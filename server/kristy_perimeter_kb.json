@@ -177,7 +177,7 @@
       "question": "Is grass-fed beef worth it?",
       "decision": "100% grass-fed or grass-finished beef.",
       "why": "Grass after weaning, no grain and no feedlot. A grass finish gives you leaner beef with a different fat balance.",
-      "short_answer": "On a beef label, ‘grass-fed’ alone rests on the producer. FSIS reads ‘100% grass-fed’ as grass after weaning, no grain, and pasture access. A certifier’s seal is what audits it. That one is worth paying for.",
+      "short_answer": "On a beef label, ‘grass-fed’ alone rests on the producer. FSIS reads ‘100% grass-fed’ as grass after weaning, no grain, and pasture access. A certifier’s seal is what audits it. That seal is the one to look for.",
       "detail": "The USDA withdrew its own grass-fed marketing standard, the AMS Grass (Forage) Fed claim standard, in 2016, so the bare claim now rests on the producer and on whatever third-party seal sits behind it. American Grassfed Association certification and Certified Grassfed by AGW both audit the whole life. The compositional difference that follows a grass finish is established and modest, and it is a leaner animal with a different fatty-acid balance rather than a different food. The fat profile follows the finish, not the start.",
       "evidence_tier": "kristys_standard",
       "sources": [
@@ -193,12 +193,12 @@
         "Consumer Reports: Decoding the labels on meat packages https://www.consumerreports.org/food/decoding-the-labels-on-meat-packages/"
       ],
       "kristy_take": "Go gently with the heat: this leaner beef dries out at feedlot-beef heat. Look for whole-life words backed by a seal.",
-      "instead": "Grass-finished ground beef or chuck: grass after weaning, no grain or feedlot, in the cut that costs least.",
+      "instead": "Grass-finished ground beef or chuck: grass after weaning, no grain or feedlot, in the everyday cuts.",
       "cart_pick": "100% grass-fed or grass-finished ground beef",
       "buying_tips": [
         "“Grass-fed” alone can mean a grain finish; grass to the end makes leaner beef.",
         "‘100% grass-fed’ and ‘grass-finished’ mean the same thing. Either one is the claim.",
-        "Ground and chuck are the lowest-cost way into a whole-life grass animal.",
+        "When steaks are a stretch, ground beef and chuck still come from a whole-life grass animal.",
         "At the counter, ask what the animal was finished on and for how long.",
         "Look for no added hormones and a certifier’s seal behind the claim.",
         "Grain-finished cattle are often given antibiotics; look for ‘no antibiotics ever’ or the American Grassfed seal.",
@@ -208,14 +208,14 @@
         "Where grass-finished is not on the shelf, organic grain-finished is the floor. Well-raised grain-finished beef beats poorly-raised anything.",
         "Pasture artwork on the package is not a claim. The words are the claim.",
         "A grass finish leaves a leaner animal, so it cooks faster and dries out at feedlot-beef heat.",
-        "USDA withdrew its grass-fed claim standard in 2016. A ‘grass-fed’ label today points at a standard the company chose, so ask whose definition it is."
+        "USDA withdrew its grass-fed claim standard in 2016. A ‘grass-fed’ label today points at a standard the company chose; look for a certifier’s seal behind it."
       ],
       "pick_steps": [
         "Read for ‘grass-finished’ or ‘100% grass-fed’; pasture artwork is not a claim.",
         "Without grass-finished on the shelf, organic grain-finished is the floor.",
         "At the counter, ask what it was finished on and whose definition."
       ],
-      "science": "FSIS reads a ‘grass-fed’ claim as grass after weaning, no grain, and pasture access. USDA withdrew its grass-fed claim standard in 2016, so the bare claim rests on the producer and any seal. The fat profile follows the finish, not the start. A grass finish leaves a leaner animal that dries out at feedlot-beef heat. Ground and chuck are the lowest-cost way into a whole-life grass animal.",
+      "science": "FSIS reads a ‘grass-fed’ claim as grass after weaning, no grain, and pasture access. USDA withdrew its grass-fed claim standard in 2016, so the bare claim rests on the producer and any seal. The fat profile follows the finish, not the start. A grass finish leaves a leaner animal that dries out at feedlot-beef heat. Ground beef and chuck still come from the same whole-life grass animal.",
       "labels_decoded": [
         {
           "term": "Grass-fed",
@@ -267,6 +267,14 @@
         {
           "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
           "url": "https://drcate.com/hateful-eight/"
+        },
+        {
+          "name": "A Greener World: Animal Welfare Approved standards",
+          "url": "https://agreenerworld.org/certifications/animal-welfare-approved/standards/"
+        },
+        {
+          "name": "ASPCA: Food certification label guide",
+          "url": "https://www.aspca.org/shopkind/guide/food-certification-label-guide"
         }
       ],
       "kristy_take": "Take a steaming bird from under the lamp and turn to the sticker. Every ingredient runs in descending order; a solution must name its percent and contents.",
@@ -281,7 +289,8 @@
         "A bird held under the lamp is held hot for a reason. Take one that is steaming, not one that has sat.",
         "Check the sticker for oil in the seasoning; choose olive oil or a bird with no added oil.",
         "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
-        "Skip a bird seasoned with avocado oil too."
+        "Skip a bird seasoned with avocado oil too.",
+        "Look for “raised without antibiotics” on the sticker, with organic or Animal Welfare Approved behind it."
       ],
       "watch_out": [
         "FSIS: eat or refrigerate a hot rotisserie bird within 2 hours of purchase. If it will not be eaten in that window, cut it up. Refrigerate it in shallow covered containers.",
@@ -2869,38 +2878,48 @@
       "question": "What should I ask at the butcher counter?",
       "decision": "100% grass-fed soup bones and a whole chuck, freshly ground.",
       "why": "A whole chuck ground at the counter lets you choose the cut. The butcher can tell you when it was cut.",
-      "short_answer": "The service counter answers what a package never will. Ask what came in today and ask the sourcing question directly. Ask for a whole cut ground fresh, and for bones and trim.",
+      "short_answer": "The service counter answers what a package never will. Ask the butcher what came in today and ask the sourcing question directly. At the counter, ask for a whole cut ground fresh, and for bones and trim.",
       "detail": "A staffed counter answers things a package never will: how it was raised, what was added, when it was actually cut. They will grind a whole chuck fresh, which lets you choose the cut. Cutting, tying, grinding and boning are usually included. Unsure of the cut, name the primal first: a cut from the chuck, a cut from the loin.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "USDA Institutional Meat Purchase Specifications (cut nomenclature)",
         "MakeFoodSafe.com “Meat Grinding at Home Safety Tips” https://www.makefoodsafe.com/meat-grinding-at-home-safety-tips/",
         "Rising Star Custom Meats “4 Questions You Should Always Ask Your Local Butchers” https://www.risingstarmeats.com/4-questions-you-should-always-ask-your-local-butchers",
-        "The Butcher’s Handbook “How to Order Meat Like a Pro: Butcher Counter Communication Guide” https://butchershandbook.com/guides/butcher-counter-terminology"
+        "The Butcher’s Handbook “How to Order Meat Like a Pro: Butcher Counter Communication Guide” https://butchershandbook.com/guides/butcher-counter-terminology",
+        {
+          "name": "A Greener World: Animal Welfare Approved standards",
+          "url": "https://agreenerworld.org/certifications/animal-welfare-approved/standards/"
+        },
+        {
+          "name": "ASPCA: Food certification label guide",
+          "url": "https://www.aspca.org/shopkind/guide/food-certification-label-guide"
+        }
       ],
       "kristy_take": "Start with what came in today, then how it was raised and what was added. Bones, trim and portioning are worth asking for while you are at the counter.",
       "cart_pick": "Grass-fed soup bones from the butcher counter",
       "buying_tips": [
         "A butcher can tell you how it was raised and when it was cut; a package cannot.",
-        "Ask which farm the bones came from and what the cattle were fed.",
-        "Ask what came in today.",
-        "Ask for a whole chuck ground fresh, which lets you choose the cut.",
-        "Ask the sourcing question outright: how it was raised and where from.",
-        "Ask for bones and trim. Often cheap or free.",
-        "Ask them to portion it. Cutting, tying and boning are usually included."
+        "Ask the butcher which farm the bones came from and what the cattle were fed.",
+        "Ask the butcher what came in today.",
+        "At the counter, ask for a whole chuck ground fresh, which lets you choose the cut.",
+        "Ask the butcher the sourcing question outright: how it was raised and where from.",
+        "Ask the butcher for bones and trim.",
+        "Ask the butcher to portion it. Cutting, tying and boning are usually included.",
+        "Ask the butcher whether the farm holds an Animal Welfare Approved seal, beyond “pasture raised”."
       ],
       "labels_decoded": [],
       "tier_note": "Soup bones come from the counter, and a whole chuck ground fresh lets the shopper choose the cut.",
       "watch_out": [
-        "‘Aged’ covers two different things. Wet-aged beef rests in a vacuum bag and keeps its moisture. Dry-aged beef rests in open air and loses weight. Ask which one it is.",
-        "Silverskin is connective tissue. Ask to have it removed from a tenderloin or ribs.",
+        "‘Aged’ covers two different things. Wet-aged beef rests in a vacuum bag and keeps its moisture. Dry-aged beef rests in open air and loses weight. Ask the butcher which one it is.",
+        "Silverskin is connective tissue. Ask the butcher to remove it from a tenderloin or ribs.",
         "Thickness is not fixed. Say how thick the steak should be, what size piece is needed and what lean-to-fat ratio the grind should have.",
-        "Unsure of the cut, name the section first: a piece from the chuck, a cut from the loin. That opens a real conversation about what is fresh."
+        "Unsure of the cut, name the section first: a piece from the chuck, a cut from the loin. That opens a real conversation about what is fresh.",
+        "Blade or mechanically tenderized: see Steak."
       ],
       "pick_steps": [
-        "Soup bones: ask for marrow or knuckle bones.",
+        "Soup bones: ask the butcher for marrow or knuckle bones.",
         "How it was raised: see Beef.",
-        "Ask them to portion it; cutting, tying and boning are usually included."
+        "Ask the butcher to portion it; cutting, tying and boning are usually included."
       ],
       "science": "A staffed counter answers what a package never will, such as when the meat was cut. Cutting, tying, grinding and boning are usually included. Wet-aged beef rests in a vacuum bag and keeps its moisture. Dry-aged beef rests in open air and loses weight.",
       "asked_as": [
@@ -2959,6 +2978,14 @@
         {
           "name": "The Virtual Weber Bullet: Enhanced meat",
           "url": "https://www.virtualweberbullet.com/enhanced-meat/"
+        },
+        {
+          "name": "A Greener World: Animal Welfare Approved standards",
+          "url": "https://agreenerworld.org/certifications/animal-welfare-approved/standards/"
+        },
+        {
+          "name": "ASPCA: Food certification label guide",
+          "url": "https://www.aspca.org/shopkind/guide/food-certification-label-guide"
         }
       ],
       "kristy_take": "A whole bird gives you breast, dark meat and a frame for stock. For thighs, keep the bone and skin: they give you more room at the stove than boneless skinless.",
@@ -3021,7 +3048,8 @@
         "‘Natural’ says nothing about antibiotics. It means no artificial ingredients were added after processing and the meat is minimally processed. A natural bird can be raised with antibiotics.",
         "‘No hormones’ on chicken is an empty claim. Hormones and steroids are not allowed in poultry, so every bird already qualifies.",
         "Organic is the seal that carries the antibiotic rule: organic feed only, no antibiotics.",
-        "Skip chicken labeled “enhanced” or “contains up to X% of a solution”: water, salt and phosphates injected into the meat."
+        "Skip chicken labeled “enhanced” or “contains up to X% of a solution”: water, salt and phosphates injected into the meat.",
+        "A Certified Humane seal means the farm was audited; Animal Welfare Approved also requires pasture."
       ],
       "pick_steps": [
         "Bone-in, skin-on thighs are the forgiving pick; boneless skinless costs the most.",
@@ -6630,7 +6658,7 @@
         "bratwurst",
         "bratwursts"
       ],
-      "decision": "Pastured pork sausage from a local farm; celery powder supplies nitrite.",
+      "decision": "Pastured local-farm sausage, then certified organic feed and outdoor access; “uncured” celery powder supplies nitrite.",
       "sources": [
         {
           "name": "Cornell LII: 9 CFR § 319.140 Sausage",
@@ -6659,8 +6687,17 @@
         {
           "name": "Cornell LII: 7 CFR § 205.239 Livestock living conditions",
           "url": "https://www.law.cornell.edu/cfr/text/7/205.239"
+        },
+        {
+          "name": "Wikipedia: Mechanically separated meat",
+          "url": "https://en.wikipedia.org/wiki/Mechanically_separated_meat"
+        },
+        {
+          "name": "Reverence Farms: Organic feed and non-GMO feed",
+          "url": "https://reverencefarms.com/blogs/news/why-is-it-so-important-to-feed-organic-feed-isn-t-non-gmo-almost-as-good"
         }
-      ]
+      ],
+      "avoid": "Skip sausage listing mechanically separated chicken, turkey or pork."
     },
     {
       "id": "pick_tofu",
@@ -6993,7 +7030,27 @@
       "evidence_tier": "kristys_standard",
       "sources": [
         "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/poultry/turkey-farm-table",
-        "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/water-meat-poultry"
+        "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/water-meat-poultry",
+        {
+          "name": "A Greener World: Animal Welfare Approved standards",
+          "url": "https://agreenerworld.org/certifications/animal-welfare-approved/standards/"
+        },
+        {
+          "name": "Reverence Farms: Organic feed and non-GMO feed",
+          "url": "https://reverencefarms.com/blogs/news/why-is-it-so-important-to-feed-organic-feed-isn-t-non-gmo-almost-as-good"
+        },
+        {
+          "name": "Food & Meat Co-op: Air chilled vs water chilled chicken",
+          "url": "https://foodandmeatcoop.com/blogs/news/air-chilled-vs-water-chilled-chicken-what-s-the-difference"
+        },
+        {
+          "name": "The Virtual Weber Bullet: Enhanced meat",
+          "url": "https://www.virtualweberbullet.com/enhanced-meat/"
+        },
+        {
+          "name": "ASPCA: Food certification label guide",
+          "url": "https://www.aspca.org/shopkind/guide/food-certification-label-guide"
+        }
       ],
       "kristy_take": "Fresh or frozen, read beside the name for a basting solution and its ingredients. Water left from chilling is a separate disclosure, so read the two lines separately.",
       "cart_pick": "Pasture-raised whole turkey",
@@ -7002,11 +7059,14 @@
         "Look for a pasture-raised whole turkey, sold unbasted.",
         "Read the solution ingredients beside the product name.",
         "A frozen whole turkey can be checked for the same added-solution statement.",
-        "Read retained-water wording separately from the flavoring-solution statement."
+        "Read retained-water wording separately from the flavoring-solution statement.",
+        "Above pasture raised: Animal Welfare Approved, organic feed and “raised without antibiotics”.",
+        "Air chilled turkey stays out of the water tank; “water chilled” birds retain some."
       ],
       "watch_out": [
         "“Natural” can appear on products containing a flavoring solution.",
-        "Retained water from chilling and an injected flavoring solution are different label disclosures."
+        "Retained water from chilling and an injected flavoring solution are different label disclosures.",
+        "“Self-basting” or “enhanced” on the wrapper means an injected solution."
       ],
       "pick_steps": [
         "Beside the name, read the solution ingredients on a basted or self-basted bird.",
@@ -7054,6 +7114,10 @@
         {
           "name": "Food & Meat Co-op: Air-chilled vs water-chilled chicken",
           "url": "https://foodandmeatcoop.com/blogs/news/air-chilled-vs-water-chilled-chicken-what-s-the-difference"
+        },
+        {
+          "name": "A Greener World: Animal Welfare Approved standards",
+          "url": "https://agreenerworld.org/certifications/animal-welfare-approved/standards/"
         }
       ],
       "kristy_take": "Look for turkey on the ingredient list, with no added seasoning or flavoring solution. A percent-lean claim must have its percent-fat statement alongside.",
@@ -7064,7 +7128,8 @@
         "Look for “air-chilled” on the turkey pack.",
         "Choose a formulation listing turkey without added seasonings or a flavoring solution.",
         "Without a percent-lean claim, use the Nutrition Facts fat line to compare packs.",
-        "Compare the fat content of the actual packs rather than assume one level for all ground turkey."
+        "Compare the fat content of the actual packs rather than assume one level for all ground turkey.",
+        "An Animal Welfare Approved seal and “raised without antibiotics” back the pasture claim."
       ],
       "watch_out": [
         "Do not infer a fat level from the animal name. Read each pack.",
@@ -7380,7 +7445,11 @@
         "https://www.law.cornell.edu/cfr/text/9/317.17",
         "Consumer Reports: Decoding the labels on meat packages https://www.consumerreports.org/food/decoding-the-labels-on-meat-packages/",
         "Reverence Farms: Organic feed and non-GMO feed https://reverencefarms.com/blogs/news/why-is-it-so-important-to-feed-organic-feed-isn-t-non-gmo-almost-as-good",
-        "Iowa State University Extension: Liquid smoke https://blogs.extension.iastate.edu/answerline/2019/04/18/liquid-smoke-that-controversial-condiment/"
+        "Iowa State University Extension: Liquid smoke https://blogs.extension.iastate.edu/answerline/2019/04/18/liquid-smoke-that-controversial-condiment/",
+        {
+          "name": "UCSF SugarScience: Hidden in plain sight",
+          "url": "https://sugarscience.ucsf.edu/hidden-in-plain-sight/"
+        }
       ],
       "kristy_take": "The curing ingredients describe the process. An uncured claim alone does not establish nitrate-free bacon.",
       "cart_pick": "Pasture-raised sliced bacon",
@@ -7394,7 +7463,8 @@
       "watch_out": [
         "On bacon labeled “uncured” or “no nitrates added”, celery powder or juice may supply the nitrite for curing. Find the asterisk and read its exception.",
         "An uncured label does not by itself establish the absence of nitrates or nitrites.",
-        "The source set does not establish a health advantage from choosing celery-based curing."
+        "The source set does not establish a health advantage from choosing celery-based curing.",
+        "Dextrose in a curing list is added sugar under another name."
       ],
       "pick_steps": [
         "Read any exception naming nitrates naturally occurring in celery powder.",
@@ -7561,7 +7631,15 @@
       "evidence_tier": "kristys_standard",
       "sources": [
         "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/water-meat-poultry",
-        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7365903/"
+        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7365903/",
+        {
+          "name": "ASPCA: Food certification label guide",
+          "url": "https://www.aspca.org/shopkind/guide/food-certification-label-guide"
+        },
+        {
+          "name": "The Virtual Weber Bullet: Enhanced meat",
+          "url": "https://www.virtualweberbullet.com/enhanced-meat/"
+        }
       ],
       "kristy_take": "A plain breast gives you only chicken. Added flavoring solution must appear in the product name with its amount, even on a pack labeled ‘natural’.",
       "cart_pick": "Pasture-raised chicken breast",
@@ -7570,12 +7648,15 @@
         "Look for pasture-raised or certified organic breast, sold plain.",
         "Read the full product name for the solution percentage and ingredients.",
         "Fresh or frozen breast can be checked for the same solution disclosure.",
-        "Read retained-water wording separately from the added flavoring ingredients."
+        "Read retained-water wording separately from the added flavoring ingredients.",
+        "Look for “raised without antibiotics” and a Certified Humane seal on the pack.",
+        "Air chilled or water chilled: see Chicken."
       ],
       "watch_out": [
         "“Natural” does not exclude a flavoring solution.",
         "Retained chilling water is different from an added flavoring solution.",
-        "The archived woody-breast study does not establish a dependable visual test for shoppers."
+        "The archived woody-breast study does not establish a dependable visual test for shoppers.",
+        "“Enhanced” on a breast pack means an injected solution; the label states the percent."
       ],
       "pick_steps": [
         "Read the full product name for a solution percentage and its ingredients.",
@@ -7999,7 +8080,11 @@
         "CSPI: Food additive safety ratings https://www.cspi.org/page/chemical-cuisine-food-additive-safety-ratings",
         "CSPI: Carrageenan https://www.cspi.org/node/7465",
         "True Story Foods: Deli meat additives https://www.truestoryfoods.com/blog/deli-meat-additives/",
-        "Iowa State University Extension: Liquid smoke https://blogs.extension.iastate.edu/answerline/2019/04/18/liquid-smoke-that-controversial-condiment/"
+        "Iowa State University Extension: Liquid smoke https://blogs.extension.iastate.edu/answerline/2019/04/18/liquid-smoke-that-controversial-condiment/",
+        {
+          "name": "Weston A. Price Foundation: Pork",
+          "url": "https://www.westonaprice.org/health-topics/food-features/pork/"
+        }
       ],
       "kristy_take": "Ham is the cured leg of pork. Its product name tells how much water the curing added.",
       "cart_pick": "Pasture-raised sliced ham",
@@ -8008,13 +8093,14 @@
         "Read the product name for “Water Added” or a percent of added ingredients.",
         "Check whether the label says fully cooked or cook before eating.",
         "Find where water sits in the ingredients statement.",
-        "On smoked ham, favor wood smoking over liquid smoke or smoke flavoring. Those ingredients add condensed smoke to the meat."
+        "On smoked ham, favor wood smoking over liquid smoke or smoke flavoring. Those ingredients add condensed smoke to the meat.",
+        "Above a quick-cured ham: one dry cured with salt and time, as in prosciutto."
       ],
       "watch_out": [
         "Packaged ham marked “uncured” or “no nitrates added” can get nitrite from celery powder or juice. Fresh ham is the raw leg and needs cooking.",
         "“Ham and Water Product” states the share of its weight that is added ingredients.",
         "Fresh ham and country ham are not fully cooked and need cooking before eating.",
-        "Choose ham without added phosphates, used to retain water. Pass on binders such as carrageenan, modified food starch and maltodextrin, which thicken or bind it."
+        "Choose ham without added phosphates such as sodium phosphate, used to retain water. Pass on binders such as carrageenan, modified food starch and maltodextrin, which thicken or bind it."
       ],
       "pick_steps": [
         "Read the name for “Water Added” or a percent of added ingredients.",
@@ -8456,7 +8542,7 @@
         "meat stick",
         "meat sticks"
       ],
-      "decision": "Whole-muscle grass-fed, grass-finished beef jerky with a short list; celery powder supplies nitrite.",
+      "decision": "Whole-muscle grass-fed, grass-finished beef jerky with a short list; celery powder in “uncured” jerky supplies nitrite.",
       "sources": [
         {
           "name": "NDSU Extension: Jerky",
@@ -8477,8 +8563,13 @@
         {
           "name": "American Grassfed Association: Our Standards",
           "url": "https://www.americangrassfed.org/about-us/our-standards/"
+        },
+        {
+          "name": "Iowa State University Extension: Liquid smoke",
+          "url": "https://blogs.extension.iastate.edu/answerline/2019/04/18/liquid-smoke-that-controversial-condiment/"
         }
-      ]
+      ],
+      "avoid": "Skip jerky listing liquid smoke or smoke flavoring."
     },
     {
       "id": "pick_soup_bones",
