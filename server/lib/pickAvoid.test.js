@@ -17,11 +17,13 @@ const AVOIDS = {
   // clean-sweep-J3 (2026-10-22): register mechanically-separated and liquid-smoke lines.
   pick_sausage: ['sausage', 'Skip sausage listing mechanically separated chicken, turkey or pork.'],
   pick_jerky: ['jerky', 'Skip jerky listing liquid smoke or smoke flavoring.'],
+  // clean-sweep-J4 (2026-10-22): register pangasius and MSC low-bar lines.
+  pick_fish_sticks: ['fish sticks', 'Skip Vietnam swai or basa; critics call ‘MSC certified’ a low bar.'],
 };
 const entries = perimeterKb.entries || [];
 const byId = (id) => entries.find((e) => e.id === id);
 
-test('exactly the seven picks carry avoid, each lint-clean', () => {
+test('exactly the eight picks carry avoid, each lint-clean', () => {
   const withAvoid = entries.filter((e) => 'avoid' in e).map((e) => e.id).sort();
   assert.deepEqual(withAvoid, Object.keys(AVOIDS).sort());
   for (const [id, [, line]] of Object.entries(AVOIDS)) {
@@ -30,9 +32,9 @@ test('exactly the seven picks carry avoid, each lint-clean', () => {
   }
 });
 
-test('the seven picks resolve with pickAvoid through attachCards', () => {
+test('the eight picks resolve with pickAvoid through attachCards', () => {
   const rows = Object.values(AVOIDS).map(([name], i) => ({ id: `r${i}`, name, source: 'user' }));
-  nonEmpty(rows, 'rows', 7);
+  nonEmpty(rows, 'rows', 8);
   const out = attachCards({ items: rows }, { log: false }).items;
   Object.entries(AVOIDS).forEach(([id, [name, line]], i) => {
     assert.equal(out[i].pickId, id, name);

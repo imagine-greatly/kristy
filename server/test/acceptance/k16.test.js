@@ -12,6 +12,8 @@ import { projectEntry, parseReviewTable } from '../../lib/counterCards.js';
 import { matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
 import { scoreEntries } from '../../lib/perimeter.js';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
+import { preCleanJ4 } from './cartPlain.js';
+kb.entries = kb.entries.map(preCleanJ4); // clean-sweep-J4: seafood pins read 6d98564; cleanPickJ4.test.js owns live copy.
 import { preT6_1 } from "./twoLinePin.js";
 kb.entries = kb.entries.map(preT6_1); // t6-1: the 15 meat/seafood cards read as of 85c399e; t6_1.test.js owns them now
 

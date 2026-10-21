@@ -11,6 +11,8 @@ import { inScope } from '../../lib/counterScope.js';
 import { RETIRED, ESSENTIALS, projectEntry, parseReviewTable } from '../../lib/counterCards.js';
 import { lintCard, readability, lintRepeatedClaim, OWNED_FACTS } from '../../lib/counterCardLint.js';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
+import { preCleanJ4 } from './cartPlain.js';
+kb.entries = kb.entries.map(preCleanJ4); // clean-sweep-J4: seafood pins read 6d98564; cleanPickJ4.test.js owns live copy.
 import doLines from '../../lib/doLines.json' with { type: 'json' };
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../../..');

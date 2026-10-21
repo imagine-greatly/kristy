@@ -32,7 +32,7 @@
       "question": "Is wild or farmed salmon better?",
       "decision": "Wild salmon, frozen wild Alaskan before fresh farmed.",
       "why": "Feed decides the fat, and a penned fish eats what it is given. Wild is the whole-food standard.",
-      "short_answer": "Two different animals sold under one name. Wild salmon eats krill and small fish across open ocean. Farmed salmon eats a formulated ration built largely on plant protein and vegetable oil.",
+      "short_answer": "Two different animals sold under one name. Wild salmon eats krill and small fish across open ocean. Farmed salmon eats a ration of plant protein and vegetable oil, not krill.",
       "detail": "That ration leaves farmed salmon with far more omega-6 and a much worse omega-3 to omega-6 ratio. Astaxanthin goes into the ration because the flesh comes out gray without it. Sea lice and the treatments used against them are the cost of penning fish that close together, and antibiotic use varies enormously by country of origin. The ratio is the claim, not the amount. Farmed salmon is fatter, so a serving can carry as much total omega-3 as wild or more; what the feed changes is the balance against omega-6, and that is the difference worth naming. Country of origin does most of the work on the rest: Norwegian farming runs close to zero antibiotic use on the back of vaccination, and other producing countries run far higher. The fish never swam anywhere, and it was colored to look like one that did.",
       "evidence_tier": "kristys_standard",
       "sources": [
@@ -46,13 +46,17 @@
         {
           "name": "Monterey Bay Aquarium: Farmed salmon in Chile",
           "url": "https://www.montereybayaquarium.org/change-impact/our-conservation-work/global-ocean-conservation-programs/global-seafood-projects/farmed-salmon-in-chile"
+        },
+        {
+          "name": "Quartz: Here is why your farmed salmon has color added to it",
+          "url": "https://qz.com/358811/heres-why-your-farmed-salmon-has-color-added-to-it"
         }
       ],
       "kristy_take": "Wild, and frozen wild before fresh farmed. Where wild is not in the case, the tin is.",
       "instead": "Canned wild salmon, or sardines. Actually wild, and canned is the cheapest way to buy wild.",
       "cart_pick": "Wild-caught salmon",
       "buying_tips": [
-        "Wild salmon eats krill and small fish; farmed eats plant protein and vegetable oil.",
+        "Farmed salmon eats plant protein and vegetable oil, not krill and small fish like wild.",
         "Sockeye and coho are almost always wild, and their color is deep because of diet, not dye.",
         "A 2004 Science study found 14 contaminants, PCBs and dioxins included, all higher in farmed salmon.",
         "Canned wild salmon comes next; for farmed salmon, read the country of origin.",
@@ -68,7 +72,7 @@
         "Check the freezer case: frozen wild Alaskan is often fresher than ‘fresh’ farmed.",
         "Pick wild salmon; choose frozen wild Alaskan before fresh farmed."
       ],
-      "science": "Farmed salmon eats a ration built largely on plant protein and vegetable oil. That leaves a worse omega-3 to omega-6 ratio. Its flesh comes out gray without added astaxanthin; sockeye and coho get their color from diet. Alaska law limits farming to shellfish and seaweeds, so Alaska salmon is not net-pen farmed. ‘Fresh’ at the counter is often previously frozen, which is not a downgrade.",
+      "science": "Farmed salmon eats a ration built largely on plant protein and vegetable oil, not krill and small fish. That leaves a worse omega-3 to omega-6 ratio. Its flesh comes out gray without added astaxanthin; sockeye and coho get their color from diet. Alaska law limits farming to shellfish and seaweeds, so Alaska salmon is not net-pen farmed. ‘Fresh’ at the counter is often previously frozen, which is not a downgrade.",
       "labels_decoded": [
         {
           "term": "Farm-raised",
@@ -77,6 +81,10 @@
         {
           "term": "Wild-caught / Alaskan",
           "meaning": "Caught in the wild; Alaskan fisheries are well managed."
+        },
+        {
+          "term": "Color added",
+          "meaning": "Astaxanthin in the feed set the pink; farmed flesh is gray without it."
         }
       ],
       "tier_note": "Frozen wild being the same fish is documented; reaching past the fresh Atlantic for it is the whole-food standard.",
@@ -119,6 +127,10 @@
         {
           "name": "The Fish Site: STPP in fish",
           "url": "https://thefishsite.com/articles/warnings-of-sodium-tripolyphosphate-in-fish"
+        },
+        {
+          "name": "UF/IFAS Extension: Sulfites, separating fact from fiction (FY731)",
+          "url": "https://ask.ifas.ufl.edu/publication/FY731"
         }
       ],
       "kristy_take": "Read the country first. It is printed by law and it is most of the answer.",
@@ -128,7 +140,7 @@
         "Second choice is pond-raised shrimp labeled Naturland or Aquaculture Stewardship Council; last is imported shrimp.",
         "A 2015 Consumer Reports test found antibiotics in 11 of 205 raw imported pond-raised samples, from Vietnam, Thailand and Bangladesh.",
         "Uniform size and a flawless look point to pond-raised; wild shrimp come in a wide range of sizes.",
-        "‘Fresh’ at the case is nearly always thawed, so frozen raw is the same shrimp. Ask the case if it is dry, since wet shrimp holds extra water.",
+        "‘Fresh’ at the case is nearly always thawed, so frozen raw is the same shrimp. Ask at the counter if it is dry, since wet shrimp holds extra water.",
         "Read the bag for the country of origin; the antibiotics Consumer Reports found were in imported shrimp raised on farms."
       ],
       "labels_decoded": [
@@ -145,7 +157,8 @@
       "watch_out": [
         "Where wild American is not stocked, check for a BAP or ASC certification. A label alone is not proof; antibiotics showed on four samples carrying one common label.",
         "Consumer Reports found bacteria on 20 percent of raw U.S. wild samples and 42 to 83 percent of imported pond-raised. Cooking through kills most of it, yet 16 percent of cooked samples carried bacteria.",
-        "A 2014 Oceana DNA test found 30 percent of shrimp labels misleading, with some pond-raised shrimp sold as wild. The Southern Shrimp Alliance, a domestic industry group, counts India, Indonesia and Vietnam first in FDA refusals for drug residues."
+        "A 2014 Oceana DNA test found 30 percent of shrimp labels misleading, with some pond-raised shrimp sold as wild. The Southern Shrimp Alliance, a domestic industry group, counts India, Indonesia and Vietnam first in FDA refusals for drug residues.",
+        "Fresh, frozen, canned or dried shrimp may contain sulfites, such as sulfur dioxide. Check the label."
       ],
       "pick_steps": [
         "Read the country of origin first; it is printed by law.",
@@ -3302,8 +3315,8 @@
       "question": "What should I look for in canned fish?",
       "decision": "Fish in olive oil or water, bone-in and skin-on.",
       "why": "The list should read fish, oil or water, salt. Anything longer is a sauce.",
-      "short_answer": "Read what it is packed in. Olive oil or water are the clean options. Plenty of tins use soybean, cottonseed or unnamed ‘vegetable oil’. Buy sardines and salmon with the bones and skin left in.",
-      "detail": "Canned fish is one of the best value whole foods in the store, and the differences between tins are almost entirely the pack medium and what else went in. Oil-packed carries more flavor and, in good olive oil, is worth using in the dish rather than pouring away. Water-packed is leaner and neutral. ‘Vegetable oil’ on a tin is nearly always a seed oil blend and the label will not name which. Skin-on, bone-in sardines and salmon keep the whole small fish intact, which is much of why the tin is worth buying. Flavored tins in sauces bring added sugar and a long list, so read those like any packaged food. Soybean, cottonseed or unnamed ‘vegetable oil’ matters if seed oils are a line you hold. The ingredient list should read fish, oil or water, and salt; anything longer is a sauce.",
+      "short_answer": "Read what it is packed in. Olive oil or water are the clean options. Skip tins in soybean, cottonseed or unnamed ‘vegetable oil’. Buy sardines and salmon with the bones and skin left in.",
+      "detail": "Canned fish is one of the best value whole foods in the store, and the differences between tins are almost entirely the pack medium and what else went in. Oil-packed carries more flavor and, in good olive oil, is worth using in the dish rather than pouring away. Water-packed is leaner and neutral. ‘Vegetable oil’ on a tin is nearly always a seed oil blend and the label will not name which. Skin-on, bone-in sardines and salmon keep the whole small fish intact, which is much of why the tin is worth buying. Flavored tins in sauces bring added sugar and a long list, so read those like any packaged food. Skip soybean, cottonseed or unnamed ‘vegetable oil’ if seed oils are a line you hold. The ingredient list should read fish, oil or water, and salt; anything longer is a sauce.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "USDA FoodData Central (canned fish composition)",
@@ -3325,8 +3338,8 @@
       ],
       "labels_decoded": [
         {
-          "term": "Packed in vegetable oil",
-          "meaning": "Nearly always a seed oil blend. The tin will not name which."
+          "term": "Packed in vegetable oil (skip)",
+          "meaning": "Nearly always a seed oil blend, and the tin will not name which."
         },
         {
           "term": "Packed in olive oil",
@@ -3392,7 +3405,7 @@
         "Mussels and oysters filter their food from the water and need no feed.",
         "Mussels, oysters and clams are farmed almost everywhere and need no feed.",
         "Farmed trout, arctic char and barramundi are generally well regarded.",
-        "For salmon and shrimp, ask the country and look for a credible certification.",
+        "For salmon and shrimp, ask the counter for the country, and look for a credible certification.",
         "Country-of-origin is required on unprocessed seafood. Read it.",
         "‘Farmed’ alone is not a verdict. The species and the operation are the question.",
         "On ‘farm raised’ salmon, read the country: Chile uses more antibiotics than any other salmon-farming country."
@@ -8638,7 +8651,7 @@
       "question": "How do you pick good white fish?",
       "decision": "Wild-caught white fish by its named species, firm, mild-smelling.",
       "why": "A fillet is hard to identify by eye, so the species name does that work. Firm flesh and a mild smell show the rest.",
-      "short_answer": "Ask which species it is, since a fillet is hard to identify by eye. Then look for shiny, firm flesh that springs back, a mild sea smell, and no dried or dark edges.",
+      "short_answer": "Ask the counter which species it is, since a fillet is hard to identify by eye. Then look for shiny, firm flesh that springs back, a mild sea smell, and no dried or dark edges.",
       "detail": "Seafood must be labeled with an acceptable market name for its species. FDA DNA testing targeted fish with a history of mislabeling, including cod, haddock, snapper and grouper. The species was labeled correctly 85% of the time. Fillets should sit on ice, not buried in it. For frozen packs, skip tears, ice crystals, liquid inside, or soft flesh.",
       "evidence_tier": "established",
       "sources": [
@@ -8654,16 +8667,17 @@
       "buying_tips": [
         "A fillet is hard to identify by eye, so the species name does that work.",
         "Look for how it was caught and the species, on the sign or label.",
-        "Ask which species the fillet is.",
+        "Ask the counter which species the fillet is.",
         "Press the flesh and check that it springs back.",
-        "Skip fillets with dried, dark or discolored edges."
+        "Skip fillets with dried, dark or discolored edges.",
+        "Dry packed fillets: see Scallops."
       ],
       "watch_out": [
         "A fillet is hard to identify by eye, so the species name on the sign carries the weight.",
         "Color alone does not show freshness, because diet, environment and color fixatives all change it."
       ],
       "pick_steps": [
-        "Ask the species; a fillet is hard to identify by eye.",
+        "Ask the counter for the species; a fillet is hard to identify by eye.",
         "Press it: firm flesh springs back, with no dried or dark edges.",
         "Take a piece with a mild sea smell."
       ],
@@ -9002,6 +9016,14 @@
         {
           "name": "Quartz: Here is why your farmed salmon has color added to it",
           "url": "https://qz.com/358811/heres-why-your-farmed-salmon-has-color-added-to-it"
+        },
+        {
+          "name": "Iowa State Extension AnswerLine: Liquid smoke",
+          "url": "https://blogs.extension.iastate.edu/answerline/2019/04/18/liquid-smoke-that-controversial-condiment/"
+        },
+        {
+          "name": "WebMD via NBC News: Do risks of farmed salmon outweigh benefits?",
+          "url": "https://www.nbcnews.com/id/wbna3980525"
         }
       ],
       "kristy_take": "The label word tells the kind. Refrigerated smoked fish stays cold all the way home.",
@@ -9012,7 +9034,9 @@
         "Choose smoked wild salmon first. For farmed smoked salmon, read the country of origin.",
         "Wild salmon get their color from krill and shrimp. Farmed salmon flesh is gray until astaxanthin in the feed sets the pink, which ‘color added’ means.",
         "Pick it from a refrigerated case and put it in the fridge soon after buying.",
-        "Choose canned or jarred smoked fish to keep on the shelf."
+        "Choose canned or jarred smoked fish to keep on the shelf.",
+        "Skip packs listing liquid smoke or smoke flavoring; look for wood-smoked.",
+        "On a pack marked ‘farm raised’, read the country; a 2004 study found farmed salmon higher in PCBs and dioxins."
       ],
       "watch_out": [
         "Cold smoking and refrigeration do not kill Listeria.",
@@ -9079,7 +9103,7 @@
       "question": "How do you choose seafood at the counter?",
       "decision": "Named species on ice, clean briny smell, springy flesh.",
       "why": "The species name is what a seafood label must get right. FDA DNA tests found it right 85% of the time.",
-      "short_answer": "Name the species, then ask where it came from and whether it was farmed. Fish should sit refrigerated or on a thick bed of ice. It should smell mild, and cooked seafood sits apart from raw.",
+      "short_answer": "Name the species, then ask the counter where it came from and whether it was farmed. Fish should sit refrigerated or on a thick bed of ice. It should smell mild, and cooked seafood sits apart from raw.",
       "detail": "FDA guidance says to buy fish refrigerated or on a thick bed of fresh ice, preferably under a cover. Fish should smell fresh and mild, not fishy, sour or ammonia-like. Unpackaged cooked seafood belongs in its own case or behind dividers from raw. Around 85 percent of seafood eaten in the U.S. is imported. NOAA inspection is a fee-for-service program for vessels, processing plants and retail facilities. Participants may use an official mark showing federal inspection.",
       "evidence_tier": "established",
       "sources": [
@@ -9097,14 +9121,15 @@
         "NOAA Fisheries seafood handling guidance",
         "Nofima “How to check how fresh fish is” https://nofima.com/worth-knowing/how-to-check-how-fresh-fish-is/ (gills as the single best freshness check; eye and skin sheen; the date alone is not reliable)",
         "The Fish Site “Warnings of sodium tripolyphosphate in fish” https://thefishsite.com/articles/warnings-of-sodium-tripolyphosphate-in-fish",
-        "Nordic Catch “Tuna treated with carbon monoxide” https://nordiccatch.com/blogs/news/tuna-treated-with-carbon-monoxide"
+        "Nordic Catch “Tuna treated with carbon monoxide” https://nordiccatch.com/blogs/news/tuna-treated-with-carbon-monoxide",
+        "FDA “Advice about Eating Fish” https://www.fda.gov/food/consumers/advice-about-eating-fish (Best Choices list: canned light tuna, skipjack included; albacore a Good Choice)"
       ],
       "kristy_take": "Species first, then where it came from. The ice and the smell confirm the rest.",
       "cart_pick": "A named species from a cold, iced case",
       "buying_tips": [
         "Red gills mean recently slaughtered; brown, gray or green means past fresh.",
         "Ask the counter for the species name.",
-        "Ask where it came from and whether it was farmed.",
+        "Ask the counter where it came from and whether it was farmed.",
         "Check that the fish sits on ice or in a refrigerated case.",
         "Check that cooked seafood is kept apart from raw.",
         "Ask the counter ‘was this previously frozen?’ The answer is often yes.",
@@ -9114,9 +9139,10 @@
         "Whole fish: clear domed eyes, bright red gills, tight scales, flesh that springs back.",
         "Fillets: a translucent sheen, flakes holding together, no browning at the edge.",
         "It should sit on plenty of ice, not in a pool of its own liquid.",
-        "Ask when it came in and whether it was previously frozen. Both are fair questions.",
-        "Ask for dry packed scallops and fillets; ‘wet’ means soaked in sodium tripolyphosphate, which adds water weight.",
-        "Tuna labeled ‘tasteless smoke’ or ‘treated with carbon monoxide’ stays red as it ages; untreated tuna browns."
+        "Ask the counter when it came in and whether it was previously frozen. Both are fair questions.",
+        "At the counter, ask for dry packed scallops and fillets; ‘wet’ means soaked in sodium tripolyphosphate, which adds water weight.",
+        "Tuna labeled ‘tasteless smoke’ or ‘treated with carbon monoxide’ stays red as it ages; untreated tuna browns.",
+        "FDA’s fish chart lists canned light tuna, skipjack included, as a Best Choice; albacore is a Good Choice."
       ],
       "watch_out": [
         "Fishy, sour or ammonia odors mean the fish stays at the store.",
@@ -9184,8 +9210,17 @@
         {
           "name": "Cornell LII: 21 CFR § 102.45 Fish sticks or portions made from minced fish",
           "url": "https://www.law.cornell.edu/cfr/text/21/102.45"
+        },
+        {
+          "name": "Monterey Bay Aquarium Seafood Watch: Catfish and pangasius buying guide",
+          "url": "https://www.montereybayaquarium.org/animals-the-ocean/how-to-choose-sustainable-seafood/sustainable-seafood-guides/catfish-and-pangasius-buying-guide"
+        },
+        {
+          "name": "SeafoodSource: Multiple groups call newest Marine Stewardship Council standards too lax",
+          "url": "https://www.seafoodsource.com/news/environment-sustainability/multiple-groups-call-newest-marine-stewardship-council-standards-too-lax"
         }
-      ]
+      ],
+      "avoid": "Skip Vietnam swai or basa; critics call ‘MSC certified’ a low bar."
     },
     {
       "id": "pick_anchovies",
@@ -9198,7 +9233,7 @@
         "anchovy fillet",
         "anchovy fillets"
       ],
-      "decision": "Plump anchovy fillets packed in olive oil or salt, in a tin or jar.",
+      "decision": "Anchovy fillets packed in olive oil or salt, plump, in a tin or jar.",
       "sources": [
         {
           "name": "Saveur: The best anchovies",

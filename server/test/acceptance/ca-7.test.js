@@ -13,6 +13,8 @@ import { beforeTwoLine, beforeConcern, preTidy, preCleanPick, preCleanPick2, pre
 const SERVER = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const ROOT = join(SERVER, '..');
 const kb = JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8'));
+import { preCleanJ4 } from './cartPlain.js';
+kb.entries = kb.entries.map(preCleanJ4); // clean-sweep-J4: seafood pins read 6d98564; cleanPickJ4.test.js owns live copy.
 import { preSwapPicks1 } from './twoLinePin.js';
 kb.entries = preSwapPicks1(kb.entries); // swap-picks-1: 8 swap picks + 2 aliases after 58d6160; swap_picks_1.test.js owns them.
 import { preT6_4 } from './twoLinePin.js';
