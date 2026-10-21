@@ -851,7 +851,7 @@
         "Residue sits on the skin, so a peel you throw away takes it with it.",
         "Above the seal: a local grower’s “grown without sprays”, the grower’s word, not a seal.",
         "The USDA Organic seal on the sign or sticker is the floor to read.",
-        "Ask one question at the shelf: does the skin get eaten? Berries, greens, apples, grapes and potatoes, yes. That is where the money goes."
+        "One question at the shelf: does the skin get eaten? Berries, greens, apples, grapes and potatoes, yes. Those come first."
       ],
       "watch_out": [
         "When organic runs short, go by the SKIN, not how thick it feels. Avocado and kiwi read as delicate and get peeled, so they can wait. A potato reads as sturdy and gets eaten skin-on, so it cannot.",
@@ -895,7 +895,7 @@
       ],
       "category": "produce",
       "question": "Is frozen produce as good as fresh?",
-      "decision": "Plain organic frozen produce, picked ripe and frozen within hours.",
+      "decision": "Frozen bags listing only the food, picked ripe, then organic.",
       "why": "Freezing holds vegetables at the ripeness they were picked. ‘Fresh’ produce can lose nutrients over days in transit.",
       "short_answer": "Often just as good, sometimes better. Frozen is picked and frozen at peak ripeness, which locks in nutrients. ‘Fresh’ that travels a long way or sits in storage can lose some. Frozen does not spoil.",
       "detail": "Studies comparing frozen and fresh find them broadly comparable in nutrition, with frozen sometimes ahead for produce that traveled far. Freezing is just cold, with no additives needed (check the bag is single-ingredient). This is established and it’s a genuine budget and waste win. Frozen fruit and vegetables do not spoil, and they are one of the better budget moves in the store.",
@@ -5365,8 +5365,8 @@
       ],
       "category": "produce",
       "question": "How do I choose and store carrots, potatoes, sweet potatoes, and beets?",
-      "decision": "Firm local potatoes and carrots labeled grown without sprays.",
-      "why": "Potatoes, carrots, beets and sweet potatoes should feel firm. Soft, shriveled or sprouting roots stay behind.",
+      "decision": "Local potatoes labeled grown without sprays, fresh-dug, then organic.",
+      "why": "Potatoes rank high for residue in USDA testing, and the skin often gets eaten.",
       "short_answer": "Firm is the test at every root. Potatoes: no bruises, nicks or soft spots, never green. Carrots: well colored, no green shoulders, wilt, flab or cracks. Sweet potatoes: smooth, even shape, even peel color. Beets: round, slender tap root.",
       "detail": "Potatoes keep up to a month in a cool, dark place with good ventilation, ideally 45 to 50°F. Throw away any that turn shriveled or green or grow many sprouts. Sweet potatoes want cool and dry, 55 to 59°F: colder brings chilling injury (fungal decay, internal browning, shriveling) and warmer speeds sprouting. Carrots go in a closed bag or container in the refrigerator for up to two weeks. Cut the tops off first, since attached tops wilt the root, and a wilted carrot revives in a soak of cold water. Beets: trim the leafy stem to an inch, leave the root end on, and refrigerate in a food-safe container for up to two weeks. Carrots also sit on EWG’s Clean Fifteen, a standard ranking residues from USDA data, among the items with the lowest pesticide residues. Carrots rank among the lowest for pesticide residue. Potatoes rank high for residue in USDA testing and carrots rank low, so the bag decides.",
       "evidence_tier": "established",
@@ -5807,7 +5807,7 @@
       ],
       "category": "produce",
       "question": "How do I choose and keep bell peppers?",
-      "decision": "Firm local or greenhouse peppers labeled grown without sprays.",
+      "decision": "Local or greenhouse peppers labeled grown without sprays.",
       "why": "A pepper should feel firm when you hold it. Wrinkled skin means it has lost water in storage.",
       "short_answer": "Green peppers: judged on size, firmness, and color. Colored peppers: at least half colored, firm, and uniform in shape and size. Skip any with cracks, decay, sunburn, disease, insect damage, or bruises.",
       "detail": "Peppers keep best around 45°F, three to five weeks, and shrivel from water loss when stored warmer. At 41°F they hold about two weeks before chilling injury begins to show as pitting, decay, softening, or a discolored seed cavity; red and other colored peppers are less sensitive to chilling than green ones. Keep peppers away from raw meat and meat juices. A dark, sunken spot at the blossom end is blossom end rot.",
@@ -5826,6 +5826,10 @@
         {
           "name": "7 CFR 205.206, organic crop pest and weed management standard",
           "url": "https://www.law.cornell.edu/cfr/text/7/205.206"
+        },
+        {
+          "name": "Northwest Horticultural Council: Fruit Coatings (Wax)",
+          "url": "https://nwhort.org/technicalbulletins/fruitcoatings/"
         }
       ],
       "kristy_take": "Red, yellow and orange peppers tolerate cold better than green ones. In a fridge at 41°F, plan on about two weeks; leave any cracked or bruised pepper at the bin.",
@@ -5844,7 +5848,8 @@
       "watch_out": [
         "A dark, sunken lesion at the blossom end: blossom end rot.",
         "Shriveling, which is water loss from warm storage.",
-        "Pitting, softening, or a discolored seed cavity after a long stay in the refrigerator: chilling injury."
+        "Pitting, softening, or a discolored seed cavity after a long stay in the refrigerator: chilling injury.",
+        "A glossy shine can be an added carnauba or shellac coating; look for uncoated peppers."
       ],
       "pick_steps": [
         "Pick a firm pepper, uniform in shape, size and color for the variety.",
@@ -6049,6 +6054,10 @@
         {
           "name": "PMC: postharvest fungicides on citrus",
           "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11989162/"
+        },
+        {
+          "name": "Northwest Horticultural Council: Fruit Coatings (Wax)",
+          "url": "https://nwhort.org/technicalbulletins/fruitcoatings/"
         }
       ],
       "kristy_take": "UC Davis’s checks are firmness and a sound rind: leave decay and shriveling behind. Use yellowed lemons and limes first; green-picked ones keep longest.",
@@ -6067,7 +6076,8 @@
         "Drying and shriveling on lemons, dryness on limes: the fruit is past its best.",
         "Decay on any citrus.",
         "Grading an orange by color alone: degreening sets the color and says nothing about the inside.",
-        "Conventional citrus is often treated after harvest with imazalil or thiabendazole fungicides on the peel; organic for zest."
+        "Conventional citrus is often treated after harvest with imazalil or thiabendazole fungicides on the peel; organic for zest.",
+        "Citrus rind can carry an added carnauba or shellac coating; for zest, look for uncoated."
       ],
       "pick_steps": [
         "Choose firm, smooth citrus free of decay, bruising and blemishes.",
@@ -6174,6 +6184,10 @@
         {
           "name": "7 CFR 205.206, organic crop pest and weed management standard",
           "url": "https://www.law.cornell.edu/cfr/text/7/205.206"
+        },
+        {
+          "name": "EWG Shopper’s Guide to Pesticides in Produce 2026, summary",
+          "url": "https://www.ewg.org/foodnews/summary.php"
         }
       ],
       "kristy_take": "Nectarines turn from green to yellow too; plums need their variety’s color. Check cherries for green, fleshy stems and full color. Skin staining can be cosmetic, but bruises and damage stay behind.",
@@ -6192,7 +6206,8 @@
       "watch_out": [
         "Bruised or damaged fruit, on every sheet the first thing to leave behind.",
         "Plums stored in the 36 to 46°F range: mealiness, browning, and failure to ripen.",
-        "Dents in cherries: pitting, thought to come from impact injury."
+        "Dents in cherries: pitting, thought to come from impact injury.",
+        "Fludioxonil, a PFAS fungicide, showed up on nearly 90% of peaches and plums in EWG’s 2026 testing."
       ],
       "pick_steps": [
         "Leave any bruised, cracked, pecked, dented or shriveled fruit; skin staining is cosmetic.",
@@ -6233,7 +6248,8 @@
           "name": "EWG: BPA in Canned Food",
           "url": "https://www.ewg.org/research/bpa-canned-food"
         }
-      ]
+      ],
+      "avoid": "Skip cans without a BPA-free lining stated on the label."
     },
     {
       "id": "pick_frozen_peas",
@@ -6284,12 +6300,16 @@
         "persian cucumbers",
         "mini cucumbers"
       ],
-      "decision": "Firm cucumbers labeled grown without sprays from a local or greenhouse grower, else organic.",
-      "avoid": "Pass on cucumbers coated with wax.",
+      "decision": "Local or greenhouse cucumbers labeled grown without sprays, firm to the touch, else organic.",
+      "avoid": "Pass on cucumbers coated with wax, shellac or carnauba.",
       "sources": [
         {
           "name": "Nebraska Extension: Cucumbers",
           "url": "https://food.unl.edu/article/cucumbers"
+        },
+        {
+          "name": "Northwest Horticultural Council: Fruit Coatings (Wax)",
+          "url": "https://nwhort.org/technicalbulletins/fruitcoatings/"
         }
       ]
     },
@@ -6571,7 +6591,7 @@
         "orange juices"
       ],
       "decision": "Juice not from concentrate: pasteurized, or untreated with warning labels; no added color over dyes.",
-      "avoid": "Skip juice listing benzoate preservatives or artificial color.",
+      "avoid": "Skip juice drinks listing benzoates, benzoic acid, BVO or artificial color.",
       "sources": [
         {
           "name": "FDA: What You Need to Know About Juice Safety",
@@ -6580,6 +6600,14 @@
         {
           "name": "CSPI: Artificial colorings (synthetic food dyes)",
           "url": "https://www.cspi.org/node/7436"
+        },
+        {
+          "name": "CSPI: Sodium benzoate",
+          "url": "https://www.cspi.org/node/7451"
+        },
+        {
+          "name": "EWG: Beware of the chemical BVO in fruit-flavored drinks",
+          "url": "https://www.ewg.org/news-insights/news/2025/04/beware-chemical-bvo-fruit-flavored-drinks"
         }
       ]
     },
@@ -7703,7 +7731,7 @@
       ],
       "category": "produce",
       "question": "How do you pick good green beans?",
-      "decision": "Crisp, slender local beans labeled grown without sprays.",
+      "decision": "Local, in-season beans labeled grown without sprays.",
       "why": "A crisp pod with flat seeds is a young bean. Bulging seeds mean an older bean turning tough, stringy and starchy.",
       "short_answer": "Choose green beans that are smooth, firm and crisp. Skip pods with bulging seeds, brown or rust spots, or a damp, sticky feel. Keep them cold and use them within five days.",
       "detail": "Green beans are snap beans, eaten pod and all while the bean inside is still immature. Ohio State Extension describes good snap beans as firm, crisp and smooth, with no seeds bulging. Flabby, tough beans or bulging seeds are over-mature. Iowa State Extension adds: avoid beans with brown spots or a damp, sticky surface. Keep fresh beans cold and humid in the refrigerator and use them within five days if possible. Snap beans also come yellow, purple and red.",
@@ -7915,7 +7943,7 @@
         "carton egg whites",
         "liquid egg whites"
       ],
-      "decision": "Egg whites: certified organic feed and outdoor access, pasteurized per federal standard.",
+      "decision": "Whites from soy-free, corn-free pastured hens, then certified organic feed and outdoor access; pasteurized by law.",
       "sources": [
         {
           "name": "USDA FSIS: Egg Products and Food Safety",
@@ -7932,6 +7960,10 @@
         {
           "name": "Cornell LII: 7 CFR § 205.239 Livestock living conditions",
           "url": "https://www.law.cornell.edu/cfr/text/7/205.239"
+        },
+        {
+          "name": "Cornucopia Institute: Egg Scorecard criteria",
+          "url": "https://www.cornucopia.org/egg-scorecard-criteria/"
         }
       ]
     },

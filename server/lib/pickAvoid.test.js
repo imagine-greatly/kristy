@@ -10,13 +10,15 @@ import { lintPick } from './counterCardLint.js';
 const AVOIDS = {
   pick_corn: ['corn', 'Skip corn labeled bioengineered.'],
   pick_tofu: ['tofu', 'Skip tofu labeled bioengineered.'],
-  pick_juice: ['orange juice', 'Skip juice listing benzoate preservatives or artificial color.'],
-  pick_cucumbers: ['cucumbers', 'Pass on cucumbers coated with wax.'],
+  pick_juice: ['orange juice', 'Skip juice drinks listing benzoates, benzoic acid, BVO or artificial color.'],
+  pick_cucumbers: ['cucumbers', 'Pass on cucumbers coated with wax, shellac or carnauba.'],
+  // clean-sweep-J1 (2026-10-22): register BPA line; juice and cucumber lines widened.
+  pick_canned_tomatoes: ['canned tomatoes', 'Skip cans without a BPA-free lining stated on the label.'],
 };
 const entries = perimeterKb.entries || [];
 const byId = (id) => entries.find((e) => e.id === id);
 
-test('exactly the four picks carry avoid, each lint-clean', () => {
+test('exactly the five picks carry avoid, each lint-clean', () => {
   const withAvoid = entries.filter((e) => 'avoid' in e).map((e) => e.id).sort();
   assert.deepEqual(withAvoid, Object.keys(AVOIDS).sort());
   for (const [id, [, line]] of Object.entries(AVOIDS)) {
@@ -25,9 +27,9 @@ test('exactly the four picks carry avoid, each lint-clean', () => {
   }
 });
 
-test('the four picks resolve with pickAvoid through attachCards', () => {
+test('the five picks resolve with pickAvoid through attachCards', () => {
   const rows = Object.values(AVOIDS).map(([name], i) => ({ id: `r${i}`, name, source: 'user' }));
-  nonEmpty(rows, 'rows', 4);
+  nonEmpty(rows, 'rows', 5);
   const out = attachCards({ items: rows }, { log: false }).items;
   Object.entries(AVOIDS).forEach(([id, [name, line]], i) => {
     assert.equal(out[i].pickId, id, name);

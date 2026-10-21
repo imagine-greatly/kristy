@@ -1,4 +1,7 @@
 import { readFileSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'node:path';
 // 2026-10-21: every cart_pick dropped "Organic" and card decisions no longer lead with it (cartPlain.test.js owns the new names).
 // Older acceptance tests pin the strings they shipped; they call restoreOrganicCarts on the loaded KB to read them as before.
 export const OLD = {
@@ -193,7 +196,14 @@ const DECISIONS = {
 };
 for (const [id, decision] of Object.entries(DECISIONS)) OLD[id] = { ...OLD[id], decision };
 export const OLD_CARTS = Object.fromEntries(Object.entries(OLD).filter(([, v]) => v.cart_pick).map(([id, v]) => [id, v.cart_pick]));
+// clean-sweep-J1 (2026-10-22): produce, potato and four picks after 52b0a8c; cleanPickJ1.test.js owns the live copy.
+// Every older pin reads them as of 52b0a8c, then the OLD strings above.
+export const CLEAN_J1 = new Set(['produce_root_vegetables', 'organic_worth_it_by_type', 'frozen_vs_fresh_produce', 'produce_peppers', 'produce_citrus', 'produce_stone_fruit', 'produce_green_beans', 'pick_cucumbers', 'pick_canned_tomatoes', 'pick_juice', 'pick_egg_whites']);
+export const CLEAN_J1_BASE = '52b0a8c';
+const PRE_J1 = JSON.parse(execFileSync('git', ['show', `${CLEAN_J1_BASE}:server/kristy_perimeter_kb.json`], { cwd: join(dirname(fileURLToPath(import.meta.url)), '..', '..', '..'), maxBuffer: 64 << 20 }).toString());
+export const preCleanJ1 = (e) => (e && CLEAN_J1.has(e.id) ? structuredClone(PRE_J1.entries.find((x) => x.id === e.id)) : e);
 export const restoreOrganicCarts = (kb) => {
+  kb.entries = kb.entries.map(preCleanJ1);
   for (const e of kb.entries) if (OLD[e.id]) Object.assign(e, OLD[e.id]);
   return kb;
 };
