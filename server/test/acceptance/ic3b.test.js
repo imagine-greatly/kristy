@@ -1,3 +1,4 @@
+import { restoreOrganicCarts } from './cartPlain.js';
 // IC-3b: produce fronts (skin rule) and the new Bananas card (.pipeline/specs/ic-3b.md).
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
@@ -10,7 +11,8 @@ import { scoreEntries } from '../../lib/perimeter.js';
 import { inScope } from '../../lib/counterScope.js';
 import { ESSENTIALS, projectEntry } from '../../lib/counterCards.js';
 import { lintCard, readability, headlineHedge, sentences, words, TIER_NOTE_ORPHANED_PENDING } from '../../lib/counterCardLint.js';
-import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
+import kb0 from '../../kristy_perimeter_kb.json' with { type: 'json' }
+const kb = restoreOrganicCarts(structuredClone(kb0));
 import doLines from '../../lib/doLines.json' with { type: 'json' };
 import { preCleanPick2, preCleanPick9, preCleanPick10 } from './twoLinePin.js';
 

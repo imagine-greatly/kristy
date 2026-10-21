@@ -1,3 +1,4 @@
+import { restoreOrganicCarts } from './cartPlain.js';
 // CA-4a: Eggs and Milk fronts, the dairy ladder, pick_milk retired (docs/CARD-ALIGNMENT-PLAN.md CA-4). Written by the planner; do not edit.
 import { beforeCa7 } from './ca7Superseded.js';
 import { beforeTwoLine, preCleanPick, preCleanPick3, preCleanPick8 } from './twoLinePin.js';
@@ -16,7 +17,7 @@ import { assertPassRule } from './passRule.js';
 const SERVER = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const ROOT = join(SERVER, '..');
 const BASE_REF = 'd707172';
-const kb = JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8'));
+const kb = restoreOrganicCarts(JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8')));
 import { preSwapPicks1 } from './twoLinePin.js';
 kb.entries = preSwapPicks1(kb.entries); // swap-picks-1: 8 swap picks + 2 aliases after 58d6160; swap_picks_1.test.js owns them.
 import { preT6_2 } from './twoLinePin.js';

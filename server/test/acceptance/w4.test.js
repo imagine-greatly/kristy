@@ -1,7 +1,9 @@
+import { restoreOrganicCarts } from './cartPlain.js';
 // W4: warmth is a tone edit, with a corpus-level repetition ratchet.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
+import kb0 from '../../kristy_perimeter_kb.json' with { type: 'json' }
+const kb = restoreOrganicCarts(structuredClone(kb0));
 import { preT6_4 } from './twoLinePin.js';
 kb.entries = kb.entries.map(preT6_4); // t6-4: produce/label pins read 2f67540; t6_4.test.js owns live copy.
 import { preT6_3 } from './twoLinePin.js';

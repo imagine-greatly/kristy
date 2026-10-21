@@ -1,3 +1,4 @@
+import { restoreOrganicCarts } from './cartPlain.js';
 // concern-deli: deli and cured-meat cards name the hidden concerns (nitrite, celery powder, phosphates,
 // binders, smoke flavoring) and lead with organic / pasture-raised; new sources come from the concern archive.
 import test from 'node:test';
@@ -7,7 +8,7 @@ import { join } from 'node:path';
 import { nonEmpty } from '../../lib/testGuards.js';
 import { preCleanPick8 } from './twoLinePin.js';
 
-const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
+const kb = restoreOrganicCarts(JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8')));
 const card = (id) => { const e = kb.entries.find((x) => x.id === id); assert.ok(e, `${id} missing`); return e; };
 const SKIP = new Set(['sources', 'aliases', 'asked_as', 'id', 'kind', 'category']);
 const text = (e) => JSON.stringify(Object.fromEntries(Object.entries(e).filter(([k]) => !SKIP.has(k))));

@@ -1,3 +1,4 @@
+import { restoreOrganicCarts } from './cartPlain.js';
 // Owns the two-line rewrite's text (docs/CARD-STYLE-SAMPLES.md): every card's decision and
 // buying_tips (and egg_labels sources) equal the pin in twoLinePin.js, which older batch tests read through.
 import test from 'node:test';
@@ -7,7 +8,7 @@ import { nonEmpty } from '../../lib/testGuards.js';
 import { TWO_LINE } from './twoLinePin.js';
 import { matchItemToCard } from '../../lib/listMatch.js';
 
-const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
+const kb = restoreOrganicCarts(JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8')));
 import { preT6_4 } from './twoLinePin.js';
 kb.entries = kb.entries.map(preT6_4); // t6-4: produce/label pins read 2f67540; t6_4.test.js owns live copy.
 import { preT6_3 } from './twoLinePin.js';

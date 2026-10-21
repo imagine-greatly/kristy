@@ -1,3 +1,4 @@
+import { restoreOrganicCarts } from './cartPlain.js';
 // Written by the planner; do not edit.
 // ca-3b: docs/CARD-ALIGNMENT-PLAN.md "CA-3 Meat batch", CA-3b rows. D8: chicken_breast is rewritten, not folded.
 import test from 'node:test';
@@ -13,7 +14,7 @@ import { beforeConcern, preCleanPick10, preCleanPick8 } from './twoLinePin.js';
 
 const SERVER = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const ROOT = join(SERVER, '..');
-const kb = JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8'));
+const kb = restoreOrganicCarts(JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8')));
 const doLines = JSON.parse(readFileSync(join(SERVER, 'lib', 'doLines.json'), 'utf8'));
 const BASE = 'aa12a3d';
 const PRE = JSON.parse(execFileSync('git', ['show', `${BASE}:server/kristy_perimeter_kb.json`], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());

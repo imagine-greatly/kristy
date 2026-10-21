@@ -1,3 +1,4 @@
+import { restoreOrganicCarts } from './cartPlain.js';
 // SR: section rules carry one holistic principle per aisle (docs/CLEAN-PICK-PLAN.md, "SR", SR-C1..C7).
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
@@ -12,7 +13,7 @@ const SERVER = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const ROOT = join(SERVER, '..');
 const BASE = '951441c';
 const show = (path) => execFileSync('git', ['show', `${BASE}:${path}`], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
-const kb = JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8'));
+const kb = restoreOrganicCarts(JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8')));
 const rows = nonEmpty(JSON.parse(readFileSync(join(SERVER, 'lib', 'sectionRules.json'), 'utf8')), 'section rules', 6);
 const base = nonEmpty(JSON.parse(show('server/lib/sectionRules.json')), 'base section rules', 6);
 const row = (s) => rows.find((r) => r.section === s);

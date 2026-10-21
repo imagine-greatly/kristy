@@ -251,7 +251,7 @@
       ],
       "category": "poultry",
       "question": "Is the rotisserie chicken worth buying?",
-      "decision": "Pasture-raised or organic rotisserie chicken, salt and spices only.",
+      "decision": "Pasture-raised rotisserie chicken, salt and spices only.",
       "why": "A plain bird is chicken, salt and spices, roasted in the store. Phosphate and starch go in with a needle.",
       "short_answer": "A rotisserie bird is a plain chicken or a solution bird. A plain one is chicken with salt and spices, roasted in the store. A solution bird was pumped with a seasoning solution before the spit. The sticker says which.",
       "detail": "Two label rules do the work. 9 CFR 381.117(h): a raw poultry product with added solution must carry a descriptive designation stating the percentage of added solution as a number with the % sign, e.g. ‘contains 15% added solution of water and salt’, plus the common or usual name of every solution ingredient in descending order; the word ‘enhanced’ may not appear in the product name. 9 CFR 381.118(a): any poultry product fabricated from two or more ingredients lists them by common or usual name in descending order of predominance; ingredients at 2 percent or less may trail the list under a ‘contains 2% or less of’ line. 9 CFR 424.21 permits sodium and potassium phosphates in poultry ‘to decrease the amount of cooked out juices’, capped at 0.5 percent of total product, and sodium hydroxide only alongside phosphate at one part to four. FSIS’s labeling glossary defines a bone-in bird injected or marinated with broth, water, fat or flavor enhancers as ‘basted’ or ‘self basted’, about 3 percent solution, with the solution ingredients named on the label. At the shelf the two kinds read differently: a plain bird’s panel is one line (one store’s organic rotisserie chicken lists ‘organic chicken’ and nothing else); a solution bird lists water and its seasoning after the chicken, in descending order as 381.118 requires; a phosphate, a starch and a sweetener are the usual entries. On the sticker, the second word on the list settles it: ‘salt’ or ‘spices’ is a plain bird; ‘water’ followed by ‘sodium phosphate’, ‘modified food starch’, ‘sugar’ is a solution bird, roasted. Both are cooked chicken. One of them is also a marinade injection. Two federal label rules settle it; the ingredient list just needs reading.",
@@ -271,7 +271,7 @@
       ],
       "kristy_take": "Take a steaming bird from under the lamp and turn to the sticker. Every ingredient runs in descending order; a solution must name its percent and contents.",
       "instead": "A plain raw bird from the case, roasted at home. Salt it the night before; the skin does the rest.",
-      "cart_pick": "Organic or pasture-raised rotisserie chicken",
+      "cart_pick": "Pasture-raised rotisserie chicken",
       "buying_tips": [
         "A solution bird was injected with water and seasoning before it went on the spit.",
         "Look for a pasture-raised or certified organic bird on the sticker.",
@@ -1815,7 +1815,7 @@
         }
       ],
       "kristy_take": "Big canister of plain rolled oats. Sweeten with fruit. The flavored packets are candy with an oat garnish.",
-      "cart_pick": "Organic steel-cut oats",
+      "cart_pick": "Steel-cut oats",
       "buying_tips": [
         "Same grain in every form; the flavored packets are where the sugar is.",
         "Look for USDA Organic oats, with a Glyphosate Residue Free label on top where the bag carries it.",
@@ -1987,7 +1987,7 @@
       ],
       "category": "bulk_pantry",
       "question": "Are dried or canned beans better?",
-      "decision": "Organic dried beans, whole with unbroken skins.",
+      "decision": "Dried beans, whole with unbroken skins.",
       "why": "Nothing in the store competes per serving, and the salt is yours to set.",
       "short_answer": "Dried beans are the cheapest protein in the store, by a wide margin. Cooking them yourself is the only way to set the salt. Canned are close, and a rinse removes much of the sodium.",
       "detail": "Nutritionally dried and canned beans are very close. Canned adds convenience and some sodium (rinsing removes a good chunk). If you avoid certain can linings, look for ‘BPA-free’ cans or cartons, though that’s a minor point. Beans are one of the best protein-and-fiber values in the whole store. Dried beans ask for planning rather than skill: a slow cooker or a pressure cooker takes the work out.",
@@ -2009,7 +2009,7 @@
         }
       ],
       "kristy_take": "A bag of dried beans and a slow cooker. Nothing in the store competes.",
-      "cart_pick": "Organic dried beans",
+      "cart_pick": "Dried beans",
       "buying_tips": [
         "Cooking dried beans yourself is the only way to set the salt.",
         "Look for USDA Organic on the bag of dried beans.",
@@ -3048,7 +3048,7 @@
       ],
       "category": "pork",
       "question": "Which pork cut should you buy, and what does ‘solution added’ mean?",
-      "decision": "Organic or pasture-raised pork with no added solution.",
+      "decision": "Pasture-raised pork with no added solution.",
       "why": "Pork is often pumped with water, salt and phosphates to hold moisture. A plain pack leaves that solution out.",
       "short_answer": "A raw meat product with added solution must say so in its name, with the percentage. One example is ‘contains 15% added solution of water and salt’. The solution’s ingredients are listed in descending order by weight.",
       "detail": "A large share of retail pork is pumped with a solution of water, salt and phosphates to hold moisture. The law requires the share as a number with a percent sign, like ‘contains 15% added solution’. It is the solution weighed against the raw meat, so 15% means 15 parts to 100. The ingredients in the solution are listed in descending order by weight. The rule is written for raw meat products, not pork alone.",
@@ -3063,7 +3063,7 @@
         "CSPI: Food additive safety ratings https://www.cspi.org/page/chemical-cuisine-food-additive-safety-ratings"
       ],
       "kristy_take": "An ‘up to 12% solution’ line means some of that pack is added water. Raw meat with added solution must give its name, percentage and contents beside the product name.",
-      "cart_pick": "Organic or pasture-raised pork shoulder",
+      "cart_pick": "Pasture-raised pork shoulder",
       "buying_tips": [
         "Much retail pork is pumped with water, salt and phosphates, then sold by weight.",
         "Read for ‘contains X% added solution’. That is injected water and salt.",
@@ -3124,7 +3124,7 @@
       ],
       "category": "deli",
       "question": "Is ‘uncured’ deli meat actually nitrite-free?",
-      "decision": "Organic or pasture-raised whole roasted meat, sliced thin.",
+      "decision": "Pasture-raised whole roasted meat, sliced thin.",
       "why": "Whole roasted meat leaves the curing step out. The ingredient list names added curing agents and binders.",
       "short_answer": "‘Uncured’ meat is cured, using celery powder instead of added nitrite. Read the qualifier and the full ingredient list.",
       "detail": "“Uncured” and “no nitrates or nitrites added” can appear on meat cured with celery powder or juice. Celery supplies nitrate that is converted to nitrite during curing. The qualifier names this plant source. Sodium nitrite names a directly added curing agent; celery changes the source, not the curing chemistry. Organic describes the feed standard and pasture-raised describes outdoor access. Neither claim tells you which curing agents or binders were used.",
@@ -3688,7 +3688,7 @@
         }
       ],
       "kristy_take": "Berries will not ripen further at home, so buy them ready. Turn the carton over: a dry bottom, no fuzzy fruit. Keep them cold and wash just before eating.",
-      "cart_pick": "Berries: grown without sprays, or organic",
+      "cart_pick": "Berries",
       "buying_tips": [
         "The bottom berries carry the weight and mold first, while the top still looks fresh.",
         "Look for berries from a local farm or market, u-pick included, labeled or stated grown without sprays.",
@@ -4413,7 +4413,7 @@
       ],
       "category": "bulk_pantry",
       "question": "What else should I be buying besides rice?",
-      "decision": "Organic grains with the bran still on, not polished off.",
+      "decision": "Grains with the bran still on, not polished off.",
       "why": "Hulled barley loses only its inedible outer hull. Pearl barley is polished to remove bran.",
       "short_answer": "Whole or hulled grains keep their bran; pearled grains have some or all of it polished off. Hulled barley loses only its inedible hull. Buckwheat, millet, sorghum and quinoa carry no gluten.",
       "detail": "Hulled barley is minimally processed to remove only the tough inedible outer hull. Pearl barley has been polished to remove some or all of the outer bran layer along with the hull. On barley and farro, “pearled” marks bran removed and “whole” or “hulled” marks bran kept. Variety is worth it on its own terms, since rotating grains means no single crop is the base of every meal. That matters practically as well, because rice takes up more inorganic arsenic from soil and water than other grains, so it is the one not to build every dinner on. Buy them from the bulk bins where you can. Buckwheat is not wheat at all. Millet and sorghum carry no gluten. Bulgur takes 10 minutes, quinoa and buckwheat 15, millet 20. The bitter coating on quinoa’s hull is called saponin.",
@@ -4434,7 +4434,7 @@
         }
       ],
       "kristy_take": "Whole or hulled over pearled. The bran stays on, and the bag says which.",
-      "cart_pick": "Organic whole or hulled grain, not pearled",
+      "cart_pick": "Whole or hulled grain, not pearled",
       "watch_out": [
         "Quinoa carries a bitter natural coating on its outer hull. Rinse it before cooking. That is what takes the bitterness off.",
         "Conventional wheat and barley may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate."
@@ -5255,7 +5255,7 @@
         "sprouting"
       ],
       "question": "Are sprouts worth buying?",
-      "decision": "Organic sprouts from the cold case, white roots, crisp stems.",
+      "decision": "Sprouts from the cold case, white roots, crisp stems.",
       "why": "Crisp stems and white roots are what to look for in a cold clamshell. Sprouts go slick and sour before they look wrong.",
       "card_why": "Sprouts are about as alive as produce gets, a seed caught mid-decision, sold days old. That is the appeal, and it is also the whole handling question. The warm damp days that sprout a seed are the same days that sprout everything else. A grower who keeps them cold from the sprouting room to the case is doing the only thing that matters. Past that, a jar and a screen on your own counter costs almost nothing. It puts the sourcing question entirely in your hands.",
       "short_answer": "Cold case, roots still white, no sour smell in the clamshell. Anything sitting at room temperature has been given the conditions it was grown in.",
@@ -5485,7 +5485,7 @@
       ],
       "category": "produce",
       "question": "How do I pick fresh broccoli, cauliflower, or cabbage?",
-      "decision": "Organic broccoli, cauliflower and cabbage, tight heads, no soft spots.",
+      "decision": "Broccoli, cauliflower and cabbage, tight heads, no soft spots.",
       "why": "Tight, dark green broccoli florets are fresh. Enlarged, open or yellowish-green ones are past fresh.",
       "short_answer": "Broccoli: dark green florets, closed, not yellowish or wilted, on stems that are not thick and tough. Cauliflower: no bruises or damage. Cabbage: strip wilted or insect-damaged outer leaves. A soft or slippery head stays on the shelf.",
       "detail": "Broccoli is the short keeper of the three: refrigerate it in a plastic bag with holes and use it within three days. Cabbage goes the other way, staying fresh for several weeks in a plastic bag or wrap in the refrigerator at 41°F or below; before using, cut out the core and rinse the leaves under cool running water. Cauliflower gets kept away from raw meat and meat juices. By EWG’s Clean Fifteen, a standard ranking residues from USDA data, cabbage and cauliflower are among the fifteen items with the lowest pesticide residues. Cabbage and cauliflower rank among the lowest produce for pesticide residue. Cabbage and cauliflower both sit on the low-residue list from USDA testing.",
@@ -5588,7 +5588,7 @@
       ],
       "category": "produce",
       "question": "How do I pick onions and garlic that will keep?",
-      "decision": "Organic onions and garlic, firm, with a dry neck.",
+      "decision": "Onions and garlic, firm, with a dry neck.",
       "why": "A well-cured bulb feels dry at the neck and papery outside. A soft, scented or sprouting bulb is already on its way out.",
       "short_answer": "Onions: firm for their size, little to no scent, a dry neck, no cuts, bruises or mold, no sprouting. Some loose skins are normal. Garlic: clean, white or true to the variety, well cured, cloves firm.",
       "detail": "Whole dry onions live in a cool, dry, dark place with plenty of air movement: no plastic bags, no wrap, and not beside potatoes or anything else that releases moisture. Storage between 41 and 75°F favors sprouting, so the cooler the spot the better. Refrigeration is only for sweet or mild high-water varieties, on a low-humidity setting, and a cut onion goes in a sealed container for up to seven days. Garlic keeps one to two months at room temperature in low humidity before it softens, goes spongy, and shrivels from water loss; it sprouts fastest between 41 and 65°F, and its odor moves into other foods, so it gets stored on its own. By EWG’s Clean Fifteen, a standard ranking residues from USDA data, onions are among the items with the lowest pesticide residues. Onions sit on the low-residue list from USDA testing, and the papery skin comes off.",
@@ -5731,7 +5731,7 @@
         }
       ],
       "kristy_take": "For milder, more tender kale, choose the smaller leaves on moist stems. Keep the bunch cold from the cart to the crisper, and wash it when you use it.",
-      "cart_pick": "Lettuce: grown without sprays, or organic",
+      "cart_pick": "Lettuce",
       "buying_tips": [
         "Lettuce is eaten as the leaf, and the leaf is what gets sprayed.",
         "Look for local or greenhouse lettuce labeled grown without sprays; greenhouse or hydroponic alone does not say it.",
@@ -6035,7 +6035,7 @@
       ],
       "category": "produce",
       "question": "How do I choose and keep oranges, lemons, and limes?",
-      "decision": "Organic oranges, lemons and limes, firm with a smooth rind.",
+      "decision": "Oranges, lemons and limes, firm with a smooth rind.",
       "why": "Yellow limes carry more juice. A partly green orange can be fully mature, so feel for a firm, smooth rind.",
       "short_answer": "Oranges: even color, firm, smooth, free of decay and bruising. A partly green orange can be fully mature. Lemons: even yellow, smooth, firm, no shriveling. Limes: firm and smooth, no dryness.",
       "detail": "Oranges keep at room temperature for up to a week and in the refrigerator for up to three weeks. Lemons hold best around 54 to 57°F and limes around 50 to 55°F, warmer than a refrigerator. A lemon or lime that has turned yellow is the one to use first: lemons picked fully yellow and limes picked yellow must be marketed quickly, while the fruit picked dark green keeps longest. At the bin, oranges should show even, intense color, free of skin blemishes and discoloration. A partly green orange gets its color from degreening, which does not change the inside. Lemons should be free of decay, drying, and rind stains. Green limes are preferred in the US, but yellow limes carry more juice; pick limes free of bruises and oil spotting. USDA tests oranges with the peel off, so organic only earns its place when the zest goes in.",
@@ -6223,7 +6223,7 @@
         "canned diced tomatoes",
         "canned crushed tomatoes"
       ],
-      "decision": "Organic tomatoes: skip dented, rusted or swollen cans and read for BPA-free; the date marks quality.",
+      "decision": "Tomatoes: skip dented, rusted or swollen cans and read for BPA-free; the date marks quality.",
       "sources": [
         {
           "name": "Nebraska Extension: Food Storage",
@@ -6246,7 +6246,7 @@
         "frozen green peas",
         "frozen sweet peas"
       ],
-      "decision": "Organic peas frozen solid, with no pack drips or off smell.",
+      "decision": "Peas frozen solid, with no pack drips or off smell.",
       "sources": [
         {
           "name": "NDSU Extension: Food Freezing Guide",
@@ -6264,7 +6264,7 @@
         "frozen broccoli florets",
         "frozen broccoli floret"
       ],
-      "decision": "Organic broccoli frozen solid; pack drips or off smell mean it thawed.",
+      "decision": "Broccoli frozen solid; pack drips or off smell mean it thawed.",
       "sources": [
         {
           "name": "NDSU Extension: Food Freezing Guide",
@@ -6304,7 +6304,7 @@
         "asparagus spear",
         "asparagus bunch"
       ],
-      "decision": "Organic asparagus with dry, closed, compact tips and no limp stalks.",
+      "decision": "Asparagus with dry, closed, compact tips and no limp stalks.",
       "sources": [
         {
           "name": "Nebraska Extension: Asparagus",
@@ -6325,7 +6325,7 @@
         "corn cobs",
         "corn cob"
       ],
-      "decision": "Organic corn with green husks and fresh silk, without dried-out ears.",
+      "decision": "Corn with green husks and fresh silk, without dried-out ears.",
       "avoid": "Skip corn labeled bioengineered.",
       "sources": [
         {
@@ -6345,7 +6345,7 @@
         "globe eggplant",
         "japanese eggplant"
       ],
-      "decision": "Organic eggplant, heavy, shiny and smooth, with a green stem free of mold.",
+      "decision": "Eggplant, heavy, shiny and smooth, with a green stem free of mold.",
       "sources": [
         {
           "name": "Nebraska Extension: Eggplant",
@@ -6365,7 +6365,7 @@
         "summer squashes",
         "yellow squash"
       ],
-      "decision": "Organic zucchini, small-to-medium, glossy and firm, that feel heavy for their size.",
+      "decision": "Zucchini, small-to-medium, glossy and firm, that feel heavy for their size.",
       "sources": [
         {
           "name": "Nebraska Extension: Summer Squash",
@@ -6468,7 +6468,7 @@
         "snow peas",
         "snow pea"
       ],
-      "decision": "Organic snap peas in firm, bright green pods, without blemishes.",
+      "decision": "Snap peas in firm, bright green pods, without blemishes.",
       "sources": [
         {
           "name": "Nebraska Extension: Snap Peas",
@@ -6487,7 +6487,7 @@
         "kohlrabi bulb",
         "kohlrabi bulbs"
       ],
-      "decision": "Organic kohlrabi bulbs, firm and heavy in your hand, without cracks or bruises.",
+      "decision": "Kohlrabi bulbs, firm and heavy in your hand, without cracks or bruises.",
       "sources": [
         {
           "name": "Nebraska Extension: Kohlrabi",
@@ -6506,7 +6506,7 @@
         "okra pods",
         "okra pod"
       ],
-      "decision": "Organic okra, firm and bright green, without limp, moldy or dried-out pods.",
+      "decision": "Okra, firm and bright green, without limp, moldy or dried-out pods.",
       "sources": [
         {
           "name": "Nebraska Extension: Okra",
@@ -6551,7 +6551,7 @@
         "mango",
         "mangos"
       ],
-      "decision": "Organic mangoes that yield slightly to gentle pressure; red color does not indicate ripeness.",
+      "decision": "Mangoes that yield slightly to gentle pressure; red color does not indicate ripeness.",
       "sources": [
         {
           "name": "National Mango Board: How to Choose a Mango",
@@ -6650,7 +6650,7 @@
         "block of tofu",
         "blocks of tofu"
       ],
-      "decision": "Organic tofu by firmness: soybeans, water, coagulant such as nigari or gypsum.",
+      "decision": "Tofu by firmness: soybeans, water, coagulant such as nigari or gypsum.",
       "avoid": "Skip tofu labeled bioengineered.",
       "sources": [
         {
@@ -6886,7 +6886,7 @@
       ],
       "category": "bulk_pantry",
       "question": "Which tortillas should you choose, corn or flour?",
-      "decision": "Organic corn tortillas of masa, water and salt.",
+      "decision": "Corn tortillas of masa, water and salt.",
       "why": "Masa is corn cooked and soaked in limewater, then ground into dough. Water and salt complete the tortilla recipe.",
       "short_answer": "Traditional corn tortillas use corn cooked and soaked in alkaline limewater, then ground into masa. Flour tortillas typically use wheat flour, water, fat, salt, and leavening.",
       "detail": "Masa harina is dried, ground nixtamalized corn dough. Corn flour alone is a different ingredient. Packaged corn tortillas can also contain wheat; the ingredient list shows the blend. The archived nixtamalization paper measures laboratory digestibility under particular processing conditions, not health outcomes from retail tortillas.",
@@ -6913,7 +6913,7 @@
         }
       ],
       "kristy_take": "Masa harina is the dried, ground dough; plain corn flour is a different ingredient. Check the bag for wheat too, since some corn tortillas contain both.",
-      "cart_pick": "Organic corn tortillas",
+      "cart_pick": "Corn tortillas",
       "buying_tips": [
         "Masa is corn cooked and soaked in limewater; some packaged corn tortillas add wheat.",
         "Choose certified organic corn tortillas first, with Non-GMO Project Verified a close second.",
@@ -7015,7 +7015,7 @@
       ],
       "category": "poultry",
       "question": "What should you check before buying ground turkey?",
-      "decision": "Pasture-raised or organic ground turkey, fat content printed.",
+      "decision": "Pasture-raised ground turkey, fat content printed.",
       "why": "Two packs of ground turkey can have different fat contents. Read the fat line to see what you are taking home.",
       "short_answer": "Ground turkey needs its own label check. US nutrition-labeling rules cover ground poultry, and a percent-lean claim must be accompanied by a percent-fat statement.",
       "detail": "FSIS’s archived rule covers ground turkey and requires the fat statement beside a percent-lean claim. The turkey guide says additives in processed turkey, including ground products, must be listed. The words ground turkey alone do not identify one fat level. Ground turkey alone names no fat level, and a percent-lean claim must carry its percent fat.",
@@ -7029,7 +7029,7 @@
         }
       ],
       "kristy_take": "Look for turkey on the ingredient list, with no added seasoning or flavoring solution. A percent-lean claim must have its percent-fat statement alongside.",
-      "cart_pick": "Pasture-raised or organic plain ground turkey",
+      "cart_pick": "Pasture-raised plain ground turkey",
       "buying_tips": [
         "The name ground turkey sets no one fat level, so two packs can differ.",
         "Look for pasture-raised or certified organic ground turkey, sold plain.",
@@ -7160,7 +7160,7 @@
       ],
       "category": "bulk_pantry",
       "question": "What should you check on a box of dry pasta?",
-      "decision": "Organic dry pasta of durum semolina and water.",
+      "decision": "Dry pasta of durum semolina and water.",
       "why": "Semolina and water form a simple dry pasta. That formulation is the whole-food standard.",
       "short_answer": "US macaroni-product standards allow semolina, durum flour, farina, or flour with water and optional ingredients. The ingredient list shows which formulation is in the box.",
       "detail": "Enriched pasta contains specified vitamins and iron under a separate standard; enrichment does not establish whole grain. Bronze-cut describes the die and the resulting rough surface. The archived culinary articles describe sauce adhesion, not a health advantage.",
@@ -7180,7 +7180,7 @@
         }
       ],
       "kristy_take": "Semolina and water form a simple dry pasta. That formulation is the whole-food standard.",
-      "cart_pick": "Organic dry durum semolina pasta",
+      "cart_pick": "Dry durum semolina pasta",
       "buying_tips": [
         "The standard also allows farina or other flour; the list shows which is in the box.",
         "Look for USDA Organic on the box of durum semolina pasta.",
@@ -7342,7 +7342,7 @@
       ],
       "category": "deli",
       "question": "What should you check when choosing bacon?",
-      "decision": "Organic or pasture-raised bacon with a short curing list.",
+      "decision": "Pasture-raised bacon with a short curing list.",
       "why": "The curing ingredients describe the process. An uncured claim alone does not establish nitrate-free bacon.",
       "short_answer": "Bacon labeled uncured can use celery powder as a natural curing source. Read the qualifier on a no-nitrates-added claim and the ingredient list.",
       "detail": "The archived NPR report describes natural curing sources used in bacon and hot dogs and the qualifying fine print. US curing-label policy requires curing-mixture ingredients to be listed individually. That distinguishes a source of curing ingredients, not a demonstrated health advantage.",
@@ -7355,7 +7355,7 @@
         "Iowa State University Extension: Liquid smoke https://blogs.extension.iastate.edu/answerline/2019/04/18/liquid-smoke-that-controversial-condiment/"
       ],
       "kristy_take": "The curing ingredients describe the process. An uncured claim alone does not establish nitrate-free bacon.",
-      "cart_pick": "Organic or pasture-raised sliced bacon",
+      "cart_pick": "Pasture-raised sliced bacon",
       "buying_tips": [
         "Look for pork, salt and named curing agents; read each added ingredient.",
         "Read any exception naming naturally occurring nitrates in celery powder.",
@@ -7403,7 +7403,7 @@
       ],
       "category": "deli",
       "question": "What should you check on a pack of hot dogs?",
-      "decision": "Organic beef hot dogs with no phosphates or binders.",
+      "decision": "Beef hot dogs with no phosphates or binders.",
       "why": "Named meat and mechanically separated poultry are distinct ingredients. The whole-food standard favors named meat.",
       "short_answer": "Hot dogs can contain meat, poultry, and other declared ingredients. Mechanically separated poultry is a paste-like product, made by separating attached tissue from bones. Its name belongs in the ingredient statement.",
       "detail": "The US frankfurter standard distinguishes sausages with meat byproducts and requires “with byproducts” or “with variety meats” in their name. Mechanically separated poultry has its own regulatory definition. These processing distinctions support an ingredient choice, not a claim that one hot dog produces a health result.",
@@ -7414,7 +7414,7 @@
         "https://www.npr.org/sections/thesalt/2019/08/29/755115208/duped-in-the-deli-aisle-no-nitrates-added-labels-are-often-misleading"
       ],
       "kristy_take": "Named meat and mechanically separated poultry are distinct ingredients. The whole-food standard favors named meat.",
-      "cart_pick": "Organic packaged beef hot dogs",
+      "cart_pick": "Packaged beef hot dogs",
       "buying_tips": [
         "Named meat first, with no mechanically separated chicken or turkey.",
         "Look for a list with no sodium phosphate, carrageenan or modified food starch.",
@@ -7526,7 +7526,7 @@
       ],
       "category": "poultry",
       "question": "What should you check when buying chicken breast?",
-      "decision": "Pasture-raised or organic bone-in, skin-on breast; no solution added.",
+      "decision": "Pasture-raised bone-in, skin-on breast; no solution added.",
       "why": "Bone-in, skin-on breast cooks better than boneless skinless, which dries fast in the pan.",
       "short_answer": "Flavoring solutions added to poultry must be disclosed as part of the product name, including their amount. Water retained during chilling is a separate disclosure.",
       "detail": "FSIS describes solution added through injection, marinating, tumbling, or soaking. A product labeled natural can still contain a minimally processed flavoring solution. The archived woody-breast study also describes unusually hard breast tissue, but manual sorting was inconsistent; it does not support reliable visual identification at the case. Any added flavoring solution has to appear in the product name, with its amount.",
@@ -7536,7 +7536,7 @@
         "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7365903/"
       ],
       "kristy_take": "A plain breast gives you only chicken. Added flavoring solution must appear in the product name with its amount, even on a pack labeled ‘natural’.",
-      "cart_pick": "Pasture-raised or organic chicken breast",
+      "cart_pick": "Pasture-raised chicken breast",
       "buying_tips": [
         "Boneless skinless breast dries fast in the pan; bone and skin cook better.",
         "Look for pasture-raised or certified organic breast, sold plain.",
@@ -7587,7 +7587,7 @@
       ],
       "category": "produce",
       "question": "How do you pick good mushrooms?",
-      "decision": "Organic mushrooms, dry and firm, with no dark spots.",
+      "decision": "Mushrooms, dry and firm, with no dark spots.",
       "why": "Closed caps taste milder; open caps with gills showing taste stronger. Dry, firm caps are the fresh ones.",
       "short_answer": "Choose mushrooms that feel dry and firm, with no dark spots. Closed caps taste milder. Open caps with gills showing taste stronger. Keep them cold in a paper bag.",
       "detail": "Penn State Extension, quoting a selection guide, looks for caps closed around the stem or moderately open, with pink or light tan gills. The cap surface should be white, creamy or an even light brown. Portobello is a large, mature cremini. Shiitake has broad, umbrella-shaped caps and is best cooked. Store mushrooms unwashed in the refrigerator, in the original container or a paper bag. A plastic bag or airtight container collects moisture that spoils them. Use fresh mushrooms within a week for best quality. Only an expert can tell poisonous wild mushrooms from edible ones, and no amount of cooking or drying destroys the toxins. Mushrooms sit on the low-residue list from USDA testing, so plain ones earn the cart.",
@@ -7647,7 +7647,7 @@
       ],
       "category": "produce",
       "question": "How do you buy and ripen bananas?",
-      "decision": "Organic bananas, green, to finish ripening on the counter.",
+      "decision": "Bananas, green, to finish ripening on the counter.",
       "why": "Bananas get sweeter as the green fades at home. Left to ripen on the plant, they often split and lose texture.",
       "short_answer": "Buy organic bananas green or just turning and let them ripen on the counter. They get sweeter as the green fades. Bananas sit on the low-residue list because the peel comes off; organic still sets how they are grown.",
       "detail": "Bananas are harvested mature-green and ripened at the market end, since fruit ripened on the plant often splits. Nearly every supermarket banana, green or yellow, goes through a ripening room. The ripening runs on the fruit’s own ethylene. UC Davis ripens them at 59 to 68°F, and cold below 56°F can stop a green banana ripening at all. EWG’s Clean Fifteen ranks bananas 12th for low pesticide residue, from USDA data. That testing is done on the peeled fruit, the part that gets eaten. Green bananas rank low for residue, tested with the peel off; organic still sets how they are grown.",
@@ -7772,7 +7772,7 @@
       ],
       "category": "poultry_eggs",
       "question": "What should a shopper know about duck and quail eggs?",
-      "decision": "Pasture-raised duck or quail eggs with organic feed.",
+      "decision": "Pasture-raised duck or quail eggs.",
       "why": "Duck eggs need longer to cook than hens’ eggs. Salmonella incidents are the reason to cook them thoroughly.",
       "short_answer": "Buy them clean, uncracked and cold. Ireland’s food safety authority advises cooking duck eggs until white and yolk are solid. Quail eggs are tiny, about 10 to 12 grams each.",
       "detail": "The Food Safety Authority of Ireland advises eating duck eggs only when thoroughly cooked. Raw duck eggs stay out of raw or lightly cooked dishes such as homemade mayonnaise or tiramisu. A duck egg is larger and heavier than a hen’s egg, so it needs more cooking time. In one test kitchen weighing, duck yolks made up 42 percent of the egg’s weight, against 32 percent for chicken. US FDA consumer advice for eggs: check for clean, uncracked shells, refrigerate, and cook until yolk and white are firm. Quail eggs weigh about 10 to 12 grams. In a storage study, quail eggs held at room temperature lost internal quality sharply, and the authors recommend refrigerated storage.",
@@ -7788,7 +7788,7 @@
         }
       ],
       "kristy_take": "Open the carton for clean, uncracked shells and keep the eggs cold at home. Duck or quail, cook until both yolk and white are firm.",
-      "cart_pick": "Pasture-raised organic duck or quail eggs",
+      "cart_pick": "Pasture-raised duck or quail eggs",
       "buying_tips": [
         "Look for printed soy-free or corn-free feed; otherwise choose organic feed.",
         "Quail eggs held at room temperature lose quality sharply, so cold matters.",
@@ -7837,7 +7837,7 @@
         "acorn squash",
         "spaghetti squash"
       ],
-      "decision": "Organic winter squash, firm and heavy-for-size, with hard skin and no sunken or moldy spots.",
+      "decision": "Winter squash, firm and heavy-for-size, with hard skin and no sunken or moldy spots.",
       "sources": [
         {
           "name": "University of Maine Cooperative Extension: Winter Squash",
@@ -7858,7 +7858,7 @@
         "turmeric root",
         "turmeric roots"
       ],
-      "decision": "Organic ginger and turmeric roots, firm, ginger smooth and uncracked; keep both sealed and refrigerated.",
+      "decision": "Ginger and turmeric roots, firm, ginger smooth and uncracked; keep both sealed and refrigerated.",
       "sources": [
         {
           "name": "University of Minnesota Extension: Ginger",
@@ -7915,7 +7915,7 @@
         "carton egg whites",
         "liquid egg whites"
       ],
-      "decision": "Organic whites: certified organic feed and outdoor access, pasteurized per federal standard.",
+      "decision": "Egg whites: certified organic feed and outdoor access, pasteurized per federal standard.",
       "sources": [
         {
           "name": "USDA FSIS: Egg Products and Food Safety",
@@ -7952,7 +7952,7 @@
       ],
       "category": "deli",
       "question": "Which ham should you buy?",
-      "decision": "Organic or pasture-raised ham named just “Ham”.",
+      "decision": "Pasture-raised ham named just “Ham”.",
       "why": "Ham is the cured leg of pork. Its product name tells how much water the curing added.",
       "short_answer": "A ham labeled plain “Ham” must meet the highest protein level. “Water Added” and “Ham and Water Product” mean more added solution. Water appears in the ingredients either way.",
       "detail": "US labeling ties ham names to protein. “Ham” needs at least 20.5% protein in the lean portion. “Ham With Natural Juices” needs at least 18.5%. “Ham, Water Added” needs at least 17.0%, with 10% added solution. “Ham and Water Product” must state the percent of weight that is added ingredients. Fresh ham is the uncured leg of pork and is labeled “fresh” or “uncured”.",
@@ -7970,7 +7970,7 @@
         "Iowa State University Extension: Liquid smoke https://blogs.extension.iastate.edu/answerline/2019/04/18/liquid-smoke-that-controversial-condiment/"
       ],
       "kristy_take": "Ham is the cured leg of pork. Its product name tells how much water the curing added.",
-      "cart_pick": "Organic or pasture-raised sliced ham",
+      "cart_pick": "Pasture-raised sliced ham",
       "buying_tips": [
         "Next, “Ham With Natural Juices”; “Water Added” means more added solution.",
         "Read the product name for “Water Added” or a percent of added ingredients.",
@@ -8022,7 +8022,7 @@
       ],
       "category": "deli",
       "question": "What does the turkey bacon label tell you?",
-      "decision": "Organic or pasture-raised turkey bacon with no added sugar.",
+      "decision": "Pasture-raised turkey bacon with no added sugar.",
       "why": "Turkey bacon is turkey meat seasoned and pressed into bacon form. The label has to say which turkey meat.",
       "short_answer": "Bacon from turkey carries a descriptive name, such as “turkey bacon, cured turkey thigh meat”. Every curing ingredient must appear in the ingredients statement.",
       "detail": "Under US labeling, “bacon” alone means cured pork belly. Bacon made from poultry needs a descriptive name that says which meat was used. Each substance in a curing mixture, such as salt, sugar, or sodium nitrite, must be listed. “Uncured” and “No Nitrate or Nitrite Added” may accompany celery-based curing; the qualifier names that plant source of nitrite.",
@@ -8044,7 +8044,7 @@
         }
       ],
       "kristy_take": "Turkey bacon is turkey meat seasoned and pressed into bacon form. The label has to say which turkey meat.",
-      "cart_pick": "Organic or pasture-raised turkey bacon strips",
+      "cart_pick": "Pasture-raised turkey bacon strips",
       "buying_tips": [
         "Read the named turkey cut and each curing ingredient after the meat.",
         "Look for a curing list that names no sugar after the turkey.",
@@ -8099,7 +8099,7 @@
       ],
       "category": "deli",
       "question": "How do you choose prosciutto, salami, pancetta, or guanciale?",
-      "decision": "Organic or pasture-raised pork, with cut and curing ingredients named.",
+      "decision": "Pasture-raised pork, with cut and curing ingredients named.",
       "why": "Each of these is pork cured with salt and curing agents. The label names the cut and lists every curing ingredient.",
       "short_answer": "Prosciutto is dry-cured ham, and salami is a fermented, dried, cured ground product. Pancetta is cured belly. Guanciale is worth buying on the same terms: the cut named and the curing ingredients listed.",
       "detail": "Prosciutto is an Italian-style dry-cured raw ham, not smoked. Its low water content lets it be eaten raw. Salami is a fermented, dried, and cured ground meat product. Pancetta is Italian belly bacon, usually cured in salt and spices and air-dried. Cured pork from the cheeks must carry its true product name, such as pork jowl. “Uncured” and “No Nitrate or Nitrite Added” may accompany celery-based curing; the qualifier names that plant source of nitrite.",
@@ -8114,7 +8114,7 @@
         "NPR: No nitrates added labels and celery-based curing https://www.npr.org/sections/thesalt/2019/08/29/755115208/duped-in-the-deli-aisle-no-nitrates-added-labels-are-often-misleading"
       ],
       "kristy_take": "Each of these is pork cured with salt and curing agents. The label names the cut and lists every curing ingredient.",
-      "cart_pick": "Organic or pasture-raised guanciale pork jowl",
+      "cart_pick": "Pasture-raised guanciale pork jowl",
       "buying_tips": [
         "A short curing list names the salt, spices and any added curing agents.",
         "Read the product name for the cut, such as ham, belly, or jowl.",
@@ -10762,7 +10762,7 @@
         }
       ],
       "kristy_take": "The mother and the word unfiltered go together. Full strength and a single vinegar show on the label too.",
-      "cart_pick": "Organic raw cider vinegar with the mother",
+      "cart_pick": "Raw cider vinegar with the mother",
       "buying_tips": [
         "Cider vinegar is fermented apple juice; unfiltered bottles can keep the mother.",
         "Look for USDA Organic on the bottle. In USDA residue testing, about 94 percent of fresh apple samples carried at least one pesticide.",
@@ -10815,7 +10815,7 @@
       ],
       "category": "bulk_pantry",
       "question": "Which miso do you buy?",
-      "decision": "Organic miso of soybeans, salt and koji, any grain named.",
+      "decision": "Miso of soybeans, salt and koji, any grain named.",
       "why": "Miso is soybeans fermented with salt and koji, often with rice or barley. Red miso is the saltiest kind.",
       "short_answer": "Read the list: soybeans, salt and koji, often with rice or barley. White miso is mild and sweet. Yellow is a little stronger. Red is the saltiest and strongest, so a little goes far.",
       "detail": "Miso is a thick paste of soybeans fermented with salt and koji, a mold culture, often with rice or barley. White (shiro) miso is soybeans and rice, fermented a short time, so it is mild and sweet. Yellow miso is often soybeans and barley, slightly stronger than white. Red (aka) miso is the saltiest and strongest, made with soybeans and barley or another grain. Mame miso is soybeans only, with no grain. The darker the miso, the stronger the flavor. Miso comes as a paste in a sealed container, kept in the fridge after opening.",
@@ -10826,7 +10826,7 @@
         "https://www.huffingtonpost.co.uk/entry/different-kinds-of-miso_n_6993590"
       ],
       "kristy_take": "The list names the soybeans, salt, koji and grain. Red is the salty one.",
-      "cart_pick": "Organic miso paste",
+      "cart_pick": "Miso paste",
       "buying_tips": [
         "White miso is mild and sweet, and red is the saltiest, so a little goes far.",
         "Look for organic soybeans, koji and salt on the list, with any grain named.",
@@ -10877,7 +10877,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick tempeh?",
-      "decision": "Organic tempeh in a firm cake, bound white all through.",
+      "decision": "Tempeh in a firm cake, bound white all through.",
       "why": "A finished cake holds together as one piece. A loose one crumbles easily.",
       "short_answer": "Pick a firm, dense cake held together by white growth all through. A loose cake that crumbles is unfinished. Read the list for soybeans alone or added grains. Pass on any pack with noticeable mold or odd colors.",
       "detail": "Tempeh is cooked soybeans fermented with a Rhizopus culture, a mold, into a firm, dense cake. In good tempeh, a dense white mycelium, the threads of the mold, binds the beans into one cake. The whole cake should lift as one piece without crumbling. Unfinished tempeh is bound loosely and crumbles easily. Most versions add grains, seeds or other beans, and soy-free versions exist. It is sold cold, often near the tofu. It keeps up to three weeks in the fridge, and unopened blocks can be frozen for up to a month.",
@@ -10888,7 +10888,7 @@
         "https://www.americastestkitchen.com/articles/575-what-is-tempeh"
       ],
       "kristy_take": "A tempeh cake should hold as one solid piece. The list shows what went in besides the soybeans.",
-      "cart_pick": "Firm organic tempeh cake",
+      "cart_pick": "Firm tempeh cake",
       "buying_tips": [
         "A finished cake holds together as one piece; a loose, crumbly one is unfinished.",
         "Look for a tempeh list of organic soybeans alone or with one named grain.",
@@ -10934,7 +10934,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick natto?",
-      "decision": "Organic natto in sealed trays, chilled or frozen.",
+      "decision": "Natto in sealed trays, chilled or frozen.",
       "why": "Chilled natto keeps only days. Frozen, it keeps for months.",
       "short_answer": "Natto is whole soybeans fermented until sticky and stringy, with a strong smell. It comes in small sealed trays, often with mustard and sauce packets. Buy it from the cold case or the freezer, and check the date.",
       "detail": "Natto is whole soybeans fermented with Bacillus subtilis bacteria. Stirring it pulls up sticky strings, and its smell is strong, like a pungent aged cheese. Mass-produced natto comes in small polystyrene trays, two or three to a pack, occasionally four. Each tray holds 40 to 50 g. Chilled below 10°C, natto keeps about 7 to 12 days. Frozen, it keeps for several months. Left to ferment too long, natto releases ammonia.",
@@ -10945,7 +10945,7 @@
         "https://wiki.ubc.ca/Course:FNH200/Projects/2022/Natto"
       ],
       "kristy_take": "The strong smell and sticky strings are the food itself, not a fault.",
-      "cart_pick": "Organic natto beans",
+      "cart_pick": "Natto beans",
       "buying_tips": [
         "Chilled natto keeps only days; frozen, it keeps for months.",
         "Look for USDA Organic on the pack, with whole soybeans listed first.",
@@ -11197,7 +11197,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick sugar?",
-      "decision": "Organic coconut or maple sugar first, each from one sap.",
+      "decision": "Coconut or maple sugar first, each from one sap.",
       "why": "Coconut sugar is palm flower sap and maple sugar is maple sap. White sugar is crystallized from cane or beet juice.",
       "short_answer": "Coconut sugar and maple sugar each come from one sap. Cane sugar and beet sugar are the same sugar. Brown sugar is sugar with molasses added. Turbinado is a raw cane sugar, paler than brown sugar.",
       "detail": "Sucrose is the name 21 CFR 184.1854 gives to sugar, cane sugar or beet sugar. It is crystallized from sugar cane or sugar beet juice, so cane and beet sugar are the same substance. Brown sugar is sugar with molasses added. Light brown carries approximately 3.5 percent molasses and dark brown approximately 6.5 percent. Raw sugar, also called turbinado, is a cane sugar with minimal refining, paler than brown sugar. Coconut sugar comes from the sap of coconut palm flowers and is made mostly of sucrose. A single-ingredient sugar must show a percent Daily Value for added sugars, without the words “Includes Xg Added Sugars.” A “†” symbol after that percent may lead to a footnote. Under Vermont’s maple rule, maple sugar takes all its sugar from pure maple sap, with nothing added.",
@@ -11218,7 +11218,7 @@
         "https://www.law.cornell.edu/regulations/vermont/20-002-Code-Vt-R-20-011-002-X"
       ],
       "kristy_take": "Coconut or maple sugar comes from one sap. For plain sugar, cane or beet makes the same sugar, and organic leads.",
-      "cart_pick": "Organic coconut sugar or pure maple sugar",
+      "cart_pick": "Coconut sugar or pure maple sugar",
       "buying_tips": [
         "Each stays closer to its plant than sugar crystallized from cane or beet juice.",
         "Look for certified organic coconut sugar or pure maple sugar.",
@@ -12285,7 +12285,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick soy sauce and hot sauce?",
-      "decision": "Organic soy sauce, traditionally brewed, not made fast with acid.",
+      "decision": "Soy sauce, traditionally brewed, not made fast with acid.",
       "why": "Traditional soy sauce ferments for months; a fast acid method takes hours. Wheat and gluten-free are label facts.",
       "short_answer": "Traditionally brewed soy sauce ferments for months. A fast method makes it with acid in hours. Shoyu is about equal wheat and soybeans; tamari is mostly soybeans. Some fermented hot sauces have no added vinegar.",
       "detail": "Classic soy sauce is made by microbial fermentation. Soybeans and wheat are inoculated with Aspergillus oryzae, a mold. Traditional soy sauce then ferments for months or even a year. A fast method makes hydrolyzed soy protein with acid in hours, called acid hydrolysis. A USDA AMS purchase description covers both methods; it is a federal buying spec, not retail label law. It names Type I, fermented, made from koji: wheat and soybeans cultured with Aspergillus oryzae. It names Type II, non-fermented, a blend made from hydrolyzed vegetable protein. Shoyu, the prevalent Japanese style, is made from roughly equal parts wheat and soybeans. Tamari is described as all or mostly soybeans, with no wheat. As TASTE reports, tamari began in Japan as a by-product of miso making. Liquid pooled at the bottom of the miso barrel, and it was used for seasoning. Wheat is a gluten-containing grain. A gluten-free claim means any unavoidable gluten is below 20 ppm, or 20 mg per kilogram of food. A hot sauce cooked with vinegar may fall under the rules for acidified foods. A fermented hot sauce with no added vinegar may follow a different review process. Traditionally, hot pepper sauce is made from a salted pepper mash aged in barrels, and one study aged it in oak.",
@@ -12303,7 +12303,7 @@
         }
       ],
       "kristy_take": "Traditionally, soy sauce is brewed for months, and tamari began as the liquid pooled in a miso barrel. The ingredient list stays the wheat check.",
-      "cart_pick": "Organic naturally brewed soy sauce",
+      "cart_pick": "Naturally brewed soy sauce",
       "buying_tips": [
         "Brewed soy sauce ferments for months; the fast method makes it with acid in hours.",
         "Look for the words naturally brewed, with organic soybeans named first.",
@@ -12862,7 +12862,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick tortilla chips?",
-      "decision": "Organic masa tortilla chips in olive oil or tallow.",
+      "decision": "Masa tortilla chips in olive oil or tallow.",
       "why": "Corn cooked in limewater grinds into masa, a dough. Untreated cornmeal will not form one.",
       "short_answer": "Corn for tortillas is cooked in an alkaline solution, usually limewater, then ground into masa. Some corn chips use corn that never went through that step. Masa and a trace of lime often show on the ingredients.",
       "detail": "The step is nixtamalization: dry corn is soaked and cooked in a solution of slaked lime and water. Slaked lime is calcium hydroxide, called “cal.” The cooked corn, called nixtamal, is washed, then ground into a dough, masa. The word comes from Nahuatl, the Aztec language. Cornmeal from untreated corn cannot form a dough with water alone. Masa harina means “dough flour,” the powder ground from nixtamal. Masa flour made at scale is based on the traditional method. Restaurant-style chips are tortillas cut into wedges and fried. Most bagged chips are shaped straight from coarse masa dough and fried. For chips, Kristy’s standard is olive oil, coconut oil, tallow or lard. Skip seed oils and avocado oil.",
@@ -12892,7 +12892,7 @@
         }
       ],
       "kristy_take": "Traditionally, the corn soaks overnight in lime and water, is rinsed and rubbed free of its hulls, then ground on a flat lava stone. The practice began in Mesoamerica, where the earliest equipment dates from 1200 to 1500 BCE. In parts of the region, the old techniques persist.",
-      "cart_pick": "Organic masa tortilla chips: olive oil",
+      "cart_pick": "Masa tortilla chips: olive oil",
       "buying_tips": [
         "Lime-cooked corn grinds into masa, a dough; untreated cornmeal cannot form one.",
         "Look for the USDA Organic seal, then masa, one named fat and salt.",
@@ -12977,7 +12977,7 @@
         }
       ],
       "kristy_take": "As the story goes, the chef George Crum served “Saratoga Chips” at Saratoga Springs in 1853. The earliest known recipe is older, from an 1817 cookbook: potatoes fried in slices or shavings. Crum made the chip famous.",
-      "cart_pick": "Sliced organic potato chips: olive oil",
+      "cart_pick": "Sliced potato chips: olive oil",
       "buying_tips": [
         "Stacked crisps start as dried potato flakes and cornstarch pressed into one shape.",
         "Look for USDA Organic on the bag. In USDA residue testing, about 98 percent of fresh potato samples carried at least one pesticide.",
@@ -13025,7 +13025,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick popcorn?",
-      "decision": "Organic plain popcorn kernels, popped at home in coconut oil.",
+      "decision": "Plain popcorn kernels, popped at home in coconut oil.",
       "why": "Plain kernels pop with no oil at all, so the cook decides on any butter, oil or salt.",
       "short_answer": "Popcorn is its own variety of corn. Water inside the hard hull turns to steam, the hull bursts and the kernel turns inside out. Plain kernels pop in a paper bag in the microwave, no oil needed.",
       "detail": "Popcorn is a variety of corn, Zea mays everta. Its hard outer hull is the pericarp. Inside, moisture runs about 13 to 14.5 percent of the kernel. As the water heats, the kernel acts as a pressure cooker until the hull ruptures. Kernels with cuts or weak spots in the hull let the moisture escape and stay unpopped. In one study, 4 to 47 percent of kernels failed to pop, depending on variety. Two popped shapes are grown, butterfly and mushroom. Mushroom popcorn is often sold prepopped and coated with flavorings. For popping at home, Kristy’s standard is coconut oil, butter or tallow. Skip seed oils and avocado oil.",
@@ -13054,7 +13054,7 @@
         }
       ],
       "kristy_take": "Popped corn found in Peru dates back 6,700 years. One extension view holds that whole kernels popped at home are the consumer-controlled option. Nebraska grows the most popcorn, and Indiana is second.",
-      "cart_pick": "Organic plain popcorn kernels",
+      "cart_pick": "Plain popcorn kernels",
       "buying_tips": [
         "Plain kernels pop with no oil, so any butter, oil or salt is your call.",
         "Look for USDA Organic on the bag of kernels.",
@@ -13158,7 +13158,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick a granola or snack bar?",
-      "decision": "Organic bars with oats or another whole grain listed first.",
+      "decision": "Bars with oats or another whole grain listed first.",
       "why": "Ingredients run in order of amount, so the first one leads. Rolled oats count as whole grain.",
       "short_answer": "Ingredients run in order of amount. Look for oats or another whole grain first, not enriched refined grains. The list also names any high fructose corn syrup or hydrogenated oils.",
       "detail": "Under 21 CFR 101.4, ingredients are listed in descending order of predominance. FDA guidance counts rolled oats as whole grain, since simple flattening or steaming keeps every part of the whole oat. An extension guide favors bars with whole grains such as oats, sweetened with fruit, honey or syrups, with nuts and seeds. The same guide advises avoiding bars with hydrogenated oils. Granola is rolled oats, nuts, seeds and honey or another sweetener, usually baked. A granola bar mixes granola with honey or syrup, pressed and baked into a bar. For added fat in bars, Kristy’s standard is olive oil, coconut oil or butter. Skip seed oils and avocado oil. Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed. Choose certified organic oat bars over conventional. Conventional oats may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic oats. Many bars carry sugar and high fructose corn syrup, and the list shows which.",
@@ -13203,7 +13203,7 @@
         }
       ],
       "kristy_take": "Granula was made in Dansville, New York, in 1863 by James Caleb Jackson. The food and name came back in the 1960s with fruit and nuts added. Granola bars caught on in the same decade.",
-      "cart_pick": "Organic oat snack bars",
+      "cart_pick": "Oat snack bars",
       "buying_tips": [
         "Ingredients run by amount, so the first one leads; rolled oats count as whole grain.",
         "Look for organic oats first and fruit or honey as the only sweetener.",
@@ -13369,7 +13369,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick hummus?",
-      "decision": "Organic hummus of chickpeas and tahini, with no gums.",
+      "decision": "Hummus of chickpeas and tahini, with no gums.",
       "why": "Hummus bi tahina names its two parts, chickpeas and tahini. Store tubs add lemon and salt.",
       "short_answer": "Hummus is chickpeas and tahini, with garlic, lemon and salt. The word is Arabic for chickpea. Store tubs typically list chickpeas, tahini, lemon and salt, and every tub in one tasting had an acid.",
       "detail": "The full name, hummus bi tahina, names chickpeas and tahini, a paste of sesame seeds. A 13th-century cookbook from Cairo holds the first written record, without tahini or garlic. Some historians trace the modern style to 18th-century Damascus. In Israel, Palestine and Lebanon it is a main dish, not just a dip. Guar gum thickens a tub and stops weeping, and roughly half the tubs in one tasting used it. Most store-bought hummus is pasteurized before it is packed and sealed. A grainy texture likely comes from how coarsely the chickpeas were ground. Homemade hummus keeps three to four days in an airtight container in the fridge.",
@@ -13397,7 +13397,7 @@
         }
       ],
       "kristy_take": "One cook’s view from the tradition: chickpeas and tahini need to be the two primary ingredients.",
-      "cart_pick": "Organic hummus: chickpeas and tahini",
+      "cart_pick": "Hummus: chickpeas and tahini",
       "buying_tips": [
         "Hummus bi tahina names its two parts, so chickpeas and tahini should lead the list.",
         "Look for certified organic chickpeas and tahini, with no gum on the list.",
@@ -13958,7 +13958,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick frozen chicken nuggets?",
-      "decision": "Organic or pasture-raised white meat nuggets, one solid piece.",
+      "decision": "Pasture-raised white meat nuggets, one solid piece.",
       "why": "“White meat” means 100 percent light meat, and “mostly white meat” means 66 percent or more.",
       "short_answer": "The label words set the light meat. “White meat” means 100 percent light meat, and “mostly white meat” 66 percent or more. A plain “Chicken Nugget” is a solid piece of meat or poultry.",
       "detail": "On poultry labels, “white meat” or “light meat” means 100 percent light meat. “Mostly white meat” means 66 percent or more light meat. “Natural proportions” means 50 to 65 percent light meat. A nugget is an irregular, usually bite-sized piece, usually breaded and fried, meant as finger food. “Chicken Nugget” with no qualifier means a solid piece of meat or poultry. “Chopped and Formed” beside the name means chopped and formed meat or poultry. With binders, extenders or water, “nugget” is only a fanciful name. A descriptive name then follows, such as “Breaded Nugget-Shaped Chicken Patties”. A product labeled “breaded” carries batter and breading of no more than 30 percent of the finished product. “Ice glazed” beside the name means an ice glaze set the breading. “Mechanically Separated Chicken” is poultry with most of the bone removed by machine, in a paste-like form. Its bone solids are at most 1 percent. For added fat, Kristy’s standard is tallow, olive oil, or coconut oil. Skip seed oils and avocado oil.",
@@ -13992,7 +13992,7 @@
         }
       ],
       "kristy_take": "At home, nuggets start as whole breast cut into small pieces. They are dipped in an egg and flour mix, coated in panko, and baked at 400 degrees for 15 to 20 minutes.",
-      "cart_pick": "Organic chicken nuggets",
+      "cart_pick": "Chicken nuggets",
       "buying_tips": [
         "“White meat” means 100 percent light meat; “mostly white meat” can be 66 percent.",
         "Look for certified organic on the box and a plain “Chicken Nugget” name.",

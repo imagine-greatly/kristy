@@ -1,4 +1,4 @@
-import { restoreOrganicCarts } from './cartPlain.js';
+import { restoreOrganicCarts, liveDecision } from './cartPlain.js';
 // clean-pick-6 (Devon 2026-10-20, Q1 A organic on every produce): B7a, the 17 produce picks name their own item organic.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
@@ -162,7 +162,7 @@ test('C11 a list row of each pick’s first alias carries the new organic line',
     const name = live(id).aliases[0];
     const row = attachCards({ items: [{ name, source: 'user' }] }, { log: false }).items[0];
     assert.equal(row.pickId, id, `${name} pickId ${row.pickId}`);
-    assert.equal(row.pickLine, CP9or10(id) ? find(kb, id).decision : BECAME[id].decision, `${name} pickLine`);
+    assert.equal(row.pickLine, liveDecision(id), `${name} pickLine`);
     assert.equal(row.cardSlug, undefined, `${name} cardSlug ${row.cardSlug}`);
   }
 });

@@ -1,4 +1,4 @@
-import { restoreOrganicCarts } from './cartPlain.js';
+import { restoreOrganicCarts, liveDecision } from './cartPlain.js';
 // clean-pick-7 (Devon 2026-10-20, "organic, no additives, no synthetic, as close to the source as possible"): B7b, 9 picks name their item's cleanest version; sausage, egg whites and soup bones are held.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
@@ -160,7 +160,7 @@ test('C11 a list row of each pick’s first alias carries the new line', () => {
     const name = live(id).aliases[0];
     const row = attachCards({ items: [{ name, source: 'user' }] }, { log: false }).items[0];
     assert.equal(row.pickId, id, `${name} pickId ${row.pickId}`);
-    assert.equal(row.pickLine, CLEAN_PICK_8.has(id) ? find(kb, id).decision : BECAME[id].decision, `${name} pickLine`);
+    assert.equal(row.pickLine, liveDecision(id), `${name} pickLine`);
     assert.equal(row.cardSlug, undefined, `${name} cardSlug ${row.cardSlug}`);
   }
 });

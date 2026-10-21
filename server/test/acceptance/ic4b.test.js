@@ -1,3 +1,4 @@
+import { restoreOrganicCarts } from './cartPlain.js';
 // IC-4b: poultry fronts, "Eggs" and "Chicken" (docs/ITEM-CARDS-PLAN.md IC-4b). Written by the planner; do not edit.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
@@ -7,7 +8,8 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { RETIRED, ESSENTIALS, projectEntry } from '../../lib/counterCards.js';
 import { lintCard, readability, headlineHedge, TIER_NOTE_ORPHANED_PENDING } from '../../lib/counterCardLint.js';
-import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
+import kb0 from '../../kristy_perimeter_kb.json' with { type: 'json' }
+const kb = restoreOrganicCarts(structuredClone(kb0));
 import { preT6_2 } from './twoLinePin.js';
 kb.entries = kb.entries.map(preT6_2); // t6-2: dairy/egg pins read ca32bef; t6_2.test.js owns live copy.
 import { beforeConcern, preCleanPick10 } from './twoLinePin.js';

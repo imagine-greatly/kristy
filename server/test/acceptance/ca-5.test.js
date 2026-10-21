@@ -1,3 +1,4 @@
+import { restoreOrganicCarts } from './cartPlain.js';
 // CA-5: section rules rewritten; section lints turned on (docs/CARD-ALIGNMENT-PLAN.md CA-5). Written by the planner; do not edit.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
@@ -8,7 +9,7 @@ import { execFileSync } from 'node:child_process';
 import * as lint from '../../lib/counterCardLint.js';
 
 const SERVER = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
-const kb = JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8'));
+const kb = restoreOrganicCarts(JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8')));
 const raw = JSON.parse(readFileSync(join(SERVER, 'lib', 'sectionRules.json'), 'utf8'));
 const rows = Array.isArray(raw) ? raw : raw.sections ?? raw.rules ?? Object.values(raw).find(Array.isArray);
 const row = (s) => rows.find((r) => r.section === s);

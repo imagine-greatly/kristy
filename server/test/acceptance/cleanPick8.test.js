@@ -1,4 +1,4 @@
-import { restoreOrganicCarts } from './cartPlain.js';
+import { restoreOrganicCarts, liveDecision } from './cartPlain.js';
 // clean-pick-8 (docs/CLEAN-PICK-PLAN.md B8 r2): 17 pantry ids and carried picks under the stance. Written by the builder.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
@@ -515,7 +515,7 @@ test('C13 pick routing equals the base; each pick row carries its new line', () 
     const name = live(id).aliases[0];
     const row = attachCards({ items: [{ name, source: 'user' }] }, { log: false }).items[0];
     assert.equal(row.pickId, id, `${name} pickId ${row.pickId}`);
-    assert.equal(row.pickLine, live(id).decision, `${name} pickLine`);
+    assert.equal(row.pickLine, liveDecision(id), `${name} pickLine`);
     assert.equal(row.cardSlug, undefined, `${name} cardSlug ${row.cardSlug}`);
   }
 });

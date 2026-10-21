@@ -1,3 +1,4 @@
+import { restoreOrganicCarts } from './cartPlain.js';
 // clean-pick-1: batch B1 of docs/CLEAN-PICK-PLAN.md (Devon 2026-10-20). Each staple's front names its own
 // cleanest version (pasture-raised or organic poultry, grass-fed dairy, organic sugar and corn, wild-caught fish,
 // short-list bread, olive oil mayo and sauce), not a blanket "get organic". Base ede90e7 (3ca18db, dfbef8a plan-only).
@@ -13,7 +14,7 @@ import { matchItemToCard } from '../../lib/listMatch.js';
 
 const ROOT = new URL('../../../', import.meta.url).pathname;
 const git = (spec) => execFileSync('git', ['show', spec], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
-const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
+const kb = restoreOrganicCarts(JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8')));
 import { preSwapPicks1 } from './twoLinePin.js';
 kb.entries = preSwapPicks1(kb.entries); // swap-picks-1: 8 swap picks + 2 aliases after 58d6160; swap_picks_1.test.js owns them.
 import { preT6_4 } from './twoLinePin.js';

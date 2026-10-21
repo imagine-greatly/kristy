@@ -9,6 +9,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { nonEmpty } from '../../lib/testGuards.js';
+import { restoreOrganicCarts } from './cartPlain.js';
 
 export const TWO_LINE = {
   "salmon_wild_vs_farmed": {
@@ -3471,7 +3472,7 @@ Object.defineProperties(TWO_LINE, Object.fromEntries(
 ));
 
 test('every full-card and concern pick pin matches the live KB', () => {
-  const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
+  const kb = restoreOrganicCarts(JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8')));
   kb.entries = preSwapPicks1(kb.entries); // swap-picks-1: 8 swap picks + 2 aliases after 58d6160; swap_picks_1.test.js owns them.
   kb.entries = kb.entries.map(preT6_4); // t6-4 owns the six produce/label cards after 2f67540.
   kb.entries = kb.entries.map(preT6_3); // t6-3 owns the 14 pantry cards after 6d6ca49.

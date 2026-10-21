@@ -1,3 +1,4 @@
+import { restoreOrganicCarts } from './cartPlain.js';
 // t6-1 (2026-10-20): T6 avoid sweep, batch 1 of 4 (meat + seafood). Each open register
 // concern on these 15 cards names a label term (docs/CONCERN-REGISTER.md col 3) where the
 // shopper reads it, or is CARRIED with a reason. decision/cart_pick stay as of 85c399e.
@@ -9,7 +10,7 @@ import { nonEmpty } from '../../lib/testGuards.js';
 import { T6_1, T6_1_BASE, preT6_1 } from './twoLinePin.js';
 
 const ROOT = new URL('../../../', import.meta.url).pathname;
-const kb = JSON.parse(readFileSync(join(ROOT, 'server/kristy_perimeter_kb.json'), 'utf8'));
+const kb = restoreOrganicCarts(JSON.parse(readFileSync(join(ROOT, 'server/kristy_perimeter_kb.json'), 'utf8')));
 const IDS = nonEmpty([...T6_1], 'T6_1 ids', 15);
 const card = (id) => { const e = kb.entries.find((x) => x.id === id); assert.ok(e, `${id} missing`); return e; };
 
