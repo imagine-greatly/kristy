@@ -48,7 +48,7 @@ Eyebrow: **Or start from a planned cart**
 
 | key | capsule title | caption (≤8 words) |
 | --- | --- | --- |
-| everyday | Everyday cart | Greens, eggs, salmon, grass-fed beef, oats. |
+| everyday | Everyday cart | Eggs, salmon, grass-fed beef, whole milk, greens. |
 | nose_to_tail | Nose-to-tail cart | Liver, lamb, raw kefir, kraut, soup bones. |
 | garden_and_sea | Garden and sea cart | Peppers, stone fruit, white fish, scallops, miso. |
 

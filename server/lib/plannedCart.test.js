@@ -124,10 +124,11 @@ test('legacy cart remains served by POST /api/guest/list', async () => {
 test('collisions move forward to the next untaken backup', () => {
   const ids = (cart, nonNegotiables) => buildPlannedCart({ cart, nonNegotiables }).items.map((it) => it.perimeterId);
   const everyday = ids('everyday', ['gluten-free', 'dairy-free']);
-  assert.equal(everyday[4], 'lard_tallow');
-  assert.equal(everyday[14], 'rice_arsenic');
-  assert.equal(everyday[15], 'bulk_bins_buying');
-  assert.equal(everyday[16], 'fermented_pickles');
+  assert.equal(everyday[5], 'canned_coconut_milk');
+  assert.equal(everyday[6], 'nuts_raw_vs_roasted');
+  assert.equal(everyday[7], 'lard_tallow');
+  assert.equal(everyday[16], 'rice_arsenic');
+  assert.equal(everyday[17], 'fermented_pickles');
   const farmhouse = ids('farmhouse', ['dairy-free']);
   assert.equal(farmhouse[5], 'lard_tallow');
   assert.equal(farmhouse[6], 'cooking_oils');
@@ -286,7 +287,7 @@ test('POST /api/guest/list {} is still 400 goals_required', async () => {
 // Independent primary fixtures: Devon's seven carts, with existing KB stand-ins.
 // garden_and_sea is the literal 20-row order at BASE 64485ea.
 const APPENDIX = {
-  everyday: 'egg_labels salmon_wild_vs_farmed ground_beef_lean_ratio chicken_cuts_basics grassfed_butter olive_oil_grades produce_leafy_greens produce_root_vegetables produce_onions_garlic produce_brassicas produce_peppers berries_picking produce_apples_pears produce_bananas oats_steelcut_rolled_instant sourdough yogurt_plain_vs_flavored sauerkraut salt dried_herbs',
+  everyday: 'egg_labels salmon_wild_vs_farmed canned_fish_choosing ground_beef_lean_ratio chicken_cuts_basics whole_vs_reduced_fat_milk cheese_real_vs_processed grassfed_butter olive_oil_grades produce_leafy_greens produce_root_vegetables produce_onions_garlic produce_brassicas berries_picking produce_apples_pears produce_bananas sourdough yogurt_plain_vs_flavored sauerkraut salt',
   mediterranean: 'white_fish chicken_cuts_basics egg_labels beans_dried_vs_canned olive_oil_grades olives produce_leafy_greens pasta_sauce fermented_pickles produce_peppers produce_onions_garlic produce_mushrooms produce_citrus produce_stone_fruit dried_fruit sourdough pasta_dry cheese_real_vs_processed yogurt_plain_vs_flavored dried_herbs',
   farmhouse: 'egg_labels chicken_cuts_basics pork_cuts_and_enhanced beef_cuts_basics bacon grassfed_butter lard_tallow produce_leafy_greens produce_root_vegetables produce_onions_garlic produce_green_beans produce_apples_pears berries_picking sourdough oats_steelcut_rolled_instant whole_vs_reduced_fat_milk raw_aged_cheese sauerkraut salt broth',
   nose_to_tail: 'organ_meats ground_beef_lean_ratio clams_mussels_oysters canned_fish_choosing egg_labels lamb_goat butcher_counter_asking lard_tallow grassfed_butter produce_leafy_greens produce_onions_garlic produce_root_vegetables berries_picking produce_citrus rice_arsenic raw_kefir sauerkraut broth salt dried_herbs',
@@ -296,7 +297,7 @@ const APPENDIX = {
   garden_and_sea: 'produce_peppers produce_stone_fruit produce_green_beans produce_onions_garlic berries_picking ground_turkey bison chicken_breast white_fish scallops egg_labels plain_kefir cottage_cheese cheese_real_vs_processed grains_beyond_rice rice_arsenic miso hummus nut_butter_ingredients frozen_vs_fresh_produce',
 };
 const APPENDIX_SECTIONS = {
-  everyday: 'eggs_dairy seafood meat meat eggs_dairy bulk_pantry produce produce produce produce produce produce produce produce bulk_pantry bulk_pantry eggs_dairy bulk_pantry bulk_pantry bulk_pantry',
+  everyday: 'eggs_dairy seafood seafood meat meat eggs_dairy eggs_dairy eggs_dairy bulk_pantry produce produce produce produce produce produce produce bulk_pantry eggs_dairy bulk_pantry bulk_pantry',
   mediterranean: 'seafood meat eggs_dairy bulk_pantry bulk_pantry bulk_pantry produce bulk_pantry bulk_pantry produce produce produce produce produce bulk_pantry bulk_pantry bulk_pantry eggs_dairy eggs_dairy bulk_pantry',
   farmhouse: 'eggs_dairy meat meat meat meat eggs_dairy bulk_pantry produce produce produce produce produce produce bulk_pantry bulk_pantry eggs_dairy eggs_dairy bulk_pantry bulk_pantry bulk_pantry',
   nose_to_tail: 'meat meat seafood seafood eggs_dairy meat meat bulk_pantry eggs_dairy produce produce produce produce produce bulk_pantry eggs_dairy bulk_pantry bulk_pantry bulk_pantry bulk_pantry',
