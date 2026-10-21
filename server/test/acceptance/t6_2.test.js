@@ -7,9 +7,11 @@ import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { nonEmpty } from '../../lib/testGuards.js';
 import { T6_2, T6_2_BASE, preT6_2 } from './twoLinePin.js';
+import { preCleanJ5 } from './cartPlain.js';
 
 const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
 const kb = JSON.parse(readFileSync(join(ROOT, 'server/kristy_perimeter_kb.json'), 'utf8'));
+kb.entries = kb.entries.map(preCleanJ5); // clean-sweep-J5: dairy pins read 5706fee; cleanPickJ5.test.js owns live copy.
 const IDS = nonEmpty([...T6_2], 'T6_2 ids', 6);
 const card = (id) => { const e = kb.entries.find((x) => x.id === id); assert.ok(e, `${id} missing`); return e; };
 

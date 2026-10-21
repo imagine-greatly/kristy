@@ -214,8 +214,14 @@ export const CLEAN_J4 = new Set(['salmon_wild_vs_farmed', 'shrimp_imported_vs_do
 export const CLEAN_J4_BASE = '6d98564';
 const PRE_J4 = JSON.parse(execFileSync('git', ['show', `${CLEAN_J4_BASE}:server/kristy_perimeter_kb.json`], { cwd: join(dirname(fileURLToPath(import.meta.url)), '..', '..', '..'), maxBuffer: 64 << 20 }).toString());
 export const preCleanJ4 = (e) => (e && CLEAN_J4.has(e.id) ? structuredClone(PRE_J4.entries.find((x) => x.id === e.id)) : e);
+// clean-sweep-J5 (2026-10-22): dairy and plant milks after 5706fee; cleanPickJ5.test.js owns the live copy.
+// Every older pin reads them as of 5706fee (J5, J4, J3 and J1 ids are disjoint).
+export const CLEAN_J5 = new Set(['grassfed_butter', 'whole_vs_reduced_fat_milk', 'cheese_real_vs_processed', 'yogurt_plain_vs_flavored', 'cream_vs_creamer', 'ice_cream', 'goat_sheep_dairy', 'plant_butter', 'dairy_case', 'almond_milk', 'soy_milk', 'coconut_milk_beverage', 'oat_milk']);
+export const CLEAN_J5_BASE = '5706fee';
+const PRE_J5 = JSON.parse(execFileSync('git', ['show', `${CLEAN_J5_BASE}:server/kristy_perimeter_kb.json`], { cwd: join(dirname(fileURLToPath(import.meta.url)), '..', '..', '..'), maxBuffer: 64 << 20 }).toString());
+export const preCleanJ5 = (e) => (e && CLEAN_J5.has(e.id) ? structuredClone(PRE_J5.entries.find((x) => x.id === e.id)) : e);
 export const restoreOrganicCarts = (kb) => {
-  kb.entries = kb.entries.map(preCleanJ4).map(preCleanJ3).map(preCleanJ1);
+  kb.entries = kb.entries.map(preCleanJ5).map(preCleanJ4).map(preCleanJ3).map(preCleanJ1);
   for (const e of kb.entries) if (OLD[e.id]) Object.assign(e, OLD[e.id]);
   return kb;
 };
