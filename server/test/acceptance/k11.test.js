@@ -8,7 +8,8 @@ import { nonEmpty } from '../../lib/testGuards.js';
 import { readability, lintCard } from '../../lib/counterCardLint.js';
 import { projectEntry, parseReviewTable } from '../../lib/counterCards.js';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
-import { preCleanJ9 } from './cartPlain.js';
+import { preCleanJ9, preCompleteness } from './cartPlain.js';
+const live = kb.entries;
 kb.entries = kb.entries.map(preCleanJ9); // J9 label pins read 53c6f90 before the older T6 overlay.
 import { preT6_4 } from './twoLinePin.js';
 kb.entries = kb.entries.map(preT6_4); // t6-4: restore produce/label pins before the older tidy overlay.
@@ -16,6 +17,8 @@ import pre from './fixtures/kb-pre-readability.json' with { type: 'json' };
 import { assertPassRule } from './passRule.js';
 import { beforeConcern, preTidy, preCleanPick9 } from './twoLinePin.js';
 kb.entries = kb.entries.map(preTidy);
+// Completeness pass rewrote these cards at 9845b9e; the pass rule reads the pre-completeness copy, rule checks stay on kb.entries.
+const pinned = live.map(preCompleteness).map(preCleanJ9).map(preT6_4).map(preTidy);
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const reviewed = parseReviewTable(readFileSync(join(HERE, '../../../docs/do-lines-review.md'), 'utf8'));
@@ -52,6 +55,6 @@ for (const id of SLICE) {
     assert.deepEqual(readability(now), []);
     assert.deepEqual(lintCard(projectEntry(now, { doLine: reviewed.get(id)?.do || '' })), []);
     // clean-pick-9 moved label_organic_scope's frozen fields; the pass rule reads it as of 96d61e2.
-    assertPassRule(t, old, beforeConcern(preCleanPick9(now)));
+    assertPassRule(t, old, beforeConcern(preCleanPick9(pinned.find((e) => e.id === id))));
   });
 }

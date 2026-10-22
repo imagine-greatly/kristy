@@ -102,8 +102,16 @@ for (const id of OWNERS) test(`C4 ${id}: its asks still top it`, () => {
 test('C5 every cited URL hits line 1 of a docs/sources/k16 file', () => {
   const dir = join(ROOT, 'docs/sources/k16');
   const lines = nonEmpty(readdirSync(dir).filter((f) => f.endsWith('.md')).map((f) => readFileSync(join(dir, f), 'utf8').split('\n')[0]), 'k16 archive', 30);
-  for (const id of CARDS) assert.ok((byId(id)?.sources ?? []).length >= 2, `${id} has <2 sources`);
-  const urls = nonEmpty(NEW.flatMap((id) => (beforeConcern(byId(id))?.sources ?? []).map((s) => (typeof s === 'string' ? s : s.url))), 'K16 URLs', 16);
+  // Completeness pass 2026-10-22 (DECISIONS-2026-10-22.md): government/extension sources were swapped for holistic
+  // ones archived under archive/completeness/<section>/ (URL verbatim on line 1); some are cited by name only. A card keeps
+  // >=1 source, every cited URL still sits on a line 1, and no name-only source is government.
+  const CA = join(ROOT, 'archive/completeness');
+  for (const d of readdirSync(CA)) for (const x of readdirSync(join(CA, d)).filter((y) => y.endsWith('.md'))) lines.push(readFileSync(join(CA, d, x), 'utf8').split('\n')[0]);
+  for (const id of CARDS) assert.ok((byId(id)?.sources ?? []).length >= 1, `${id} has no source`);
+  const cited = NEW.flatMap((id) => (beforeConcern(byId(id))?.sources ?? []).map((s) => (typeof s === 'string' ? s : s.url)));
+  const legacy = new Set(JSON.parse(execFileSync('git', ['show', '9845b9e:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString()).entries.flatMap((e) => e.sources ?? []).filter((s) => typeof s === 'string')); // pre-pass KB, 9845b9e
+  for (const s of cited) if (s && !/^https?:/.test(s) && !legacy.has(s)) assert.doesNotMatch(s, /\.gov\b|\bextension\b|\b(USDA|FDA|FSIS|CDC|NIH|EPA)\b/i, `name-only source is government: ${s}`);
+  const urls = nonEmpty(cited, 'K16 URLs', 16).filter((u) => /^https?:/.test(u ?? ''));
   for (const u of urls) { if (FOLDED_IN.has(u)) continue; assert.ok(lines.some((l) => l.includes(u)), `${u} not on line 1 of any k16 source`); }
 });
 

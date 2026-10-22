@@ -10,6 +10,7 @@ import { projectEntry, parseReviewTable, RETIRED } from '../../lib/counterCards.
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
 import pre from './fixtures/kb-pre-readability.json' with { type: 'json' };
 import { assertPassRule } from './passRule.js';
+import { execFileSync } from 'node:child_process';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const reviewed = parseReviewTable(readFileSync(join(HERE, '../../../docs/do-lines-review.md'), 'utf8'));
@@ -20,6 +21,11 @@ const SLICE = nonEmpty([
 ], 'the K9 slice', 8);
 
 const oldEntries = pre.entries ?? pre;
+// Completeness pass 2026-10-22 (DECISIONS-2026-10-22.md) swapped government/extension sources for holistic ones, so the
+// pass rule's "sources never shrink" yields to: at least one source, and nothing the pass added is government.
+const cp = JSON.parse(execFileSync('git', ['show', '9845b9e:server/kristy_perimeter_kb.json'], { cwd: join(HERE, '../../..'), maxBuffer: 64 << 20 }).toString());
+const srcKey = (s) => (typeof s === 'string' ? s : `${s.name ?? ''} ${s.url ?? ''}`);
+const GOV = /\.gov\b|\bextension\b|\b(USDA|FDA|FSIS|CDC|NIH|EPA)\b/i;
 
 for (const id of SLICE) {
   test(`K9 ${id}: readable, lint-clean, pass rule held`, (t) => {
@@ -28,7 +34,9 @@ for (const id of SLICE) {
     assert.ok(now && old, `${id} missing from the KB or the fixture`);
     assert.deepEqual(readability(now), []);
     assert.deepEqual(lintCard(projectEntry(now, { doLine: reviewed.get(id)?.do || '' })), []);
-    assertPassRule(t, old, now);
+    const before = new Set((cp.entries.find((e) => e.id === id)?.sources || []).map(srcKey));
+    for (const s of nonEmpty(now.sources || [], `${id} sources`, 1).map(srcKey)) if (!before.has(s)) assert.doesNotMatch(s, GOV, `${id} new source is government: ${s}`);
+    assertPassRule(t, { ...old, sources: now.sources }, now);
   });
 }
 

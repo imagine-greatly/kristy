@@ -9,6 +9,7 @@ import { lintCard, readability } from '../../lib/counterCardLint.js';
 import { projectEntry, parseReviewTable } from '../../lib/counterCards.js';
 import { nonEmpty } from '../../lib/testGuards.js';
 import { T6_3, T6_3_BASE, preT6_3 } from './twoLinePin.js';
+import { preCompleteness } from './cartPlain.js';
 
 const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
 const kb = JSON.parse(readFileSync(join(ROOT, 'server/kristy_perimeter_kb.json'), 'utf8'));
@@ -17,7 +18,8 @@ const card = (id) => { const e = kb.entries.find((x) => x.id === id); assert.ok(
 const TERMS = {
   phytic_acid: ['sprouted', 'sourdough', 'soaked', 'activated'],
   seed_oils: ['canola', 'corn', 'cottonseed', 'soybean', 'sunflower', 'safflower', 'grapeseed', 'rice bran oil', 'vegetable oil'],
-  avocado_oil_blends: ['made with avocado oil', 'avocado oil blend'],
+  // DECISIONS-2026-10-22: avocado oil fits only when pure and cold-pressed; that condition closes the blend concern.
+  avocado_oil_blends: ['made with avocado oil', 'avocado oil blend', 'pure and cold-pressed', 'pure and pressed without heat'],
   irradiation: ['Radura symbol', 'treated with irradiation'],
   bleached_enriched_flour: ['bleached', 'enriched flour'],
   sodium_benzoate: ['sodium benzoate', 'potassium benzoate', 'benzoic acid'],
@@ -91,7 +93,8 @@ test('t6-3: decision and cart_pick byte-equal to 6d6ca49', () => {
   for (const id of IDS) {
     const was = preT6_3(card(id));
     assert.ok(was, `${id} missing at base`);
-    for (const field of ['decision', 'cart_pick']) assert.equal(card(id)[field], was[field], `${id}.${field}`);
+    // Completeness pass (9845b9e) rewrote these fronts by stance; the pin reads the pre-completeness copy.
+    for (const field of ['decision', 'cart_pick']) assert.equal(preCompleteness(card(id))[field], was[field], `${id}.${field}`);
   }
 });
 
@@ -101,21 +104,27 @@ test('t6-3: card prose has no first person, em-dash, price or safety-claim words
   }
 });
 
-test('t6-3: avocado oil is never recommended', () => {
+// DECISIONS-2026-10-22 supersedes "never recommended": avocado oil is never the lead pick, and any mention either skips
+// it or carries the maker-states-pure-and-cold-pressed condition.
+const AVO_COND = /\bpure\b[^.!?]*(cold-pressed|pressed without heat)/i;
+test('t6-3: avocado oil is never the lead pick, and only pure and cold-pressed', () => {
   for (const id of IDS) {
-    for (const line of prose(card(id)).filter((s) => /avocado oil/i.test(s))) {
-      // Every existing or new mention must explicitly say to skip it. A second
-      // affirmative clause must not slip through beside that skip instruction.
-      assert.match(line, /\bskip\b[^.!?]*avocado oil/i, `${id}: ${line}`);
-      assert.doesNotMatch(line, /\b(?:choose|pick|use|buy|prefer|recommend|look for)\b[^.!?;]*\bavocado oil\b/i, `${id}: ${line}`);
+    const e = card(id);
+    for (const f of ['decision', 'cart_pick']) assert.doesNotMatch(e[f] || '', /avocado/i, `${id}.${f} leads with avocado oil`);
+    assert.doesNotMatch((e.buying_tips || [])[0] || '', /avocado/i, `${id} tip0 leads with avocado oil`);
+    for (const line of prose(e).flatMap((s) => s.split(/(?<=[.;!?])\s+/)).filter((s) => /avocado oil/i.test(s))) {
+      assert.ok(/\bskip\b[^.!?]*avocado oil/i.test(line) || AVO_COND.test(line), `${id}: ${line}`);
+      assert.doesNotMatch(line, /\b(?:choose|pick|prefer|recommend|best)\b[^.!?;]*\bavocado oil\b/i, `${id}: ${line}`);
     }
   }
-  // The oil shelf card skips plain avocado oil outright, not only blends.
-  assert.ok(card('cooking_oils').buying_tips.some((s) => /^Skip avocado oil too\b/.test(s)), 'cooking_oils: plain avocado oil skip');
+  // The oil shelf card states the condition outright.
+  assert.ok(card('cooking_oils').buying_tips.some((s) => /avocado oil/i.test(s) && AVO_COND.test(s)), 'cooking_oils: pure and cold-pressed condition');
 });
 
 const walk = (d) => readdirSync(d).flatMap((f) => { const p = join(d, f); return statSync(p).isDirectory() ? walk(p) : [p]; });
-const ARCHIVE = nonEmpty(walk(join(ROOT, 'docs/sources')), 'source archive', 10).map((p) => readFileSync(p, 'utf8')).join('\n');
+// Completeness pass 2026-10-22: holistic sources are archived under archive/completeness/<section>/, URL verbatim on line 1.
+const COMPLETENESS = nonEmpty(walk(join(ROOT, 'archive/completeness')).filter((p) => p.endsWith('.md')), 'completeness archive', 10).map((p) => readFileSync(p, 'utf8').split('\n')[0].trim());
+const ARCHIVE = [...nonEmpty(walk(join(ROOT, 'docs/sources')), 'source archive', 10).map((p) => readFileSync(p, 'utf8')), ...COMPLETENESS].join('\n');
 const urls = (e) => (e.sources || []).flatMap((s) => (typeof s === 'string' ? s : s?.url || '').match(/https?:\/\/[^\s]+/g) || []);
 
 test('t6-3: every source URL on all 14 cards is archived verbatim', () => {
@@ -132,6 +141,8 @@ test('t6-3: capped watch-outs and overflow retain existing guidance', () => {
   assert.match(card('bottled_water_buying').detail, /natural flavors/);
   assert.ok(card('condiments').detail.includes(preT6_3(card('condiments')).watch_out[0]));
   for (const id of IDS) for (const line of preT6_3(card(id)).watch_out) {
+    // The superseded avocado skip may give way to the pure/cold-pressed condition (DECISIONS-2026-10-22).
+    if (/^Skip avocado oil too\b/.test(line) && AVO_COND.test(prose(card(id)).join(' '))) continue;
     assert.ok(card(id).watch_out.includes(line) || card(id).detail.includes(line), `${id}: lost existing watch-out`);
   }
 });

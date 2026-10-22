@@ -1,0 +1,724 @@
+{
+  "rice_arsenic": {
+    "decision": "White basmati from California, boiled in plenty of water.",
+    "short_answer": "Rice takes up more arsenic than other grains, and the bran holds most of it. Brown carries more than white; variety and origin matter more than color. White California basmati, rinsed and boiled in extra water, is the strong pick.",
+    "detail": "Rice takes up more inorganic arsenic from soil and water than other grains, and the bran holds most of it. Healthy Babies Bright Futures measured brown rice at 129 ppb against 86 for white. By variety, basmati averaged 55 ppb and sushi rice 57, while plain long-grain and parboiled both averaged 101. Origin moves it as much as color does. Rice grown in Arkansas, Louisiana, Mississippi, Missouri and Texas tests highest, and California, India and Pakistan test lowest. Why the southern crop runs high is not settled. Those fields carry residue from decades of arsenical pesticides used on cotton, and the same fields also have sandier soil, which releases arsenic more readily than clay. Both explanations are published and neither has been shown to be the whole of it. Cooking is the other lever. Rinse the rice, boil it in a high ratio of water and pour the water off. The bran also carries phytic acid, so brown rice, when it is the choice, is bought organic and soaked overnight before cooking.",
+    "kristy_take": "Take the white basmati from California. Rinse it, boil it in plenty of water and pour the water off.",
+    "buying_tips": [
+      "Arsenic collects in the bran, so brown rice carries more than white.",
+      "Rinse it, boil it in plenty of water and pour the water off.",
+      "Basmati and sushi rice test lowest. Plain long-grain and parboiled test highest.",
+      "California, India and Pakistan on the bag run lower than Arkansas, Louisiana, Mississippi, Missouri or Texas.",
+      "Choose certified organic rice over conventional.",
+      "Vary grains, such as oats, millet and barley, so rice isn’t every meal."
+    ],
+    "watch_out": [
+      "Brown rice keeps the bran, and the bran carries both the arsenic and phytic acid. If you buy brown, buy it organic and soak it overnight before cooking.",
+      "Plain white long-grain is only a small step below brown. The variety and the origin do more work than the color."
+    ],
+    "tier_note": "Origin and variety moving the arsenic number is measured; rinsing and boiling it off is kitchen practice.",
+    "science": "Rice takes up more inorganic arsenic than other grains, and the bran holds most of it. Brown carries more than white; variety and origin matter more than color. Rinsing, then boiling in plenty of water and pouring it off, brings the arsenic down. The bran also carries phytic acid, which an overnight soak reduces.",
+    "sources": [
+      "Healthy Babies Bright Futures, What’s in Your Family’s Rice?, 2025",
+      "Zavala and Duxbury on arsenic in US rice by growing region",
+      "Chris Kresser, Arsenic in Rice: How Concerned Should You Be?",
+      "Weston A. Price Foundation, Be Kind to Grains",
+      "Weston A. Price Foundation, Living with Phytic Acid",
+      "Weston A. Price Foundation, Shopping Guide (Best/Good/Avoid tiers)"
+    ]
+  },
+  "oats_steelcut_rolled_instant": {
+    "decision": "Plain organic oats, soaked overnight, then cooked.",
+    "short_answer": "Same grain, three ways: steel-cut is least processed, rolled is steamed and flattened, instant is pre-cooked and often pre-sweetened. Buy plain organic oats in any form. Soak them overnight with a little yogurt, whey or cider vinegar, then cook them.",
+    "detail": "Steel-cut are the least processed, chewy and slow to cook. Rolled or old-fashioned are steamed and flattened. Instant are pre-cooked and often come pre-sweetened, and the flavored packets are mostly added sugar. The traditional step is the soak. Oats go into warm water overnight with a spoonful of yogurt, whey or apple cider vinegar, which reduces their phytic acid, and get cooked in the morning. Many traditional cooks toasted the oats in butter or ghee first for flavor. Conventional oats may be sprayed with glyphosate shortly before harvest to dry the crop, and organic farming does not allow glyphosate.",
+    "kristy_take": "A bag of plain organic oats. Soak them the night before and cook them in the morning. Sweeten with fruit; the flavored packets are candy with an oat garnish.",
+    "cart_pick": "Rolled or steel-cut oats",
+    "buying_tips": [
+      "Same grain in every form; the flavored packets are where the sugar is.",
+      "Choose certified organic oats; conventional oats may be sprayed with glyphosate before harvest.",
+      "Plain oats in any form; steel-cut if you like chew and have time.",
+      "Soak them overnight in warm water with a spoonful of yogurt, whey or cider vinegar, then cook.",
+      "Sprouted oats come with the soaking step already done.",
+      "Skip flavored instant packets. Check the sugar on the label."
+    ],
+    "watch_out": [
+      "Soaked oats still need cooking. The soak is the first step, and cooking is the second.",
+      "Flavored instant packets are pre-cooked and usually pre-sweetened."
+    ],
+    "science": "Steel-cut, rolled and instant are the same grain, cut and cooked differently. Oats carry phytic acid and enzyme inhibitors. An overnight soak in warm water with a little yogurt, whey or vinegar reduces the phytic acid. The oats are then cooked. Sprouted oats have had that step done. Flavored instant packets are mostly added sugar.",
+    "sources": [
+      {"name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest", "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"},
+      {"name": "FoodPrint: Glyphosate Residue in Food", "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"},
+      "Weston A. Price Foundation, How to Make Oatmeal Healthier",
+      "Weston A. Price Foundation, Living with Phytic Acid",
+      "Weston A. Price Foundation, Shopping Guide (Best/Good/Avoid tiers)"
+    ]
+  },
+  "nuts_raw_vs_roasted": {},
+  "honey_adulteration": {
+    "decision": "Raw unfiltered honey from a named local producer.",
+    "why": "Raw honey keeps its enzymes, and heating can compromise them. It is still a sweetener, just a real and old one.",
+    "short_answer": "Look for raw honey, ideally unfiltered, from a local producer you can name, with a label that reads only ‘honey’. Skip heated honey. Crystallized honey is normal. It is still a sugar, a sweetener to use with intention.",
+    "detail": "Raw honey has not been heated, so it keeps its enzymes, and unfiltered honey keeps more of what came from the hive. Heating does not spoil honey as a food, but the enzymes may be compromised. Commercial honey is often blended, and some has corn syrup added. A local producer you can name, and can ask whether the honey was heated or filtered, is the reliable route. Crystallizing is what raw honey does over time. Being an old, traditional food is a fair reason to prefer real honey. Tradition speaks to it being a real food, and it is still sugar.",
+    "kristy_take": "Local raw honey from someone you can name. Use it because you like it; it is still sugar, just a real, old one.",
+    "buying_tips": [
+      "Commercial honey is often blended, and some has corn syrup added.",
+      "Ingredient list should read ‘honey’ and nothing else.",
+      "Look for raw, preferably unfiltered, from a local producer you can name.",
+      "Ask the seller whether it was heated or filtered. Crystallized honey is normal.",
+      "It’s still a sweetener. Use it with intention."
+    ],
+    "watch_out": [
+      "Raw honey is not for infants.",
+      "“Raw” with no named producer is frequently blended and filtered. The word is unregulated.",
+      "“Pure honey” is a marketing word with little enforcement. Traceability is the real check."
+    ],
+    "science": "Raw honey has not been heated, so its enzymes are intact; heating can compromise them. Unfiltered honey keeps more of what came from the hive. Commercial honey is often blended, and some has corn syrup added. Crystallizing over time is normal for raw honey. It is still sugar, a real and old sweetener.",
+    "pick_steps": [
+      "Read for one ingredient: honey, and nothing else.",
+      "Pick raw, preferably unfiltered, from a local producer you can name.",
+      "Ask whether it was heated; ‘raw’ with no named producer is often blended."
+    ],
+    "labels_decoded": [
+      {"term": "Raw honey", "meaning": "Not heated, so the enzymes are intact. Closest to the hive."},
+      {"term": "Pure honey", "meaning": "A marketing word with little enforcement. Traceability matters more."}
+    ],
+    "sources": [
+      "Weston A. Price Foundation, Shopping Guide (Best/Good/Avoid tiers): raw honey, preferably unfiltered, under Best; heated honey under Avoid; raw honey not for babies",
+      "Weston A. Price Foundation, FAQ: Miscellaneous Food Questions (raw honey and heating)",
+      "Chemistry World “The honey fraud problem” https://www.chemistryworld.com/features/the-honey-fraud-problem/4020255.article (low-cost sugar syrups used to dilute or replace honey)"
+    ]
+  },
+  "beans_dried_vs_canned": {},
+  "flour_basics": {
+    "decision": "Organic sprouted flour, or fresh-ground whole grain, soaked.",
+    "why": "Whole grain flour keeps the bran and germ, and soaking or sprouting is how those were traditionally made digestible.",
+    "short_answer": "Freshly ground organic whole grain flour, soaked before baking, is the top rung. Organic sprouted flour is next, with the soaking step done. Unbleached white is a limited use. Skip bleached white flour, and whole grain flour used without soaking.",
+    "detail": "Refining strips the bran and germ and leaves the starchy endosperm, which is what makes white flour pale and shelf-stable. Whole grain flour keeps them, along with the phytic acid in the bran. Soaking the flour overnight with a little acid, or buying flour made from sprouted grain, is the traditional answer. The germ also carries oil, and milled flour stored for long periods, particularly in open bins, turns rancid. Fresh-ground from a small mill, bought in small amounts and kept cold, is the way around that. On white flour, the label must bear the word “Bleached” when a bleaching ingredient was used. Bromated flour has potassium bromate added. Enriched means B vitamins and iron were added back after refining took them out.",
+    "kristy_take": "Fresh-ground or sprouted, organic, and soaked when it is not sprouted. Keep whole grain flour cold. The germ is still in it, and that oil turns.",
+    "cart_pick": "Sprouted whole wheat flour",
+    "buying_tips": [
+      "Whole grain flour keeps the bran and germ; soak it, or buy it sprouted.",
+      "Look for organic sprouted flour, or fresh-ground from a small mill.",
+      "Soak whole grain flour overnight with a little yogurt, whey or vinegar before baking.",
+      "On white flour, read for “unbleached”, and pass on “bromated”.",
+      "Whole grain flour carries the oil in the germ. Buy small and keep it cold.",
+      "Choose certified organic wheat flour over conventional. Conventional wheat may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic wheat."
+    ],
+    "watch_out": [
+      "Milled flour turns rancid when stored for long periods, particularly in open bins. Fresh-ground keeps only days unless it is kept cold.",
+      "Bleached white flour and soy flour are the low rung."
+    ],
+    "tier_note": "Bleached, bromated, enriched and whole wheat are defined label terms, and the germ’s oil turning is what fat does.",
+    "science": "Refining strips the bran and germ; enriched means B vitamins and iron added back. Whole grain flour keeps the bran, with its phytic acid, and the germ, with its oil. Soaking with a little acid, or sprouting the grain first, reduces the phytic acid. Milled flour stored long, particularly in open bins, turns rancid. Bleached flour must say “Bleached” on the label.",
+    "pick_steps": [
+      "Pick organic sprouted flour, or fresh-ground whole grain from a small mill.",
+      "Soak whole grain flour overnight before use unless it is sprouted.",
+      "On white flour, read for “unbleached”, and pass on “bromated”."
+    ],
+    "labels_decoded": [
+      {"term": "Sprouted flour", "meaning": "Milled from grain that was sprouted and dried first."},
+      {"term": "Enriched", "meaning": "B vitamins and iron added back after refining. A defined standard."},
+      {"term": "Bleached", "meaning": "Treated with a whitening and maturing agent."},
+      {"term": "Unbleached", "meaning": "Aged with air rather than chemically treated."},
+      {"term": "Whole wheat", "meaning": "Bran, germ and endosperm intact. A much shorter shelf life."},
+      {"term": "Bromated", "meaning": "Potassium bromate added, at no more than 50 parts per million."}
+    ],
+    "sources": [
+      "Weston A. Price Foundation, Shopping Guide (Best/Good/Avoid tiers)",
+      "Weston A. Price Foundation, Be Kind to Grains",
+      "Weston A. Price Foundation, Sprouting: The Secret to Digestible Grains",
+      "Weston A. Price Foundation, Living with Phytic Acid",
+      "Weston A. Price Foundation, Wisely Stocked Kitchen",
+      "21 CFR 137, flour standards of identity (label meaning of enriched, bleached, bromated and whole wheat)",
+      {"name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest", "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"},
+      {"name": "FoodPrint: Glyphosate Residue in Food", "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"}
+    ]
+  },
+  "bulk_bins_buying": {
+    "decision": "Beans, lentils and whole spices from a busy bin.",
+    "why": "Turnover is everything, and oil in nuts and flour goes rancid in an open bin.",
+    "short_answer": "Dried beans, lentils and whole spices keep well by the scoop when the bin turns over. Nuts, seeds, flours and hot-cereal grains are better bought sealed. Their oil goes rancid in an open bin. Smell what you scoop.",
+    "detail": "Bulk strips out the packaging and the brand. Spices are the extreme case, where a scoop from a bin is usually fresher than a jar because the bin moves. The risk sits with the fatty items. Milled flour stored for long periods in open bins turns rancid, and nuts and seeds are best bought fresh in sealed packages rather than from bins. Rancidity announces itself: rancid nuts and seeds smell like old paint or crayons and taste sharp and bitter. Bring your own jars where the store allows it, and note the tare weight.",
+    "kristy_take": "Bulk is unbeatable on beans and spices. Nuts, seeds and flour come in a sealed bag.",
+    "buying_tips": [
+      "A full, busy bin turns over; oil in nuts and flour goes rancid in an open one.",
+      "Best by the scoop: dried beans, lentils and especially whole spices.",
+      "Buy nuts, seeds and flour in sealed packages.",
+      "Full busy bins turn over. A dusty half-empty one does not.",
+      "Smell it before it goes in the cart. Rancid reads as paint, crayon or bitter.",
+      "Buy what you will use in a month, and store it airtight and dark."
+    ],
+    "watch_out": [
+      "The scoop, the bin handle and the scale are touched by every shopper before you. The container you bring is not the exposed part.",
+      "Bring-your-own-container rules vary by store."
+    ],
+    "tier_note": "Rancidity in an open bin is real, and which bins to trust is a shopping standard.",
+    "science": "Dry beans, lentils and whole spices keep well in bulk. The risk sits with the fatty items, whose oil goes rancid; milled flour stored long in open bins turns. The scoop, bin handle and scale are touched by every shopper; the container you bring is not the exposed part.",
+    "pick_steps": [
+      "Pick full, busy bins for beans, lentils and spices.",
+      "Buy nuts, seeds and flour in sealed packages.",
+      "Smell before it goes in the cart: paint, crayon or bitter means rancid."
+    ],
+    "sources": [
+      "Weston A. Price Foundation, Shopping Guide (Best/Good/Avoid tiers): raw nuts and seeds in sealed packages, not from bins",
+      "Weston A. Price Foundation, Be Kind to Grains (rancidity in milled flour stored in open bins)",
+      "The Counter, bulk-bin hygiene reporting https://thecounter.org/bulk-bins-grocery-stores-bring-your-own-container-covid-19/ (the real touchpoint is customers’ repeated touching of the same equipment, gravity bin and scoop bin handles and scales, rather than the container a shopper brings)"
+    ]
+  },
+  "whole_spices": {},
+  "rancidity_check": {
+    "cart_pick": "Small dark bottle of oil",
+    "watch_out": [
+      "Rancid oil smells like varnish, putty, old walnuts or crayons. Rancidity is more obvious in the mouth than in the nose. A tiny sip settles a smell you are unsure of.",
+      "Heat, air, light and time are what turn it. A cool dark place, tightly capped, and use it up promptly.",
+      "Heating oil past its limit oxidizes it further. Liquid seed oils are the most fragile; butter, ghee, tallow and coconut oil hold up to heat."
+    ],
+    "sources": [
+      "Peer-reviewed literature on lipid oxidation in foods",
+      "UC Davis Olive Center sensory standards for olive oil defects",
+      "America’s Test Kitchen “How to Tell If Olive Oil Is Rancid” https://www.americastestkitchen.com/articles/1224-how-to-tell-if-olive-oil-is-rancid (heat, air, light, and time will wreck the best olive oil; rancid oil has a distinctive smell like varnish, putty, old walnuts, or crayons, and rancidity is more obvious in the mouth, so take a tiny sip when in doubt; store cool, dark, tightly capped, and use it up promptly)",
+      "Weston A. Price Foundation, The Big Fat Surprise: Toxic Heated Oils",
+      "Weston A. Price Foundation, The Skinny on Fats"
+    ]
+  },
+  "olive_oil_grades": {},
+  "nut_butter_ingredients": {},
+  "grains_beyond_rice": {
+    "decision": "Organic whole grains, soaked overnight before cooking.",
+    "why": "Hulled grains keep their bran, and soaking is the traditional step that makes them digestible.",
+    "detail": "Hulled barley is minimally processed to remove only the tough inedible outer hull. Pearl barley has been polished to remove some or all of the outer bran layer along with the hull. On barley and farro, “pearled” marks bran removed and “whole” or “hulled” marks bran kept. The bran carries phytic acid, so whole grains are soaked overnight in warm water with a little acid before cooking, or bought sprouted. Store-bought bulgur is parboiled and dried rather than soaked or sprouted, and quick-cooking grains skip the soak too. Variety is worth it on its own terms, since rotating grains means no single crop is the base of every meal. Buckwheat is not wheat at all. Millet and sorghum carry no gluten. The bitter coating on quinoa’s hull is called saponin.",
+    "kristy_take": "Whole or hulled, organic, and soaked the night before. The bag says which grain kept its bran.",
+    "cart_pick": "Whole or hulled grain",
+    "buying_tips": [
+      "Pearled grains have some or all of the bran polished off; hulled loses only the hull.",
+      "Choose certified organic grains over conventional.",
+      "Soak whole grains overnight in warm water with a little yogurt, whey or vinegar.",
+      "Buckwheat, millet, sorghum and quinoa carry no gluten. Barley, farro and bulgur do.",
+      "Cook a big batch. They keep several days and reheat straight from cold.",
+      "Rotate in farro, millet or sorghum so rice isn’t every meal."
+    ],
+    "watch_out": [
+      "Quinoa carries a bitter natural coating on its outer hull. Rinse it before cooking. That is what takes the bitterness off.",
+      "Store-bought bulgur and quick-cooking grains have not been soaked or sprouted.",
+      "Conventional wheat and barley may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate."
+    ],
+    "science": "Hulled barley loses only its inedible outer hull; pearl barley is polished to remove some or all of the bran. Whole or hulled grains keep the bran, and with it phytic acid. An overnight soak with a little acid reduces it. Sprouted grains have had that step done. Quinoa carries a bitter natural coating on its hull, so rinse it before cooking.",
+    "pick_steps": [
+      "Read the bag for “hulled” or “whole”; “pearled” means bran was polished off.",
+      "Pick certified organic, and soak overnight before cooking.",
+      "No gluten in buckwheat, millet, sorghum or quinoa; barley, farro and bulgur carry it."
+    ],
+    "sources": [
+      "Weston A. Price Foundation, Shopping Guide (Best/Good/Avoid tiers)",
+      "Weston A. Price Foundation, Be Kind to Grains",
+      "Weston A. Price Foundation, Living with Phytic Acid",
+      "Weston A. Price Foundation, Sprouting: The Secret to Digestible Grains",
+      "Whole Grains Council grain reference",
+      "Jerry James Stone “Why You Should Always Rinse Quinoa Before Cooking” https://www.jerryjamesstone.com/2019/06/17/why-you-should-always-rinse-quinoa-before-cooking/ (quinoa’s outer hull is coated with saponin, a bitter natural coating, and rinsing before cooking is how it comes off)",
+      "https://wholegrainscouncil.org/whole-grains-101/whole-grains-101-orphan-pages-found/types-barley",
+      {"name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest", "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"},
+      {"name": "FoodPrint: Glyphosate residue in food", "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"}
+    ]
+  },
+  "bottled_water_buying": {},
+  "sandwich_bread": {
+    "decision": "Sourdough or sprouted whole wheat bread, organic, short list.",
+    "short_answer": "The top loaf is sourdough, soaked or sprouted, from organic whole grain flour, with no added gluten, soy or bran. A loaf called “wheat” needs an ingredient check; enriched grain and whole grain are different descriptions.",
+    "detail": "The top rung is sourdough, soaked or sprouted bread made from freshly ground organic whole grain flour, without additives such as added gluten, soy, bran or partially hydrogenated oils. Organic whole grain bread without those additives is the next rung. Most commercial bread is built on white flour with added gluten, soy and dough conditioners, and some adds ascorbic acid. The US whole wheat bread standard excludes ordinary flour, bromated flour and phosphated flour from the dough. A Basic Whole Grain Stamp may appear on a product containing more refined grain than whole grain. Potassium bromate and azodicarbonamide (ADA) are dough conditioners, so read the list for them.",
+    "kristy_take": "Sourdough or sprouted, organic whole grain, and a list you could bake from. A loaf called “wheat” may still use refined flour, so turn it over.",
+    "cart_pick": "Sourdough or sprouted whole wheat bread",
+    "buying_tips": [
+      "A loaf called just “wheat” may be refined; whole wheat keeps the bran and germ.",
+      "Look for true sourdough or sprouted whole grain bread, organic.",
+      "Look for a short list: whole grain flour, water, salt and a starter or yeast.",
+      "Skip a list with added gluten, soy, bran or ascorbic acid.",
+      "Check which stamp is shown: 100%, 50%+, or Basic have different grain requirements.",
+      "Choose certified organic whole wheat bread over conventional. Conventional wheat may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic wheat.",
+      "Skip a loaf listing soybean, canola or other seed oil; look for olive oil or butter, or no added fat.",
+      "Skip a list naming “bleached” or “enriched flour”; look for unbleached whole wheat."
+    ],
+    "watch_out": [
+      "“Wheat” or “enriched” alone does not establish that the grain is whole.",
+      "A Basic Whole Grain Stamp allows more refined grain than whole grain.",
+      "Added gluten, soy flour, bran and ascorbic acid mark a commercial loaf."
+    ],
+    "tier_note": "The flour names are documented label distinctions; sourdough and sprouting are the traditional preparation.",
+    "pick_steps": [
+      "Look for true sourdough or sprouted whole grain, organic.",
+      "Check the ingredients for whole wheat flour, not just “wheat” or “enriched”.",
+      "Pass on added gluten, soy, bran or ascorbic acid."
+    ],
+    "sources": [
+      "Weston A. Price Foundation, Shopping Guide (Best/Good/Avoid tiers), bread",
+      "Weston A. Price Foundation, Be Kind to Grains",
+      "21 CFR 136.180, whole wheat bread standard (label meaning)",
+      "21 CFR 137.200, whole wheat flour standard (label meaning)",
+      "https://wholegrainscouncil.org/whole-grains-101/whats-whole-grain-refined-grain/existing-standards-whole-grains",
+      "https://wholegrainscouncil.org/whole-grain-stamp",
+      {"name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest", "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"},
+      {"name": "FoodPrint: Glyphosate Residue in Food", "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"},
+      {"name": "Chris Kresser: How industrial seed oils are making us sick", "url": "https://chriskresser.com/how-industrial-seed-oils-are-making-us-sick/"},
+      "https://www.westonaprice.org/health-topics/vegetarianism-and-plant-foods/living-with-phytic-acid/",
+      "https://www.healthline.com/nutrition/bleached-vs-unbleached-flour"
+    ]
+  },
+  "sourdough": {
+    "detail": "A true sourdough rises on its starter alone. If yeast is on the label, it is not a true sourdough, and the word “organic” or “sourdough” on the front still calls for reading the list. The long, warm, acidic fermentation of a starter reduces the phytic acid in the flour, and eight hours of sourdough fermentation has been measured to remove nearly all of it in whole wheat bread. The fermentation review describes acid formation and leavening by microbes. Culture or starter may not be listed separately, so the baker can clarify the process.",
+    "kristy_take": "That sourness can also come from added acids. If yeast is on the list, the loaf is not a true sourdough.",
+    "buying_tips": [
+      "Some loaves called sourdough use commercial yeast and added acids for the sour taste.",
+      "Look for whole wheat flour as the first ingredient, ahead of any white flour.",
+      "Look for flour, water, salt, and a culture or starter, with no yeast.",
+      "Ask the baker about the starter when the label does not list it separately.",
+      "Read for added vinegar or acetic acid; ask the baker about fermentation rather than infer it from sour flavor."
+    ],
+    "watch_out": [
+      "The word sourdough alone does not establish traditional fermentation. Yeast on the list means it is not a true sourdough.",
+      "Wheat sourdough still contains gluten."
+    ],
+    "tier_note": "A starter and no yeast on the list marks the long fermentation that true sourdough is.",
+    "science": "Traditional sourdough rises on a starter, a flour-and-water culture of wild yeasts and bacteria. Those microbes form acid and leaven the dough. The long acidic fermentation reduces the phytic acid in the flour. Some bread labeled sourdough uses commercial yeast and added acids for sour flavor. Yeast on the list rules it out. Wheat sourdough still contains gluten.",
+    "sources": [
+      "Weston A. Price Foundation, Make Your Own Sourdough",
+      "Weston A. Price Foundation, Shopping Guide (Best/Good/Avoid tiers), bread",
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9524358/fullTextXML"
+    ]
+  },
+  "bagels": {
+    "decision": "Sourdough or sprouted whole wheat bagels, no added gluten.",
+    "why": "The best bread rung applies to bagels too: a starter or sprouted grain, organic whole grain flour, a short list.",
+    "detail": "The top bread rung is sourdough, soaked or sprouted, made from organic whole grain flour without added gluten, soy, bran or hydrogenated oils, and a bagel is a bread. A sourdough bagel rises on starter, flour and a fat such as coconut oil. Boiling dough before baking sets the outside and gives a bagel its chew, and baking soda in the bath promotes browning. Most commercial bagels are white flour, with sugar and added gluten.",
+    "kristy_take": "A sourdough or sprouted bagel with whole grain flour first. Ask the bakery what went into the dough, or read the bag.",
+    "cart_pick": "Sourdough or sprouted whole wheat bagels",
+    "buying_tips": [
+      "The boil sets the outside and gives a bagel its chew.",
+      "Look for a sourdough or sprouted bagel with whole grain flour named first.",
+      "Read the ingredient list on the bag, or ask the bakery for it.",
+      "Skip a list with added gluten, sugar or soy.",
+      "Skip bagels of “bleached” or “enriched flour”; whole grain flour should lead the list."
+    ],
+    "watch_out": [
+      "Most commercial bagels are white flour with sugar and added gluten.",
+      "Boiling and browning shape texture; the flour and starter set the rung."
+    ],
+    "tier_note": "The sourdough and sprouted rung comes from the traditional bread tiers; the boil is texture.",
+    "science": "A bagel is a bread, so the bread tiers apply: sourdough, soaked or sprouted organic whole grain on top. Boiling before baking sets a bagel’s exterior and gives its characteristic chew. Baking soda in the bath changes its alkalinity and promotes browning. Boiling and browning are processing and texture facts.",
+    "pick_steps": [
+      "Look for a sourdough or sprouted bagel, whole grain flour first.",
+      "Pass on added gluten, sugar or soy.",
+      "Dough conditioners: see Sandwich bread."
+    ],
+    "sources": [
+      "Weston A. Price Foundation, Shopping Guide (Best/Good/Avoid tiers), bread",
+      "Weston A. Price Foundation, Sourdough Bagels",
+      "https://www.tastingtable.com/1606040/why-boil-bagels-before-baking/",
+      "https://www.tastingtable.com/1412083/baking-soda-bath-golden-homemade-bagels/",
+      "https://www.healthline.com/nutrition/bleached-vs-unbleached-flour"
+    ]
+  },
+  "tortillas": {},
+  "breakfast_cereal": {
+    "decision": "Soaked, cooked oats; if boxed, organic soaked granola.",
+    "why": "Cold cereal is made by extrusion, high heat and pressure. Soaked, cooked porridge is the traditional breakfast grain.",
+    "short_answer": "Boxed cold cereal is extruded: a grain slurry forced through a small hole at high heat and pressure. Organic boxes are made the same way. Soaked, cooked porridge is the top rung; organic soaked granola is the boxed fallback.",
+    "detail": "Modern cold breakfast cereals are made by extrusion. Grains are mixed with water into a slurry and forced out of a small hole under very high temperature and pressure; the shape of the die makes the flake, the O or the puff. Health food store cereals are usually made the same way, often with organic grains. The traditional breakfast grain is a porridge: whole grains soaked overnight and cooked, served with butter and cream. Unsoaked granola sits with extruded cereal on the low rung, and organic soaked granola is the boxed option. For oat cereal, certified organic skips glyphosate sprayed before harvest.",
+    "kristy_take": "A pot of soaked oats with butter and cream does the job the box claims to. If it has to be boxed, organic soaked granola.",
+    "cart_pick": "Rolled oats to soak",
+    "buying_tips": [
+      "Boxed flakes, puffs and O’s are extruded; soaked, cooked oats are the traditional bowl.",
+      "Look for organic oats to soak overnight and cook in the morning.",
+      "Boxed, look for organic granola that says the grain was soaked or sprouted.",
+      "Read for sugar under other names: dextrose, corn syrup, evaporated cane juice.",
+      "“Made with whole grains” or “multigrain” can still be mostly refined grain.",
+      "For oat cereal or granola, choose certified organic over conventional. Conventional oats may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic oats."
+    ],
+    "watch_out": [
+      "Organic extruded cereal goes through the same process as the rest of the aisle.",
+      "Unsoaked granola sits with extruded cereal on the low rung.",
+      "Honey-sweetened granola still has added sugar."
+    ],
+    "tier_note": "Extrusion is how cold cereal is made; the soaked porridge rung comes from the traditional grain tiers.",
+    "science": "Cold breakfast cereals are made by extrusion: a grain slurry forced through a small die at high temperature and pressure. Health food store cereals usually use the same process with organic grains. Soaking whole grains overnight and cooking them is the traditional preparation. Honey and syrups in granola are still added sugar.",
+    "pick_steps": [
+      "Pick oats to soak and cook over a boxed cereal.",
+      "Boxed, look for organic soaked or sprouted granola.",
+      "Read for sugar under other names, honey and syrups included."
+    ],
+    "labels_decoded": [
+      {"term": "100% Whole Grain Stamp", "meaning": "All grain ingredients are whole grain, with a minimum amount per serving."},
+      {"term": "Sprouted or soaked granola", "meaning": "Grain prepared before baking; the boxed option on the higher rung."}
+    ],
+    "sources": [
+      "Weston A. Price Foundation, Be Kind to Grains (extrusion; soaked and cooked porridges)",
+      "Weston A. Price Foundation, Shopping Guide (Best/Good/Avoid tiers), grains",
+      "Weston A. Price Foundation, Homemade Granola",
+      "https://wholegrainscouncil.org/whole-grain-stamp",
+      {"name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest", "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"},
+      {"name": "FoodPrint: Glyphosate Residue in Food", "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"}
+    ]
+  },
+  "pasta_dry": {
+    "decision": "Organic whole grain, buckwheat or legume pasta.",
+    "why": "White pasta is the low rung. Organic whole grain, buckwheat, corn, brown rice and legume pastas are the better box.",
+    "short_answer": "Pick organic whole grain, buckwheat, corn, brown rice or legume pasta. White flour pasta and quinoa pasta are the low rung. The ingredient list shows which flour is in the box.",
+    "detail": "On the traditional tiers, organic whole grain, buckwheat, corn, brown rice and legume pastas are the good rung, and white flour pasta and quinoa pasta are on the avoid list. US macaroni-product standards allow semolina, durum flour, farina or flour with water, so the list names which one is in the box. Enriched pasta contains specified vitamins and iron under a separate standard; enrichment does not establish whole grain. Bronze-cut describes the die and the resulting rough surface, which holds sauce.",
+    "kristy_take": "Organic whole grain or buckwheat pasta, and read the flour. Plain white semolina is the low rung, organic or not.",
+    "cart_pick": "Whole grain or buckwheat pasta",
+    "buying_tips": [
+      "The flour decides it: whole grain, buckwheat or legume over white semolina.",
+      "Look for organic whole grain, buckwheat, corn, brown rice or legume pasta.",
+      "Read the ingredient list for the flour; “durum” alone is white semolina.",
+      "Read enrichment separately from the flour name and any bronze-cut claim.",
+      "Choose certified organic wheat pasta over conventional. Conventional wheat may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic wheat."
+    ],
+    "watch_out": [
+      "White flour pasta and quinoa pasta are the low rung.",
+      "“Enriched” describes added nutrients, not whole-grain content."
+    ],
+    "tier_note": "The flour is regulated label information; the whole grain rung comes from the traditional grain tiers.",
+    "science": "US standards allow dry pasta from semolina, durum flour, farina or flour, with water and optional ingredients. The ingredient list shows which one is in the box. Enriched pasta carries specified vitamins and iron, which does not make it whole grain. Bronze-cut describes the die and the rough surface it leaves, which holds sauce.",
+    "pick_steps": [
+      "Look for organic whole grain, buckwheat, corn, brown rice or legume pasta.",
+      "Read enrichment on its own: it adds nutrients, not whole grain.",
+      "Pass on white flour and quinoa pasta."
+    ],
+    "sources": [
+      "Weston A. Price Foundation, Shopping Guide (Best/Good/Avoid tiers), grains and pasta",
+      "Weston A. Price Foundation, The Mediterranean Diet: Pasta or Pastrami?",
+      "21 CFR 139.110, macaroni products standard (label meaning)",
+      "21 CFR 139.115, enriched macaroni products standard (label meaning)",
+      "https://wholegrainscouncil.org/whole-grains-101/whats-whole-grain-refined-grain/existing-standards-whole-grains",
+      "https://scienceinsights.org/why-is-bronze-cut-pasta-better-than-regular-pasta/",
+      {"name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest", "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"},
+      {"name": "FoodPrint: Glyphosate Residue in Food", "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"}
+    ]
+  },
+  "coffee_beans": {
+    "decision": "Occasional; organic whole bean from a mold-testing roaster.",
+    "why": "Coffee beans can carry mold from hot, humid growing and storage. A roaster that tests for it says so.",
+    "short_answer": "Coffee is an occasional item. If you buy it, pick organic whole beans in a sealed bag. The roaster should state it tests for mold. Beans can carry mold toxins from hot, humid growing, storage and processing.",
+    "detail": "Traditional food guides keep coffee off the staple list. When it is bought, coffee beans have been found to carry mycotoxins, likely from the hot, humid conditions they are grown, stored and processed in, and some roasters verify their beans by testing. Whole bean keeps longer than ground. Coffee studies document changes in aroma and chemical composition during storage, including oxidation tied to oxygen exposure, so a sealed bag kept closed and away from heat holds it best.",
+    "kristy_take": "An occasional cup. When you buy it, organic whole beans from a roaster that names its mold testing.",
+    "cart_pick": "Whole bean coffee, mold-tested",
+    "buying_tips": [
+      "Coffee beans can carry mold from hot, humid growing and storage.",
+      "Look for organic whole beans from a roaster that states it tests for mold.",
+      "Check that the packaging is sealed.",
+      "Keep the sealed coffee away from heat; the storage studies describe heat-related changes."
+    ],
+    "watch_out": [
+      "Coffee sits off the staple list in traditional food guides. Keep it occasional.",
+      "No universal number of fresh days is established for all retail bags."
+    ],
+    "tier_note": "Mold testing is the roaster’s claim to check, and keeping coffee occasional is the traditional stance.",
+    "science": "Coffee beans have been found to carry mycotoxins, likely from hot, humid growing, storage and processing. Coffee studies document changes in aroma and chemical composition during storage, including oxidation associated with oxygen exposure. Packaging and storage conditions affect that chemistry. No universal number of fresh days is established for all retail bags.",
+    "pick_steps": [
+      "Keep it occasional; it is not a staple.",
+      "Pick organic whole beans from a roaster that states it tests for mold.",
+      "Pick a bag with an intact seal, valve or not."
+    ],
+    "sources": [
+      "Weston A. Price Foundation, Shopping Guide (Best/Good/Avoid tiers), beverages",
+      "Chris Kresser, Food for Mold Illness (coffee beans and mycotoxins; roasters that verify beans by testing)",
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11243642/fullTextXML",
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12607991/fullTextXML"
+    ]
+  },
+  "sprouted_grain_bread": {},
+  "sprouted_grains": {},
+  "specialty_flours": {
+    "decision": "Organic whole grain flour, fresh-ground or sprouted, soaked before use.",
+    "kristy_take": "The word “whole” on the bag carries the meaning. Fresh-ground or sprouted, organic, and soaked when it is not sprouted.",
+    "buying_tips": [
+      "A stone mill’s flour can still have its bran sifted out; “whole” is what settles it.",
+      "Look for fresh-ground, organic whole flour, or organic sprouted flour.",
+      "Look for “whole” in the flour’s name or first ingredient.",
+      "Soak whole grain flour overnight with a little acid before baking.",
+      "Check the fat line: about 2.5% for whole wheat flour, under 1% for white.",
+      "Read almond flour as usually skinned, and almond meal as either."
+    ],
+    "tier_note": "Whole wheat flour has a federal definition; fresh-ground, sprouted and soaked come from the traditional flour tiers.",
+    "sources": [
+      "Weston A. Price Foundation, Shopping Guide (Best/Good/Avoid tiers), flour",
+      "Weston A. Price Foundation, Wisely Stocked Kitchen",
+      "https://wholegrainscouncil.org/print/blog/2017/01/whole-grain-flour-sifting-true-false",
+      "https://www.npr.org/2013/03/01/173242994/seeking-a-grain-of-truth-in-whole-grain-labels",
+      "https://en.wikipedia.org/wiki/Spelt",
+      "https://en.wikipedia.org/wiki/Einkorn_wheat",
+      "https://en.wikipedia.org/wiki/Almond_flour",
+      "https://www.healthline.com/nutrition/bleached-vs-unbleached-flour"
+    ]
+  },
+  "gluten_free_bread": {
+    "decision": "Gluten-free sourdough or sprouted bread, short list, fewest gums.",
+    "detail": "All four claim wordings mean the food has less than 20 ppm (parts per million) gluten under one federal labeling rule. Wheat starch may appear only if the food stays under 20 ppm. The claim is voluntary. Bakers replace gluten with a blend of flours and starches, such as rice, potato or tapioca. A gum binder, usually xanthan gum or HPMC, mimics some of the stretch gluten gives. Gluten-free does not mean unrefined. Many gluten-free breads and mixes are mostly starch, with added sugar and gums. Grains were traditionally prepared by soaking, sprouting or leavening with wild yeast, and gluten-free sourdough and sprouted loaves follow that.",
+    "kristy_take": "The gluten-free claim covers gluten alone. Look for a sourdough or sprouted loaf with whole flours named, and the fewest gums and sugars.",
+    "buying_tips": [
+      "Every gluten-free wording meets one federal limit; a gum gives back some stretch.",
+      "Look for a gluten-free sourdough or sprouted loaf with whole flours named first.",
+      "Look for a single gum binder, such as xanthan gum, not two or more.",
+      "Read which flours and starches replace the wheat.",
+      "Skip a list led by starches with added sugar."
+    ],
+    "watch_out": [
+      "Celiac disease or a gluten concern? Ask a doctor which foods fit.",
+      "“Gluten-free” describes gluten content only. Many gluten-free loaves are refined starch with added sugar."
+    ],
+    "pick_steps": [
+      "Find the claim: “gluten-free”, “no gluten”, “free of gluten” or “without gluten”.",
+      "Look for a sourdough or sprouted loaf with whole flours first.",
+      "Pick the list with the fewest gums and no added sugar."
+    ],
+    "sources": [
+      "21 CFR 101.91, gluten-free labeling rule (label meaning)",
+      "Weston A. Price Foundation, To Gluten or Not to Gluten",
+      "Weston A. Price Foundation, Shopping Guide (Best/Good/Avoid tiers), bread",
+      "https://research.ucc.ie/en/publications/gluten-free-breads/"
+    ]
+  },
+  "buns_rolls": {
+    "decision": "Sourdough or sprouted whole wheat buns, no added sugar.",
+    "short_answer": "Sourdough or sprouted buns from organic whole grain are the top rung. Read the name on the bag. “Whole wheat” buns and rolls use whole wheat flour, no white flour. “Enriched buns” are made with enriched flour instead.",
+    "detail": "Buns and rolls are bread, so the bread tiers apply: sourdough, soaked or sprouted from organic whole grain flour on top, without added gluten, soy, bran or hydrogenated oils. One federal standard covers bread, rolls and buns. Under it, whole wheat buns, whole wheat rolls and graham buns are made from whole wheat flour, and no plain white flour is used. Enriched buns use enriched flour in place of some or all of the flour. A typical enriched hot dog bun lists enriched flour, water, yeast, sugar and soybean oil, a seed oil to skip.",
+    "kristy_take": "Sourdough or sprouted whole grain if the bakery has it. Otherwise “whole wheat” on the bag, which means whole wheat flour only.",
+    "cart_pick": "Sourdough or sprouted whole wheat buns",
+    "buying_tips": [
+      "Whole wheat buns use whole wheat flour with no white flour; enriched buns do not.",
+      "Look for sourdough or sprouted buns, organic whole grain flour first.",
+      "Look for a list with no sugar or soybean oil after the whole wheat flour.",
+      "Read the name on the bag for “whole wheat”.",
+      "Skip a list with added gluten, soy or ascorbic acid."
+    ],
+    "watch_out": [
+      "Enriched buns use enriched flour in place of whole wheat flour.",
+      "Skip a bun list naming potassium bromate or azodicarbonamide."
+    ],
+    "tier_note": "The bun names come from one federal standard; the sourdough and sprouted rung comes from the traditional bread tiers.",
+    "pick_steps": [
+      "Look for sourdough or sprouted, organic whole grain buns.",
+      "Read the name on the bag: “whole wheat” buns use no white flour.",
+      "“Enriched buns” mean enriched flour in place of whole wheat."
+    ],
+    "sources": [
+      "Weston A. Price Foundation, Shopping Guide (Best/Good/Avoid tiers), bread",
+      "21 CFR 136.110, bread, rolls and buns standard (label meaning)",
+      "21 CFR 136.180, whole wheat bread, rolls and buns (label meaning)",
+      "21 CFR 136.115, enriched bread, rolls and buns (label meaning)",
+      "https://smartlabel.syndigo.com/id/bdce1b9a-cc48-4c26-8003-92bf9073231d"
+    ]
+  },
+  "pastries_muffins": {
+    "decision": "Butter pastries and muffins, natural sweetener, whole grain flour.",
+    "short_answer": "Read the fat and the sweetener, or ask the baker. The top rung is butter or coconut oil, a natural sweetener and soaked or sprouted whole grain flour. Skip shortening, hydrogenated oil and refined sugar or corn syrup.",
+    "detail": "On the traditional tiers, the best muffins and baked goods use organic natural sweeteners, soaked or sprouted whole grain flour, and butter, coconut oil or another traditional fat. Most commercial ones use partially hydrogenated oils and refined sweeteners such as sugar, high fructose corn syrup or agave. Danish pastry is laminated, meaning butter is folded into a yeast dough in thin layers. Butter is the traditional fat; industrial production often uses other fats, such as hydrogenated sunflower oil. The American muffin is a quick bread, raised by baking soda instead of yeast.",
+    "kristy_take": "The fat and the sweetener are the read on a pastry. Butter and a natural sweetener are the traditional pair.",
+    "buying_tips": [
+      "Butter is Danish pastry’s traditional fat; factory-made often uses other fats.",
+      "Look for butter as the only fat, with no shortening or hydrogenated oil.",
+      "Look for a natural sweetener such as maple, honey or molasses.",
+      "Ask the baker which fat and sweetener go in.",
+      "Look for whole grain flour, soaked or sprouted where the baker does it.",
+      "Look for unbleached flour; skip a pastry list naming “bleached” flour."
+    ],
+    "watch_out": [
+      "Skip factory-made Danish pastry made with hydrogenated sunflower oil in place of butter.",
+      "Refined sugar, high fructose corn syrup and agave mark the commercial rung."
+    ],
+    "tier_note": "The fat and sweetener read comes from the traditional baked-goods tiers.",
+    "pick_steps": [
+      "Read the ingredients for butter by name, or ask the baker.",
+      "Read the sweetener: maple, honey or molasses over sugar or corn syrup.",
+      "On factory-made Danish, skip a list naming hydrogenated sunflower oil."
+    ],
+    "sources": [
+      "Weston A. Price Foundation, Shopping Guide (Best/Good/Avoid tiers), cookies, bars and muffins",
+      "Weston A. Price Foundation, Sugar flyer",
+      "https://en.wikipedia.org/wiki/Danish_pastry",
+      "https://en.wikipedia.org/wiki/Muffin",
+      "https://www.healthline.com/nutrition/bleached-vs-unbleached-flour"
+    ]
+  },
+  "muesli": {},
+  "bread_aisle": {},
+  "kombucha": {
+    "decision": "Plain raw kombucha in glass, from the refrigerated case.",
+    "short_answer": "Pick plain kombucha from the refrigerated case, in glass, brewed with organic tea. It is a fizzy, fermented, sweetened tea, often with fruit juice added. Read the Nutrition Facts for added sugars, and the label for alcohol.",
+    "detail": "Kombucha is sugared tea fermented by a culture of bacteria and yeast. The traditional brew uses organic black tea and sugar and is kept in glass in the refrigerator. After fermenting, it is bottled for a second fermentation in the bottle, or kept cold. Its alcohol is usually under 0.5%, but it rises with longer fermentation. At one-half of 1 percent alcohol or more, it falls under federal alcohol rules, with a health warning statement on the container. Some makers sell hard kombucha at over 5 percent alcohol.",
+    "kristy_take": "Plain, raw and cold, in glass. Kombucha keeps working in the bottle, and the label shows where it stands.",
+    "cart_pick": "Plain raw kombucha in glass",
+    "buying_tips": [
+      "Bottled kombucha can keep fermenting, and its alcohol can climb.",
+      "Look for plain kombucha in glass, brewed with organic black tea.",
+      "Pick bottles from the refrigerated case.",
+      "Read the Nutrition Facts for added sugars.",
+      "Look for an alcohol statement on the label.",
+      "Keep it cold once home."
+    ],
+    "watch_out": [
+      "Hard kombucha is an alcoholic drink, sold at over 5 percent alcohol.",
+      "Pregnant, nursing or on medication? Ask a doctor about the alcohol in kombucha.",
+      "Flavored kombucha often carries fruit juice. Plain is the traditional brew."
+    ],
+    "pick_steps": [
+      "Pick plain kombucha in glass from the refrigerated case.",
+      "Read the Nutrition Facts for added sugars.",
+      "Check for an alcohol statement; hard kombucha is over 5 percent alcohol."
+    ],
+    "sources": [
+      "Weston A. Price Foundation, Kombucha (organic black tea, glass, refrigerated)",
+      "Weston A. Price Foundation, Shopping Guide (Best/Good/Avoid tiers), beverages",
+      "Weston A. Price Foundation, Jun Tea",
+      "https://en.wikipedia.org/wiki/Kombucha",
+      "26 USC 5052, definition of beer at one-half of 1 percent alcohol (label meaning)"
+    ]
+  },
+  "sauerkraut": {},
+  "kimchi": {
+    "decision": "Unpasteurized kimchi from the cold case, no vinegar.",
+    "detail": "Kimchi is cabbage, usually napa, seasoned with red pepper powder, garlic, ginger and salt (the Codex standard). Fish sauce or salted seafood such as shrimp is often added. Traditional kimchi ferments a few days at room temperature, then moves to cold storage to age for weeks. The packed date shows how long it has fermented, from fresh to ripe to overripe. Ripe kimchi is sour and softer, with some crunch left. Overripe kimchi is intense and juicy, and best cooked into other dishes. Fermenting kimchi makes carbon dioxide gas, so a live jar can be fizzy. Pasteurized or heated kimchi, or a jar soured with vinegar, is no longer a live ferment.",
+    "buying_tips": [
+      "The packed date shows its stage: crisp and bright is fresh, softer is well fermented.",
+      "Pick raw kimchi from the cold case.",
+      "Read the list for cabbage, red pepper powder, garlic, ginger and salt.",
+      "Skip a list with vinegar, sugar or preservatives.",
+      "Read the ingredients for fish sauce or shrimp."
+    ],
+    "watch_out": [
+      "Labels do not always say fresh or well fermented.",
+      "Pasteurized or heated kimchi is no longer a live ferment.",
+      "Fish sauce or salted seafood is often in the seasoning."
+    ],
+    "pick_steps": [
+      "Pick raw kimchi from the cold case, with no vinegar.",
+      "Read the list for cabbage, red pepper, garlic, ginger, salt and any fish sauce.",
+      "Check the packed date; crisp, bright cabbage is fresh, softer kimchi is riper."
+    ],
+    "sources": [
+      "Nourished Kitchen, Kimchi Recipe (a few days warm, then cold storage to age)",
+      "Weston A. Price Foundation, Shopping Guide (Best/Good/Avoid tiers), lacto-fermented vegetables",
+      "Weston A. Price Foundation, FAQ: Fermented Foods",
+      "https://en.wikipedia.org/wiki/Kimchi",
+      "https://www.tastingtable.com/1611638/store-bought-kimchi-fermentation-time",
+      "https://www.chowhound.com/1921456/store-bought-kimchi-problem/",
+      "https://www.traceone.com/resources/plm-compliance-blog/codex-alimentarius-releases-standard-for-kimchi"
+    ]
+  },
+  "fermented_pickles": {
+    "detail": "Brined pickles sit in salt brine for several weeks. Lactic acid bacteria, the microbes that sour them, make the acid. Quick pickles are made in one or two days by adding vinegar. The traditional rung is unheated, lacto-fermented pickles in glass, made with unrefined salt and no vinegar. Pasteurized or heated pickles, and ferments with calcium chloride added, sit on the low rung. Federal rules let acidified foods, meaning foods with acid added, be called pickles. A half-sour has a shorter stay in the brine and is still crisp and bright green. A full-sour is fully fermented. Skip a pickle jar listing sodium benzoate, an added preservative.",
+    "buying_tips": [
+      "Quick pickles are soured with vinegar in a day or two; brined ones sour for weeks.",
+      "Pick unheated, salt-brined pickles from the refrigerated case.",
+      "Read the ingredients for salt and no vinegar.",
+      "Skip a jar listing calcium chloride.",
+      "Choose half-sour for a crisp, bright green pickle.",
+      "Choose full-sour for a fully fermented pickle."
+    ],
+    "watch_out": [
+      "Refrigerated does not by itself mean fermented.",
+      "Some makers add vinegar to brined pickles as a preservative.",
+      "Pasteurized or heated pickles are no longer a live ferment."
+    ],
+    "pick_steps": [
+      "Pick from the refrigerated case, but refrigerated alone does not mean fermented.",
+      "Check ingredients for salt and no vinegar or calcium chloride.",
+      "Pick half-sour for crisp and bright green, full-sour for fully fermented."
+    ],
+    "sources": [
+      "Weston A. Price Foundation, Shopping Guide (Best/Good/Avoid tiers), lacto-fermented vegetables",
+      "Weston A. Price Foundation, Lacto-Fermentation",
+      "https://en.wikipedia.org/wiki/Pickled_cucumber",
+      "21 CFR 114.3, acidified foods definitions (label meaning)"
+    ]
+  },
+  "raw_cider_vinegar": {
+    "decision": "Organic raw, unfiltered cider vinegar with the mother.",
+    "detail": "Cider vinegar is made from apple juice by two fermentations. Yeast first turns the sugars into alcohol, making cider. Acetic acid bacteria then turn the alcohol into acetic acid, the sour part of vinegar. That second step is called acetous fermentation. Organic raw vinegar sits on the top rung of the traditional tiers, and distilled vinegar on the low one. Vinegar labeling rules set 4 grams of acetic acid per 100 mL. A diluted vinegar must say “diluted with water to __ percent acid strength”, never below 4 percent. A blend of spirit and cider vinegar is labeled as a blend, names in order of predominance. The mother is a cellulose film of acetic bacteria. It may remain in unfiltered vinegar, or be filtered out.",
+    "kristy_take": "Organic, raw and unfiltered, with the mother. Full strength and a single vinegar show on the label too.",
+    "buying_tips": [
+      "Cider vinegar is fermented apple juice; unfiltered bottles can keep the mother.",
+      "Look for organic raw vinegar, unfiltered, with the mother.",
+      "Check that the label does not say diluted.",
+      "Read the name for a second vinegar in a blend.",
+      "Skip distilled white vinegar; raw cider vinegar is the higher rung."
+    ],
+    "watch_out": [
+      "A diluted vinegar must state its acid strength on the label.",
+      "A blend of spirit and cider vinegar names both, the main one first.",
+      "Pasteurized vinegar has been heated; raw is the traditional rung."
+    ],
+    "sources": [
+      "Weston A. Price Foundation, Shopping Guide (Best/Good/Avoid tiers), condiments",
+      "Weston A. Price Foundation, Wisely Stocked Kitchen",
+      "Vinegar compliance policy CPG 525.825, vinegar definitions (label meaning)",
+      "https://en.wikipedia.org/wiki/Vinegar",
+      "https://en.wikipedia.org/wiki/Apple_cider_vinegar"
+    ]
+  },
+  "miso": {},
+  "tempeh": {},
+  "natto": {},
+  "fermented": {},
+  "broth": {
+    "decision": "Bone broth from pastured animals, ideally homemade, short list.",
+    "why": "Stock is made from bones, and good stock gels when chilled. Bones from pastured animals are the traditional base.",
+    "short_answer": "Bone broth from the bones of pastured animals is the top rung, best made at home. Store-bought, pick a canned or jarred broth with no additives and bones named first. Skip aseptic boxes, bouillon cubes and dehydrated soups.",
+    "detail": "Stock and bone broth are made by simmering bones with vegetables, herbs and spices; a broth includes the actual meat. Bone broth is often simmered longer, sometimes up to 24 hours. The traditional base is the bones of pastured poultry, beef, lamb or pork, or wild fish. A splash of wine or vinegar in the pot draws more out of the bones. Good stock thickens when chilled, even to a full jelly, which is the sign of gelatin. Store-bought, canned broth or stock without additives is the middle rung; stock in aseptic high-temperature boxes, bouillon cubes and dehydrated soups with MSG are the low one.",
+    "kristy_take": "A pot of bones from pastured animals makes the best broth. In the store, the shortest list with bones first.",
+    "cart_pick": "Bone broth from pastured animals",
+    "buying_tips": [
+      "The list shows what was simmered: stock is made from bones, and broth includes meat.",
+      "Look for bone broth from pastured animals, bones named first, nothing added.",
+      "Pick canned or jarred over an aseptic box.",
+      "A good broth gels when chilled."
+    ],
+    "watch_out": [
+      "Bouillon cubes and dehydrated soups are the low rung.",
+      "Skip a broth listing MSG or autolyzed yeast extract, both added flavorings.",
+      "Broth may have salt added, so a plain-looking carton can still run high in sodium."
+    ],
+    "tier_note": "Pastured bones and a gel when chilled come from traditional stock-making.",
+    "science": "Stock and bone broth are simmered from bones with vegetables, herbs and spices; broth includes meat. Acid in the pot draws minerals from the bones. Gelatin from the bones makes good stock thicken or jell when chilled. Commercial stock in aseptic boxes and bouillon cubes sit on the low rung.",
+    "pick_steps": [
+      "Look for bone broth from pastured animals, bones named first.",
+      "Pick canned or jarred with no additives over an aseptic box.",
+      "Pass on bouillon cubes and MSG or yeast extract."
+    ],
+    "sources": [
+      "Weston A. Price Foundation, Broth Is Beautiful (Stocks)",
+      "Weston A. Price Foundation, Shopping Guide (Best/Good/Avoid tiers), soups and stocks"
+    ]
+  },
+  "salt": {},
+  "sugars": {},
+  "maple_syrup": {
+    "decision": "100% pure maple syrup, darker grade, from a named sugarhouse.",
+    "why": "Most table syrups are mainly corn syrup. Darker maple carries the stronger flavor.",
+    "short_answer": "Look for “100% pure maple syrup” on the label. Table or pancake syrup is a different product, mostly corn syrup. Darker grades carry the stronger maple flavor; the taste for light syrup came from early candy makers.",
+    "detail": "Maple syrup is sap boiled down at a sugarhouse, about forty to one, until it reaches the legal density of roughly 67 percent sugar. Many syrups made to look like maple are fakes, and the main ingredient of most table syrups is high fructose corn syrup. Early American candy makers preferred lighter syrup because it crystallized better, and that demand is why light grades gained status. Darker syrup comes later in the season and carries the stronger flavor. Today all consumer maple syrup is Grade A, classed by color and taste: Golden, Amber, Dark and Very Dark. Maple syrup and maple sugar are both top-rung sweeteners on the traditional tiers.",
+    "kristy_take": "The label should read “100% pure maple syrup”. Dark or Very Dark from a sugarhouse you can name.",
+    "cart_pick": "100% pure maple syrup, dark grade",
+    "buying_tips": [
+      "Most table and pancake syrups are mainly high fructose corn syrup.",
+      "Look for “100% pure maple syrup” on the label.",
+      "Pick Dark or Very Dark from a sugarhouse you can name.",
+      "Check that the name says maple syrup; table and pancake syrup are other products."
+    ],
+    "watch_out": [
+      "Table or pancake syrup is a different product from maple syrup, often with little or no maple in it."
+    ],
+    "tier_note": "“100% pure maple syrup” on the label is the read; the darker grade is the traditional preference.",
+    "science": "Maple syrup is sap boiled down roughly forty to one, to about 67 percent sugar. Table syrups made to look like maple are mainly high fructose corn syrup. All consumer maple syrup is Grade A, classed by color and taste: Golden, Amber, Dark and Very Dark. The flavor follows the color, from delicate to strong.",
+    "pick_steps": [
+      "Look for “100% pure maple syrup” on the label.",
+      "Pick Dark or Very Dark, from a named sugarhouse.",
+      "Pass on table or pancake syrup."
+    ],
+    "sources": [
+      "Weston A. Price Foundation, Maple Sugar: A Gift from the Indians",
+      "Weston A. Price Foundation, Shopping Guide (Best/Good/Avoid tiers), sweeteners",
+      "21 CFR 168.140, maple sirup standard (label meaning)",
+      "21 CFR 168.180, table sirup standard (label meaning)"
+    ]
+  }
+}

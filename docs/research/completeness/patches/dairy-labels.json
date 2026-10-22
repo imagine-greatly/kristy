@@ -1,0 +1,605 @@
+{
+  "grassfed_butter": {
+    "buying_tips": [
+      "Deep yellow toward orange is carotene from grass. Pale is a hay-fed winter churn.",
+      "Look for grass-fed on the wrapper; cream and salt are the whole list.",
+      "Raw butter from grass-fed cows, sold by the farm, sits above any store churn.",
+      "Skip whipped butter and any butter listing natural flavors.",
+      "Pale butter can carry added color to look like grass butter. Read the list for a color.",
+      "European-style butters are higher in fat, a separate axis from what the cows ate.",
+      "Salted or unsalted is a cooking choice. Unsalted gives control."
+    ],
+    "sources": [
+      "Saxelby Cheesemongers “Grass-Fed Butter Is Better” https://saxelbycheese.com/blogs/cheese-blog/grass-fed-butter-is-better",
+      "Weston A. Price Foundation: Shopping Guide categories (butter and ghee)",
+      "Weston A. Price Foundation: On the Trail of the Elusive X-Factor (butter color and K2)",
+      "Real Milk (Campaign for Real Milk): Real Milk brochure"
+    ]
+  },
+  "whole_vs_reduced_fat_milk": {},
+  "cheese_real_vs_processed": {
+    "decision": "Raw-milk grass-fed block cheese: milk, cultures, salt, rennet.",
+    "buying_tips": [
+      "Bagged shreds are coated in starch to keep them apart, which is why they melt poorly.",
+      "Look for grass-fed milk named on the block.",
+      "Look for a short list: milk, salt, cultures, enzymes/rennet.",
+      "Raw-milk cheese from grass-fed herds is the top rung. Imported and deli-counter wheels are the easiest raw finds.",
+      "Skip cheese made from homogenized milk. Small makers say how the milk was handled.",
+      "Smoked cheese should be smoked over real smoke, not liquid smoke or smoke flavoring.",
+      "‘Parmesan’ is a generic word in the US. ‘Parmigiano-Reggiano’ is a protected one with a stamped rind.",
+      "Keep hard-cheese rinds. They belong in a pot of beans or soup.",
+      "The milk for cheese may come from cows given the synthetic growth hormone rBST. Certified organic rules exclude its use.",
+      "Certified organic block cheese is the first choice. Next, find a wrapper stating the cheese uses milk from cows given no rBST. Cheese with neither claim is last. US labeling does not require a statement about rBST use.",
+      "“rBST free” on a wrapper points to milk from cows not given rBST."
+    ],
+    "sources": [
+      "Food Renegade: Healthy cheese, what to buy",
+      "Weston A. Price Foundation: Shopping Guide categories (aged cheese)",
+      "21 CFR 133 cheese and process-cheese standards of identity (label meaning)",
+      "Mason Dixie Foods “Natural Cheese vs. Processed” https://masondixiefoods.com/blogs/faqs/natural-cheese-vs-processed",
+      "7 CFR 205.238 organic livestock hormone rules (label meaning)",
+      {"name": "BCPP: rBGH / rBST labeling", "url": "https://www.bcpp.org/resource/rbgh-rbst/"},
+      {"name": "U.S. Dairy Export Council: Milk protein concentrates technical report", "url": "https://www.thinkusadairy.org/assets/Documents/Customer%20Site/C3-Using%20Dairy/C3.7-Resources%20and%20Insights/03-Application%20and%20Technical%20Materials/Milk_Protein_Concentrates_Technical_Report.pdf"},
+      {"name": "Center for Food Safety: Phthalates in macaroni and cheese powders", "url": "https://centerforfoodsafety.org/press-release/toxic-industrial-chemicals-found-in-10-varieties-of-macaroni-and-cheese-powders/"},
+      {"name": "Food Packaging Forum: Phthalates found in mac and cheese", "url": "https://foodpackagingforum.org/news/phthalates-found-in-mac-and-cheese"}
+    ]
+  },
+  "yogurt_plain_vs_flavored": {
+    "buying_tips": [
+      "100% grass-fed means grass and hay, never grain; flavored tubs carry added sugar.",
+      "Plain over flavored. Sweeten it yourself with fruit.",
+      "Raw plain whole-milk yogurt from a farm sits above any store tub.",
+      "Look for whole milk, non-homogenized or cream-top, with no added vitamins on the list.",
+      "Compare the added-sugars line on the plain tub against the fruit cup. That gap is the decision.",
+      "Greek or strained yogurt is thicker; whole-milk versions are more filling.",
+      "A short list is the sign: milk and cultures. Thickeners do the job straining does, for less.",
+      "Greek and skyr are strained: thicker, with less whey.",
+      "Kefir is drinkable and carries a wider mix of cultures than yogurt.",
+      "Whole-milk versions are more filling and less tinkered with than fat-free.",
+      "rBST names a synthetic growth hormone used in dairy cows. Certified organic yogurt rules bar it in the herd.",
+      "For this herd treatment, take certified organic yogurt first. Next is a tub stating its milk comes from cows not given rBST. Tubs bearing neither claim rank last. US labels need not disclose whether cows received rBST.",
+      "“rBST free” means the milk comes from cows not given that synthetic hormone.",
+      "Skip artificial color on the yogurt list.",
+      "Read the yogurt list for Red 40, Yellow 5, Yellow 6 or Blue 1, all synthetic dyes. Take the tub with no added color over one naming a dye. “Lake” means a dye that does not dissolve in water; it still counts."
+    ],
+    "sources": [
+      "Weston A. Price Foundation: Shopping Guide categories (yogurt and kefir)",
+      "Food Babe: Ingredients to avoid (synthetic dyes)",
+      "Chris Kresser: Why you should know how to read a nutrition label",
+      "21 CFR 131.200 yogurt standard of identity (label meaning)",
+      "National Yogurt Association ‘Live & Active Cultures’ seal criteria",
+      "7 CFR 205.238 organic livestock hormone rules (label meaning)",
+      {"name": "BCPP: rBGH / rBST labeling", "url": "https://www.bcpp.org/resource/rbgh-rbst/"}
+    ]
+  },
+  "raw_milk": {
+    "buying_tips": [
+      "The farmer makes the difference, and the good ones publish their herd test results.",
+      "Grass and pasture, small herd, milked into a cold chain that never breaks.",
+      "Ask the farmer about pasture, winter hay, sprays on the fields and how fast the milk is chilled.",
+      "Glass bottles and a bottling date you can read. Days, not weeks.",
+      "A cream line at the top. That is the milk telling you what it is.",
+      "Raw cultured dairy from the same farm: kefir, clabber, aged raw cheese.",
+      "Buy an extra bottle and let one sit out a day or two. Live raw milk clabbers into something worth eating; pasteurized milk only spoils."
+    ],
+    "sources": [
+      "Real Milk (Campaign for Real Milk): Questions to ask your raw milk farmer",
+      "Real Milk (Campaign for Real Milk): Real Milk brochure",
+      "Weston A. Price Foundation: FAQ, dairy",
+      "Edible Seattle “In the Raw” (Cascadia Creamery, raw-milk cheese) https://edibleseattle.com/explore/artisans/in-the-raw/"
+    ]
+  },
+  "label_natural": {
+    "buying_tips": [
+      "On meat, ‘natural’ only means no artificial ingredients and minimal processing.",
+      "Don’t pay a premium for ‘natural’. It is rarely enforced.",
+      "Look for defined terms instead: organic, grass-finished, pasture-raised.",
+      "‘Natural flavors’ on the list is a processed flavoring, whatever the front says.",
+      "The ingredient list beats any front-of-pack adjective."
+    ],
+    "sources": [
+      "Food Babe: The differences between artificial, natural and organic flavors",
+      "Chris Kresser: Misleading food labels",
+      "Federal ‘natural’ policy for food and for meat and poultry (label meaning)"
+    ]
+  },
+  "label_made_with_real": {
+    "sources": [
+      "Chris Kresser: Why you should know how to read a nutrition label",
+      "21 CFR 101.4 ingredient order by weight (label meaning)"
+    ]
+  },
+  "label_no_added_hormones": {
+    "buying_tips": [
+      "Pork and poultry ban hormones by law, so every producer there can print it.",
+      "Chicken/pork: hormones are banned anyway. Look for the required explanatory statement.",
+      "Beef/dairy: the claim is meaningful; look for verification.",
+      "Beef hormones are ear implants: estrogen, progesterone, testosterone, zeranol, trenbolone acetate.",
+      "Poultry labels must add ‘no hormones are used in poultry’ by rule.",
+      "On dairy, look for “from cows not treated with rBST”; this describes the producer’s claim."
+    ],
+    "sources": [
+      "Chris Kresser: Is organic meat better? (hormone implants in beef)",
+      "Federal meat and poultry hormone-claim labeling rules (label meaning)",
+      "https://www.bcpp.org/resource/rbgh-rbst/"
+    ]
+  },
+  "label_nonGMO_vs_organic": {
+    "sources": [
+      "Chris Kresser: Misleading food labels",
+      "Real Organic Project: Standards",
+      "7 CFR 205 organic standards (label meaning)",
+      "7 CFR 66 bioengineered food disclosure standard (label meaning)",
+      "Non-GMO Project standards",
+      {"name": "Non-GMO Project: GMO FAQ", "url": "https://www.nongmoproject.org/gmo-faq/"}
+    ]
+  },
+  "label_cage_free": {
+    "sources": [
+      "Weston A. Price Foundation: Eat your eggs and have your chickens too",
+      "Federal egg-labeling definitions (label meaning)",
+      "Certified Humane / AWA space standards"
+    ]
+  },
+  "label_grass_fed_term": {
+    "decision": "‘100% grass-fed’ beef, bought from a rancher you can ask.",
+    "buying_tips": [
+      "A bare ‘grass-fed’ can still end on grain in the feedlot before slaughter.",
+      "‘100% grass-fed’ / ‘grass-finished’ beats a bare ‘grass-fed’.",
+      "Buying direct lets you ask the rancher whether the cattle ate any grain at the end.",
+      "Ask the butcher. They’ll usually know the sourcing."
+    ],
+    "watch_out": [
+      "A bare “grass-fed” allows a grain finish in the feedlot before slaughter.",
+      "The claim is weakly enforced on its own. A rancher who answers the grain question is what backs it."
+    ],
+    "sources": [
+      "Weston A. Price Foundation: Splendor from the grass",
+      "Federal meat labeling guidance on ‘grass-fed’ (label meaning)"
+    ]
+  },
+  "label_pasture_raised_feed": {
+    "sources": [
+      "Weston A. Price Foundation: Eat your eggs and have your chickens too",
+      "Federal labeling policy: no regulatory definition of “pasture-raised” (label meaning)",
+      "Certified Humane pasture-raised standards (outdoor space requirements)",
+      "7 CFR 205.237 organic livestock feed (label meaning)",
+      {"name": "100 Days of Real Food: Egg Labels: What To Look For", "url": "https://www.100daysofrealfood.com/egg-labels-whats-to-look-for/"}
+    ]
+  },
+  "label_organic_scope": {
+    "buying_tips": [
+      "The seal covers inputs and practices, and an organic cookie is still a cookie.",
+      "Organic is about inputs and practices. Read the ingredient panel separately.",
+      "Organic is the floor. A local grower who sprays nothing at all sits above it.",
+      "A short list of approved sprays is permitted under the organic standard.",
+      "It carries the most weight on thin-skinned produce you eat whole, and the least on processed food.",
+      "On animal products it does reach feed. It means organic feed, not a different kind of feed.",
+      "Real Organic Project on top of the USDA seal means soil-grown, never hydroponic."
+    ],
+    "sources": [
+      "Real Organic Project: Standards",
+      "Real Organic Project: Hydroponics are not organic",
+      "7 CFR 205 organic standards: 205.105, 205.206, 205.601 (label meaning)",
+      {"name": "National Agricultural Law Center: Ninth Circuit memorandum on hydroponic organic certification (2022)", "url": "https://nationalaglawcenter.org/wp-content/uploads/2022/09/Ninth-Cir.-memo.pdf"},
+      "https://centerforfoodsafety.org/press-release/citizens-consumer-groups-oppose-proposed-irradiation-labeling-change/"
+    ]
+  },
+  "label_multigrain_vs_whole_grain": {
+    "buying_tips": [
+      "Multigrain only counts grains, and every one of them can be refined.",
+      "Read the first ingredient. “Whole wheat flour” counts; “wheat flour” and “enriched flour” do not.",
+      "“100% whole grain” is a real claim. “Made with whole grains” permits any fraction.",
+      "Sprouted or sourdough whole grain goes a step past plain whole grain.",
+      "Ignore the color. Brown can be caramel coloring on white flour."
+    ],
+    "sources": [
+      "Weston A. Price Foundation: Replacing white flour with whole grains",
+      "Weston A. Price Foundation: Be kind to your grains",
+      "Federal whole-grain labeling guidance (label meaning)",
+      "Whole Grains Council stamp criteria"
+    ]
+  },
+  "label_lightly_sweetened": {},
+  "label_no_artificial_flavors": {
+    "buying_tips": [
+      "Natural flavors are still engineered and can hide dozens of substances in two words.",
+      "The claim rules out artificial flavoring only. Natural flavoring is still permitted.",
+      "Pick the version with no flavors line at all.",
+      "‘Organic natural flavor’ keeps out synthetic solvents and preservatives, so it ranks above plain ‘natural flavor’.",
+      "Both are engineered; the legal difference is the starting material, not the process.",
+      "“Natural flavors” can carry solvents and carriers that need no separate declaration.",
+      "A short ingredient list with recognisable food names beats any flavor claim on the front."
+    ],
+    "watch_out": [
+      "The claim rules out artificial flavoring only. Natural flavoring is still permitted.",
+      "“Natural flavors” can carry solvents and carriers that need no separate declaration.",
+      "Those carriers can be most of a flavor’s formula: sodium benzoate, glycerin, potassium sorbate, propylene glycol, none of them listed."
+    ],
+    "sources": [
+      "Food Babe: The differences between artificial, natural and organic flavors",
+      "Food Babe: Natural flavors (video)",
+      "Chris Kresser: Why you should know how to read a nutrition label",
+      "21 CFR 101.22 natural and artificial flavor definitions (label meaning)"
+    ]
+  },
+  "cream_vs_creamer": {
+    "buying_tips": [
+      "Cream carries a legal milkfat minimum; creamer is oil and sweetener imitating it.",
+      "Look for grass-fed cream or half-and-half from a small dairy, pasteurized and not ultra-pasteurized.",
+      "Raw cream from a grass-fed farm comes first. Next is pasteurized cream-top, not homogenized.",
+      "Grass-fed ultra-pasteurized cream is the store fallback.",
+      "Look for a carton naming grass-fed cows, with cream and milk only.",
+      "Heavy cream is 36% milkfat or more. Half-and-half is 10.5 to 18%. Those numbers are fixed by law.",
+      "‘Non-dairy creamer’ is oil, sweetener and emulsifiers. It is not cream.",
+      "Even real cream can carry carrageenan or gellan gum. A short list is still worth checking.",
+      "Flavored creamers are where the added sugar sits. Read the panel.",
+      "Whole milk or half-and-half does the same job with a two-word ingredient list.",
+      "Even certified organic cream can list carrageenan, a thickener derived from seaweed. Read the ingredients and take cream with none listed."
+    ],
+    "sources": [
+      "Weston A. Price Foundation: Shopping Guide categories (cream)",
+      "Weston A. Price Foundation: FAQ, dairy",
+      "21 CFR 131 cream standards of identity; 21 CFR 131.3 pasteurized and ultra-pasteurized (label meaning)",
+      "Product ingredient labeling",
+      "Morning Fresh Dairy “Coffee Creamer, Half & Half, and Whipping Cream” https://www.morningfreshdairy.com/moo-news/an-explanation-on-coffee-creamer-half-half-and-whipping-cream.html",
+      "7 CFR 205.238 organic livestock hormone rules (label meaning)",
+      {"name": "BCPP: rBGH / rBST labeling", "url": "https://www.bcpp.org/resource/rbgh-rbst/"},
+      "Food Babe: Ingredients to avoid"
+    ]
+  },
+  "label_front_vs_back": {
+    "sources": [
+      "Chris Kresser: Why you should know how to read a nutrition label",
+      "Chris Kresser: Misleading food labels",
+      "21 CFR 101 food labeling (label meaning)"
+    ]
+  },
+  "label_ingredient_order": {
+    "sources": [
+      "Chris Kresser: Why you should know how to read a nutrition label",
+      "21 CFR 101.4 ingredient order by weight (label meaning)",
+      "21 CFR 101.9 added-sugars declaration (label meaning)"
+    ]
+  },
+  "label_third_party_seals": {
+    "buying_tips": [
+      "A badge a company gives itself has no published standard and no outside auditor.",
+      "Look for a named program, not a decorative badge. If the standard cannot be looked up, it is marketing.",
+      "Each seal covers one scope. Organic is not welfare, welfare is not pesticides, non-GMO is neither.",
+      "Third-party audited beats self-declared, every time.",
+      "Real Organic Project adds soil-grown and pasture to the organic seal.",
+      "A farm you can visit or ask sits above any seal.",
+      "More seals is not a better food. It is a food that bought more audits.",
+      "The ingredient panel still decides what the thing actually is."
+    ],
+    "detail": "The gap between a certification and a marketing badge is entirely in the audit. Real programs publish their standard, so anyone can read exactly what was checked, and they send inspectors. The second half of reading a seal is scope: an organic seal covers inputs and practices and says nothing about welfare beyond a baseline, a welfare seal says nothing about pesticides, and a non-GMO seal addresses one issue only. Stacking seals on a package does not make it a better food, it makes it a food that paid for several audits. The ingredient panel still decides what the thing actually is. A badge a company created for its own products answers none of the three questions. USDA Organic, Real Organic Project, Certified Humane, Animal Welfare Approved, Global Animal Partnership and the Non-GMO Project all publish standards and use outside auditors. Real Organic Project sits on top of the organic seal and requires soil-grown crops and pastured animals. A farm that sells direct, where the grower answers questions about sprays, feed and pasture, reaches past what any seal audits. What no seal tells you is anything it never set out to measure.",
+    "sources": [
+      "Real Organic Project: Standards",
+      "7 CFR 205 organic certification requirements (label meaning)",
+      "Certified Humane, Animal Welfare Approved and Global Animal Partnership published standards",
+      "Non-GMO Project verification standard"
+    ]
+  },
+  "label_cold_pressed_expeller": {
+    "buying_tips": [
+      "Most supermarket oil is solvent-extracted, then refined, bleached and deodorized.",
+      "Read the oil name and ingredients first: choose olive or coconut oil. Skip seed oil even when cold-pressed.",
+      "‘Expeller-pressed’ means mechanical, no solvent. Friction heat still happens.",
+      "‘Cold-pressed’ means pressed with the temperature held down. Tightly defined only for olive oil.",
+      "‘Refined’, ‘pure’, or no process word at all usually means solvent-extracted and refined.",
+      "Unrefined oils taste like their source. Refined ones taste like nothing, which is the point of refining them.",
+      "Dark bottle, cool shelf, and a size you will finish. Pressed oils are the least stable.",
+      "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
+      "Avocado oil works when the maker shows it is pure and cold-pressed. Otherwise reach for olive or coconut.",
+      "Skip canola, sunflower and vegetable oil; “expeller-pressed” describes pressing, not the plant."
+    ],
+    "sources": [
+      "Seed Oil Free Certified: Expeller-pressed oil explained",
+      "Food Babe: Cooking oils",
+      "International Olive Council definitions of cold extraction",
+      {"name": "Dr. Cate Shanahan: The Hateful Eight seed oils", "url": "https://drcate.com/hateful-eight/"}
+    ]
+  },
+  "label_sugar_free_substitutes": {
+    "buying_tips": [
+      "Sugar-free means under half a gram of sugar; something else does the sweetening.",
+      "Read the list for which substitute: erythritol, maltitol, xylitol, stevia, monk fruit, sucralose, aspartame.",
+      "Pick unsweetened, or a pure stevia, monk fruit or allulose with no erythritol listed.",
+      "Erythritol is often the bulk of a ‘stevia’ or ‘monk fruit’ blend. The list shows it.",
+      "‘Unsweetened’ is the plainer word. It generally means nothing sweet was added at all.",
+      "‘Naturally sweetened’ has no definition. Honey, syrup and juice concentrate all qualify.",
+      "Sugar alcohols are totalled on the panel under their own line."
+    ],
+    "watch_out": [
+      "“Sugar-free” does not mean unsweetened. Something else is doing the sweetening.",
+      "“Naturally sweetened” has no definition. Honey, syrup and juice concentrate all qualify.",
+      "Sugar alcohols are isolated sweeteners, a long way from any whole food. A little real sugar is the plainer choice than erythritol every day."
+    ],
+    "sources": [
+      "Chris Kresser: Erythritol, the safe sweetener that is anything but",
+      "Weston A. Price Foundation: Sugar-free blues",
+      "21 CFR 101.60 sugar content claims (label meaning)",
+      "21 CFR 101.9 sugar alcohol declaration (label meaning)"
+    ]
+  },
+  "label_wild_vs_farm_raised": {
+    "sources": [
+      "Weston A. Price Foundation: Is something fishy going on?",
+      "7 CFR 60 country of origin labeling for fish and shellfish (label meaning)",
+      "Federal seafood market-name list (label meaning)",
+      "Peer-reviewed studies of seafood species substitution",
+      {"name": "Quartz: Here is why your farmed salmon has color added to it", "url": "https://qz.com/358811/heres-why-your-farmed-salmon-has-color-added-to-it"}
+    ]
+  },
+  "label_serving_size": {},
+  "label_artificial_color": {
+    "decision": "Colors named from food; skip ‘artificial color’ and ‘color added’.",
+    "why": "Certified dyes must be named. The rest, titanium dioxide among them, may hide under a group term.",
+    "buying_tips": [
+      "‘Artificial color’ can cover titanium dioxide without naming it on the panel.",
+      "Skip any list reading “artificial color” or “color added”; titanium dioxide can sit under either.",
+      "Take the version with no dye at all, or a color named from a food.",
+      "Certified dyes appear by name and number. “Red 40” is always “Red 40.”",
+      "“Colored with titanium dioxide” is that additive named on purpose, not by rule.",
+      "Color sits low on an ingredient list, because the amounts used are small."
+    ],
+    "watch_out": [
+      "The EU removed titanium dioxide from food after a review by its food safety authority. US rules still allow it.",
+      "US labels need not name titanium dioxide. “Artificial color,” “artificial color added” or “color added” can stand in for it.",
+      "A generic color term is a reason to put the package back. The panel alone cannot say which color it is."
+    ],
+    "detail": "The split is written into 21 CFR 101.22(k). Paragraph (k)(1) covers color additives subject to certification and requires each to be declared by the name in its own regulation, dropping the “FD&C” prefix but keeping “Lake” where it applies. Paragraph (k)(2) covers color additives not subject to certification and permits the collective terms instead, offering “Colored with ______” as the alternative that names the substance. Titanium dioxide is listed at 21 CFR 73.575, which sets the one percent ceiling and states that batches are exempt from certification.\n\nSo the generic phrase is a signal rather than a blank. Where a panel reads “artificial color” with no number beside it, the color is one federal rules did not require to be named, and the panel alone cannot say which.\n\nA certified dye must be declared by its own name, so “Red 40” and “Blue 1” always appear as themselves. A color exempt from certification does not have to: federal labeling rules let it ride as “Artificial Color,” “Artificial Color Added” or “Color Added.” Titanium dioxide is the white pigment used for opacity in candy shells, frosting, chewing gum and creamy dressings, capped at one percent of the food by weight. A label may name it outright as “colored with titanium dioxide,” and nothing requires that. The EU removed it from food after a review by its food safety authority, and food makers there took it out. US rules still allow it. The plain move at the shelf is to skip a list carrying a generic color term and take one with no added color, or a color named from a food.",
+    "science": "Certified dyes must be declared by name; colors exempt from certification may be declared as a group. Titanium dioxide is a white pigment exempt from certification. A label may name it outright, though nothing requires that. The EU removed it from food after a review by its food safety authority. US rules still allow it, under a group term if the maker chooses.",
+    "sources": [
+      "Food Babe: 3 ingredients to check for (titanium dioxide under “artificial color” or “color added”)",
+      "Chris Kresser: Why you should know how to read a nutrition label (colors under umbrella terms)",
+      "21 CFR 101.22(k) declaration of color additives on the ingredient list (label meaning)",
+      "21 CFR 73.575 titanium dioxide: one percent limit, exempt from certification (label meaning)"
+    ]
+  },
+  "raw_kefir": {
+    "sources": [
+      "Weston A. Price Foundation: FAQ, dairy (raw kefir)",
+      "Real Milk (Campaign for Real Milk): Real Milk brochure",
+      "Weston A. Price Foundation: Shopping Guide categories (yogurt and kefir)"
+    ]
+  },
+  "raw_aged_cheese": {
+    "buying_tips": [
+      "Aged raw-milk cheese tastes of one herd and season; a commodity block, of very little.",
+      "“Raw milk” or “lait cru” printed on the rind label, with an age beside it.",
+      "A named maker and a named herd, not just a country of origin.",
+      "Ask whether the milk was heated. Some ‘raw’ cheese is warmed to just below pasteurizing.",
+      "The cut-to-order counter over the pre-wrapped wall.",
+      "Hard, aged styles first: alpine, aged cheddar, manchego, pecorino.",
+      "Keep the rinds. They belong in a pot of beans or soup.",
+      "Look for raw cheese from a grass-fed organic herd; organic is the next rung when the feed claim is absent."
+    ],
+    "sources": [
+      "Weston A. Price Foundation: Shopping Guide categories (aged cheese)",
+      "Food Renegade: Healthy cheese, what to buy",
+      "21 CFR 133 cheese standards of identity, 60-day aging (label meaning)",
+      "Edible Seattle “In the Raw” (Cascadia Creamery, raw-milk cheese) https://edibleseattle.com/explore/artisans/in-the-raw/"
+    ]
+  },
+  "oat_milk": {
+    "buying_tips": [
+      "Oat drinks vary carton to carton in stabilizers, protein and added vitamins.",
+      "Look for oats and water alone, with no vitamins, minerals or oil added.",
+      "If dairy suits you, whole dairy comes first. Among plant drinks, nut or coconut milk ranks above oat.",
+      "Some certified organic oat drinks still use carrageenan, a seaweed thickener; pick one without it.",
+      "Read the ingredient list for stabilizers, and the carton for protein and added vitamins and minerals."
+    ],
+    "sources": [
+      "Weston A. Price Foundation: Shopping Guide categories (milk, imitation milks)",
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10877596/fullTextXML",
+      {"name": "Joi: 5 common plant milk additives (gums)", "url": "https://addjoi.com/blogs/news/5-common-plant-milk-additives-and-why-you-should-avoid-them"},
+      {"name": "Seed Oil Free Certified: Does oat milk contain seed oils", "url": "https://www.seedoilfreecertified.com/seed-oils-guide/everyday-foods/does-oat-milk-contain-seed-oils"}
+    ]
+  },
+  "plain_kefir": {
+    "buying_tips": [
+      "100% grass-fed means the cows ate grass and hay, never grain.",
+      "Pick the bottle with no flavor named on the label.",
+      "Raw kefir from a farm sits above any store bottle. The raw kefir card covers it.",
+      "Look for cream-top whole milk with no added vitamins on the list.",
+      "Skip lowfat and sweetened kefir.",
+      "Take it from the refrigerated case and keep it cold.",
+      "Use plain kefir in place of buttermilk or yogurt in recipes."
+    ],
+    "sources": [
+      "Weston A. Price Foundation: Shopping Guide categories (yogurt and kefir)",
+      "Weston A. Price Foundation: FAQ, dairy",
+      {"name": "NPR: Added sugar in yogurt and dairy labels", "url": "https://www.npr.org/sections/thesalt/2018/09/19/649689591/yogurt-may-not-be-so-healthy-if-its-pumped-full-of-sugar"}
+    ]
+  },
+  "sour_cream": {
+    "buying_tips": [
+      "Cultured means bacteria did the souring; acidified tubs use added acids.",
+      "Look for a grass-fed tub listing only cream and cultures.",
+      "Raw cultured cream from a farm comes first. Next is a non-homogenized tub with no additives.",
+      "Pick a tub named “sour cream” or “cultured sour cream”.",
+      "Read the optional ingredients added for texture or shelf life.",
+      "Check the name for a declared flavor.",
+      "A synthetic growth hormone called rBST can be given to dairy cows. Certified organic sour cream excludes that treatment.",
+      "On sour cream, prefer certified organic. Next, look for a printed statement that rBST was not used on the dairy cows. Without either claim, the tub ranks last. Use of rBST need not appear on US dairy labels.",
+      "Carrageenan is made from seaweed and used to thicken foods, including some certified organic ones. Read your sour cream’s list and pick a tub without carrageenan."
+    ],
+    "sources": [
+      "Weston A. Price Foundation: Shopping Guide categories (cream, cultured cream and sour cream)",
+      "21 CFR 131.160 and 131.162 sour cream standards (label meaning)",
+      "7 CFR 205.238 organic livestock hormone rules (label meaning)",
+      {"name": "BCPP: rBGH / rBST labeling", "url": "https://www.bcpp.org/resource/rbgh-rbst/"}
+    ]
+  },
+  "cream_cheese": {
+    "buying_tips": [
+      "The standard allows up to 0.5 percent stabilizers; the list shows who skipped them.",
+      "Look for grass-fed cream cheese that lists no stabilizers.",
+      "Raw whole-milk cream cheese from a farm comes first. Next is whole milk with no additives.",
+      "Look for “cream cheese” as the name on the package.",
+      "Find a culture in the ingredient list.",
+      "Swap in Neufchâtel in most recipes; the two taste similar.",
+      "rBST is the synthetic growth hormone used to increase milk production in cows. Certified organic cream cheese rules prohibit it.",
+      "Choose certified organic cream cheese first. Next is a pack stating the milk comes from cows untreated with rBST. Both outrank a pack with neither. US labels can omit whether the cows received rBST.",
+      "Some certified organic foods contain carrageenan, a seaweed-derived thickener. Look through the cream cheese ingredients and take the version that lists no carrageenan."
+    ],
+    "sources": [
+      "Weston A. Price Foundation: Shopping Guide categories (cottage cheese, cream cheese and fresh cheese)",
+      "21 CFR 133.133 cream cheese standard (label meaning)",
+      "https://www.masterclass.com/articles/neufchatel-cheese-vs-cream-cheese-explained",
+      "7 CFR 205.238 organic livestock hormone rules (label meaning)",
+      {"name": "BCPP: rBGH / rBST labeling", "url": "https://www.bcpp.org/resource/rbgh-rbst/"}
+    ]
+  },
+  "cottage_cheese": {
+    "buying_tips": [
+      "A culture sets the curd unless the tub prints “directly set” beside the name.",
+      "Look for milk, cream, salt and cultures alone, with no carrageenan or gum.",
+      "Raw whole cottage cheese from a farm is the top pick. Next is whole milk, non-homogenized, no additives.",
+      "Read the milkfat statement beside the name.",
+      "Look for “directly set” or “curd set by direct acidification”.",
+      "Dry curd runs under 0.5 percent milkfat. Pick creamed whole-milk curd over dry curd, lowfat or fat-free.",
+      "Milk for cottage cheese can come from cows treated with rBST. That synthetic growth hormone is barred in certified organic dairy.",
+      "For cottage cheese, certified organic is the first rung. Then comes a tub whose printed claim says the milk comes from cows that received no rBST. A tub with neither is last; US law does not require rBST-use labeling.",
+      "The seaweed-derived thickener carrageenan appears even in some certified organic foods. Check the cottage cheese ingredient list for it; choose a tub that lists none."
+    ],
+    "sources": [
+      "Weston A. Price Foundation: Shopping Guide categories (cottage cheese, cream cheese and fresh cheese)",
+      "21 CFR 133.128 and 133.129 cottage cheese standards (label meaning)",
+      "7 CFR 205.238 organic livestock hormone rules (label meaning)",
+      {"name": "BCPP: rBGH / rBST labeling", "url": "https://www.bcpp.org/resource/rbgh-rbst/"}
+    ]
+  },
+  "ice_cream": {
+    "buying_tips": [
+      "The name ice cream needs 10 percent milkfat and no oils beyond incidental amounts.",
+      "Look for cream, milk and sugar first, with no carrageenan or guar gum.",
+      "Homemade from grass-fed cream, raw if you can get it, with egg yolks and real vanilla, sits above any carton.",
+      "In the case, simple flavors made of cream, milk, egg yolks and real vanilla come first.",
+      "Skip natural flavors, vanilla flavor, powdered milk and powdered egg on the list.",
+      "Read the name on the carton, not the picture.",
+      "Look for “frozen dairy dessert” in the small print.",
+      "Read the ingredients for oils such as coconut or palm oil.",
+      "Carrageenan thickens foods and comes from seaweed. Some certified organic foods use it too, so read the ice cream’s ingredient list and choose one without it.",
+      "Look for certified organic first, then “rBST free” on the carton."
+    ],
+    "sources": [
+      "Weston A. Price Foundation: Shopping Guide categories (ice cream)",
+      "Chris Kresser: Erythritol, the safe sweetener that is anything but",
+      "21 CFR 135.110 ice cream standard (label meaning)",
+      "https://www.mentalfloss.com/food/ice-cream/ice-cream-vs-frozen-dairy-dessert-what-is-difference",
+      "7 CFR 205.238 organic livestock hormone rules (label meaning)",
+      {"name": "BCPP: rBGH / rBST labeling", "url": "https://www.bcpp.org/resource/rbgh-rbst/"}
+    ]
+  },
+  "ghee": {
+    "buying_tips": [
+      "Plain ghee is butter simmered down to its fat; flavored jars add spices.",
+      "Look for butter as the single ingredient on the jar, with nothing added.",
+      "Ghee from raw grass-fed butter, sold by a farm, is the top rung.",
+      "Skip any jar listing natural flavors. Look for butter from grass-fed cows.",
+      "Read the ingredient list for butter alone.",
+      "Expect spices on the list if the jar is flavored.",
+      "Choose ghee for its nutty taste and aroma."
+    ],
+    "watch_out": [
+      "Spices can be added to ghee, so a flavored jar lists more than butter.",
+      "Real ghee is butter alone. A jar built on vegetable oil is an imitation."
+    ],
+    "sources": [
+      "Weston A. Price Foundation: FAQ, dairy (real ghee)",
+      "Weston A. Price Foundation: Shopping Guide categories (butter and ghee)"
+    ]
+  },
+  "goat_sheep_dairy": {
+    "sources": [
+      "Real Milk (Campaign for Real Milk): Real Milk brochure (raw goat and sheep milk)",
+      "Weston A. Price Foundation: FAQ, dairy (goat milk and A2)"
+    ]
+  },
+  "almond_milk": {
+    "buying_tips": [
+      "Almond drinks vary in added sugars, so the carton panel is the guide.",
+      "Look for unsweetened on the carton and no added vitamins or minerals on the list.",
+      "Whole dairy that suits you comes first. Almond milk is the fallback for a shopper skipping dairy.",
+      "Pick unsweetened over sweetened, vanilla or chocolate.",
+      "Some certified organic almond drinks still use carrageenan, a seaweed thickener; choose a carton with none listed."
+    ],
+    "sources": [
+      "Weston A. Price Foundation: Shopping Guide categories (milk, imitation milks)",
+      {"name": "Joi: 5 common plant milk additives (gums)", "url": "https://addjoi.com/blogs/news/5-common-plant-milk-additives-and-why-you-should-avoid-them"}
+    ]
+  },
+  "soy_milk": {
+    "buying_tips": [
+      "Every addition is another ingredient; soybeans and water stays closest to the bean.",
+      "Look for unsweetened soy milk with no vitamins or minerals in the ingredient list.",
+      "Whole dairy that suits you comes first. Among plant drinks, nut or coconut milk ranks above soy.",
+      "Most U.S. soybeans are bioengineered, so choose certified organic first, with Non-GMO Project Verified a close second.",
+      "Carrageenan, a seaweed thickener, appears in some certified organic foods too; choose a soy milk with none listed.",
+      "A short-list unsweetened almond milk ranks above soy milk."
+    ],
+    "sources": [
+      "Weston A. Price Foundation: Shopping Guide categories (milk, imitation milks)",
+      "7 CFR 66 bioengineered food disclosure standard (label meaning)",
+      {"name": "Non-GMO Project: GMO FAQ", "url": "https://www.nongmoproject.org/gmo-faq/"},
+      {"name": "Joi: 5 common plant milk additives (gums)", "url": "https://addjoi.com/blogs/news/5-common-plant-milk-additives-and-why-you-should-avoid-them"}
+    ]
+  },
+  "coconut_milk_beverage": {
+    "decision": "Canned whole coconut milk with no additives, over any carton.",
+    "buying_tips": [
+      "The carton is coconut milk thinned with water, and gums like gellan thicken it back.",
+      "Look for coconut and water at the top, with no vitamins added below.",
+      "Reach for the can, not the aseptic carton: whole coconut milk with nothing added.",
+      "Read “beverage” in the name: coconut milk thinned with water.",
+      "Find it in the nondairy milk section, next to the soy milk.",
+      "Check for sugar and flavors on a sweetened carton.",
+      "Carrageenan adds thickness and is derived from seaweed. It can occur in certified organic foods, so check the coconut beverage’s ingredients and take one with none listed."
+    ],
+    "sources": [
+      "Weston A. Price Foundation: Shopping Guide categories (coconut: canned, not aseptic boxes)",
+      "https://www.cookscountry.com/how_tos/6667-canned-coconut-milk-vs-carton-packed-coconut-milk-beverage",
+      "https://www.tastingtable.com/1527981/canned-coconut-milk-carton-difference"
+    ]
+  },
+  "plant_butter": {
+    "buying_tips": [
+      "Plant butters differ in their oils, and the ingredient list names each one.",
+      "Look for oils, water and salt, with no lecithin or natural flavors listed.",
+      "Butter or ghee from grass-fed cows ranks above any plant butter.",
+      "Choose coconut or olive oil in the ingredients, then check every other oil in the spread.",
+      "Check whether a nut milk or culture is listed, as in some versions.",
+      "Compare the fat line on the Nutrition Facts.",
+      "Skip seed oils. Avocado oil works only when the maker shows it is pure and cold-pressed."
+    ],
+    "sources": [
+      "Weston A. Price Foundation: Shopping Guide categories (butter, margarines and spreads)",
+      "21 CFR 166.110 margarine standard (label meaning)",
+      {"name": "Dr. Cate Shanahan: The Hateful Eight seed oils", "url": "https://drcate.com/hateful-eight/"}
+    ]
+  },
+  "dairy_case": {
+    "buying_tips": [
+      "Each type has its own card; the carton adds vitamins, pasture and filtering.",
+      "Choose the type first: milk, yogurt, cheese, butter, cream or a plant drink.",
+      "Across the case, whole and non-homogenized with no added vitamins ranks highest; raw from a farm tops each type.",
+      "Read the milk label for added vitamins A and D. Plain milk without them ranks higher.",
+      "Read a filtered milk panel for its protein and sugar lines.",
+      "Dairy cows can receive rBST, a synthetic growth hormone. Organic certification bars that treatment.",
+      "Choose certified organic dairy before a package stating “from cows not treated with rBST”. A package with neither ranks last, since rBST use need not be disclosed in the US."
+    ],
+    "sources": [
+      "Weston A. Price Foundation: Shopping Guide categories (dairy)",
+      {"name": "Weston A. Price Foundation: Milk homogenization", "url": "https://www.westonaprice.org/health-topics/know-your-fats/milk-homogenization-heart-disease/"},
+      "21 CFR 131.110 milk standard; 21 CFR 131.3 ultra-pasteurized (label meaning)",
+      "7 CFR 205.238 and 205.240 organic livestock rules (label meaning)",
+      "https://www.dairyreporter.com/Article/2026/03/13/how-ultrafiltered-milk-is-made-benefits-protein-process/",
+      "https://www.farmanddairy.com/?p=14321",
+      {"name": "BCPP: rBGH / rBST labeling", "url": "https://www.bcpp.org/resource/rbgh-rbst/"},
+      {"name": "HealthyUWellness: Packaged shredded cheese additives", "url": "https://www.healthyuwellness.org/post/packaged-shredded-cheese-is-toxic"}
+    ]
+  }
+}

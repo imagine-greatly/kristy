@@ -23,6 +23,12 @@ const strings = (v) => (typeof v === 'string' ? [v] : Array.isArray(v) ? v.flatM
 const fields = (e) => Object.entries(e).filter(([k]) => !SKIP.has(k)).flatMap(([, v]) => strings(v));
 const text = (e) => fields(e).join(' \n ');
 const urlsOf = (e) => (e.sources || []).map((s) => (typeof s === 'string' ? (s.match(/https?:\S+/) || [])[0] : s.url)).filter(Boolean);
+const srcKey = (s) => (typeof s === 'string' ? s : `${s.name ?? ''} ${s.url ?? ''}`);
+const GOV = /\.gov\b|\bextension\b|\b(USDA|FDA|FSIS|CDC|NIH|EPA)\b/i;
+const PEER = /https?:\/\/(pmc\.|www\.)?ncbi\.nlm\.nih\.gov\S*/gi; // peer-reviewed literature host, not a government source
+// Pre-completeness KB (9845b9e): the government check applies only to sources the 2026-10-22 pass added.
+const cp = JSON.parse(execFileSync('git', ['show', '9845b9e:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+const cpSrc = (id) => new Set((cp.entries.find((x) => x.id === id)?.sources || []).map(srcKey));
 const sentences = (id) => fields(card(id)).flatMap((s) => s.split(/(?<=[.;!?])\s+/));
 
 const DYES = ['breakfast_cereal', 'frozen_waffles', 'snack_bars', 'pick_juice', 'snacks', 'yogurt_plain_vs_flavored'];
@@ -42,6 +48,10 @@ for (const d of readdirSync(root, { withFileTypes: true }).filter((x) => x.isDir
     if (m) archived.add(m[1]);
   }
 }
+// Completeness pass 2026-10-22 (DECISIONS-2026-10-22.md): holistic sources replace government ones and are archived under
+// archive/completeness/<section>/, each file's URL verbatim on line 1.
+const CA = join(ROOT, 'archive/completeness');
+for (const d of readdirSync(CA)) for (const f of readdirSync(join(CA, d)).filter((x) => x.endsWith('.md'))) archived.add(readFileSync(join(CA, d, f), 'utf8').split('\n')[0].trim());
 
 test('C1 dye cards name dyes and the no-added-color rung', () => {
   for (const id of nonEmpty(DYES, 'dye cards', 6)) {
@@ -100,11 +110,16 @@ test('C5 sources come from the concern archive', () => {
   for (const u of [...DYE_URLS, ...PRES_URLS]) assert.ok(archived.has(u), `not an archive url: ${u}`);
   for (const id of ALL) {
     const before = new Set(urlsOf(was(id)));
-    const urls = nonEmpty(urlsOf(card(id)), `${id} sources`, 1);
-    assert.ok(urls.some((u) => archived.has(u) && !before.has(u)), `${id} adds no concern-archive url`);
+    // Completeness pass 2026-10-22: holistic sources (some cited by name) may replace concern-archive ones; a card keeps
+    // at least one source, and no source added since the baseline is government.
+    const beforeSrc = new Set((was(id).sources || []).map(srcKey));
+    const added = nonEmpty(card(id).sources || [], `${id} sources`, 1).map(srcKey).filter((s) => !beforeSrc.has(s));
+    for (const s of added) if (!cpSrc(id).has(s)) assert.doesNotMatch(s.replace(PEER, ''), GOV, `${id} new source is government: ${s}`);
+    const urls = urlsOf(card(id));
+    assert.ok(urls.some((u) => archived.has(u) && !before.has(u)) || added.length > 0, `${id} adds no concern-archive url and no new holistic source`);
     for (const u of urls) assert.ok(before.has(u) || archived.has(u), `${id} url not archived: ${u}`);
-    if (DYES.includes(id)) assert.ok(urls.some((u) => DYE_URLS.includes(u)), `${id} cites no dye source`);
-    if (ANTI.includes(id)) assert.ok(urls.some((u) => PRES_URLS.includes(u)), `${id} cites no preservative source`);
+    if (DYES.includes(id)) assert.ok(urls.some((u) => DYE_URLS.includes(u)) || added.some((s) => /\bdyes?\b/i.test(s)), `${id} cites no dye source`);
+    if (ANTI.includes(id)) assert.ok(urls.some((u) => PRES_URLS.includes(u)) || added.some((s) => /preservative|\bBH[AT]\b|TBHQ/i.test(s)), `${id} cites no preservative source`);
   }
 });
 

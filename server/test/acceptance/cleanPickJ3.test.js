@@ -9,12 +9,12 @@ import { fileURLToPath } from 'node:url';
 import { nonEmpty } from '../../lib/testGuards.js';
 import { lintCard, lintPick } from '../../lib/counterCardLint.js';
 import { projectEntry } from '../../lib/counterCards.js';
-import { CLEAN_J3, CLEAN_J3_BASE, preCleanJ4, preCleanJ5, preCleanJ6, preCleanJ7, preCleanJ8, preCleanJ9, preDialed } from './cartPlain.js';
+import { CLEAN_J3, preCompleteness, CLEAN_J3_BASE, preCleanJ4, preCleanJ5, preCleanJ6, preCleanJ7, preCleanJ8, preCleanJ9, preDialed } from './cartPlain.js';
 
 const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
 // Later batches restore their own ids to the J3 commit (J4: preCleanJ4, J5: preCleanJ5, J6: preCleanJ6, J7: preCleanJ7, J8: preCleanJ8, J9: preCleanJ9).
 const raw = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
-const kb = { ...raw, entries: raw.entries.map(preDialed).map(preCleanJ4).map(preCleanJ5).map(preCleanJ6).map(preCleanJ7).map(preCleanJ8).map(preCleanJ9) };
+const kb = { ...raw, entries: raw.entries.map(preCompleteness).map(preDialed).map(preCleanJ4).map(preCleanJ5).map(preCleanJ6).map(preCleanJ7).map(preCleanJ8).map(preCleanJ9) };
 const base = JSON.parse(execFileSync('git', ['show', `${CLEAN_J3_BASE}:server/kristy_perimeter_kb.json`], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 const doLines = JSON.parse(readFileSync(new URL('../../lib/doLines.json', import.meta.url), 'utf8'));
 const live = (id) => kb.entries.find((e) => e.id === id);

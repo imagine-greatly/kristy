@@ -15,6 +15,14 @@ import doLines from '../../lib/doLines.json' with { type: 'json' };
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../../..');
 const PRE = JSON.parse(execFileSync('git', ['show', '663ca3d:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+// Completeness pass 2026-10-22 (DECISIONS-2026-10-22.md) swapped government/extension sources for holistic ones. A base
+// source may be missing only if that pass dropped it (it sat on the card at 9845b9e); the card keeps >=1 source and
+// nothing the pass added is government.
+const CP = JSON.parse(execFileSync('git', ['show', '9845b9e:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+const cpSources = (id) => (CP.entries.find((x) => x.id === id)?.sources || []).map((s) => JSON.stringify(s));
+const GOV = /\.gov\b|\bextension\b|\b(USDA|FDA|FSIS|CDC|NIH|EPA)\b/i;
+const passDropped = (id, s) => cpSources(id).includes(JSON.stringify(s));
+const assertSwap = (id, e) => { const before = cpSources(id); for (const s of nonEmpty(e.sources || [], `${id} sources`, 1)) if (!before.includes(JSON.stringify(s))) assert.doesNotMatch(JSON.stringify(s), GOV, `${id} new source is government: ${JSON.stringify(s)}`); };
 const pre = (id) => PRE.entries.find((e) => e.id === id);
 const now = (id) => kb.entries.find((e) => e.id === id);
 const admits = (top) => !!(top && top.score >= 2 && top.aliasScore > 0);
@@ -75,7 +83,8 @@ test('C3 folded questions reach the survivor', () => {
 test('C4 sources moved', () => {
   for (const id of FOLDED) {
     const have = new Set(now(FOLD[id]).sources.map((s) => JSON.stringify(s)));
-    for (const s of nonEmpty(pre(id).sources, `${id} sources`, 1)) assert.ok(have.has(JSON.stringify(s)), `${id} source lost: ${JSON.stringify(s)}`);
+    for (const s of nonEmpty(pre(id).sources, `${id} sources`, 1)) assert.ok(have.has(JSON.stringify(s)) || passDropped(FOLD[id], s), `${id} source lost: ${JSON.stringify(s)}`);
+    assertSwap(FOLD[id], now(FOLD[id]));
   }
   const milk = JSON.stringify(now(MILK).sources);
   assert.ok(milk.includes('https://extension.umn.edu/agriculture/animals-and-livestock/dairy/a2-milk-and-a2-genetics'), 'umn A2 source lost');

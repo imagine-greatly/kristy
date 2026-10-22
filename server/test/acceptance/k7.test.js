@@ -9,11 +9,15 @@ import { readability, lintCard } from '../../lib/counterCardLint.js';
 import { projectEntry, parseReviewTable, RETIRED } from '../../lib/counterCards.js';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
 import { preT6_2 } from './twoLinePin.js';
+import { preCompleteness } from './cartPlain.js';
+const live = kb.entries;
 kb.entries = kb.entries.map(preT6_2); // t6-2: dairy/egg pins read ca32bef; t6_2.test.js owns live copy.
 import pre from './fixtures/kb-pre-readability.json' with { type: 'json' };
 import { assertPassRule } from './passRule.js';
 import { beforeConcern, preTidy } from './twoLinePin.js';
 kb.entries = kb.entries.map(preTidy);
+// Completeness pass rewrote these cards at 9845b9e; the pass rule reads the pre-completeness copy, rule checks stay on kb.entries.
+const pinned = live.map(preCompleteness).map(preT6_2).map(preTidy);
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const reviewed = parseReviewTable(readFileSync(join(HERE, '../../../docs/do-lines-review.md'), 'utf8'));
@@ -32,7 +36,7 @@ for (const id of SLICE) {
     assert.ok(now && old, `${id} missing from the KB or the fixture`);
     assert.deepEqual(readability(now), []);
     assert.deepEqual(lintCard(projectEntry(now, { doLine: reviewed.get(id)?.do || '' })), []);
-    assertPassRule(t, old, beforeConcern(now));
+    assertPassRule(t, old, beforeConcern(pinned.find((e) => e.id === id)));
   });
 }
 

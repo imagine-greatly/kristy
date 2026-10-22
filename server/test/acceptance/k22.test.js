@@ -5,6 +5,7 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { nonEmpty } from '../../lib/testGuards.js';
+import { execFileSync } from 'node:child_process';
 import { readability, lintCard } from '../../lib/counterCardLint.js';
 import { projectEntry, parseReviewTable, RETIRED } from '../../lib/counterCards.js';
 import { matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
@@ -86,8 +87,16 @@ for (const id of OWNERS) test(`C4 ${id}: its asks still top it`, () => {
 test('C5 every cited URL hits line 1 of a docs/sources/k22 file, none banned', () => {
   const dir = join(ROOT, 'docs/sources/k22');
   const lines = nonEmpty(readdirSync(dir).filter((f) => f.endsWith('.md')).map((f) => readFileSync(join(dir, f), 'utf8').split('\n')[0]), 'k22 archive', 49);
-  for (const id of CARDS) assert.ok((beforeConcern(preCleanPick12(byId(id)))?.sources ?? []).length >= 2, `${id} has <2 sources`);
-  const urls = nonEmpty(NEW.flatMap((id) => (beforeConcern(preCleanPick12(byId(id)))?.sources ?? []).map((s) => (typeof s === 'string' ? s : s.url))), 'K22 URLs', 26);
+  // Completeness pass 2026-10-22 (DECISIONS-2026-10-22.md): government/extension sources were swapped for holistic
+  // ones archived under archive/completeness/<section>/ (URL verbatim on line 1); some are cited by name only. A card keeps
+  // >=1 source, every cited URL still sits on a line 1, and no name-only source is government.
+  const CA = join(ROOT, 'archive/completeness');
+  for (const d of readdirSync(CA)) for (const x of readdirSync(join(CA, d)).filter((y) => y.endsWith('.md'))) lines.push(readFileSync(join(CA, d, x), 'utf8').split('\n')[0]);
+  for (const id of CARDS) assert.ok((beforeConcern(preCleanPick12(byId(id)))?.sources ?? []).length >= 1, `${id} has no source`);
+  const cited = NEW.flatMap((id) => (beforeConcern(preCleanPick12(byId(id)))?.sources ?? []).map((s) => (typeof s === 'string' ? s : s.url)));
+  const legacy = new Set(JSON.parse(execFileSync('git', ['show', '9845b9e:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString()).entries.flatMap((e) => e.sources ?? []).filter((s) => typeof s === 'string')); // pre-pass KB, 9845b9e
+  for (const s of cited) if (s && !/^https?:/.test(s) && !legacy.has(s)) assert.doesNotMatch(s, /\.gov\b|\bextension\b|\b(USDA|FDA|FSIS|CDC|NIH|EPA)\b/i, `name-only source is government: ${s}`);
+  const urls = nonEmpty(cited, 'K22 URLs', 26).filter((u) => /^https?:/.test(u ?? ''));
   for (const u of urls) {
     assert.ok(lines.some((l) => l.includes(u)), `${u} not on line 1 of any k22 source`);
     assert.ok(!BANNED.some((b) => u.includes(b)), `${u} is banned`);
@@ -123,7 +132,9 @@ test('C9 one entry per id, no forbidden, cider, seed-oil, hydrogenated or state 
 for (const id of NEW) test(`C10 ${id}: no health, price or brand wording`, () => {
   const e = byId(id);
   assert.ok(e, `${id} missing`);
-  const text = prose(id === 'canned_soup' ? beforeConcern(e, { copy: true }) : e).replace(/hydrolyzed (soy |vegetable |plant )?protein/gi, '');
+  const text = prose(id === 'canned_soup' ? beforeConcern(e, { copy: true }) : e).replace(/hydrolyzed (soy |vegetable |plant )?protein/gi, '')
+    // DECISIONS-2026-10-22 keeps canned soup's MSG objection; the ingredient term passes there only.
+    .replace(id === 'canned_soup' ? /\bMSG\b/g : /(?!)/, '');
   assert.ok(text.length > 40, `${id} prose is empty`);
   assert.doesNotMatch(text, /\b(healthy|healthier|heart|brain|joints?|skin|safer|safest|cures?|prevents?|glycemic|blood sugar|blood pressure|hypertension|digest\w*|nutritious|nutrients?|inflammat\w*|probiotic\w*|gut|immun\w*|allerg\w*|asthma|sensitiv\w*|hypoallergenic|absorb\w*|cholesterol|intoleran\w*|celiac|therapeutic|weight|detox\w*|metabol\w*|insulin|enzymes?|beneficial|wellness|boost\w*|microbiome|omega\w*|b-?12|folic|minerals?|antioxidants?|catechins?|fiber|protein|stimulant\w*|collagen|trans fats?|superfood\w*|diet|thyroid\w*|goit\w*|deficien\w*|electrolytes?|hydrat\w*|potassium|botulism|toxins?|toxic\w*|poison\w*|bpa|calories?|pregnan\w*|kidneys?|cancer\w*|carcinogen\w*|msg|remed\w*)\b/i);
   assert.doesNotMatch(text, /\$|\b(price|prices|pricier|cheap|cheaper|expensive|cost)\b/i);

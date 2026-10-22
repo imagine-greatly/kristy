@@ -1,0 +1,1023 @@
+{
+  "cooking_oils": {
+    "decision": "Olive or coconut oil, tallow, lard, butter or ghee.",
+    "short_answer": "The standard is olive oil, virgin coconut oil, butter, ghee, or pastured animal fat. Read every oil on the list. “Vegetable oil” names no single oil. Store oils are usually refined, bleached and deodorized; the bottle says refined or unrefined.",
+    "buying_tips": [
+      "Skip “vegetable oil” on a label; it names a category, not one seed or fruit.",
+      "Look for olive oil, virgin coconut oil, or animal fat from pastured animals.",
+      "Skip sunflower, safflower, canola, soybean, corn and cottonseed oils; the last four come from mostly bioengineered crops.",
+      "Avocado oil fits only when the maker states it is pure and pressed without heat.",
+      "Read the list for BHA, BHT, TBHQ or propyl gallate, preservatives added to oils, and choose a list without them.",
+      "Read the label for the oil’s name first, then refined or unrefined."
+    ],
+    "sources": [
+      {
+        "name": "Nourished Kitchen: Minimally processed, unrefined fats and oils",
+        "url": "https://nourishedkitchen.com/my-favorite-minimally-processed-unrefined-fats-oils/"
+      },
+      {
+        "name": "Weston A. Price Foundation: Principles of healthy diets",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/principles-of-healthy-diets-2/"
+      },
+      {
+        "name": "Weston A. Price Foundation: FAQ, fats and oils",
+        "url": "https://www.westonaprice.org/health-topics/faq-fats-and-oils/"
+      },
+      {
+        "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+        "url": "https://drcate.com/hateful-eight/"
+      },
+      {
+        "name": "Non-GMO Project: GMO FAQ",
+        "url": "https://www.nongmoproject.org/gmo-faq/"
+      }
+    ]
+  },
+  "lard_tallow": {
+    "buying_tips": [
+      "Lard may be hardened with lard stearin or hydrogenated lard, and the label says so.",
+      "Look for lard from pigs raised outdoors or tallow from grass-fed cattle, one fat listed.",
+      "Pick leaf lard for lard from the abdominal fat.",
+      "Read the ingredients for one fat: pork for lard, beef for tallow.",
+      "Check that a tub called shortening is not taken for plain lard.",
+      "Render leaf lard or suet at home from a small pasture farm’s fat."
+    ],
+    "sources": [
+      {
+        "name": "Weston A. Price Foundation: Shopping guide categories",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+      },
+      {
+        "name": "Weston A. Price Foundation: Rendering lard, tallow and other fats",
+        "url": "https://www.westonaprice.org/rendering-lard-tallow-and-other-fats/"
+      },
+      {
+        "name": "Weston A. Price Foundation: FAQ, fats and oils",
+        "url": "https://www.westonaprice.org/health-topics/faq-fats-and-oils/"
+      }
+    ]
+  },
+  "cocoa": {
+    "decision": "Organic cocoa or cacao, one ingredient, now and then.",
+    "why": "Traditional food guides put cocoa on the avoid list, so it stays occasional. Dutch cocoa is alkali-processed.",
+    "buying_tips": [
+      "Dutch cocoa is treated with an alkali, and its name has to say so.",
+      "Look for organic cocoa or cacao as the only ingredient.",
+      "Read the name for “processed with alkali” and pass on it; that is Dutch cocoa.",
+      "Skip drink mixes that list sugar ahead of cocoa.",
+      "Keep cocoa an occasional item, not a daily staple.",
+      "“Unsweetened cocoa” is often natural cocoa, not processed with alkali."
+    ],
+    "sources": [
+      {
+        "name": "Weston A. Price Foundation: Shopping guide categories",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+      }
+    ]
+  },
+  "seeds": {
+    "decision": "Raw organic chia and flax, sealed bags, soaked or ground.",
+    "why": "Flax gets ground before use, and chia works whole or soaked. Traditional guides pick sealed bags over bins.",
+    "short_answer": "Flax is ground in a coffee grinder or bought already ground. Chia is used whole or ground, and it turns to gel when soaked. Traditional guides favor raw organic seeds from sealed packages, soaked and dried, and pass on hemp.",
+    "buying_tips": [
+      "Flax needs grinding before use, while chia goes straight from the bag or into a soak.",
+      "Look for raw organic seeds in a sealed package, not from the bulk bins.",
+      "Buy flax already ground, or whole for grinding at home.",
+      "Soak seeds, then dry them at low heat, before eating them by the handful.",
+      "Pick chia whole or ground; soaked chia turns to gel.",
+      "Pass on hemp seeds; traditional guides leave them off the list."
+    ],
+    "sources": [
+      {
+        "name": "Weston A. Price Foundation: Shopping guide categories",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+      },
+      {
+        "name": "Weston A. Price Foundation: FAQ, grains, seeds, nuts and beans",
+        "url": "https://www.westonaprice.org/health-topics/faq-grains-seeds-nuts-beans/"
+      }
+    ]
+  },
+  "dried_fruit": {
+    "decision": "Organic dried fruit, unsulphured, with only the fruit listed.",
+    "buying_tips": [
+      "Sulfites added to stop browning must be declared, so the list shows them.",
+      "Look for organic, unsulphured fruit, with no sugar, oil or preservative listed.",
+      "Pick a bag whose list names only the fruit.",
+      "Expect added sugar on dried cranberries, since the fruit is tart.",
+      "Read the origin and pass on dried fruit from China.",
+      "Compare two bags of the same fruit by their lists."
+    ],
+    "sources": [
+      {
+        "name": "Weston A. Price Foundation: Shopping guide categories",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+      },
+      {
+        "name": "Weston A. Price Foundation: Healthy snacks, Sarah Pope",
+        "url": "https://www.westonaprice.org/healthy-snacks-video-by-sarah-pope/"
+      }
+    ]
+  },
+  "nutritional_yeast": {
+    "buying_tips": [
+      "The two look alike in the bag; only the list shows whether vitamins were added.",
+      "Look for inactive dried yeast and nothing more, with no vitamins listed.",
+      "Look for yeast dried at low temperature, where the maker says so.",
+      "Read the ingredient list to tell fortified from unfortified.",
+      "Pick flakes, granules or powder by how it will be used.",
+      "Look in the spice aisle or the bulk bins."
+    ],
+    "sources": [
+      {
+        "name": "Dr. Berg: Fortified vs non-fortified nutritional yeast",
+        "url": "https://www.drberg.com/blog/fortified-vs-non-fortified-nutritional-yeast"
+      },
+      {
+        "name": "Weston A. Price Foundation: Guide to superfoods",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/guide-to-superfoods/"
+      }
+    ]
+  },
+  "canned_coconut_milk": {
+    "buying_tips": [
+      "Many cans add a gum such as guar gum to thicken the milk and hold it steady.",
+      "Look for coconut alone on the list, with no guar gum or other gum.",
+      "Pass on coconut milk in aseptic boxes and “lite” cans; whole canned milk is the pick.",
+      "Pick a can that says “BPA-free lining” or “non-BPA”; many cans have an epoxy lining made with BPA. Where the same coconut milk is sold in glass, the jar has no can lining.",
+      "Compare two cans by how much the list holds beyond coconut.",
+      "Read the ingredients for guar gum or another gum."
+    ],
+    "watch_out": [
+      "The carton coconut milk drink is a different product, covered on its own card.",
+      "A “BPA-free” lining can swap in a related chemical such as BPS, which is not inert either."
+    ],
+    "sources": [
+      {
+        "name": "Chris Kresser: Coconut milk",
+        "url": "https://chriskresser.com/3-reasons-why-coconut-milk-may-not-be-your-friend/"
+      },
+      {
+        "name": "Chris Kresser: Guar gum, locust bean gum and more",
+        "url": "https://chriskresser.com/harmful-or-harmless-guar-gum-locust-bean-gum-and-more/"
+      },
+      {
+        "name": "Chris Kresser: BPA and BPA-free plastics",
+        "url": "https://chriskresser.com/re-examining-the-evidence-on-bpa-and-bpa-free-plastics/"
+      },
+      {
+        "name": "Weston A. Price Foundation: Shopping guide categories",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+      }
+    ]
+  },
+  "dried_herbs": {
+    "decision": "A single organic herb, non-irradiated, named on the jar.",
+    "buying_tips": [
+      "Basil and oregano count as spices, so a blend can list them only as “spice.”",
+      "Look for non-irradiated herbs with nothing added, and no Radura symbol.",
+      "Pick a single herb when the name on the jar matters.",
+      "Read a blend’s list for “spice” standing in for herb names.",
+      "Look for “spice and coloring” where a spice also adds color.",
+      "Read the origin and pass on herbs from China, organic or not.",
+      "Fresh herbs from a local grower are the first rung when the dish allows."
+    ],
+    "sources": [
+      {
+        "name": "Weston A. Price Foundation: Shopping guide categories",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+      },
+      "https://centerforfoodsafety.org/press-release/citizens-consumer-groups-oppose-proposed-irradiation-labeling-change/"
+    ]
+  },
+  "tea": {
+    "decision": "Organic loose-leaf tea, or herbs named on the box.",
+    "why": "True tea is one plant’s leaf, and processing makes the types. Herbal teas come from named plants.",
+    "buying_tips": [
+      "Every true tea is one plant’s leaf; herbal blends come from other plants.",
+      "Look for organic loose leaf or whole-leaf bags, with no “natural flavors.”",
+      "Read herbal blends for each plant named, and pass on “natural flavors.”",
+      "Read the box for “decaffeinated” when caffeine matters.",
+      "Traditional guides favor organic herb tea, in moderation, over caffeinated tea."
+    ],
+    "sources": [
+      {
+        "name": "Octavia Tea: Organic loose-leaf tea",
+        "url": "https://www.octaviatea.com/blog/post/organic-tea-how-to-tell-if-loose-leaf-tea-is-organic"
+      },
+      {
+        "name": "Weston A. Price Foundation: Shopping guide categories",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+      }
+    ]
+  },
+  "vinegar": {
+    "decision": "Organic raw vinegar or aged balsamic, 5 percent for pickling.",
+    "why": "Raw, naturally fermented vinegar is the traditional pick. Labels print acidity, and 5 percent is the pickling floor.",
+    "buying_tips": [
+      "Bottles at 4 percent are sold too, and tested pickling recipes rely on 5.",
+      "Look for organic raw or unpasteurized vinegar; pass on distilled white vinegar.",
+      "Pass on vinegar with natural flavors or caramel added.",
+      "Read the label for percent acidity.",
+      "Choose 5 percent acidity for canning or pickling.",
+      "An unpasteurized vinegar says so on its label.",
+      "On balsamic, read for the full protected name and its aging words.",
+      "Store vinegar cool, dark and tightly capped."
+    ],
+    "sources": [
+      {
+        "name": "Weston A. Price Foundation: Shopping guide categories",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+      },
+      "https://www.balsamicotradizionale.it/en/?p=2270",
+      "https://www.ilpost.it/2019/12/05/aceto-balsamico/",
+      "https://bur.regione.emilia-romagna.it/area-bollettini/bollettini-in-lavorazione/luglio-periodico-parte-seconda-2a-quindicina.2023-07-19.9761992070/comunicato-relativo-alla-modifica-del-disciplinare-della-igp-aceto-balsamico-di-modena/modifica-disciplinare-della-ig.2023-07-19.1689746028"
+    ]
+  },
+  "pasta_sauce": {
+    "decision": "Organic tomato sauce in glass, olive oil, no sweetener.",
+    "buying_tips": [
+      "Ingredients run most first, so anything ahead of the tomatoes outweighs them.",
+      "Look for organic tomatoes first, olive oil as the oil, and no added sweetener.",
+      "Pass on citric acid on the list.",
+      "Pick glass over cans or aseptic boxes; a jar has no can lining.",
+      "Read the first ingredient; tomatoes should lead.",
+      "Count what follows the tomatoes; a short list is the craft standard.",
+      "On canned tomatoes, read the “with” words for added spices, seasonings or vegetables."
+    ],
+    "sources": [
+      {
+        "name": "Weston A. Price Foundation: Shopping guide categories",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+      },
+      {
+        "name": "Chris Kresser: BPA and BPA-free plastics",
+        "url": "https://chriskresser.com/re-examining-the-evidence-on-bpa-and-bpa-free-plastics/"
+      },
+      "https://ouritaliantable.com/sugo-di-pomodoro/"
+    ]
+  },
+  "jam": {
+    "decision": "Organic fruit jam, natural sweetener, no citric or ascorbic acid.",
+    "why": "Traditional guides pick organic jam with a natural sweetener and no added acids. Jelly is strained juice.",
+    "buying_tips": [
+      "Jam and preserves start from the fruit itself; jelly is strained juice.",
+      "Look for organic fruit first, honey or another natural sweetener, and no citric acid.",
+      "Pass on jam sweetened with white sugar or corn syrup.",
+      "Read the name for “Jam” or “Preserves” with the fruit named.",
+      "Preserves hold small whole fruits or uniform pieces in a thick syrup.",
+      "In a mixed-fruit jam, the fruits are listed most first.",
+      "Refrigerate the jar once opened.",
+      "At farmers markets, cottage-food jam labels name the maker and address."
+    ],
+    "sources": [
+      {
+        "name": "Weston A. Price Foundation: Shopping guide categories",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+      }
+    ]
+  },
+  "ketchup_mustard": {
+    "decision": "Fermented or unsweetened organic ketchup; organic mustard of seed, vinegar.",
+    "short_answer": "Ketchup is made from tomato with vinegar, sweeteners and spices. Fermented ketchup is cultured with whey and raw vinegar. Prepared mustard is ground mustard seed, vinegar, turmeric, salt and spices.",
+    "buying_tips": [
+      "Ketchup’s federal standard starts from tomato; sweeteners and spices are optional.",
+      "Look for fermented ketchup, or tomato, vinegar and spices with no sweetener.",
+      "If sweetened, take honey or maple named on the list, never corn syrup.",
+      "Read the ketchup label for tomato concentrate and vinegar.",
+      "Look for organic mustard, with seed, vinegar and spices listed.",
+      "Stone ground mustard shows visible specks of seed.",
+      "Dijon carries mild white wine notes; yellow mustard is mild.",
+      "Use an open condiment before opening a new one."
+    ],
+    "sources": [
+      {
+        "name": "Traditional Cooking School: Lacto-fermented ketchup",
+        "url": "https://traditionalcookingschool.com/food-preparation/recipes/lacto-fermented-homemade-ketchup/"
+      },
+      {
+        "name": "Weston A. Price Foundation: Shopping guide categories",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+      },
+      "https://culinarylore.com/food-history:origin-of-ketchup/"
+    ]
+  },
+  "condiments": {
+    "decision": "Condiments read by first ingredient: organic, fermented, no corn syrup.",
+    "buying_tips": [
+      "Ingredients run most first, so the first one is what the jar mostly holds.",
+      "Look for organic or fermented condiments with no corn syrup or MSG.",
+      "Read the first ingredient; it is the one present in the largest amount.",
+      "Check the serving size before comparing two jars.",
+      "Write the open date on a jar the day it is opened.",
+      "Use an open condiment before opening a new one."
+    ],
+    "sources": [
+      {
+        "name": "Weston A. Price Foundation: Shopping guide categories",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+      },
+      {
+        "name": "Traditional Cooking School: Lacto-fermented ketchup",
+        "url": "https://traditionalcookingschool.com/food-preparation/recipes/lacto-fermented-homemade-ketchup/"
+      }
+    ]
+  },
+  "mayo": {
+    "buying_tips": [
+      "A jar sold on avocado or olive oil can carry other oils; the list shows which leads.",
+      "Look for olive oil as the only oil in the ingredient list.",
+      "Check that the name on the jar is Mayonnaise.",
+      "Choose olive oil mayonnaise with egg yolk and vinegar or citrus juice. Check every oil in the ingredient list.",
+      "Compare jars by what they add beyond oil, egg yolk, acid and salt.",
+      "Once opened, keep it in the fridge and use it within 1 to 2 months.",
+      "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
+      "Avocado oil mayo fits when the maker states the oil is pure and cold-pressed.",
+      "Homemade mayo of egg yolk and cold-pressed olive oil is the top rung."
+    ],
+    "sources": [
+      {
+        "name": "Traditional Cooking School: Healthy mayonnaise",
+        "url": "https://traditionalcookingschool.com/food-preparation/how-to-make-healthy-mild-tasting-mayonnaise-askwardee-128/"
+      },
+      {
+        "name": "Nourished Kitchen: Minimally processed, unrefined fats and oils",
+        "url": "https://nourishedkitchen.com/my-favorite-minimally-processed-unrefined-fats-oils/"
+      },
+      {
+        "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+        "url": "https://drcate.com/hateful-eight/"
+      },
+      "https://chriskresser.com/how-industrial-seed-oils-are-making-us-sick/"
+    ]
+  },
+  "hot_soy_sauce": {
+    "buying_tips": [
+      "Brewed soy sauce ferments for months; the fast method makes it with acid in hours.",
+      "Look for the words naturally brewed, with organic soybeans named first.",
+      "Pass on liquid aminos and any list with hydrolyzed protein.",
+      "Read the ingredients for wheat, on tamari too.",
+      "Read the front for a gluten-free claim.",
+      "On hot sauce, read the ingredients for vinegar; some fermented sauces have none added."
+    ],
+    "sources": [
+      {
+        "name": "Weston A. Price Foundation: Pantry intervention, Sarah Pope",
+        "url": "https://www.westonaprice.org/pantry-intervention-video-by-sarah-pope-2/"
+      },
+      {
+        "name": "Weston A. Price Foundation: Shopping guide categories",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+      },
+      "https://pureadmin.qub.ac.uk/ws/portalfiles/portal/609323809/The_crucial_importance_of_soy_sauce_authenticity.pdf",
+      "https://tastecooking.com/a-tale-of-two-tamaris/"
+    ]
+  },
+  "canned_soup": {
+    "decision": "Bone broth soup with a short list; homemade is better.",
+    "why": "Most canned soups lean on MSG and yeast extract for flavor. Bone broth makes the base, and homemade beats the can.",
+    "short_answer": "Most canned soup is seasoned with MSG, yeast extract or hydrolyzed protein. Homemade bone broth is the best start. In a can, pick broth-based soup with a short list, no seed oils. Skip deep dents, leaks, rust or bulging.",
+    "buying_tips": [
+      "MSG, yeast extract and hydrolyzed protein add flavor in place of more real ingredients.",
+      "Look for bone broth first and herbs and spices by name, with no natural flavor.",
+      "Skip soybean, canola or other seed oils on a soup list.",
+      "Homemade soup on bone broth is the top rung.",
+      "Low sodium is a fixed ceiling; reduced sodium only means less than a named soup.",
+      "Leave cans with deep dents, seam dents, leaks, rust or bulging lids on the shelf."
+    ],
+    "watch_out": [
+      "“No salt added” is not “sodium free”; the soup can still carry sodium.",
+      "Store cans cool and dry, between 50 °F and 70 °F, with the oldest in front. Wipe the lid before opening, and move opened soup to a covered container in the refrigerator."
+    ],
+    "sources": [
+      {
+        "name": "Weston A. Price Foundation: Pantry intervention, Sarah Pope",
+        "url": "https://www.westonaprice.org/pantry-intervention-video-by-sarah-pope-2/"
+      },
+      {
+        "name": "Weston A. Price Foundation: Shopping guide categories",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+      },
+      {
+        "name": "Chris Kresser: BPA and BPA-free plastics",
+        "url": "https://chriskresser.com/re-examining-the-evidence-on-bpa-and-bpa-free-plastics/"
+      }
+    ]
+  },
+  "olives": {
+    "buying_tips": [
+      "Lye works quickly and leaves a neutral olive; brine keeps a salty, fermented flavor.",
+      "Look for a jar of olives, water and salt, with no ferrous gluconate.",
+      "Look for organic olives from a named grower, cured in brine.",
+      "Read the jar for the curing method: brine, lye or dry salt.",
+      "Greek-style olives are near-ripe purple fruit cured in brine.",
+      "Spanish-style green olives are treated with lye, rinsed, then fermented.",
+      "Finish an opened jar within about 2 weeks."
+    ]
+  },
+  "seaweed": {
+    "buying_tips": [
+      "Kinds differ widely, and a study found species mislabeled on several products.",
+      "Read the package for the kind: nori, kombu, kelp or another.",
+      "Pass on sea vegetables from China, organic included.",
+      "Use kelp sparingly; iodine varies widely by kind and drying.",
+      "Laver, or nori, is soaked briefly or toasted dry.",
+      "Sugar kelp is soaked briefly, then simmered into broths.",
+      "Dulse is eaten as a snack straight from the bag."
+    ],
+    "sources": [
+      {
+        "name": "Weston A. Price Foundation: The great iodine debate",
+        "url": "https://www.westonaprice.org/health-topics/modern-diseases/the-great-iodine-debate/"
+      },
+      {
+        "name": "Weston A. Price Foundation: Guide to superfoods",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/guide-to-superfoods/"
+      },
+      {
+        "name": "Weston A. Price Foundation: Shopping guide categories",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+      },
+      "https://foodandnutritionresearch.net/index.php/fnr/article/download/7584/13452"
+    ]
+  },
+  "salsa": {
+    "decision": "Fermented or fresh cold-case salsa, vegetables first.",
+    "why": "Fermented salsa is cultured with salt, not heated. A shelf jar is acidified and heat-processed.",
+    "short_answer": "Salsa mixes onions and peppers with tomatoes. Fermented salsa is cultured with salt and left unheated. A shelf jar is acidified and heat-processed. A fresh tub sold from the cold case stays in the refrigerator.",
+    "buying_tips": [
+      "Shelf jars are acidified and heat-processed; a tub sold cold is meant to stay cold.",
+      "Look for vegetables first and salt, in a fermented or refrigerated tub.",
+      "A shelf jar is the fallback, behind fermented or fresh salsa.",
+      "A fresh tub from the cold case goes straight back in the refrigerator.",
+      "Homemade salsa keeps up to one week in the refrigerator.",
+      "In Virginia, a home-kitchen jar sells directly to shoppers and names its maker, address and phone."
+    ],
+    "sources": [
+      {
+        "name": "Nourished Kitchen: Fermented salsa",
+        "url": "https://nourishedkitchen.com/fermented-salsa/"
+      },
+      {
+        "name": "Weston A. Price Foundation: Shopping guide categories",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+      }
+    ]
+  },
+  "coconut_water": {
+    "decision": "Fresh coconut water, straight from the coconut, nothing added.",
+    "why": "Traditional guides favor water drawn from fresh coconuts. Some cartons add sugar, so the ingredients tell.",
+    "buying_tips": [
+      "Brands differ, and some add sugar; the list shows whether yours did.",
+      "Look for a whole young coconut, or cold coconut water listing only coconut water.",
+      "Read the ingredients: coconut water alone, or with sugar added.",
+      "Pass on coconut water made from concentrate.",
+      "Canned coconut water is heat-treated so it keeps; choose it over an aseptic box.",
+      "A whole young coconut in its husk keeps longer than a trimmed one."
+    ],
+    "sources": [
+      {
+        "name": "Weston A. Price Foundation: Shopping guide categories",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+      }
+    ]
+  },
+  "crackers": {
+    "decision": "Sourdough or sprouted organic crackers in olive oil or butter.",
+    "buying_tips": [
+      "Plain “wheat flour” is not whole grain, and multigrain often means refined grains.",
+      "Look for organic sourdough, soaked or sprouted whole grain, with olive oil or butter.",
+      "Pass on soy flour and added gluten on a cracker list.",
+      "Read the ingredient list for oil; take crackers made with olive oil, coconut oil or butter.",
+      "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
+      "Read the first ingredient; a whole grain there leads the cracker.",
+      "Look for “whole wheat flour” on the list, not just “wheat flour.”",
+      "For a fermented cracker, look to soda crackers, raised with yeast, or sourdough crackers made from starter.",
+      "BHA, BHT and TBHQ are preservatives added to fats and fat-containing foods. Read the ingredient list for BHA, BHT or TBHQ. Take a list without them over one naming any."
+    ],
+    "watch_out": [
+      "A front that leads with whole-grain words can still list refined flour first.",
+      "Avocado oil fits only when the maker states it is pure and cold-pressed."
+    ],
+    "sources": [
+      {
+        "name": "Weston A. Price Foundation: Shopping guide categories",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+      },
+      {
+        "name": "Weston A. Price Foundation: FAQ, fats and oils",
+        "url": "https://www.westonaprice.org/health-topics/faq-fats-and-oils/"
+      },
+      "https://en.wikipedia.org/wiki/Cracker_(food)",
+      "https://bakerpedia.com/processes/crackers/",
+      "https://www.masterclass.com/articles/sourdough-crackers",
+      {
+        "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+        "url": "https://drcate.com/hateful-eight/"
+      }
+    ],
+    "detail": "Under 21 CFR 101.4, ingredients are listed in descending order of predominance. FDA draft guidance says the ingredient list should show whether the first ingredient is a whole grain. “Wheat flour” is a synonym of flour, so it is not a whole grain flour. Soda crackers are fermented and leavened with yeast. The finest soda crackers take a long sponge fermentation, where most of the flour ferments first as a pre-ferment. Sourdough crackers are made from sourdough starter. Docking holes are poked in the dough to stop large air pockets while baking. Animal crackers are crackers in name only, and modern graham crackers are sweet. Olive oil, coconut oil or butter is Kristy’s standard for crackers. Skip seed oils; avocado oil fits only when the maker states it is pure and cold-pressed. Skip “partially hydrogenated” or “interesterified” oil on the list; look for olive oil, coconut oil or butter. Skip refined palm oil or fractionated palm kernel oil in crackers; look for butter or olive oil. Brown rice generally carries more arsenic than white rice; rotate rice-flour crackers with whole wheat or oat crackers."
+  },
+  "tortilla_chips": {
+    "decision": "Organic masa chips in lard, coconut oil or olive oil.",
+    "buying_tips": [
+      "Lime-cooked corn grinds into masa, a dough; untreated cornmeal cannot form one.",
+      "Look for the USDA Organic seal, then masa, one named fat and salt.",
+      "Check the frying fat in the ingredients; choose masa chips cooked in lard, tallow, coconut oil or olive oil.",
+      "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
+      "Choose certified organic tortilla chips first, with Non-GMO Project Verified a close second.",
+      "Most U.S. corn is bioengineered. Corn becomes grain, syrup, oil and starch."
+    ],
+    "watch_out": [
+      "Some corn chips are made from corn that was never cooked in lime.",
+      "Avocado oil fits only when the maker states it is pure and cold-pressed.",
+      "Canola, soy or corn frying oil in tortilla chips is typically derived from bioengineering."
+    ],
+    "sources": [
+      {
+        "name": "Weston A. Price Foundation: Shopping guide categories",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+      },
+      {
+        "name": "Weston A. Price Foundation: FAQ, fats and oils",
+        "url": "https://www.westonaprice.org/health-topics/faq-fats-and-oils/"
+      },
+      "https://en.wikipedia.org/wiki/Nixtamalization",
+      "https://www.fao.org/4/t0395e/T0395E05.htm",
+      "https://www.americastestkitchen.com/articles/8026-what-s-the-difference-between-corn-chips-and-tortilla-chips-ask-paul",
+      "https://sporked.com/article/what-is-masa/",
+      "https://anchoviesandeclairs.wordpress.com/2018/01/16/the-secret-behind-making-nixtamal-and-tortillas/",
+      "https://mininatortilla.com/blogs/news/traditional-vs-factory-made-tortilla-chips",
+      {
+        "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+        "url": "https://drcate.com/hateful-eight/"
+      },
+      {
+        "name": "Non-GMO Project: GMO FAQ",
+        "url": "https://www.nongmoproject.org/gmo-faq/"
+      }
+    ],
+    "detail": "The step is nixtamalization: dry corn is soaked and cooked in a solution of slaked lime and water. Slaked lime is calcium hydroxide, called “cal.” The cooked corn, called nixtamal, is washed, then ground into a dough, masa. The word comes from Nahuatl, the Aztec language. Cornmeal from untreated corn cannot form a dough with water alone. Masa harina means “dough flour,” the powder ground from nixtamal. Masa flour made at scale is based on the traditional method. Restaurant-style chips are tortillas cut into wedges and fried. Most bagged chips are shaped straight from coarse masa dough and fried. For chips, Kristy’s standard is lard, tallow, coconut oil or olive oil. Skip seed oils; avocado oil fits only when the maker states it is pure and cold-pressed."
+  },
+  "potato_chips": {
+    "decision": "Organic sliced potato chips in lard, coconut or olive oil.",
+    "buying_tips": [
+      "Stacked crisps start as dried potato flakes and cornstarch pressed into one shape.",
+      "Look for USDA Organic on the bag, and potatoes, one fat and salt on the list.",
+      "Read the ingredient list for the frying fat; take chips cooked in lard, tallow, coconut oil or olive oil.",
+      "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
+      "Read the ingredients; a sliced chip starts with potatoes.",
+      "Identical, stackable shapes point to a crisp pressed from flakes.",
+      "Expect irregular sizes and folds in a bag of sliced chips.",
+      "BHA, BHT and TBHQ are preservatives added to fats and fat-containing foods. Read the ingredient list for BHA, BHT or TBHQ. Take a list without them over one naming any."
+    ],
+    "watch_out": [
+      "“Potato crisps” can name a product pressed from dried potato flakes, not slices.",
+      "Avocado oil fits only when the maker states it is pure and cold-pressed."
+    ],
+    "sources": [
+      {
+        "name": "Weston A. Price Foundation: Shopping guide categories",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+      },
+      {
+        "name": "Weston A. Price Foundation: FAQ, fats and oils",
+        "url": "https://www.westonaprice.org/health-topics/faq-fats-and-oils/"
+      },
+      "https://www.smithsonianmag.com/arts-culture/curious-history-potato-chip-180979232/",
+      "https://www.chowhound.com/1803980/pringles-arent-potato-chips/",
+      "https://www.thetakeout.com/1833928/why-pringles-not-real-potato-chips/",
+      {
+        "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+        "url": "https://drcate.com/hateful-eight/"
+      }
+    ],
+    "detail": "The FDA classifies potato chips as thin slices of potatoes fried in deep fat. A stacked crisp starts from dehydrated potato flakes mixed with cornstarch and water. That mix gives every piece the same shape for stacking. The FDA let one such product use the name potato chips only with a prominent disclaimer: “potato chips made from dried potatoes.” Its maker chose “potato crisps,” the British term, instead. For chips, Kristy’s standard is lard, tallow, coconut oil or olive oil. Skip seed oils; avocado oil fits only when the maker states it is pure and cold-pressed. High-heat frying browns starchy slices, and darker browning forms more of a heat-made compound. Look for lighter browning: golden chips over dark ones. Monosodium glutamate is a flavor enhancer used in chips; skip it on the ingredient list and look for potatoes, oil and salt."
+  },
+  "popcorn": {
+    "decision": "Organic kernels, home-popped in coconut oil, butter or lard.",
+    "buying_tips": [
+      "Plain kernels pop with no oil, so any butter, oil or salt is your call.",
+      "Look for USDA Organic on the bag of kernels.",
+      "Look for a bag of kernels with popcorn as the only ingredient.",
+      "Pop kernels at home in coconut oil, butter, ghee or lard, then salt to taste.",
+      "Microwave and ready-popped bags name their oil in the list; skip sunflower, safflower, canola, soybean, corn and cottonseed oil."
+    ],
+    "watch_out": [
+      "Prepopped popcorn is often coated with flavorings before it reaches the shelf.",
+      "Avocado oil fits only when the maker states it is pure and cold-pressed.",
+      "Skip canola, soy or corn oil in ready-popped bags; these oils are typically derived from bioengineering.",
+      "Microwave popcorn bags are grease-lined, and grease-resistant packaging can carry PFAS. Pop plain kernels on the stove instead."
+    ],
+    "sources": [
+      {
+        "name": "Weston A. Price Foundation: Shopping guide categories",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+      },
+      {
+        "name": "Weston A. Price Foundation: FAQ, fats and oils",
+        "url": "https://www.westonaprice.org/health-topics/faq-fats-and-oils/"
+      },
+      "https://www.nbcnews.com/id/wbna7584284",
+      "https://www.csmonitor.com/The-Culture/Food/Stir-It-Up/2014/0903/The-easier-cheaper-way-to-make-air-popped-popcorn",
+      {
+        "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+        "url": "https://drcate.com/hateful-eight/"
+      }
+    ],
+    "detail": "Popcorn is a variety of corn, Zea mays everta. Its hard outer hull is the pericarp. Inside, moisture runs about 13 to 14.5 percent of the kernel. As the water heats, the kernel acts as a pressure cooker until the hull ruptures. Kernels with cuts or weak spots in the hull let the moisture escape and stay unpopped. In one study, 4 to 47 percent of kernels failed to pop, depending on variety. Two popped shapes are grown, butterfly and mushroom. Mushroom popcorn is often sold prepopped and coated with flavorings. For popping at home, Kristy’s standard is coconut oil, butter or tallow. Skip seed oils; avocado oil fits only when the maker states it is pure and cold-pressed."
+  },
+  "pretzels": {
+    "decision": "Organic whole wheat pretzels, sourdough if offered, short list.",
+    "buying_tips": [
+      "The alkaline bath gives a pretzel its chew and glossy brown crust.",
+      "Look for organic whole wheat flour, not enriched flour, at the top of the list.",
+      "Pick sourdough pretzels when the shelf has them.",
+      "Read the list for flour, malt syrup, oil, salt, yeast and soda.",
+      "Hard and soft pretzels both take the bath; a hard one bakes about twice as long.",
+      "A paler pretzel can point to the milder baking soda bath."
+    ],
+    "sources": [
+      {
+        "name": "Weston A. Price Foundation: Shopping guide categories",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+      },
+      "https://www.americastestkitchen.com/articles/5745-the-best-pretzels-you-ll-ever-have",
+      "https://www.npr.org/sections/thesalt/2014/08/09/338591194/for-a-proper-pretzel-crust-count-on-chemistry-and-memories"
+    ]
+  },
+  "snack_bars": {
+    "decision": "Whole nuts, fruit, jerky or cheese ahead of any bar.",
+    "why": "Traditional guides pass on most commercial granola and energy bars. Whole nuts and fruit need no binder or sweetener.",
+    "short_answer": "Whole nuts, fruit, jerky or cheese do the job of a bar with nothing added. If a bar is the choice, its list reads nuts, seeds and dates, nothing else. Granola and energy bars sit on the low rung.",
+    "buying_tips": [
+      "Ingredients run by amount, so the first ingredient leads the bar.",
+      "Look for a bar of nuts, seeds and dates, with nothing else on the list.",
+      "Reach for whole nuts, fruit, jerky or cheese before any bar.",
+      "Pass on granola and energy bars, soy ones included.",
+      "Find the oil in the ingredient list; take bars made with coconut oil or butter.",
+      "Read the ingredient list for synthetic dyes: Red 40, Yellow 5, Yellow 6 or Blue 1. Take the list with no added color over one naming a dye. “Lake” means a dye that does not dissolve in water; it still counts.",
+      "A bar with zero added sugar may use sucralose, aspartame or acesulfame potassium instead; take one sweetened with dried fruit.",
+      "“No added sugar” on a bar can still mean maltitol, erythritol or another sugar alcohol on the list. Look for fruit or honey as the sweetener."
+    ],
+    "watch_out": [
+      "Enriched refined grains listed first mean refined grain leads the bar.",
+      "Avocado oil fits only when the maker states it is pure and cold-pressed."
+    ],
+    "sources": [
+      {
+        "name": "Weston A. Price Foundation: Shopping guide categories",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+      },
+      {
+        "name": "Weston A. Price Foundation: FAQ, fats and oils",
+        "url": "https://www.westonaprice.org/health-topics/faq-fats-and-oils/"
+      },
+      "https://en.wikipedia.org/wiki/Granola",
+      {
+        "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+        "url": "https://drcate.com/hateful-eight/"
+      },
+      {
+        "name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest",
+        "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"
+      },
+      {
+        "name": "FoodPrint: Glyphosate Residue in Food",
+        "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"
+      }
+    ],
+    "detail": "Under 21 CFR 101.4, ingredients are listed in descending order of predominance. Granola is rolled oats, nuts, seeds and honey or another sweetener, usually baked. A granola bar mixes granola with honey or syrup, pressed and baked into a bar. For added fat in bars, Kristy’s standard is olive oil, coconut oil or butter. Skip seed oils; avocado oil fits only when the maker states it is pure and cold-pressed. Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed. Choose certified organic oat bars over conventional. Conventional oats may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic oats. Many bars carry sugar and high fructose corn syrup, and the list shows which. Skip refined palm oil or fractionated palm kernel oil in bars; look for coconut oil, olive oil or butter."
+  },
+  "trail_mix": {
+    "decision": "Raw or soaked nuts with unsulphured fruit, nothing added.",
+    "buying_tips": [
+      "Ingredients run by amount, so a long list can push nuts and fruit to the back.",
+      "Look for raw or soaked organic nuts and unsulphured dried fruit, no candy or oil.",
+      "Read the first few ingredients; nuts and fruit should lead.",
+      "Compare mixes by how short the list runs beyond nuts and fruit.",
+      "Mix soaked, dried nuts with raisins or unsulphured apricots at home."
+    ],
+    "sources": [
+      {
+        "name": "Weston A. Price Foundation: Healthy snacks, Sarah Pope",
+        "url": "https://www.westonaprice.org/healthy-snacks-video-by-sarah-pope/"
+      },
+      {
+        "name": "Weston A. Price Foundation: Shopping guide categories",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+      },
+      "https://www.rei.com/blog/hike/the-origins-of-gorp"
+    ]
+  },
+  "snacks": {
+    "decision": "Whole-food snacks, or organic whole grain listed first.",
+    "buying_tips": [
+      "Ingredients run by amount, and multigrain often means several refined grains.",
+      "Reach for nuts, fruit, cheese or soaked trail mix before a packaged snack.",
+      "Read the first ingredient before the front of the bag.",
+      "Look for an organic whole grain, vegetable or bean first, cooked in lard, coconut or olive oil.",
+      "Read “multigrain” as several grains, not whole grains.",
+      "Check the snack’s ingredient list for artificial color and synthetic dyes: Red 40, Yellow 5, Yellow 6 or Blue 1. Take the list with no added color over one naming a dye. “Lake” means a dye that does not dissolve in water; it still counts."
+    ],
+    "sources": [
+      {
+        "name": "Weston A. Price Foundation: Healthy snacks, Sarah Pope",
+        "url": "https://www.westonaprice.org/healthy-snacks-video-by-sarah-pope/"
+      },
+      {
+        "name": "Weston A. Price Foundation: Shopping guide categories",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+      }
+    ]
+  },
+  "hummus": {
+    "buying_tips": [
+      "Hummus bi tahina names its two parts, so chickpeas and tahini should lead the list.",
+      "Look for certified organic chickpeas and tahini, with no gum on the list.",
+      "Read the list for chickpeas and tahini at the top.",
+      "Look for lemon juice, garlic and extra virgin olive oil on the list.",
+      "A tub listing guar gum runs thicker; without it, water and grind set the texture.",
+      "Check the tub’s ingredients for added oil; choose olive oil or a hummus with no added oil.",
+      "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
+      "Avocado oil fits only when the maker states it is pure and cold-pressed.",
+      "Choose certified organic hummus over conventional. Conventional chickpeas may receive glyphosate before harvest for weed control. Organic farming does not allow glyphosate. Drift can still leave residues on organic chickpeas.",
+      "Homemade hummus of cooked chickpeas, tahini, olive oil, lemon and garlic is the top rung."
+    ],
+    "sources": [
+      {
+        "name": "Nourished Kitchen: Sprouted hummus",
+        "url": "https://nourishedkitchen.com/sprouted-hummus-recipe/"
+      },
+      "https://www.britannica.com/topic/hummus",
+      "https://www.pilgrimaps.com/hummus-discovering-the-spread-that-conquered-the-world/",
+      "https://www.americastestkitchen.com/taste_tests/2747-the-best-supermarket-hummus",
+      "https://mndaily.com/uncategorized/sharing-food-hommous-bi-tahini/01/18/2021/snoadmin/",
+      {
+        "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+        "url": "https://drcate.com/hateful-eight/"
+      },
+      {
+        "name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest",
+        "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"
+      },
+      {
+        "name": "FoodPrint: Glyphosate Residue in Food",
+        "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"
+      },
+      {
+        "name": "Saskatchewan Pulse Growers: Harvest Aid Options for Pulses",
+        "url": "https://saskpulse.com/resources/harvest-aid-options-for-pulses/"
+      }
+    ]
+  },
+  "deli_salads": {
+    "decision": "Cold-case deli salads dressed in olive oil, eaten within days.",
+    "buying_tips": [
+      "Cold food stays at 40°F or below, and egg, tuna or macaroni salad keeps 3 to 5 days.",
+      "Buy salads from a refrigerated case.",
+      "Check the Sell-By date, and skip a tub past it.",
+      "Get it home cold; two hours out at most, one hour above 90°F.",
+      "Read the salad’s ingredient label, including the dressing: choose olive oil or mayonnaise made with olive oil.",
+      "Skip a deli dressing listing vegetable oil such as sunflower, safflower, canola, soybean, corn or cottonseed oil.",
+      "Avocado oil in the dressing fits only when stated pure and cold-pressed. Ask for the ingredient list at the deli counter."
+    ]
+  },
+  "prepared_meals": {
+    "decision": "Whole meat and vegetable dishes, held hot or cold.",
+    "buying_tips": [
+      "Hot food belongs at 140°F or above and cold food below 40°F.",
+      "Pick whole meat and vegetable dishes; ask for the list and skip MSG or hydrolyzed protein.",
+      "Find the thermometer facing out and read it before choosing.",
+      "Pick pans filled to the rim, not piled into mounds.",
+      "Look for a sneeze guard and a separate utensil for each dish.",
+      "At home, two hours out at most, then into the fridge."
+    ],
+    "sources": [
+      {
+        "name": "Weston A. Price Foundation: Pantry intervention, Sarah Pope",
+        "url": "https://www.westonaprice.org/pantry-intervention-video-by-sarah-pope-2/"
+      },
+      {
+        "name": "Weston A. Price Foundation: Simple salt-cured beef or pork",
+        "url": "https://www.westonaprice.org/simple-salt-cured-beef-or-pork/"
+      },
+      "https://www.foodrepublic.com/1291124/signs-avoid-grocery-store-hot-bar-food-safety",
+      "https://www.tastingtable.com/1546547/temperature-prepared-foods-grocery-store-deli",
+      "https://centerforfoodsafety.org/press-release/toxic-industrial-chemicals-found-in-10-varieties-of-macaroni-and-cheese-powders/"
+    ]
+  },
+  "fresh_pasta": {
+    "decision": "Organic fresh pasta of flour and egg, nothing added.",
+    "buying_tips": [
+      "Many packs add nothing, and some add ascorbic or citric acid, which the list shows.",
+      "Look for organic flour and egg alone, with no ascorbic or citric acid added.",
+      "Read the list; flour and egg with little else marks a plain pack.",
+      "Pick a pack that is vacuum sealed or holds an oxygen packet."
+    ],
+    "sources": [
+      {
+        "name": "Weston A. Price Foundation: Shopping guide categories",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+      },
+      "https://www.tastingtable.com/854470/why-fresh-pasta-isnt-always-better-than-dried-pasta/",
+      "https://www.walksinsiderome.com/blog/what-to-do-in-rome-fresh-pasta-recipe/",
+      "https://www.chowhound.com/1821630/store-bought-fresh-pasta-preservatives",
+      "https://guide.michelin.com/hk/en/article/people/ask-the-expert-how-to-make-fresh-pasta-by-hand"
+    ]
+  },
+  "deli": {
+    "buying_tips": [
+      "Breads and dry snacks keep fine out of the cold; meats, cheeses and salads need it.",
+      "Look for whole-muscle meat from pasture-raised animals with a short ingredient list.",
+      "Check that meats, cheeses and salads sit in a refrigerated case.",
+      "For hot food, look for a case held at 140°F or above.",
+      "Ask about one food by name: deli salads, prepared meals or lunch meat."
+    ],
+    "sources": [
+      {
+        "name": "Weston A. Price Foundation: Simple salt-cured beef or pork",
+        "url": "https://www.westonaprice.org/simple-salt-cured-beef-or-pork/"
+      },
+      {
+        "name": "Weston A. Price Foundation: Pantry intervention, Sarah Pope",
+        "url": "https://www.westonaprice.org/pantry-intervention-video-by-sarah-pope-2/"
+      },
+      "https://www.tastingtable.com/1907890/avoid-deli-food-display-red-flag",
+      "https://www.foodrepublic.com/1291124/signs-avoid-grocery-store-hot-bar-food-safety"
+    ]
+  },
+  "frozen_pizza": {
+    "decision": "Sourdough or sprouted crust, olive oil, real mozzarella.",
+    "buying_tips": [
+      "That short list is the traditional Neapolitan dough, with nothing else in it.",
+      "Look for real cheese on the list; “imitation cheese” marks a substitute.",
+      "Look for a sourdough or sprouted flour crust with olive oil and sea salt.",
+      "Skip pizza listing soybean oil, hydrolyzed protein or MSG.",
+      "Read the crust list for flour, water, salt and yeast.",
+      "On a whole wheat crust, look for whole wheat flour listed first.",
+      "At home, double-wrap a pizza for the freezer: plastic wrap, then foil.",
+      "Air touching the surface leaves freezer burn, grayish-brown leathery spots."
+    ],
+    "sources": [
+      {
+        "name": "Weston A. Price Foundation: Homemade sourdough pizza dough",
+        "url": "https://www.westonaprice.org/homemade-sourdough-pizza-dough/"
+      },
+      {
+        "name": "Weston A. Price Foundation: Pantry intervention, Sarah Pope",
+        "url": "https://www.westonaprice.org/pantry-intervention-video-by-sarah-pope-2/"
+      },
+      "https://ilfattoalimentare.it/pizza-napoletana-disciplinare.html",
+      "https://www.tastingtable.com/1768445/double-wrap-homemade-frozen-pizza-freezer-burn"
+    ]
+  },
+  "frozen_meals": {
+    "decision": "Plain frozen meat, fish or vegetables, no sauce or MSG.",
+    "why": "Frozen dinners are a major source of MSG. Plain frozen meat, fish and vegetables carry no seasoning blend.",
+    "short_answer": "Plain frozen meat, fish and vegetables come ahead of a boxed dinner, which often carries MSG. A named stew must be at least 25 percent meat; a poultry dinner, 18 percent.",
+    "buying_tips": [
+      "The name sets a floor: at least 25 percent meat in a stew, 18 in a poultry dinner.",
+      "Look for frozen meat, fish or vegetables with no sauce, and no MSG on the list.",
+      "Frozen organic fruit and vegetables come without ascorbic or citric acid at their best.",
+      "Read the product name first: it sets the meat minimum.",
+      "Check the package for the inspection mark.",
+      "Read the label, since some products must be cooked from frozen.",
+      "At home, use frozen dinners within 3 to 4 months for best quality."
+    ],
+    "sources": [
+      {
+        "name": "Weston A. Price Foundation: Pantry intervention, Sarah Pope",
+        "url": "https://www.westonaprice.org/pantry-intervention-video-by-sarah-pope-2/"
+      },
+      {
+        "name": "Weston A. Price Foundation: Shopping guide categories",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+      },
+      {
+        "name": "Center for Food Safety: Phthalates in macaroni and cheese powders",
+        "url": "https://centerforfoodsafety.org/press-release/toxic-industrial-chemicals-found-in-10-varieties-of-macaroni-and-cheese-powders/"
+      }
+    ]
+  },
+  "frozen_fries": {
+    "decision": "Organic frozen fries in tallow, lard or coconut oil.",
+    "buying_tips": [
+      "At home, hash browns take potatoes, oil, salt and pepper; the bag lists anything more.",
+      "Look for organic potatoes on the bag.",
+      "The bag names its frying oil. Choose tallow, lard or coconut oil; olive oil or no added oil also fits.",
+      "Skip frozen fries listing vegetable oil: sunflower, safflower, canola, soybean, corn or cottonseed oil.",
+      "Read the bag’s ingredient list for potatoes, salt and the oil by name.",
+      "Compare bags by what each one lists beyond potatoes, salt and that oil.",
+      "In an air fryer, preheat about 3 minutes and shake the basket halfway.",
+      "Do not overcrowd the air fryer basket, so the fries cook evenly.",
+      "From an oven recipe, lower the air fryer temperature 25 to 30 F and the time by 20%.",
+      "The fat in a fry bag can carry BHA, BHT or TBHQ, preservatives added to fats. Take a bag listing none of them."
+    ],
+    "watch_out": [
+      "Fried foods frozen at home may lose their crispness.",
+      "Avocado oil fits only when the maker states it is pure and cold-pressed."
+    ],
+    "sources": [
+      {
+        "name": "Weston A. Price Foundation: Shopping guide categories",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+      },
+      {
+        "name": "Weston A. Price Foundation: FAQ, fats and oils",
+        "url": "https://www.westonaprice.org/health-topics/faq-fats-and-oils/"
+      },
+      "https://www.wgbh.org/news/2016-03-24/fry-and-fry-again-the-science-secrets-to-the-double-fry",
+      "https://patents.google.com/patent/US4254153",
+      "https://www.recipetineats.com/french-fries/",
+      "https://www.crunchycreamysweet.com/hash-browns-recipe/",
+      {
+        "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+        "url": "https://drcate.com/hateful-eight/"
+      }
+    ],
+    "detail": "The federal grade standard describes frozen french fries as mature white potatoes, washed, sorted and trimmed. They may be cut or left whole. They are deep-fried or blanched in fat or oil, then frozen. Blanching is a short cook in hot water or steam. In a plant, the strips are peeled, cut and blanched, then par-fried, meaning partly fried, and frozen. Blanching also leaches sugars from the strips. The fries are finish-fried from frozen to develop color and crispness. Why it works: frying is first a dehydration process, meaning it drives water out of the food. The drier the food going in, the better the crust. So cooks fry once, freeze, and fry again. As food cools, moisture moves from the center to the surface. The second fry boils it off. The first fry also leaves simpler pathways inside, so water escapes more easily the second time. An air fryer is a convection appliance, meaning it circulates hot air. It cooks faster than an oven and gives a crisp outside. French fries cook well in one. For added fat, Kristy’s standard is tallow, olive oil, or coconut oil. Skip seed oils; avocado oil fits only when the maker states it is pure and cold-pressed. Look for thick-cut fries on the bag. Acrylamide forms during high-heat browning; it is a cooking byproduct, not an added ingredient."
+  },
+  "frozen_waffles": {
+    "decision": "Organic whole grain waffles, no dyes or enriched flour.",
+    "buying_tips": [
+      "“Wheat flour” is plain flour, and front grain claims are undefined, so the list decides.",
+      "Look for organic whole wheat flour first and no enriched flour or dye anywhere.",
+      "Read the first ingredient for a whole grain, such as whole wheat flour.",
+      "Graham flour and rolled oats count as whole grain on the list.",
+      "Regular waffles rise with baking powder or soda, and yeast waffles rise with yeast.",
+      "At home, freeze cooled waffles airtight with parchment between, then toast them from frozen.",
+      "Skip a waffle list naming Red 40, Yellow 5, Yellow 6 or Blue 1. Each is a synthetic dye, and a “Lake” dye still counts."
+    ],
+    "sources": [
+      {
+        "name": "Weston A. Price Foundation: Shopping guide categories",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+      },
+      "https://www.onceuponachef.com/recipes/waffle-recipe.html",
+      "https://www.abakershouse.com/overnight-belgian-style-yeast-waffles/"
+    ]
+  },
+  "frozen_nuggets": {
+    "buying_tips": [
+      "“White meat” means 100 percent light meat; “mostly white meat” can be 66 percent.",
+      "Look for certified organic on the box and a plain “Chicken Nugget” name.",
+      "Look for whole chicken pieces with a short coating, such as arrowroot, salt and spices.",
+      "Find the frying or par-frying oil in the ingredient list. Take nuggets with tallow, olive oil, or coconut oil; no added oil also fits.",
+      "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
+      "Read the name: a plain “Chicken Nugget” is a solid piece of meat or poultry.",
+      "Look for “Chopped and Formed” beside the name, which means chopped and formed meat or poultry.",
+      "A nugget labeled “breaded” holds no more than 30 percent breading.",
+      "Nugget frying fats can carry BHA, BHT or TBHQ, preservatives added to fats. Take a box listing none of them.",
+      "Homemade nuggets of chicken, arrowroot and coconut oil are the top rung."
+    ],
+    "watch_out": [
+      "“Nugget-Shaped” in the name marks chopped meat that may hold binders, extenders or water.",
+      "Avocado oil fits only when the maker states it is pure and cold-pressed.",
+      "Pass on nuggets listing sodium phosphate; added phosphates help the chicken soak up and hold water."
+    ],
+    "sources": [
+      {
+        "name": "Mommypotamus: Homemade chicken nuggets",
+        "url": "https://mommypotamus.com/homemade-chicken-nuggets-gluten-free-paleo/"
+      },
+      {
+        "name": "Weston A. Price Foundation: FAQ, fats and oils",
+        "url": "https://www.westonaprice.org/health-topics/faq-fats-and-oils/"
+      },
+      "https://www.americastestkitchen.com/recipes/15619-tiny-chicken-tenders",
+      {
+        "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+        "url": "https://drcate.com/hateful-eight/"
+      },
+      {
+        "name": "The Conversation: How deli meat is made (phosphates hold water)",
+        "url": "https://theconversation.com/how-is-deli-meat-made-the-food-science-behind-the-turkey-ham-and-other-cold-cuts-in-your-lunch-283597"
+      }
+    ],
+    "detail": "On poultry labels, “white meat” or “light meat” means 100 percent light meat. “Mostly white meat” means 66 percent or more light meat. “Natural proportions” means 50 to 65 percent light meat. A nugget is an irregular, usually bite-sized piece, usually breaded and fried, meant as finger food. “Chicken Nugget” with no qualifier means a solid piece of meat or poultry. “Chopped and Formed” beside the name means chopped and formed meat or poultry. With binders, extenders or water, “nugget” is only a fanciful name. A descriptive name then follows, such as “Breaded Nugget-Shaped Chicken Patties”. A product labeled “breaded” carries batter and breading of no more than 30 percent of the finished product. “Ice glazed” beside the name means an ice glaze set the breading. “Mechanically Separated Chicken” is poultry with most of the bone removed by machine, in a paste-like form. Its bone solids are at most 1 percent. For added fat, Kristy’s standard is tallow, olive oil, or coconut oil. Skip seed oils; avocado oil fits only when the maker states it is pure and cold-pressed."
+  },
+  "frozen": {
+    "decision": "Plain organic frozen foods, frozen solid, picked up last.",
+    "buying_tips": [
+      "Food held at 0°F or below keeps its color, flavor and texture better.",
+      "Look for organic fruit and vegetables with no ascorbic or citric acid, and no sauce.",
+      "Pick up frozen food just before checkout, and buy only food frozen solid.",
+      "Get it into the home freezer as soon as possible.",
+      "Keep the freezer at 0°F or below, and 5°F at most.",
+      "Ice cream that is not brick-hard means the freezer runs warm.",
+      "Label and date frozen food, and use the oldest first.",
+      "Cook or thaw by the label instructions."
+    ],
+    "sources": [
+      {
+        "name": "Weston A. Price Foundation: Shopping guide categories",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+      },
+      {
+        "name": "Weston A. Price Foundation: Pantry intervention, Sarah Pope",
+        "url": "https://www.westonaprice.org/pantry-intervention-video-by-sarah-pope-2/"
+      }
+    ]
+  }
+}

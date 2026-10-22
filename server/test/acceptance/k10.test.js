@@ -10,6 +10,7 @@ import { projectEntry, parseReviewTable, RETIRED } from '../../lib/counterCards.
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
 import pre from './fixtures/kb-pre-readability.json' with { type: 'json' };
 import { assertPassRule } from './passRule.js';
+import { preCompleteness } from './cartPlain.js';
 import { beforeConcern, preCleanPick8, preT6_3 } from './twoLinePin.js';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -31,7 +32,7 @@ for (const id of SLICE) {
     assert.deepEqual(readability(now), []);
     assert.deepEqual(lintCard(projectEntry(now, { doLine: reviewed.get(id)?.do || '' })), []);
     // clean-pick-8 moved oats' cart_pick and coffee's sources; the pass rule reads them as of 125244d.
-    assertPassRule(t, old, beforeConcern(preCleanPick8(preT6_3(now))));
+    assertPassRule(t, old, beforeConcern(preCleanPick8(preT6_3(preCompleteness(now)))));
   });
 }
 

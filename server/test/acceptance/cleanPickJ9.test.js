@@ -13,11 +13,11 @@ import { nonEmpty } from "../../lib/testGuards.js";
 import { lintCard, readability, words, mechanicalVeto } from "../../lib/counterCardLint.js";
 import { projectEntry } from "../../lib/counterCards.js";
 import { load, run } from "../../scripts/stanceSweep.js";
-import { CLEAN_J9, CLEAN_J9_BASE, preCleanJ9, preDialed } from "./cartPlain.js";
+import { CLEAN_J9, preCompleteness, CLEAN_J9_BASE, preCleanJ9, preDialed, COMPLETENESS_BASE } from "./cartPlain.js";
 
 const ROOT = fileURLToPath(new URL("../../../", import.meta.url));
 const kb = JSON.parse(readFileSync(new URL("../../kristy_perimeter_kb.json", import.meta.url), "utf8"));
-kb.entries = kb.entries.map(preDialed); // dialed-1 restores salt to 9d7898e.
+kb.entries = kb.entries.map(preCompleteness).map(preDialed); // dialed-1 restores salt to 9d7898e.
 const base = JSON.parse(execFileSync("git", ["show", `${CLEAN_J9_BASE}:server/kristy_perimeter_kb.json`], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 const doLines = JSON.parse(readFileSync(new URL("../../lib/doLines.json", import.meta.url), "utf8"));
 const live = (id) => kb.entries.find((e) => e.id === id);
@@ -392,7 +392,7 @@ test("JC10 preCleanJ9 restores only batch ids and does not mutate live entries",
 });
 
 test("JC11 J9 leaves only reasoned M7 carries; M8 does not shrink by cutting sources", () => {
-  const before = run(CLEAN_J9_BASE), after = run();
+  const before = run(CLEAN_J9_BASE), after = run(COMPLETENESS_BASE); // snapshot pin: the completeness pass supersedes this sweep (DECISIONS-2026-10-22)
   assert.equal(before.flagged.length, 15);
   assert.equal(after.flagged.length, 8);
   assert.deepEqual(after.flagged.filter((id) => J9_SCOPE.has(id)).toSorted(), ["snack_bars", "snacks"]);

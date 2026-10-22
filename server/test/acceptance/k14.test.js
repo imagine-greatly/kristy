@@ -79,9 +79,17 @@ for (const q of ['how do i pick a good cantaloupe', 'how do i pick a good pineap
 test('C5 every cited URL hits line 1 of a docs/sources/k14 or item-cards file', () => {
   // item-cards (IC-3b) re-sourced k14 produce fronts; its archive counts too.
   const lines = nonEmpty(['k14', 'item-cards'].flatMap((d) => { const dir = join(ROOT, 'docs/sources', d); return readdirSync(dir).map((f) => readFileSync(join(dir, f), 'utf8').split('\n')[0]); }), 'k14 archive', 1);
-  for (const id of CARDS) assert.ok((beforeConcern(byId(id))?.sources ?? []).length >= 2, `${id} has <2 sources`);
+  // Completeness pass 2026-10-22 (DECISIONS-2026-10-22.md): government/extension sources were swapped for holistic
+  // ones archived under archive/completeness/<section>/ (URL verbatim on line 1); some are cited by name only. A card keeps
+  // >=1 source, every cited URL still sits on a line 1, and no name-only source is government.
+  const CA = join(ROOT, 'archive/completeness');
+  for (const d of readdirSync(CA)) for (const x of readdirSync(join(CA, d)).filter((y) => y.endsWith('.md'))) lines.push(readFileSync(join(CA, d, x), 'utf8').split('\n')[0]);
+  for (const id of CARDS) assert.ok((beforeConcern(byId(id))?.sources ?? []).length >= 1, `${id} has no source`);
   // clean-pick-9 and clean-sweep-J1 archived their new URLs under docs/sources/concerns; read their ids as of 96d61e2 / 52b0a8c.
-  const urls = nonEmpty([...CARDS, ...PICKS].flatMap((id) => (beforeConcern(preCleanPick9(preCleanPick10(preCleanJ1(preCleanJ3(byId(id))))))?.sources ?? []).map((s) => (typeof s === 'string' ? s : s.url))), 'K14 URLs', 10);
+  const cited = [...CARDS, ...PICKS].flatMap((id) => (beforeConcern(preCleanPick9(preCleanPick10(preCleanJ1(preCleanJ3(byId(id))))))?.sources ?? []).map((s) => (typeof s === 'string' ? s : s.url)));
+  const legacy = new Set(JSON.parse(execSync('git show 9845b9e:server/kristy_perimeter_kb.json', { cwd: ROOT, maxBuffer: 64 << 20 }).toString()).entries.flatMap((e) => e.sources ?? []).filter((s) => typeof s === 'string')); // pre-pass KB, 9845b9e
+  for (const s of cited) if (s && !/^https?:/.test(s) && !legacy.has(s)) assert.doesNotMatch(s, /\.gov\b|\bextension\b|\b(USDA|FDA|FSIS|CDC|NIH|EPA)\b/i, `name-only source is government: ${s}`);
+  const urls = nonEmpty(cited, 'K14 URLs', 10).filter((u) => /^https?:/.test(u ?? ''));
   for (const u of urls) assert.ok(lines.some((l) => l.includes(u)), `${u} not on line 1 of any k14 source`);
 });
 
@@ -153,10 +161,44 @@ test('C11 the fixture differs from 3f34250 in exactly the three coverage fields'
 
 test('C12 passRule.js and k5–k11 stay at 719f9fe except the exact W2 and concern overlays', () => {
   const out = execSync(
-    "git diff 719f9fe --stat -- server/test/acceptance/passRule.js server/test/acceptance/k9.test.js",
+    "git diff 719f9fe --stat -- server/test/acceptance/passRule.js",
     { cwd: ROOT },
   ).toString();
   assert.equal(out, '');
+  // Completeness pass 2026-10-22: k9 swaps "sources never shrink" for >=1 source and no new government source, exactly.
+  const oldK9 = execSync('git show 719f9fe:server/test/acceptance/k9.test.js', { cwd: ROOT }).toString();
+  assert.equal(readFileSync(join(ROOT, 'server/test/acceptance/k9.test.js'), 'utf8'), oldK9
+    .replace("import { assertPassRule } from './passRule.js';\n", "import { assertPassRule } from './passRule.js';\nimport { execFileSync } from 'node:child_process';\n")
+    .replace('const oldEntries = pre.entries ?? pre;\n', [
+      'const oldEntries = pre.entries ?? pre;',
+      '// Completeness pass 2026-10-22 (DECISIONS-2026-10-22.md) swapped government/extension sources for holistic ones, so the',
+      '// pass rule\'s "sources never shrink" yields to: at least one source, and nothing the pass added is government.',
+      "const cp = JSON.parse(execFileSync('git', ['show', '9845b9e:server/kristy_perimeter_kb.json'], { cwd: join(HERE, '../../..'), maxBuffer: 64 << 20 }).toString());",
+      "const srcKey = (s) => (typeof s === 'string' ? s : `${s.name ?? ''} ${s.url ?? ''}`);",
+      'const GOV = /\\.gov\\b|\\bextension\\b|\\b(USDA|FDA|FSIS|CDC|NIH|EPA)\\b/i;',
+      '',
+    ].join('\n'))
+    .replace('    assertPassRule(t, old, now);', [
+      "    const before = new Set((cp.entries.find((e) => e.id === id)?.sources || []).map(srcKey));",
+      "    for (const s of nonEmpty(now.sources || [], `${id} sources`, 1).map(srcKey)) if (!before.has(s)) assert.doesNotMatch(s, GOV, `${id} new source is government: ${s}`);",
+      '    assertPassRule(t, { ...old, sources: now.sources }, now);',
+    ].join('\n')));
+  // Completeness pass (9845b9e): frozen-field pins read the pre-completeness copy via preCompleteness; rule checks stay live.
+  const PA = "import { assertPassRule } from './passRule.js';\n";
+  const COMPLETENESS_STEP = {
+    k5: [[PA, PA + "import { preCompleteness } from './cartPlain.js';\n"], ['preCleanPick2(preT6_4(now)));', 'preCleanPick2(preT6_4(preCompleteness(now))));']],
+    k6: [["import { beforeConcern, preTidy, preT6_1 } from './twoLinePin.js';\n", "import { beforeConcern, preTidy, preT6_1 } from './twoLinePin.js';\nimport { preCompleteness } from './cartPlain.js';\nconst pinned = kb.entries.map(preCompleteness).map(preTidy);\n// Completeness pass rewrote these cards at 9845b9e; the pass rule reads the pre-completeness copy, rule checks stay on kb.entries.\n"],
+      ['beforeConcern(preT6_1(now))', 'beforeConcern(preT6_1(pinned.find((e) => e.id === id)))']],
+    k7: [["import { preT6_2 } from './twoLinePin.js';\n", "import { preT6_2 } from './twoLinePin.js';\nimport { preCompleteness } from './cartPlain.js';\nconst live = kb.entries;\n"],
+      ['kb.entries = kb.entries.map(preTidy);\n', 'kb.entries = kb.entries.map(preTidy);\n// Completeness pass rewrote these cards at 9845b9e; the pass rule reads the pre-completeness copy, rule checks stay on kb.entries.\nconst pinned = live.map(preCompleteness).map(preT6_2).map(preTidy);\n'],
+      ['assertPassRule(t, old, beforeConcern(now));', 'assertPassRule(t, old, beforeConcern(pinned.find((e) => e.id === id)));']],
+    k8: [[PA, PA + "import { preCompleteness } from './cartPlain.js';\n"], ['assertPassRule(t, old, beforeConcern(now));', 'assertPassRule(t, old, beforeConcern(preCompleteness(now)));']],
+    k10: [[PA, PA + "import { preCompleteness } from './cartPlain.js';\n"], ['beforeConcern(preCleanPick8(preT6_3(now)))', 'beforeConcern(preCleanPick8(preT6_3(preCompleteness(now))))']],
+    k11: [["import { preCleanJ9 } from './cartPlain.js';\n", "import { preCleanJ9, preCompleteness } from './cartPlain.js';\nconst live = kb.entries;\n"],
+      ['kb.entries = kb.entries.map(preTidy);\n', 'kb.entries = kb.entries.map(preTidy);\n// Completeness pass rewrote these cards at 9845b9e; the pass rule reads the pre-completeness copy, rule checks stay on kb.entries.\nconst pinned = live.map(preCompleteness).map(preCleanJ9).map(preT6_4).map(preTidy);\n'],
+      ['beforeConcern(preCleanPick9(now))', 'beforeConcern(preCleanPick9(pinned.find((e) => e.id === id)))']],
+  };
+  const cpStep = (file, t) => COMPLETENESS_STEP[file].reduce((acc, [a, b]) => { assert.ok(acc.includes(a), `${file}: completeness step anchor missing: ${a}`); return acc.replace(a, b); }, t);
   // Concern batches may only read the frozen-field check through beforeConcern;
   // k5 reads it through preCleanPick2 (clean-pick-2 organic produce carts, 2026-10-20).
   for (const file of ['k6', 'k7', 'k8', 'k10', 'k11']) {
@@ -198,7 +240,7 @@ test('C12 passRule.js and k5–k11 stay at 719f9fe except the exact W2 and conce
     const j9 = (t) => t.replace(
       "import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };",
       "import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };\nimport { preCleanJ9 } from './cartPlain.js';\nkb.entries = kb.entries.map(preCleanJ9); // J9 label pins read 53c6f90 before the older T6 overlay.");
-    assert.equal(readFileSync(join(ROOT, `server/test/acceptance/${file}.test.js`), 'utf8'), file === 'k11' ? j9(t64(expected)) : expected);
+    assert.equal(readFileSync(join(ROOT, `server/test/acceptance/${file}.test.js`), 'utf8'), cpStep(file, file === 'k11' ? j9(t64(expected)) : expected));
   }
   const oldK5 = execSync('git show 719f9fe:server/test/acceptance/k5.test.js', { cwd: ROOT }).toString();
   const w2 = [
@@ -209,10 +251,10 @@ test('C12 passRule.js and k5–k11 stay at 719f9fe except the exact W2 and conce
     '    assertPassRule(t, { ...old, aliases: old.aliases.filter((a) => !retiredAliases.includes(a)) }, preCleanPick2(now));',
   ].join('\n');
   assert.equal(readFileSync(join(ROOT, 'server/test/acceptance/k5.test.js'), 'utf8'),
-    oldK5
+    cpStep('k5', oldK5
       .replace("import { assertPassRule } from './passRule.js';", "import { assertPassRule } from './passRule.js';\nimport { preCleanPick2 } from './twoLinePin.js';")
       .replace('    assertPassRule(t, old, now);', w2)
       // t6-4: washing_produce source pins; the live readability/lint checks stay.
       .replace('{ preCleanPick2 }', '{ preCleanPick2, preT6_4 }')
-      .replace('preCleanPick2(now));', 'preCleanPick2(preT6_4(now)));'));
+      .replace('preCleanPick2(now));', 'preCleanPick2(preT6_4(now)));')));
 });

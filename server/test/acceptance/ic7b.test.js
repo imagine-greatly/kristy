@@ -10,6 +10,7 @@ import { ESSENTIALS, projectEntry } from '../../lib/counterCards.js';
 import { lintCard, readability, headlineHedge, TIER_NOTE_ORPHANED_PENDING } from '../../lib/counterCardLint.js';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
 import { preT6_2 } from './twoLinePin.js';
+import { preCompleteness } from './cartPlain.js'; // review table pins the pre-completeness decisions, like ic8a/ic8b
 kb.entries = kb.entries.map(preT6_2); // t6-2: dairy/egg pins read ca32bef; t6_2.test.js owns live copy.
 import { beforeConcern } from './twoLinePin.js';
 import doLines from '../../lib/doLines.json' with { type: 'json' };
@@ -88,7 +89,7 @@ test('C5 dairy fronts and why lines pass', () => {
     assert.ok(!PENDING.includes(id), `${id} still pending`);
     assert.deepEqual(lintCard(projectEntry(e, { doLine: doLines[id] })), [], `${id} lint`);
     assert.deepEqual(readability(e), [], `${id} readability`);
-    assert.equal(reviewHeadline(id), kb.entries.find((x) => x.id === id).decision, `${id} review headline differs from KB decision`);
+    assert.equal(reviewHeadline(id), preCompleteness(kb.entries.find((x) => x.id === id)).decision,`${id} review headline differs from KB decision`);
   }
   assert.deepEqual([...ESSENTIALS], ['organic_worth_it_by_type', 'egg_labels', 'salmon_wild_vs_farmed', 'label_front_vs_back',
     'produce_ripeness_by_item', 'beef_grassfed_vs_grainfed', 'judging_meat_at_the_case', 'whole_vs_reduced_fat_milk']);

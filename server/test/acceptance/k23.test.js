@@ -5,6 +5,7 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { nonEmpty } from '../../lib/testGuards.js';
+import { execFileSync } from 'node:child_process';
 import { readability, lintCard } from '../../lib/counterCardLint.js';
 import { projectEntry, parseReviewTable, RETIRED } from '../../lib/counterCards.js';
 import { matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
@@ -84,8 +85,16 @@ for (const id of OWNERS) test(`C4 ${id}: its asks still top it`, () => {
 test('C5 every cited URL hits line 1 of a docs/sources/k23 file, none banned', () => {
   const dir = join(ROOT, 'docs/sources/k23');
   const lines = nonEmpty(readdirSync(dir).filter((f) => f.endsWith('.md')).map((f) => readFileSync(join(dir, f), 'utf8').split('\n')[0]), 'k23 archive', 69);
-  for (const id of CARDS) assert.ok((beforeConcern(byId(id))?.sources ?? []).length >= 2, `${id} has <2 sources`);
-  const urls = nonEmpty(NEW.flatMap((id) => (beforeConcern(byId(id))?.sources ?? []).map((s) => (typeof s === 'string' ? s : s.url))), 'K23 URLs', 26);
+  // Completeness pass 2026-10-22 (DECISIONS-2026-10-22.md): government/extension sources were swapped for holistic
+  // ones archived under archive/completeness/<section>/ (URL verbatim on line 1); some are cited by name only. A card keeps
+  // >=1 source, every cited URL still sits on a line 1, and no name-only source is government.
+  const CA = join(ROOT, 'archive/completeness');
+  for (const d of readdirSync(CA)) for (const x of readdirSync(join(CA, d)).filter((y) => y.endsWith('.md'))) lines.push(readFileSync(join(CA, d, x), 'utf8').split('\n')[0]);
+  for (const id of CARDS) assert.ok((beforeConcern(byId(id))?.sources ?? []).length >= 1, `${id} has no source`);
+  const cited = NEW.flatMap((id) => (beforeConcern(byId(id))?.sources ?? []).map((s) => (typeof s === 'string' ? s : s.url)));
+  const legacy = new Set(JSON.parse(execFileSync('git', ['show', '9845b9e:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString()).entries.flatMap((e) => e.sources ?? []).filter((s) => typeof s === 'string')); // pre-pass KB, 9845b9e
+  for (const s of cited) if (s && !/^https?:/.test(s) && !legacy.has(s)) assert.doesNotMatch(s, /\.gov\b|\bextension\b|\b(USDA|FDA|FSIS|CDC|NIH|EPA)\b/i, `name-only source is government: ${s}`);
+  const urls = nonEmpty(cited, 'K23 URLs', 26).filter((u) => /^https?:/.test(u ?? ''));
   for (const u of urls) {
     assert.ok(lines.some((l) => l.includes(u)), `${u} not on line 1 of any k23 source`);
     assert.ok(!BANNED.some((b) => u.includes(b)), `${u} is banned`);

@@ -1,0 +1,338 @@
+{
+  "organic_worth_it_by_type": {},
+  "freezing_produce": {},
+  "produce_ripeness_by_item": {},
+  "berries_picking": {},
+  "revive_greens": {},
+  "produce_peppers": {},
+  "produce_stone_fruit": {},
+  "produce_green_beans": {},
+  "produce_storage": {},
+  "frozen_vs_fresh_produce": {
+    "decision": "Fresh, local, in season first; organic frozen as backup.",
+    "why": "A nearby grower picks closer to ripe. Supermarket produce is often harvested early to survive transit and storage.",
+    "short_answer": "Fresh from a local grower, in season, comes first. Out of season, organic frozen with one ingredient on the bag is the store fallback. A real-food kitchen keeps some frozen vegetables on hand for soups and sides.",
+    "detail": "A garden or farm stand is the top rung, then organic in season. Supermarket produce is often harvested long before peak so it survives shipping and storage, which is why local and seasonal leads. Frozen earns its place as the fallback: a Weston A. Price Foundation writer keeps broccoli, spinach or kale and green beans in the freezer for soups and sides. Check that the bag lists only the vegetable or fruit. Freezing your own: freeze soon after harvest or purchase, steam-blanch rather than boil, and thaw in the fridge.",
+    "evidence_tier": "kristys_standard",
+    "tier_note": "Local, in-season produce first is the whole-food standard, with organic frozen as the fallback.",
+    "kristy_take": "Keep some frozen vegetables for soups and sides, organic and single-ingredient. In season, the farm stand comes first.",
+    "buying_tips": [
+      "Local and in season reaches you closer to ripe than produce shipped across the country.",
+      "Out of season, organic frozen is the store fallback, with one ingredient on the bag.",
+      "Check the bag lists just the vegetable or fruit. No sauces or added sugar.",
+      "Broccoli, spinach or kale and green beans are the frozen staples worth keeping.",
+      "Freezing your own: steam-blanch, freeze soon, thaw in the fridge."
+    ],
+    "watch_out": [
+      "Supermarket ‘fresh’ is often harvested well before peak so it survives transit and storage.",
+      "Frozen is the fallback, not the top rung. A farm stand in season comes first."
+    ],
+    "pick_steps": [
+      "Buy local, in-season produce first, from a grower or farm stand.",
+      "Out of season, take organic frozen listing only the vegetable or fruit.",
+      "Keep broccoli, spinach or kale and green beans in the freezer."
+    ],
+    "science": "Supermarket produce is often harvested before peak so it survives transit and storage, so local and in season leads. Blanching stops the enzymes that keep vegetables maturing in the freezer, and steaming is preferred to boiling. Freezing needs no additives, so a bag should list only the food.",
+    "sources": [
+      "Weston A. Price Foundation: Extend to the End, Prolonging Your Local Growing Season",
+      "Weston A. Price Foundation: Feeding Your Family Well From the Big Box Stores",
+      "Weston A. Price Foundation: The Wisely Stocked Kitchen",
+      "Weston A. Price Foundation: Making the Most of Autumn Abundance (freezing)"
+    ]
+  },
+  "produce_seasonality": {
+    "short_answer": "Yes. Supermarket produce is often harvested long before peak so it survives transit and storage. In season from a local farm or a garden is the top tier, organic or biodynamic. Out of season, organic frozen is the store fallback.",
+    "detail": "Supermarket produce is often harvested long before its peak nutritional value so it can survive transit and storage. Fresh from a garden or a local farm stand is best, organic or biodynamic and in season. Ask the grower how the crop was grown; a farm directory or farmers market lists local farms. Off-season, produce is shipped long distances or grown under conditions that trade flavor for availability, and organic frozen is the fallback. Broadly: tender greens and berries in spring, tomatoes and stone fruit in summer, squash and apples in autumn, citrus and hardy brassicas in winter. Season shows up in the size of the pile before it shows up anywhere else. Some produce ignores the calendar because it stores well (apples, onions, potatoes, winter squash, carrots) or because it was shipped from the other hemisphere, which is why ‘available’ and ‘in season’ are different words. Citrus peaks in the dead of winter, which is why a January orange tastes better than a July one.",
+    "sources": [
+      "Weston A. Price Foundation: Extend to the End, Prolonging Your Local Growing Season",
+      "Weston A. Price Foundation: Shopping Guide Categories",
+      "Weston A. Price Foundation: Feeding Your Family Well From the Big Box Stores",
+      "Weston A. Price Foundation: Eating Locally & Seasonally (book review)"
+    ]
+  },
+  "washing_produce": {
+    "decision": "Uncoated produce from a grower; rinse even pre-washed bags.",
+    "why": "Washing lifts dirt but does not remove a fruit coating. Pre-washed bagged greens still get a rinse at home.",
+    "short_answer": "Rinse under cold running water, rubbing firm produce, right before eating. Wash pre-washed bags too. Wax or an added coating does not wash off. The pick is uncoated produce from a grower.",
+    "detail": "Water and friction lift surface dirt. A coating is a different matter: Added edible coatings sit on the Weston A. Price Foundation avoid list, and washing does not take them off, so the choice is made at the shelf, uncoated and from a grower. In-season conventional produce gets washed well. Pre-washed bagged salad has been through a chlorine sanitising wash; one health writer advises washing it again and buying from a grower. Leave berries and mushrooms unwashed until they are used. Moisture speeds spoilage.",
+    "evidence_tier": "kristys_standard",
+    "tier_note": "A coating does not wash off, so uncoated produce from a grower comes first.",
+    "kristy_take": "Brush firm produce; rinse and spin leafy greens, pre-washed bags included. Leave berries and mushrooms dry until they are eaten.",
+    "buying_tips": [
+      "Washing lifts dirt, not a fruit coating, so pick uncoated produce from a grower.",
+      "Rinse pre-washed bagged greens again at home.",
+      "Rinse under cold running water; rub firm produce or use a brush.",
+      "Wash right before eating, not before storing (moisture = mold)."
+    ],
+    "watch_out": [
+      "Added edible coatings do not wash off; shellac and carnauba are waxes used the same way.",
+      "Pre-washed bags go through a chlorine wash at the plant; rinse them again."
+    ],
+    "pick_steps": [
+      "Choose uncoated produce from a grower; a coating does not wash off.",
+      "Rinse under cold running water right before eating, pre-washed bags included.",
+      "Brush firm produce; rinse and spin greens."
+    ],
+    "science": "Water and friction remove surface dirt. A coating stays on through any rinse, so uncoated is chosen at the shelf. Moisture speeds spoilage, so berries and mushrooms stay dry until use. Pre-washed bagged greens have been through a chlorine wash and still get a rinse at home.",
+    "sources": [
+      "Weston A. Price Foundation: Shopping Guide Categories",
+      "Paleo.com.au: Why You Must Wash Your Pre-Washed Salad"
+    ]
+  },
+  "baking_soda_soak": {
+    "decision": "Produce grown without sprays, then organic, over any soak.",
+    "why": "Residue is settled at the farm, not the sink. A grower who uses no sprays answers it before the produce is bought.",
+    "short_answer": "The surest answer comes before the sink: a local grower who uses no sprays, then organic. What a home soak does to residue is not settled. Rinse under cold running water; the real choice is made at the shelf.",
+    "detail": "Baking soda soaks circulate widely as a residue fix, and no holistic source backs that claim, so it is left unmade here. The dependable step is choosing produce grown without sprays from a local grower, then organic, starting with what gets eaten skin-on: apples, grapes, berries. Ask the grower how the crop was grown. At home, rinse under cold running water right before eating.",
+    "evidence_tier": "kristys_standard",
+    "tier_note": "Choosing produce grown without sprays is the standard; a soak’s effect on residue is unverified.",
+    "kristy_take": "Spend the effort at the shelf, not the sink: grown without sprays first, then organic. Rinse in plain water before eating.",
+    "buying_tips": [
+      "Residue is settled at the farm, so the pick is grown without sprays, then organic.",
+      "Ask the grower how it was grown; a plain rinse at home is the habit.",
+      "Start with produce eaten skin-on: apples, grapes, berries."
+    ],
+    "watch_out": [
+      "A home soak is not a substitute for produce grown without sprays."
+    ],
+    "pick_steps": [
+      "Look for a local grower’s “grown without sprays”, then organic.",
+      "Start with produce eaten skin-on: apples, grapes, berries.",
+      "Rinse under cold running water right before eating."
+    ],
+    "science": "No holistic source backs a home soak for residue, so no removal claim is made. Growing without sprays keeps residue off from the start, and organic is the floor.",
+    "sources": [
+      "Weston A. Price Foundation: Shopping Guide Categories"
+    ]
+  },
+  "precut_produce_tradeoffs": {
+    "decision": "Whole heads and whole vegetables from a grower over pre-cut.",
+    "short_answer": "Buy it whole and cut it at home. Whole keeps longer; cut produce keeps days, not weeks. Bagged greens get a chlorine wash, so rinse them again. When it has to be a bag, organic spring mix or romaine.",
+    "detail": "Cutting exposes more surface to air and light, so pre-cut keeps days rather than weeks. Pre-washed bagged salad is sanitised with chlorine; one health writer advises washing it again and asking the grower how the greens are washed. Whole heads from a local grower skip the question. When a bag is the only option, the Weston A. Price Foundation names organic spring mix and romaine as store fallbacks.",
+    "buying_tips": [
+      "Whole produce waits for the day you need it; once cut, it keeps days, not weeks.",
+      "Whole produce keeps far longer.",
+      "For bagged greens, organic spring mix or romaine is the store fallback.",
+      "Use pre-cut within a couple of days. It spoils fast once opened.",
+      "Give ‘pre-washed’ greens a rinse anyway."
+    ],
+    "labels_decoded": [
+      {
+        "term": "Pre-washed / triple-washed",
+        "meaning": "Washed at the plant, often in chlorinated water. Rinse again at home."
+      }
+    ],
+    "watch_out": [
+      "Bagged greens are washed at the plant with chlorine; a home rinse still matters.",
+      "Pre-cut melon and pineapple sit closest to the edge. Buy those the day you eat them.",
+      "Whole skin protects the fruit. Sliced and chopped produce has more exposed surface and supports microbial growth more easily. Low-acid items that grew touching dirt, melon first, need the most care.",
+      "‘Sell by’, ‘use by’ and ‘best by’ on a tub are not regulated. They are how the company chose to present the product, not a safety cutoff."
+    ],
+    "pick_steps": [
+      "Buy it whole and cut it at home; it keeps far longer.",
+      "For bagged greens, organic spring mix or romaine, rinsed again at home.",
+      "Buy pre-cut melon and pineapple the day they get eaten."
+    ],
+    "science": "Cutting opens every surface at once, so pre-cut keeps days, not weeks. Whole skin protects the fruit; cut produce supports microbial growth more easily, melon most of all. Bagged greens go through a chlorine wash and still get a rinse at home.",
+    "sources": [
+      "Paleo.com.au: Why You Must Wash Your Pre-Washed Salad",
+      "Weston A. Price Foundation: Feeding Your Family Well From the Big Box Stores",
+      "Eat or Toss: How to Assess Pre-Cut and Chopped Fruits and Vegetables After the Use-By, Best-By, or Sell-By Dates"
+    ]
+  },
+  "sprouts_raw": {
+    "decision": "Organic broccoli, radish or mung sprouts; skip alfalfa and soy.",
+    "why": "Weston A. Price guidance accepts sprouted seeds but not alfalfa or soy, and eats sprouts lightly steamed, not raw.",
+    "short_answer": "Yes, chosen well. Broccoli, radish or mung from the cold case, with white roots and no sour smell. Home-grown from organic seed works too. Skip alfalfa and soy sprouts. Weston A. Price guidance eats them lightly steamed, not raw.",
+    "detail": "Weston A. Price Foundation guidance accepts organic sprouting seeds with two exceptions, alfalfa and soybean. Alfalfa seeds contain canavanine, and raw sprouts hold irritants that are neutralized in cooking, so the guidance is to eat them lightly steamed or cooked. Sprouting has been a winter green in kitchens for a very long time, and a jar with a mesh lid on the counter still produces a crop in three or four days. Buying them is fine when the case is cold and turnover is quick; sprouts go slick and sour before they look wrong.",
+    "kristy_take": "A jar, a mesh lid and organic seed grow a crop at home. Bought sprouts come from the cold case; steam them lightly before eating.",
+    "buying_tips": [
+      "Broccoli, radish or mung over alfalfa and soy, per Weston A. Price guidance.",
+      "Sprouts are eaten whole, so the USDA Organic seal is the floor here.",
+      "The refrigerated case only. Room-temperature sprouts have been left in growing conditions.",
+      "Roots still white and threadlike, stems crisp rather than limp.",
+      "No condensation fogging the clamshell and no sour smell through the vents.",
+      "A pack date you can read. Days old, not a week.",
+      "Or a jar, a mesh lid and a scoop of organic sprouting seed. Three days on the counter."
+    ],
+    "watch_out": [
+      "Alfalfa seeds contain canavanine; Weston A. Price guidance skips alfalfa and soy sprouts.",
+      "Raw sprouts hold irritants that cooking neutralizes, so they go in lightly steamed.",
+      "Not for pregnancy or anyone immunocompromised.",
+      "Slick, browning or sour-smelling sprouts are past it. That happens fast and it is visible.",
+      "Warm, damp growing conditions also multiply any bacteria already on the seed."
+    ],
+    "pick_steps": [
+      "Choose broccoli, radish or mung; skip alfalfa and soy.",
+      "From the refrigerated case only: white roots, crisp stems, no sour smell.",
+      "Eat them lightly steamed or cooked, as Weston A. Price guidance does."
+    ],
+    "science": "Weston A. Price guidance accepts sprouted seeds except alfalfa, whose seeds contain canavanine, and soy. Raw sprouts hold irritants that cooking neutralizes, so they are eaten lightly steamed or cooked. Sprouts grow in the warm damp that bacteria also like, and slick, browning or sour sprouts are past it.",
+    "sources": [
+      "Weston A. Price Foundation: Shopping Guide Categories",
+      "Weston A. Price Foundation: Sprouted grains (Sprout-Buckwheat PDF)",
+      "Weston A. Price Foundation: 11 Dietary Principles, chapter 4 (cooking plant foods)"
+    ]
+  },
+  "produce_root_vegetables": {
+    "why": "Roots grow in the soil and the skin often gets eaten, so how they were grown comes first.",
+    "detail": "Top tier is local and in season from a grower who uses no sprays, then organic; ask the grower how the crop was grown. Potatoes keep up to a month in a cool, dark place with good ventilation, ideally 45 to 50°F. Throw away any that turn shriveled or green or grow many sprouts. Sweet potatoes want cool and dry, 55 to 59°F: colder brings chilling injury (fungal decay, internal browning, shriveling) and warmer speeds sprouting. Carrots go in a closed bag or container in the refrigerator for up to two weeks. Cut the tops off first, since attached tops wilt the root, and a wilted carrot revives in a soak of cold water. Beets: trim the leafy stem to an inch, leave the root end on, and refrigerate in a food-safe container for up to two weeks. Stored potatoes are often treated with a sprout inhibitor, so fresh-dug local potatoes come first.",
+    "tier_note": "Each root is eaten close to the soil, often skin-on, so the grower comes before firmness.",
+    "buying_tips": [
+      "Roots are often eaten skin-on, so how the grower raised them comes first.",
+      "Look for local potatoes labeled “grown without sprays”, the grower’s word, not a seal.",
+      "Organic is the fallback for potatoes and carrots; the standard still permits approved sprays.",
+      "Potatoes: firm, with no bruises, nicks, or soft spots.",
+      "Carrots: firm and well colored. With the tops on, choose bright green, fresh-looking tops.",
+      "Sweet potatoes: smooth and firm, even in shape and size, peel color even for the variety, free of damage.",
+      "Beets: firm and round with a slender tap root. The leaves on top say nothing certain about the root. Wilted leaves say little as long as the root is firm.",
+      "Potatoes: a cool, dark, ventilated place, 45 to 50°F, for up to a month.",
+      "Carrots: a closed bag or container in the refrigerator, tops removed, up to two weeks. A wilted carrot revives in cold water.",
+      "Beets: stem trimmed to an inch, root end left on, refrigerated in a food-safe container up to two weeks."
+    ],
+    "sources": [
+      "Weston A. Price Foundation: Shopping Guide Categories",
+      "Weston A. Price Foundation: Extend to the End, Prolonging Your Local Growing Season",
+      "Organic Federation of Canada: Organic sprout inhibitors for potatoes caught in red tape"
+    ]
+  },
+  "produce_brassicas": {
+    "decision": "Local broccoli, cauliflower, cabbage grown without sprays, then organic.",
+    "detail": "Top tier is local and in season from a grower who uses no sprays, then organic; ask the grower how the crop was grown. Broccoli is the short keeper of the three: refrigerate it in a plastic bag with holes and use it within three days. Cabbage goes the other way, staying fresh for several weeks in a plastic bag or wrap in the refrigerator at 41°F or below; before using, cut out the core and rinse the leaves under cool running water. Cauliflower gets kept away from raw meat and meat juices.",
+    "buying_tips": [
+      "Florets and leaves are eaten whole, with no peel to take surface residue away.",
+      "Look for a local grower’s “grown without sprays”, the grower’s word, not a seal.",
+      "Organic is the store fallback for broccoli, cauliflower and cabbage.",
+      "Broccoli: dark green florets, closed tight, on stems that are not thick and tough.",
+      "Cauliflower: a head with no bruises or damage.",
+      "Cabbage: outer leaves fresh, not wilted or insect-damaged. Remove any that are.",
+      "Broccoli keeps in the refrigerator in a plastic bag with holes. Use it within three days.",
+      "Cabbage keeps several weeks in a plastic bag or wrap in the refrigerator, at 41°F or below.",
+      "Cut out the cabbage core and rinse the leaves under cool running water before using."
+    ],
+    "pick_steps": [
+      "Look for local heads grown without sprays, then organic.",
+      "Press each head; leave any soft, slippery, bruised or damaged one.",
+      "Pick broccoli with dark green, tight florets on stems not thick or tough."
+    ],
+    "sources": [
+      "Weston A. Price Foundation: Shopping Guide Categories",
+      "Weston A. Price Foundation: Extend to the End, Prolonging Your Local Growing Season"
+    ]
+  },
+  "produce_onions_garlic": {
+    "decision": "Local onions and garlic grown without sprays, firm, dry-necked.",
+    "detail": "Top tier is local and in season from a grower who uses no sprays, then organic; ask the grower how the crop was grown. Whole dry onions live in a cool, dry, dark place with plenty of air movement: no plastic bags, no wrap, and not beside potatoes or anything else that releases moisture. Storage between 41 and 75°F favors sprouting, so the cooler the spot the better. Refrigeration is only for sweet or mild high-water varieties, on a low-humidity setting, and a cut onion goes in a sealed container for up to seven days. Garlic keeps one to two months at room temperature in low humidity before it softens, goes spongy, and shrivels from water loss; it sprouts fastest between 41 and 65°F, and its odor moves into other foods, so it gets stored on its own.",
+    "buying_tips": [
+      "A dry neck and papery skins mark a well-cured bulb; soft or scented ones are fading.",
+      "Look for a local grower’s “grown without sprays”, then organic.",
+      "Onions firm for their size, with little to no scent.",
+      "An onion neck that is completely dry to the touch, not slippery.",
+      "Garlic well cured: dried neck, dry outer skins, cloves firm to the touch.",
+      "Some loose skins on an onion are normal.",
+      "Whole onions: cool, dry, dark, with air moving. Never in plastic.",
+      "Cut onions go in a sealed container for up to seven days."
+    ],
+    "tier_note": "Onions and garlic from a grower who uses no sprays come first, then organic.",
+    "sources": [
+      "Weston A. Price Foundation: Shopping Guide Categories",
+      "Weston A. Price Foundation: Extend to the End, Prolonging Your Local Growing Season"
+    ]
+  },
+  "produce_leafy_greens": {
+    "decision": "Lettuce grown without sprays, local or living greenhouse, then organic.",
+    "detail": "Cold is the whole storage story. Romaine keeps about 21 days near 32°F and noticeably less at 41°F, so the coldest shelf of the refrigerator is the right one. Spinach wants 32°F too and will not hold good quality past two weeks; at 41 to 50°F it wilts and yellows faster. Kale goes in a plastic bag with as much air pressed out as possible, unwashed, for about five days; water on the leaves speeds spoilage, so wash at the point of use. Small greenhouse growers sell living lettuce with the root ball on, grown with no sprays of any kind; one says the root ball doubles the shelf life, and another packs it to stay fresh up to three weeks. Greenhouse or hydroponic alone does not say how it was grown, so look for the no-sprays word. In a big store, organic spring mix and romaine are the fallback. At the shelf, lettuce runs bright to dark green outside and yellow or light green at the heart, free of insects, decay, or damage. A very loose romaine head is immature; a very firm or hard one is overmature. Spinach should be fairly clean with no serious damage. Kale should show no browning, yellow, or small holes.",
+    "tier_note": "The leaves are what gets eaten and what gets sprayed, so the grower comes first.",
+    "buying_tips": [
+      "Lettuce is eaten as the leaf, and the leaf is what gets sprayed.",
+      "Look for local or greenhouse lettuce labeled grown without sprays; greenhouse or hydroponic alone does not say it.",
+      "Living lettuce sold with the root ball on keeps longest; keep the roots damp.",
+      "Organic is the store fallback; organic rules still allow approved sprays.",
+      "In a big store, organic spring mix or romaine is the fallback.",
+      "Lettuce: crisp leaves, bright to dark green outside and pale at the heart, free of decay or damage.",
+      "Romaine: a head that is neither very loose nor very hard. Loose is immature; hard is overmature.",
+      "Spinach: uniformly green, fully crisp, fairly clean.",
+      "Kale: firm, deep colored leaves on moist, hardy stems. Smaller leaves are more tender and milder.",
+      "Store lettuce and spinach as close to 32°F as the refrigerator gets.",
+      "Kale: plastic bag, air pressed out, unwashed, about five days in the refrigerator."
+    ],
+    "sources": [
+      "CanvasRebel: interview with Forest Valley Acres (greenhouse grower, no sprays, living lettuce)",
+      "Reading Eagle: Big Leaf Hydroponics living lettuce (2019)",
+      "Weston A. Price Foundation: Feeding Your Family Well From the Big Box Stores",
+      "Paleo.com.au: Why You Must Wash Your Pre-Washed Salad"
+    ]
+  },
+  "produce_apples_pears": {
+    "decision": "Local, in-season, uncoated apples and pears grown without sprays.",
+    "detail": "Cold and dark is the storage rule: 30 to 32°F is best and up to 40°F still works, in a ventilated box or a plastic bag with holes, unwashed, since the moisture from washing hastens decay. Gala apples soften quickly, so cool them fast; McIntosh and Honeycrisp are prone to chilling injury and want 38°F. Refrigerated apples keep up to a month. Keep apples and pears away from raw meat and meat juices. Added edible coatings sit on the Weston A. Price Foundation avoid list, and orchards that skip synthetic sprays and wax coatings say so, so ask at the stand: waxed or coated? On apples, look for cracks at the stem or blossom end. Bartletts are picked mature-green and ripened off the tree; a ripe one is sweet, aromatic, and juicy with a buttery texture.",
+    "tier_note": "Each apple and pear is eaten skin-on, so how the orchard grew and coated it comes first.",
+    "buying_tips": [
+      "Bruised fruit makes the sound fruit beside it ripen and rot faster.",
+      "Look for “grown without sprays” or Certified Naturally Grown; the first is the grower’s word, not a seal.",
+      "At the orchard or stand, ask: waxed or coated? Uncoated is the pick.",
+      "Organic is the fallback, and the organic standard still permits approved sprays when other pest controls fall short.",
+      "Apples: firm and crisp, free of bruising, decay, cracks, and insect injury.",
+      "Pears: free of bruising, insect damage, and decay; a firm green Bartlett ripens off the tree.",
+      "Store in the dark at 30 to 32°F, up to 40°F, in a ventilated box or a perforated bag.",
+      "Do not wash before storing; the moisture hastens decay.",
+      "McIntosh and Honeycrisp: store at 38°F, since they are prone to chilling injury.",
+      "Refrigerated apples keep up to a month."
+    ],
+    "watch_out": [
+      "Bruised or damaged fruit stored with sound fruit: it makes the sound fruit ripen and rot faster.",
+      "A pear ripened on the tree turns mealy; Bartletts are meant to be picked green.",
+      "Gala softens quickly when it is not cooled.",
+      "A high shine can be an added coating of carnauba or shellac, applied after washing strips the natural wax.",
+      "Added edible coatings sit on the Weston A. Price Foundation avoid list."
+    ],
+    "sources": [
+      "Weston A. Price Foundation: Shopping Guide Categories",
+      "Chelan Ranch (organic orchard): Should I put apples in the fridge",
+      "The Orchards Box: FAQ (wax-free apples)"
+    ]
+  },
+  "produce_citrus": {
+    "decision": "Organic or untreated citrus, firm, with a smooth rind.",
+    "detail": "Oranges keep at room temperature for up to a week and in the refrigerator for up to three weeks. Lemons hold best around 54 to 57°F and limes around 50 to 55°F, warmer than a refrigerator. A lemon or lime that has turned yellow is the one to use first: lemons picked fully yellow and limes picked yellow must be marketed quickly, while the fruit picked dark green keeps longest. At the bin, oranges should show even, intense color, free of skin blemishes and discoloration. A partly green orange gets its color from degreening, which does not change the inside. Lemons should be free of decay, drying, and rind stains. Green limes are preferred in the US, but yellow limes carry more juice; pick limes free of bruises and oil spotting. Conventional citrus is often treated after harvest with imazalil or thiabendazole fungicides, and residues are measurable in the peel, so organic or untreated is the pick, most of all when the zest goes in.",
+    "tier_note": "Post-harvest fungicides sit on the peel, so organic or untreated comes first.",
+    "kristy_take": "Firmness and a sound rind are the checks; leave decay and shriveling behind. For zest, organic or untreated only.",
+    "buying_tips": [
+      "A partly green orange can be fully mature, so firmness and a smooth rind tell more.",
+      "Look for organic or labeled untreated citrus, peel and all.",
+      "Oranges: even color, firm, smooth, no decay, bruising, or blemishes.",
+      "Lemons: even yellow, firm, smooth, no drying, rind stains, or shriveling.",
+      "Limes: firm and smooth, no bruises, oil spotting, or dryness; yellow ones have more juice.",
+      "Oranges: room temperature up to a week, refrigerator up to three weeks.",
+      "Lemons and limes hold best in the 50s °F, warmer than the refrigerator.",
+      "Use the yellowed lemons and limes first; the green-picked ones keep longest."
+    ],
+    "sources": [
+      "Foods (2025) 14:1264, peer-reviewed: genotoxicological assessment of imazalil, pyrimethanil and thiabendazole post-harvest treatments on citrus (PMC11989162)"
+    ]
+  },
+  "produce_mushrooms": {
+    "decision": "Local mushrooms grown without sprays, then organic, dry and firm.",
+    "detail": "A local grower who uses no sprays comes first, then organic. Look for caps closed around the stem or moderately open, with pink or light tan gills. The cap surface should be white, creamy or an even light brown. Portobello is a large, mature cremini. Shiitake has broad, umbrella-shaped caps and is best cooked. Store mushrooms unwashed in the refrigerator, in the original container or a paper bag. A plastic bag or airtight container collects moisture that spoils them. Use fresh mushrooms within a week for best quality. Only an expert can tell poisonous wild mushrooms from edible ones, and no amount of cooking or drying destroys the toxins.",
+    "tier_note": "Mushrooms get eaten whole, cap and stem, so the grower comes first.",
+    "buying_tips": [
+      "Moisture is what spoils mushrooms, so a dry, firm cap is the fresh one.",
+      "Look for a local grower’s “grown without sprays”, then organic.",
+      "Feel for a dry, firm cap and pass on any with dark spots.",
+      "Pick closed caps for a mild flavor and open caps for a stronger one.",
+      "Buy them loose to take only the amount needed."
+    ],
+    "sources": [
+      "Weston A. Price Foundation: Shopping Guide Categories"
+    ]
+  },
+  "produce_bananas": {
+    "decision": "Organic bananas, green, to finish ripening on the counter.",
+    "short_answer": "Buy organic bananas green or just turning and let them ripen on the counter. They get sweeter as the green fades. Organic is the floor.",
+    "detail": "Bananas are harvested mature-green and ripened at the market end, since fruit ripened on the plant often splits. Nearly every supermarket banana, green or yellow, goes through a ripening room. The ripening runs on the fruit’s own ethylene. They ripen at 59 to 68°F, and cold below 56°F can stop a green banana ripening at all. Organic is the floor for how they are grown.",
+    "sources": [
+      "Weston A. Price Foundation: Shopping Guide Categories",
+      "Produce Business: Retailers Have a Gas"
+    ]
+  }
+}

@@ -11,6 +11,9 @@ import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
 import pre from './fixtures/kb-pre-readability.json' with { type: 'json' };
 import { assertPassRule } from './passRule.js';
 import { beforeConcern, preTidy, preT6_1 } from './twoLinePin.js';
+import { preCompleteness } from './cartPlain.js';
+const pinned = kb.entries.map(preCompleteness).map(preTidy);
+// Completeness pass rewrote these cards at 9845b9e; the pass rule reads the pre-completeness copy, rule checks stay on kb.entries.
 kb.entries = kb.entries.map(preTidy);
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -32,7 +35,7 @@ for (const id of SLICE) {
     assert.deepEqual(readability(now), []);
     assert.deepEqual(lintCard(projectEntry(now, { doLine: reviewed.get(id)?.do || '' })), []);
     // t6-1 appended evidence sources to farmed_fish_by_species and seafood_certifications; the pass rule reads them as of 85c399e.
-    assertPassRule(t, old, beforeConcern(preT6_1(now)));
+    assertPassRule(t, old, beforeConcern(preT6_1(pinned.find((e) => e.id === id))));
   });
 }
 

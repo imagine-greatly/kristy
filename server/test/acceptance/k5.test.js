@@ -10,6 +10,7 @@ import { projectEntry, parseReviewTable, RETIRED } from '../../lib/counterCards.
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
 import pre from './fixtures/kb-pre-readability.json' with { type: 'json' };
 import { assertPassRule } from './passRule.js';
+import { preCompleteness } from './cartPlain.js';
 import { preCleanPick2, preT6_4 } from './twoLinePin.js';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -35,7 +36,7 @@ for (const id of SLICE) {
     // from home technique to its buying family. w2.test.js pins both outcomes.
     const retiredAliases = id === 'organic_worth_it_by_type' ? ['grapes', 'kiwi', 'kiwis']
       : id === 'revive_greens' ? ['lettuce'] : [];
-    assertPassRule(t, { ...old, aliases: old.aliases.filter((a) => !retiredAliases.includes(a)) }, preCleanPick2(preT6_4(now)));
+    assertPassRule(t, { ...old, aliases: old.aliases.filter((a) => !retiredAliases.includes(a)) }, preCleanPick2(preT6_4(preCompleteness(now))));
   });
 }
 

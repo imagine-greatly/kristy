@@ -17,4 +17,5 @@ Made under the standing brief: guide the shopper to the healthiest version of ev
 | Hydroponic / greenhouse lettuce | Unsprayed, living (roots on) hydroponic or greenhouse lettuce is a recommended pick, alongside local soil-grown. |
 | Reassurance lines | "Safe levels", "buy conventional", "low-residue", "just as good", "broadly comparable" are rewritten to the nature-first ladder, claim-locked, no new claims. |
 | Government sourcing | Replaced by holistic sources where one exists; kept only for the raw meaning of a label term. |
+| Coffee | Occasional, not a staple. If bought: organic whole bean from a roaster that states it tests for mold. No detox or can-lining health wording. |
 | Brand picks | No brand picks and no negative brand claims; method and label picks only. |

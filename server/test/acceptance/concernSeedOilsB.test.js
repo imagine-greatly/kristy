@@ -27,6 +27,10 @@ for (const d of readdirSync(root, { withFileTypes: true }).filter((x) => x.isDir
     if (m) archived.add(m[1]);
   }
 }
+// Completeness pass 2026-10-22 (DECISIONS-2026-10-22.md): holistic sources replace government ones and are archived under
+// archive/completeness/<section>/, each file's URL verbatim on line 1.
+const CA = join(ROOT, 'archive/completeness');
+for (const d of readdirSync(CA)) for (const f of readdirSync(join(CA, d)).filter((x) => x.endsWith('.md'))) archived.add(readFileSync(join(CA, d, f), 'utf8').split('\n')[0].trim());
 
 test('C1 seed oil and natural fat named', () => {
   for (const id of nonEmpty(ALL, 'cards', 7)) {
@@ -36,10 +40,13 @@ test('C1 seed oil and natural fat named', () => {
   }
 });
 
-test('C2 avocado oil never recommended', () => {
+// Stance 2026-10-22 (DECISIONS-2026-10-22.md): avocado oil is acceptable only when the maker shows it is pure and
+// cold-pressed; it is never the lead pick (decision or cart_pick).
+test('C2 avocado oil is never the lead pick, and only pure and cold-pressed', () => {
   const hits = [];
   for (const id of ALL) for (const s of fields(card(id))) for (const sent of s.split(/(?<=[.;!?])\s+/)) if (/avocado/i.test(sent)) hits.push([id, sent]);
-  for (const [id, sent] of hits) assert.match(sent, /skip|never|not|can carry|avoid/i, `${id}: ${sent}`);
+  for (const [id, sent] of hits) assert.ok(/skip|never|not|can carry|avoid/i.test(sent) || (/pure/i.test(sent) && /cold.pressed/i.test(sent)), `${id}: ${sent}`);
+  for (const id of ALL) for (const k of ['decision', 'cart_pick']) assert.doesNotMatch(String(card(id)[k] ?? ''), /avocado/i, `${id}.${k} leads with avocado oil`);
 });
 
 test('C3 oil decisions name a natural fat', () => {

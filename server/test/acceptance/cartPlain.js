@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
@@ -249,8 +249,15 @@ export const DIALED = new Set(['salt']);
 export const DIALED_BASE = '9d7898e';
 const PRE_DIALED = JSON.parse(execFileSync('git', ['show', `${DIALED_BASE}:server/kristy_perimeter_kb.json`], { cwd: join(dirname(fileURLToPath(import.meta.url)), '..', '..', '..'), maxBuffer: 64 << 20 }).toString());
 export const preDialed = (e) => (e && DIALED.has(e.id) ? structuredClone(PRE_DIALED.entries.find((x) => x.id === e.id)) : e);
+// completeness pass (2026-10-22): every id in docs/research/completeness/patches/*.json rewritten after 9845b9e
+// (stance: docs/research/completeness/DECISIONS-2026-10-22.md); older snapshot tests read the pre-pass card.
+const PATCHES_DIR = join(dirname(fileURLToPath(import.meta.url)), '..', '..', '..', 'docs', 'research', 'completeness', 'patches');
+export const COMPLETENESS = new Set(readdirSync(PATCHES_DIR).filter((f) => f.endsWith('.json')).flatMap((f) => Object.keys(JSON.parse(readFileSync(join(PATCHES_DIR, f), 'utf8')))));
+export const COMPLETENESS_BASE = '9845b9e';
+const PRE_COMPLETENESS = JSON.parse(execFileSync('git', ['show', `${COMPLETENESS_BASE}:server/kristy_perimeter_kb.json`], { cwd: join(dirname(fileURLToPath(import.meta.url)), '..', '..', '..'), maxBuffer: 64 << 20 }).toString());
+export const preCompleteness = (e) => (e && COMPLETENESS.has(e.id) ? structuredClone(PRE_COMPLETENESS.entries.find((x) => x.id === e.id)) : e);
 export const restoreOrganicCarts = (kb) => {
-  kb.entries = kb.entries.map(preDialed).map(preCleanJ9).map(preCleanJ8).map(preCleanJ7).map(preCleanJ6).map(preCleanJ5).map(preCleanJ4).map(preCleanJ3).map(preCleanJ1);
+  kb.entries = kb.entries.map(preCompleteness).map(preDialed).map(preCleanJ9).map(preCleanJ8).map(preCleanJ7).map(preCleanJ6).map(preCleanJ5).map(preCleanJ4).map(preCleanJ3).map(preCleanJ1);
   for (const e of kb.entries) if (OLD[e.id]) Object.assign(e, OLD[e.id]);
   return kb;
 };

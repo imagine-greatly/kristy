@@ -6,10 +6,19 @@ import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { nonEmpty } from '../../lib/testGuards.js';
+import { execFileSync } from 'node:child_process';
 import { T6_2, T6_2_BASE, preT6_2 } from './twoLinePin.js';
 import { preCleanJ5 } from './cartPlain.js';
 
 const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
+// Completeness pass 2026-10-22 (DECISIONS-2026-10-22.md) swapped government/extension sources for holistic ones. A base
+// source may be missing only if that pass dropped it (it sat on the card at 9845b9e); the card keeps >=1 source and
+// nothing the pass added is government.
+const CP = JSON.parse(execFileSync('git', ['show', '9845b9e:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+const cpSources = (id) => (CP.entries.find((x) => x.id === id)?.sources || []).map((s) => JSON.stringify(s));
+const GOV = /\.gov\b|\bextension\b|\b(USDA|FDA|FSIS|CDC|NIH|EPA)\b/i;
+const passDropped = (id, s) => cpSources(id).includes(JSON.stringify(s));
+const assertSwap = (id, e) => { const before = cpSources(id); for (const s of nonEmpty(e.sources || [], `${id} sources`, 1)) if (!before.includes(JSON.stringify(s))) assert.doesNotMatch(JSON.stringify(s), GOV, `${id} new source is government: ${JSON.stringify(s)}`); };
 const kb = JSON.parse(readFileSync(join(ROOT, 'server/kristy_perimeter_kb.json'), 'utf8'));
 kb.entries = kb.entries.map(preCleanJ5); // clean-sweep-J5: dairy pins read 5706fee; cleanPickJ5.test.js owns live copy.
 const IDS = nonEmpty([...T6_2], 'T6_2 ids', 6);
@@ -103,8 +112,9 @@ test('t6-2: milk protein concentrate overflow stays in detail and every base sou
   assert.match(yogurt.detail, /Milk protein concentrate/);
   assert.doesNotMatch([...strings(yogurt.watch_out), ...strings(yogurt.buying_tips.slice(2))].join('\n'), /milk protein concentrate|\bMPC\b/i);
   for (const id of IDS) {
+    assertSwap(id, card(id));
     for (const source of nonEmpty(preT6_2(card(id)).sources, `${id} base sources`)) {
-      assert.ok(card(id).sources.some((s) => JSON.stringify(s) === JSON.stringify(source)), `${id} lost source ${JSON.stringify(source)}`);
+      assert.ok(card(id).sources.some((s) => JSON.stringify(s) === JSON.stringify(source)) || passDropped(id, source), `${id} lost source ${JSON.stringify(source)}`);
     }
   }
 });
