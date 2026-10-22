@@ -194,7 +194,11 @@ test('C12 passRule.js and k5–k11 stay at 719f9fe except the exact W2 and conce
     const t64 = (t) => t.replace(
       "import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };",
       "import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };\nimport { preT6_4 } from './twoLinePin.js';\nkb.entries = kb.entries.map(preT6_4); // t6-4: restore produce/label pins before the older tidy overlay.");
-    assert.equal(readFileSync(join(ROOT, `server/test/acceptance/${file}.test.js`), 'utf8'), file === 'k11' ? t64(expected) : expected);
+    // J9 pins the rBST label's added source at 53c6f90, before K11's older T6 overlay.
+    const j9 = (t) => t.replace(
+      "import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };",
+      "import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };\nimport { preCleanJ9 } from './cartPlain.js';\nkb.entries = kb.entries.map(preCleanJ9); // J9 label pins read 53c6f90 before the older T6 overlay.");
+    assert.equal(readFileSync(join(ROOT, `server/test/acceptance/${file}.test.js`), 'utf8'), file === 'k11' ? j9(t64(expected)) : expected);
   }
   const oldK5 = execSync('git show 719f9fe:server/test/acceptance/k5.test.js', { cwd: ROOT }).toString();
   const w2 = [

@@ -13,12 +13,12 @@ import { fileURLToPath } from "node:url";
 import { nonEmpty } from "../../lib/testGuards.js";
 import { lintCard, lintPick } from "../../lib/counterCardLint.js";
 import { projectEntry } from "../../lib/counterCards.js";
-import { CLEAN_J7, CLEAN_J7_BASE, preCleanJ8 } from "./cartPlain.js";
+import { CLEAN_J7, CLEAN_J7_BASE, preCleanJ8, preCleanJ9 } from "./cartPlain.js";
 
 const ROOT = fileURLToPath(new URL("../../../", import.meta.url));
 const raw = JSON.parse(readFileSync(new URL("../../kristy_perimeter_kb.json", import.meta.url), "utf8"));
-// Later batches restore their own ids to the J7 commit (J8: preCleanJ8).
-const kb = { ...raw, entries: raw.entries.map(preCleanJ8) };
+// Later batches restore their own ids to the J7 commit (J8: preCleanJ8, J9: preCleanJ9).
+const kb = { ...raw, entries: raw.entries.map(preCleanJ8).map(preCleanJ9) };
 const base = JSON.parse(execFileSync("git", ["show", `${CLEAN_J7_BASE}:server/kristy_perimeter_kb.json`], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 const doLines = JSON.parse(readFileSync(new URL("../../lib/doLines.json", import.meta.url), "utf8"));
 const live = (id) => kb.entries.find((e) => e.id === id);

@@ -8,6 +8,8 @@ import { nonEmpty } from '../../lib/testGuards.js';
 import { readability, lintCard } from '../../lib/counterCardLint.js';
 import { projectEntry, parseReviewTable } from '../../lib/counterCards.js';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
+import { preCleanJ9 } from './cartPlain.js';
+kb.entries = kb.entries.map(preCleanJ9); // J9 label pins read 53c6f90 before the older T6 overlay.
 import { preT6_4 } from './twoLinePin.js';
 kb.entries = kb.entries.map(preT6_4); // t6-4: restore produce/label pins before the older tidy overlay.
 import pre from './fixtures/kb-pre-readability.json' with { type: 'json' };

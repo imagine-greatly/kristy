@@ -11,6 +11,8 @@ import { matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
 import { scoreEntries } from '../../lib/perimeter.js';
 import { inScope } from '../../lib/counterScope.js';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
+import { preCleanJ9 } from './cartPlain.js';
+kb.entries = kb.entries.map(preCleanJ9); // J9 mayo processing reads 53c6f90; cleanPickJ9.test.js owns live copy.
 import { preT6_3 } from './twoLinePin.js';
 kb.entries = kb.entries.map(preT6_3); // t6-3: pantry pins read 6d6ca49; t6_3.test.js owns live copy.
 import { beforeConcern, preCleanPick12 } from './twoLinePin.js';

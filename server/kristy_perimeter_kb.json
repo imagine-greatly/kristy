@@ -2199,18 +2199,20 @@
       "decision": "On beef and dairy, a third-party verified ‘no added hormones’.",
       "why": "Hormones are already banned in pork and poultry, so every producer could print it.",
       "short_answer": "In pork and poultry, added hormones are banned by law. The claim there is true but meaningless; every producer could say it. Beef and dairy allow hormones, so there it is meaningful and should be third-party verified.",
-      "detail": "By federal rule, hormones can’t be used in raising pigs or chickens, so any ‘hormone-free’ chicken label must also note that no poultry is raised with hormones. For beef and dairy the claim actually distinguishes producers. Knowing which animal you’re looking at tells you whether the claim is information or filler. It depends on the animal.",
+      "detail": "By federal rule, hormones can’t be used in raising pigs or chickens, so any ‘hormone-free’ chicken label must also note that no poultry is raised with hormones. For beef and dairy the claim actually distinguishes producers. Knowing which animal you’re looking at tells you whether the claim is information or filler. It depends on the animal. rBST, also called rBGH, is a hormone given to dairy cows to increase milk production. The U.S. does not require a label declaring its use; “rBST free” is a voluntary claim.",
       "evidence_tier": "established",
       "sources": [
         "USDA FSIS hormone-labeling rules",
-        "FDA rules on hormone use in livestock"
+        "FDA rules on hormone use in livestock",
+        "https://www.bcpp.org/resource/rbgh-rbst/"
       ],
       "kristy_take": "On chicken and pork, ‘no hormones’ is a freebie every producer earns. On beef and dairy, it actually means something.",
       "buying_tips": [
         "Pork and poultry ban hormones by law, so every producer there can print it.",
-        "Chicken/pork: hormones are banned anyway. Don’t pay extra for the words.",
+        "Chicken/pork: hormones are banned anyway. Look for the required explanatory statement.",
         "Beef/dairy: the claim is meaningful; look for verification.",
-        "Poultry labels must add ‘no hormones are used in poultry’ by rule."
+        "Poultry labels must add ‘no hormones are used in poultry’ by rule.",
+        "On dairy, look for “from cows not treated with rBST”; this describes the producer’s claim."
       ],
       "labels_decoded": [
         {
@@ -2266,9 +2268,9 @@
           "url": "https://www.nongmoproject.org/gmo-faq/"
         }
       ],
-      "kristy_take": "If you’re paying for one label, Organic covers more ground. And ‘non-GMO water’ is someone selling you nothing.",
+      "kristy_take": "Organic covers growing practices as well as GMOs. Read the ingredient list alongside the seal.",
       "buying_tips": [
-        "Organic also restricts synthetic pesticides and fertilizers; non-GMO covers one issue.",
+        "Organic also restricts pesticides and fertilizers; non-GMO covers one issue.",
         "Choose certified organic first, with Non-GMO Project Verified a close second. Next is an unlabeled package; read any bioengineered disclosure.",
         "Ignore ‘non-GMO’ on foods that have no GMO version anyway.",
         "Look near the ingredients for “bioengineered” or “Contains Bioengineered Food Ingredients”, rather than “GMO”. A phone number or QR code may lead to the disclosure, which does not name the ingredient."
@@ -2538,9 +2540,9 @@
       "category": "label_terms",
       "question": "What does the organic seal actually guarantee?",
       "decision": "Organic as the floor; the seal still allows approved sprays.",
-      "why": "It covers inputs and practices, not nutrition or processing. It is not pesticide-free.",
-      "short_answer": "It is a production standard, not a quality rating. Certified organic means no prohibited synthetic pesticides, no GMOs, organic feed for animals, and no routine antibiotics or added hormones. It is not pesticide-free. An organic cookie is a cookie.",
-      "detail": "The National Organic Program defines organic as a set of permitted and prohibited INPUTS and practices, verified by certification. That is a real, enforced standard and worth something. What it is not is a nutrition claim: the seal is silent on whether the food is nutrient-dense or minimally processed, and ultra-processed foods can carry it in full compliance. Reading it as a shorthand for “good food” is the most common way it gets misused. Organic tells you how something was grown or raised, and you still have to look at what the thing actually is. Certified organic means no synthetic pesticides from the prohibited list. It does not mean pesticide-free (a short list of approved sprays, some synthetic, is permitted), and it makes no claim at all about nutrient density, how well an animal was raised beyond the baseline, or how processed the food is. Organic is a floor, not the finish line: a grower who uses no sprays sits above it, and hydroponic crops can carry the seal too.",
+      "why": "It covers inputs and practices, not nutrition or processing. Approved sprays are still allowed.",
+      "short_answer": "Organic is a production standard. It excludes prohibited pesticides and GMOs. Animals get organic feed, with no routine antibiotics or added hormones. Approved sprays are allowed. An organic cookie is a cookie.",
+      "detail": "The National Organic Program defines organic as a set of permitted and prohibited INPUTS and practices, verified by certification. That is a real, enforced standard and worth something. What it is not is a nutrition claim: the seal is silent on whether the food is nutrient-dense or minimally processed, and ultra-processed foods can carry it in full compliance. Reading it as a shorthand for “good food” is the most common way it gets misused. Organic tells you how something was grown or raised, and you still have to look at what the thing actually is. Certified organic means no pesticides from the prohibited list. A short list of approved sprays is permitted, and it makes no claim at all about nutrient density, how well an animal was raised beyond the baseline, or how processed the food is. Organic is a floor, not the finish line: a grower who uses no sprays sits above it, and hydroponic crops can carry the seal too. Organic rules prohibit ionizing radiation. On non-organic foods, the Radura symbol and “treated with irradiation” identify this process.",
       "evidence_tier": "established",
       "sources": [
         "USDA National Organic Program, 7 CFR Part 205 (permitted and prohibited substances)",
@@ -2560,13 +2562,15 @@
         {
           "name": "National Agricultural Law Center: Ninth Circuit memorandum on hydroponic organic certification (2022)",
           "url": "https://nationalaglawcenter.org/wp-content/uploads/2022/09/Ninth-Cir.-memo.pdf"
-        }
+        },
+        "https://www.law.cornell.edu/cfr/text/7/205.105",
+        "https://centerforfoodsafety.org/press-release/citizens-consumer-groups-oppose-proposed-irradiation-labeling-change/"
       ],
       "kristy_take": "Organic tells you how it was grown, not what it is. The seal on a box of cookies is still a box of cookies.",
       "buying_tips": [
         "The seal covers inputs and practices, and an organic cookie is still a cookie.",
         "Organic is about inputs and practices. Read the ingredient panel separately.",
-        "It is not pesticide-free; a short list of approved sprays, some synthetic, is permitted.",
+        "A short list of approved sprays is permitted under the organic standard.",
         "It carries the most weight on thin-skinned produce you eat whole, and the least on processed food.",
         "On animal products it does reach feed. It means organic feed, not a different kind of feed.",
         "Real Organic Project on top of the USDA seal means soil-grown, never hydroponic."
@@ -2586,7 +2590,7 @@
         }
       ],
       "watch_out": [
-        "Organic is not pesticide-free. A short list of approved sprays, some synthetic, is permitted.",
+        "Organic rules permit a short list of approved sprays.",
         "It is a production standard, not a quality grade. An organic cookie is still a cookie.",
         "“Made with organic ___” needs only 70%, and cannot carry the USDA seal.",
         "Hydroponic crops can carry the USDA Organic seal, grown in water rather than soil."
@@ -2595,7 +2599,7 @@
         "“Made with organic” needs only 70% and cannot carry the USDA seal.",
         "It counts most on thin-skinned produce you eat whole, least on processed food."
       ],
-      "science": "Certified organic is a production standard, not a quality grade. It means no synthetic pesticides from the prohibited list, no GMOs, and organic feed for animals. It is not pesticide-free; a short list of approved sprays, some synthetic, is permitted. It makes no claim about nutrient density or how processed the food is. An organic cookie is still a cookie.",
+      "science": "Certified organic is a production standard, not a quality grade. It means no pesticides from the prohibited list, no GMOs, and organic feed for animals. A short list of approved sprays is permitted. It makes no claim about nutrient density or how processed the food is. An organic cookie is still a cookie.",
       "tier_note": "What the organic seal covers and excludes is written into the standard, approved pesticides included.",
       "asked_as": [
         "what does the organic seal guarantee",
@@ -4852,7 +4856,7 @@
       "kristy_take": "Pressed oil tastes like what it came from. Refined oil tastes like nothing, on purpose.",
       "buying_tips": [
         "Most supermarket oil is solvent-extracted, then refined, bleached and deodorized.",
-        "Read the oil name and ingredients first: choose olive or coconut oil. A cold-pressed seed oil stays a seed oil.",
+        "Read the oil name and ingredients first: choose olive or coconut oil. Skip seed oil even when cold-pressed.",
         "‘Expeller-pressed’ means mechanical, no solvent. Friction heat still happens.",
         "‘Cold-pressed’ means pressed with the temperature held down. Tightly defined only for olive oil.",
         "‘Refined’, ‘pure’, or no process word at all usually means solvent-extracted and refined.",
@@ -4881,7 +4885,7 @@
         }
       ],
       "watch_out": [
-        "A pressed seed oil is still a seed oil. These words rank how the oil was made and say nothing about what it was made from.",
+        "Skip pressed seed oil too. These words rank how the oil was made and say nothing about what it was made from.",
         "No process word at all usually means solvent-extracted and refined.",
         "“Cold-pressed” is tightly defined only for olive oil."
       ],
@@ -12450,7 +12454,7 @@
       "decision": "Mayonnaise with olive oil alone, egg yolk and an acid.",
       "why": "The name Mayonnaise is a federal standard: at least 65 percent oil, egg yolk, and vinegar or citrus juice.",
       "short_answer": "Mayonnaise is a standardized name. The jar holds at least 65 percent oil, plus egg yolk and vinegar or lemon juice. A jar sold on avocado or olive oil can carry other oils, so read which comes first.",
-      "detail": "Under 21 CFR 169.140, the name of the food is “Mayonnaise.” It is an emulsified semisolid food made from oil, an acid and egg yolk. The acid is vinegar, or lemon or lime juice. The lecithin in the yolk is what lets the oil and the liquid mix into a creamy texture. Optional ingredients include salt, sweeteners and spices. A sequestrant such as calcium disodium EDTA may be added to preserve color or flavor. No spice may give the jar a color that imitates egg yolk.",
+      "detail": "Under 21 CFR 169.140, the name of the food is “Mayonnaise.” It is an emulsified semisolid food made from oil, an acid and egg yolk. The acid is vinegar, or lemon or lime juice. The lecithin in the yolk is what lets the oil and the liquid mix into a creamy texture. Optional ingredients include salt, sweeteners and spices. A sequestrant such as calcium disodium EDTA may be added to preserve color or flavor. No spice may give the jar a color that imitates egg yolk. Skip industrial seed oils, refined, bleached and deodorized, regardless of pressing words.",
       "evidence_tier": "established",
       "sources": [
         "https://www.law.cornell.edu/cfr/text/21/169.140",
@@ -12460,7 +12464,9 @@
         {
           "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
           "url": "https://drcate.com/hateful-eight/"
-        }
+        },
+        "https://chriskresser.com/how-industrial-seed-oils-are-making-us-sick/",
+        "https://www.ucdavis.edu/food/news/avocado-oil-chip-youre-eating-may-not-be-made-pure-avocado-oil"
       ],
       "kristy_take": "The name on the jar settles the recipe. The ingredient list shows which oil leads.",
       "cart_pick": "Olive oil only mayonnaise",
@@ -12472,7 +12478,7 @@
         "Compare jars by what they add beyond oil, egg yolk, acid and salt.",
         "Once opened, keep it in the fridge and use it within 1 to 2 months.",
         "Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed.",
-        "Skip avocado oil mayo too, even if it names no other oil."
+        "Skip “made with avocado oil” mayo too, even if it names no other oil."
       ],
       "watch_out": [
         "A front label can name an oil that the ingredient list ranks lower."
@@ -13008,7 +13014,7 @@
       "decision": "Whole grain crackers with olive oil, coconut oil or butter.",
       "why": "Ingredients run in order of amount, so the first one leads. Multigrain is not whole grain.",
       "short_answer": "Crackers are mostly wheat flour and water, baked dry and seasoned. Ingredients run in order of amount. A whole grain listed first leads the cracker, and plain “wheat flour” is not a whole grain flour.",
-      "detail": "Under 21 CFR 101.4, ingredients are listed in descending order of predominance. FDA draft guidance says the ingredient list should show whether the first ingredient is a whole grain. “Wheat flour” is a synonym of flour, so it is not a whole grain flour. Soda crackers are fermented and leavened with yeast. The finest soda crackers take a long sponge fermentation, where most of the flour ferments first as a pre-ferment. Sourdough crackers are made from sourdough starter. Docking holes are poked in the dough to stop large air pockets while baking. Animal crackers are crackers in name only, and modern graham crackers are sweet. Olive oil, coconut oil or butter is Kristy’s standard for crackers. Skip seed oils and avocado oil.",
+      "detail": "Under 21 CFR 101.4, ingredients are listed in descending order of predominance. FDA draft guidance says the ingredient list should show whether the first ingredient is a whole grain. “Wheat flour” is a synonym of flour, so it is not a whole grain flour. Soda crackers are fermented and leavened with yeast. The finest soda crackers take a long sponge fermentation, where most of the flour ferments first as a pre-ferment. Sourdough crackers are made from sourdough starter. Docking holes are poked in the dough to stop large air pockets while baking. Animal crackers are crackers in name only, and modern graham crackers are sweet. Olive oil, coconut oil or butter is Kristy’s standard for crackers. Skip seed oils and avocado oil. Skip “partially hydrogenated” or “interesterified” oil on the list; look for olive oil, coconut oil or butter. Skip refined palm oil or fractionated palm kernel oil in crackers; look for butter or olive oil. Brown rice generally carries more arsenic than white rice; rotate rice-flour crackers with whole wheat or oat crackers.",
       "evidence_tier": "established",
       "sources": [
         "https://www.law.cornell.edu/cfr/text/21/101.4",
@@ -13032,7 +13038,11 @@
         {
           "name": "EWG: Food chemicals guide, preservative uses",
           "url": "https://www.ewg.org/consumer-guides/ewgs-dirty-dozen-guide-food-chemicals-top-12-avoid"
-        }
+        },
+        "https://www.cspi.org/chemical-cuisine/trans-fat-partially-hydrogenated-vegetable-oil",
+        "https://www.cspi.org/chemical-cuisine/inter-esterified-oil",
+        "https://extension.okstate.edu/fact-sheets/properties-of-palm-oil",
+        "https://www.consumerreports.org/health/food-contaminants/arsenic-in-rice-reducing-risk-a8972350937/"
       ],
       "kristy_take": "Traditionally, hardtack was grain flour and water baked brick hard, and it kept for long periods. Water crackers came from that recipe, rolled much thinner.",
       "cart_pick": "Short-list whole grain crackers",
@@ -13175,10 +13185,10 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick potato chips?",
-      "decision": "Sliced organic potato chips in olive oil, coconut or tallow.",
+      "decision": "Sliced potato chips: olive oil first, then organic.",
       "why": "A potato chip is a thin slice of potato, fried. Stacked crisps are pressed from dried potato flakes.",
       "short_answer": "A potato chip is a thin slice of potato, fried. Some stacked crisps are shaped from dried potato flakes and cornstarch. Their labels can say “made from dried potatoes.” A sliced chip lists potatoes.",
-      "detail": "The FDA classifies potato chips as thin slices of potatoes fried in deep fat. A stacked crisp starts from dehydrated potato flakes mixed with cornstarch and water. That mix gives every piece the same shape for stacking. The FDA let one such product use the name potato chips only with a prominent disclaimer: “potato chips made from dried potatoes.” Its maker chose “potato crisps,” the British term, instead. For chips, Kristy’s standard is olive oil, coconut oil, tallow or lard. Skip seed oils and avocado oil. High-heat frying browns starchy slices, and darker browning forms more of a heat-made compound. Look for lighter browning: golden chips over dark ones.",
+      "detail": "The FDA classifies potato chips as thin slices of potatoes fried in deep fat. A stacked crisp starts from dehydrated potato flakes mixed with cornstarch and water. That mix gives every piece the same shape for stacking. The FDA let one such product use the name potato chips only with a prominent disclaimer: “potato chips made from dried potatoes.” Its maker chose “potato crisps,” the British term, instead. For chips, Kristy’s standard is olive oil, coconut oil, tallow or lard. Skip seed oils and avocado oil. High-heat frying browns starchy slices, and darker browning forms more of a heat-made compound. Look for lighter browning: golden chips over dark ones. Monosodium glutamate is a flavor enhancer used in chips; skip it on the ingredient list and look for potatoes, oil and salt.",
       "evidence_tier": "established",
       "sources": [
         "https://www.smithsonianmag.com/arts-culture/curious-history-potato-chip-180979232/",
@@ -13207,7 +13217,9 @@
         {
           "name": "Consumer Reports: What you need to know about process contaminants",
           "url": "https://www.consumerreports.org/health/food-contaminants/what-you-need-to-know-about-process-contaminants-a8019192822/"
-        }
+        },
+        "https://www.cspi.org/node/7459",
+        "https://www.ucdavis.edu/food/news/avocado-oil-chip-youre-eating-may-not-be-made-pure-avocado-oil"
       ],
       "kristy_take": "As the story goes, the chef George Crum served “Saratoga Chips” at Saratoga Springs in 1853. The earliest known recipe is older, from an 1817 cookbook: potatoes fried in slices or shavings. Crum made the chip famous.",
       "cart_pick": "Sliced potato chips: olive oil",
@@ -13223,7 +13235,7 @@
       ],
       "watch_out": [
         "“Potato crisps” can name a product pressed from dried potato flakes, not slices.",
-        "Skip avocado oil too: the label cannot prove the oil is pure."
+        "Skip chips labeled “made with avocado oil” too; the label cannot prove the oil is pure."
       ],
       "pick_steps": [
         "Read the ingredients: a sliced chip starts with potatoes, not dried flakes.",
@@ -13299,7 +13311,7 @@
       "watch_out": [
         "Prepopped popcorn is often coated with flavorings before it reaches the shelf.",
         "Skip avocado oil too: the label cannot prove the oil is pure.",
-        "Canola, soy or corn oil in ready-popped bags is typically derived from bioengineering.",
+        "Skip canola, soy or corn oil in ready-popped bags; these oils are typically derived from bioengineering.",
         "Microwave popcorn bags are grease-lined, and grease-resistant packaging can carry PFAS. Pop plain kernels on the stove instead."
       ],
       "pick_steps": [
@@ -13394,7 +13406,7 @@
       "decision": "Bars with oats or another whole grain listed first.",
       "why": "Ingredients run in order of amount, so the first one leads. Rolled oats count as whole grain.",
       "short_answer": "Ingredients run in order of amount. Look for oats or another whole grain first, not enriched refined grains. The list also names any high fructose corn syrup or hydrogenated oils.",
-      "detail": "Under 21 CFR 101.4, ingredients are listed in descending order of predominance. FDA guidance counts rolled oats as whole grain, since simple flattening or steaming keeps every part of the whole oat. An extension guide favors bars with whole grains such as oats, sweetened with fruit, honey or syrups, with nuts and seeds. The same guide advises avoiding bars with hydrogenated oils. Granola is rolled oats, nuts, seeds and honey or another sweetener, usually baked. A granola bar mixes granola with honey or syrup, pressed and baked into a bar. For added fat in bars, Kristy’s standard is olive oil, coconut oil or butter. Skip seed oils and avocado oil. Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed. Choose certified organic oat bars over conventional. Conventional oats may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic oats. Many bars carry sugar and high fructose corn syrup, and the list shows which.",
+      "detail": "Under 21 CFR 101.4, ingredients are listed in descending order of predominance. FDA guidance counts rolled oats as whole grain, since simple flattening or steaming keeps every part of the whole oat. An extension guide favors bars with whole grains such as oats, sweetened with fruit, honey or syrups, with nuts and seeds. The same guide advises avoiding bars with hydrogenated oils. Granola is rolled oats, nuts, seeds and honey or another sweetener, usually baked. A granola bar mixes granola with honey or syrup, pressed and baked into a bar. For added fat in bars, Kristy’s standard is olive oil, coconut oil or butter. Skip seed oils and avocado oil. Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed. Choose certified organic oat bars over conventional. Conventional oats may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic oats. Many bars carry sugar and high fructose corn syrup, and the list shows which. Skip refined palm oil or fractionated palm kernel oil in bars; look for coconut oil, olive oil or butter.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "https://www.law.cornell.edu/cfr/text/21/101.4",
@@ -13433,7 +13445,8 @@
         {
           "name": "CSPI: Chemical Cuisine ratings",
           "url": "https://www.cspi.org/page/chemical-cuisine-food-additive-safety-ratings"
-        }
+        },
+        "https://extension.okstate.edu/fact-sheets/properties-of-palm-oil"
       ],
       "kristy_take": "Granula was made in Dansville, New York, in 1863 by James Caleb Jackson. The food and name came back in the 1960s with fruit and nuts added. Granola bars caught on in the same decade.",
       "cart_pick": "Oat snack bars",

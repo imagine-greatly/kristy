@@ -12,8 +12,8 @@ import { scoreEntries } from '../../lib/perimeter.js';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
 import { preT6_3 } from './twoLinePin.js';
 kb.entries = kb.entries.map(preT6_3); // t6-3: pantry pins read 6d6ca49; t6_3.test.js owns live copy.
-import { preCleanJ8 } from './cartPlain.js';
-kb.entries = kb.entries.map(preCleanJ8); // clean-sweep-J8: bread pins read e8cf851; cleanPickJ8.test.js owns live copy.
+import { preCleanJ8, preCleanJ9 } from './cartPlain.js';
+kb.entries = kb.entries.map(preCleanJ8).map(preCleanJ9); // clean-sweep-J8/J9: pins read e8cf851/53c6f90; cleanPickJ8/J9.test.js own live copies.
 import { beforeConcern, preCleanPick12 } from './twoLinePin.js';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../../..');
