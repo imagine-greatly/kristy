@@ -221,10 +221,84 @@ export function plannedCartKey(cart) {
   return typeof cart === 'string' && Object.hasOwn(PLANNED_CARTS, cart) ? cart : 'everyday';
 }
 
+/** Plain shopper-facing row names. The how-to-shop wording stays on the card (`cart_pick`). */
+export const CART_NAMES = {
+  egg_labels: 'Eggs',
+  salmon_wild_vs_farmed: 'Salmon',
+  canned_fish_choosing: 'Canned sardines',
+  ground_beef_lean_ratio: 'Ground beef',
+  chicken_cuts_basics: 'Chicken',
+  whole_vs_reduced_fat_milk: 'Milk',
+  canned_coconut_milk: 'Coconut milk',
+  cheese_real_vs_processed: 'Cheese',
+  nuts_raw_vs_roasted: 'Almonds',
+  olives: 'Olives',
+  grassfed_butter: 'Butter',
+  lard_tallow: 'Lard or tallow',
+  cooking_oils: 'Cooking oil',
+  olive_oil_grades: 'Olive oil',
+  produce_leafy_greens: 'Lettuce',
+  produce_root_vegetables: 'Carrots and potatoes',
+  produce_onions_garlic: 'Onions and garlic',
+  produce_brassicas: 'Broccoli, cauliflower, or cabbage',
+  berries_picking: 'Berries',
+  produce_apples_pears: 'Apples or pears',
+  produce_bananas: 'Bananas',
+  sourdough: 'Sourdough bread',
+  rice_arsenic: 'Rice',
+  bulk_bins_buying: 'Lentils',
+  yogurt_plain_vs_flavored: 'Yogurt',
+  fermented_pickles: 'Pickles',
+  kimchi: 'Kimchi',
+  natto: 'Natto',
+  sauerkraut: 'Sauerkraut',
+  salt: 'Salt',
+  white_fish: 'White fish',
+  beans_dried_vs_canned: 'Beans',
+  pasta_sauce: 'Pasta sauce',
+  produce_peppers: 'Bell peppers',
+  produce_mushrooms: 'Mushrooms',
+  produce_citrus: 'Oranges, lemons, or limes',
+  produce_stone_fruit: 'Peaches, plums, or cherries',
+  dried_fruit: 'Dried fruit',
+  pasta_dry: 'Pasta',
+  egg_duck_quail: 'Duck or quail eggs',
+  seeds: 'Flaxseed',
+  dried_herbs: 'Dried herbs',
+  pork_cuts_and_enhanced: 'Pork shoulder',
+  beef_cuts_basics: 'Chuck roast',
+  bacon: 'Bacon',
+  produce_green_beans: 'Green beans',
+  oats_steelcut_rolled_instant: 'Oats',
+  raw_aged_cheese: 'Aged cheddar',
+  broth: 'Broth',
+  organ_meats: 'Beef liver',
+  clams_mussels_oysters: 'Shellfish',
+  lamb_goat: 'Lamb',
+  butcher_counter_asking: 'Soup bones',
+  raw_kefir: 'Kefir',
+  honey_adulteration: 'Honey',
+  maple_syrup: 'Maple syrup',
+  tempeh: 'Tempeh',
+  miso: 'Miso',
+  raw_cider_vinegar: 'Apple cider vinegar',
+  seaweed: 'Seaweed',
+  grains_beyond_rice: 'Whole grains',
+  ground_turkey: 'Ground turkey',
+  bison: 'Bison',
+  chicken_breast: 'Chicken breast',
+  scallops: 'Scallops',
+  plain_kefir: 'Kefir',
+  cottage_cheese: 'Cottage cheese',
+  hummus: 'Hummus',
+  nut_butter_ingredients: 'Peanut butter',
+  frozen_vs_fresh_produce: 'Frozen vegetables',
+};
+
 /**
  * One planned cart as an ordinary list. Rows are stamped `source: 'user'` (the ruling
  * supersedes composition rule 7) so they behave exactly like rows the shopper typed: a
- * later compose never wipes them. Names are the KB `cart_pick`, byte-equal; no new copy.
+ * later compose never wipes them. Names are plain (`CART_NAMES`); the card carries the how-to-shop wording.
  */
 export function buildPlannedCart({ cart, nonNegotiables = [] } = {}) {
   const key = plannedCartKey(cart);
@@ -239,7 +313,7 @@ export function buildPlannedCart({ cart, nonNegotiables = [] } = {}) {
     taken.add(r.id);
     const entry = entriesById.get(r.id);
     if (!entry?.cart_pick) throw new Error(`planned cart ${key}: ${r.id} has no cart_pick`);
-    return [{ name: entry.cart_pick, perimeterId: r.id, source: 'user' }];
+    return [{ name: CART_NAMES[r.id] || entry.title, perimeterId: r.id, source: 'user' }];
   });
   return { ...attachCards(sanitizeList({ goal: null, items })), cart: key };
 }

@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import perimeterKb from '../kristy_perimeter_kb.json' with { type: 'json' };
 import { nonEmpty } from './testGuards.js';
-import { PLANNED_CARTS, LISTED_CARTS, CART_HARD_LINES, plannedCartKey, buildPlannedCart } from './plannedCart.js';
+import { PLANNED_CARTS, LISTED_CARTS, CART_HARD_LINES, plannedCartKey, buildPlannedCart, CART_NAMES } from './plannedCart.js';
 import { attachCards, sectionForItem } from './listMatch.js';
 import { sanitizeList } from './cartEdit.js';
 import { EXCLUDE_TAGS } from './list.js';
@@ -60,7 +60,7 @@ for (const key of nonEmpty(LISTED_CARTS, 'compatible carts', 7)) {
         const it = items[i];
         assert.equal(it.perimeterId, expected.id);
         assert.ok(!expected.tags.some((tag) => banned.has(tag)));
-        assert.equal(it.name, BY_ID.get(expected.id).cart_pick);
+        assert.equal(it.name, CART_NAMES[expected.id]);
         assert.equal(it.cardSlug, expected.id);
         assert.equal(it.source, 'user');
         assert.equal(it.carded, true);
@@ -108,7 +108,7 @@ test('vegetarian and vegan choices preserve their philosophy without an extra ha
 test('garden_and_sea is byte-equal to the BASE literal through the original pipeline', () => {
   for (const choices of SLOTS.garden_and_sea) assert.equal(choices.length, 1);
   const baseItems = APPENDIX.garden_and_sea.split(' ').map((id) => ({
-    name: BY_ID.get(id).cart_pick, perimeterId: id, source: 'user',
+    name: CART_NAMES[id], perimeterId: id, source: 'user',
   }));
   const base = { ...attachCards(sanitizeList({ goal: null, items: baseItems })), cart: 'garden_and_sea' };
   assert.equal(JSON.stringify(stripIds(buildPlannedCart({ cart: 'garden_and_sea' }))), JSON.stringify(stripIds(base)));
@@ -177,7 +177,7 @@ for (const key of KEYS) {
     const items = nonEmpty(buildPlannedCart({ cart: key }).items, `${key} items`, 20);
     items.forEach((it, i) => {
       const id = PLANNED_CARTS[key][i][0].id;
-      assert.equal(it.name, BY_ID.get(id).cart_pick, id);
+      assert.equal(it.name, CART_NAMES[id], id);
       assert.equal(it.perimeterId, id);
       assert.equal(it.cardSlug, id);
       assert.equal(it.source, 'user');
@@ -197,7 +197,7 @@ for (const key of KEYS) {
 
   test(`${key}: tags cover what the food is (a missed tag leaks past a hard line)`, () => {
     for (const r of nonEmpty(rowsFor(key), key, 20)) {
-      const name = BY_ID.get(r.id).cart_pick;
+      const name = CART_NAMES[r.id];
       if (r.section === 'meat') assert.ok(r.tags.includes('meat'), r.id);
       if (r.section === 'seafood') assert.ok(r.tags.includes('fish'), r.id);
       if (/\beggs?\b/i.test(name)) assert.ok(r.tags.includes('egg'), r.id);
@@ -221,7 +221,7 @@ for (const key of KEYS) {
 }
 
 const ALL_ROWS = nonEmpty(KEYS.flatMap(rowsFor), 'all authored rows');
-const tagsByName = new Map(ALL_ROWS.map((r) => [BY_ID.get(r.id).cart_pick, r.tags]));
+const tagsByName = new Map(ALL_ROWS.map((r) => [CART_NAMES[r.id], r.tags]));
 
 const HARD = [
   ['vegan', ['meat', 'fish', 'egg', 'dairy', 'honey']],
