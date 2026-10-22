@@ -5,6 +5,7 @@ import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { nonEmpty } from '../../lib/testGuards.js';
 import { sweep, run } from '../../scripts/stanceSweep.js';
+import { CLEAN_J8_BASE } from './cartPlain.js';
 
 const BASE = 'aba615b'; // the sweep's base; SW-C4 reads it so S4 rewriting the potato headline keeps this green.
 const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
@@ -117,7 +118,7 @@ test('XC4: M7 skips "none" terms (X11) and veto-word terms on picks only (X12)',
 });
 
 test('XC3: the 39 projected ids leave the flag list; sourdough, sandwich_bread, potato_chips stay', () => {
-  const out = run('HEAD');
+  const out = run(CLEAN_J8_BASE); // J8 and J9 cleaned sourdough, sandwich_bread and potato_chips; XC3 reads the sweep before them.
   const GONE = `beef_cuts_basics label_lightly_sweetened pork_cuts_and_enhanced seafood_certifications label_third_party_seals label_artificial_color produce_brassicas produce_onions_garlic produce_apples_pears pick_frozen_peas pick_asparagus pick_corn pick_cilantro pick_parsley pick_basil pick_swiss_chard pick_mangoes pick_celery tortillas canned_tuna produce_mushrooms produce_bananas pick_microgreens bison venison_game clams_mussels_oysters bread_aisle kombucha maple_syrup jam coconut_water condiments tortilla_chips hummus fresh_pasta deli frozen pick_artificial_sweetener raw_aged_cheese`.split(' ');
   nonEmpty(GONE, 'gone ids', 39);
   for (const id of GONE) assert.ok(!out.flagged.includes(id), id);

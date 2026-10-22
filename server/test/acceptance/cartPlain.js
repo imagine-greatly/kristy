@@ -244,7 +244,7 @@ export const CLEAN_J9 = new Set(['mayo', 'crackers', 'potato_chips', 'popcorn', 
 export const CLEAN_J9_BASE = '53c6f90';
 const PRE_J9 = JSON.parse(execFileSync('git', ['show', `${CLEAN_J9_BASE}:server/kristy_perimeter_kb.json`], { cwd: join(dirname(fileURLToPath(import.meta.url)), '..', '..', '..'), maxBuffer: 64 << 20 }).toString());
 export const preCleanJ9 = (e) => (e && CLEAN_J9.has(e.id) ? structuredClone(PRE_J9.entries.find((x) => x.id === e.id)) : e);
-// dialed-1 (2026-10-22): cards rewritten after 9d7898e; dialedCards.test.js owns the live copy.
+// dialed-1 (2026-10-22): cards rewritten after 9d7898e; k21.test.js C5/C6 and the lint and two-line suites read the live copy.
 export const DIALED = new Set(['salt']);
 export const DIALED_BASE = '9d7898e';
 const PRE_DIALED = JSON.parse(execFileSync('git', ['show', `${DIALED_BASE}:server/kristy_perimeter_kb.json`], { cwd: join(dirname(fileURLToPath(import.meta.url)), '..', '..', '..'), maxBuffer: 64 << 20 }).toString());

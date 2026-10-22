@@ -11364,9 +11364,9 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick salt?",
-      "decision": "Sea salt that names its sea, with salt alone on the list.",
+      "decision": "Sea salt naming its sea, with salt alone listed.",
       "why": "Sea salt carries its own water’s plastic, so a named sea and salt alone is the closest read.",
-      "short_answer": "Look for sea salt that names the sea or coast it was harvested from, with salt alone on the list. Studies find microplastics in most salts of every origin, and sea salt tracks the pollution of its own waters, so a named source gives something to judge. Salt with no added iodine says “does not supply iodide” beside its name.",
+      "short_answer": "Look for sea salt that names its sea or coast, with salt alone on the list. Sea salt tracks the pollution of its own waters, so a named source gives something to judge.",
       "detail": "A systematic review of ten studies found microplastics in the majority of salt samples, from none detected up to 1,674 particles per kilogram in sea salt, 8 to 462 in lake salt and 0 to 204 in rock and well salt. A study of 39 brands across six continents found that unrefined sea salt tracks the plastic pollution of the seawater around it, unless the particles are filtered out during manufacture. That makes the sea of origin and the way the salt is processed the two things worth reading for. No tested salt type was clear across every sample, so a package promising zero microplastics needs a stated method behind it. Under 21 CFR 100.155, table salt with no added iodide must carry a statement that it “does not supply iodide” right after the name. An anticaking agent, an additive that keeps salt from caking, may be added under 21 CFR 172.490, and the list names it. Sea salt is made by evaporating seawater and usually has larger crystals than the fine grains of table salt. Flaked salt is a type of sea salt with larger, irregular flakes. Pickling or canning salt is pure salt with nothing added, and it keeps a brine clear. Kosher salt has a coarse texture, so salts do not swap cup for cup. Pink Himalayan salt is sodium chloride, like other salts. Curing salt, sometimes dyed pink and labeled “pink salt,” is a different product used for curing meats.",
       "evidence_tier": "established",
       "sources": [
@@ -11398,7 +11398,7 @@
         "Read the list for salt alone, with no anti-caking agent.",
         "Look for the washing or filtering described, on the package or the maker’s site."
       ],
-      "science": "Microplastics turn up in most salts of every origin, and sea salt follows the pollution of its own water unless the particles are filtered out in manufacture. Table salt with no added iodide must say so right after its name. An anti-caking agent may be added, and the list names it. Pickling or canning salt is pure salt.",
+      "science": "Microplastics turn up in most salts of every origin. Sea salt follows the pollution of its own water unless the particles are filtered out in manufacture. Table salt with no added iodide must say so right after its name. An anti-caking agent may be added, and the list names it. Pickling or canning salt is pure salt.",
       "labels_decoded": [
         {
           "term": "Sea salt",
