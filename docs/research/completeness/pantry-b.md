@@ -72,3 +72,45 @@ Legend: DIRECTION OK = card pick matches what a holistic source in the archive s
 - No card is COMPLETE on sourcing: every card's sources[] is government, extension or mainstream, and the archive now holds holistic support for about 25 of 45.
 - Biggest direction questions (WAPF vs card): cocoa, tea, snack_bars, ketchup (unsweetened vs fermented), coconut_water (HPP vs fresh), avocado oil purity, canned_soup (MSG not only sodium).
 - Not done: 20 cards with no holistic source fetched.
+
+## Wave 3 (2026-10-22): holistic sources and RECOMMENDED CALL per unsourced card
+Findings only. All claims are attributed to the source; none are Kristy's.
+
+### W3.1 Failed or not fetched (first)
+- naturopathicearth hummus: failed twice earlier, still NOT FETCHED. WAPF HVP page: never fetched, not cited.
+- No holistic page was fetched for: dried fruit (the only hits were Bon Appetit, ATK, Saveur, diet-health.info: all non-holistic, rejected), pretzels, fresh pasta, deli salads, frozen fries, frozen waffles, frozen meals, tea/cocoa beyond existing files, coconut water HPP, olive oil grades beyond McEvoy, Sisson, Cultured Food Life. Those cards stay GAP.
+- First bulk_get of the last three pages saved under shifted names; renamed and re-checked, URL on line 1 of all 25 files.
+- Budget: about 24 tool calls of 45.
+
+### W3.2 New archive files (URL on line 1; all status 200)
+wapf-healthy-snacks-sarah-pope, nourishedkitchen-sprouted-hummus, nourishedkitchen-unrefined-fats-oils, tcs-healthy-mayonnaise, wapf-principles-healthy-diets, wapf-salt-cured-beef-lunch-meat, tcs-lacto-fermented-ketchup, nourishedkitchen-fermented-salsa, wapf-sourdough-pizza-dough, mommypotamus-chicken-nuggets, wapf-faq-grains-seeds-nuts-beans (all .md in archive/completeness/pantry-b/).
+
+### W3.3 Wording to flag (attribute, never repeat as Kristy voice)
+- wapf-principles-healthy-diets.md: MSG/HVP and caffeine framed as "neurotoxins"/"toxic"; disease-adjacent. wapf-healthy-snacks-sarah-pope.md and the sourdough/grains FAQ: "anti-nutrients", gluten "toxic" for some. All advocacy claims; card copy must stay mechanical (no treat/prevent wording, claim lock 2, 3).
+- nourishedkitchen-sprouted-hummus.md: raw sprouted legumes warned against by the author; a pick-rule, not a cure claim.
+
+### W3.4 Per card (COMPLETE needs decision dialed AND a holistic source; GAP says what is missing)
+- mayo: SOURCED. TCS: egg yolks plus cold- or expeller-pressed olive, coconut or avocado oil. CALL: pick mayo whose oil is olive or avocado, no soybean/canola; for the egg-and-oil list shorter is better. File: tcs-healthy-mayonnaise.md (also nourishedkitchen-unrefined-fats-oils.md rejects canola/grapeseed/rice bran).
+- hummus: SOURCED. Nourished Kitchen: chickpeas cooked (sprouted then cooked), tahini, extra virgin olive oil, lemon, garlic. CALL: take the list that is chickpeas, tahini, olive oil, lemon, garlic; pass on soybean/canola oil and preservatives. File: nourishedkitchen-sprouted-hummus.md.
+- salsa: SOURCED. Nourished Kitchen fermented salsa; WAPF BEST is lacto-fermented, unheated. CALL: refrigerated or fermented salsa, vegetables first, no vinegar-heat-stable shelf version as the top pick. Files: nourishedkitchen-fermented-salsa.md, wapf-shopping-guide-categories.md.
+- ketchup_mustard / condiments: SOURCED. TCS fermented ketchup (tomato paste, whey, raw ACV, maple/honey); WAPF BEST organic fermented ketchup, GOOD organic-sugar or natural-sweetener ketchup, AVOID most commercial. CALL: fermented or organic ketchup with a named natural sweetener and no HFCS; mustard organic. Files: tcs-lacto-fermented-ketchup.md, wapf-shopping-guide-categories.md. Card's "unsweetened" is stricter than WAPF GOOD; Devon call.
+- trail_mix / snacks: SOURCED. Sarah Pope (WAPF): trail mix of soaked and dried nuts with raisins, dried cranberries, unsulphured apricots; bought crackers/cookies carry rancid oils. CALL: raw or soaked nuts plus dried fruit with no sulfur, no added oil, sugar or candy pieces. File: wapf-healthy-snacks-sarah-pope.md.
+- dried_fruit: PARTIAL. Only the "unsulphured apricots" point (Pope) and WAPF Best "no added sugar, oil, additives, preservatives, not from China" (shopping guide line 269). CALL: dried fruit with one ingredient, unsulphured, no oil or sugar coating, not from China. Files: wapf-healthy-snacks-sarah-pope.md, wapf-shopping-guide-categories.md.
+- cooking_oils / avocado oil: SOURCED. Nourished Kitchen favors extra virgin olive, virgin coconut, pastured lard, butter, ghee; avoids grapeseed, canola, rice bran. WAPF principles list EVOO, sesame, flax, coconut, palm. CALL: olive or coconut for heat tolerance of choice, pastured lard or tallow where a neutral fat is needed; seed oils not picked. Avocado oil: TCS accepts it for mayo; WAPF GOOD lists it for chips; purity doubt on card is not a holistic source point, leave as is. Files: nourishedkitchen-unrefined-fats-oils.md, wapf-principles-healthy-diets.md, wapf-faq-fats-oils.md.
+- olive_oil_grades: GAP-partial. McEvoy covers fraud, not grades. CALL: extra virgin only, from a named producer with a harvest date. File: mcevoy-fake-olive-oil.md.
+- deli / prepared_meals: PARTIAL. WAPF lists highly processed lunch meats and canned foods under dietary dangers; homemade salt-cured beef or pork named; packaged naturally-cured options named in the page as Epic, Grassland, US Wellness. CALL: whole-muscle meat cured with salt only, from pasture-raised animals; skip meat with HVP, MSG, corn syrup. Files: wapf-salt-cured-beef-lunch-meat.md, wapf-principles-healthy-diets.md.
+- canned_soup: SOURCED. WAPF: most canned soups carry MSG/HVP; BPA lining; BEST bone broth, GOOD GMO-free canned broth without additives. CALL: bone-broth based, ingredient list with no "yeast extract", "hydrolyzed" or "natural flavor"; BPA-free is not neutral (Kresser). Files: wapf-pantry-intervention.md, wapf-shopping-guide-categories.md, kresser-bpa-free-plastics.md.
+- cocoa: AVOID per WAPF guide (caffeine, habit). CALL: if bought, a plain cocoa with one ingredient, small amounts; lead/cadmium note is from an independent advocate (borderline). Files: wapf-shopping-guide-categories.md, leadsafemama-cocoa.md.
+- tea: SOURCED partly. WAPF guide: tea AVOID except organic black for kombucha, herb teas GOOD in moderation. CALL: loose-leaf, single herb or plain leaf, organic. Files: wapf-shopping-guide-categories.md, octavia-loose-leaf-tea.md.
+- snack_bars: AVOID per WAPF (granola and energy bars, soy protein). CALL: only bars whose list is nuts, seeds, dates, nothing else; granola bar styles are not a pick. File: wapf-shopping-guide-categories.md.
+- coconut_water: GAP on HPP. WAPF BEST is water from fresh coconuts, GOOD canned (not aseptic box). CALL: fresh coconut water, else canned, ingredient list "coconut water" only. HPP point has no holistic source: do not assert. File: wapf-shopping-guide-categories.md.
+- pretzels: GAP. Closest source is WAPF snack guide (chips and snacks cooked in good fats, organic grain, AVOID non-organic grain). CALL tentative: organic, sourdough if offered. File: wapf-shopping-guide-categories.md.
+- fresh_pasta: GAP. Only the shopping-guide pasta line (organic whole grain, buckwheat, corn, brown rice, legume) and the grains FAQ (sourdough best, commercial sprouted breads doubted). CALL tentative: organic, fewest ingredients. Files: wapf-shopping-guide-categories.md, wapf-faq-grains-seeds-nuts-beans.md.
+- frozen_pizza: PARTIAL. WAPF sourdough pizza (sprouted flour, starter, olive oil, sea salt, fresh mozzarella). CALL: a crust listing sourdough or sprouted flour, olive oil, real mozzarella; nothing packaged that lists soybean oil or HVP. Files: wapf-sourdough-pizza-dough.md, wapf-pantry-intervention.md.
+- frozen_nuggets: PARTIAL. Mommypotamus nuggets: chicken, arrowroot, paprika, salt, onion powder, coconut oil. CALL: whole chicken pieces only, minimal coating, fried in coconut oil or lard; read the breading list. File: mommypotamus-chicken-nuggets.md.
+- frozen_meals / frozen: PARTIAL. WAPF: frozen dinners a major MSG source. CALL: frozen whole vegetables, fish or meat with no sauce; frozen fruit and vegetables without ascorbic or citric acid. Files: wapf-pantry-intervention.md, wapf-shopping-guide-categories.md.
+- frozen_fries, frozen_waffles, deli_salads: GAP, no holistic page fetched. Chip-oil line (WAPF: lard, ghee, coconut, palm, or avocado/olive GOOD) is the only usable one for fries. File: wapf-shopping-guide-categories.md.
+
+### W3.5 Net
+- Newly sourced and executable: mayo, hummus, salsa, ketchup_mustard/condiments, trail_mix/snacks, cooking_oils, canned_soup. Partial: dried_fruit, deli/prepared, frozen group. GAP: pretzels, fresh_pasta, frozen_fries, frozen_waffles, deli_salads, olive_oil_grades, coconut_water HPP.
+- Devon calls: cocoa and tea stay cards or get a caffeine note; snack_bars pick vs WAPF AVOID; ketchup unsweetened vs fermented/organic-sugar.

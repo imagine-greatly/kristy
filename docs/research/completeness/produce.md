@@ -112,3 +112,43 @@ Findings only; no KB, code or test file edited. Scrapling only (CLI `scrapling e
 ### Third-pass counts
 - COMPLETE (decision stands, source swap needed): 7 (cucumbers, cilantro, parsley, basil, swiss_chard, celery, microgreens)
 - GAP: 13 (frozen_peas, frozen_broccoli, asparagus, corn, eggplant, zucchini, snap_peas, kohlrabi, okra, mangoes, tofu, winter_squash, ginger_turmeric); the 9 plain freshness-only picks share one fix (add the grower/no-sprays/local-seasonal rung); tofu, corn, frozen, ginger_turmeric have specific supported adds above.
+
+## Wave 3 (2026-10-22): holistic-source fill, RECOMMENDED CALL per card
+Findings only; no KB, code or test edited, no commit. Scrapling only. Every URL below is on line 1 of the named archive file.
+
+### What failed or was not fetched (read first)
+- Not fetched after two attempts: WAPF Healthy4Life PDF (westonaprice.org/wp-content/uploads/Healthy4LifeEnglish.pdf, make_request error twice, bulk_get error once); WAPF Final-Shopping-Guide-2024 PDF (bulk_get error twice, not retried singly); organicconsumers.org (403). The Healthy4Life lines seen only in search snippets (tropical fruit best raw, locally grown in season) are NOT citable; do not use them.
+- herbsandapples.com/orchard was fetched (200) but is an apple-grower's farm page with no wax, storage or buying guidance; not archived, not cited.
+- No holistic source found, so no call beyond the pass-3 one: hydroponic/greenhouse lettuce nutrition, mushrooms (substrate, wild vs cultivated), stone fruit varieties, banana ethylene, mango treatment, asparagus, okra, eggplant, snap pea, herbs, microgreens, ginger/turmeric origin. These stay GAP; do not invent a source.
+- Disease/cure wording flagged: the Healthy4Life text (snippet only) says conditions "can be helped and even prevented" and a coconut-milk soup is "wonderful for colds and flu". Unusable as claims under the no-treatment rule.
+
+### New archive files (/Users/m1/kristy/archive/completeness/produce/, URL on line 1)
+- `wapf-autumn-abundance-freezing.md` : WAPF article quoting a preserving-food text. Freeze soon after harvest or purchase, steam-blanch rather than boil, thaw in the fridge; blanching destroys enzymes that keep vegetables maturing in the freezer. No nutrient-retention percentage in it.
+- `paleo-au-wash-bagged-salad.md` : Paleo.com.au (health blog, advocacy). Pre-washed bagged salad is sanitised with chlorine; the author advises washing it again and buying from a grower. Treat as one author's position.
+- `chelan-ranch-apples-wax-fridge.md` : organic orchard's own post. "we do not use synthetic pesticides or wax coatings such as Apeel"; skin absorbs pesticides and wax coatings (the farm's claim).
+- `orchards-box-apple-wax-faq.md` : small seller's FAQ. Sells wax-free apples; says shine comes from cold-storage practice and recommends picked-this-season fruit (seller statement).
+- `cban-gm-sweet-corn-guide.md` : CBAN (anti-GMO advocacy, Canada). Seed catalogues do not always label GE sweet corn; it lists "Questions to ask your farmer" and says organic farming prohibits GM seed. Canadian market context, so US availability is not claimed.
+
+### RECOMMENDED CALL per card (healthiest, closest to nature; executable step; source file)
+- produce_apples_pears (GAP, now supported): buy local, in season, from the orchard, uncoated; ask "waxed or coated?". Wax/Apeel sit on the WAPF avoid list (`wapf-shopping-guide-categories.md`); farm statements in `chelan-ranch-apples-wax-fridge.md`, `orchards-box-apple-wax-faq.md`. No source on 1-MCP or controlled-atmosphere; do not claim.
+- precut_produce_tradeoffs (WEAK-SOURCING, now supported): replace "loss is minor and measured" with a whole-head or whole-vegetable pick and, for bagged greens, "wash it again; ask the grower how it is washed" (Paleo.com.au, attributed, `paleo-au-wash-bagged-salad.md`). WAPF fallback is organic spring mix or romaine (`wapf-big-box-stores.md`). Do not say organic bagged salad skips the chlorine step as fact: the page says it is common even for organic, single source.
+- washing_produce (GAP): lead with "wash even pre-washed bags" (`paleo-au-wash-bagged-salad.md`) and "uncoated from a grower; washing does not remove a coating" (`wapf-shopping-guide-categories.md`). The page's vinegar rinse is the author's advocacy, no source on effectiveness; leave out.
+- frozen_vs_fresh_produce (WEAK-SOURCING): drop "just as good / broadly comparable". Call: local, in season, fresh from a grower first; "some frozen" belongs in a real-food kitchen, organic single-ingredient, and WAPF keeps broccoli, spinach or kale and green beans frozen (`wapf-wisely-stocked-kitchen.md`). If the shopper freezes their own: steam-blanch, freeze soon, thaw in the fridge (`wapf-autumn-abundance-freezing.md`). No nutrient-retention claim is sourced.
+- freezing_produce (COMPLETE): add the blanch-by-steam and fridge-thaw lines from `wapf-autumn-abundance-freezing.md` if wanted; not required.
+- produce_seasonality (GAP): unchanged from round 2; replace the reassurance line with the WAPF "harvested before peak to survive transit" fact (`wapf-extend-local-growing-season.md`).
+- baking_soda_soak (WEAK-SOURCING): still nothing holistic. Call: do not state a residue-removal claim; point to the plain rinse and growing without sprays. Unverified.
+- produce_root_vegetables, produce_brassicas, produce_onions_garlic (WEAK-SOURCING): no new source. Call: strike the "low-residue list" sentence; replace with the grower rung (no sprays, else organic, local in season), supported by `wapf-shopping-guide-categories.md`, `wapf-extend-local-growing-season.md`. Potato sprout-inhibitor facts stay in `potato-sprout-inhibitors-ofc.md`.
+- produce_mushrooms (WEAK-SOURCING): no holistic source. Call: strike the "low-residue list" line; say only "local grower, no sprays, else organic". Wild vs cultivated is an open gap.
+- produce_bananas (WEAK-SOURCING): no holistic source. Call: strike the "peel comes off" reassurance; keep organic as the floor and ripeness by feel. No ethylene claim.
+- produce_citrus (GAP): unchanged, `citrus-eosta-untreated-peel.md` plus `citrus-pmc-fungicide-genotoxicity.md`. Call: untreated or organic if the zest goes in; label facts only.
+- produce_leafy_greens (GAP): unchanged; no hydroponic nutrition source. Frame on no sprays and rooted living heads (`greenhouse-forest-valley-acres.md`, `greenhouse-readingeagle-big-leaf.md`, producer statements).
+- pick_corn (GAP): call is "organic, or ask the grower for the variety and whether it is conventional sweet corn; local in season first". Questions list from `cban-gm-sweet-corn-guide.md` (attributed, CBAN); WAPF says GMO sweet corn is in supermarkets (`wapf-journal-fall-2013-ge-food.md`). Not sourced: a verified non-GMO variety list.
+- pick_frozen_peas, pick_frozen_broccoli (GAP): call is organic, single ingredient (`wapf-big-box-stores.md`, `wapf-wisely-stocked-kitchen.md`); texture cue stays as a secondary check.
+- pick_asparagus, pick_eggplant, pick_okra, pick_snap_peas, pick_kohlrabi, pick_zucchini, pick_winter_squash, pick_cilantro, pick_parsley, pick_basil (no new source): call is the grower rung (local, in season, no sprays, else organic) on `wapf-shopping-guide-categories.md` and `wapf-eating-locally-seasonally.md`; herbs and microgreens have no specific source. Say no more for zucchini and squash than "ask the grower about the seed".
+- pick_mangoes, pick_ginger_turmeric (GAP): no source fetched. Call is the origin sticker plus organic; ginger origin is not asserted.
+- pick_tofu: stance call unchanged (WAPF ranks fermented soy first; `wapf-the-ploy-of-soy.md`). Still Devon's decision.
+
+### Wave 3 counts
+- New archive files: 5, each checked by reading line 1 and grepping the quoted keyword (wax, chlorine, blanch, Questions to ask).
+- Supported this wave: apple wax, bagged-salad wash, sweet-corn GMO questions, frozen-veg handling. Unsupported, left as GAP: the "no holistic source found" list above.
+- Reassurance-phrase grep was not re-run this wave; the round-2 quotes above stand as recorded.
