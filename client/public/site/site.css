@@ -178,6 +178,38 @@ p { margin: 0 0 1em; }
 .tablewrap th { color: var(--ink); font-weight: 600; background: var(--tint); }
 .tablewrap tr:last-child td { border-bottom: 0; }
 
+/* Landing on forest (ruled 2026-10-23). Scoped to body.forest so the legal pages stay paper.
+   Light copy on forest; light cards and sections keep dark ink. The seal never sits on forest:
+   it rides a Toasted roundel. Buttons on forest invert. */
+.forest { --on-forest-soft: #E9E2D0; --gold-on-forest: #D2B26A; --forest-rule: rgba(248, 242, 229, .22); --toasted: #E6D2AE; }
+body.forest { background: var(--forest); color: var(--on-forest-soft); }
+.forest a { color: var(--on-forest); }
+.forest a:hover { color: #FFFFFF; }
+.forest :focus-visible { outline-color: var(--gold-on-forest); }
+.forest h1, .forest h2, .forest h3 { color: #FFFFFF; }
+.forest .eyebrow { color: var(--gold-on-forest); }
+.forest .lede { color: var(--on-forest); }
+.forest .cta-note, .forest .site-foot__inner { color: var(--rule); }
+.forest .site-head { background: var(--forest); border-bottom-color: var(--forest-rule); }
+.forest .site-foot { border-top-color: var(--forest-rule); }
+.forest .brand { color: var(--on-forest); }
+.forest .brand img, .forest .hero__seal { background: var(--toasted); border-radius: 50%; padding: 4px; }
+.forest .hero__seal { padding: 8px; }
+.forest .btn, .forest .btn:hover { background: var(--on-forest); color: var(--forest); }
+.forest .btn:hover { background: #FFFFFF; }
+.forest .shot { border: 6px solid var(--on-forest); box-shadow: 0 24px 56px rgba(0, 0, 0, .35); }
+.forest .feature__copy .quote, .forest .nots strong { color: #FFFFFF; }
+.forest .nots li { border-color: var(--gold-on-forest); }
+.forest .section--tint { background: transparent; border-top: 1px solid var(--forest-rule); }
+/* Light surfaces on forest: back to paper ink. */
+.forest .section--card, .forest .tile { color: var(--body); }
+.forest .section--card h2, .forest .section--card h3, .forest .tile h3 { color: var(--ink); }
+.forest .section--card .eyebrow { color: var(--gold-text); }
+.forest .section--card .lede { color: var(--body); }
+.forest .section--card .btn { background: var(--forest); color: var(--on-forest); }
+.forest .section--card .btn:hover { background: #0F3A26; }
+.forest .section--card a:focus-visible { outline-color: var(--gold); }
+
 @media (max-width: 860px) {
   .hero__grid, .feature { grid-template-columns: 1fr; gap: 36px; }
   .feature--flip .feature__copy { order: 0; }

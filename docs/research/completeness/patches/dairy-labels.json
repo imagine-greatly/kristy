@@ -2,8 +2,9 @@
   "grassfed_butter": {
     "buying_tips": [
       "Deep yellow toward orange is carotene from grass. Pale is a hay-fed winter churn.",
-      "Look for grass-fed on the wrapper; cream and salt are the whole list.",
+      "Look for 100% grass-fed on the wrapper; cream and salt are the whole list.",
       "Raw butter from grass-fed cows, sold by the farm, sits above any store churn.",
+      "Where 100% grass-fed is not stocked, organic butter is the next rung.",
       "Skip whipped butter and any butter listing natural flavors.",
       "Pale butter can carry added color to look like grass butter. Read the list for a color.",
       "European-style butters are higher in fat, a separate axis from what the cows ate.",
@@ -14,14 +15,21 @@
       "Weston A. Price Foundation: Shopping Guide categories (butter and ghee)",
       "Weston A. Price Foundation: On the Trail of the Elusive X-Factor (butter color and K2)",
       "Real Milk (Campaign for Real Milk): Real Milk brochure"
+    ],
+    "decision": "Deep yellow 100% grass-fed butter: cream, and salt if salted.",
+    "cart_pick": "100% grass-fed butter",
+    "pick_steps": [
+      "Skip tubs and spreads; butter comes as a block or a stick.",
+      "How it was raised: see Milk.",
+      "100% grass-fed on the label means the cows ate grass and hay, never grain."
     ]
   },
   "whole_vs_reduced_fat_milk": {},
   "cheese_real_vs_processed": {
-    "decision": "Raw-milk grass-fed block cheese: milk, cultures, salt, rennet.",
+    "decision": "Raw-milk 100% grass-fed block cheese: milk, cultures, salt, rennet.",
     "buying_tips": [
       "Bagged shreds are coated in starch to keep them apart, which is why they melt poorly.",
-      "Look for grass-fed milk named on the block.",
+      "Look for 100% grass-fed milk named on the block.",
       "Look for a short list: milk, salt, cultures, enzymes/rennet.",
       "Raw-milk cheese from grass-fed herds is the top rung. Imported and deli-counter wheels are the easiest raw finds.",
       "Skip cheese made from homogenized milk. Small makers say how the milk was handled.",
@@ -38,11 +46,25 @@
       "21 CFR 133 cheese and process-cheese standards of identity (label meaning)",
       "Mason Dixie Foods “Natural Cheese vs. Processed” https://masondixiefoods.com/blogs/faqs/natural-cheese-vs-processed",
       "7 CFR 205.238 organic livestock hormone rules (label meaning)",
-      {"name": "BCPP: rBGH / rBST labeling", "url": "https://www.bcpp.org/resource/rbgh-rbst/"},
-      {"name": "U.S. Dairy Export Council: Milk protein concentrates technical report", "url": "https://www.thinkusadairy.org/assets/Documents/Customer%20Site/C3-Using%20Dairy/C3.7-Resources%20and%20Insights/03-Application%20and%20Technical%20Materials/Milk_Protein_Concentrates_Technical_Report.pdf"},
-      {"name": "Center for Food Safety: Phthalates in macaroni and cheese powders", "url": "https://centerforfoodsafety.org/press-release/toxic-industrial-chemicals-found-in-10-varieties-of-macaroni-and-cheese-powders/"},
-      {"name": "Food Packaging Forum: Phthalates found in mac and cheese", "url": "https://foodpackagingforum.org/news/phthalates-found-in-mac-and-cheese"}
-    ]
+      {
+        "name": "BCPP: rBGH / rBST labeling",
+        "url": "https://www.bcpp.org/resource/rbgh-rbst/"
+      },
+      {
+        "name": "U.S. Dairy Export Council: Milk protein concentrates technical report",
+        "url": "https://www.thinkusadairy.org/assets/Documents/Customer%20Site/C3-Using%20Dairy/C3.7-Resources%20and%20Insights/03-Application%20and%20Technical%20Materials/Milk_Protein_Concentrates_Technical_Report.pdf"
+      },
+      {
+        "name": "Center for Food Safety: Phthalates in macaroni and cheese powders",
+        "url": "https://centerforfoodsafety.org/press-release/toxic-industrial-chemicals-found-in-10-varieties-of-macaroni-and-cheese-powders/"
+      },
+      {
+        "name": "Food Packaging Forum: Phthalates found in mac and cheese",
+        "url": "https://foodpackagingforum.org/news/phthalates-found-in-mac-and-cheese"
+      }
+    ],
+    "cart_pick": "100% grass-fed block cheese",
+    "tier_note": "The starch and cellulose on shreds are printed facts; the uncoated block is the standard, and 100% grass-fed means the cows ate grass and hay, never grain."
   },
   "yogurt_plain_vs_flavored": {
     "buying_tips": [
@@ -69,7 +91,10 @@
       "21 CFR 131.200 yogurt standard of identity (label meaning)",
       "National Yogurt Association ‘Live & Active Cultures’ seal criteria",
       "7 CFR 205.238 organic livestock hormone rules (label meaning)",
-      {"name": "BCPP: rBGH / rBST labeling", "url": "https://www.bcpp.org/resource/rbgh-rbst/"}
+      {
+        "name": "BCPP: rBGH / rBST labeling",
+        "url": "https://www.bcpp.org/resource/rbgh-rbst/"
+      }
     ]
   },
   "raw_milk": {
@@ -114,6 +139,7 @@
       "Pork and poultry ban hormones by law, so every producer there can print it.",
       "Chicken/pork: hormones are banned anyway. Look for the required explanatory statement.",
       "Beef/dairy: the claim is meaningful; look for verification.",
+      "On beef and dairy, start from organic, then look for a verified claim.",
       "Beef hormones are ear implants: estrogen, progesterone, testosterone, zeranol, trenbolone acetate.",
       "Poultry labels must add ‘no hormones are used in poultry’ by rule.",
       "On dairy, look for “from cows not treated with rBST”; this describes the producer’s claim."
@@ -131,7 +157,10 @@
       "7 CFR 205 organic standards (label meaning)",
       "7 CFR 66 bioengineered food disclosure standard (label meaning)",
       "Non-GMO Project standards",
-      {"name": "Non-GMO Project: GMO FAQ", "url": "https://www.nongmoproject.org/gmo-faq/"}
+      {
+        "name": "Non-GMO Project: GMO FAQ",
+        "url": "https://www.nongmoproject.org/gmo-faq/"
+      }
     ]
   },
   "label_cage_free": {
@@ -164,7 +193,10 @@
       "Federal labeling policy: no regulatory definition of “pasture-raised” (label meaning)",
       "Certified Humane pasture-raised standards (outdoor space requirements)",
       "7 CFR 205.237 organic livestock feed (label meaning)",
-      {"name": "100 Days of Real Food: Egg Labels: What To Look For", "url": "https://www.100daysofrealfood.com/egg-labels-whats-to-look-for/"}
+      {
+        "name": "100 Days of Real Food: Egg Labels: What To Look For",
+        "url": "https://www.100daysofrealfood.com/egg-labels-whats-to-look-for/"
+      }
     ]
   },
   "label_organic_scope": {
@@ -181,7 +213,10 @@
       "Real Organic Project: Standards",
       "Real Organic Project: Hydroponics are not organic",
       "7 CFR 205 organic standards: 205.105, 205.206, 205.601 (label meaning)",
-      {"name": "National Agricultural Law Center: Ninth Circuit memorandum on hydroponic organic certification (2022)", "url": "https://nationalaglawcenter.org/wp-content/uploads/2022/09/Ninth-Cir.-memo.pdf"},
+      {
+        "name": "National Agricultural Law Center: Ninth Circuit memorandum on hydroponic organic certification (2022)",
+        "url": "https://nationalaglawcenter.org/wp-content/uploads/2022/09/Ninth-Cir.-memo.pdf"
+      },
       "https://centerforfoodsafety.org/press-release/citizens-consumer-groups-oppose-proposed-irradiation-labeling-change/"
     ]
   },
@@ -244,9 +279,15 @@
       "Product ingredient labeling",
       "Morning Fresh Dairy “Coffee Creamer, Half & Half, and Whipping Cream” https://www.morningfreshdairy.com/moo-news/an-explanation-on-coffee-creamer-half-half-and-whipping-cream.html",
       "7 CFR 205.238 organic livestock hormone rules (label meaning)",
-      {"name": "BCPP: rBGH / rBST labeling", "url": "https://www.bcpp.org/resource/rbgh-rbst/"},
+      {
+        "name": "BCPP: rBGH / rBST labeling",
+        "url": "https://www.bcpp.org/resource/rbgh-rbst/"
+      },
       "Food Babe: Ingredients to avoid"
-    ]
+    ],
+    "decision": "100% grass-fed cream from a small dairy, not ultra-pasteurized.",
+    "cart_pick": "100% grass-fed cream or half-and-half",
+    "tier_note": "Cream carries a federal milkfat minimum, and creamer carries none because it is not dairy, and 100% grass-fed means the cows ate grass and hay, never grain."
   },
   "label_front_vs_back": {
     "sources": [
@@ -298,7 +339,10 @@
       "Seed Oil Free Certified: Expeller-pressed oil explained",
       "Food Babe: Cooking oils",
       "International Olive Council definitions of cold extraction",
-      {"name": "Dr. Cate Shanahan: The Hateful Eight seed oils", "url": "https://drcate.com/hateful-eight/"}
+      {
+        "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+        "url": "https://drcate.com/hateful-eight/"
+      }
     ]
   },
   "label_sugar_free_substitutes": {
@@ -329,8 +373,12 @@
       "7 CFR 60 country of origin labeling for fish and shellfish (label meaning)",
       "Federal seafood market-name list (label meaning)",
       "Peer-reviewed studies of seafood species substitution",
-      {"name": "Quartz: Here is why your farmed salmon has color added to it", "url": "https://qz.com/358811/heres-why-your-farmed-salmon-has-color-added-to-it"}
-    ]
+      {
+        "name": "Quartz: Here is why your farmed salmon has color added to it",
+        "url": "https://qz.com/358811/heres-why-your-farmed-salmon-has-color-added-to-it"
+      }
+    ],
+    "decision": "Wild-caught whole or skin-on fish, species, method and country named."
   },
   "label_serving_size": {},
   "label_artificial_color": {
@@ -381,12 +429,14 @@
       "Food Renegade: Healthy cheese, what to buy",
       "21 CFR 133 cheese standards of identity, 60-day aging (label meaning)",
       "Edible Seattle “In the Raw” (Cascadia Creamery, raw-milk cheese) https://edibleseattle.com/explore/artisans/in-the-raw/"
-    ]
+    ],
+    "why": "Aged raw-milk cheese tastes of one herd and season, and its maker has to know the milk."
   },
   "oat_milk": {
     "buying_tips": [
       "Oat drinks vary carton to carton in stabilizers, protein and added vitamins.",
       "Look for oats and water alone, with no vitamins, minerals or oil added.",
+      "Look for organic oats on the list.",
       "If dairy suits you, whole dairy comes first. Among plant drinks, nut or coconut milk ranks above oat.",
       "Some certified organic oat drinks still use carrageenan, a seaweed thickener; pick one without it.",
       "Read the ingredient list for stabilizers, and the carton for protein and added vitamins and minerals."
@@ -394,8 +444,14 @@
     "sources": [
       "Weston A. Price Foundation: Shopping Guide categories (milk, imitation milks)",
       "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10877596/fullTextXML",
-      {"name": "Joi: 5 common plant milk additives (gums)", "url": "https://addjoi.com/blogs/news/5-common-plant-milk-additives-and-why-you-should-avoid-them"},
-      {"name": "Seed Oil Free Certified: Does oat milk contain seed oils", "url": "https://www.seedoilfreecertified.com/seed-oils-guide/everyday-foods/does-oat-milk-contain-seed-oils"}
+      {
+        "name": "Joi: 5 common plant milk additives (gums)",
+        "url": "https://addjoi.com/blogs/news/5-common-plant-milk-additives-and-why-you-should-avoid-them"
+      },
+      {
+        "name": "Seed Oil Free Certified: Does oat milk contain seed oils",
+        "url": "https://www.seedoilfreecertified.com/seed-oils-guide/everyday-foods/does-oat-milk-contain-seed-oils"
+      }
     ]
   },
   "plain_kefir": {
@@ -411,7 +467,10 @@
     "sources": [
       "Weston A. Price Foundation: Shopping Guide categories (yogurt and kefir)",
       "Weston A. Price Foundation: FAQ, dairy",
-      {"name": "NPR: Added sugar in yogurt and dairy labels", "url": "https://www.npr.org/sections/thesalt/2018/09/19/649689591/yogurt-may-not-be-so-healthy-if-its-pumped-full-of-sugar"}
+      {
+        "name": "NPR: Added sugar in yogurt and dairy labels",
+        "url": "https://www.npr.org/sections/thesalt/2018/09/19/649689591/yogurt-may-not-be-so-healthy-if-its-pumped-full-of-sugar"
+      }
     ]
   },
   "sour_cream": {
@@ -430,27 +489,46 @@
       "Weston A. Price Foundation: Shopping Guide categories (cream, cultured cream and sour cream)",
       "21 CFR 131.160 and 131.162 sour cream standards (label meaning)",
       "7 CFR 205.238 organic livestock hormone rules (label meaning)",
-      {"name": "BCPP: rBGH / rBST labeling", "url": "https://www.bcpp.org/resource/rbgh-rbst/"}
-    ]
+      {
+        "name": "BCPP: rBGH / rBST labeling",
+        "url": "https://www.bcpp.org/resource/rbgh-rbst/"
+      }
+    ],
+    "decision": "100% grass-fed sour cream: cream and cultures, nothing else added.",
+    "cart_pick": "100% grass-fed sour cream",
+    "tier_note": "Live cultures do the souring here; acidified tubs are soured with added acids, and 100% grass-fed means the cows ate grass and hay, never grain."
   },
   "cream_cheese": {
     "buying_tips": [
       "The standard allows up to 0.5 percent stabilizers; the list shows who skipped them.",
-      "Look for grass-fed cream cheese that lists no stabilizers.",
+      "Look for 100% grass-fed cream cheese that lists no stabilizers.",
       "Raw whole-milk cream cheese from a farm comes first. Next is whole milk with no additives.",
       "Look for “cream cheese” as the name on the package.",
       "Find a culture in the ingredient list.",
       "Swap in Neufchâtel in most recipes; the two taste similar.",
       "rBST is the synthetic growth hormone used to increase milk production in cows. Certified organic cream cheese rules prohibit it.",
       "Choose certified organic cream cheese first. Next is a pack stating the milk comes from cows untreated with rBST. Both outrank a pack with neither. US labels can omit whether the cows received rBST.",
-      "Some certified organic foods contain carrageenan, a seaweed-derived thickener. Look through the cream cheese ingredients and take the version that lists no carrageenan."
+      "Some certified organic foods contain carrageenan, a seaweed-derived thickener. Look through the cream cheese ingredients and take the version that lists no carrageenan.",
+      "The standard name requires at least 33 percent milkfat, a bacterial culture, and stabilizers at 0.5 percent at most."
     ],
     "sources": [
       "Weston A. Price Foundation: Shopping Guide categories (cottage cheese, cream cheese and fresh cheese)",
       "21 CFR 133.133 cream cheese standard (label meaning)",
       "https://www.masterclass.com/articles/neufchatel-cheese-vs-cream-cheese-explained",
       "7 CFR 205.238 organic livestock hormone rules (label meaning)",
-      {"name": "BCPP: rBGH / rBST labeling", "url": "https://www.bcpp.org/resource/rbgh-rbst/"}
+      {
+        "name": "BCPP: rBGH / rBST labeling",
+        "url": "https://www.bcpp.org/resource/rbgh-rbst/"
+      }
+    ],
+    "decision": "100% grass-fed cream cheese by its standard name, no stabilizers.",
+    "cart_pick": "100% grass-fed stabilizer-free cream cheese",
+    "tier_note": "A live culture on the list marks cream cheese made the traditional way.",
+    "why": "Cream cheese is cream set by a bacterial culture; a short list with no stabilizers is the closest to that.",
+    "pick_steps": [
+      "Look for “cream cheese” as the name; that name carries the standard.",
+      "Stabilizers are allowed up to 0.5 percent; choose the package that lists none.",
+      "100% grass-fed on the label means the cows ate grass and hay, never grain."
     ]
   },
   "cottage_cheese": {
@@ -469,8 +547,14 @@
       "Weston A. Price Foundation: Shopping Guide categories (cottage cheese, cream cheese and fresh cheese)",
       "21 CFR 133.128 and 133.129 cottage cheese standards (label meaning)",
       "7 CFR 205.238 organic livestock hormone rules (label meaning)",
-      {"name": "BCPP: rBGH / rBST labeling", "url": "https://www.bcpp.org/resource/rbgh-rbst/"}
-    ]
+      {
+        "name": "BCPP: rBGH / rBST labeling",
+        "url": "https://www.bcpp.org/resource/rbgh-rbst/"
+      }
+    ],
+    "decision": "100% grass-fed cottage cheese, set by a culture, no carrageenan.",
+    "cart_pick": "100% grass-fed culture-set cottage cheese",
+    "tier_note": "A culture sets the best curd; a tub marked directly set was curdled with acid, and 100% grass-fed means the cows ate grass and hay, never grain."
   },
   "ice_cream": {
     "buying_tips": [
@@ -491,15 +575,21 @@
       "21 CFR 135.110 ice cream standard (label meaning)",
       "https://www.mentalfloss.com/food/ice-cream/ice-cream-vs-frozen-dairy-dessert-what-is-difference",
       "7 CFR 205.238 organic livestock hormone rules (label meaning)",
-      {"name": "BCPP: rBGH / rBST labeling", "url": "https://www.bcpp.org/resource/rbgh-rbst/"}
-    ]
+      {
+        "name": "BCPP: rBGH / rBST labeling",
+        "url": "https://www.bcpp.org/resource/rbgh-rbst/"
+      }
+    ],
+    "decision": "100% grass-fed ice cream: cream, milk, sugar, no gums.",
+    "cart_pick": "100% grass-fed gum-free ice cream",
+    "tier_note": "The recipe reads off the list: cream, milk, sugar and yolks, no gums or oils, and 100% grass-fed means the cows ate grass and hay, never grain."
   },
   "ghee": {
     "buying_tips": [
       "Plain ghee is butter simmered down to its fat; flavored jars add spices.",
       "Look for butter as the single ingredient on the jar, with nothing added.",
       "Ghee from raw grass-fed butter, sold by a farm, is the top rung.",
-      "Skip any jar listing natural flavors. Look for butter from grass-fed cows.",
+      "Skip any jar listing natural flavors. Look for butter from 100% grass-fed cows.",
       "Read the ingredient list for butter alone.",
       "Expect spices on the list if the jar is flavored.",
       "Choose ghee for its nutty taste and aroma."
@@ -511,6 +601,13 @@
     "sources": [
       "Weston A. Price Foundation: FAQ, dairy (real ghee)",
       "Weston A. Price Foundation: Shopping Guide categories (butter and ghee)"
+    ],
+    "decision": "100% grass-fed ghee or clarified butter, butter the only ingredient.",
+    "cart_pick": "100% grass-fed ghee",
+    "pick_steps": [
+      "For plain ghee, pick a jar listing butter alone.",
+      "Check flavored jars for spices on the ingredient list.",
+      "100% grass-fed on the label means the cows ate grass and hay, never grain."
     ]
   },
   "goat_sheep_dairy": {
@@ -529,7 +626,16 @@
     ],
     "sources": [
       "Weston A. Price Foundation: Shopping Guide categories (milk, imitation milks)",
-      {"name": "Joi: 5 common plant milk additives (gums)", "url": "https://addjoi.com/blogs/news/5-common-plant-milk-additives-and-why-you-should-avoid-them"}
+      {
+        "name": "Joi: 5 common plant milk additives (gums)",
+        "url": "https://addjoi.com/blogs/news/5-common-plant-milk-additives-and-why-you-should-avoid-them"
+      }
+    ],
+    "why": "Dairy comes first when it suits you. Almond milk is the fallback; almonds and water alone stay closest to the nut.",
+    "watch_out": [
+      "Fortified almond milk comes second, since each added vitamin or mineral joins the list.",
+      "Gellan gum, guar gum or locust bean gum are added thickeners; pick almonds and water without them.",
+      "Skip an almond carton listing sunflower oil or canola oil."
     ]
   },
   "soy_milk": {
@@ -544,8 +650,14 @@
     "sources": [
       "Weston A. Price Foundation: Shopping Guide categories (milk, imitation milks)",
       "7 CFR 66 bioengineered food disclosure standard (label meaning)",
-      {"name": "Non-GMO Project: GMO FAQ", "url": "https://www.nongmoproject.org/gmo-faq/"},
-      {"name": "Joi: 5 common plant milk additives (gums)", "url": "https://addjoi.com/blogs/news/5-common-plant-milk-additives-and-why-you-should-avoid-them"}
+      {
+        "name": "Non-GMO Project: GMO FAQ",
+        "url": "https://www.nongmoproject.org/gmo-faq/"
+      },
+      {
+        "name": "Joi: 5 common plant milk additives (gums)",
+        "url": "https://addjoi.com/blogs/news/5-common-plant-milk-additives-and-why-you-should-avoid-them"
+      }
     ]
   },
   "coconut_milk_beverage": {
@@ -563,7 +675,8 @@
       "Weston A. Price Foundation: Shopping Guide categories (coconut: canned, not aseptic boxes)",
       "https://www.cookscountry.com/how_tos/6667-canned-coconut-milk-vs-carton-packed-coconut-milk-beverage",
       "https://www.tastingtable.com/1527981/canned-coconut-milk-carton-difference"
-    ]
+    ],
+    "cart_pick": "Canned whole coconut milk, nothing added"
   },
   "plant_butter": {
     "buying_tips": [
@@ -578,7 +691,10 @@
     "sources": [
       "Weston A. Price Foundation: Shopping Guide categories (butter, margarines and spreads)",
       "21 CFR 166.110 margarine standard (label meaning)",
-      {"name": "Dr. Cate Shanahan: The Hateful Eight seed oils", "url": "https://drcate.com/hateful-eight/"}
+      {
+        "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+        "url": "https://drcate.com/hateful-eight/"
+      }
     ]
   },
   "dairy_case": {
@@ -593,13 +709,22 @@
     ],
     "sources": [
       "Weston A. Price Foundation: Shopping Guide categories (dairy)",
-      {"name": "Weston A. Price Foundation: Milk homogenization", "url": "https://www.westonaprice.org/health-topics/know-your-fats/milk-homogenization-heart-disease/"},
+      {
+        "name": "Weston A. Price Foundation: Milk homogenization",
+        "url": "https://www.westonaprice.org/health-topics/know-your-fats/milk-homogenization-heart-disease/"
+      },
       "21 CFR 131.110 milk standard; 21 CFR 131.3 ultra-pasteurized (label meaning)",
       "7 CFR 205.238 and 205.240 organic livestock rules (label meaning)",
       "https://www.dairyreporter.com/Article/2026/03/13/how-ultrafiltered-milk-is-made-benefits-protein-process/",
       "https://www.farmanddairy.com/?p=14321",
-      {"name": "BCPP: rBGH / rBST labeling", "url": "https://www.bcpp.org/resource/rbgh-rbst/"},
-      {"name": "HealthyUWellness: Packaged shredded cheese additives", "url": "https://www.healthyuwellness.org/post/packaged-shredded-cheese-is-toxic"}
+      {
+        "name": "BCPP: rBGH / rBST labeling",
+        "url": "https://www.bcpp.org/resource/rbgh-rbst/"
+      },
+      {
+        "name": "HealthyUWellness: Packaged shredded cheese additives",
+        "url": "https://www.healthyuwellness.org/post/packaged-shredded-cheese-is-toxic"
+      }
     ]
   }
 }

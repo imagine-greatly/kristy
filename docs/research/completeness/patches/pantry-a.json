@@ -47,14 +47,22 @@
     ],
     "science": "Steel-cut, rolled and instant are the same grain, cut and cooked differently. Oats carry phytic acid and enzyme inhibitors. An overnight soak in warm water with a little yogurt, whey or vinegar reduces the phytic acid. The oats are then cooked. Sprouted oats have had that step done. Flavored instant packets are mostly added sugar.",
     "sources": [
-      {"name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest", "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"},
-      {"name": "FoodPrint: Glyphosate Residue in Food", "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"},
+      {
+        "name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest",
+        "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"
+      },
+      {
+        "name": "FoodPrint: Glyphosate Residue in Food",
+        "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"
+      },
       "Weston A. Price Foundation, How to Make Oatmeal Healthier",
       "Weston A. Price Foundation, Living with Phytic Acid",
       "Weston A. Price Foundation, Shopping Guide (Best/Good/Avoid tiers)"
     ]
   },
-  "nuts_raw_vs_roasted": {},
+  "nuts_raw_vs_roasted": {
+    "decision": "Organic raw or dry-roasted nuts, no added oil."
+  },
   "honey_adulteration": {
     "decision": "Raw unfiltered honey from a named local producer.",
     "why": "Raw honey keeps its enzymes, and heating can compromise them. It is still a sweetener, just a real and old one.",
@@ -80,8 +88,14 @@
       "Ask whether it was heated; ‘raw’ with no named producer is often blended."
     ],
     "labels_decoded": [
-      {"term": "Raw honey", "meaning": "Not heated, so the enzymes are intact. Closest to the hive."},
-      {"term": "Pure honey", "meaning": "A marketing word with little enforcement. Traceability matters more."}
+      {
+        "term": "Raw honey",
+        "meaning": "Not heated, so the enzymes are intact. Closest to the hive."
+      },
+      {
+        "term": "Pure honey",
+        "meaning": "A marketing word with little enforcement. Traceability matters more."
+      }
     ],
     "sources": [
       "Weston A. Price Foundation, Shopping Guide (Best/Good/Avoid tiers): raw honey, preferably unfiltered, under Best; heated honey under Avoid; raw honey not for babies",
@@ -89,7 +103,12 @@
       "Chemistry World “The honey fraud problem” https://www.chemistryworld.com/features/the-honey-fraud-problem/4020255.article (low-cost sugar syrups used to dilute or replace honey)"
     ]
   },
-  "beans_dried_vs_canned": {},
+  "beans_dried_vs_canned": {
+    "watch_out": [
+      "Rinsing canned beans cuts much of the sodium the can added.",
+      "Second best: organic, no-salt-added beans in glass jars or BPA-free cans."
+    ]
+  },
   "flour_basics": {
     "decision": "Organic sprouted flour, or fresh-ground whole grain, soaked.",
     "why": "Whole grain flour keeps the bran and germ, and soaking or sprouting is how those were traditionally made digestible.",
@@ -117,12 +136,30 @@
       "On white flour, read for “unbleached”, and pass on “bromated”."
     ],
     "labels_decoded": [
-      {"term": "Sprouted flour", "meaning": "Milled from grain that was sprouted and dried first."},
-      {"term": "Enriched", "meaning": "B vitamins and iron added back after refining. A defined standard."},
-      {"term": "Bleached", "meaning": "Treated with a whitening and maturing agent."},
-      {"term": "Unbleached", "meaning": "Aged with air rather than chemically treated."},
-      {"term": "Whole wheat", "meaning": "Bran, germ and endosperm intact. A much shorter shelf life."},
-      {"term": "Bromated", "meaning": "Potassium bromate added, at no more than 50 parts per million."}
+      {
+        "term": "Sprouted flour",
+        "meaning": "Milled from grain that was sprouted and dried first."
+      },
+      {
+        "term": "Enriched",
+        "meaning": "B vitamins and iron added back after refining. A defined standard."
+      },
+      {
+        "term": "Bleached",
+        "meaning": "Treated with a whitening and maturing agent."
+      },
+      {
+        "term": "Unbleached",
+        "meaning": "Aged with air rather than chemically treated."
+      },
+      {
+        "term": "Whole wheat",
+        "meaning": "Bran, germ and endosperm intact. A much shorter shelf life."
+      },
+      {
+        "term": "Bromated",
+        "meaning": "Potassium bromate added, at no more than 50 parts per million."
+      }
     ],
     "sources": [
       "Weston A. Price Foundation, Shopping Guide (Best/Good/Avoid tiers)",
@@ -131,8 +168,14 @@
       "Weston A. Price Foundation, Living with Phytic Acid",
       "Weston A. Price Foundation, Wisely Stocked Kitchen",
       "21 CFR 137, flour standards of identity (label meaning of enriched, bleached, bromated and whole wheat)",
-      {"name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest", "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"},
-      {"name": "FoodPrint: Glyphosate Residue in Food", "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"}
+      {
+        "name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest",
+        "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"
+      },
+      {
+        "name": "FoodPrint: Glyphosate Residue in Food",
+        "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"
+      }
     ]
   },
   "bulk_bins_buying": {
@@ -166,24 +209,38 @@
       "The Counter, bulk-bin hygiene reporting https://thecounter.org/bulk-bins-grocery-stores-bring-your-own-container-covid-19/ (the real touchpoint is customers’ repeated touching of the same equipment, gravity bin and scoop bin handles and scales, rather than the container a shopper brings)"
     ]
   },
-  "whole_spices": {},
+  "whole_spices": {
+    "decision": "Organic whole spices, bought small, ground as you go."
+  },
   "rancidity_check": {
-    "cart_pick": "Small dark bottle of oil",
+    "cart_pick": "Extra virgin olive oil in dark glass or tin",
     "watch_out": [
       "Rancid oil smells like varnish, putty, old walnuts or crayons. Rancidity is more obvious in the mouth than in the nose. A tiny sip settles a smell you are unsure of.",
       "Heat, air, light and time are what turn it. A cool dark place, tightly capped, and use it up promptly.",
       "Heating oil past its limit oxidizes it further. Liquid seed oils are the most fragile; butter, ghee, tallow and coconut oil hold up to heat."
     ],
     "sources": [
-      "Peer-reviewed literature on lipid oxidation in foods",
       "UC Davis Olive Center sensory standards for olive oil defects",
       "America’s Test Kitchen “How to Tell If Olive Oil Is Rancid” https://www.americastestkitchen.com/articles/1224-how-to-tell-if-olive-oil-is-rancid (heat, air, light, and time will wreck the best olive oil; rancid oil has a distinctive smell like varnish, putty, old walnuts, or crayons, and rancidity is more obvious in the mouth, so take a tiny sip when in doubt; store cool, dark, tightly capped, and use it up promptly)",
       "Weston A. Price Foundation, The Big Fat Surprise: Toxic Heated Oils",
       "Weston A. Price Foundation, The Skinny on Fats"
+    ],
+    "tier_note": "The paint-and-crayon smell is oxidized fat, and it is flagged on exactly that basis."
+  },
+  "olive_oil_grades": {
+    "buying_tips": [
+      "“Pure”, “classic” and “light” are refined oil; extra virgin uses no heat or solvent.",
+      "Extra virgin: mechanically extracted, no heat or solvent, taste-panel tested.",
+      "Organic, from a single estate or a small producer, is the top rung.",
+      "Look for a HARVEST date, not just ‘best by’. Buy recent.",
+      "Dark glass or tin protects it from light; store away from the stove.",
+      "Single country of origin, named with ‘product of’.",
+      "‘First cold pressed’ is a legacy phrase and adds nothing legally."
     ]
   },
-  "olive_oil_grades": {},
-  "nut_butter_ingredients": {},
+  "nut_butter_ingredients": {
+    "decision": "Organic nut butter, just nuts and salt, oil on top."
+  },
   "grains_beyond_rice": {
     "decision": "Organic whole grains, soaked overnight before cooking.",
     "why": "Hulled grains keep their bran, and soaking is the traditional step that makes them digestible.",
@@ -217,11 +274,19 @@
       "Whole Grains Council grain reference",
       "Jerry James Stone “Why You Should Always Rinse Quinoa Before Cooking” https://www.jerryjamesstone.com/2019/06/17/why-you-should-always-rinse-quinoa-before-cooking/ (quinoa’s outer hull is coated with saponin, a bitter natural coating, and rinsing before cooking is how it comes off)",
       "https://wholegrainscouncil.org/whole-grains-101/whole-grains-101-orphan-pages-found/types-barley",
-      {"name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest", "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"},
-      {"name": "FoodPrint: Glyphosate residue in food", "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"}
+      {
+        "name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest",
+        "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"
+      },
+      {
+        "name": "FoodPrint: Glyphosate residue in food",
+        "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"
+      }
     ]
   },
-  "bottled_water_buying": {},
+  "bottled_water_buying": {
+    "cart_pick": "Spring water in glass, unpainted cap"
+  },
   "sandwich_bread": {
     "decision": "Sourdough or sprouted whole wheat bread, organic, short list.",
     "short_answer": "The top loaf is sourdough, soaked or sprouted, from organic whole grain flour, with no added gluten, soy or bran. A loaf called “wheat” needs an ingredient check; enriched grain and whole grain are different descriptions.",
@@ -256,9 +321,18 @@
       "21 CFR 137.200, whole wheat flour standard (label meaning)",
       "https://wholegrainscouncil.org/whole-grains-101/whats-whole-grain-refined-grain/existing-standards-whole-grains",
       "https://wholegrainscouncil.org/whole-grain-stamp",
-      {"name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest", "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"},
-      {"name": "FoodPrint: Glyphosate Residue in Food", "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"},
-      {"name": "Chris Kresser: How industrial seed oils are making us sick", "url": "https://chriskresser.com/how-industrial-seed-oils-are-making-us-sick/"},
+      {
+        "name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest",
+        "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"
+      },
+      {
+        "name": "FoodPrint: Glyphosate Residue in Food",
+        "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"
+      },
+      {
+        "name": "Chris Kresser: How industrial seed oils are making us sick",
+        "url": "https://chriskresser.com/how-industrial-seed-oils-are-making-us-sick/"
+      },
       "https://www.westonaprice.org/health-topics/vegetarianism-and-plant-foods/living-with-phytic-acid/",
       "https://www.healthline.com/nutrition/bleached-vs-unbleached-flour"
     ]
@@ -346,16 +420,28 @@
       "Read for sugar under other names, honey and syrups included."
     ],
     "labels_decoded": [
-      {"term": "100% Whole Grain Stamp", "meaning": "All grain ingredients are whole grain, with a minimum amount per serving."},
-      {"term": "Sprouted or soaked granola", "meaning": "Grain prepared before baking; the boxed option on the higher rung."}
+      {
+        "term": "100% Whole Grain Stamp",
+        "meaning": "All grain ingredients are whole grain, with a minimum amount per serving."
+      },
+      {
+        "term": "Sprouted or soaked granola",
+        "meaning": "Grain prepared before baking; the boxed option on the higher rung."
+      }
     ],
     "sources": [
       "Weston A. Price Foundation, Be Kind to Grains (extrusion; soaked and cooked porridges)",
       "Weston A. Price Foundation, Shopping Guide (Best/Good/Avoid tiers), grains",
       "Weston A. Price Foundation, Homemade Granola",
       "https://wholegrainscouncil.org/whole-grain-stamp",
-      {"name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest", "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"},
-      {"name": "FoodPrint: Glyphosate Residue in Food", "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"}
+      {
+        "name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest",
+        "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"
+      },
+      {
+        "name": "FoodPrint: Glyphosate Residue in Food",
+        "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"
+      }
     ]
   },
   "pasta_dry": {
@@ -390,8 +476,14 @@
       "21 CFR 139.115, enriched macaroni products standard (label meaning)",
       "https://wholegrainscouncil.org/whole-grains-101/whats-whole-grain-refined-grain/existing-standards-whole-grains",
       "https://scienceinsights.org/why-is-bronze-cut-pasta-better-than-regular-pasta/",
-      {"name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest", "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"},
-      {"name": "FoodPrint: Glyphosate Residue in Food", "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"}
+      {
+        "name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest",
+        "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"
+      },
+      {
+        "name": "FoodPrint: Glyphosate Residue in Food",
+        "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"
+      }
     ]
   },
   "coffee_beans": {
@@ -425,8 +517,16 @@
       "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12607991/fullTextXML"
     ]
   },
-  "sprouted_grain_bread": {},
-  "sprouted_grains": {},
+  "sprouted_grain_bread": {
+    "decision": "Organic sprouted whole grain bread, no added flour.",
+    "cart_pick": "Sprouted whole grain bread, no added flour"
+  },
+  "sprouted_grains": {
+    "decision": "Organic grain labeled sprouted whole grain.",
+    "watch_out": [
+      "“Sprouted” has no regulated definition, so the word alone promises nothing."
+    ]
+  },
   "specialty_flours": {
     "decision": "Organic whole grain flour, fresh-ground or sprouted, soaked before use.",
     "kristy_take": "The word “whole” on the bag carries the meaning. Fresh-ground or sprouted, organic, and soaked when it is not sprouted.",
@@ -506,7 +606,8 @@
       "21 CFR 136.180, whole wheat bread, rolls and buns (label meaning)",
       "21 CFR 136.115, enriched bread, rolls and buns (label meaning)",
       "https://smartlabel.syndigo.com/id/bdce1b9a-cc48-4c26-8003-92bf9073231d"
-    ]
+    ],
+    "why": "Sourdough or sprouted whole grain is the traditional rung; whole wheat must be the only flour."
   },
   "pastries_muffins": {
     "decision": "Butter pastries and muffins, natural sweetener, whole grain flour.",
@@ -523,7 +624,8 @@
     ],
     "watch_out": [
       "Skip factory-made Danish pastry made with hydrogenated sunflower oil in place of butter.",
-      "Refined sugar, high fructose corn syrup and agave mark the commercial rung."
+      "Refined sugar, high fructose corn syrup and agave mark the commercial rung.",
+      "Skip muffins listing canola, soybean or other seed oil."
     ],
     "tier_note": "The fat and sweetener read comes from the traditional baked-goods tiers.",
     "pick_steps": [
@@ -537,10 +639,23 @@
       "https://en.wikipedia.org/wiki/Danish_pastry",
       "https://en.wikipedia.org/wiki/Muffin",
       "https://www.healthline.com/nutrition/bleached-vs-unbleached-flour"
+    ],
+    "why": "Butter is the traditional fat in pastries and muffins. Factory-made versions often swap in other fats."
+  },
+  "muesli": {
+    "buying_tips": [
+      "Granola adds oil and sweetener before baking; plain muesli is a raw mix.",
+      "Read the ingredients for sugar, honey or syrup.",
+      "Pick a bag that lists only grains, fruit, nuts and seeds.",
+      "Check whether the bag says toasted.",
+      "Choose certified organic muesli over conventional. Conventional oats may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic oats.",
+      "Soak it overnight in yogurt or water, Bircher style."
     ]
   },
-  "muesli": {},
-  "bread_aisle": {},
+  "bread_aisle": {
+    "decision": "Organic sourdough or sprouted whole grain; else 100% whole grain.",
+    "cart_pick": "Sourdough or sprouted whole grain bread"
+  },
   "kombucha": {
     "decision": "Plain raw kombucha in glass, from the refrigerated case.",
     "short_answer": "Pick plain kombucha from the refrigerated case, in glass, brewed with organic tea. It is a fizzy, fermented, sweetened tea, often with fruit juice added. Read the Nutrition Facts for added sugars, and the label for alcohol.",
@@ -573,7 +688,14 @@
       "26 USC 5052, definition of beer at one-half of 1 percent alcohol (label meaning)"
     ]
   },
-  "sauerkraut": {},
+  "sauerkraut": {
+    "buying_tips": [
+      "Shelf-stable kraut is heated in the jar, which stops fermenting; raw is never heated.",
+      "Look for raw on the label, with organic cabbage and salt, nothing else.",
+      "Pick it from the refrigerated case.",
+      "Keep raw kraut cold once home."
+    ]
+  },
   "kimchi": {
     "decision": "Unpasteurized kimchi from the cold case, no vinegar.",
     "detail": "Kimchi is cabbage, usually napa, seasoned with red pepper powder, garlic, ginger and salt (the Codex standard). Fish sauce or salted seafood such as shrimp is often added. Traditional kimchi ferments a few days at room temperature, then moves to cold storage to age for weeks. The packed date shows how long it has fermented, from fresh to ripe to overripe. Ripe kimchi is sour and softer, with some crunch left. Overripe kimchi is intense and juicy, and best cooked into other dishes. Fermenting kimchi makes carbon dioxide gas, so a live jar can be fizzy. Pasteurized or heated kimchi, or a jar soured with vinegar, is no longer a live ferment.",
@@ -655,9 +777,20 @@
       "https://en.wikipedia.org/wiki/Apple_cider_vinegar"
     ]
   },
-  "miso": {},
-  "tempeh": {},
-  "natto": {},
+  "miso": {
+    "decision": "Organic miso of soybeans, salt and koji, any grain named."
+  },
+  "tempeh": {
+    "decision": "Organic tempeh, soybeans alone or one named grain, firm cake."
+  },
+  "natto": {
+    "decision": "Organic natto, whole soybeans, chilled or frozen.",
+    "watch_out": [
+      "Chilled natto keeps only days, so buy what will be eaten soon.",
+      "A strong ammonia smell means it fermented too long.",
+      "Read the sauce packet’s list too, or dress it yourself."
+    ]
+  },
   "fermented": {},
   "broth": {
     "decision": "Bone broth from pastured animals, ideally homemade, short list.",
@@ -669,7 +802,7 @@
     "buying_tips": [
       "The list shows what was simmered: stock is made from bones, and broth includes meat.",
       "Look for bone broth from pastured animals, bones named first, nothing added.",
-      "Pick canned or jarred over an aseptic box.",
+      "Pick frozen, refrigerated or jarred over an aseptic box.",
       "A good broth gels when chilled."
     ],
     "watch_out": [
@@ -690,7 +823,21 @@
     ]
   },
   "salt": {},
-  "sugars": {},
+  "sugars": {
+    "buying_tips": [
+      "Each stays closer to its plant than sugar crystallized from cane or beet juice.",
+      "Look for certified organic coconut sugar or pure maple sugar.",
+      "Read the list: coconut sugar or maple sugar alone, with nothing added.",
+      "Look for pure maple sugar; a maple-flavored product is not maple sugar.",
+      "Plain “sugar” names no crop, so choose certified organic first; organic must come from non-GMO plants. Non-GMO Project Verified is a close second."
+    ],
+    "watch_out": [
+      "Coconut sugar is made mostly of sucrose, like other sugar.",
+      "More than half of granulated sugar sold comes from bioengineered sugar beets.",
+      "No modified DNA remains in sugar from bioengineered beets, so the “derived from bioengineering” line is voluntary.",
+      "Sugar of any kind is an occasional item, not a staple."
+    ]
+  },
   "maple_syrup": {
     "decision": "100% pure maple syrup, darker grade, from a named sugarhouse.",
     "why": "Most table syrups are mainly corn syrup. Darker maple carries the stronger flavor.",

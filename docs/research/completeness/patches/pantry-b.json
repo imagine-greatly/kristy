@@ -73,7 +73,8 @@
         "name": "Weston A. Price Foundation: Shopping guide categories",
         "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
       }
-    ]
+    ],
+    "tier_note": "Natural cocoa ranks above cocoa processed with alkali; the name says which."
   },
   "seeds": {
     "decision": "Raw organic chia and flax, sealed bags, soaked or ground.",
@@ -82,7 +83,7 @@
     "buying_tips": [
       "Flax needs grinding before use, while chia goes straight from the bag or into a soak.",
       "Look for raw organic seeds in a sealed package, not from the bulk bins.",
-      "Buy flax already ground, or whole for grinding at home.",
+      "Buy flax whole and grind it at home; ground flax is the fallback.",
       "Soak seeds, then dry them at low heat, before eating them by the handful.",
       "Pick chia whole or ground; soaked chia turns to gel.",
       "Pass on hemp seeds; traditional guides leave them off the list."
@@ -96,7 +97,8 @@
         "name": "Weston A. Price Foundation: FAQ, grains, seeds, nuts and beans",
         "url": "https://www.westonaprice.org/health-topics/faq-grains-seeds-nuts-beans/"
       }
-    ]
+    ],
+    "cart_pick": "Whole flaxseed, ground at home"
   },
   "dried_fruit": {
     "decision": "Organic dried fruit, unsulphured, with only the fruit listed.",
@@ -232,7 +234,9 @@
       "https://www.balsamicotradizionale.it/en/?p=2270",
       "https://www.ilpost.it/2019/12/05/aceto-balsamico/",
       "https://bur.regione.emilia-romagna.it/area-bollettini/bollettini-in-lavorazione/luglio-periodico-parte-seconda-2a-quindicina.2023-07-19.9761992070/comunicato-relativo-alla-modifica-del-disciplinare-della-igp-aceto-balsamico-di-modena/modifica-disciplinare-della-ig.2023-07-19.1689746028"
-    ]
+    ],
+    "cart_pick": "Raw vinegar, 5 percent acidity",
+    "tier_note": "Raw, unpasteurized vinegar ranks above pasteurized and distilled."
   },
   "pasta_sauce": {
     "decision": "Organic tomato sauce in glass, olive oil, no sweetener.",
@@ -275,7 +279,9 @@
         "name": "Weston A. Price Foundation: Shopping guide categories",
         "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
       }
-    ]
+    ],
+    "cart_pick": "Fruit jam sweetened with honey",
+    "tier_note": "Fruit first and a named natural sweetener rank above sugar-sweetened jars."
   },
   "ketchup_mustard": {
     "decision": "Fermented or unsweetened organic ketchup; organic mustard of seed, vinegar.",
@@ -402,7 +408,9 @@
         "name": "Chris Kresser: BPA and BPA-free plastics",
         "url": "https://chriskresser.com/re-examining-the-evidence-on-bpa-and-bpa-free-plastics/"
       }
-    ]
+    ],
+    "cart_pick": "Bone broth soup, short list, no yeast extract",
+    "tier_note": "MSG, yeast extract and seed oils are read from the list, as much as sodium."
   },
   "olives": {
     "buying_tips": [
@@ -413,7 +421,8 @@
       "Greek-style olives are near-ripe purple fruit cured in brine.",
       "Spanish-style green olives are treated with lye, rinsed, then fermented.",
       "Finish an opened jar within about 2 weeks."
-    ]
+    ],
+    "tier_note": "Brine-cured olives, water and salt, rank above lye-cured."
   },
   "seaweed": {
     "buying_tips": [
@@ -439,7 +448,8 @@
         "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
       },
       "https://foodandnutritionresearch.net/index.php/fnr/article/download/7584/13452"
-    ]
+    ],
+    "decision": "Organic sea vegetables named by kind; kelp sparingly."
   },
   "salsa": {
     "decision": "Fermented or fresh cold-case salsa, vegetables first.",
@@ -450,8 +460,7 @@
       "Look for vegetables first and salt, in a fermented or refrigerated tub.",
       "A shelf jar is the fallback, behind fermented or fresh salsa.",
       "A fresh tub from the cold case goes straight back in the refrigerator.",
-      "Homemade salsa keeps up to one week in the refrigerator.",
-      "In Virginia, a home-kitchen jar sells directly to shoppers and names its maker, address and phone."
+      "Homemade salsa keeps up to one week in the refrigerator."
     ],
     "sources": [
       {
@@ -462,7 +471,9 @@
         "name": "Weston A. Price Foundation: Shopping guide categories",
         "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
       }
-    ]
+    ],
+    "cart_pick": "Fermented or fresh cold-case salsa",
+    "tier_note": "Fermented or fresh ranks above an acidified shelf jar."
   },
   "coconut_water": {
     "decision": "Fresh coconut water, straight from the coconut, nothing added.",
@@ -480,7 +491,9 @@
         "name": "Weston A. Price Foundation: Shopping guide categories",
         "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
       }
-    ]
+    ],
+    "cart_pick": "Young coconut or cold pure coconut water",
+    "tier_note": "Fresh ranks above high-pressure, canned and from-concentrate."
   },
   "crackers": {
     "decision": "Sourdough or sprouted organic crackers in olive oil or butter.",
@@ -516,7 +529,8 @@
         "url": "https://drcate.com/hateful-eight/"
       }
     ],
-    "detail": "Under 21 CFR 101.4, ingredients are listed in descending order of predominance. FDA draft guidance says the ingredient list should show whether the first ingredient is a whole grain. “Wheat flour” is a synonym of flour, so it is not a whole grain flour. Soda crackers are fermented and leavened with yeast. The finest soda crackers take a long sponge fermentation, where most of the flour ferments first as a pre-ferment. Sourdough crackers are made from sourdough starter. Docking holes are poked in the dough to stop large air pockets while baking. Animal crackers are crackers in name only, and modern graham crackers are sweet. Olive oil, coconut oil or butter is Kristy’s standard for crackers. Skip seed oils; avocado oil fits only when the maker states it is pure and cold-pressed. Skip “partially hydrogenated” or “interesterified” oil on the list; look for olive oil, coconut oil or butter. Skip refined palm oil or fractionated palm kernel oil in crackers; look for butter or olive oil. Brown rice generally carries more arsenic than white rice; rotate rice-flour crackers with whole wheat or oat crackers."
+    "detail": "Under 21 CFR 101.4, ingredients are listed in descending order of predominance. FDA draft guidance says the ingredient list should show whether the first ingredient is a whole grain. “Wheat flour” is a synonym of flour, so it is not a whole grain flour. Soda crackers are fermented and leavened with yeast. The finest soda crackers take a long sponge fermentation, where most of the flour ferments first as a pre-ferment. Sourdough crackers are made from sourdough starter. Docking holes are poked in the dough to stop large air pockets while baking. Animal crackers are crackers in name only, and modern graham crackers are sweet. Olive oil, coconut oil or butter is Kristy’s standard for crackers. Skip seed oils; avocado oil fits only when the maker states it is pure and cold-pressed. Skip “partially hydrogenated” or “interesterified” oil on the list; look for olive oil, coconut oil or butter. Skip refined palm oil or fractionated palm kernel oil in crackers; look for butter or olive oil. Brown rice generally carries more arsenic than white rice; rotate rice-flour crackers with whole wheat or oat crackers.",
+    "cart_pick": "Sourdough or sprouted whole grain crackers"
   },
   "tortilla_chips": {
     "decision": "Organic masa chips in lard, coconut oil or olive oil.",
@@ -687,7 +701,9 @@
         "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"
       }
     ],
-    "detail": "Under 21 CFR 101.4, ingredients are listed in descending order of predominance. Granola is rolled oats, nuts, seeds and honey or another sweetener, usually baked. A granola bar mixes granola with honey or syrup, pressed and baked into a bar. For added fat in bars, Kristy’s standard is olive oil, coconut oil or butter. Skip seed oils; avocado oil fits only when the maker states it is pure and cold-pressed. Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed. Choose certified organic oat bars over conventional. Conventional oats may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic oats. Many bars carry sugar and high fructose corn syrup, and the list shows which. Skip refined palm oil or fractionated palm kernel oil in bars; look for coconut oil, olive oil or butter."
+    "detail": "Under 21 CFR 101.4, ingredients are listed in descending order of predominance. Granola is rolled oats, nuts, seeds and honey or another sweetener, usually baked. A granola bar mixes granola with honey or syrup, pressed and baked into a bar. For added fat in bars, Kristy’s standard is olive oil, coconut oil or butter. Skip seed oils; avocado oil fits only when the maker states it is pure and cold-pressed. Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed. Choose certified organic oat bars over conventional. Conventional oats may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic oats. Many bars carry sugar and high fructose corn syrup, and the list shows which. Skip refined palm oil or fractionated palm kernel oil in bars; look for coconut oil, olive oil or butter.",
+    "cart_pick": "Bar of nuts and dates, nothing else",
+    "tier_note": "A bar of nuts and dates alone is the only bar rung; granola and energy bars sit low."
   },
   "trail_mix": {
     "decision": "Raw or soaked nuts with unsulphured fruit, nothing added.",
@@ -729,7 +745,8 @@
         "name": "Weston A. Price Foundation: Shopping guide categories",
         "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
       }
-    ]
+    ],
+    "tier_note": "Whole foods rank above any packaged snack; whole grain first is the floor."
   },
   "hummus": {
     "buying_tips": [
@@ -774,20 +791,23 @@
   "deli_salads": {
     "decision": "Cold-case deli salads dressed in olive oil, eaten within days.",
     "buying_tips": [
+      "Read the dressing: olive oil, or mayonnaise made with olive oil.",
       "Cold food stays at 40°F or below, and egg, tuna or macaroni salad keeps 3 to 5 days.",
       "Buy salads from a refrigerated case.",
       "Check the Sell-By date, and skip a tub past it.",
       "Get it home cold; two hours out at most, one hour above 90°F.",
-      "Read the salad’s ingredient label, including the dressing: choose olive oil or mayonnaise made with olive oil.",
       "Skip a deli dressing listing vegetable oil such as sunflower, safflower, canola, soybean, corn or cottonseed oil.",
       "Avocado oil in the dressing fits only when stated pure and cold-pressed. Ask for the ingredient list at the deli counter."
-    ]
+    ],
+    "cart_pick": "Deli salad dressed in olive oil, short list",
+    "tier_note": "Olive oil dressing ranks above seed-oil mayo.",
+    "why": "The dressing decides the salad: olive oil over seed oils. Cold salads keep 3 to 5 days."
   },
   "prepared_meals": {
     "decision": "Whole meat and vegetable dishes, held hot or cold.",
     "buying_tips": [
+      "Pick whole meat and vegetable dishes; ask for the list, skip MSG and seed oils.",
       "Hot food belongs at 140°F or above and cold food below 40°F.",
-      "Pick whole meat and vegetable dishes; ask for the list and skip MSG or hydrolyzed protein.",
       "Find the thermometer facing out and read it before choosing.",
       "Pick pans filled to the rim, not piled into mounds.",
       "Look for a sneeze guard and a separate utensil for each dish.",
@@ -805,7 +825,9 @@
       "https://www.foodrepublic.com/1291124/signs-avoid-grocery-store-hot-bar-food-safety",
       "https://www.tastingtable.com/1546547/temperature-prepared-foods-grocery-store-deli",
       "https://centerforfoodsafety.org/press-release/toxic-industrial-chemicals-found-in-10-varieties-of-macaroni-and-cheese-powders/"
-    ]
+    ],
+    "cart_pick": "Whole meat and vegetable dish, no seed oils",
+    "tier_note": "Thermometer and rim checks are food-safety handling; seed oils and MSG are read from the list."
   },
   "fresh_pasta": {
     "decision": "Organic fresh pasta of flour and egg, nothing added.",
@@ -828,10 +850,10 @@
   },
   "deli": {
     "buying_tips": [
-      "Breads and dry snacks keep fine out of the cold; meats, cheeses and salads need it.",
       "Look for whole-muscle meat from pasture-raised animals with a short ingredient list.",
       "Check that meats, cheeses and salads sit in a refrigerated case.",
       "For hot food, look for a case held at 140°F or above.",
+      "Breads and dry snacks keep fine out of the cold; meats, cheeses and salads need it.",
       "Ask about one food by name: deli salads, prepared meals or lunch meat."
     ],
     "sources": [
@@ -845,7 +867,9 @@
       },
       "https://www.tastingtable.com/1907890/avoid-deli-food-display-red-flag",
       "https://www.foodrepublic.com/1291124/signs-avoid-grocery-store-hot-bar-food-safety"
-    ]
+    ],
+    "decision": "Pasture-raised whole-muscle meat and real cheese, short list.",
+    "cart_pick": "Pasture-raised whole-muscle deli meat"
   },
   "frozen_pizza": {
     "decision": "Sourdough or sprouted crust, olive oil, real mozzarella.",
@@ -898,7 +922,9 @@
         "name": "Center for Food Safety: Phthalates in macaroni and cheese powders",
         "url": "https://centerforfoodsafety.org/press-release/toxic-industrial-chemicals-found-in-10-varieties-of-macaroni-and-cheese-powders/"
       }
-    ]
+    ],
+    "cart_pick": "Plain frozen meat, fish or vegetables",
+    "tier_note": "No sauce and no MSG ranks above any seasoned dinner."
   },
   "frozen_fries": {
     "decision": "Organic frozen fries in tallow, lard or coconut oil.",
@@ -995,7 +1021,9 @@
         "url": "https://theconversation.com/how-is-deli-meat-made-the-food-science-behind-the-turkey-ham-and-other-cold-cuts-in-your-lunch-283597"
       }
     ],
-    "detail": "On poultry labels, “white meat” or “light meat” means 100 percent light meat. “Mostly white meat” means 66 percent or more light meat. “Natural proportions” means 50 to 65 percent light meat. A nugget is an irregular, usually bite-sized piece, usually breaded and fried, meant as finger food. “Chicken Nugget” with no qualifier means a solid piece of meat or poultry. “Chopped and Formed” beside the name means chopped and formed meat or poultry. With binders, extenders or water, “nugget” is only a fanciful name. A descriptive name then follows, such as “Breaded Nugget-Shaped Chicken Patties”. A product labeled “breaded” carries batter and breading of no more than 30 percent of the finished product. “Ice glazed” beside the name means an ice glaze set the breading. “Mechanically Separated Chicken” is poultry with most of the bone removed by machine, in a paste-like form. Its bone solids are at most 1 percent. For added fat, Kristy’s standard is tallow, olive oil, or coconut oil. Skip seed oils; avocado oil fits only when the maker states it is pure and cold-pressed."
+    "detail": "On poultry labels, “white meat” or “light meat” means 100 percent light meat. “Mostly white meat” means 66 percent or more light meat. “Natural proportions” means 50 to 65 percent light meat. A nugget is an irregular, usually bite-sized piece, usually breaded and fried, meant as finger food. “Chicken Nugget” with no qualifier means a solid piece of meat or poultry. “Chopped and Formed” beside the name means chopped and formed meat or poultry. With binders, extenders or water, “nugget” is only a fanciful name. A descriptive name then follows, such as “Breaded Nugget-Shaped Chicken Patties”. A product labeled “breaded” carries batter and breading of no more than 30 percent of the finished product. “Ice glazed” beside the name means an ice glaze set the breading. “Mechanically Separated Chicken” is poultry with most of the bone removed by machine, in a paste-like form. Its bone solids are at most 1 percent. For added fat, Kristy’s standard is tallow, olive oil, or coconut oil. Skip seed oils; avocado oil fits only when the maker states it is pure and cold-pressed.",
+    "cart_pick": "Pasture-raised whole-piece chicken nuggets",
+    "tier_note": "Solid-piece nuggets rank above chopped-and-formed."
   },
   "frozen": {
     "decision": "Plain organic frozen foods, frozen solid, picked up last.",

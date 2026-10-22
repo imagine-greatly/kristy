@@ -3,7 +3,8 @@
     "watch_out": [
       "Atlantic salmon is farmed, effectively without exception. Wild Atlantic is off the market.",
       "Some salmon farms rely on routine antibiotics, and practice varies by country. Ask where it was farmed.",
-      "Alaska law limits aquatic farming to shellfish and seaweeds, so Alaska salmon is not net-pen farmed. Hatchery ‘ranching’ there releases juveniles to supplement wild runs, not replace them."
+      "Alaska law limits aquatic farming to shellfish and seaweeds, so Alaska salmon is not net-pen farmed. Hatchery ‘ranching’ there releases juveniles to supplement wild runs, not replace them.",
+      "Skip farmed Atlantic salmon; wild is the pick."
     ],
     "sources": [
       "Alaska Sea Grant, University of Alaska Fairbanks “Aquaculture” https://alaskaseagrant.org/our-work/aquaculture/ (Alaska law limits aquatic farming to shellfish and seaweeds; salmon ranching by nonprofit hatcheries supplements, not replaces, wild stocks)",
@@ -15,6 +16,12 @@
       "Weston A. Price Foundation: Something Fishy",
       "Wellness Mama: Fish farming",
       "Kwee-Jack Fish Co.: Wild Alaskan smoked salmon"
+    ],
+    "buying_tips": [
+      "Farmed salmon eats plant protein and vegetable oil, not krill and small fish like wild.",
+      "Sockeye and coho are almost always wild, and their color is deep because of diet, not dye.",
+      "Canned wild salmon comes next; for farmed salmon, read the country of origin.",
+      "Frozen wild Alaskan is the same fish, frozen at its best. ‘Fresh’ at the counter is often previously-frozen, so ask."
     ]
   },
   "shrimp_imported_vs_domestic": {
@@ -57,7 +64,7 @@
       "‘No added hormones’ does not rule out ractopamine, a feed drug for leanness. Look for ‘raised without ractopamine’."
     ],
     "watch_out": [
-      "Where grass-finished is not on the shelf, organic grain-finished is the floor. Well-raised grain-finished beef beats poorly-raised anything.",
+      "Where grass-finished is not on the shelf, organic grain-finished is the floor.",
       "Pasture artwork on the package is not a claim. The words are the claim.",
       "A grass finish leaves a leaner animal, so it cooks faster and dries out at feedlot-beef heat.",
       "The federal grass-fed claim standard was withdrawn in 2016. A bare ‘grass-fed’ label rests on the company, so ask the farm about the finish."
@@ -73,7 +80,6 @@
       }
     ],
     "sources": [
-      "peer-reviewed reviews of grass- vs grain-fed fatty acids",
       "Weston A. Price Foundation: Shopping Guide (Best, Good and Avoid tiers)",
       "Weston A. Price Foundation: Splendor from Grass",
       "Weston A. Price Foundation: Grass-fed culinary guide"
@@ -90,6 +96,12 @@
       },
       "Weston A. Price Foundation: Shopping Guide (Best, Good and Avoid tiers)",
       "Weston A. Price Foundation: Chickens Are Omnivores (soy-free feed)"
+    ],
+    "watch_out": [
+      "FSIS: eat or refrigerate a hot rotisserie bird within 2 hours of purchase. If it will not be eaten in that window, cut it up. Refrigerate it in shallow covered containers.",
+      "Hot food is held at or above 140°F. A bird sitting in the case long enough to fall below that has left its hold. FSIS puts the growth range at 40 to 140°F.",
+      "Eat within 3 to 4 days, cold or reheated to 165°F. Freezing is fine; use within 4 months for texture.",
+      "Skip a bird whose sticker lists sodium phosphate, starch, sugar or seed oil."
     ]
   },
   "beef_cuts_basics": {
@@ -113,7 +125,9 @@
       "9 CFR 317.2 (label rule, raw meaning of the term)",
       "Weston A. Price Foundation: Shopping Guide (Best, Good and Avoid tiers)",
       "Weston A. Price Foundation: Grass-fed culinary guide"
-    ]
+    ],
+    "decision": "100% grass-fed whole chuck or round, not mechanically tenderized.",
+    "why": "Raising matters more than the cut: a whole working-muscle cut, never needle-tenderized, is the pick."
   },
   "ground_beef_lean_ratio": {
     "sources": [
@@ -123,6 +137,22 @@
       "Seven Sons Farms, Ground Beef Primal Blend, product page (92% ground beef, 5% liver, 3% heart) https://sevensons.net/store/product/ground-beef-ancestral-blend",
       "Weston A. Price Foundation: Shopping Guide (Best, Good and Avoid tiers)",
       "Weston A. Price Foundation: The Liver Files"
+    ],
+    "buying_tips": [
+      "A few percent liver and heart still tastes like regular ground beef.",
+      "Read the name: ‘ground beef’ may not have beef fat added as such; ‘hamburger’ may.",
+      "Read the ingredient list: beef, with seasoning at most, no water or phosphates.",
+      "‘Ground chuck/round/sirloin’ tells you the cut it came from.",
+      "The product name will not say ‘ground beef’ alone; a blend has to carry its own descriptive name.",
+      "Check for ‘grass finished’: see Beef.",
+      "On conventional ground beef, look for ‘raised without ractopamine’, a feed drug the EU and China ban.",
+      "On ratio, 80/20 ground chuck over the leanest packs."
+    ],
+    "watch_out": [
+      "‘Ground beef’ may not have beef fat added as such; ‘hamburger’ may. Both cap at 30% fat, so the name is where the difference lives.",
+      "‘Ground beef’ may not contain added water, phosphates, binders or extenders. Its ingredient list should be beef, with seasoning at most.",
+      "Preformed vitamin A is most concentrated in liver, so keep servings ordinary.",
+      "Producers print shares such as 8 percent organ, or 5 percent liver plus 3 percent heart. At those shares the blend tastes like regular ground beef."
     ]
   },
   "egg_labels": {
@@ -149,10 +179,8 @@
   "judging_meat_at_the_case": {
     "science": "Beef pigment turns bright red within minutes of oxygen and browns over days. That is surface chemistry, not spoilage. Vacuum-packed beef looks purple, and brown edges mean older. Tray-wrapped meat generally holds up to three days refrigerated. A sealed vacuum pack holds up to seven, so the newest date wins.",
     "watch_out": [
-      "Fresh tray-wrapped meat generally holds up to three days refrigerated after packaging. A well-sealed vacuum pack can go up to seven, so buy the newest date.",
       "Store names for one cut vary by region, so read the primal cut instead.",
       "Ungraded beef is inspected, but its quality may be higher or lower than graded beef.",
-      "Brownish or discolored meat is not automatically spoiled. Judge it by the seal and the smell, not the color alone.",
       "Color comes from oxygen and packaging, not from how fresh it is.",
       "Pass on slime or any off smell; color alone is not the test."
     ],
@@ -160,7 +188,7 @@
       "Color only shows oxygen and packaging; the seal and the smell tell you more.",
       "Not slimy, and no off smell. Both, not either.",
       "The package should be fully sealed, with no holes, tears or punctures, and not leaking meat juices.",
-      "Purple beef is vacuum-packed, not spoiled. Brown edges mean older, not unsafe.",
+      "Purple beef is vacuum-packed; color tracks oxygen, not freshness.",
       "Take it from the back of the case where it is coldest, and get it home cold.",
       "Read the primal cut on the label, such as chuck or round.",
       "Check the use-by date, and freeze what will not be used in time.",
@@ -174,7 +202,8 @@
     ],
     "sources": [
       "Weston A. Price Foundation: Shopping Guide (Best, Good and Avoid tiers)"
-    ]
+    ],
+    "tier_note": "The packaged-on date sets the clock, so the newest date is the pick."
   },
   "butcher_counter_asking": {
     "buying_tips": [
@@ -206,7 +235,6 @@
       "‘Air-chilled’ is printed on the package when it applies.",
       "Skin that starts dry is the skin that crisps.",
       "The top rung is a pasture bird on soy-free feed; ask the farm or counter.",
-      "‘Raised without antibiotics’ is a management and resistance choice, not a cleaner-meat guarantee.",
       "Heritage breeds such as Freedom Ranger carry darker, earthier meat than Cornish Cross."
     ],
     "watch_out": [
@@ -287,7 +315,8 @@
       "Wellness Mama podcast: Randy Hartnell on mercury in seafood",
       "Weston A. Price Foundation: Something Fishy",
       "Weston A. Price Foundation: Shopping Guide (Best, Good and Avoid tiers)"
-    ]
+    ],
+    "cart_pick": "Canned wild sardines"
   },
   "canned_fish_choosing": {
     "watch_out": [
@@ -316,12 +345,11 @@
       "Farmed trout, arctic char and barramundi are generally well regarded.",
       "For salmon and shrimp, ask the counter for the country, and choose wild where it is stocked.",
       "Country-of-origin is required on unprocessed seafood. Read it.",
-      "‘Farmed’ alone is not a verdict. The species and the operation are the question.",
-      "On ‘farm raised’ salmon, read the country: Chile uses more antibiotics than any other salmon-farming country."
+      "‘Farmed’ alone is not a verdict. The species and the operation are the question."
     ],
     "watch_out": [
       "Farmed salmon, catfish and trout sit on traditional avoid lists; farmed shellfish needs no feed at all.",
-      "U.S.-farmed white leg shrimp and tilapia rate Green on the same list. The rating names the origin and the system, so read the country before judging the species."
+      "Skip farmed tilapia and pangasius; traditional guides list farmed fish to avoid."
     ],
     "sources": [
       "Wellness Mama: Fish farming",
@@ -392,6 +420,7 @@
     "buying_tips": [
       "The name ground turkey sets no one fat level, so two packs can differ.",
       "Look for pasture-raised or certified organic ground turkey, sold plain.",
+      "Ground thigh, or a pack with dark meat, over all-breast ground turkey.",
       "Look for “air-chilled” on the turkey pack.",
       "Choose a formulation listing turkey without added seasonings or a flavoring solution.",
       "Without a percent-lean claim, use the Nutrition Facts fat line to compare packs.",
@@ -415,6 +444,18 @@
       "Weston A. Price Foundation: Save Your Bacon",
       "Chris Kresser: The nitrite myth",
       "Weston A. Price Foundation Shopping Guide 2020: processed meat tiers"
+    ],
+    "watch_out": [
+      "On bacon labeled “uncured” or “no nitrates added”, celery powder or juice may supply the nitrite for curing. Find the asterisk and read its exception.",
+      "An uncured label does not by itself establish the absence of nitrates or nitrites.",
+      "Celery-cured bacon still carries nitrite, from the celery; the label wording alone is no step up.",
+      "Dextrose in a curing list is added sugar under another name."
+    ],
+    "buying_tips": [
+      "Look for pork, salt and named curing agents; read each added ingredient.",
+      "Read any exception naming naturally occurring nitrates in celery powder.",
+      "Next: organic bacon; skip dextrose, sugar and liquid smoke.",
+      "For smoked bacon, choose wood-smoked with no added smoke flavoring or liquid smoke. Liquid smoke is condensed smoke added for flavor."
     ]
   },
   "hot_dogs": {
@@ -434,7 +475,9 @@
       "Weston A. Price Foundation: Save Your Bacon",
       "Chris Kresser: The nitrite myth",
       "Weston A. Price Foundation Shopping Guide 2020: processed meat tiers"
-    ]
+    ],
+    "decision": "100% grass-fed beef hot dogs, no phosphates or binders.",
+    "cart_pick": "100% grass-fed beef hot dogs"
   },
   "canned_tuna": {
     "why": "Small, young tuna that live a few years carry far less mercury than giants that live for decades.",
@@ -445,13 +488,14 @@
     "buying_tips": [
       "Small, young tuna carry less mercury than big ones; skipjack is the small one.",
       "Pick a can that says BPA-free; many food cans use an epoxy lining made with BPA. Fresh or frozen tuna comes with no can lining.",
-      "Read the packing medium separately from the light or white designation.",
-      "Look for pole-and-troll or troll caught on the can."
+      "Pick tuna packed in olive oil, water or its own juice; skip soybean or vegetable oil.",
+      "Pole-and-troll or troll caught ranks above a can that names no catch method."
     ],
     "watch_out": [
       "Light is not one species. Do not assume every light can is skipjack.",
       "Pregnant, nursing or feeding a young child? Anything medical is a doctor’s call.",
-      "‘BPA-free lining’ is the maker’s own claim, and the replacement lining is rarely disclosed."
+      "‘BPA-free lining’ is the maker’s own claim, and the replacement lining is rarely disclosed.",
+      "Skip white albacore as an everyday can; it is larger and older, with more mercury."
     ],
     "pick_steps": [
       "Read the front for ‘light’ or skipjack, the small tuna.",
@@ -483,6 +527,11 @@
       "Weston A. Price Foundation: Shopping Guide (Best, Good and Avoid tiers)",
       "Weston A. Price Foundation: Chickens Are Omnivores (soy-free feed)",
       "Simply Grassfed: Pastured chicken, Freedom Ranger and Cornish Cross"
+    ],
+    "watch_out": [
+      "“Natural” does not exclude a flavoring solution.",
+      "Retained chilling water is different from an added flavoring solution.",
+      "“Enhanced” on a breast pack means an injected solution; the label states the percent."
     ]
   },
   "egg_duck_quail": {
@@ -503,7 +552,8 @@
       },
       "Weston A. Price Foundation: Shopping Guide (Best, Good and Avoid tiers)",
       "Weston A. Price Foundation: Eat Your Eggs"
-    ]
+    ],
+    "why": "The feed comes first: soy-free or corn-free, else organic. Duck eggs also need longer to cook than hens’ eggs."
   },
   "ham": {
     "sources": [
@@ -518,6 +568,15 @@
       "Weston A. Price Foundation: Save Your Bacon",
       "Chris Kresser: The nitrite myth",
       "Weston A. Price Foundation Shopping Guide 2020: processed meat tiers"
+    ],
+    "decision": "Pasture-raised ham, dry-cured with salt, or named just “Ham”.",
+    "buying_tips": [
+      "Best: ham dry-cured with salt and time, as in prosciutto.",
+      "Then a ham named just “Ham”, then “Ham With Natural Juices”. “Water Added” means more added solution.",
+      "Read the product name for “Water Added” or a percent of added ingredients.",
+      "Check whether the label says fully cooked or cook before eating.",
+      "Find where water sits in the ingredients statement.",
+      "On smoked ham, favor wood smoking over liquid smoke or smoke flavoring. Those ingredients add condensed smoke to the meat."
     ]
   },
   "turkey_bacon": {
@@ -532,6 +591,14 @@
       "Weston A. Price Foundation: Save Your Bacon",
       "Chris Kresser: The nitrite myth",
       "Weston A. Price Foundation Shopping Guide 2020: processed meat tiers"
+    ],
+    "buying_tips": [
+      "Above turkey bacon: pasture-raised pork bacon with a short curing list.",
+      "Read the named turkey cut and each curing ingredient after the meat.",
+      "Look for a curing list that names no sugar after the turkey.",
+      "Read the descriptive name beside “turkey bacon” for the meat used.",
+      "Read each curing ingredient in the ingredients statement.",
+      "On “Uncured” packs, read the qualifier and check for celery powder or juice in the curing list."
     ]
   },
   "cured_pork": {
@@ -543,12 +610,30 @@
       "Chris Kresser: The nitrite myth",
       "Weston A. Price Foundation Shopping Guide 2020: processed meat tiers",
       "Weston A. Price Foundation podcast: Lard (pork raised indoors and outdoors)"
+    ],
+    "cart_pick": "Pasture-raised prosciutto or salami",
+    "buying_tips": [
+      "Best: dry-cured with salt and time, no sodium nitrite.",
+      "A short curing list names the salt, spices and any added curing agents.",
+      "Read the product name for the cut, such as ham, belly, or jowl.",
+      "Read each curing ingredient in the ingredients statement.",
+      "Check whether the package says ready to eat or cook before eating."
+    ],
+    "watch_out": [
+      "On salami or pancetta, “uncured” and “no nitrates added” can point to nitrite from celery juice or celery powder. Check the ingredient list for that plant source.",
+      "An “Uncured” product that is not dried or heavily salted must say “Not Preserved, Keep Refrigerated”.",
+      "Skip sodium nitrite, dextrose and corn syrup solids in the curing list."
     ]
   },
   "lamb_goat": {
     "sources": [
       "Weston A. Price Foundation: Shopping Guide (Best, Good and Avoid tiers)",
       "Weston A. Price Foundation: Splendor from Grass"
+    ],
+    "watch_out": [
+      "Ungraded lamb is inspected, but its quality may be higher or lower than graded lamb.",
+      "Goat meat has no quality grade, and older goat is darker, so ask the age at the counter.",
+      "Skip pre-seasoned or marinated packs; buy the plain cut."
     ]
   },
   "organ_meats": {
@@ -575,6 +660,7 @@
     ],
     "buying_tips": [
       "Game often comes through small shops, where cold handling decides its safety.",
+      "Wild venison, or deer farmed on grass, ranks above grain-fed farmed venison.",
       "Ask whether the processor handles each animal individually.",
       "Choose a processor with fully refrigerated facilities.",
       "Use unfrozen venison within two or three days.",
@@ -582,6 +668,9 @@
     ],
     "sources": [
       "Weston A. Price Foundation: Shopping Guide (Best, Good and Avoid tiers)"
+    ],
+    "watch_out": [
+      "Discard meat that is bruised, discolored, or has hair, dirt or bone fragments."
     ]
   },
   "white_fish": {
@@ -610,6 +699,7 @@
     "tier_note": "Leg movement on live crab and shell color on cooked crab are the buying checks.",
     "buying_tips": [
       "Crabs spoil fast after death, and moving legs show the crab is alive.",
+      "Best: live crab, then whole cooked crab; picked meat in a tub comes after.",
       "Check that live crabs move their legs.",
       "Look for bright orange to red shells on cooked crab.",
       "Smell cooked crab and skip any with an off odor.",
@@ -618,6 +708,10 @@
     ],
     "sources": [
       "Weston A. Price Foundation: Crab, a high-vitamin food (Ramiel Nagel)"
+    ],
+    "watch_out": [
+      "A crab that does not move may have died, and dead crab spoils fast.",
+      "Skip imitation crab: it is made from pollock, not crab meat."
     ]
   },
   "lobster": {
@@ -628,6 +722,7 @@
       "Ask the counter to lift the lobster and watch the tail.",
       "Check that the claws and legs move.",
       "Pick frozen tails that are hard-frozen, with clear white meat.",
+      "On frozen tails, read for sodium tripolyphosphate and the country of origin.",
       "Skip frozen packs that are torn or show ice crystals.",
       "The green tomalley holds the fat-soluble vitamins; eat it when the water is clean."
     ],
@@ -665,7 +760,8 @@
       "Tap any open shell and check that it closes.",
       "Skip cracked or broken shells.",
       "Read the date on shucked containers.",
-      "Oysters are nature’s richest source of zinc; buy them live and eat them fresh."
+      "Oysters are nature’s richest source of zinc; buy them live and eat them fresh.",
+      "Canned or smoked oysters in olive oil or water rank above those in seed oil."
     ],
     "sources": [
       "Weston A. Price Foundation: Oysters",
@@ -680,6 +776,19 @@
       },
       "Kwee-Jack Fish Co.: Wild Alaskan smoked salmon",
       "Weston A. Price Foundation: Shopping Guide (Best, Good and Avoid tiers)"
+    ],
+    "why": "Nova and kippered are cold-smoked; lox is salt-cured, not smoked. Shelf-stable smoked fish is heat-treated and sealed.",
+    "short_answer": "Read the label word. Nova-style, kippered and smoked mean refrigerated cold-smoked fish; lox is salt-cured, not smoked. Keep it cold from the case to the fridge. Shelf-stable smoked fish comes heat-treated in a sealed can, tin or jar.",
+    "detail": "Refrigerated smoked seafood, such as salmon, trout or whitefish, is usually labeled nova-style, kippered, smoked or jerky. These are cold-smoked. Lox is salt-cured, not smoked, and is kept refrigerated too. Listeria is a germ that can contaminate cold-smoked fish. The cold-smoking process does not kill it, and refrigeration does not either. Shelf-stable smoked fish is heat-treated, then sealed in a can, tin or jar. It needs no refrigeration before opening. Store refrigerated seafood in the coldest part of the fridge, at or below 40°F.",
+    "buying_tips": [
+      "Shelf-stable smoked fish is heat-treated and sealed; nova and lox rely on the cold.",
+      "Look for wild-caught on the pack, and no ‘color added’ line.",
+      "Choose smoked wild salmon first. For farmed smoked salmon, read the country of origin.",
+      "Wild salmon get their color from krill and shrimp. Farmed salmon flesh is gray until astaxanthin in the feed sets the pink, which ‘color added’ means.",
+      "Pick it from a refrigerated case and put it in the fridge soon after buying.",
+      "Choose canned or jarred smoked fish to keep on the shelf.",
+      "Skip packs listing liquid smoke or smoke flavoring; look for wood-smoked.",
+      "Read the list: fish, salt, sugar at most and wood smoke, no color added."
     ]
   },
   "seafood_counter": {

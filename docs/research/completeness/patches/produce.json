@@ -1,11 +1,22 @@
 {
-  "organic_worth_it_by_type": {},
+  "organic_worth_it_by_type": {
+    "watch_out": [
+      "When organic runs short, go by the SKIN, not how thick it feels. Avocado and kiwi read as delicate and get peeled, so they can wait. A potato reads as sturdy and gets eaten skin-on, so it cannot.",
+      "Organic is not pesticide-free. It is a different approved list: copper, spinosad and pyrethrins are all permitted organic pesticides. The claim is fewer synthetic residues, never none.",
+      "Fludioxonil, a fungicide also identified as a PFAS, was the pesticide found most often in EWG’s 2026 produce testing summary."
+    ]
+  },
   "freezing_produce": {},
   "produce_ripeness_by_item": {},
-  "berries_picking": {},
+  "berries_picking": {
+    "tier_note": "Strawberries, blackberries and blueberries sit high on EWG’s residue list, whatever the container looks like."
+  },
   "revive_greens": {},
   "produce_peppers": {},
-  "produce_stone_fruit": {},
+  "produce_stone_fruit": {
+    "tier_note": "EWG’s testing finds more residue on peaches, nectarines and cherries, all eaten skin-on.",
+    "why": "A peach’s green background turns yellow as it readies. Unbruised fruit is the pick."
+  },
   "produce_green_beans": {},
   "produce_storage": {},
   "frozen_vs_fresh_produce": {
@@ -147,18 +158,18 @@
     "detail": "Weston A. Price Foundation guidance accepts organic sprouting seeds with two exceptions, alfalfa and soybean. Alfalfa seeds contain canavanine, and raw sprouts hold irritants that are neutralized in cooking, so the guidance is to eat them lightly steamed or cooked. Sprouting has been a winter green in kitchens for a very long time, and a jar with a mesh lid on the counter still produces a crop in three or four days. Buying them is fine when the case is cold and turnover is quick; sprouts go slick and sour before they look wrong.",
     "kristy_take": "A jar, a mesh lid and organic seed grow a crop at home. Bought sprouts come from the cold case; steam them lightly before eating.",
     "buying_tips": [
+      "Best: home-sprouted organic seed in a jar with a mesh lid, three days on the counter.",
       "Broccoli, radish or mung over alfalfa and soy, per Weston A. Price guidance.",
       "Sprouts are eaten whole, so the USDA Organic seal is the floor here.",
       "The refrigerated case only. Room-temperature sprouts have been left in growing conditions.",
       "Roots still white and threadlike, stems crisp rather than limp.",
       "No condensation fogging the clamshell and no sour smell through the vents.",
-      "A pack date you can read. Days old, not a week.",
-      "Or a jar, a mesh lid and a scoop of organic sprouting seed. Three days on the counter."
+      "A pack date you can read. Days old, not a week."
     ],
     "watch_out": [
       "Alfalfa seeds contain canavanine; Weston A. Price guidance skips alfalfa and soy sprouts.",
       "Raw sprouts hold irritants that cooking neutralizes, so they go in lightly steamed.",
-      "Not for pregnancy or anyone immunocompromised.",
+      "Pregnant or immunocompromised: ask a doctor before eating sprouts.",
       "Slick, browning or sour-smelling sprouts are past it. That happens fast and it is visible.",
       "Warm, damp growing conditions also multiply any bacteria already on the seed."
     ],
@@ -180,7 +191,7 @@
     "tier_note": "Each root is eaten close to the soil, often skin-on, so the grower comes before firmness.",
     "buying_tips": [
       "Roots are often eaten skin-on, so how the grower raised them comes first.",
-      "Look for local potatoes labeled “grown without sprays”, the grower’s word, not a seal.",
+      "Look for local roots labeled “grown without sprays”, the grower’s word, not a seal.",
       "Organic is the fallback for potatoes and carrots; the standard still permits approved sprays.",
       "Potatoes: firm, with no bruises, nicks, or soft spots.",
       "Carrots: firm and well colored. With the tops on, choose bright green, fresh-looking tops.",
@@ -194,7 +205,8 @@
       "Weston A. Price Foundation: Shopping Guide Categories",
       "Weston A. Price Foundation: Extend to the End, Prolonging Your Local Growing Season",
       "Organic Federation of Canada: Organic sprout inhibitors for potatoes caught in red tape"
-    ]
+    ],
+    "decision": "Local roots grown without sprays, fresh-dug, then organic."
   },
   "produce_brassicas": {
     "decision": "Local broccoli, cauliflower, cabbage grown without sprays, then organic.",
@@ -218,7 +230,8 @@
     "sources": [
       "Weston A. Price Foundation: Shopping Guide Categories",
       "Weston A. Price Foundation: Extend to the End, Prolonging Your Local Growing Season"
-    ]
+    ],
+    "tier_note": "Florets and leaves are eaten whole with no peel, so the grower comes first."
   },
   "produce_onions_garlic": {
     "decision": "Local onions and garlic grown without sprays, firm, dry-necked.",
@@ -293,13 +306,13 @@
     ]
   },
   "produce_citrus": {
-    "decision": "Organic or untreated citrus, firm, with a smooth rind.",
+    "decision": "Untreated, uncoated citrus from a grower, then organic.",
     "detail": "Oranges keep at room temperature for up to a week and in the refrigerator for up to three weeks. Lemons hold best around 54 to 57°F and limes around 50 to 55°F, warmer than a refrigerator. A lemon or lime that has turned yellow is the one to use first: lemons picked fully yellow and limes picked yellow must be marketed quickly, while the fruit picked dark green keeps longest. At the bin, oranges should show even, intense color, free of skin blemishes and discoloration. A partly green orange gets its color from degreening, which does not change the inside. Lemons should be free of decay, drying, and rind stains. Green limes are preferred in the US, but yellow limes carry more juice; pick limes free of bruises and oil spotting. Conventional citrus is often treated after harvest with imazalil or thiabendazole fungicides, and residues are measurable in the peel, so organic or untreated is the pick, most of all when the zest goes in.",
     "tier_note": "Post-harvest fungicides sit on the peel, so organic or untreated comes first.",
     "kristy_take": "Firmness and a sound rind are the checks; leave decay and shriveling behind. For zest, organic or untreated only.",
     "buying_tips": [
       "A partly green orange can be fully mature, so firmness and a smooth rind tell more.",
-      "Look for organic or labeled untreated citrus, peel and all.",
+      "Look for citrus signed untreated: no post-harvest fungicide, no wax coating. Then organic.",
       "Oranges: even color, firm, smooth, no decay, bruising, or blemishes.",
       "Lemons: even yellow, firm, smooth, no drying, rind stains, or shriveling.",
       "Limes: firm and smooth, no bruises, oil spotting, or dryness; yellow ones have more juice.",
@@ -333,6 +346,7 @@
     "sources": [
       "Weston A. Price Foundation: Shopping Guide Categories",
       "Produce Business: Retailers Have a Gas"
-    ]
+    ],
+    "tier_note": "Bananas rarely come from a local grower, so organic is the top rung on the shelf and conventional is the skip."
   }
 }
