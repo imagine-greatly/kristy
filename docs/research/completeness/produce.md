@@ -64,3 +64,51 @@ Findings only; no KB, code or test file was edited. Sources are holistic, farmer
 - GAP: 7 (produce_seasonality, washing_produce, produce_storage, sprouts_raw, produce_leafy_greens, produce_apples_pears, produce_citrus); 4 of these now have a holistic source ready (seasonality, washing, sprouts, citrus)
 - WEAK-SOURCING: 8 (frozen_vs_fresh_produce, baking_soda_soak, precut_produce_tradeoffs, produce_root_vegetables, produce_brassicas, produce_onions_garlic, produce_mushrooms, produce_bananas)
 - Cards not listed above (about 20 of the 43) were not graded in either round; no claim is made about them.
+
+## Third pass (2026-10-22): 20 remaining produce picks
+Findings only; no KB, code or test file edited. Scrapling only (CLI `scrapling extract get` and the MCP tools); no curl.
+
+### What failed or was not fetched (read first)
+- Guessed WAPF URLs 404ed (`/abcs-of-nutrition/gmos-in-our-food/`, `/modern-foods/genetically-modified-foods/`, `/politics/gmo-corn/`, `/soy-and-the-fda/`, `/food-features/soy-alert/`). Nothing cited from them. Real URLs came from WAPF `?s=` search result links.
+- Not fetched, no holistic source found: non-GMO sweet corn varieties or how to spot GMO sweet corn at a stand; GMO status of zucchini/yellow squash (WAPF only lists "squash" among GMO crops in the pipeline, `wapf-good-news-on-gmos.md`); mango post-harvest hot-water/fungicide treatment; asparagus, okra, kohlrabi, eggplant, snap peas, microgreens, herbs (no holistic buying source for any); frozen-vegetable blanching or nutrient retention (no holistic source; do not claim it).
+- Deleted: `wapf-too-hot-to-cook` (frozen berries in a smoothie recipe only, nothing on buying).
+- Card shape: all 20 cards carry only `decision`, `aliases`, `sources` (cucumbers, corn, tofu also `avoid`). There is no short_answer/detail/why/watch_out/kristy_take on them, so the grade is on `decision` + `avoid`.
+- The cards' own `sources` are extension, USDA SNAP-Ed, Northwest Horticultural Council (fruit-coating trade body), Smithsonian: none holistic. Every card needs its source list swapped even where the decision stands.
+
+### New archive files (/Users/m1/kristy/archive/completeness/produce/, URL on line 1)
+- `wapf-wisely-stocked-kitchen.md` : WAPF author's freezer "always contains at least a few frozen vegetables, mainly broccoli, spinach or kale, and green beans"; "having some frozen is important for soups, sides and general nutritional value"; fridge/freezer list says "Vegetables: Fresh, lacto-fermented and some frozen".
+- `wapf-journal-fall-2013-ge-food.md` : "GMO sweet corn is already in the supermarket"; WAPF members avoid "commercial corn products like chips (unless organic)" and soy foods.
+- `wapf-good-news-on-gmos.md` : corn, soy, canola, sugar, squash named as GMO crops; Enlist corn/soy and 2,4-D concern.
+- `wapf-phantom-of-the-gmo.md`, `wapf-switch-to-gmo-free.md` : GMO context only, no corn buying guidance.
+- `wapf-soy-alert-brochure.md` : "Most modern soy foods are not fermented to neutralize toxins in soybeans"; soy first eaten after fermentation (tempeh, natto, tamari); "Most soy beans grown in the US are genetically engineered".
+- `wapf-the-ploy-of-soy.md` : "Only Fermented Soy Products Are Safe"; fermented tempeh, miso, natto "usually made with organically grown soybeans"; tofu and soy milk unfermented (phytates, enzyme inhibitors); Japanese eat tofu with mineral-rich fish broth.
+- `wapf-soy-sanitation.md` : most tofu from large plants is pasteurized; open tofu tubs at stores were a contamination spot (producer-safety fact, not a nutrition claim).
+- Reused, not refetched: `wapf-shopping-guide-categories.md` (organic dried beans "except soybeans unless used for making fermented foods such as natto"; organic canned legumes same exception; organic raw naturally fermented soy sauce, tamari, miso, natto in top tier; all non-organic grains and legumes "most of which are sprayed with Roundup"; produce from China avoided; Apeel avoided; no tofu line anywhere), `wapf-big-box-stores.md` (organic frozen vegetables; farm stand best), `wapf-extend-local-growing-season.md`.
+
+### Mainstream-reassurance grep on the 20 cards (decision, avoid, title, aliases, sources, all fields)
+- Searched "safe levels", "buy conventional", "considered safe", "FDA says", "low-residue", "just as good", "broadly comparable", "USDA", "lowest": zero hits in card text. One incidental hit: pick_celery `sources` name "SNAP-Ed Seasonal Produce Guide" (snaped.fns.usda.gov), a USDA source, not a verdict line.
+- Absence of reassurance is because the cards carry almost no prose. Silence is not a holistic answer: see GAP list.
+
+### Per card
+- pick_frozen_peas : GAP. Decision is texture only (solid, no drips). Add WAPF position: organic frozen vegetables are an acceptable store fallback and "some frozen" belongs in a real-food kitchen, local seasonal from a grower first (`wapf-wisely-stocked-kitchen.md`, `wapf-big-box-stores.md`). Executable add: pick organic frozen, single ingredient. Source NDSU Extension to swap. No nutrient-retention claim sourced.
+- pick_frozen_broccoli : GAP. Same as peas; broccoli is the exact vegetable WAPF author keeps frozen (`wapf-wisely-stocked-kitchen.md`).
+- pick_cucumbers : COMPLETE on decision (no sprays else organic; avoid wax/shellac/carnauba, which matches WAPF's Apeel/coating avoid, `wapf-shopping-guide-categories.md`). Sources (Nebraska Extension, NW Horticultural Council) need swapping to WAPF.
+- pick_asparagus : GAP. Freshness cues only; no grower/no-sprays/local-seasonal rung (`wapf-shopping-guide-categories.md`, `wapf-extend-local-growing-season.md`).
+- pick_corn : GAP, and the avoid line is thin. "Skip corn labeled bioengineered" is right but incomplete: WAPF says GMO sweet corn is already in supermarkets (`wapf-journal-fall-2013-ge-food.md`), and a stand or bin often carries no label. Executable add: ask the grower or buy organic, (organic excluding GMO is not stated in a saved source; the WAPF guide only says to buy organic); WAPF avoids commercial corn products unless organic. Local in season from a grower is the top rung. GMO-free sweet corn identification by variety not fetched.
+- pick_eggplant : GAP. Freshness only; add grower/no-sprays/local seasonal rung.
+- pick_zucchini : GAP. Freshness only. WAPF names squash among GMO crops (`wapf-good-news-on-gmos.md`, wording imprecise, does not say zucchini or yellow squash specifically), so "organic or a grower who knows the seed" is a supported executable add; state no more than that.
+- pick_cilantro, pick_parsley, pick_basil : COMPLETE on decision (local no sprays, else organic). Source swap only.
+- pick_snap_peas : GAP. Freshness only; add grower/no-sprays rung.
+- pick_kohlrabi : GAP. Freshness only; kohlrabi is a cool-season crop a farm stand carries in season, so local seasonal is the natural top rung (`wapf-extend-local-growing-season.md`).
+- pick_okra : GAP. Freshness only; same.
+- pick_swiss_chard : COMPLETE on decision. Source swap only. (Oxalate content exists in `wapf-plants-bite-back.md` but no buying guidance; not added.)
+- pick_mangoes : GAP, minor. Ripeness by feel is right but the card gives no grower/organic rung and no origin. WAPF avoids produce from China (not relevant to mango origin) and notes most Hawaiian papaya is GMO, which does not apply to mango. Nothing sourced on mango treatment. Leave as ripeness card unless a source is found.
+- pick_tofu : GAP, the biggest in this batch. Decision says choose by firmness and avoid "bioengineered" only. Holistic (WAPF) stance is that unfermented soy (tofu, soy milk) is not recommended, soybeans acceptable mainly fermented (tempeh, miso, natto, tamari), usually from organic beans; the shopping guide lists no tofu at all (`wapf-the-ploy-of-soy.md`, `wapf-soy-alert-brochure.md`, `wapf-shopping-guide-categories.md`). The card as written presents tofu as an ordinary pick. Executable add: if tofu, organic (non-GMO, since US soy is mostly genetically engineered), nigari or gypsum only; better, tempeh or miso. State as WAPF position; no health-outcome claim (no-treatment rule, claim lock). Open question for Devon: does Kristy's stance rank tofu below tempeh (WAPF) or treat it neutrally? This is a stance call, not a source gap.
+- pick_celery : COMPLETE on decision (no sprays else organic). Only its source is USDA SNAP-Ed; swap.
+- pick_winter_squash : GAP. Freshness only. Squash is long-keeping, so a farm-stand fall buy is the obvious top rung (`wapf-eating-locally-seasonally.md`); same GMO-squash note as zucchini, no more.
+- pick_ginger_turmeric : GAP. Decision has storage and firmness only. WAPF avoids produce from China (`wapf-shopping-guide-categories.md`); executable add: check the origin sticker, prefer organic. I did not fetch any source on where US-sold ginger or turmeric comes from; do not assert that.
+- pick_microgreens : COMPLETE on decision (small local grower, no sprays, else organic, rinse). Producer statements on living, rooted greens exist for lettuce only (`greenhouse-*.md`); none for microgreens.
+
+### Third-pass counts
+- COMPLETE (decision stands, source swap needed): 7 (cucumbers, cilantro, parsley, basil, swiss_chard, celery, microgreens)
+- GAP: 13 (frozen_peas, frozen_broccoli, asparagus, corn, eggplant, zucchini, snap_peas, kohlrabi, okra, mangoes, tofu, winter_squash, ginger_turmeric); the 9 plain freshness-only picks share one fix (add the grower/no-sprays/local-seasonal rung); tofu, corn, frozen, ginger_turmeric have specific supported adds above.
