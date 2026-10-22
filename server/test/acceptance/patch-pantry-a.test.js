@@ -1,3 +1,3 @@
-// Completeness-pass patch guard for pantry-a. Do not edit.
+// Completeness-pass patch guard for pantry-a. Do not edit. Tests: C1 C2 C3 (see patchGuard.js).
 import { patchSuite } from './patchGuard.js';
 patchSuite('pantry-a', ["rice_arsenic", "oats_steelcut_rolled_instant", "nuts_raw_vs_roasted", "honey_adulteration", "beans_dried_vs_canned", "flour_basics", "bulk_bins_buying", "whole_spices", "rancidity_check", "olive_oil_grades", "nut_butter_ingredients", "grains_beyond_rice", "bottled_water_buying", "sandwich_bread", "sourdough", "bagels", "tortillas", "breakfast_cereal", "pasta_dry", "coffee_beans", "sprouted_grain_bread", "sprouted_grains", "specialty_flours", "gluten_free_bread", "buns_rolls", "pastries_muffins", "muesli", "bread_aisle", "kombucha", "sauerkraut", "kimchi", "fermented_pickles", "raw_cider_vinegar", "miso", "tempeh", "natto", "fermented", "broth", "salt", "sugars", "maple_syrup"]);

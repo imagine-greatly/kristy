@@ -1,3 +1,3 @@
-// Completeness-pass patch guard for pantry-b. Do not edit.
+// Completeness-pass patch guard for pantry-b. Do not edit. Tests: C1 C2 C3 (see patchGuard.js).
 import { patchSuite } from './patchGuard.js';
 patchSuite('pantry-b', ["cooking_oils", "lard_tallow", "cocoa", "seeds", "dried_fruit", "nutritional_yeast", "canned_coconut_milk", "dried_herbs", "tea", "vinegar", "pasta_sauce", "jam", "ketchup_mustard", "mayo", "hot_soy_sauce", "canned_soup", "olives", "seaweed", "salsa", "coconut_water", "condiments", "crackers", "tortilla_chips", "potato_chips", "popcorn", "pretzels", "snack_bars", "trail_mix", "snacks", "hummus", "deli_salads", "prepared_meals", "fresh_pasta", "deli", "frozen_pizza", "frozen_meals", "frozen_fries", "frozen_waffles", "frozen_nuggets", "frozen"]);

@@ -25,13 +25,13 @@ const strings = (v) => (typeof v === 'string' ? [v] : Array.isArray(v) ? v.flatM
 // group: patch file name; required: ids the patch must cover (all must be cards in the KB or new ids).
 export function patchSuite(group, required) {
   const file = join(ROOT, 'docs', 'research', 'completeness', 'patches', `${group}.json`);
-  test(`${group} patch exists and covers required cards`, () => {
+  test(`C1 ${group} patch exists and covers required cards`, () => {
     assert.ok(existsSync(file), `missing ${file}`);
     const p = JSON.parse(readFileSync(file, 'utf8'));
     const missing = required.filter((id) => !p[id]);
     assert.deepEqual(missing, [], 'cards with no patch');
   });
-  test(`${group} patch fields and copy rules`, () => {
+  test(`C2 C3 ${group} patch fields and copy rules`, () => {
     const p = JSON.parse(readFileSync(file, 'utf8'));
     const byId = new Map(kb.entries.map((e) => [e.id, e]));
     const bad = [];
