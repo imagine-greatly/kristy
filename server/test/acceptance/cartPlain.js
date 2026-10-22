@@ -244,8 +244,13 @@ export const CLEAN_J9 = new Set(['mayo', 'crackers', 'potato_chips', 'popcorn', 
 export const CLEAN_J9_BASE = '53c6f90';
 const PRE_J9 = JSON.parse(execFileSync('git', ['show', `${CLEAN_J9_BASE}:server/kristy_perimeter_kb.json`], { cwd: join(dirname(fileURLToPath(import.meta.url)), '..', '..', '..'), maxBuffer: 64 << 20 }).toString());
 export const preCleanJ9 = (e) => (e && CLEAN_J9.has(e.id) ? structuredClone(PRE_J9.entries.find((x) => x.id === e.id)) : e);
+// dialed-1 (2026-10-22): cards rewritten after 9d7898e; dialedCards.test.js owns the live copy.
+export const DIALED = new Set(['salt']);
+export const DIALED_BASE = '9d7898e';
+const PRE_DIALED = JSON.parse(execFileSync('git', ['show', `${DIALED_BASE}:server/kristy_perimeter_kb.json`], { cwd: join(dirname(fileURLToPath(import.meta.url)), '..', '..', '..'), maxBuffer: 64 << 20 }).toString());
+export const preDialed = (e) => (e && DIALED.has(e.id) ? structuredClone(PRE_DIALED.entries.find((x) => x.id === e.id)) : e);
 export const restoreOrganicCarts = (kb) => {
-  kb.entries = kb.entries.map(preCleanJ9).map(preCleanJ8).map(preCleanJ7).map(preCleanJ6).map(preCleanJ5).map(preCleanJ4).map(preCleanJ3).map(preCleanJ1);
+  kb.entries = kb.entries.map(preDialed).map(preCleanJ9).map(preCleanJ8).map(preCleanJ7).map(preCleanJ6).map(preCleanJ5).map(preCleanJ4).map(preCleanJ3).map(preCleanJ1);
   for (const e of kb.entries) if (OLD[e.id]) Object.assign(e, OLD[e.id]);
   return kb;
 };
