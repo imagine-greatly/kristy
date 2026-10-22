@@ -225,8 +225,8 @@ Open/closed rules/history: `docs/OPEN-ITEMS.md`, “Open items”.
   Apply before push-token code deploys. Everything else: `docs/SCHEMA-AUDIT.md`.
 - ⚠️ The corpus count lives here and nowhere else; re-count it, never carry it forward.
   - LIVE `counter_cards`: **182 rows — 181 `curated` + 1 `generated`**, migration's post-upsert
-    count 2026-10-18, read back.
-  - `kristy_perimeter_kb.json`: **211 entries — 181 cards + 30 picks** at `297895d`, 2026-10-18.
+    count 2026-10-22, read back.
+  - `kristy_perimeter_kb.json`: **219 entries — 181 cards + 38 picks** at `07f2663`, 2026-10-22.
     Picks never migrate; `listMatch.js` reads the KB file, push publishes.
   - KB and table agree at 181 curated. Migrate: `set -a;. ./.env`. A migration publishes what the KB is ahead by.
 - ⚠️ Accounts gate revenue; rail is SIWA. Only a completed token exchange proves the client id
