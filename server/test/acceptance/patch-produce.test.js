@@ -1,0 +1,3 @@
+// Completeness-pass patch guard for produce. Do not edit.
+import { patchSuite } from './patchGuard.js';
+patchSuite('produce', ["organic_worth_it_by_type", "frozen_vs_fresh_produce", "freezing_produce", "produce_seasonality", "washing_produce", "baking_soda_soak", "precut_produce_tradeoffs", "produce_ripeness_by_item", "berries_picking", "produce_storage", "revive_greens", "sprouts_raw", "produce_root_vegetables", "produce_brassicas", "produce_onions_garlic", "produce_leafy_greens", "produce_peppers", "produce_apples_pears", "produce_citrus", "produce_stone_fruit", "produce_mushrooms", "produce_bananas", "produce_green_beans"]);
