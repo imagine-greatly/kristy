@@ -17,7 +17,7 @@
 // matches nothing simply gets no card, which costs one KB scan of an in-memory array and
 // zero model calls. The gate is a cost control on a path that has no cost.
 
-import { scoreEntries, scorePool, pickEntries, perimeterKb, isPick, typeContradicts } from './perimeter.js';
+import { scoreEntries, scorePool, pickEntries, perimeterKb, isQuestionEntry, typeContradicts } from './perimeter.js';
 import { kindFor, sectionForCategory } from './counterCards.js';
 import { logCounterGap } from './counterGaps.js';
 
@@ -358,7 +358,7 @@ export function cardForItem(item, pool) {
   const authored = !id ? null : pool ? pool.find((e) => e.id === id) || null : entryById(id);
   if (
     authored &&
-    !isPick(authored) &&
+    isQuestionEntry(authored) &&
     kindFor(authored.id) !== 'home' &&
     !NON_AISLE_SECTIONS.has(sectionForCategory(authored.category)) &&
     !typeContradicts(item?.name, authored)

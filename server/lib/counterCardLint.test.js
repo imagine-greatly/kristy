@@ -20,6 +20,7 @@ import { PERIMETER_SECTIONS, questionEntries } from './perimeter.js';
 import { DEPTH_FIELDS } from './counterCards.js';
 import {
   lintCard,
+  lintFamily, lintAisle, lintFamilyReferences, lintFamilyMetadata,
   lintPick,
   lintCorpus,
   mechanicalVeto,
@@ -757,4 +758,67 @@ test('sectionRules corpus: lintSections is clean (CA-5 flags turn the section li
   nonEmpty(sectionRules, 'sectionRules', 6);
   nonEmpty(perimeterKb.entries, 'perimeterKb.entries', 180);
   assert.deepEqual(lintSections(sectionRules, perimeterKb.entries), []);
+});
+
+const FAMILY_FIXTURE = {
+  id: 'fam_fixture', kind: 'family', title: 'Fixture fruit', category: 'aisle_produce', decision: 'Choose firm fruit.',
+  why: 'Firm flesh holds its shape.', buying_tips: ['Check the skin.'], watch_out: ['Skip leaking fruit.'],
+  shopper_questions: ['Is the skin intact?', 'Is the fruit firm?'], season_storage: '',
+  sources: [{ name: 'Fixture', url: 'https://example.invalid/fruit' }],
+};
+const AISLE_FIXTURE = {
+  id: 'aisle_produce', kind: 'aisle', category: 'aisle_produce', title: 'Produce', decision: 'Choose intact produce.',
+  buying_tips: ['Check the skin.', 'Check the stem.', 'Skip leaking produce.'],
+};
+
+test('family and aisle dispatch uses navigation rules without card-only requirements', () => {
+  assert.deepEqual(lintFamily(FAMILY_FIXTURE), []);
+  assert.deepEqual(lintAisle(AISLE_FIXTURE), []);
+  assert.deepEqual(lintCard(FAMILY_FIXTURE), []);
+  assert.deepEqual(lintCard(AISLE_FIXTURE), []);
+  assert.deepEqual(lintCorpus([FAMILY_FIXTURE, AISLE_FIXTURE]), lintCorpus([]));
+  for (const entry of perimeterKb.entries.filter((e) => ['family', 'aisle'].includes(e.kind))) {
+    assert.deepEqual(lintCard(entry), [], entry.id);
+  }
+  assert.deepEqual(lintFamilyReferences(perimeterKb.entries), []);
+});
+
+test('navigation requires a rule, canonical IDs/sections, typed depth, and no aliases', () => {
+  for (const entry of [FAMILY_FIXTURE, AISLE_FIXTURE]) {
+    for (const patch of [
+      { decision: '' }, { id: 'bad' }, { category: 'bad' }, { aliases: [] }, { asked_as: ['fruit'] },
+      { why: [] }, { science: {} }, { season_storage: null }, { buying_tips: 'skin' }, { watch_out: [3] },
+      { shopper_questions: [null] }, { pick_steps: [false] }, { sources: [{ name: 'Missing URL' }] },
+      { family: 'fam_fixture' }, { delta: 'An exception.' },
+    ]) assert.ok(lintCard({ ...entry, ...patch }).length, JSON.stringify(patch));
+  }
+  assert.ok(codes(lintCard({ ...FAMILY_FIXTURE, buying_tips: ['x'.repeat(141)] })).includes('FAMILY_TIP_TOO_LONG'));
+  assert.ok(codes(lintCard({ ...AISLE_FIXTURE, buying_tips: [] })).includes('AISLE_CHECKS_INVALID'));
+  for (const kind of ['unknown', 'shelf', 'home']) {
+    assert.ok(codes(lintCard({ ...FAMILY_FIXTURE, kind })).includes('KIND_INVALID'));
+  }
+});
+
+test('family references validate raw targets and delta type, length, and dependency', () => {
+  const member = { id: 'member', family: 'fam_fixture', delta: 'Choose the softer ones.' };
+  assert.deepEqual(lintFamilyReferences([member, FAMILY_FIXTURE]), []);
+  assert.ok(codes(lintFamilyReferences([member])).includes('FAMILY_DANGLING'));
+  assert.ok(codes(lintFamilyReferences([member, { id: 'fam_fixture', kind: 'aisle' }])).includes('FAMILY_WRONG_KIND'));
+  for (const family of [4, {}, '', 'aisle_produce']) {
+    assert.ok(codes(lintFamilyMetadata({ family })).includes('FAMILY_INVALID'));
+  }
+  for (const delta of [[], 1, {}, '']) {
+    assert.ok(codes(lintFamilyMetadata({ ...member, delta })).includes('DELTA_INVALID'));
+  }
+  assert.deepEqual(lintFamilyMetadata({ ...member, delta: 'x'.repeat(400) }), []);
+  assert.ok(codes(lintFamilyMetadata({ ...member, delta: 'x'.repeat(401) })).includes('DELTA_TOO_LONG'));
+  assert.ok(codes(lintFamilyMetadata({ delta: 'Exception.' })).includes('DELTA_WITHOUT_FAMILY'));
+  assert.deepEqual(lintFamilyMetadata({ family: null, delta: null }), []);
+  assert.ok(codes(lintCard({ ...generated(), delta: 'Exception.' })).includes('DELTA_WITHOUT_FAMILY'));
+});
+
+test('picks forbid family and delta even if null', () => {
+  for (const field of ['family', 'delta']) {
+    assert.ok(codes(lintPick({ kind: 'pick', [field]: null })).includes('PICK_FIELD_FORBIDDEN'));
+  }
 });

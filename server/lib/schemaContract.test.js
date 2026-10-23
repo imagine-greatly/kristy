@@ -22,7 +22,8 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
-import { cardToRow } from './counterCards.js';
+import { perimeterKb as authoredKb } from './perimeter.js';
+import { cardToRow, rowToCard, projectEntry, coverage, getAllCards } from './counterCards.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const SQL_DIR = join(__dirname, '..', '..', 'supabase');
@@ -110,6 +111,8 @@ test('EVERY key cardToRow emits is a declared column of counter_cards', () => {
   // exactly what the upsert will send.
   const fullCard = {
     slug: 'gen_probe',
+    family: 'fam_probe',
+    delta: 'A specific exception.',
     section: 'produce',
     topic: 'Probe',
     kind: 'shelf',
@@ -248,4 +251,31 @@ test('the literal sweep is finding real writes, not zero of them', () => {
   // exists separately rather than relying on this sweep.
   const opaque = found.filter((w) => w.keys.length === 0);
   assert.ok(opaque.length <= 3, `too many writes the sweep cannot read: ${opaque.map((w) => w.table).join(', ')}`);
+});
+
+test('family and delta survive projection, row mapping, and explicit table selection', async (t) => {
+  const entry = { id: 'fixture', title: 'Fruit', family: 'fam_fruit', delta: 'Choose softer fruit.', decision: 'Choose firm fruit.' };
+  authoredKb.entries.push(entry);
+  t.after(() => authoredKb.entries.splice(authoredKb.entries.indexOf(entry), 1));
+  const card = projectEntry(entry);
+  assert.equal(card.family, entry.family);
+  assert.equal(card.delta, entry.delta);
+  assert.deepEqual(rowToCard(cardToRow(card)), card);
+  assert.deepEqual(coverage(entry, card).unmapped, []);
+  assert.ok(coverage(entry, { ...card, delta: null }).unmapped.some((u) => u.field === 'delta'));
+  assert.ok(coverage(entry, { ...card, family: null }).unmapped.some((u) => u.field === 'family'));
+  const client = { from: () => ({ select(columns) {
+    const keys = columns.split(',').map((s) => s.trim());
+    const row = Object.fromEntries(Object.entries(cardToRow(card)).filter(([key]) => keys.includes(key)));
+    return { order: async () => ({ data: [row], error: null }) };
+  } }) };
+  const selected = (await getAllCards(client))[0];
+  assert.equal(selected.family, card.family);
+  assert.equal(selected.delta, card.delta);
+  const fallback = (await getAllCards(null)).find((c) => c.slug === entry.id);
+  assert.equal(fallback.family, selected.family);
+  assert.equal(fallback.delta, selected.delta);
+  const cleared = projectEntry({ id: entry.id, title: entry.title });
+  assert.equal(cardToRow(cleared).family, null);
+  assert.equal(cardToRow(cleared).delta, null);
 });

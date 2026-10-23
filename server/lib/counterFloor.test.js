@@ -115,3 +115,25 @@ test('the pipeline gates on aliasScore, not on the score alone', () => {
 function readPipeline() {
   return readFileSync(new URL('./counterAskPipeline.js', import.meta.url), 'utf8');
 }
+
+test('navigation aliases cannot displace a real question or enter the generated scorer', () => {
+  const card = { id: 'fruit', title: 'Selection', aliases: ['rambutan'] };
+  const navigation = ['family', 'aisle', 'unknown', 'pick'].map((kind) => ({
+    id: `${kind}_fruit`, kind, title: 'Rambutan', aliases: ['rambutan', 'rambutan', 'rambutan'],
+  }));
+  const scored = scoreEntries('rambutan', 3, [...navigation, card]);
+  assert.equal(scored.length, 1);
+  assert.equal(scored[0].entry.id, card.id);
+  assert.equal(scored[0].aliasScore, 2);
+  assert.deepEqual(scoreGenerated('rambutan', [...navigation, { slug: 'fruit', kind: 'shelf', aliases: ['rambutan'] }])
+    .map(({ card, score }) => [card.slug, score]), [['fruit', 2]]);
+});
+
+test('navigation is excluded before unique buying-question rescue counts owners', () => {
+  const card = { id: 'fruit', title: 'Selection', aliases: [], asked_as: ['which rambutan should i buy'] };
+  const navigation = ['family', 'aisle'].map((kind) => ({ ...card, kind, id: `${kind}_fruit` }));
+  const scored = scoreEntries('rambutan', 3, [...navigation, card]);
+  assert.equal(scored[0]?.entry.id, card.id);
+  assert.equal(scored[0]?.aliasScore, 4);
+  assert.deepEqual(scoreEntries('rambutan', 3, navigation), []);
+});

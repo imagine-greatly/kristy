@@ -1,3 +1,4 @@
+import { AISLE_IDS, isQuestionEntry } from './perimeter.js';
 // The counter card's shape rules, as executable checks.
 //
 // WHY THIS IS A MODULE AND NOT A SCRIPT: Pass 3 generates cards for questions the KB
@@ -828,6 +829,7 @@ const NON_AISLE_SECTION = 'label_terms';
 // authored line from a remembered one. Nothing on a pick is served, so paid/free does not
 // apply to it.
 export const PICK_FORBIDDEN_FIELDS = new Set([
+  'family', 'delta',
   'asked_as', 'headline', 'why', 'tier_note', 'look_for', 'watch_out', 'detail',
   'kristy_take', 'labels_decoded', 'cart_pick', 'short_answer', 'buying_tips', 'question',
   'evidence_tier', 'instead', 'card_why', 'eyebrow_short', 'pick_steps', 'science',
@@ -1004,17 +1006,93 @@ export function lintPick(entry) {
 
 /* ═══════════════════════════ Per-card ═══════════════════════════ */
 
-/**
- * Lint one card — curated or generated — or one pick.
- * @returns {Array<{code:string, detail:string}>} empty when the card passes.
- */
+const FAMILY_ID = /^fam_[a-z0-9]+(?:_[a-z0-9]+)*$/;
+const textValue = (v) => typeof v === 'string' && Boolean(v.trim());
+
+/** Metadata checks apply to raw KB entries as well as projected cards. */
+export function lintFamilyMetadata(entry) {
+  const out = [];
+  const fail = (code, detail) => out.push({ code, detail });
+  if (entry.family != null && (typeof entry.family !== 'string' || !FAMILY_ID.test(entry.family))) {
+    fail('FAMILY_INVALID', 'family must be a fam_* ID');
+  }
+  if (entry.delta != null) {
+    if (!textValue(entry.delta)) fail('DELTA_INVALID', 'delta must be a nonempty string');
+    else if (entry.delta.length > 400) fail('DELTA_TOO_LONG', 'delta must be at most 400 characters');
+    if (!entry.family) fail('DELTA_WITHOUT_FAMILY', 'delta requires a family reference');
+  }
+  return out;
+}
+
+/** Validate against raw entries: a projected item cannot establish a family exists. */
+export function lintFamilyReferences(entries) {
+  const byId = new Map(entries.map((e) => [e.id, e]));
+  return entries.flatMap((entry) => {
+    const out = lintFamilyMetadata(entry);
+    if (entry.family != null && typeof entry.family === 'string') {
+      const target = byId.get(entry.family);
+      if (!target) out.push({ code: 'FAMILY_DANGLING', detail: `missing family ${entry.family}` });
+      else if (target.kind !== 'family') out.push({ code: 'FAMILY_WRONG_KIND', detail: `${entry.family} is not a family` });
+    }
+    return out.map((v) => ({ ...v, id: entry.id }));
+  });
+}
+
+function lintNavigation(entry, kind) {
+  const out = [];
+  const fail = (code, detail) => out.push({ code, detail });
+  const prefix = kind.toUpperCase();
+  for (const field of ['id', 'title', 'category', 'decision']) {
+    if (!textValue(entry[field])) fail(`${prefix}_FIELD_MISSING`, `${kind} needs ${field}`);
+  }
+  if (entry.kind !== kind) fail('KIND_INVALID', `expected ${kind}`);
+  if (!AISLE_IDS.includes(entry.category)) fail(`${prefix}_SECTION_INVALID`, 'category must be a supported aisle ID');
+  if (kind === 'family' && !FAMILY_ID.test(entry.id || '')) fail('FAMILY_ID_INVALID', 'family IDs start with fam_');
+  if (kind === 'aisle' && (entry.id !== entry.category || !AISLE_IDS.includes(entry.id))) {
+    fail('AISLE_ID_INVALID', 'aisle id and category must be the same supported aisle ID');
+  }
+  for (const field of ['aliases', 'asked_as', 'family', 'delta']) {
+    if (Object.hasOwn(entry, field)) fail(`${prefix}_FIELD_FORBIDDEN`, `${kind} cannot carry ${field}`);
+  }
+  for (const field of ['why', 'science', 'season_storage']) {
+    if (Object.hasOwn(entry, field) && typeof entry[field] !== 'string') {
+      fail(`${prefix}_DEPTH_INVALID`, `${field} must be text`);
+    }
+  }
+  for (const field of ['buying_tips', 'watch_out', 'shopper_questions', 'pick_steps']) {
+    if (Object.hasOwn(entry, field) && (!Array.isArray(entry[field]) || !entry[field].every(textValue))) {
+      fail(`${prefix}_DEPTH_INVALID`, `${field} must be an array of nonempty strings`);
+    }
+  }
+  if (Array.isArray(entry.buying_tips) && entry.buying_tips.some((s) => typeof s === 'string' && s.length > 140)) {
+    fail(`${prefix}_TIP_TOO_LONG`, 'buying tips must be at most 140 characters');
+  }
+  if (kind === 'aisle' && (!Array.isArray(entry.buying_tips) || entry.buying_tips.length < 3 || entry.buying_tips.length > 5)) {
+    fail('AISLE_CHECKS_INVALID', 'aisle briefing needs 3–5 buying tips');
+  }
+  if (Object.hasOwn(entry, 'sources') && (!Array.isArray(entry.sources) || !entry.sources.every((s) =>
+    s && typeof s === 'object' && textValue(s.name) && typeof s.url === 'string' && /^https?:\/\/\S+$/.test(s.url)))) {
+    fail(`${prefix}_SOURCES_INVALID`, 'sources must be {name,url} objects with HTTP(S) URLs');
+  }
+  return out;
+}
+
+export function lintFamily(entry) { return lintNavigation(entry, 'family'); }
+export function lintAisle(entry) { return lintNavigation(entry, 'aisle'); }
+
+/** Lint a projected card or a raw pick/family/aisle entry. */
 export function lintCard(card) {
   // A pick is not a card and clears a different bar. Branching here rather than at the
   // call site means the generation path, the corpus tests and any future door all reach
   // the pick rules through the one function they already call.
   if (card?.kind === 'pick') return lintPick(card);
+  if (card?.kind === 'family') return lintFamily(card);
+  if (card?.kind === 'aisle') return lintAisle(card);
+  if (card && !isQuestionEntry(card, { projected: !card.id })) {
+    return [{ code: 'KIND_INVALID', detail: `unsupported kind ${card.kind}` }];
+  }
 
-  const out = [];
+  const out = lintFamilyMetadata(card || {});
   const fail = (code, detail) => out.push({ code, detail });
 
   const headline = String(card?.headline || '').trim();
@@ -1326,6 +1404,7 @@ export function lintOpenerRepetition(cards) {
  * @returns {{violations:Array, report:{verbs:Array, emDashShare:number, total:number}}}
  */
 export function lintCorpus(cards) {
+  cards = (cards || []).filter((c) => isQuestionEntry(c, { projected: !c?.id }));
   const violations = lintOpenerRepetition(cards);
   const list = (cards || []).filter(Boolean);
   const doOf = (c) => String(c?.do ?? c?.do_line ?? '').trim();

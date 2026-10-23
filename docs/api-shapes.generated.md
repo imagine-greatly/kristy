@@ -68,6 +68,16 @@ Mounted at: `/api`
 
 Mounted at: `/api`
 
+### GET /counter/aisles  ·  optionalAuth
+
+- `200` → { aisles: ??? }
+
+### GET /counter/families/:id  ·  optionalAuth
+
+- `404` → { error: String }
+- `200` → { family: ??? }
+- `500` → { error: String }
+
 ### GET /counter/try  ·  public
 
 - `200` → { items: ??? }
@@ -118,7 +128,7 @@ Mounted at: `/api`
 ### GET /counter/cards/:slug  ·  optionalAuth
 
 - `404` → { error: String }
-- `200` → `forViewer(card)` — **NEEDS HAND-CHECK** (built elsewhere)
+- `200` → `forViewer(card, { premium })` — **NEEDS HAND-CHECK** (built elsewhere)
 - `500` → { error: String }
 
 ### POST /counter/ask  ·  optionalAuth
@@ -466,14 +476,14 @@ Mounted at: `(unmounted)`
 
 ## NEEDS HAND-CHECK
 
-26 of 60 handlers have at least one response this script cannot
+26 of 62 handlers have at least one response this script cannot
 expand. Confirm these by hand before writing a Codable for them.
 
 - `POST /checkout` (billing.js) — opaque: NOT_CONFIGURED
 - `POST /portal` (billing.js) — opaque: NOT_CONFIGURED
 - `POST /chat` (chat.js) — spread: …
 - `POST /chat` (chat.js) — spread: result
-- `GET /counter/cards/:slug` (counter.js) — opaque: forViewer(card)
+- `GET /counter/cards/:slug` (counter.js) — opaque: forViewer(card, { premium })
 - `POST /counter/ask` (counter.js) — opaque: result
 - `POST /counter/ask` (counter.js) — opaque: body
 - `POST /counter/ask` (counter.js) — spread: body
@@ -496,4 +506,4 @@ expand. Confirm these by hand before writing a Codable for them.
 - `POST /subscription/trial` (subscription.js) — opaque: subscriptionSummary(null)
 - `POST /trips/import` (trips.js) — opaque: out
 
-_60 handlers, 163 literal responses derived._
+_62 handlers, 167 literal responses derived._

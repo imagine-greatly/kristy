@@ -155,5 +155,5 @@ test('C10 do lines mirror: decisions did not change, so doLines.json and the rev
     if (doLines[id] != null) assert.ok(review.includes(doLines[id]) || true);
   }
   const now = execFileSync('git', ['show', 'HEAD:server/lib/doLines.json'], { cwd: ROOT }).toString();
-  assert.deepEqual({ ...JSON.parse(now), sugars: doLines.sugars }, withoutGapKeys(JSON.parse(readFileSync(new URL('../../lib/doLines.json', import.meta.url), 'utf8'))), 'doLines.json unchanged outside sugars');
+  assert.deepEqual({ ...withoutGapKeys(JSON.parse(now)), sugars: doLines.sugars }, withoutGapKeys(JSON.parse(readFileSync(new URL('../../lib/doLines.json', import.meta.url), 'utf8'))), 'doLines.json unchanged outside sugars');
 });

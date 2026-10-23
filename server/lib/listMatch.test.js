@@ -12,6 +12,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
 import {
+  cardForItem,
   matchItemToCard,
   matchItemToPick,
   attachCards,
@@ -606,4 +607,17 @@ test('an authored perimeterId naming a pick falls through to retrieval, never to
   assert.equal(row.cardSlug, undefined);
   assert.equal(row.cardSection, undefined);
   assert.equal(row.pickId, 'pick_celery');
+});
+
+test('family and aisle explicit IDs cannot attach a card or a pick', () => {
+  for (const kind of ['family', 'aisle', 'unknown']) {
+    const entry = { id: `${kind}_rambutan`, kind, title: 'Rambutan', category: 'produce', aliases: ['rambutan'] };
+    assert.equal(cardForItem({ name: 'rambutan', perimeterId: entry.id }, [entry]), null);
+    assert.equal(matchItemToPick('rambutan', [entry]), null);
+    const { kind: _, ...twin } = entry;
+    assert.equal(cardForItem({ name: 'rambutan', perimeterId: entry.id }, [twin])?.slug, twin.id);
+  }
+  const pick = { id: 'pick_rambutan', kind: 'pick', title: 'Rambutan', category: 'produce', aliases: ['rambutan'], decision: 'Pick firm fruit.' };
+  assert.equal(cardForItem({ name: 'rambutan', perimeterId: pick.id }, [pick]), null);
+  assert.equal(matchItemToPick('rambutan', [pick])?.id, pick.id);
 });

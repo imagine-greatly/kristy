@@ -24,14 +24,15 @@ const KB_PATH = join(__dirname, '..', 'kristy_perimeter_kb.json');
 
 export const perimeterKb = JSON.parse(readFileSync(KB_PATH, 'utf8'));
 
-/* ───────────────────────── Two kinds of entry, one file ─────────────────────────
+/* ───────────────────────── Question cards, picks, and navigation ─────────────────────────
    A QUESTION entry is a card: headline, depth, aliases authored as questions, an ask, a
    sheet. A PICK (`kind: 'pick'`) is one authored sentence a shopper reads in the store on
    a list row that has no card — the surface of the food, its weight, smell, color, a label
    word. It is not a card: no headline, no depth, no ask, no sheet, never migrated to
    `counter_cards` and never served by any counter door.
 
-   The KB holds both because the alias table and the section filing are the same, and the
+   Family and aisle entries provide navigation and never enter question retrieval.
+   The KB holds these kinds together because the alias table and the section filing are the same, and the
    list matcher reads one file. Everything that ANSWERS A QUESTION reads `questionEntries()`
    and never `perimeterKb.entries` directly — the ask pool, the browse index, the entry
    lookup, the section index — so a pick cannot be retrieved by an ask, listed in a
@@ -40,16 +41,59 @@ export const perimeterKb = JSON.parse(readFileSync(KB_PATH, 'utf8'));
 
    Guarded at the binding. A KB that filtered down to zero question entries would leave
    every door answering nothing and every corpus test passing over nothing. */
+// Navigation stays in the authored KB; these are deliberately not CounterCards.
+export const AISLE_IDS = Object.freeze([
+  'aisle_produce', 'aisle_meat_eggs', 'aisle_seafood', 'aisle_dairy_alt',
+  'aisle_pantry_bulk', 'aisle_bread_bakery', 'aisle_ferments', 'aisle_condiments',
+  'aisle_snacks', 'aisle_drinks', 'aisle_deli_prepared', 'aisle_frozen',
+]);
+
+export const FAMILY_DEPTH_FIELDS = Object.freeze([
+  'why', 'buying_tips', 'watch_out', 'shopper_questions', 'season_storage', 'sources',
+  'science', 'pick_steps',
+]);
+
+export function familyForViewer(entry, { premium = false } = {}) {
+  if (entry?.kind !== 'family') return null;
+  const out = { id: entry.id, kind: entry.kind, title: entry.title, section: entry.category, rule: entry.decision };
+  if (premium) {
+    for (const field of FAMILY_DEPTH_FIELDS) {
+      if (entry[field] != null) out[field] = entry[field];
+    }
+  }
+  return out;
+}
+
+export function publicAisle(entry) {
+  if (entry?.kind !== 'aisle') return null;
+  return {
+    id: entry.id, kind: entry.kind, title: entry.title, section: entry.category,
+    rule: entry.decision, checks: entry.buying_tips || [],
+  };
+}
+
 export const isPick = (e) => e?.kind === 'pick';
 
-/** The entries that answer questions — every entry that is not a pick. */
+// KB questions have no kind. Projected wire cards use shelf/home instead.
+export const isQuestionEntry = (e, { projected = false } = {}) => Boolean(e) &&
+  (e.kind == null || (projected && ['shelf', 'home'].includes(e.kind)));
+
+/** The entries that answer questions; navigation and picks never enter the scorer. */
 export function questionEntries(entries = perimeterKb.entries || []) {
-  return entries.filter((e) => !isPick(e));
+  return entries.filter((e) => isQuestionEntry(e));
 }
 
 /** The picks — for the list matcher's floor and nothing that answers a question. */
 export function pickEntries(entries = perimeterKb.entries || []) {
   return entries.filter(isPick);
+}
+
+export function familyEntries(entries = perimeterKb.entries || []) {
+  return entries.filter((e) => e?.kind === 'family');
+}
+
+export function aisleEntries(entries = perimeterKb.entries || []) {
+  return entries.filter((e) => e?.kind === 'aisle');
 }
 
 const QUESTION_POOL = nonEmpty(questionEntries(), 'perimeterKb question entries');
@@ -245,9 +289,13 @@ export function matchEntries(question, limit = 3) {
    claim-lock: every field is authored in the KB. `sources` is included here for display
    (it is NOT sent to the model). */
 export function publicEntry(e) {
+  if (e?.kind === 'family') return familyForViewer(e);
+  if (e?.kind === 'aisle') return publicAisle(e);
+  if (!isQuestionEntry(e)) return null;
   return {
     id: e.id,
     title: e.title,
+    family: e.family ?? null,
     category: e.category || null,
     question: e.question || null,
     // THE DECISION LEADS. A shopper at a counter has ten seconds and one hand, and

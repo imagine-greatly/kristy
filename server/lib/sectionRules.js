@@ -1,3 +1,4 @@
+import { aisleEntries } from './perimeter.js';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
@@ -26,4 +27,21 @@ export function loadSectionRules(path = DEFAULT_PATH) {
   }
   cache.set(path, rules);
   return rules;
+}
+
+// Existing browse section IDs differ from the new aisle IDs. Where an authored aisle
+// exists, it owns that section's briefing; the old file supplies only uncovered sections.
+const AISLE_SECTION = Object.freeze({
+  aisle_produce: 'produce', aisle_meat_eggs: 'meat', aisle_seafood: 'seafood',
+  aisle_dairy_alt: 'eggs_dairy', aisle_pantry_bulk: 'bulk_pantry', aisle_frozen: 'frozen',
+});
+
+export function loadCounterSectionRules(entries = aisleEntries(), legacy = loadSectionRules()) {
+  const rules = new Map(legacy.map((rule) => [rule.section, rule]));
+  for (const entry of entries) {
+    if (entry.kind !== 'aisle') continue;
+    const section = AISLE_SECTION[entry.id] || entry.category;
+    rules.set(section, { section, rule: entry.decision, checks: entry.buying_tips || [] });
+  }
+  return [...rules.values()];
 }

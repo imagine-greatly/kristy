@@ -28,7 +28,7 @@
 
 import perimeterKb from '../kristy_perimeter_kb.json' with { type: 'json' };
 import doLines from './doLines.json' with { type: 'json' };
-import { PERIMETER_SECTIONS, questionEntries } from './perimeter.js';
+import { PERIMETER_SECTIONS, questionEntries, isQuestionEntry } from './perimeter.js';
 
 export const TABLE = 'counter_cards';
 
@@ -418,6 +418,8 @@ export function projectEntry(entry, { doLine = '' } = {}) {
 
   return {
     slug: entry.id,
+    family: entry.family ?? null,
+    delta: entry.delta ?? null,
     section: sectionForCategory(entry.category),
     topic: entry.title,
     kind,
@@ -501,6 +503,7 @@ export function contentUnits(entry) {
     if (t) out.push({ field, text: t });
   };
   push('decision', entry.decision);
+  push('delta', entry.delta);
   push('why', entry.why);
   push('card_why', entry.card_why);
   push('tier_note', entry.tier_note);
@@ -524,6 +527,7 @@ export function coverage(entry, card) {
   const haystack = norm(
     [
       card.headline,
+      card.delta,
       card.why,
       card.detail,
       card.kristy_take,
@@ -538,6 +542,9 @@ export function coverage(entry, card) {
   );
   const units = contentUnits(entry);
   const unmapped = units.filter((u) => !haystack.includes(norm(u.text)));
+  if ((entry.family ?? null) !== (card.family ?? null)) {
+    unmapped.push({ field: 'family', text: entry.family ?? '(absent)' });
+  }
   return { total: units.length, unmapped };
 }
 
@@ -577,21 +584,22 @@ export function parseReviewTable(markdown) {
 
 /* ═══════════════════════════ Public card shape ═══════════════════════════ */
 
-// Retained as card-field metadata for the pick linter; no fields are withheld.
+// Existing item depth stays free; delta is filtered separately below.
 export const DEPTH_FIELDS = [
   'why', 'look_for', 'watch_out', 'detail', 'kristy_take', 'labels_decoded', 'sources',
 ];
 
-// Every card is free in full, without the optional lock and teaser fields.
-export function summarize(card) {
+// Public summaries retain existing depth, without paid delta or obsolete lock fields.
+export function summarize(card, { premium = false } = {}) {
   if (!card) return card;
-  const { teaser, locked, ...full } = card;
+  const { teaser, locked, delta, ...full } = card;
+  if (premium && delta != null) full.delta = delta;
   return full;
 }
 
-/** The public card shape is the same for guests and members. */
-export function forViewer(card) {
-  return summarize(card);
+/** Only the item exception is paid; membership and existing depth remain free. */
+export function forViewer(card, { premium = false } = {}) {
+  return summarize(card, { premium });
 }
 
 /* ═══════════════════════════ Row mapping ═══════════════════════════ */
@@ -661,7 +669,7 @@ const CARD_COLUMNS =
   'slug, section, topic, kind, eyebrow, headline, do_line, tier, cta_item, instead, pick_steps, science, why, ' +
   'look_for, watch_out, tier_note, detail, kristy_take, labels_decoded, sources, aliases, source, use_count, ' +
   // Keep the essentials shelf and its authored order on every read path.
-  'essential, essential_rank';
+  'essential, essential_rank, family, delta';
 
 // A real select, never a head:true count — PostgREST answers 204 / null / no error for a
 // table that does not exist, which reads as "present, empty" and would render the counter
@@ -786,6 +794,7 @@ export function scoreGenerated(question, cards) {
   if (q.trim().length < 2) return [];
   const scored = [];
   for (const c of cards || []) {
+    if (!isQuestionEntry(c, { projected: true })) continue;
     let score = 0;
     for (const alias of c.aliases || []) {
       const a = String(alias || '').toLowerCase().replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim();

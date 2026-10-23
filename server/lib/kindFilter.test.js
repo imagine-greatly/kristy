@@ -155,16 +155,14 @@ test('the web route reads no entries array of its own', () => {
   assert.ok(!/perimeterKb/.test(src), 'routes/perimeter.js must not touch perimeterKb directly');
   assert.match(src, /publicIndex\(\)/);
   assert.match(src, /questionEntryById\(/);
-  // And in the library, the raw array is read in exactly two places: the defaults of the
-  // two halves of the partition, questionEntries and pickEntries. Every door goes through
-  // the first; the list matcher's floor goes through the second; nothing reads it raw.
+  // Raw reads are confined to the four kind selectors; every door uses a selector.
   const lib = codeOf('./perimeter.js');
   const reads = lib.match(/^.*perimeterKb\.entries.*$/gm) || [];
-  assert.equal(reads.length, 2, `lib/perimeter.js reads perimeterKb.entries in ${reads.length} places:\n${reads.join('\n')}`);
+  assert.equal(reads.length, 4, `lib/perimeter.js reads perimeterKb.entries in ${reads.length} places:\n${reads.join('\n')}`);
   for (const line of reads) {
     assert.match(
       line,
-      /function (questionEntries|pickEntries)\(entries = perimeterKb\.entries/,
+      /function (questionEntries|pickEntries|familyEntries|aisleEntries)\(entries = perimeterKb\.entries/,
       `a raw read outside the partition: ${line.trim()}`
     );
   }
@@ -244,3 +242,27 @@ test('the lint fails the pick for each of the five defects it exists to catch', 
   // No plural.
   assert.ok(codes(lintCard({ ...PICK, aliases: ['rambutan', 'rambutan bulb'] })).includes('PICK_ALIASES_NO_NUMBER_PAIR'));
 });
+
+for (const kind of ['family', 'aisle', 'unsupported']) {
+  test(`${kind} is excluded from every question door; its kindless twin remains matchable`, () => {
+    const navigation = { ...AS_CARD, kind, id: `${kind}_rambutan` };
+    const { kind: _, ...twin } = navigation;
+    for (const [entry, expected] of [[navigation, 0], [twin, 1]]) {
+      const pool = [entry];
+      assert.equal(questionEntries(pool).length, expected);
+      assert.equal(scoreEntries('rambutan', 3, pool).length, expected);
+      assert.equal(publicIndex(pool).length, expected);
+      assert.equal(Boolean(questionEntryById(entry.id, pool)), Boolean(expected));
+      assert.equal(sectionById('produce', pool).topics.length, expected);
+      assert.equal(sectionIndex(pool).flatMap((s) => s.topics).length, expected);
+      assert.equal(projectAll(pool).length, expected);
+      const migration = projectCorpus(pool, new Map());
+      assert.equal(migration.cards.length, expected);
+      assert.equal(migration.families.length, kind === 'family' && !expected ? 1 : 0);
+      assert.equal(migration.aisles.length, kind === 'aisle' && !expected ? 1 : 0);
+      assert.equal(migration.picks.length, 0);
+      assert.equal(pickEntries(pool).length, 0);
+      assert.equal(migration.problems.missingDo.length, expected);
+    }
+  });
+}

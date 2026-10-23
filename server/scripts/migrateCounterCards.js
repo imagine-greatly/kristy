@@ -29,7 +29,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
 
 import perimeterKb from '../kristy_perimeter_kb.json' with { type: 'json' };
-import { isPick, questionEntries } from '../lib/perimeter.js';
+import { isPick, questionEntries, familyEntries, aisleEntries } from '../lib/perimeter.js';
 import {
   TABLE,
   RETIRED,
@@ -39,7 +39,7 @@ import {
   cardToRow,
   parseReviewTable,
 } from '../lib/counterCards.js';
-import { MAX_HEADLINE_WORDS } from '../lib/counterCardLint.js';
+import { MAX_HEADLINE_WORDS, lintFamilyReferences } from '../lib/counterCardLint.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const REVIEW_FILE = join(__dirname, '..', '..', 'docs', 'do-lines-review.md');
@@ -57,12 +57,16 @@ const words = (s) => (String(s || '').match(/[\w’'-]+/g) || []).length;
  *
  * @param {Array} entries   the KB entries, picks included
  * @param {Map} reviewed    slug → { do, flag } from docs/do-lines-review.md
- * @returns {{ cards:Array, picks:Array, problems:object }}
+ * @returns {{ cards:Array, picks:Array, families:Array, aisles:Array, problems:object }}
  */
 export function projectCorpus(entries, reviewed) {
   const picks = (entries || []).filter(isPick);
+  const families = familyEntries(entries || []);
+  const aisles = aisleEntries(entries || []);
   const cards = [];
   const problems = { missingDo: [], unmapped: [], longHeadline: [], longDo: [], flagged: [] };
+
+  problems.familyReferences = lintFamilyReferences(entries || []);
 
   for (const entry of questionEntries(entries || [])) {
     const review = reviewed.get(entry.id);
@@ -81,7 +85,7 @@ export function projectCorpus(entries, reviewed) {
     cards.push(card);
   }
 
-  return { cards, picks, problems };
+  return { cards, picks, families, aisles, problems };
 }
 
 /* ── Write ────────────────────────────────────────────────────────────────── */
@@ -223,7 +227,7 @@ async function main() {
   }
 
   const entries = perimeterKb.entries || [];
-  const { cards, picks, problems } = projectCorpus(entries, reviewed);
+  const { cards, picks, families, aisles, problems } = projectCorpus(entries, reviewed);
 
   // ── Report ──
   const line = (label, list) => {
@@ -233,8 +237,11 @@ async function main() {
 
   console.log(`[counter-cards] ${entries.length} authored entries → ${cards.length} cards`);
   console.log(`[counter-cards] ${picks.length} picks skipped, never migrated`);
+  console.log(`[counter-cards] ${families.length} families skipped, never migrated`);
+  console.log(`[counter-cards] ${aisles.length} aisles skipped, never migrated`);
   console.log(`[counter-cards] reviewed do lines found: ${reviewed.size}`);
 
+  if (problems.familyReferences.length) line('INVALID FAMILY REFERENCES', problems.familyReferences.map((v) => `${v.id}: ${v.code}`));
   if (problems.unmapped.length) line('UNPLACED CONTENT (must be zero)', problems.unmapped);
   if (problems.missingDo.length) line('MISSING do LINE', problems.missingDo);
   if (problems.longHeadline.length) line(`HEADLINE OVER ${MAX_HEADLINE_WORDS} WORDS`, problems.longHeadline);
@@ -242,7 +249,7 @@ async function main() {
   if (problems.flagged.length) line('FLAGGED IN REVIEW (not blocking)', problems.flagged);
 
   const blocking =
-    problems.unmapped.length + problems.missingDo.length + problems.longHeadline.length + problems.longDo.length;
+    problems.unmapped.length + problems.missingDo.length + problems.longHeadline.length + problems.longDo.length + problems.familyReferences.length;
 
   if (blocking) {
     console.error(`\n[counter-cards] ${blocking} blocking problem(s) — nothing was written.`);

@@ -7,6 +7,10 @@ import { DEPTH_FIELDS, summarize, forViewer, projectEntry, projectAll } from './
 import { nonEmpty } from './testGuards.js';
 import { lintCard } from './counterCardLint.js';
 import { supabase } from './supabase.js';
+import { familyForViewer, publicAisle, FAMILY_DEPTH_FIELDS } from './perimeter.js';
+import { perimeterKb, publicEntry, questionEntries } from './perimeter.js';
+import { loadCounterSectionRules } from './sectionRules.js';
+import { anthropic } from './anthropic.js';
 import { counterRouter } from '../routes/counter.js';
 
 const CARDS = nonEmpty(projectAll(), 'projected counter cards', 70);
@@ -15,9 +19,11 @@ const NON_ESSENTIALS = nonEmpty(CARDS.filter((c) => !c.essential), 'non-essentia
 const CARD_FIELDS = nonEmpty(DEPTH_FIELDS, 'card depth fields', 7);
 
 // Exercise the public GET route and optionalAuth, without a network or database.
-function get(url, user) {
+function get(url, user) { return request(url, { user }); }
+
+function request(url, { user, method = 'GET', body } = {}) {
   const parsed = new URL(url, 'http://localhost');
-  const req = { method: 'GET', url, headers: {}, query: Object.fromEntries(parsed.searchParams), user };
+  const req = { method, url, headers: {}, query: Object.fromEntries(parsed.searchParams), user, body, ip: 'family-test' };
   return new Promise((resolve, reject) => {
     const res = {
       statusCode: 200,
@@ -116,7 +122,8 @@ test('full and summary shapes omit teasers and retain full depth on every card',
       assert.ok(out.locked === undefined || out.locked === false, `${card.slug}: card must be unlocked`);
       assert.ok('why' in out, `${card.slug}: missing why`);
       assert.ok('sources' in out, `${card.slug}: missing sources`);
-      assert.deepEqual(out, card, `${card.slug}: full card must be preserved`);
+      const { delta, ...freeCard } = card;
+      assert.deepEqual(out, freeCard, `${card.slug}: existing full depth must be preserved`);
     }
   }
 });
@@ -189,6 +196,128 @@ test('GET full and summary routes omit teasers and retain full depth on every ca
       assert.ok('sources' in out, `${card.slug}: missing sources`);
       assert.equal(out.why, card.why);
       assert.deepEqual(out.sources, card.sources);
+    }
+  }
+});
+
+const FAMILY = {
+  id: 'fam_boundary', kind: 'family', title: 'Fruit', category: 'aisle_produce', decision: 'Choose intact fruit.',
+  why: 'Paid explanation.', buying_tips: ['Paid tip.'], watch_out: ['Paid warning.'],
+  shopper_questions: ['Paid question?'], season_storage: 'Paid storage.',
+  sources: [{ name: 'Paid source', url: 'https://example.invalid/source' }], science: 'Paid science.', pick_steps: ['Paid step.'],
+  extra: 'Never serialized', delta: 'Never serialized on a family',
+};
+const AISLE = {
+  id: 'aisle_produce', kind: 'aisle', title: 'Produce', category: 'aisle_produce', decision: 'Inspect whole produce.',
+  buying_tips: ['Check skin.', 'Check stems.', 'Skip leaks.'], why: 'Not an aisle response field.', delta: 'Not free.',
+};
+const FREE_FAMILY_KEYS = ['id', 'kind', 'title', 'section', 'rule'].sort();
+
+test('viewer serializers omit paid keys for guests/free users and allow only authored paid family depth', () => {
+  const card = { slug: 'fixture', family: FAMILY.id, delta: 'Item exception.', why: 'Old free depth.' };
+  for (const options of [undefined, { premium: false }, { premium: true }]) {
+    const out = forViewer(card, options);
+    assert.equal(out.family, FAMILY.id);
+    assert.equal(out.why, card.why);
+    assert.equal(Object.hasOwn(out, 'delta'), options?.premium === true);
+    const family = familyForViewer(FAMILY, options);
+    for (const field of FAMILY_DEPTH_FIELDS) assert.equal(Object.hasOwn(family, field), options?.premium === true, field);
+    assert.ok(!('extra' in family));
+    assert.ok(!('delta' in family));
+    if (!options?.premium) assert.deepEqual(Object.keys(family).sort(), FREE_FAMILY_KEYS);
+  }
+  assert.ok(!('delta' in summarize(card)));
+  assert.equal(card.delta, 'Item exception.', 'serialization must not mutate shared cards');
+  assert.deepEqual(Object.keys(publicEntry(FAMILY)).sort(), FREE_FAMILY_KEYS);
+  assert.ok(!('delta' in publicEntry({ id: 'item', family: FAMILY.id, delta: 'Secret.' })));
+  assert.deepEqual(publicEntry(AISLE), publicAisle(AISLE));
+  assert.ok(!('why' in publicAisle(AISLE)));
+});
+
+test('family and aisle routes enforce guest/free/paid boundaries and canonical briefings', async (t) => {
+  perimeterKb.entries.push(FAMILY, AISLE);
+  t.after(() => perimeterKb.entries.splice(perimeterKb.entries.indexOf(FAMILY), 2));
+  let subscriptionReads = 0;
+  t.mock.method(supabase, 'from', (table) => {
+    assert.equal(table, 'subscriptions');
+    subscriptionReads++;
+    return { select: () => ({ eq: (_, id) => ({ maybeSingle: async () => ({ data: id === 'paid'
+      ? { status: 'active', current_period_end: '2999-01-01' } : null, error: null }) }) }) };
+  });
+  for (const id of [null, 'free', 'paid']) {
+    const user = id ? { id } : undefined;
+    const before = subscriptionReads;
+    const response = await get(`/counter/families/${FAMILY.id}?premium=true`, user);
+    assert.equal(response.status, 200);
+    assert.equal(subscriptionReads - before, user ? 1 : 0);
+    const family = response.body.family;
+    if (id !== 'paid') assert.deepEqual(Object.keys(family).sort(), FREE_FAMILY_KEYS);
+    for (const field of FAMILY_DEPTH_FIELDS) {
+      assert.equal(Object.hasOwn(family, field), id === 'paid', `${id}: ${field}`);
+    }
+    const aisles = await get('/counter/aisles', user);
+    assert.deepEqual(aisles.body.aisles.find((e) => e.id === AISLE.id), publicAisle(AISLE));
+    assert.equal((await get('/counter/families/aisle_produce', user)).status, 404);
+  }
+  const rules = loadCounterSectionRules([AISLE], [{ section: 'produce', rule: 'Old rule', checks: [] }]);
+  assert.deepEqual(rules, [{ section: 'produce', rule: AISLE.decision, checks: AISLE.buying_tips }]);
+  const routeRules = await get('/counter/section-rules');
+  assert.equal(routeRules.body.rules.find((rule) => rule.section === 'produce').rule, AISLE.decision);
+});
+
+test('all item routes filter delta with one server entitlement lookup, including ask', async (t) => {
+  const fixture = {
+    slug: 'boundary_item', kind: 'shelf', section: 'produce', headline: 'Choose intact fruit.',
+    family: FAMILY.id, delta: 'Choose softer fruit.', why: 'Existing free item depth.',
+    sources: [], essential: true, essential_rank: 1, use_count: 0,
+  };
+  let subscriptionReads = 0;
+  t.mock.method(supabase, 'from', (table) => {
+    if (table === 'subscriptions') {
+      subscriptionReads++;
+      return { select: () => ({ eq: (_, id) => ({ maybeSingle: async () => ({ data: id === 'paid'
+        ? { status: 'active', current_period_end: '2999-01-01' } : null, error: null }) }) }) };
+    }
+    const query = {
+      select: () => query, eq: () => query, limit: () => query, order: () => query, update: () => query,
+      single: async () => ({ data: { use_count: 0 }, error: null }),
+      then: (resolve) => Promise.resolve({ data: [{ ...fixture, do_line: 'Check the skin.' }], error: null }).then(resolve),
+    };
+    return query;
+  });
+  // Ask uses the curated in-memory object; annotate it only for this test and restore it.
+  const asked = questionEntries().find((entry) => entry.id === 'egg_labels');
+  assert.ok(asked);
+  const original = { ...asked };
+  Object.assign(asked, { family: FAMILY.id, delta: fixture.delta });
+  t.after(() => { for (const key of Object.keys(asked)) delete asked[key]; Object.assign(asked, original); });
+  t.mock.method(anthropic.messages, 'create', async () => ({ content: [{ text: '{"answer":"Fixture answer.","refinement":null}' }] }));
+  const routes = [
+    ['/counter/cards', (b) => b.cards[0]],
+    ['/counter/essentials', (b) => b.cards[0]],
+    ['/counter/sections/produce', (b) => b.cards[0]],
+    ['/counter/cards/boundary_item', (b) => b],
+    ['/counter/cards/boundary_item/full', (b) => b.card],
+    ['/counter/summaries?slugs=boundary_item', (b) => b.cards.boundary_item],
+    ['/counter/ask', (b) => b.card],
+  ];
+  for (const id of [null, 'free', 'paid']) {
+    for (const [url, extract] of routes) {
+      const before = subscriptionReads;
+      const response = await request(url, {
+        user: id ? { id } : undefined,
+        method: url.endsWith('/ask') ? 'POST' : 'GET',
+        body: { query: 'eggs', premium: true },
+      });
+      assert.equal(response.status, 200, `${id}: ${url}`);
+      assert.equal(subscriptionReads - before, id ? 1 : 0, `${id}: ${url} entitlement lookup count`);
+      const card = extract(response.body);
+      assert.ok(card, `${id}: ${url}`);
+      assert.equal(card.family, FAMILY.id, url);
+      assert.ok(card.why, url);
+      assert.equal(Object.hasOwn(card, 'delta'), id === 'paid', `${id}: ${url}`);
+      if (id === 'paid') assert.equal(card.delta, fixture.delta);
+      assert.ok(!('entries' in response.body), 'raw ask entries never reach the client');
     }
   }
 });

@@ -1,15 +1,17 @@
 import { Router } from 'express';
 import { supabase, optionalAuth } from '../lib/supabase.js';
 import { clientIp, counterAskLimited } from '../lib/guestRate.js';
-import { PERIMETER_SECTIONS } from '../lib/perimeter.js';
+import {
+  PERIMETER_SECTIONS, familyEntries, aisleEntries, familyForViewer, publicAisle,
+  composeAnswer, COUNTER_UPSELL,
+} from '../lib/perimeter.js';
 import {
   getCard, getSectionCards, getAllCards, getEssentialCards, bumpUseCount, forViewer,
 } from '../lib/counterCards.js';
 import { answerCounterQuestion } from '../lib/counterAskPipeline.js';
 import { premiumForReq } from '../lib/subscription.js';
-import { composeAnswer, COUNTER_UPSELL } from '../lib/perimeter.js';
 import { buildTryPool } from '../lib/tryPool.js';
-import { loadSectionRules } from '../lib/sectionRules.js';
+import { loadCounterSectionRules } from '../lib/sectionRules.js';
 import { logCounterGap } from '../lib/counterGaps.js';
 
 // The Counter's card corpus, as the client reads it.
@@ -30,6 +32,22 @@ import { logCounterGap } from '../lib/counterGaps.js';
 
 export const counterRouter = Router();
 
+counterRouter.get('/counter/aisles', optionalAuth, (_req, res) => {
+  return res.json({ aisles: aisleEntries().map((entry) => publicAisle(entry)) });
+});
+
+counterRouter.get('/counter/families/:id', optionalAuth, async (req, res) => {
+  const entry = familyEntries().find((entry) => entry.id === req.params.id);
+  if (!entry) return res.status(404).json({ error: 'not_found' });
+  try {
+    const premium = req.user ? await premiumForReq(req) : false;
+    return res.json({ family: familyForViewer(entry, { premium }) });
+  } catch (err) {
+    console.error('[kristy] /api/counter/families/:id error:', err?.message || err);
+    return res.status(500).json({ error: 'counter_unavailable' });
+  }
+});
+
 counterRouter.get('/counter/try', (_req, res) => {
   return res.json({ items: buildTryPool() });
 });
@@ -41,6 +59,7 @@ const browseRow = (c) => ({
   headline: c.headline,
   kind: c.kind,
   tier: c.tier,
+  family: c.family ?? null,
 });
 
 counterRouter.get('/counter/sections', async (_req, res) => {
@@ -88,7 +107,8 @@ counterRouter.get('/counter/sections/:id', optionalAuth, async (req, res) => {
   const meta = PERIMETER_SECTIONS.find((s) => s.id === req.params.id);
   if (!meta) return res.status(404).json({ error: 'not_found' });
   try {
-    const cards = (await getSectionCards(meta.id, supabase)).map(forViewer);
+    const premium = req.user ? await premiumForReq(req) : false;
+    const cards = (await getSectionCards(meta.id, supabase)).map((card) => forViewer(card, { premium }));
     return res.json({
       id: meta.id,
       title: meta.title,
@@ -104,9 +124,10 @@ counterRouter.get('/counter/sections/:id', optionalAuth, async (req, res) => {
 
 // The essentials shelf — the cards the index renders in place, before any navigation.
 // Registered BEFORE /cards/:slug, which would otherwise swallow "essentials".
-counterRouter.get('/counter/essentials', optionalAuth, async (_req, res) => {
+counterRouter.get('/counter/essentials', optionalAuth, async (req, res) => {
   try {
-    const cards = (await getEssentialCards(supabase)).map(forViewer);
+    const premium = req.user ? await premiumForReq(req) : false;
+    const cards = (await getEssentialCards(supabase)).map((card) => forViewer(card, { premium }));
     return res.json({ cards, count: cards.length });
   } catch (err) {
     console.error('[kristy] /api/counter/essentials error:', err?.message || err);
@@ -114,8 +135,8 @@ counterRouter.get('/counter/essentials', optionalAuth, async (_req, res) => {
   }
 });
 
-// Per-section buying rules, authored in lib/sectionRules.json; [] until that file exists.
-counterRouter.get('/counter/section-rules', optionalAuth, (_req, res) => res.json({ rules: loadSectionRules() }));
+// Authored aisles own their briefing; the legacy rules fill sections not authored yet.
+counterRouter.get('/counter/section-rules', optionalAuth, (_req, res) => res.json({ rules: loadCounterSectionRules() }));
 
 // "Ask for this card": a list item with no card. Stores the scrubbed topic only (logCounterGap),
 // never the asker, on the counter's own per-IP bucket for guests.
@@ -130,9 +151,10 @@ counterRouter.post('/counter/request', optionalAuth, async (req, res) => {
 });
 
 // The whole corpus. Registered BEFORE /cards/:slug, which would otherwise swallow it.
-counterRouter.get('/counter/cards', optionalAuth, async (_req, res) => {
+counterRouter.get('/counter/cards', optionalAuth, async (req, res) => {
   try {
-    const cards = (await getAllCards(supabase)).map(forViewer);
+    const premium = req.user ? await premiumForReq(req) : false;
+    const cards = (await getAllCards(supabase)).map((card) => forViewer(card, { premium }));
     return res.json({ cards, count: cards.length });
   } catch (err) {
     console.error('[kristy] /api/counter/cards error:', err?.message || err);
@@ -144,7 +166,7 @@ counterRouter.get('/counter/cards', optionalAuth, async (_req, res) => {
 /* GET /api/counter/summaries?slugs=a,b,c
    The summaries for a known set of slugs, in one request.
 
-   Cards are free in full here too; the requested slugs bound the response.
+   Existing card depth stays free; delta follows the viewer entitlement.
 
    NO use_count BUMP. A card that rode along with a list render was not opened, and
    counting it would make the number mean "appeared on screen" — which is the same
@@ -160,10 +182,11 @@ counterRouter.get('/counter/summaries', optionalAuth, async (req, res) => {
     .slice(0, SUMMARY_SLUG_CAP);
   if (!slugs.length) return res.json({ cards: {} });
   try {
+    const premium = req.user ? await premiumForReq(req) : false;
     const want = new Set(slugs);
     const cards = {};
     for (const c of await getAllCards(supabase)) {
-      if (want.has(c.slug)) cards[c.slug] = forViewer(c);
+      if (want.has(c.slug)) cards[c.slug] = forViewer(c, { premium });
     }
     return res.json({ cards });
   } catch (err) {
@@ -172,13 +195,14 @@ counterRouter.get('/counter/summaries', optionalAuth, async (req, res) => {
   }
 });
 
-// GET /api/counter/cards/:slug/full — full cards are free for guests and members.
+// GET /api/counter/cards/:slug/full — item depth stays free; delta is premium.
 counterRouter.get('/counter/cards/:slug/full', optionalAuth, async (req, res) => {
   try {
+    const premium = req.user ? await premiumForReq(req) : false;
     const card = await getCard(req.params.slug, supabase);
     if (!card) return res.status(404).json({ error: 'not_found' });
 
-    return res.json({ card: forViewer(card) });
+    return res.json({ card: forViewer(card, { premium }) });
   } catch (err) {
     console.error('[kristy] /api/counter/cards/:slug/full error:', err?.message || err);
     return res.status(500).json({ error: 'counter_unavailable' });
@@ -186,6 +210,7 @@ counterRouter.get('/counter/cards/:slug/full', optionalAuth, async (req, res) =>
 });
 counterRouter.get('/counter/cards/:slug', optionalAuth, async (req, res) => {
   try {
+    const premium = req.user ? await premiumForReq(req) : false;
     const card = await getCard(req.params.slug, supabase);
     if (!card) return res.status(404).json({ error: 'not_found' });
     // A BROWSE OPEN COUNTS, not just an ask that retrieved. use_count is a counter on the
@@ -193,7 +218,7 @@ counterRouter.get('/counter/cards/:slug', optionalAuth, async (req, res) => {
     // reach earned it at least as much as one a matcher surfaced. Fire-and-forget: nobody
     // waits on our bookkeeping.
     bumpUseCount(card.slug, supabase, card.use_count);
-    return res.json(forViewer(card));
+    return res.json(forViewer(card, { premium }));
   } catch (err) {
     console.error('[kristy] /api/counter/cards/:slug error:', err?.message || err);
     return res.status(500).json({ error: 'counter_unavailable' });
@@ -232,8 +257,9 @@ counterRouter.post('/counter/ask', optionalAuth, async (req, res) => {
 
     if (result.out_of_scope || !result.card) return res.json(result);
 
-    // Asking and the full card are free, generation included.
-    result.card = forViewer(result.card);
+    // Existing item depth stays free; only the new exception needs entitlement.
+    const premium = req.user ? await premiumForReq(req) : false;
+    result.card = forViewer(result.card, { premium });
 
     // A GENERATED card is never personalized. composeAnswer is claim-locked to matched KB
     // entries, and a generated card has none — personalizing it would mean a model call
@@ -242,8 +268,7 @@ counterRouter.post('/counter/ask', optionalAuth, async (req, res) => {
     const { entries: _entries, ...body } = result;
     if (!personalizable) return res.json(body);
 
-    // Personalization: premium, and only when there is something to read against.
-    const premium = req.user ? await premiumForReq(req) : false;
+    // Personalization reuses the entitlement already computed for the card.
     if (!premium) {
       return res.json({ ...body, gated: true, upsell: COUNTER_UPSELL });
     }
