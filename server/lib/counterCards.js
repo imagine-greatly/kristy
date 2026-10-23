@@ -677,7 +677,11 @@ const CARD_COLUMNS =
 async function selectCards(client, apply) {
   if (!client) return null;
   try {
-    const { data, error } = await apply(client.from(TABLE).select(CARD_COLUMNS));
+    let { data, error } = await apply(client.from(TABLE).select(CARD_COLUMNS));
+    // family/delta ship in additive SQL; until it is applied, read the legacy columns.
+    if (error && /\b(family|delta)\b/.test(error.message || '')) {
+      ({ data, error } = await apply(client.from(TABLE).select(CARD_COLUMNS.replace(', family, delta', ''))));
+    }
     if (error) return null;
     return (data || []).map(rowToCard);
   } catch {

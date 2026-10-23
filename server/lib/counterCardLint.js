@@ -1033,6 +1033,11 @@ export function lintFamilyReferences(entries) {
       const target = byId.get(entry.family);
       if (!target) out.push({ code: 'FAMILY_DANGLING', detail: `missing family ${entry.family}` });
       else if (target.kind !== 'family') out.push({ code: 'FAMILY_WRONG_KIND', detail: `${entry.family} is not a family` });
+      else if (typeof entry.delta === 'string' && typeof target.decision === 'string') {
+        const norm = (t) => t.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+        const d = norm(entry.delta), r = norm(target.decision);
+        if (r && (d === r || d.includes(r))) out.push({ code: 'DELTA_RESTATES_FAMILY', detail: 'delta repeats the family rule' });
+      }
     }
     return out.map((v) => ({ ...v, id: entry.id }));
   });
@@ -1070,6 +1075,9 @@ function lintNavigation(entry, kind) {
   if (kind === 'aisle' && (!Array.isArray(entry.buying_tips) || entry.buying_tips.length < 3 || entry.buying_tips.length > 5)) {
     fail('AISLE_CHECKS_INVALID', 'aisle briefing needs 3–5 buying tips');
   }
+  const copy = ['title', 'decision', 'why', 'season_storage', 'buying_tips', 'watch_out', 'shopper_questions'].flatMap((f) => stringsIn(entry[f]));
+  for (const v of claimLockViolations({ look_for: copy, detail: '' })) out.push(v);
+  if (copy.some((t) => /[$€£]\s?\d|\b(price[sd]?|cheap(er)?|costs?|dollars?)\b/i.test(t))) fail(`${prefix}_PRICE`, 'no price talk');
   if (Object.hasOwn(entry, 'sources') && (!Array.isArray(entry.sources) || !entry.sources.every((s) =>
     s && typeof s === 'object' && textValue(s.name) && typeof s.url === 'string' && /^https?:\/\/\S+$/.test(s.url)))) {
     fail(`${prefix}_SOURCES_INVALID`, 'sources must be {name,url} objects with HTTP(S) URLs');
