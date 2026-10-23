@@ -1,0 +1,641 @@
+[
+ {
+  "id": "dark_chocolate",
+  "title": "Dark chocolate bars",
+  "aliases": [
+   "dark chocolate",
+   "dark chocolate bar",
+   "chocolate bar",
+   "cacao bar",
+   "70 percent chocolate",
+   "baking chocolate"
+  ],
+  "category": "bulk_pantry",
+  "question": "How do you pick a dark chocolate bar?",
+  "decision": "An occasional bar, short list, lower cocoa percentage.",
+  "why": "Lab testing found more lead and cadmium as cocoa percentage climbed. Traditional guides keep chocolate occasional.",
+  "short_answer": "Treat dark chocolate as a treat, not a daily habit. Higher cocoa percentages tested more likely to carry lead and cadmium, so a lower percentage is the steadier pick. Organic on the label did not mean lower metals in testing.",
+  "detail": "Dark chocolate is generally at least 65 percent cacao. In independent lab testing, the higher the amount of cocoa, the more likely the lab found concerning levels of heavy metals like lead and cadmium. The same concern reaches hot cocoa and brownie and cake mixes. The testing advice: treat chocolate as a treat, try dark chocolates with lower cocoa percentages, do not assume organic dark chocolates are safer, do not give kids much dark chocolate, and think about total chocolate eaten across the week. Traditional guides list chocolate, cocoa and cacao among baking items to avoid and say chocolate should not be eaten habitually. A traditional chocolate maker in the same guide describes bars sweetened with whole cane sugar and no additives beyond nuts and spices.",
+  "evidence_tier": "kristys_standard",
+  "sources": [
+   {
+    "name": "Mamavation: Dark chocolate lead and cadmium testing",
+    "url": "https://mamavation.com/food/dark-chocolate-lead-cadmium.html"
+   },
+   {
+    "name": "Weston A. Price Foundation: Shopping guide categories",
+    "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+   }
+  ],
+  "kristy_take": "Dark chocolate is a treat food. A short list and a moderate cocoa percentage make the better bar.",
+  "cart_pick": "Dark chocolate bar with a short list",
+  "buying_tips": [
+   "Higher cocoa percentages tested more likely to carry lead and cadmium.",
+   "Look for organic cacao first, a short list, and whole cane sugar as the sweetener.",
+   "Pass on bars with long lists of additives and flavorings.",
+   "Treat a bar as a treat; count cocoa mixes and baking chocolate in the week too.",
+   "Keep dark chocolate small for kids."
+  ],
+  "watch_out": [
+   "Organic on the label did not mean lower lead or cadmium in testing."
+  ],
+  "pick_steps": [
+   "Pick a bar with a short ingredient list.",
+   "Pick a moderate cocoa percentage over the darkest bar."
+  ],
+  "science": "Dark chocolate is generally at least 65 percent cacao. In independent testing, higher cocoa percentages were more likely to show concerning lead and cadmium. Organic bars were not reliably lower. Hot cocoa and brownie and cake mixes carry the same concern.",
+  "labels_decoded": [
+   {
+    "term": "Percent cacao",
+    "meaning": "How much of the bar comes from cocoa; dark chocolate is generally at least 65 percent."
+   },
+   {
+    "term": "Organic",
+    "meaning": "A farming standard; testing found it did not mean lower metals."
+   }
+  ],
+  "tier_note": "A short list and moderate cocoa percentage rank above the darkest bars.",
+  "asked_as": [
+   "which dark chocolate should i buy",
+   "how do i pick a chocolate bar",
+   "is dark chocolate worth buying"
+  ]
+ },
+ {
+  "id": "molasses_whole_cane_sweeteners",
+  "title": "Molasses and whole cane sweeteners",
+  "aliases": [
+   "molasses",
+   "blackstrap molasses",
+   "rapadura",
+   "sucanat",
+   "whole cane sugar",
+   "dehydrated cane juice",
+   "sorghum syrup"
+  ],
+  "category": "bulk_pantry",
+  "question": "How do you pick molasses or a whole cane sweetener?",
+  "decision": "Organic molasses or dried whole cane juice over white sugar.",
+  "why": "Traditional guides rank molasses and dehydrated cane juice among the best sweeteners and avoid white sugar.",
+  "short_answer": "Molasses and dehydrated whole cane juice keep more of the cane than white sugar. Traditional guides list them with maple, raw honey and sorghum syrup. The same guides still limit sweets overall.",
+  "detail": "Traditional shopping guides list organic natural sweeteners as the best choice: molasses, dehydrated sugar cane juice, malt syrups, coconut sugar, palm sugar, date sugar, sorghum syrup, maple syrup and sugar, and raw honey. They avoid white sugar, corn syrup, high fructose corn syrup, brown rice syrup and concentrated fruit juices. A companion guide names Rapadura as dehydrated cane sugar juice and says to read labels and avoid sucrose, dextrose, fructose and all artificial sweeteners. The same guide says to limit even natural sweets and not to eat them alone. Blackstrap molasses appears in traditional recipes as a spoonful in cooked greens.",
+  "evidence_tier": "kristys_standard",
+  "sources": [
+   {
+    "name": "Weston A. Price Foundation: Shopping guide categories",
+    "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+   },
+   {
+    "name": "Weston A. Price Foundation: Replacing refined sugars with natural sugars",
+    "url": "https://www.westonaprice.org/health-topics/making-it-practical/replacing-refined-sugars-with-natural-sugars-one-step-at-a-time/"
+   },
+   {
+    "name": "Weston A. Price Foundation: Collard greens with wild rice",
+    "url": "https://www.westonaprice.org/collard-greens-with-wild-rice/"
+   }
+  ],
+  "kristy_take": "Molasses and dried cane juice are sugar with more of the cane left in. Still a sweet, still a small amount.",
+  "cart_pick": "Molasses or dehydrated cane juice",
+  "buying_tips": [
+   "Molasses and dehydrated cane juice keep more of the cane than white sugar.",
+   "Look for organic molasses first, or dehydrated whole cane juice with one ingredient.",
+   "Pass on white sugar, corn syrup and brown rice syrup.",
+   "Maple syrup, raw honey and sorghum syrup sit in the same natural group.",
+   "Use even natural sweeteners in small amounts, with a meal."
+  ],
+  "pick_steps": [
+   "Pick molasses or dehydrated cane juice with nothing added.",
+   "Pick a small jar; a little goes a long way."
+  ],
+  "science": "Traditional guides list molasses, dehydrated sugar cane juice, sorghum syrup, maple and raw honey as the natural sweeteners. White sugar, corn syrup, high fructose corn syrup, brown rice syrup and concentrated fruit juices are on the avoid list.",
+  "labels_decoded": [
+   {
+    "term": "Rapadura",
+    "meaning": "Dehydrated cane sugar juice, the whole juice dried."
+   },
+   {
+    "term": "Blackstrap molasses",
+    "meaning": "A dark molasses used by the spoonful in traditional cooking."
+   }
+  ],
+  "tier_note": "Whole cane and molasses rank above white sugar and corn syrup.",
+  "asked_as": [
+   "which molasses should i buy",
+   "how do i pick a whole cane sugar",
+   "is sucanat worth buying"
+  ]
+ },
+ {
+  "id": "baking_powder",
+  "title": "Baking powder",
+  "aliases": [
+   "baking powder",
+   "aluminum free baking powder",
+   "aluminum-free baking powder",
+   "double acting baking powder"
+  ],
+  "category": "bulk_pantry",
+  "question": "How do you pick baking powder?",
+  "decision": "Aluminum-free baking powder.",
+  "why": "Traditional guides put aluminum-free baking powder in the best column and powder with aluminum on the avoid list.",
+  "short_answer": "Read the ingredient list for aluminum. Traditional shopping guides keep aluminum-free baking powder and pass on powder that contains aluminum.",
+  "detail": "Traditional shopping guides list aluminum-free baking powder as the best choice in the baking aisle. Baking powder containing aluminum sits on the avoid list in the same section.",
+  "evidence_tier": "kristys_standard",
+  "sources": [
+   {
+    "name": "Weston A. Price Foundation: Shopping guide categories",
+    "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+   }
+  ],
+  "kristy_take": "One small swap in the baking aisle: the powder without aluminum.",
+  "cart_pick": "Aluminum-free baking powder",
+  "buying_tips": [
+   "Traditional guides keep aluminum-free baking powder and avoid the kind with aluminum.",
+   "Look for “aluminum-free” on the can.",
+   "Pass on baking powder with aluminum in the ingredient list."
+  ],
+  "pick_steps": [
+   "Pick a can marked aluminum-free."
+  ],
+  "science": "Traditional guides list aluminum-free baking powder as best and baking powder containing aluminum as one to avoid.",
+  "labels_decoded": [
+   {
+    "term": "Aluminum-free",
+    "meaning": "The powder is made without an aluminum ingredient."
+   }
+  ],
+  "tier_note": "The aluminum-free can ranks above powder that contains aluminum.",
+  "asked_as": [
+   "which baking powder should i buy",
+   "how do i pick a baking powder",
+   "is aluminum free baking powder worth buying"
+  ]
+ },
+ {
+  "id": "cornmeal_polenta_grits",
+  "title": "Cornmeal, polenta and grits",
+  "aliases": [
+   "cornmeal",
+   "corn meal",
+   "polenta",
+   "grits",
+   "hominy grits",
+   "masa harina",
+   "nixtamalized corn"
+  ],
+  "category": "bulk_pantry",
+  "question": "How do you pick cornmeal, polenta or grits?",
+  "decision": "Organic whole grain corn, lime-treated when offered, soaked first.",
+  "why": "Traditional cooks soaked corn in lime water to soften it and release niacin. Guides avoid quick-cooking grains.",
+  "short_answer": "Look for organic whole grain corn. Corn labeled nixtamalized, treated with lime, follows the traditional preparation. Soak cornmeal and polenta before cooking, and pass on quick-cooking grains.",
+  "detail": "Native American cooks first soaked dry corn in lime water, a process called nixtamalization, which softens the corn and releases vitamin B3 that otherwise stays bound in the grain. Some then fermented the treated corn. Traditional shopping guides list organic whole grains as best, say all grains should be soaked in an acidic medium before cooking, and avoid non-organic grains and quick-cooking grains. A traditional grain guide says soaking in an acidic medium for seven hours is fine, and cooking in broth adds minerals. Hot cereals keep best bought in sealed packages rather than bins.",
+  "evidence_tier": "kristys_standard",
+  "sources": [
+   {
+    "name": "Weston A. Price Foundation: Guts and grease, the diet of Native Americans",
+    "url": "https://www.westonaprice.org/health-topics/traditional-diets/guts-and-grease-the-diet-of-native-americans/"
+   },
+   {
+    "name": "Weston A. Price Foundation: Shopping guide categories",
+    "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+   },
+   {
+    "name": "Weston A. Price Foundation: Grains, seeds, nuts and beans FAQs",
+    "url": "https://www.westonaprice.org/health-topics/grains-seeds-nuts-beans-faqs/"
+   }
+  ],
+  "kristy_take": "Corn was a lime-soaked food long before it was a box mix. Whole grain and a soak bring it back closer.",
+  "cart_pick": "Whole grain cornmeal",
+  "buying_tips": [
+   "Traditional cooks soaked corn in lime water before using it.",
+   "Look for organic whole grain corn first, or corn labeled nixtamalized.",
+   "Pass on quick-cooking or instant grits and polenta.",
+   "Buy in a sealed package, not from a bin.",
+   "Soak cornmeal or polenta in water with a splash of something sour before cooking."
+  ],
+  "pick_steps": [
+   "Pick whole grain cornmeal, or corn labeled nixtamalized.",
+   "Pick a sealed bag over the bulk bin."
+  ],
+  "science": "Nixtamalization soaks dry corn in lime water, softening it and releasing vitamin B3 that otherwise stays bound in the grain. Traditional guides soak all grains in an acidic medium and avoid quick-cooking grains.",
+  "labels_decoded": [
+   {
+    "term": "Nixtamalized",
+    "meaning": "Corn soaked in lime water, the traditional way to soften it and free its B3."
+   },
+   {
+    "term": "Instant or quick-cooking",
+    "meaning": "Pre-processed to cook fast; traditional guides avoid these grains."
+   }
+  ],
+  "tier_note": "Whole grain and lime-treated corn rank above instant mixes.",
+  "asked_as": [
+   "which cornmeal should i buy",
+   "how do i pick a polenta",
+   "are grits worth buying"
+  ]
+ },
+ {
+  "id": "rice_cakes_puffed_grains",
+  "title": "Rice cakes and puffed grains",
+  "aliases": [
+   "rice cakes",
+   "rice cake",
+   "puffed rice",
+   "puffed grains",
+   "puffed wheat",
+   "corn cakes",
+   "puffed millet"
+  ],
+  "category": "bulk_pantry",
+  "question": "Are rice cakes or puffed grains a good pick?",
+  "decision": "Skip puffed grains; whole grain crackers or soaked grains instead.",
+  "why": "Traditional guides list puffed grain products like rice cakes to avoid; grains are pressure-heated, never soaked.",
+  "short_answer": "Traditional guides put puffed grain products, rice cakes included, on the avoid list. The grain is rapidly heated under pressure rather than soaked or slow cooked. Whole grains soaked and cooked at home are the traditional swap.",
+  "detail": "Traditional shopping guides list puffed grain products, such as rice cakes, among the grains to avoid, along with extruded cereals and quick-cooking grains. A traditional food guide groups rice cakes with breakfast cereals as grains that have been rapidly heated or subjected to pressure, and describes the traditional alternative: grains soaked or sour leavened, then cooked. The same guides list organic whole grain rice and whole grains, soaked in an acidic medium, as the best grains.",
+  "evidence_tier": "kristys_standard",
+  "sources": [
+   {
+    "name": "Weston A. Price Foundation: Shopping guide categories",
+    "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+   },
+   {
+    "name": "Weston A. Price Foundation: Why we cook, chop, ferment, salt and dry",
+    "url": "https://www.westonaprice.org/health-topics/why-we-cook-and-chop-ferment-salt-and-dry/"
+   }
+  ],
+  "kristy_take": "Rice cakes look light and plain, but puffing is a pressure process. Soaked whole grains are the traditional way.",
+  "cart_pick": "Brown rice to soak and cook",
+  "buying_tips": [
+   "Puffed grains are heated under pressure, not soaked or slow cooked.",
+   "Look for organic whole grain rice to soak and cook at home.",
+   "Pass on rice cakes, corn cakes and puffed cereals.",
+   "Buy whole grain rice in a sealed package, not from a bin."
+  ],
+  "pick_steps": [
+   "Pick whole grain rice or another whole grain to soak and cook."
+  ],
+  "science": "Traditional guides list puffed grain products, such as rice cakes, to avoid. They group them with grains rapidly heated or put under pressure. The traditional method soaks or sour leavens grains before cooking.",
+  "labels_decoded": [
+   {
+    "term": "Puffed",
+    "meaning": "Grain rapidly heated under pressure until it expands."
+   }
+  ],
+  "tier_note": "Soaked whole grains rank above any puffed grain product.",
+  "asked_as": [
+   "which rice cakes should i buy",
+   "how do i pick a puffed rice",
+   "are rice cakes worth buying"
+  ]
+ },
+ {
+  "id": "wild_rice",
+  "title": "Wild rice",
+  "aliases": [
+   "wild rice",
+   "wildcrafted wild rice",
+   "wild rice blend"
+  ],
+  "category": "bulk_pantry",
+  "question": "How do you pick wild rice?",
+  "decision": "Wildcrafted wild rice, soaked seven hours before cooking.",
+  "why": "Traditional guides name wildcrafted wild rice among the best grains and soak it before cooking.",
+  "short_answer": "Look for wildcrafted wild rice, gathered from where it grows. Traditional guides list it with organic whole grains as the best choices. Soak it at least seven hours in warm water with a splash of something sour before cooking.",
+  "detail": "Wild rice was a traditional food of the Great Lakes peoples. Traditional shopping guides list wildcrafted wild rice among the best grains, alongside organic whole grain rice and dried beans, and say all grains should be soaked in an acidic medium. A traditional recipe soaks wild rice in warm water with whey, yogurt, kefir, buttermilk, lemon juice or vinegar for at least seven hours, then simmers it with broth. Grains keep best bought in sealed packages rather than bins.",
+  "evidence_tier": "kristys_standard",
+  "sources": [
+   {
+    "name": "Weston A. Price Foundation: Shopping guide categories",
+    "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+   },
+   {
+    "name": "Weston A. Price Foundation: Collard greens with wild rice",
+    "url": "https://www.westonaprice.org/collard-greens-with-wild-rice/"
+   },
+   {
+    "name": "Weston A. Price Foundation: Guts and grease, the diet of Native Americans",
+    "url": "https://www.westonaprice.org/health-topics/traditional-diets/guts-and-grease-the-diet-of-native-americans/"
+   }
+  ],
+  "kristy_take": "Wild rice is a gathered grain with a long traditional history. Wildcrafted is the closest to how it grows.",
+  "cart_pick": "Wildcrafted wild rice",
+  "buying_tips": [
+   "Wild rice was a traditional food of the Great Lakes peoples.",
+   "Look for “wildcrafted” wild rice first.",
+   "Pass on quick-cooking rice mixes.",
+   "Buy it in a sealed package, not from a bin.",
+   "Soak it at least seven hours in warm water with a splash of vinegar or lemon."
+  ],
+  "pick_steps": [
+   "Pick wildcrafted wild rice in a sealed bag."
+  ],
+  "science": "Traditional guides list wildcrafted wild rice among the best grains and soak all grains in an acidic medium. A traditional recipe soaks wild rice at least seven hours before simmering it in broth.",
+  "labels_decoded": [
+   {
+    "term": "Wildcrafted",
+    "meaning": "Gathered from where the plant grows wild."
+   }
+  ],
+  "tier_note": "Wildcrafted wild rice ranks above seasoned quick-cooking blends.",
+  "asked_as": [
+   "which wild rice should i buy",
+   "how do i pick a wild rice",
+   "is wild rice worth buying"
+  ]
+ },
+ {
+  "id": "split_peas",
+  "title": "Split peas and lentil varieties",
+  "aliases": [
+   "split peas",
+   "split pea",
+   "yellow split peas",
+   "green split peas",
+   "red lentils",
+   "french lentils",
+   "green lentils"
+  ],
+  "category": "bulk_pantry",
+  "question": "How do you pick split peas or lentils?",
+  "decision": "Organic dried split peas or lentils, soaked before cooking.",
+  "why": "Traditional guides list organic dried lentils among the best foods and soak legumes before long cooking.",
+  "short_answer": "Buy organic dried split peas or lentils. Traditional guides soak legumes in an acidic medium, then cook them a long time; cooking in broth adds minerals.",
+  "detail": "Traditional shopping guides list organic dried beans and lentils among the best grains and legumes, and say they should be soaked in an acidic medium before cooking. A traditional food guide says beans are indigestible unless soaked and then cooked a long time, and that some cultures then ferment cooked legumes into a sour porridge. A traditional grain guide says soaking in an acidic medium for seven hours is fine, and cooking in broth adds minerals. Non-organic grains and legumes from China sit on the avoid list.",
+  "evidence_tier": "kristys_standard",
+  "sources": [
+   {
+    "name": "Weston A. Price Foundation: Shopping guide categories",
+    "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+   },
+   {
+    "name": "Weston A. Price Foundation: Why we cook, chop, ferment, salt and dry",
+    "url": "https://www.westonaprice.org/health-topics/why-we-cook-and-chop-ferment-salt-and-dry/"
+   },
+   {
+    "name": "Weston A. Price Foundation: Grains, seeds, nuts and beans FAQs",
+    "url": "https://www.westonaprice.org/health-topics/grains-seeds-nuts-beans-faqs/"
+   }
+  ],
+  "kristy_take": "Split peas and lentils are a dried staple. A soak and a long simmer is the traditional way in.",
+  "cart_pick": "Dried split peas or lentils",
+  "buying_tips": [
+   "Traditional cooks soak legumes, then cook them a long time.",
+   "Look for organic dried split peas or lentils first.",
+   "Pass on legumes from China and non-organic bulk bins.",
+   "Soak about seven hours in warm water with a splash of something sour.",
+   "Simmer in broth for added minerals."
+  ],
+  "pick_steps": [
+   "Pick dried split peas or lentils in a sealed bag."
+  ],
+  "science": "Traditional guides list organic dried lentils as best and soak legumes in an acidic medium. Beans are described as indigestible unless soaked and cooked a long time. Cooking in broth adds minerals.",
+  "labels_decoded": [
+   {
+    "term": "Organic dried lentils",
+    "meaning": "Listed among the best legumes in traditional shopping guides."
+   }
+  ],
+  "tier_note": "Organic dried legumes, soaked at home, rank above conventional bulk bins.",
+  "asked_as": [
+   "which split peas should i buy",
+   "how do i pick a lentil",
+   "are red lentils worth buying"
+  ]
+ },
+ {
+  "id": "applesauce",
+  "title": "Applesauce",
+  "aliases": [
+   "applesauce",
+   "apple sauce",
+   "unsweetened applesauce",
+   "apple puree",
+   "applesauce pouch"
+  ],
+  "category": "bulk_pantry",
+  "question": "How do you pick applesauce?",
+  "decision": "Organic unsweetened applesauce, apples alone on the list.",
+  "why": "Apples rank on the pesticide residue list, so organic matters. Traditional guides avoid added sugar and juice concentrates.",
+  "short_answer": "Look for organic applesauce with apples as the only ingredient. Conventional apples carry heavy pesticide residue. Traditional guides pass on corn syrup, white sugar and concentrated fruit juice as sweeteners.",
+  "detail": "Apples appear on the annual pesticide residue list, which notes that apples are treated with a chemical after harvest. Traditional shopping guides avoid white sugar, corn syrup, high fructose corn syrup and concentrated fruit juices as sweeteners, and list most canned fruits among the foods to avoid. The same guides favor fresh or frozen organic fruit without added acids.",
+  "evidence_tier": "kristys_standard",
+  "sources": [
+   {
+    "name": "EWG: Dirty Dozen",
+    "url": "https://www.ewg.org/foodnews/dirty-dozen.php"
+   },
+   {
+    "name": "Weston A. Price Foundation: Shopping guide categories",
+    "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+   }
+  ],
+  "kristy_take": "Applesauce can be just cooked apples. The jar that lists only apples is the one to keep.",
+  "cart_pick": "Unsweetened applesauce, apples only",
+  "buying_tips": [
+   "Apples rank on the annual pesticide residue list.",
+   "Look for organic applesauce first, with apples as the only ingredient.",
+   "Pass on applesauce sweetened with corn syrup, sugar or juice concentrate.",
+   "Fresh organic apples cooked at home are the closest version."
+  ],
+  "pick_steps": [
+   "Pick a jar whose list reads apples and nothing else."
+  ],
+  "science": "Apples are on the annual pesticide residue list and are treated with a chemical after harvest. Traditional guides avoid corn syrup, white sugar and concentrated fruit juices as sweeteners.",
+  "labels_decoded": [
+   {
+    "term": "Unsweetened",
+    "meaning": "No sugar or sweetener added to the apples."
+   },
+   {
+    "term": "Juice concentrate",
+    "meaning": "Concentrated fruit juice used as a sweetener; traditional guides avoid it."
+   }
+  ],
+  "tier_note": "Organic apples alone rank above sweetened jars.",
+  "asked_as": [
+   "which applesauce should i buy",
+   "how do i pick an applesauce",
+   "is applesauce worth buying"
+  ]
+ },
+ {
+  "id": "salad_dressing",
+  "title": "Salad dressing",
+  "aliases": [
+   "salad dressing",
+   "bottled dressing",
+   "vinaigrette",
+   "ranch dressing",
+   "caesar dressing",
+   "italian dressing",
+   "balsamic vinaigrette"
+  ],
+  "category": "bulk_pantry",
+  "question": "How do you pick a salad dressing?",
+  "decision": "Olive oil dressing, short list, no seed oils.",
+  "why": "Testing found long dressing lists carry more problem ingredients. Traditional guides favor olive oil over seed oils.",
+  "short_answer": "Look for a dressing built on olive oil with a short list. The more ingredients, the more likely a bottle carries additives like EDTA, artificial colors or propylene glycol. Traditional guides pass on soybean, canola and vegetable oils.",
+  "detail": "An ingredient review of salad dressings found that the more ingredients, the more likely a bottle contained problem ingredients. The ingredients to avoid were high fructose corn syrup, EDTA, potassium sorbate and sodium benzoate, artificial colors, propylene glycol, polysorbate 60, natural and artificial flavors, and MSG, along with oils from conventional canola, vegetable or soybean. Bottles with organic ingredients and fully disclosed lists ranked best, and some of the best sit in the refrigerated section. Traditional shopping guides list olive oil and extra virgin olive oil as best, avoid most commercial seed oils, and list raw vinegars and aged balsamic among the best condiments. A traditional guide describes a salad topped with olive oil dressing.",
+  "evidence_tier": "kristys_standard",
+  "sources": [
+   {
+    "name": "Mamavation: Salad dressing and marinade ingredients",
+    "url": "https://mamavation.com/food/salad-dressing-marinade.html"
+   },
+   {
+    "name": "Weston A. Price Foundation: Shopping guide categories",
+    "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+   },
+   {
+    "name": "Weston A. Price Foundation: Replacing refined sugars with natural sugars",
+    "url": "https://www.westonaprice.org/health-topics/making-it-practical/replacing-refined-sugars-with-natural-sugars-one-step-at-a-time/"
+   }
+  ],
+  "kristy_take": "A dressing can be oil, vinegar and herbs. The shorter the list on the bottle, the closer it stays to that.",
+  "cart_pick": "Olive oil vinaigrette with a short list",
+  "buying_tips": [
+   "The more ingredients in a dressing, the more problem additives it tends to carry.",
+   "Look for organic ingredients first, olive oil as the oil, and a fully named list.",
+   "Pass on dressings made with soybean, canola or vegetable oil.",
+   "Check the refrigerated section; some of the shortest lists live there.",
+   "Olive oil with raw vinegar or aged balsamic is the traditional base."
+  ],
+  "pick_steps": [
+   "Pick a dressing whose oil is olive oil.",
+   "Pick the shortest fully named list."
+  ],
+  "science": "An ingredient review found longer dressing lists more likely to carry corn syrup, EDTA, preservatives, artificial colors or added flavors. Traditional guides favor olive oil and avoid most commercial seed oils.",
+  "labels_decoded": [
+   {
+    "term": "Natural flavors",
+    "meaning": "An undisclosed flavoring; the review counted it as an ingredient to avoid."
+   },
+   {
+    "term": "EDTA",
+    "meaning": "A preservative the review lists among ingredients to avoid."
+   }
+  ],
+  "tier_note": "An olive oil base and a short named list rank above seed-oil bottles.",
+  "asked_as": [
+   "which salad dressing should i buy",
+   "how do i pick a vinaigrette",
+   "is bottled dressing worth buying"
+  ]
+ },
+ {
+  "id": "bbq_sauce_marinades",
+  "title": "BBQ sauce and marinades",
+  "aliases": [
+   "bbq sauce",
+   "barbecue sauce",
+   "marinade",
+   "steak marinade",
+   "teriyaki marinade",
+   "grilling sauce"
+  ],
+  "category": "bulk_pantry",
+  "question": "How do you pick a BBQ sauce or marinade?",
+  "decision": "Short-list sauce, natural sweetener, no corn syrup or smoke flavor.",
+  "why": "Testing found many barbecue sauces use corn syrup and smoke flavor. Traditional guides avoid most commercial sauces.",
+  "short_answer": "Many barbecue sauces contain high fructose corn syrup. Look for a short list with a natural sweetener. Pass on natural smoke flavor, soybean oil and preservatives like EDTA. Traditional guides favor sauces made from natural ingredients without MSG.",
+  "detail": "An ingredient review of condiments found many ketchups and barbecue sauces contain high fructose corn syrup. Its avoid list for sauces included high fructose corn syrup, beet sugar, soybean oil, natural flavorings, natural smoke flavor and preservatives such as EDTA, and it flags research concerns about natural smoke flavor. A companion review of marinades found that the more ingredients, the more likely a bottle carried problem ingredients, and listed conventional canola, vegetable and soybean oils among them. Traditional shopping guides list fermented sauces and mustard as best, sauces with natural ingredients and without MSG as good, and most commercial sauces as ones to avoid.",
+  "evidence_tier": "kristys_standard",
+  "sources": [
+   {
+    "name": "Mamavation: Condiment and sauce ingredients",
+    "url": "https://mamavation.com/food/favorite-sauce-stack-condiments-bad-best.html"
+   },
+   {
+    "name": "Mamavation: Salad dressing and marinade ingredients",
+    "url": "https://mamavation.com/food/salad-dressing-marinade.html"
+   },
+   {
+    "name": "Weston A. Price Foundation: Shopping guide categories",
+    "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+   }
+  ],
+  "kristy_take": "Barbecue sauce is often more sweetener than anything else. A short list with real ingredients is the better bottle.",
+  "cart_pick": "BBQ sauce sweetened with molasses or honey",
+  "buying_tips": [
+   "Many barbecue sauces are sweetened with high fructose corn syrup.",
+   "Look for organic ingredients first, a short list, and molasses, honey or maple as the sweetener.",
+   "Pass on sauces with natural smoke flavor, soybean oil or EDTA.",
+   "Mustard is a traditional condiment with a short list."
+  ],
+  "pick_steps": [
+   "Pick a sauce sweetened with molasses, honey or maple.",
+   "Pick the shortest fully named list."
+  ],
+  "science": "An ingredient review found many barbecue sauces contain high fructose corn syrup. It also flagged natural smoke flavor, soybean oil and EDTA. Traditional guides avoid most commercial sauces and favor natural ingredients without MSG.",
+  "labels_decoded": [
+   {
+    "term": "Natural smoke flavor",
+    "meaning": "Added smoke flavoring; the review notes research concerns about it."
+   },
+   {
+    "term": "Natural flavorings",
+    "meaning": "Undisclosed flavor ingredients that can include MSG, per the review."
+   }
+  ],
+  "tier_note": "A short list with a natural sweetener ranks above corn syrup sauces.",
+  "asked_as": [
+   "which bbq sauce should i buy",
+   "how do i pick a marinade",
+   "is barbecue sauce worth buying"
+  ]
+ },
+ {
+  "id": "pesto",
+  "title": "Pesto",
+  "aliases": [
+   "pesto",
+   "basil pesto",
+   "pesto genovese",
+   "jarred pesto",
+   "refrigerated pesto"
+  ],
+  "category": "bulk_pantry",
+  "question": "How do you pick pesto?",
+  "decision": "Olive oil pesto: basil, pine nuts, parmesan; no seed oils.",
+  "why": "Classic pesto is olive oil, basil, pine nuts and parmesan. Traditional guides avoid seed oil swaps.",
+  "short_answer": "Classic pesto is olive oil, pine nuts, parmesan and basil. Look for a jar or tub made with extra virgin olive oil. Pass on pesto made with sunflower, canola or other seed oils.",
+  "detail": "Classic Pesto Genovese is made from olive oil, pine nuts, parmesan and basil, and traditional recipes call for extra virgin olive oil. Sunflower seeds, pumpkin seeds or walnuts can stand in for pine nuts. Fresh pesto keeps in the refrigerator for about a week and freezes well. Traditional shopping guides list olive oil and extra virgin olive oil as best and avoid most commercial seed oils such as soy, corn, canola and cottonseed.",
+  "evidence_tier": "kristys_standard",
+  "sources": [
+   {
+    "name": "Nourished Kitchen: Garlic scape pesto",
+    "url": "https://nourishedkitchen.com/garlic-scape-pesto/"
+   },
+   {
+    "name": "Weston A. Price Foundation: Shopping guide categories",
+    "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+   }
+  ],
+  "kristy_take": "Pesto is four or five ingredients at heart. The oil is the one to read.",
+  "cart_pick": "Basil pesto made with extra virgin olive oil",
+  "buying_tips": [
+   "Classic pesto is olive oil, pine nuts, parmesan and basil.",
+   "Look for organic basil first and extra virgin olive oil as the only oil.",
+   "Pass on pesto made with sunflower, canola or soybean oil.",
+   "Walnuts or pumpkin seeds in place of pine nuts still follow the classic shape.",
+   "Fresh pesto keeps about a week in the fridge and freezes well."
+  ],
+  "pick_steps": [
+   "Pick pesto with extra virgin olive oil as the only oil."
+  ],
+  "science": "Classic Pesto Genovese is olive oil, pine nuts, parmesan and basil. Traditional guides favor extra virgin olive oil and avoid most commercial seed oils.",
+  "labels_decoded": [
+   {
+    "term": "Pesto Genovese",
+    "meaning": "The classic basil pesto: olive oil, pine nuts, parmesan and basil."
+   }
+  ],
+  "tier_note": "Extra virgin olive oil pesto ranks above seed-oil blends.",
+  "asked_as": [
+   "which pesto should i buy",
+   "how do i pick a basil pesto",
+   "is jarred pesto worth buying"
+  ]
+ }
+]

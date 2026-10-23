@@ -4,8 +4,8 @@ import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
-import { preCleanJ4, preCleanJ7, preCleanJ8, preCleanJ9, preCompleteness } from './cartPlain.js';
-kb.entries = kb.entries.map(preCompleteness).map(preCleanJ7).map(preCleanJ8).map(preCleanJ9); // clean-sweep-J7/J8/J9: pins read 974ec27/e8cf851/53c6f90; cleanPickJ7/J8/J9.test.js own live copies.
+import { preCleanJ4, preCleanJ7, preCleanJ8, preCleanJ9, preCompleteness, notGap } from './cartPlain.js';
+kb.entries = kb.entries.filter(notGap).map(preCompleteness).map(preCleanJ7).map(preCleanJ8).map(preCleanJ9); // clean-sweep-J7/J8/J9: pins read 974ec27/e8cf851/53c6f90; cleanPickJ7/J8/J9.test.js own live copies.
 kb.entries = kb.entries.map(preCleanJ4); // clean-sweep-J4: seafood pins read 6d98564; cleanPickJ4.test.js owns live copy.
 import { preSwapPicks1 } from './twoLinePin.js';
 kb.entries = preSwapPicks1(kb.entries); // swap-picks-1: 8 swap picks + 2 aliases after 58d6160; swap_picks_1.test.js owns them.
@@ -41,6 +41,8 @@ const FAMILIES = nonEmpty([
   ['produce_root_vegetables', ['potatoes', 'potato']],
   ['produce_leafy_greens', ['leafy greens', 'kale', 'spinach', 'lettuce']],
 ], 'W2 family owners', 4);
+// Gap pass (2026-10-23): the potato nouns moved from the roots card to produce_potatoes; the matcher follows them.
+const GAP_MOVED = { potatoes: 'produce_potatoes', potato: 'produce_potatoes' };
 
 test('W2 organic question card carries no grocery item aliases', () => {
   const aliases = nonEmpty(byId('organic_worth_it_by_type').aliases, 'organic question aliases');
@@ -52,7 +54,7 @@ test('W2 each moved noun reaches its family, including lettuce rather than home 
     const aliases = nonEmpty(byId(id).aliases, `${id} aliases`);
     for (const noun of nonEmpty(nouns, `${id} grocery nouns`)) {
       assert.ok(aliases.includes(noun), `${id} lacks ${noun}`);
-      assert.equal(matchItemToCard(noun)?.slug, id, noun);
+      assert.equal(matchItemToCard(noun)?.slug, GAP_MOVED[noun] ?? id, noun);
     }
   }
   assert.equal(kindFor('revive_greens'), 'home');
@@ -69,7 +71,7 @@ test('W2 eight produce rows collapse to five family cards without losing foods',
   assert.deepEqual(groups.map(({ slug, items }) => [slug, items.map((i) => i.name)]), [
     ['produce_apples_pears', ['apples']],
     ['produce_onions_garlic', ['onions']],
-    ['produce_root_vegetables', ['potatoes']],
+    ['produce_potatoes', ['potatoes']],
     ['produce_leafy_greens', ['kale', 'spinach']],
     ['berries_picking', ['blueberries', 'strawberries', 'raspberries']],
   ]);
@@ -98,13 +100,21 @@ test('W2 counter still answers is organic worth it from the organic card', async
   assert.equal(out.source, 'curated');
 });
 
-test('W2 grapes and kiwi remain honest misses in the produce section', () => {
-  const names = nonEmpty(['grapes', 'grape', 'kiwi', 'kiwis'], 'W2 uncovered fruit', 4);
+// gap pass (2026-10-23): grapes and kiwi were honest misses; produce_grapes and produce_tropical_fruit now own them.
+test('W2 grapes and kiwi reach their gap cards in the produce section', () => {
+  const names = nonEmpty(['grapes', 'grape', 'kiwi', 'kiwis'], 'W2 gap fruit', 4);
   const list = attachCards({ items: names.map((name) => ({ name, source: 'user', category: 'Produce' })) }, { log: false });
-  for (const group of nonEmpty(collapseByCard(list.items), 'W2 uncovered groups', 4)) {
-    assert.equal(group.slug, null);
+  assert.deepEqual(nonEmpty(collapseByCard(list.items), 'W2 gap groups', 2).map(({ slug, section, items }) => [slug, section, items.map((i) => i.name)]), [
+    ['produce_grapes', 'produce', ['grapes', 'grape']],
+    ['produce_tropical_fruit', 'produce', ['kiwi', 'kiwis']],
+  ]);
+  const want = { grapes: 'produce_grapes', grape: 'produce_grapes', kiwi: 'produce_tropical_fruit', kiwis: 'produce_tropical_fruit' };
+  for (const group of nonEmpty(collapseByCard(list.items), 'W2 gap groups', 2)) {
     assert.equal(group.section, 'produce');
-    for (const row of nonEmpty(group.items, 'W2 uncovered rows')) assert.equal(row.pickId, undefined);
+    for (const row of nonEmpty(group.items, 'W2 gap rows')) {
+      assert.equal(want[row.name], group.slug, row.name);
+      assert.equal(row.pickId, undefined);
+    }
   }
 });
 

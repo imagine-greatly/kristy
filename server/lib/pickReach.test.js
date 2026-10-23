@@ -115,7 +115,7 @@ test('no pick alias lands on a row a card already owns', () => {
 });
 
 test('a compound row attaches only its own authored card, never the generic pick', () => {
-  const owners = { 'oat milk': 'oat_milk', 'corn tortillas': 'tortillas' };
+  const owners = { 'oat milk': 'oat_milk', 'corn tortillas': 'tortillas', 'basil pesto': 'pesto' };
   for (const name of COMPOUND_ROWS) {
     const row = attach(name);
     assert.equal(row.cardSlug ?? null, owners[name] ?? null, name);

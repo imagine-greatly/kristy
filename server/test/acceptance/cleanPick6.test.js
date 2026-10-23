@@ -1,4 +1,4 @@
-import { restoreOrganicCarts, liveDecision } from './cartPlain.js';
+import { restoreOrganicCarts, liveDecision, withoutGapKeys, withoutGapRows } from './cartPlain.js';
 // clean-pick-6 (Devon 2026-10-20, Q1 A organic on every produce): B7a, the 17 produce picks name their own item organic.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
@@ -119,9 +119,9 @@ test('C6 entries outside the batch deepEqual c6d3ff2; count and top-level keys u
 });
 
 test('C7 doLines.json and do-lines-review.md are unchanged from c6d3ff2', () => {
-  const now = JSON.parse(readFileSync(new URL('../../lib/doLines.json', import.meta.url), 'utf8'));
+  const now = withoutGapKeys(JSON.parse(readFileSync(new URL('../../lib/doLines.json', import.meta.url), 'utf8')));
   assert.deepEqual(now, JSON.parse(git('c6d3ff2:server/lib/doLines.json')));
-  const review = readFileSync(new URL('../../../docs/do-lines-review.md', import.meta.url), 'utf8');
+  const review = withoutGapRows(readFileSync(new URL('../../../docs/do-lines-review.md', import.meta.url), 'utf8'));
   nonEmpty(review.split('\n'), 'review lines', 150);
   assert.equal(strip9(review), strip9(git('c6d3ff2:docs/do-lines-review.md')));
 });

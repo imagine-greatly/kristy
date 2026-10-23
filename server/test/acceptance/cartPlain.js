@@ -255,9 +255,16 @@ const PATCHES_DIR = join(dirname(fileURLToPath(import.meta.url)), '..', '..', '.
 export const COMPLETENESS = new Set(readdirSync(PATCHES_DIR).filter((f) => f.endsWith('.json')).flatMap((f) => Object.keys(JSON.parse(readFileSync(join(PATCHES_DIR, f), 'utf8')))));
 export const COMPLETENESS_BASE = '9845b9e';
 const PRE_COMPLETENESS = JSON.parse(execFileSync('git', ['show', `${COMPLETENESS_BASE}:server/kristy_perimeter_kb.json`], { cwd: join(dirname(fileURLToPath(import.meta.url)), '..', '..', '..'), maxBuffer: 64 << 20 }).toString());
+// gap pass (2026-10-23): ids in the patches with no entry at COMPLETENESS_BASE are new cards (patches/gaps.json),
+// not rewrites; restored snapshots predate them, so they drop out rather than restore to nothing.
+export const GAP_ADDS = new Set([...COMPLETENESS].filter((id) => !PRE_COMPLETENESS.entries.some((x) => x.id === id)));
+export const notGap = (e) => !GAP_ADDS.has(e.id);
+// The gap pass adds do lines and review rows for new ids only; older pins read the rest unchanged.
+export const withoutGapKeys = (o) => Object.fromEntries(Object.entries(o).filter(([k]) => !GAP_ADDS.has(k)));
+export const withoutGapRows = (txt) => txt.split('\n').filter((l) => !(l.startsWith('| `') && GAP_ADDS.has(l.split('`')[1]))).join('\n');
 export const preCompleteness = (e) => (e && COMPLETENESS.has(e.id) ? structuredClone(PRE_COMPLETENESS.entries.find((x) => x.id === e.id)) : e);
 export const restoreOrganicCarts = (kb) => {
-  kb.entries = kb.entries.map(preCompleteness).map(preDialed).map(preCleanJ9).map(preCleanJ8).map(preCleanJ7).map(preCleanJ6).map(preCleanJ5).map(preCleanJ4).map(preCleanJ3).map(preCleanJ1);
+  kb.entries = kb.entries.filter((e) => !GAP_ADDS.has(e.id)).map(preCompleteness).map(preDialed).map(preCleanJ9).map(preCleanJ8).map(preCleanJ7).map(preCleanJ6).map(preCleanJ5).map(preCleanJ4).map(preCleanJ3).map(preCleanJ1);
   for (const e of kb.entries) if (OLD[e.id]) Object.assign(e, OLD[e.id]);
   return kb;
 };

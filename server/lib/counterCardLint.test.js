@@ -440,7 +440,8 @@ test('all curated cards clear the per-card bar', () => {
   // IC-6a folds 2: fresh_vs_previously_frozen_fish, fish_freshness_at_counter (2026-10-14).
   // IC-7a folds 3: a2_vs_a1_milk, milk_processing, yogurt_live_cultures (2026-10-14).
   // CA-3a folds 1: ground_beef_organ_blend (2026-10-15).
-  assert.equal(CARDS.length, 181);
+  // Gap pass adds 24 (patches/gaps.json): 11 pantry, 13 produce/meat/seafood (2026-10-23).
+  assert.equal(CARDS.length, 205);
   const failures = [];
   for (const card of CARDS) {
     for (const v of lintCard(card)) failures.push(`${card.slug} — ${v.code}: ${v.detail}`);

@@ -176,11 +176,12 @@ test('chf-5 folds: every retired asked_as lands where measured (null = gate admi
     ['how do you choose pretzel bread', null],
     ['what does lye dipped mean on pretzel rolls', null],
     ['what gives pretzel bread its brown crust', null],
-    ['which baking powder should i buy', null],
+    // Gap pass (2026-10-23): the baking_powder card now owns these.
+    ['which baking powder should i buy', 'baking_powder'],
     ['is bicarbonate of soda worth buying', null],
-    ['how do i pick a baking powder', null],
+    ['how do i pick a baking powder', 'baking_powder'],
     ['how do you choose duck breast', null],
-    ['how long does a whole duck keep', null],
+    ['how long does a whole duck keep', 'poultry_duck'], // gap pass: poultry_duck owns whole duck
     ['how do you buy duck legs', 'chicken_cuts_basics'],
   ];
   for (const [q, want] of nonEmpty(asks, 'chf-5 retired asks', 15)) {

@@ -1,4 +1,4 @@
-import { restoreOrganicCarts } from './cartPlain.js';
+import { restoreOrganicCarts, withoutGapKeys, withoutGapRows } from './cartPlain.js';
 // clean-pick-5 (Devon 2026-10-20): B6 corn, soy, ferments, condiments and snacks name each item’s own cleanest version.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
@@ -148,10 +148,10 @@ test('C6 entries outside the batch deepEqual 6db979f; count and top-level keys u
 });
 
 test('C7 doLines.json unchanged; review headlines move only on the batch ids', () => {
-  const now = JSON.parse(readFileSync(new URL('../../lib/doLines.json', import.meta.url), 'utf8'));
+  const now = withoutGapKeys(JSON.parse(readFileSync(new URL('../../lib/doLines.json', import.meta.url), 'utf8')));
   assert.deepEqual(now, JSON.parse(git('6db979f:server/lib/doLines.json')));
   const rows = (txt) => new Map(txt.split('\n').filter((l) => l.startsWith('| `')).map((l) => [l.split('`')[1], l]).reverse()); // first row per id wins: the main table, not the historical notes
-  const liveRows = rows(readFileSync(new URL('../../../docs/do-lines-review.md', import.meta.url), 'utf8'));
+  const liveRows = rows(withoutGapRows(readFileSync(new URL('../../../docs/do-lines-review.md', import.meta.url), 'utf8')));
   const baseRows = rows(git('6db979f:docs/do-lines-review.md'));
   nonEmpty([...baseRows.keys()], 'review rows', 150);
   assert.equal(liveRows.size, baseRows.size);

@@ -337,7 +337,8 @@ const COMPOUND_ROWS = [
   'eggplant parm', 'broccoli slaw',
 ];
 // Build 4 gives these compounds their own cards; the milk/corn picks still lose.
-const COMPOUND_OWNERS = { 'oat milk': 'oat_milk', 'corn tortillas': 'tortillas' };
+// The 2026-10-23 gap pass gives basil pesto its own card (`pesto` owns the alias); the basil pick still loses.
+const COMPOUND_OWNERS = { 'oat milk': 'oat_milk', 'corn tortillas': 'tortillas', 'basil pesto': 'pesto' };
 const compound = COMPOUND_ROWS.map((name) => {
   const row = attachCards({ items: [{ name, source: 'user' }] }, { log: false }).items[0];
   const got = row.cardSlug || row.pickId || null;

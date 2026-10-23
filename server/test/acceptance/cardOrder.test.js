@@ -1,3 +1,4 @@
+import { withoutGapKeys, withoutGapRows } from './cartPlain.js';
 // card-order: the 17 card-tidy cards read what to look for and how to shop it, health and holistic first (Devon 2026-10-19).
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -285,5 +286,5 @@ test('C9 everything else is byte-identical to 81b63d5: decisions, watch_out outs
 
 test('C10 decisions unchanged, so doLines.json equals HEAD 81b63d5', () => {
   const now = execFileSync('git', ['show', '81b63d5:server/lib/doLines.json'], { cwd: ROOT }).toString();
-  assert.deepEqual({ ...JSON.parse(now), sugars: doLines.sugars }, doLines);
+  assert.deepEqual({ ...JSON.parse(now), sugars: doLines.sugars }, withoutGapKeys(doLines));
 });

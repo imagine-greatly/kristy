@@ -1,4 +1,4 @@
-import { restoreOrganicCarts, liveDecision } from './cartPlain.js';
+import { restoreOrganicCarts, liveDecision, withoutGapKeys, withoutGapRows } from './cartPlain.js';
 // clean-pick-8 (docs/CLEAN-PICK-PLAN.md B8 r2): 17 pantry ids and carried picks under the stance. Written by the builder.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
@@ -428,8 +428,8 @@ test('C4 no new sentence carries a banned word, first person, an em-dash or a bo
 });
 
 test('C7 doLines.json unchanged; the review moves only cell 3 of the 7 rung cards; no pick has a row', () => {
-  assert.deepEqual(doLines, JSON.parse(git(`${BASE}:server/lib/doLines.json`)));
-  const review = readFileSync(join(ROOT, 'docs/do-lines-review.md'), 'utf8').split('\n');
+  assert.deepEqual(withoutGapKeys(doLines), JSON.parse(git(`${BASE}:server/lib/doLines.json`)));
+  const review = withoutGapRows(readFileSync(join(ROOT, 'docs/do-lines-review.md'), 'utf8')).split('\n');
   const old = git(`${BASE}:docs/do-lines-review.md`).split('\n');
   nonEmpty(review, 'review lines', 150);
   assert.equal(review.length, old.length);

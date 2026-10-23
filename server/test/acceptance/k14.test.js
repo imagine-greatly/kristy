@@ -53,7 +53,7 @@ const KEEPS = nonEmpty([
   ['duck', null], ['quail', null],
   ['eggs', 'egg_labels'], ['brown eggs', 'egg_labels'], ['white eggs', 'egg_labels'],
   ['egg', null], ['egg noodles', null], ['egg salad', 'deli_salads'], ['egg white protein powder', null],
-  ['pineapple', 'produce_ripeness_by_item'], ['cantaloupe', 'produce_ripeness_by_item'],
+  ['pineapple', 'produce_tropical_fruit'], ['cantaloupe', 'produce_ripeness_by_item'],
   ['pineapple juice', null], ['canned pineapple', null], ['dried pineapple', null],
   ['sprouts', 'sprouts_raw'], ['broccoli sprouts', 'sprouts_raw'], ['alfalfa sprouts', 'sprouts_raw'],
 ], 'K14 collision rows', 40);
@@ -78,7 +78,7 @@ for (const q of ['how do i pick a good cantaloupe', 'how do i pick a good pineap
 
 test('C5 every cited URL hits line 1 of a docs/sources/k14 or item-cards file', () => {
   // item-cards (IC-3b) re-sourced k14 produce fronts; its archive counts too.
-  const lines = nonEmpty(['k14', 'item-cards'].flatMap((d) => { const dir = join(ROOT, 'docs/sources', d); return readdirSync(dir).map((f) => readFileSync(join(dir, f), 'utf8').split('\n')[0]); }), 'k14 archive', 1);
+  const lines = nonEmpty(['k14', 'item-cards'].flatMap((d) => { const dir = join(ROOT, 'docs/sources', d); return readdirSync(dir, { withFileTypes: true }).filter((f) => f.isFile()).map((f) => readFileSync(join(dir, f.name), 'utf8').split('\n')[0]); }), 'k14 archive', 1);
   // Completeness pass 2026-10-22 (DECISIONS-2026-10-22.md): government/extension sources were swapped for holistic
   // ones archived under archive/completeness/<section>/ (URL verbatim on line 1); some are cited by name only. A card keeps
   // >=1 source, every cited URL still sits on a line 1, and no name-only source is government.
@@ -132,8 +132,17 @@ test('C10 passRule fixture carries the coverage alias moves for exactly the two 
     assert.ok(was, `${id} missing from fixture`);
     if (id === 'produce_ripeness_by_item') {
       // IC-3a folded the origin card in: the hub may gain, never lose.
-      for (const a of was.aliases) assert.ok(byId(id).aliases.includes(a), `${id} lost alias "${a}"`);
-      for (const q of was.asked_as) assert.ok(byId(id).asked_as.includes(q), `${id} lost ask "${q}"`);
+      // Gap pass (2026-10-23) moved five bare nouns to their own cards: each left the hub and landed on its owner.
+      const moved = { tomatoes: 'produce_tomatoes', tomato: 'produce_tomatoes', avocado: 'produce_avocados', avocados: 'produce_avocados', melon: 'produce_melons', watermelon: 'produce_melons', pineapple: 'produce_tropical_fruit' };
+      for (const a of was.aliases) {
+        if (moved[a]) assert.ok(!byId(id).aliases.includes(a) && byId(moved[a]).aliases.includes(a), `${a} did not move to ${moved[a]}`);
+        else assert.ok(byId(id).aliases.includes(a), `${id} lost alias "${a}"`);
+      }
+      const movedAsk = { 'how do i pick a good avocado': 'produce_avocados' };
+      for (const q of was.asked_as) {
+        if (movedAsk[q]) assert.ok(!byId(id).asked_as.includes(q) && byId(movedAsk[q]).asked_as.includes(q), `ask "${q}" did not move`);
+        else assert.ok(byId(id).asked_as.includes(q), `${id} lost ask "${q}"`);
+      }
     } else {
       assert.deepEqual(was.aliases, byId(id).aliases, `${id} aliases`);
       assert.deepEqual(was.asked_as, byId(id).asked_as, `${id} asked_as`);

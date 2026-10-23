@@ -1,4 +1,4 @@
-import { restoreOrganicCarts } from './cartPlain.js';
+import { restoreOrganicCarts, withoutGapKeys, withoutGapRows } from './cartPlain.js';
 // clean-pick-1: batch B1 of docs/CLEAN-PICK-PLAN.md (Devon 2026-10-20). Each staple's front names its own
 // cleanest version (pasture-raised or organic poultry, grass-fed dairy, organic sugar and corn, wild-caught fish,
 // short-list bread, olive oil mayo and sauce), not a blanket "get organic". Base ede90e7 (3ca18db, dfbef8a plan-only).
@@ -324,8 +324,8 @@ test('C6 every entry outside the batch, picks included, the entry count and top 
 });
 
 test('C7 do lines stay; the review rows for batch ids carry the new headline; nothing else in the table moves', () => {
-  assert.deepEqual(doLines, JSON.parse(git('ede90e7:server/lib/doLines.json')), 'doLines.json equals ede90e7');
-  const review = readFileSync(new URL('../../../docs/do-lines-review.md', import.meta.url), 'utf8').split('\n');
+  assert.deepEqual(withoutGapKeys(doLines), JSON.parse(git('ede90e7:server/lib/doLines.json')), 'doLines.json equals ede90e7');
+  const review = withoutGapRows(readFileSync(new URL('../../../docs/do-lines-review.md', import.meta.url), 'utf8')).split('\n');
   const old = git('ede90e7:docs/do-lines-review.md').split('\n');
   assert.equal(review.length, old.length);
   let seen = 0;

@@ -3419,11 +3419,7 @@
         "how to pick a melon",
         "ripe melon",
         "cantaloupe",
-        "watermelon",
-        "pineapple",
         "how to pick tomatoes",
-        "tomatoes",
-        "tomato",
         "ripe peach",
         "how to pick asparagus",
         "how to pick broccoli",
@@ -3431,8 +3427,6 @@
         "picking citrus",
         "how to pick fruit",
         "how to pick an avocado",
-        "avocado",
-        "avocados",
         "ripe avocado",
         "how to pick produce",
         "picking fruit",
@@ -3452,7 +3446,6 @@
         "vegetable quality",
         "ripe fruit",
         "melon is ripe",
-        "melon",
         "is it ripe",
         "peaches",
         "peach",
@@ -3538,7 +3531,6 @@
       "eyebrow_short": "Picking produce",
       "asked_as": [
         "how do i pick a ripe cantaloupe",
-        "how do i pick a good avocado",
         "how do i tell if a melon is ripe",
         "how do i pick a good cantaloupe",
         "how do i pick a good pineapple",
@@ -5235,8 +5227,6 @@
       "id": "produce_root_vegetables",
       "title": "Root vegetables: carrots, potatoes, beets",
       "aliases": [
-        "potatoes",
-        "potato",
         "carrots",
         "carrot",
         "baby carrots",
@@ -7188,7 +7178,8 @@
         "Weston A. Price Foundation, Shopping Guide (Best/Good/Avoid tiers), beverages",
         "Chris Kresser, Food for Mold Illness (coffee beans and mycotoxins; roasters that verify beans by testing)",
         "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11243642/fullTextXML",
-        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12607991/fullTextXML"
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12607991/fullTextXML",
+        "Mamavation, Decaffeinated Coffee & Methyl Chloride https://mamavation.com/food/decaffeinated-coffee-methyl-chloride.html"
       ],
       "kristy_take": "An occasional cup. When you buy it, organic whole beans from a roaster that names its mold testing.",
       "cart_pick": "Whole bean coffee, mold-tested",
@@ -7196,11 +7187,13 @@
         "Coffee beans can carry mold from hot, humid growing and storage.",
         "Look for organic whole beans from a roaster that states it tests for mold.",
         "Check that the packaging is sealed.",
-        "Keep the sealed coffee away from heat; the storage studies describe heat-related changes."
+        "Keep the sealed coffee away from heat; the storage studies describe heat-related changes.",
+        "For decaf, pick Swiss Water or another water-only process."
       ],
       "watch_out": [
         "Coffee sits off the staple list in traditional food guides. Keep it occasional.",
-        "No universal number of fresh days is established for all retail bags."
+        "No universal number of fresh days is established for all retail bags.",
+        "Solvent decaf soaks the beans in methylene chloride or ethyl acetate."
       ],
       "pick_steps": [
         "Keep it occasional; it is not a staple.",
@@ -7212,6 +7205,10 @@
         {
           "term": "Packaging barrier",
           "meaning": "The packaging’s resistance to exchange with the surrounding air."
+        },
+        {
+          "term": "Swiss Water Process",
+          "meaning": "Decaf made without a chemical solvent."
         }
       ],
       "tier_note": "Mold testing is the roaster’s claim to check, and keeping coffee occasional is the traditional stance.",
@@ -14197,6 +14194,1520 @@
           "name": "CSPI Chemical Cuisine: food additive safety ratings",
           "url": "https://www.cspi.org/page/chemical-cuisine-food-additive-safety-ratings"
         }
+      ]
+    },
+    {
+      "id": "dark_chocolate",
+      "title": "Dark chocolate bars",
+      "aliases": [
+        "dark chocolate",
+        "dark chocolate bar",
+        "chocolate bar",
+        "cacao bar",
+        "70 percent chocolate",
+        "baking chocolate"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick a dark chocolate bar?",
+      "decision": "An occasional bar, short list, lower cocoa percentage.",
+      "why": "Lab testing found more lead and cadmium as cocoa percentage climbed. Traditional guides keep chocolate occasional.",
+      "short_answer": "Treat dark chocolate as a treat, not a daily habit. Higher cocoa percentages tested more likely to carry lead and cadmium, so a lower percentage is the steadier pick. Organic on the label did not mean lower metals in testing.",
+      "detail": "Dark chocolate is generally at least 65 percent cacao. In independent lab testing, the higher the amount of cocoa, the more likely the lab found concerning levels of heavy metals like lead and cadmium. The same concern reaches hot cocoa and brownie and cake mixes. The testing advice: treat chocolate as a treat, try dark chocolates with lower cocoa percentages, do not assume organic dark chocolates are safer, do not give kids much dark chocolate, and think about total chocolate eaten across the week. Traditional guides list chocolate, cocoa and cacao among baking items to avoid and say chocolate should not be eaten habitually. A traditional chocolate maker in the same guide describes bars sweetened with whole cane sugar and no additives beyond nuts and spices.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        {
+          "name": "Mamavation: Dark chocolate lead and cadmium testing",
+          "url": "https://mamavation.com/food/dark-chocolate-lead-cadmium.html"
+        },
+        {
+          "name": "Weston A. Price Foundation: Shopping guide categories",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ],
+      "kristy_take": "Dark chocolate is a treat food. A short list and a moderate cocoa percentage make the better bar.",
+      "cart_pick": "Dark chocolate bar with a short list",
+      "buying_tips": [
+        "Higher cocoa percentages tested more likely to carry lead and cadmium.",
+        "Look for organic cacao first, a short list, and whole cane sugar as the sweetener.",
+        "Pass on bars with long lists of additives and flavorings.",
+        "Treat a bar as a treat; count cocoa mixes and baking chocolate in the week too.",
+        "Keep dark chocolate small for kids."
+      ],
+      "watch_out": [
+        "Organic on the label did not mean lower lead or cadmium in testing."
+      ],
+      "pick_steps": [
+        "Pick a bar with a short ingredient list.",
+        "Pick a moderate cocoa percentage over the darkest bar."
+      ],
+      "science": "Dark chocolate is generally at least 65 percent cacao. In independent testing, higher cocoa percentages were more likely to show concerning lead and cadmium. Organic bars were not reliably lower. Hot cocoa and brownie and cake mixes carry the same concern.",
+      "labels_decoded": [
+        {
+          "term": "Percent cacao",
+          "meaning": "How much of the bar comes from cocoa; dark chocolate is generally at least 65 percent."
+        },
+        {
+          "term": "Organic",
+          "meaning": "A farming standard; testing found it did not mean lower metals."
+        }
+      ],
+      "tier_note": "A short list and moderate cocoa percentage rank above the darkest bars.",
+      "asked_as": [
+        "which dark chocolate should i buy",
+        "how do i pick a chocolate bar",
+        "is dark chocolate worth buying"
+      ]
+    },
+    {
+      "id": "molasses_whole_cane_sweeteners",
+      "title": "Molasses and whole cane sweeteners",
+      "aliases": [
+        "molasses",
+        "blackstrap molasses",
+        "rapadura",
+        "sucanat",
+        "whole cane sugar",
+        "dehydrated cane juice",
+        "sorghum syrup"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick molasses or a whole cane sweetener?",
+      "decision": "Organic molasses or dried whole cane juice over white sugar.",
+      "why": "Traditional guides rank molasses and dehydrated cane juice among the best sweeteners and avoid white sugar.",
+      "short_answer": "Molasses and dehydrated whole cane juice keep more of the cane than white sugar. Traditional guides list them with maple, raw honey and sorghum syrup. The same guides still limit sweets overall.",
+      "detail": "Traditional shopping guides list organic natural sweeteners as the best choice: molasses, dehydrated sugar cane juice, malt syrups, coconut sugar, palm sugar, date sugar, sorghum syrup, maple syrup and sugar, and raw honey. They avoid white sugar, corn syrup, high fructose corn syrup, brown rice syrup and concentrated fruit juices. A companion guide names Rapadura as dehydrated cane sugar juice and says to read labels and avoid sucrose, dextrose, fructose and all artificial sweeteners. The same guide says to limit even natural sweets and not to eat them alone. Blackstrap molasses appears in traditional recipes as a spoonful in cooked greens.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation: Shopping guide categories",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        },
+        {
+          "name": "Weston A. Price Foundation: Replacing refined sugars with natural sugars",
+          "url": "https://www.westonaprice.org/health-topics/making-it-practical/replacing-refined-sugars-with-natural-sugars-one-step-at-a-time/"
+        },
+        {
+          "name": "Weston A. Price Foundation: Collard greens with wild rice",
+          "url": "https://www.westonaprice.org/collard-greens-with-wild-rice/"
+        }
+      ],
+      "kristy_take": "Molasses and dried cane juice are sugar with more of the cane left in. Still a sweet, still a small amount.",
+      "cart_pick": "Molasses or dehydrated cane juice",
+      "buying_tips": [
+        "Molasses and dehydrated cane juice keep more of the cane than white sugar.",
+        "Look for organic molasses first, or dehydrated whole cane juice with one ingredient.",
+        "Pass on white sugar, corn syrup and brown rice syrup.",
+        "Maple syrup, raw honey and sorghum syrup sit in the same natural group.",
+        "Use even natural sweeteners in small amounts, with a meal."
+      ],
+      "pick_steps": [
+        "Pick molasses or dehydrated cane juice with nothing added.",
+        "Pick a small jar; a little goes a long way."
+      ],
+      "science": "Traditional guides list molasses, dehydrated sugar cane juice, sorghum syrup, maple and raw honey as the natural sweeteners. White sugar, corn syrup, high fructose corn syrup, brown rice syrup and concentrated fruit juices are on the avoid list.",
+      "labels_decoded": [
+        {
+          "term": "Rapadura",
+          "meaning": "Dehydrated cane sugar juice, the whole juice dried."
+        },
+        {
+          "term": "Blackstrap molasses",
+          "meaning": "A dark molasses used by the spoonful in traditional cooking."
+        }
+      ],
+      "tier_note": "Whole cane and molasses rank above white sugar and corn syrup.",
+      "asked_as": [
+        "which molasses should i buy",
+        "how do i pick a whole cane sugar",
+        "which sucanat should i buy"
+      ]
+    },
+    {
+      "id": "baking_powder",
+      "title": "Baking powder",
+      "aliases": [
+        "baking powder",
+        "aluminum free baking powder",
+        "aluminum-free baking powder",
+        "double acting baking powder"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick baking powder?",
+      "decision": "Aluminum-free baking powder.",
+      "why": "Traditional guides put aluminum-free baking powder in the best column and powder with aluminum on the avoid list.",
+      "short_answer": "Read the ingredient list for aluminum. Traditional shopping guides keep aluminum-free baking powder and pass on powder that contains aluminum.",
+      "detail": "Traditional shopping guides list aluminum-free baking powder as the best choice in the baking aisle. Baking powder containing aluminum sits on the avoid list in the same section.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation: Shopping guide categories",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ],
+      "kristy_take": "One small swap in the baking aisle: the powder without aluminum.",
+      "cart_pick": "Aluminum-free baking powder",
+      "buying_tips": [
+        "Traditional guides keep aluminum-free baking powder and avoid the kind with aluminum.",
+        "Look for “aluminum-free” on the can.",
+        "Pass on baking powder with aluminum in the ingredient list."
+      ],
+      "pick_steps": [
+        "Pick a can marked aluminum-free."
+      ],
+      "science": "Traditional guides list aluminum-free baking powder as best and baking powder containing aluminum as one to avoid.",
+      "labels_decoded": [
+        {
+          "term": "Aluminum-free",
+          "meaning": "The powder is made without an aluminum ingredient."
+        }
+      ],
+      "tier_note": "The aluminum-free can ranks above powder that contains aluminum.",
+      "asked_as": [
+        "which baking powder should i buy",
+        "how do i pick a baking powder",
+        "is aluminum free baking powder worth buying"
+      ]
+    },
+    {
+      "id": "cornmeal_polenta_grits",
+      "title": "Cornmeal, polenta and grits",
+      "aliases": [
+        "cornmeal",
+        "corn meal",
+        "polenta",
+        "grits",
+        "hominy grits",
+        "masa harina",
+        "nixtamalized corn"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick cornmeal, polenta or grits?",
+      "decision": "Organic whole grain corn, lime-treated when offered, soaked first.",
+      "why": "Traditional cooks soaked corn in lime water to soften it and release niacin. Guides avoid quick-cooking grains.",
+      "short_answer": "Look for organic whole grain corn. Corn labeled nixtamalized, treated with lime, follows the traditional preparation. Soak cornmeal and polenta before cooking, and pass on quick-cooking grains.",
+      "detail": "Native American cooks first soaked dry corn in lime water, a process called nixtamalization, which softens the corn and releases vitamin B3 that otherwise stays bound in the grain. Some then fermented the treated corn. Traditional shopping guides list organic whole grains as best, say all grains should be soaked in an acidic medium before cooking, and avoid non-organic grains and quick-cooking grains. A traditional grain guide says soaking in an acidic medium for seven hours is fine, and cooking in broth adds minerals. Hot cereals keep best bought in sealed packages rather than bins.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation: Guts and grease, the diet of Native Americans",
+          "url": "https://www.westonaprice.org/health-topics/traditional-diets/guts-and-grease-the-diet-of-native-americans/"
+        },
+        {
+          "name": "Weston A. Price Foundation: Shopping guide categories",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        },
+        {
+          "name": "Weston A. Price Foundation: Grains, seeds, nuts and beans FAQs",
+          "url": "https://www.westonaprice.org/health-topics/grains-seeds-nuts-beans-faqs/"
+        }
+      ],
+      "kristy_take": "Corn was a lime-soaked food long before it was a box mix. Whole grain and a soak bring it back closer.",
+      "cart_pick": "Whole grain cornmeal",
+      "buying_tips": [
+        "Traditional cooks soaked corn in lime water before using it.",
+        "Look for organic whole grain corn first, or corn labeled nixtamalized.",
+        "Pass on quick-cooking or instant grits and polenta.",
+        "Buy in a sealed package, not from a bin.",
+        "Soak cornmeal or polenta in water with a splash of something sour before cooking."
+      ],
+      "pick_steps": [
+        "Pick whole grain cornmeal, or corn labeled nixtamalized.",
+        "Pick a sealed bag over the bulk bin."
+      ],
+      "science": "Nixtamalization soaks dry corn in lime water, softening it and releasing vitamin B3 that otherwise stays bound in the grain. Traditional guides soak all grains in an acidic medium and avoid quick-cooking grains.",
+      "labels_decoded": [
+        {
+          "term": "Nixtamalized",
+          "meaning": "Corn soaked in lime water, the traditional way to soften it and free its B3."
+        },
+        {
+          "term": "Instant or quick-cooking",
+          "meaning": "Pre-processed to cook fast; traditional guides avoid these grains."
+        }
+      ],
+      "tier_note": "Whole grain and lime-treated corn rank above instant mixes.",
+      "asked_as": [
+        "which cornmeal should i buy",
+        "how do i pick a polenta",
+        "are grits worth buying"
+      ]
+    },
+    {
+      "id": "rice_cakes_puffed_grains",
+      "title": "Rice cakes and puffed grains",
+      "aliases": [
+        "rice cakes",
+        "rice cake",
+        "puffed rice",
+        "puffed grains",
+        "puffed wheat",
+        "corn cakes",
+        "puffed millet"
+      ],
+      "category": "bulk_pantry",
+      "question": "Are rice cakes or puffed grains a good pick?",
+      "decision": "Skip puffed grains; whole grain crackers or soaked grains instead.",
+      "why": "Traditional guides list puffed grain products like rice cakes to avoid; grains are pressure-heated, never soaked.",
+      "short_answer": "Traditional guides put puffed grain products, rice cakes included, on the avoid list. The grain is rapidly heated under pressure rather than soaked or slow cooked. Whole grains soaked and cooked at home are the traditional swap.",
+      "detail": "Traditional shopping guides list puffed grain products, such as rice cakes, among the grains to avoid, along with extruded cereals and quick-cooking grains. A traditional food guide groups rice cakes with breakfast cereals as grains that have been rapidly heated or subjected to pressure, and describes the traditional alternative: grains soaked or sour leavened, then cooked. The same guides list organic whole grain rice and whole grains, soaked in an acidic medium, as the best grains.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation: Shopping guide categories",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        },
+        {
+          "name": "Weston A. Price Foundation: Why we cook, chop, ferment, salt and dry",
+          "url": "https://www.westonaprice.org/health-topics/why-we-cook-and-chop-ferment-salt-and-dry/"
+        }
+      ],
+      "kristy_take": "Rice cakes look light and plain, but puffing is a pressure process. Soaked whole grains are the traditional way.",
+      "cart_pick": "Brown rice to soak and cook",
+      "buying_tips": [
+        "Puffed grains are heated under pressure, not soaked or slow cooked.",
+        "Look for organic whole grain rice to soak and cook at home.",
+        "Pass on rice cakes, corn cakes and puffed cereals.",
+        "Buy whole grain rice in a sealed package, not from a bin."
+      ],
+      "pick_steps": [
+        "Pick whole grain rice or another whole grain to soak and cook."
+      ],
+      "science": "Traditional guides list puffed grain products, such as rice cakes, to avoid. They group them with grains rapidly heated or put under pressure. The traditional method soaks or sour leavens grains before cooking.",
+      "labels_decoded": [
+        {
+          "term": "Puffed",
+          "meaning": "Grain rapidly heated under pressure until it expands."
+        }
+      ],
+      "tier_note": "Soaked whole grains rank above any puffed grain product.",
+      "asked_as": [
+        "which rice cakes should i buy",
+        "how do i pick a puffed rice",
+        "are rice cakes worth buying"
+      ]
+    },
+    {
+      "id": "wild_rice",
+      "title": "Wild rice",
+      "aliases": [
+        "wild rice",
+        "wildcrafted wild rice",
+        "wild rice blend"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick wild rice?",
+      "decision": "Wildcrafted wild rice, soaked seven hours before cooking.",
+      "why": "Traditional guides name wildcrafted wild rice among the best grains and soak it before cooking.",
+      "short_answer": "Look for wildcrafted wild rice, gathered from where it grows. Traditional guides list it with organic whole grains as the best choices. Soak it at least seven hours in warm water with a splash of something sour before cooking.",
+      "detail": "Wild rice was a traditional food of the Great Lakes peoples. Traditional shopping guides list wildcrafted wild rice among the best grains, alongside organic whole grain rice and dried beans, and say all grains should be soaked in an acidic medium. A traditional recipe soaks wild rice in warm water with whey, yogurt, kefir, buttermilk, lemon juice or vinegar for at least seven hours, then simmers it with broth. Grains keep best bought in sealed packages rather than bins.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation: Shopping guide categories",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        },
+        {
+          "name": "Weston A. Price Foundation: Collard greens with wild rice",
+          "url": "https://www.westonaprice.org/collard-greens-with-wild-rice/"
+        },
+        {
+          "name": "Weston A. Price Foundation: Guts and grease, the diet of Native Americans",
+          "url": "https://www.westonaprice.org/health-topics/traditional-diets/guts-and-grease-the-diet-of-native-americans/"
+        }
+      ],
+      "kristy_take": "Wild rice is a gathered grain with a long traditional history. Wildcrafted is the closest to how it grows.",
+      "cart_pick": "Wildcrafted wild rice",
+      "buying_tips": [
+        "Wild rice was a traditional food of the Great Lakes peoples.",
+        "Look for “wildcrafted” wild rice first.",
+        "Pass on quick-cooking rice mixes.",
+        "Buy it in a sealed package, not from a bin.",
+        "Soak it at least seven hours in warm water with a splash of vinegar or lemon."
+      ],
+      "pick_steps": [
+        "Pick wildcrafted wild rice in a sealed bag."
+      ],
+      "science": "Traditional guides list wildcrafted wild rice among the best grains and soak all grains in an acidic medium. A traditional recipe soaks wild rice at least seven hours before simmering it in broth.",
+      "labels_decoded": [
+        {
+          "term": "Wildcrafted",
+          "meaning": "Gathered from where the plant grows wild."
+        }
+      ],
+      "tier_note": "Wildcrafted wild rice ranks above seasoned quick-cooking blends.",
+      "asked_as": [
+        "which wild rice should i buy",
+        "how do i pick a wild rice",
+        "is wild rice worth buying"
+      ]
+    },
+    {
+      "id": "split_peas",
+      "title": "Split peas and lentil varieties",
+      "aliases": [
+        "split peas",
+        "split pea",
+        "yellow split peas",
+        "green split peas",
+        "red lentils",
+        "french lentils",
+        "green lentils"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick split peas or lentils?",
+      "decision": "Organic dried split peas or lentils, soaked before cooking.",
+      "why": "Traditional guides list organic dried lentils among the best foods and soak legumes before long cooking.",
+      "short_answer": "Buy organic dried split peas or lentils. Traditional guides soak legumes in an acidic medium, then cook them a long time; cooking in broth adds minerals.",
+      "detail": "Traditional shopping guides list organic dried beans and lentils among the best grains and legumes, and say they should be soaked in an acidic medium before cooking. A traditional food guide says beans are indigestible unless soaked and then cooked a long time, and that some cultures then ferment cooked legumes into a sour porridge. A traditional grain guide says soaking in an acidic medium for seven hours is fine, and cooking in broth adds minerals. Non-organic grains and legumes from China sit on the avoid list.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation: Shopping guide categories",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        },
+        {
+          "name": "Weston A. Price Foundation: Why we cook, chop, ferment, salt and dry",
+          "url": "https://www.westonaprice.org/health-topics/why-we-cook-and-chop-ferment-salt-and-dry/"
+        },
+        {
+          "name": "Weston A. Price Foundation: Grains, seeds, nuts and beans FAQs",
+          "url": "https://www.westonaprice.org/health-topics/grains-seeds-nuts-beans-faqs/"
+        }
+      ],
+      "kristy_take": "Split peas and lentils are a dried staple. A soak and a long simmer is the traditional way in.",
+      "cart_pick": "Dried split peas or lentils",
+      "buying_tips": [
+        "Traditional cooks soak legumes, then cook them a long time.",
+        "Look for organic dried split peas or lentils first.",
+        "Pass on legumes from China and non-organic bulk bins.",
+        "Soak about seven hours in warm water with a splash of something sour.",
+        "Simmer in broth for added minerals."
+      ],
+      "pick_steps": [
+        "Pick dried split peas or lentils in a sealed bag."
+      ],
+      "science": "Traditional guides list organic dried lentils as best and soak legumes in an acidic medium. Beans are described as indigestible unless soaked and cooked a long time. Cooking in broth adds minerals.",
+      "labels_decoded": [
+        {
+          "term": "Organic dried lentils",
+          "meaning": "Listed among the best legumes in traditional shopping guides."
+        }
+      ],
+      "tier_note": "Organic dried legumes, soaked at home, rank above conventional bulk bins.",
+      "asked_as": [
+        "which split peas should i buy",
+        "which red lentils should i buy",
+        "are red lentils worth buying"
+      ]
+    },
+    {
+      "id": "applesauce",
+      "title": "Applesauce",
+      "aliases": [
+        "applesauce",
+        "apple sauce",
+        "unsweetened applesauce",
+        "apple puree",
+        "applesauce pouch"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick applesauce?",
+      "decision": "Organic unsweetened applesauce, apples alone on the list.",
+      "why": "Apples rank on the pesticide residue list, so organic matters. Skip added sugar and juice concentrates.",
+      "short_answer": "Look for organic applesauce with apples as the only ingredient. Conventional apples carry heavy pesticide residue. Traditional guides pass on corn syrup, white sugar and concentrated fruit juice as sweeteners.",
+      "detail": "Apples appear on the annual pesticide residue list, which notes that apples are treated with a chemical after harvest. Traditional shopping guides avoid white sugar, corn syrup, high fructose corn syrup and concentrated fruit juices as sweeteners, and list most canned fruits among the foods to avoid. The same guides favor fresh or frozen organic fruit without added acids.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        {
+          "name": "EWG: Dirty Dozen",
+          "url": "https://www.ewg.org/foodnews/dirty-dozen.php"
+        },
+        {
+          "name": "Weston A. Price Foundation: Shopping guide categories",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ],
+      "kristy_take": "Applesauce can be just cooked apples. The jar that lists only apples is the one to keep.",
+      "cart_pick": "Unsweetened applesauce, apples only",
+      "buying_tips": [
+        "Apples rank on the annual pesticide residue list.",
+        "Look for organic applesauce first, with apples as the only ingredient.",
+        "Pass on applesauce sweetened with corn syrup, sugar or juice concentrate.",
+        "Fresh organic apples cooked at home are the closest version."
+      ],
+      "pick_steps": [
+        "Pick a jar whose list reads apples and nothing else."
+      ],
+      "science": "Apples are on the annual pesticide residue list and are treated with a chemical after harvest. Traditional guides avoid corn syrup, white sugar and concentrated fruit juices as sweeteners.",
+      "labels_decoded": [
+        {
+          "term": "Unsweetened",
+          "meaning": "No sugar or sweetener added to the apples."
+        },
+        {
+          "term": "Juice concentrate",
+          "meaning": "Concentrated fruit juice used as a sweetener; traditional guides avoid it."
+        }
+      ],
+      "tier_note": "Organic apples alone rank above sweetened jars.",
+      "asked_as": [
+        "which applesauce should i buy",
+        "how do i pick an applesauce",
+        "is applesauce worth buying"
+      ]
+    },
+    {
+      "id": "salad_dressing",
+      "title": "Salad dressing",
+      "aliases": [
+        "salad dressing",
+        "bottled dressing",
+        "vinaigrette",
+        "ranch dressing",
+        "caesar dressing",
+        "italian dressing",
+        "balsamic vinaigrette"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick a salad dressing?",
+      "decision": "Olive oil dressing, short list, no seed oils.",
+      "why": "Testing found long dressing lists carry more problem ingredients. Traditional guides favor olive oil over seed oils.",
+      "short_answer": "Look for a dressing built on olive oil with a short list. The more ingredients, the more likely a bottle carries additives like EDTA, artificial colors or propylene glycol. Traditional guides pass on soybean, canola and vegetable oils.",
+      "detail": "An ingredient review of salad dressings found that the more ingredients, the more likely a bottle contained problem ingredients. The ingredients to avoid were high fructose corn syrup, EDTA, potassium sorbate and sodium benzoate, artificial colors, propylene glycol, polysorbate 60, natural and artificial flavors, and MSG, along with oils from conventional canola, vegetable or soybean. Bottles with organic ingredients and fully disclosed lists ranked best, and some of the best sit in the refrigerated section. Traditional shopping guides list olive oil and extra virgin olive oil as best, avoid most commercial seed oils, and list raw vinegars and aged balsamic among the best condiments. A traditional guide describes a salad topped with olive oil dressing.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        {
+          "name": "Mamavation: Salad dressing and marinade ingredients",
+          "url": "https://mamavation.com/food/salad-dressing-marinade.html"
+        },
+        {
+          "name": "Weston A. Price Foundation: Shopping guide categories",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        },
+        {
+          "name": "Weston A. Price Foundation: Replacing refined sugars with natural sugars",
+          "url": "https://www.westonaprice.org/health-topics/making-it-practical/replacing-refined-sugars-with-natural-sugars-one-step-at-a-time/"
+        }
+      ],
+      "kristy_take": "A dressing can be oil, vinegar and herbs. The shorter the list on the bottle, the closer it stays to that.",
+      "cart_pick": "Olive oil vinaigrette with a short list",
+      "buying_tips": [
+        "The more ingredients in a dressing, the more problem additives it tends to carry.",
+        "Look for organic ingredients first, olive oil as the oil, and a fully named list.",
+        "Pass on dressings made with soybean, canola or vegetable oil.",
+        "Check the refrigerated section; some of the shortest lists live there.",
+        "Olive oil with raw vinegar or aged balsamic is the traditional base."
+      ],
+      "pick_steps": [
+        "Pick a dressing whose oil is olive oil.",
+        "Pick the shortest fully named list."
+      ],
+      "science": "An ingredient review found longer dressing lists more likely to carry corn syrup, EDTA, preservatives, artificial colors or added flavors. Traditional guides favor olive oil and avoid most commercial seed oils.",
+      "labels_decoded": [
+        {
+          "term": "Natural flavors",
+          "meaning": "An undisclosed flavoring; the review counted it as an ingredient to avoid."
+        },
+        {
+          "term": "EDTA",
+          "meaning": "A preservative the review lists among ingredients to avoid."
+        }
+      ],
+      "tier_note": "An olive oil base and a short named list rank above seed-oil bottles.",
+      "asked_as": [
+        "which salad dressing should i buy",
+        "how do i pick a vinaigrette",
+        "is bottled dressing worth buying"
+      ]
+    },
+    {
+      "id": "bbq_sauce_marinades",
+      "title": "BBQ sauce and marinades",
+      "aliases": [
+        "bbq sauce",
+        "barbecue sauce",
+        "marinade",
+        "steak marinade",
+        "teriyaki marinade",
+        "grilling sauce"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick a BBQ sauce or marinade?",
+      "decision": "Short-list sauce, natural sweetener, no corn syrup or smoke flavoring.",
+      "why": "Testing found many barbecue sauces use corn syrup and smoke flavor. Traditional guides avoid most commercial sauces.",
+      "short_answer": "Many barbecue sauces contain high fructose corn syrup. Look for a short list with a natural sweetener. Pass on natural smoke flavor, soybean oil and preservatives like EDTA. Traditional guides favor sauces made from natural ingredients without MSG.",
+      "detail": "An ingredient review of condiments found many ketchups and barbecue sauces contain high fructose corn syrup. Its avoid list for sauces included high fructose corn syrup, beet sugar, soybean oil, natural flavorings, natural smoke flavor and preservatives such as EDTA, and it flags research concerns about natural smoke flavor. A companion review of marinades found that the more ingredients, the more likely a bottle carried problem ingredients, and listed conventional canola, vegetable and soybean oils among them. Traditional shopping guides list fermented sauces and mustard as best, sauces with natural ingredients and without MSG as good, and most commercial sauces as ones to avoid.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        {
+          "name": "Mamavation: Condiment and sauce ingredients",
+          "url": "https://mamavation.com/food/favorite-sauce-stack-condiments-bad-best.html"
+        },
+        {
+          "name": "Mamavation: Salad dressing and marinade ingredients",
+          "url": "https://mamavation.com/food/salad-dressing-marinade.html"
+        },
+        {
+          "name": "Weston A. Price Foundation: Shopping guide categories",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ],
+      "kristy_take": "Barbecue sauce is often more sweetener than anything else. A short list with real ingredients is the better bottle.",
+      "cart_pick": "BBQ sauce sweetened with molasses or honey",
+      "buying_tips": [
+        "Many barbecue sauces are sweetened with high fructose corn syrup.",
+        "Look for organic ingredients first, a short list, and molasses, honey or maple as the sweetener.",
+        "Pass on sauces with natural smoke flavor, soybean oil or EDTA.",
+        "Mustard is a traditional condiment with a short list."
+      ],
+      "pick_steps": [
+        "Pick a sauce sweetened with molasses, honey or maple.",
+        "Pick the shortest fully named list."
+      ],
+      "science": "An ingredient review found many barbecue sauces contain high fructose corn syrup. It also flagged natural smoke flavor, soybean oil and EDTA. Traditional guides avoid most commercial sauces and favor natural ingredients without MSG.",
+      "labels_decoded": [
+        {
+          "term": "Natural smoke flavor",
+          "meaning": "Added smoke flavoring; the review notes research concerns about it."
+        },
+        {
+          "term": "Natural flavorings",
+          "meaning": "Undisclosed flavor ingredients that can include MSG, per the review."
+        }
+      ],
+      "tier_note": "A short list with a natural sweetener ranks above corn syrup sauces.",
+      "asked_as": [
+        "which bbq sauce should i buy",
+        "how do i pick a marinade",
+        "is barbecue sauce worth buying"
+      ]
+    },
+    {
+      "id": "pesto",
+      "title": "Pesto",
+      "aliases": [
+        "pesto",
+        "basil pesto",
+        "pesto genovese",
+        "jarred pesto",
+        "refrigerated pesto"
+      ],
+      "category": "bulk_pantry",
+      "question": "How do you pick pesto?",
+      "decision": "Olive oil pesto: basil, pine nuts, parmesan; no seed oils.",
+      "why": "Classic pesto is olive oil, basil, pine nuts and parmesan. Traditional guides avoid seed oil swaps.",
+      "short_answer": "Classic pesto is olive oil, pine nuts, parmesan and basil. Look for a jar or tub made with extra virgin olive oil. Pass on pesto made with sunflower, canola or other seed oils.",
+      "detail": "Classic Pesto Genovese is made from olive oil, pine nuts, parmesan and basil, and traditional recipes call for extra virgin olive oil. Sunflower seeds, pumpkin seeds or walnuts can stand in for pine nuts. Fresh pesto keeps in the refrigerator for about a week and freezes well. Traditional shopping guides list olive oil and extra virgin olive oil as best and avoid most commercial seed oils such as soy, corn, canola and cottonseed.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        {
+          "name": "Nourished Kitchen: Garlic scape pesto",
+          "url": "https://nourishedkitchen.com/garlic-scape-pesto/"
+        },
+        {
+          "name": "Weston A. Price Foundation: Shopping guide categories",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ],
+      "kristy_take": "Pesto is four or five ingredients at heart. The oil is the one to read.",
+      "cart_pick": "Basil pesto made with extra virgin olive oil",
+      "buying_tips": [
+        "Classic pesto is olive oil, pine nuts, parmesan and basil.",
+        "Look for organic basil first and extra virgin olive oil as the only oil.",
+        "Pass on pesto made with sunflower, canola or soybean oil.",
+        "Walnuts or pumpkin seeds in place of pine nuts still follow the classic shape.",
+        "Fresh pesto keeps about a week in the fridge and freezes well."
+      ],
+      "pick_steps": [
+        "Pick pesto with extra virgin olive oil as the only oil."
+      ],
+      "science": "Classic Pesto Genovese is olive oil, pine nuts, parmesan and basil. Traditional guides favor extra virgin olive oil and avoid most commercial seed oils.",
+      "labels_decoded": [
+        {
+          "term": "Pesto Genovese",
+          "meaning": "The classic basil pesto: olive oil, pine nuts, parmesan and basil."
+        }
+      ],
+      "tier_note": "Extra virgin olive oil pesto ranks above seed-oil blends.",
+      "asked_as": [
+        "which pesto should i buy",
+        "how do i pick a basil pesto",
+        "is jarred pesto worth buying"
+      ]
+    },
+    {
+      "id": "produce_tomatoes",
+      "title": "Fresh tomatoes",
+      "aliases": [
+        "fresh tomatoes",
+        "heirloom tomatoes",
+        "vine tomatoes",
+        "tomatoes on the vine",
+        "cherry tomatoes",
+        "grape tomatoes",
+        "roma tomatoes",
+        "organic tomatoes",
+        "tomatoes",
+        "tomato"
+      ],
+      "category": "produce",
+      "question": "Which fresh tomatoes are the best buy?",
+      "decision": "Organic tomatoes, ripened on the counter, never chilled whole.",
+      "why": "Tomatoes sit mid-list for pesticide residue, so organic is the floor. Chilling an unripe one turns it mealy.",
+      "short_answer": "Choose organic: tomatoes and cherry tomatoes rank in the middle of the residue list. Keep whole tomatoes on the counter until ripe, and refrigerate only once cut.",
+      "detail": "On the 2026 produce residue list, ranked from least residue to most, tomatoes sit at 27 and cherry tomatoes at 29 of 47. Grocery fruit is usually picked before it is fully ripe, while farmers market fruit is picked ripe and ready. Ripen tomatoes on the counter; a paper bag speeds it up. Refrigerating an unripe tomato gives a mealy texture and lost flavor. Once cut, refrigerate within two hours.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        {
+          "name": "EWG: Shopper's Guide full list (2026)",
+          "url": "https://www.ewg.org/foodnews/full-list.php"
+        },
+        {
+          "name": "University of Arkansas Extension: Refrigerator or counter",
+          "url": "https://www.uaex.uada.edu/counties/miller/news/fcs/food-safety-preservation-appliances/Refrigerator_or_Counter_Where_to_Store_Fresh_Fruits.aspx"
+        },
+        {
+          "name": "UC Davis Health: How to make your produce last longer",
+          "url": "https://health.ucdavis.edu/blog/good-food/how-to-make-your-produce-last-longer/2025/09"
+        },
+        {
+          "name": "Weston A. Price Foundation: Principles of healthy diets",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/principles-of-healthy-diets-2/"
+        }
+      ],
+      "kristy_take": "A tomato picked ripe at a farmers market beats one ripened in a truck. Leave it on the counter and it keeps its flavor.",
+      "cart_pick": "Vine tomatoes",
+      "buying_tips": [
+        "Pick tomatoes with no bruises or torn skin, firm but not rock hard.",
+        "Farmers market tomatoes are picked ripe; grocery ones are picked early.",
+        "Ripen on the counter, in a paper bag to speed it up.",
+        "Refrigerate cut tomatoes below 40°F within two hours."
+      ],
+      "watch_out": [
+        "Chilling an unripe tomato turns it mealy and dulls the flavor."
+      ],
+      "pick_steps": [
+        "Choose organic tomatoes, or farmers market ones picked ripe.",
+        "Check for no bruises or torn skin, firm but not rock hard.",
+        "Ripen on the counter and refrigerate only once cut."
+      ],
+      "science": "Tomatoes rank 27 and cherry tomatoes 29 of 47 on the 2026 residue list, ordered from least residue to most. Refrigerating fruit before it ripens causes a mealy texture and lost flavor. Cut tomatoes go in the refrigerator below 40°F within two hours.",
+      "labels_decoded": [
+        {
+          "term": "Vine-ripened",
+          "meaning": "Left on the plant longer before picking; check it still feels firm, not soft."
+        },
+        {
+          "term": "Heirloom",
+          "meaning": "An older open-pollinated variety, often sold at farmers markets."
+        }
+      ],
+      "tier_note": "Residue rankings are measured testing; organic as the floor is the whole-food standard.",
+      "asked_as": [
+        "which tomatoes should i buy",
+        "should tomatoes go in the fridge",
+        "are organic tomatoes worth it"
+      ]
+    },
+    {
+      "id": "produce_avocados",
+      "title": "Avocados",
+      "aliases": [
+        "hass avocados",
+        "hass avocado",
+        "hard avocado",
+        "unripe avocado",
+        "ripening avocados",
+        "organic avocados",
+        "avocado",
+        "avocados"
+      ],
+      "category": "produce",
+      "question": "How do you pick and ripen avocados?",
+      "decision": "Organic when stocked; avocados rank among the lowest residue.",
+      "why": "Avocados are third cleanest on the residue list, so conventional is a fair fallback. Ripen them at home.",
+      "short_answer": "Avocados rank third cleanest of 47 on the residue list. Buy firm green Hass avocados and ripen them on the counter, then move ripe ones to the fridge.",
+      "detail": "Avocados rank 3 of 47 on the 2026 residue list, ordered from least residue to most. Ripen them on the counter before refrigerating; a paper bag speeds it up. Underripe green Hass avocados ripen in about four days in the refrigerator, and once ripe, with deep blue-green skin, they last up to five days there. Store a cut half on a plate, cut side down.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        {
+          "name": "EWG: Shopper's Guide full list (2026)",
+          "url": "https://www.ewg.org/foodnews/full-list.php"
+        },
+        {
+          "name": "University of Arkansas Extension: Refrigerator or counter",
+          "url": "https://www.uaex.uada.edu/counties/miller/news/fcs/food-safety-preservation-appliances/Refrigerator_or_Counter_Where_to_Store_Fresh_Fruits.aspx"
+        },
+        {
+          "name": "UC Davis Health: How to make your produce last longer",
+          "url": "https://health.ucdavis.edu/blog/good-food/how-to-make-your-produce-last-longer/2025/09"
+        }
+      ],
+      "kristy_take": "Buy avocados a few days ahead of the meal and let the counter do the work.",
+      "cart_pick": "Hass avocados",
+      "buying_tips": [
+        "Choose avocados with no bruises or torn skin, firm but not rock hard.",
+        "Ripen on the counter, in a paper bag to speed it up.",
+        "Ripe Hass skin turns deep blue-green; then it keeps up to five days cold.",
+        "Store a cut half on a plate, cut side down."
+      ],
+      "watch_out": [
+        "An excessively soft avocado is at the end of its life."
+      ],
+      "pick_steps": [
+        "Choose organic avocados when stocked.",
+        "Check for no bruises, firm but not rock hard.",
+        "Ripen on the counter, then refrigerate once the skin turns deep blue-green."
+      ],
+      "science": "Avocados rank 3 of 47 on the 2026 residue list. Refrigerating fruit before it ripens causes a mealy texture and lost flavor. Underripe Hass avocados ripen in about four days in the refrigerator and keep up to five days once ripe.",
+      "labels_decoded": [
+        {
+          "term": "Hass",
+          "meaning": "The common dark-skinned variety; skin turns deep blue-green when ripe."
+        }
+      ],
+      "tier_note": "Avocados ranking among the lowest in residue is measured; organic as the floor is the whole-food standard.",
+      "asked_as": [
+        "how do i ripen an avocado",
+        "do i need organic avocados",
+        "how do i pick a good avocado"
+      ]
+    },
+    {
+      "id": "produce_grapes",
+      "title": "Grapes",
+      "aliases": [
+        "grapes",
+        "grape",
+        "red grapes",
+        "green grapes",
+        "black grapes",
+        "seedless grapes",
+        "organic grapes",
+        "table grapes"
+      ],
+      "category": "produce",
+      "question": "Are organic grapes worth it?",
+      "decision": "Organic grapes; conventional ones rank among the most sprayed.",
+      "why": "Grapes sit at 44 of 47 on the residue list, inside the most sprayed group. Organic is the floor here, not an upgrade.",
+      "short_answer": "Yes. Grapes rank 44 of 47 on the residue list. Buy organic, refrigerate right away, and rinse under running water just before eating.",
+      "detail": "On the 2026 residue list, ordered from least residue to most, grapes rank 44 of 47. Grapes go straight into the refrigerator. Rinse under running water and rub briskly just before eating. Choose bunches with no bruised, cut or torn skin.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        {
+          "name": "EWG: Shopper's Guide full list (2026)",
+          "url": "https://www.ewg.org/foodnews/full-list.php"
+        },
+        {
+          "name": "University of Arkansas Extension: Refrigerator or counter",
+          "url": "https://www.uaex.uada.edu/counties/miller/news/fcs/food-safety-preservation-appliances/Refrigerator_or_Counter_Where_to_Store_Fresh_Fruits.aspx"
+        },
+        {
+          "name": "Weston A. Price Foundation: Principles of healthy diets",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/principles-of-healthy-diets-2/"
+        }
+      ],
+      "kristy_take": "Grapes are one of the clearest cases for organic in the whole produce aisle.",
+      "cart_pick": "Red grapes",
+      "buying_tips": [
+        "Choose organic grapes; conventional ones rank 44 of 47 for residue.",
+        "Pick bunches with no bruised, cut or torn skin.",
+        "Refrigerate grapes right away.",
+        "Rinse under running water and rub briskly just before eating."
+      ],
+      "watch_out": [
+        "Conventional grapes rank among the most sprayed produce."
+      ],
+      "pick_steps": [
+        "Choose organic grapes.",
+        "Check for no bruised, cut or torn skin.",
+        "Refrigerate right away and rinse just before eating."
+      ],
+      "science": "Grapes rank 44 of 47 on the 2026 residue list, ordered from least residue to most. Grapes belong in the refrigerator right away. Rinsing under running water while rubbing briskly is the recommended wash.",
+      "labels_decoded": [
+        {
+          "term": "Dirty Dozen",
+          "meaning": "The twelve produce items with the most pesticide residue in testing; grapes are on it."
+        }
+      ],
+      "tier_note": "The residue ranking is measured testing; organic as the floor is the whole-food standard.",
+      "asked_as": [
+        "should i buy organic grapes",
+        "do grapes have pesticides",
+        "how do i store grapes"
+      ]
+    },
+    {
+      "id": "produce_melons",
+      "title": "Melons",
+      "aliases": [
+        "melons",
+        "honeydew",
+        "honeydew melon",
+        "cut melon",
+        "melon cubes",
+        "precut watermelon",
+        "seedless watermelon",
+        "melon",
+        "watermelon"
+      ],
+      "category": "produce",
+      "question": "How do you buy melons?",
+      "decision": "Whole melons over precut; organic cantaloupe when stocked.",
+      "why": "Watermelon ranks low on the residue list and cantaloupe sits mid-list. Whole melons keep the rind until cutting.",
+      "short_answer": "Buy whole melons and cut them at home. Watermelon ranks 10 and cantaloupe 17 of 47 on the residue list, so organic matters more for cantaloupe.",
+      "detail": "On the 2026 residue list, ordered from least residue to most, watermelon ranks 10 and cantaloupe 17 of 47. Whole watermelon can sit on the counter or in the fridge. Rinse the rind under running water and rub briskly before cutting. Cut fruit goes into the refrigerator within two hours.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        {
+          "name": "EWG: Shopper's Guide full list (2026)",
+          "url": "https://www.ewg.org/foodnews/full-list.php"
+        },
+        {
+          "name": "University of Arkansas Extension: Refrigerator or counter",
+          "url": "https://www.uaex.uada.edu/counties/miller/news/fcs/food-safety-preservation-appliances/Refrigerator_or_Counter_Where_to_Store_Fresh_Fruits.aspx"
+        }
+      ],
+      "kristy_take": "Cutting a whole melon at home takes five minutes and leaves nothing sitting cut in a tub.",
+      "cart_pick": "Whole watermelon",
+      "buying_tips": [
+        "Choose a whole melon with no bruises or cut skin, firm but not rock hard.",
+        "Rinse the rind under running water and rub briskly before cutting.",
+        "Refrigerate cut melon within two hours.",
+        "Whole watermelon keeps on the counter or in the fridge."
+      ],
+      "watch_out": [
+        "Cut melon left out more than two hours belongs in the refrigerator or the bin."
+      ],
+      "pick_steps": [
+        "Choose a whole melon over precut; organic for cantaloupe.",
+        "Check for no bruises or cut skin.",
+        "Rinse the rind before cutting and refrigerate cut pieces."
+      ],
+      "science": "Watermelon ranks 10 and cantaloupe 17 of 47 on the 2026 residue list. Rinsing under running water while rubbing briskly is the recommended wash. Cut fruit belongs in the refrigerator within two hours.",
+      "labels_decoded": [
+        {
+          "term": "Clean Fifteen",
+          "meaning": "The fifteen produce items with the least pesticide residue in testing; watermelon is on it."
+        }
+      ],
+      "tier_note": "Residue rankings are measured testing; whole over precut is the whole-food standard.",
+      "asked_as": [
+        "should i buy cut melon",
+        "which honeydew should i buy",
+        "which watermelon should i buy"
+      ]
+    },
+    {
+      "id": "produce_tropical_fruit",
+      "title": "Tropical fruit",
+      "aliases": [
+        "tropical fruit",
+        "kiwi",
+        "kiwis",
+        "kiwifruit",
+        "papaya",
+        "papayas",
+        "whole pineapple",
+        "fresh pineapple",
+        "pineapple"
+      ],
+      "category": "produce",
+      "question": "How do you buy pineapple, mango, kiwi and papaya?",
+      "decision": "Whole tropical fruit, ripened on the counter at home.",
+      "why": "Pineapple, papaya, mango and kiwi rank among the lowest residue produce. Most arrive underripe.",
+      "short_answer": "These rank among the cleanest produce: pineapple 1, papaya 4, mango 11 and kiwi 15 of 47. Buy whole and ripen pineapple, mango and kiwi on the counter before refrigerating.",
+      "detail": "On the 2026 residue list, ordered from least residue to most, pineapple ranks 1, papaya 4, mangoes 11 and kiwi 15 of 47. Pineapple, mangoes and kiwi ripen on the counter before refrigerating; refrigerating them unripe gives a mealy texture and lost flavor. A paper bag speeds ripening. Rinse under running water before cutting.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        {
+          "name": "EWG: Shopper's Guide full list (2026)",
+          "url": "https://www.ewg.org/foodnews/full-list.php"
+        },
+        {
+          "name": "University of Arkansas Extension: Refrigerator or counter",
+          "url": "https://www.uaex.uada.edu/counties/miller/news/fcs/food-safety-preservation-appliances/Refrigerator_or_Counter_Where_to_Store_Fresh_Fruits.aspx"
+        }
+      ],
+      "kristy_take": "Tropical fruit is the easy corner of the produce aisle: low residue and whole fruit travels well.",
+      "cart_pick": "Whole pineapple",
+      "buying_tips": [
+        "Choose whole fruit with no bruises or torn skin, firm but not rock hard.",
+        "Ripen pineapple, mango and kiwi on the counter before refrigerating.",
+        "A paper bag speeds ripening.",
+        "Rinse under running water before cutting."
+      ],
+      "watch_out": [
+        "Excessively soft fruit is at the end of its life."
+      ],
+      "pick_steps": [
+        "Choose whole fruit over precut.",
+        "Check for no bruises, firm but not rock hard.",
+        "Ripen on the counter, then refrigerate."
+      ],
+      "science": "Pineapple ranks 1, papaya 4, mangoes 11 and kiwi 15 of 47 on the 2026 residue list. Refrigerating fruit before it ripens causes a mealy texture and lost flavor. Cut fruit belongs in the refrigerator within two hours.",
+      "labels_decoded": [
+        {
+          "term": "Clean Fifteen",
+          "meaning": "The fifteen produce items with the least pesticide residue in testing; pineapple, papaya, mango and kiwi are on it."
+        }
+      ],
+      "tier_note": "Low residue on tropical fruit is measured testing; whole over precut is the whole-food standard.",
+      "instead": "Mango: see Mangoes.",
+      "asked_as": [
+        "how do i ripen a pineapple",
+        "which papaya should i buy",
+        "which pineapple should i buy"
+      ]
+    },
+    {
+      "id": "produce_potatoes",
+      "title": "Potatoes",
+      "aliases": [
+        "organic potatoes",
+        "chlorpropham",
+        "potato sprout inhibitor",
+        "sprout inhibitor on potatoes",
+        "potato pesticides",
+        "are potatoes sprayed",
+        "potato",
+        "potatoes"
+      ],
+      "category": "produce",
+      "question": "Are organic potatoes worth it?",
+      "decision": "Organic potatoes first; sweet potatoes carry far less residue.",
+      "why": "Conventional potatoes carry a sprout inhibitor banned in the EU, on 90 percent of samples. Organic may not use it.",
+      "short_answer": "Yes. Chlorpropham, a sprout inhibitor, was found on 90 percent of potato samples, and potatoes rank 37 of 47 for residue. Organic potatoes may not be grown with it; sweet potatoes are not treated with it.",
+      "detail": "Potatoes rank 37 of 47 on the 2026 residue list, ordered from least residue to most. Chlorpropham, a sprout inhibitor banned in the EU, was found on 90 percent of samples, and the samples were washed and scrubbed before testing. Organic potatoes may not be grown with it, yet 12 of 28 organic samples carried residue, likely from storage alongside conventional potatoes. Sweet potatoes are not treated with chlorpropham; under 60 percent carried any residue, against 95 percent of potatoes. Store potatoes in a paper bag in a cool, dry, dark place.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        {
+          "name": "EWG: Potatoes (2026)",
+          "url": "https://www.ewg.org/foodnews/potatoes.php"
+        },
+        {
+          "name": "EWG: Shopper's Guide full list (2026)",
+          "url": "https://www.ewg.org/foodnews/full-list.php"
+        },
+        {
+          "name": "UC Davis Health: How to make your produce last longer",
+          "url": "https://health.ucdavis.edu/blog/good-food/how-to-make-your-produce-last-longer/2025/09"
+        },
+        {
+          "name": "Weston A. Price Foundation: Principles of healthy diets",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/principles-of-healthy-diets-2/"
+        }
+      ],
+      "kristy_take": "The case for organic potatoes is the sprout inhibitor, which washing does not remove. Sweet potatoes are the easy swap when organic is not stocked.",
+      "cart_pick": "Yukon Gold potatoes",
+      "buying_tips": [
+        "Choose organic potatoes; conventional ones carry a sprout inhibitor.",
+        "No organic? Sweet potatoes are not treated with chlorpropham.",
+        "Store potatoes in a paper bag in a cool, dry, dark place.",
+        "Green or sprouting potatoes: see Root vegetables."
+      ],
+      "watch_out": [
+        "Chlorpropham was found on 90 percent of potato samples even after washing and scrubbing; it is banned in the EU."
+      ],
+      "pick_steps": [
+        "Choose organic potatoes.",
+        "No organic, choose sweet potatoes instead.",
+        "Store in a paper bag, cool, dry and dark."
+      ],
+      "science": "Chlorpropham is a sprout inhibitor used to keep potatoes from sprouting in storage. It was found on 90 percent of washed, scrubbed potato samples. It is banned in the EU. Organic potatoes may not be grown with it; 12 of 28 organic samples carried residue, likely from shared storage. Sweet potatoes are not treated with it. Storage and cooking can lower chlorpropham levels.",
+      "labels_decoded": [
+        {
+          "term": "Chlorpropham",
+          "meaning": "A sprout inhibitor used on conventional potatoes in storage; not allowed in organic growing."
+        }
+      ],
+      "tier_note": "The chlorpropham testing is measured; organic as the floor is the whole-food standard.",
+      "asked_as": [
+        "should i buy organic potatoes",
+        "what is sprayed on potatoes",
+        "which potatoes should i buy"
+      ]
+    },
+    {
+      "id": "deli_liverwurst_pate",
+      "title": "Liverwurst and liver pâté",
+      "aliases": [
+        "liverwurst",
+        "braunschweiger",
+        "liver pate",
+        "liver pâté",
+        "chicken liver pate",
+        "pork liver pate",
+        "pate",
+        "pâté",
+        "chopped liver",
+        "liver sausage"
+      ],
+      "category": "deli",
+      "question": "How do you choose liverwurst or liver pâté?",
+      "decision": "Pasture-raised liver, made with its own animal fat.",
+      "why": "Liverwurst need only be 30 percent liver, with binders allowed. Traditional versions use pasture-raised liver and fat.",
+      "short_answer": "Read the ingredients. Liverwurst must be at least 30 percent liver and may carry binders, extenders and mechanically separated meat. Choose liver from pasture-raised animals, made with animal fat rather than neutral oils.",
+      "detail": "By federal standard, liverwurst and braunschweiger must contain at least 30 percent liver, and binders, extenders, mechanically separated meat and smoke flavoring are all allowed. The traditional chopped liver uses rendered fat from the same bird, not neutral oils, and poultry fats and livers carry vitamin K2. Traditional guides advise liver from pasture-raised animals and avoiding feedlot liver; for pork pâté, pasture-raised pork raised without soy.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        {
+          "name": "9 CFR 319.182: Braunschweiger and liver sausage",
+          "url": "https://www.law.cornell.edu/cfr/text/9/319.182"
+        },
+        {
+          "name": "Weston A. Price Foundation: Chopped chicken liver pâté",
+          "url": "https://www.westonaprice.org/chopped-chicken-liver-pate/"
+        },
+        {
+          "name": "Weston A. Price Foundation: French pork liver pâté",
+          "url": "https://www.westonaprice.org/french-pork-liver-pate/"
+        },
+        {
+          "name": "Weston A. Price Foundation: How to cook liver for liver haters",
+          "url": "https://www.westonaprice.org/health-topics/how-to-cook-liver-for-liver-haters-and-win-them-over/"
+        }
+      ],
+      "kristy_take": "Liverwurst is the easiest way into liver. The label tells the difference between a liver spread and a filler spread.",
+      "cart_pick": "Pasture-raised liverwurst",
+      "buying_tips": [
+        "Choose liverwurst or pâté with liver first and a short ingredient list.",
+        "Look for animal fat such as pork fat, duck fat or schmaltz, not neutral oil.",
+        "Ask which farm the liver came from; pasture-raised is the bar.",
+        "Skip binders, extenders and mechanically separated meat on the label."
+      ],
+      "watch_out": [
+        "Liverwurst need only be 30 percent liver and may carry binders, extenders and smoke flavoring.",
+        "Pregnancy questions about eating liver go to a doctor."
+      ],
+      "pick_steps": [
+        "Read the ingredients: liver first, short list.",
+        "Check the fat is animal fat, not neutral oil.",
+        "How it was raised: see What “pasture-raised” does and does not tell you."
+      ],
+      "science": "Federal standard sets liverwurst at 30 percent liver minimum. Binders, extenders and smoke flavoring are allowed. Poultry fats and livers carry vitamin K2. Pregnancy questions about eating liver go to a doctor.",
+      "labels_decoded": [
+        {
+          "term": "Braunschweiger",
+          "meaning": "A smoked liver sausage; at least 30 percent liver by federal standard."
+        },
+        {
+          "term": "Binders and extenders",
+          "meaning": "Added starches or proteins that stretch the meat; allowed in liverwurst."
+        }
+      ],
+      "tier_note": "Pasture-raised liver: time outdoors on pasture, audited only with a certifier’s seal.",
+      "asked_as": [
+        "which liverwurst should i buy",
+        "how much liver is in liverwurst",
+        "which liver pate should i buy"
+      ]
+    },
+    {
+      "id": "poultry_duck",
+      "title": "Duck",
+      "aliases": [
+        "duck breast",
+        "duck breasts",
+        "whole duck",
+        "duck fat",
+        "roast duck",
+        "rendered duck fat"
+      ],
+      "category": "poultry",
+      "question": "How do you buy duck?",
+      "decision": "Pasture-raised duck, ideally not fed soy; keep the fat.",
+      "why": "Duck fat is a traditional cooking fat, best from ducks not fed soy. A roasted duck leaves plenty of fat to save.",
+      "short_answer": "Choose pasture-raised duck, and ask whether the feed is soy-free. Roasting a whole duck leaves extra fat to render and keep for cooking.",
+      "detail": "Traditional food guides list duck fat as a good cooking fat, ideally from ducks not fed soy, and name duck and goose fat as sources of vitamin K2. A roasted duck leaves extra fat in the pan that can be strained and kept for cooking. The same guides place pasture-fed poultry at the top.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation: Fats and oils FAQ",
+          "url": "https://www.westonaprice.org/health-topics/fats-oils-faq/"
+        },
+        {
+          "name": "Weston A. Price Foundation: Rendering animal fats made easy",
+          "url": "https://www.westonaprice.org/health-topics/rendering-animal-fats-made-easy/"
+        },
+        {
+          "name": "Weston A. Price Foundation: Principles of healthy diets",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/principles-of-healthy-diets-2/"
+        }
+      ],
+      "kristy_take": "A whole duck is two meals: the meat, and a jar of cooking fat.",
+      "cart_pick": "Pasture-raised whole duck",
+      "buying_tips": [
+        "Ask the counter whether the duck was pasture-raised and fed without soy.",
+        "Roast a whole duck and save the rendered fat for cooking.",
+        "Strain duck fat into a jar and keep it in the refrigerator."
+      ],
+      "watch_out": [
+        "Duck fat quality follows the feed; soy-fed ducks are the ones traditional guides pass over."
+      ],
+      "pick_steps": [
+        "Ask whether the duck was pasture-raised.",
+        "Ask whether the feed was soy-free.",
+        "Save the rendered fat in a jar."
+      ],
+      "science": "Traditional food guides rate duck fat as a good fat, ideally from ducks not fed soy. Duck and goose fat are listed as sources of vitamin K2. Roasting a duck leaves extra fat behind.",
+      "labels_decoded": [
+        {
+          "term": "Rendered duck fat",
+          "meaning": "Fat melted out of the duck during roasting, strained and kept for cooking."
+        }
+      ],
+      "tier_note": "Pasture-raised duck: time outdoors on pasture, audited only with a certifier’s seal.",
+      "asked_as": [
+        "should i buy whole duck",
+        "is duck fat healthy",
+        "which whole duck should i buy"
+      ]
+    },
+    {
+      "id": "seafood_fish_roe",
+      "title": "Fish roe",
+      "aliases": [
+        "fish roe",
+        "roe",
+        "salmon roe",
+        "ikura",
+        "caviar",
+        "tarama",
+        "bottarga",
+        "flying fish roe",
+        "shad roe",
+        "lumpfish caviar",
+        "fish eggs"
+      ],
+      "category": "seafood",
+      "question": "Which fish roe should you buy?",
+      "decision": "Salt-only roe, fresh or frozen; skip dyed lumpfish.",
+      "why": "Fish eggs are a traditional sacred food, and fresh roe keeps with salt alone. Black lumpfish roe carries synthetic dye.",
+      "short_answer": "Choose roe preserved with salt only, such as salmon roe, tarama or bottarga. Skip black lumpfish roe, which is dyed, and read shelf-stable jars for preservatives.",
+      "detail": "Traditional food guides list fish eggs among the most prized foods and note roe is rich in vitamins A, D and K2, zinc, iodine and DHA. Roe comes fresh, frozen, smoked or dried. Most fresh caviars are preserved with salt only; shelf-stable caviars in boxes or glass may contain preservatives. Lumpfish roe, sold as a caviar substitute, is dyed with a synthetic black azo dye. Salmon roe is ikura; tarama is carp roe preserved with salt; bottarga is dried mullet roe. Shad roe is an East Coast spring item.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation: The roe to health",
+          "url": "https://www.westonaprice.org/health-topics/food-features/the-roe-to-health/"
+        },
+        {
+          "name": "Weston A. Price Foundation: Sacred foods for exceptionally healthy babies",
+          "url": "https://www.westonaprice.org/health-topics/sacred-foods-for-exceptionally-healthy-babies-and-parents-too/"
+        },
+        {
+          "name": "Weston A. Price Foundation: Principles of healthy diets",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/principles-of-healthy-diets-2/"
+        }
+      ],
+      "kristy_take": "A spoon of salmon roe is one of the most traditional foods on the whole counter. Salt is the only thing it needs.",
+      "cart_pick": "Salmon roe",
+      "buying_tips": [
+        "Read the jar: roe and salt only.",
+        "Salmon roe, tarama and bottarga are traditional salt-cured choices.",
+        "Fresh or frozen roe usually skips the preservatives that shelf-stable jars carry.",
+        "Look for shad roe at the counter in spring on the East Coast."
+      ],
+      "watch_out": [
+        "Black lumpfish roe is dyed with a synthetic azo dye.",
+        "Shelf-stable caviar in boxes or glass may contain preservatives."
+      ],
+      "pick_steps": [
+        "Choose salmon roe, tarama or bottarga.",
+        "Read the label for roe and salt only.",
+        "Skip black lumpfish roe."
+      ],
+      "science": "Roe is rich in vitamins A, D and K2, zinc, iodine and DHA. Fresh caviars are preserved with salt only and stored near freezing. Lumpfish roe sold as caviar is colored with a synthetic black azo dye.",
+      "labels_decoded": [
+        {
+          "term": "Ikura",
+          "meaning": "Salmon roe, large orange eggs."
+        },
+        {
+          "term": "Tarama",
+          "meaning": "Carp roe preserved with salt, sold in jars."
+        },
+        {
+          "term": "Bottarga",
+          "meaning": "Dried, salted mullet roe, grated or sliced."
+        }
+      ],
+      "tier_note": "The dye in lumpfish roe is documented; roe as a prized food is the traditional food standard.",
+      "asked_as": [
+        "what fish roe should i buy",
+        "is lumpfish caviar dyed",
+        "is salmon roe healthy"
+      ]
+    },
+    {
+      "id": "seafood_fresh_sardines_mackerel",
+      "title": "Fresh sardines and mackerel",
+      "aliases": [
+        "fresh sardines",
+        "whole sardines",
+        "fresh mackerel",
+        "whole mackerel",
+        "atlantic mackerel",
+        "mackerel fillet",
+        "mackerel fillets",
+        "small oily fish"
+      ],
+      "category": "seafood",
+      "question": "Are fresh sardines and mackerel worth buying?",
+      "decision": "Fresh sardines or Atlantic mackerel; skip king mackerel.",
+      "why": "Small oily fish are high in omega-3 EPA and DHA and less likely to carry mercury. King mackerel is the exception.",
+      "short_answer": "Yes. Sardines and mackerel are high in EPA and DHA, and small fish are less likely to carry mercury or PCBs. King mackerel is the one to skip.",
+      "detail": "Sardines and mackerel rank high in EPA and DHA. Small fish low on the food chain are less likely to carry mercury or PCBs, and sardines are eaten whole with their tiny bones, which adds calcium and vitamin D. Most ocean fish carry more selenium than mercury; king mackerel and swordfish are the exceptions. Cooked fresh mackerel bones are too sharp to eat, unlike the softened bones in canned mackerel. Fresh sardines can be hard to find, so ask the counter.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        {
+          "name": "Harvard Health: Why eat lower on the seafood chain",
+          "url": "https://www.health.harvard.edu/blog/why-eat-lower-on-the-seafood-chain-202303222904"
+        },
+        {
+          "name": "Chris Kresser: The fish vs fish oil smackdown",
+          "url": "https://chriskresser.com/the-fish-vs-fish-oil-smackdown/"
+        },
+        {
+          "name": "Chris Kresser: Concerns about mercury in fish",
+          "url": "https://chriskresser.com/5-reasons-why-concerns-about-mercury-in-fish-are-misguided/"
+        },
+        {
+          "name": "Weston A. Price Foundation: Sacred foods for exceptionally healthy babies",
+          "url": "https://www.westonaprice.org/health-topics/sacred-foods-for-exceptionally-healthy-babies-and-parents-too/"
+        }
+      ],
+      "kristy_take": "Fresh sardines grilled whole are a Mediterranean staple. When the counter has them, buy them.",
+      "cart_pick": "Fresh sardines",
+      "buying_tips": [
+        "Ask the counter for fresh sardines or Atlantic mackerel; skip king mackerel.",
+        "Eat sardines whole with their tiny bones.",
+        "Pick the bones out of cooked fresh mackerel; they are too sharp to eat.",
+        "Freshness checks: see The seafood counter."
+      ],
+      "watch_out": [
+        "King mackerel carries more mercury than selenium, unlike most ocean fish."
+      ],
+      "pick_steps": [
+        "Choose fresh sardines or Atlantic mackerel.",
+        "Skip king mackerel."
+      ],
+      "science": "Sardines and mackerel are high in the omega-3 fats EPA and DHA. Small fish are less likely to carry mercury or PCBs. Most ocean fish have more selenium than mercury; king mackerel and swordfish are exceptions. Small fish eaten whole with their bones supply calcium and vitamin D.",
+      "labels_decoded": [
+        {
+          "term": "Atlantic mackerel",
+          "meaning": "The small mackerel species, distinct from king mackerel."
+        },
+        {
+          "term": "King mackerel",
+          "meaning": "A large mackerel that carries more mercury than selenium."
+        }
+      ],
+      "tier_note": "The mercury and selenium figures are measured; small oily fish first is the traditional food standard.",
+      "instead": "Canned sardines: see Canned fish.",
+      "asked_as": [
+        "are fresh sardines healthy",
+        "which fresh mackerel should i buy",
+        "how do i eat fresh sardines"
+      ]
+    },
+    {
+      "id": "seafood_trout",
+      "title": "Trout",
+      "aliases": [
+        "rainbow trout",
+        "trout",
+        "trout fillet",
+        "trout fillets",
+        "whole trout",
+        "steelhead",
+        "steelhead trout",
+        "wild trout"
+      ],
+      "category": "seafood",
+      "question": "Which trout should you buy?",
+      "decision": "Wild trout first; US farmed rainbow trout next.",
+      "why": "Traditional guides put wild fish first and farmed trout to avoid. Without wild, US farmed rainbow trout rates green.",
+      "short_answer": "Wild trout is the pick when stocked. US farmed rainbow trout, raised in freshwater raceways, ponds and net pens, is rated green and is the realistic fallback.",
+      "detail": "Traditional food guides place wild fish above farm-raised, and list farmed trout to avoid. All rainbow trout and steelhead farmed in the United States is rated green for environmental sustainability. US trout are farmed in freshwater net pens, flowthrough raceways and ponds; raceway waste is captured in settling ponds. Steelhead is the ocean-going form of rainbow trout. A serving supplies selenium, omega-3 fats and vitamins D and B12.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation: Principles of healthy diets",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/principles-of-healthy-diets-2/"
+        },
+        {
+          "name": "Monterey Bay Aquarium: Nutritious rainbow trout",
+          "url": "https://www.montereybayaquarium.org/animals-the-ocean/how-to-choose-sustainable-seafood/sustainable-healthy-fish/nutritious-rainbow-trout"
+        },
+        {
+          "name": "Chris Kresser: Concerns about mercury in fish",
+          "url": "https://chriskresser.com/5-reasons-why-concerns-about-mercury-in-fish-are-misguided/"
+        }
+      ],
+      "kristy_take": "Wild trout is rare at the counter. US farmed rainbow trout is the one farmed fish with a clear green rating.",
+      "cart_pick": "Rainbow trout fillets",
+      "buying_tips": [
+        "Ask the counter for wild trout first, then US farmed rainbow trout.",
+        "Ask the country of origin; US farmed rainbow trout is rated green.",
+        "Steelhead is ocean-going rainbow trout; ask whether it is wild or farmed.",
+        "Freshness checks: see The seafood counter."
+      ],
+      "watch_out": [
+        "Farmed trout sits on traditional avoid lists; wild is the first pick."
+      ],
+      "pick_steps": [
+        "Ask for wild trout.",
+        "Without wild, choose US farmed rainbow trout."
+      ],
+      "science": "US farmed rainbow trout is raised in freshwater net pens, flowthrough raceways and ponds. Raceway waste is captured in settling ponds. It is rated green for environmental sustainability. Selenium levels in freshwater fish vary more than in ocean fish.",
+      "labels_decoded": [
+        {
+          "term": "Steelhead",
+          "meaning": "Rainbow trout in its ocean-going form; sold wild or farmed."
+        },
+        {
+          "term": "Raceway",
+          "meaning": "A long trough where river-like water flows through the fish farm."
+        }
+      ],
+      "tier_note": "The green rating is a sustainability rating; wild first is the traditional food standard.",
+      "asked_as": [
+        "is rainbow trout healthy",
+        "is farmed rainbow trout ok",
+        "what is steelhead trout"
+      ]
+    },
+    {
+      "id": "beef_veal",
+      "title": "Veal",
+      "aliases": [
+        "veal",
+        "veal chops",
+        "veal chop",
+        "rose veal",
+        "veal cutlet",
+        "veal cutlets",
+        "veal scallopini",
+        "ground veal",
+        "osso buco"
+      ],
+      "category": "beef",
+      "question": "How do you choose veal?",
+      "decision": "Pasture veal raised with its mother; skip white crate veal.",
+      "why": "Calves raised on pasture with their mothers give light red veal. White veal comes from crates, banned in Europe.",
+      "short_answer": "Choose veal from calves raised on pasture with their mothers, which is light red. Rose veal is pink. Pale white veal points to a crate system.",
+      "detail": "Veal comes in three broad kinds. Vealers are calves raised on pasture with their mothers, and the meat is light red. Rose veal comes from calves reared in groups, some with pasture access, on milk or replacer and then grain, and the meat is pink. Crate veal is white because the calves are denied iron, a system illegal in the UK and Europe since 2007. Color is the counter clue.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        {
+          "name": "RSPCA Australia: What is veal",
+          "url": "https://kb.rspca.org.au/knowledge-base/what-is-veal"
+        },
+        {
+          "name": "Weston A. Price Foundation: Principles of healthy diets",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/principles-of-healthy-diets-2/"
+        }
+      ],
+      "kristy_take": "Veal color tells the story of the calf. Light red means pasture and its mother.",
+      "cart_pick": "Veal chops",
+      "buying_tips": [
+        "Look for light red or pink veal, not pale white.",
+        "Ask the counter whether the calves were raised on pasture with their mothers.",
+        "Rose veal is pink, from group-raised calves.",
+        "How it was raised: see Beef."
+      ],
+      "watch_out": [
+        "Pale white veal comes from crate systems that deny calves iron."
+      ],
+      "pick_steps": [
+        "Ask whether the calves were raised on pasture with their mothers.",
+        "Check the color: light red or pink, not white.",
+        "How it was raised: see Beef."
+      ],
+      "science": "Veal from calves raised on pasture with their mothers is light red. Rose veal from group-reared calves fed milk, then grain, is pink. White veal results from denying calves iron in crate systems, banned in the UK and Europe since 2007.",
+      "labels_decoded": [
+        {
+          "term": "Rose veal",
+          "meaning": "Pink veal from group-raised calves fed milk, then grain."
+        },
+        {
+          "term": "Milk-fed or white veal",
+          "meaning": "Pale meat from calves kept low in iron, usually crate-raised."
+        }
+      ],
+      "tier_note": "The veal systems are documented welfare categories; pasture with the mother is the whole-food standard.",
+      "asked_as": [
+        "is veal ethical",
+        "what is rose veal",
+        "which veal should i buy"
+      ]
+    },
+    {
+      "id": "poultry_chicken_wings",
+      "title": "Chicken wings",
+      "aliases": [
+        "chicken wings",
+        "wings",
+        "wingettes",
+        "drumettes",
+        "party wings",
+        "whole chicken wings",
+        "chicken wing"
+      ],
+      "category": "poultry",
+      "question": "Which chicken wings should you buy?",
+      "decision": "Pasture-raised chicken wings, soy-free feed when the farm offers it.",
+      "why": "Wings and skin are the fattiest cuts, so feed shows most here. Soy-free pastured birds carry a better omega ratio.",
+      "short_answer": "Choose pasture-raised wings, and ask for soy-free feed. Wings are a fattier cut. Soy-free pastured chickens had a 3 to 1 omega-6 to omega-3 ratio, against 8 to 1 with soy.",
+      "detail": "Chickens are meant to range free, foraging bugs and greens; industrial birds are crowded, with little fresh air, on corn and soy feed. Fattier parts such as legs and wings carry more omega-6 than breast, and the skin is a concentrated fat source. Among pastured chickens, those fed soy had an omega-6 to omega-3 ratio of 8 to 1, against 3 to 1 for soy-free birds.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        {
+          "name": "The Paleo Mom: How poultry fits into a Paleo diet",
+          "url": "https://www.thepaleomom.com/for-the-birds-how-poultry-fits-into-a-Paleo-diet/"
+        },
+        {
+          "name": "Chris Kresser: Why pasture-raised",
+          "url": "https://chriskresser.com/why-pasture-raised/"
+        },
+        {
+          "name": "Weston A. Price Foundation: Principles of healthy diets",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/principles-of-healthy-diets-2/"
+        }
+      ],
+      "kristy_take": "Wings are mostly skin and fat, so how the bird ate matters more here than for breast.",
+      "cart_pick": "Pasture-raised chicken wings",
+      "buying_tips": [
+        "Ask the counter for pasture-raised wings, and whether the feed is soy-free.",
+        "Wings carry the most skin and fat, where the feed shows most.",
+        "How it was raised: see Chicken."
+      ],
+      "watch_out": [
+        "Wings and skin are the fattiest part of the bird, where corn and soy feed shows most."
+      ],
+      "pick_steps": [
+        "Ask whether the chickens were pasture-raised.",
+        "Ask whether the feed was soy-free.",
+        "How it was raised: see Chicken."
+      ],
+      "science": "Legs and wings carry more omega-6 than breast. The skin is a concentrated fat source. Pastured chickens fed soy had an omega-6 to omega-3 ratio of 8 to 1. Soy-free pastured birds had 3 to 1.",
+      "labels_decoded": [
+        {
+          "term": "Drumette and flat",
+          "meaning": "The two meaty sections of a split wing."
+        },
+        {
+          "term": "Party wings",
+          "meaning": "Wings already split into drumettes and flats."
+        }
+      ],
+      "tier_note": "Pasture-raised chicken: time outdoors on pasture, audited only with a certifier’s seal.",
+      "asked_as": [
+        "which chicken wings should i buy",
+        "are pasture raised wings worth it",
+        "are chicken wings healthy"
       ]
     }
   ]

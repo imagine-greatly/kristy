@@ -45,13 +45,13 @@ const NEGATIVES = nonEmpty([
   'vegetable broth', 'salad greens', 'candy thermometer',
 ], 'negative rows', 13);
 const CARRIED = nonEmpty([
-  ['ranch dressing', 'The specified oil and vinegar cards do not author a dressing choice.'],
-  ['salad dressing', 'The specified oil and vinegar cards do not author a dressing choice.'],
   ['candy', 'No card plainly supports a same-use candy choice.'],
   ['cookies', 'No card plainly supports a same-use cookie choice.'],
   ['instant noodles', 'No card plainly supports a same-use instant noodle choice.'],
   ['chips', 'The bare word is ambiguous, including chocolate chips; never add it as an alias.'],
-], 'reasoned carries', 6);
+], 'reasoned carries', 4);
+// Gap pass (2026-10-23): the two dressing carries are now authored by the salad_dressing card.
+const GAP_COVERED = nonEmpty(['ranch dressing', 'salad dressing'], 'gap-covered rows', 2);
 
 for (const [name, id, cartPick] of CARD_ALIASES) {
   test(`swap-picks-1: ${name} attaches ${id} and its existing cart pick`, () => {
@@ -98,6 +98,10 @@ test('swap-picks-1: negatives never attach a new pick or either new card alias',
   assert.equal(matchItemToPick('club soda'), null);
   assert.equal(matchItemToCard('white bread flour')?.slug, 'flour_basics');
   assert.equal(matchItemToCard('bread flour')?.slug, 'flour_basics');
+});
+
+test('swap-picks-1: the dressing carries reach the salad_dressing card', () => {
+  for (const name of GAP_COVERED) assert.equal(matchItemToCard(name)?.slug, 'salad_dressing', name);
 });
 
 test('swap-picks-1: reasoned carries stay without guidance', () => {

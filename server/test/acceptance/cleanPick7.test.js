@@ -1,4 +1,4 @@
-import { restoreOrganicCarts, liveDecision } from './cartPlain.js';
+import { restoreOrganicCarts, liveDecision, withoutGapKeys, withoutGapRows } from './cartPlain.js';
 // clean-pick-7 (Devon 2026-10-20, "organic, no additives, no synthetic, as close to the source as possible"): B7b, 9 picks name their item's cleanest version; sausage, egg whites and soup bones are held.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
@@ -117,9 +117,9 @@ test('C6 entries outside the batch deepEqual the base; count and top-level keys 
 });
 
 test('C7 doLines.json and do-lines-review.md are unchanged from the base', () => {
-  const now = JSON.parse(readFileSync(new URL('../../lib/doLines.json', import.meta.url), 'utf8'));
+  const now = withoutGapKeys(JSON.parse(readFileSync(new URL('../../lib/doLines.json', import.meta.url), 'utf8')));
   assert.deepEqual(now, JSON.parse(git(`${BASE}:server/lib/doLines.json`)));
-  const review = readFileSync(new URL('../../../docs/do-lines-review.md', import.meta.url), 'utf8');
+  const review = withoutGapRows(readFileSync(new URL('../../../docs/do-lines-review.md', import.meta.url), 'utf8'));
   nonEmpty(review.split('\n'), 'review lines', 150);
   assert.equal(strip9(review), strip9(git(`${BASE}:docs/do-lines-review.md`)));
 });

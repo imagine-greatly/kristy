@@ -34,7 +34,7 @@ const BARE = nonEmpty(Object.entries({
   'beef liver': 'organ_meats', 'chicken livers': 'organ_meats', 'beef heart': 'organ_meats', 'sweetbreads': 'organ_meats', 'organ meat': 'organ_meats',
   'bison': 'bison', 'ground bison': 'bison',
   'venison': 'venison_game', 'ground venison': 'venison_game', 'elk': 'venison_game',
-  'duck breast': null, 'whole duck': null, 'duck legs': 'chicken_cuts_basics', // chf-5: duck legs folded; breast/whole vetoed by type (honest miss)
+  'duck breast': null, 'whole duck': 'poultry_duck', 'duck legs': 'chicken_cuts_basics', // chf-5: duck legs folded; breast vetoed by type (honest miss); gap pass 2026-10-23: poultry_duck owns whole duck
   'jerky': 'pick_jerky', 'beef jerky': 'pick_jerky', 'turkey jerky': 'pick_jerky',
   'soup bones': 'pick_soup_bones', 'marrow bones': 'pick_soup_bones', 'beef bones': 'pick_soup_bones',
 }), 'K15 bare rows', 30);

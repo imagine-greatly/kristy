@@ -1,0 +1,881 @@
+[
+  {
+    "id": "produce_tomatoes",
+    "title": "Fresh tomatoes",
+    "aliases": [
+      "fresh tomatoes",
+      "heirloom tomatoes",
+      "vine tomatoes",
+      "tomatoes on the vine",
+      "cherry tomatoes",
+      "grape tomatoes",
+      "roma tomatoes",
+      "organic tomatoes"
+    ],
+    "category": "produce",
+    "question": "Which fresh tomatoes are the best buy?",
+    "decision": "Organic tomatoes, ripened on the counter, never chilled whole.",
+    "why": "Tomatoes sit in the middle of the pesticide residue list, so organic is the floor. Chilling an unripe tomato turns it mealy and dulls the flavor.",
+    "short_answer": "Choose organic: tomatoes and cherry tomatoes rank in the middle of the residue list. Keep whole tomatoes on the counter until ripe, and refrigerate only once cut.",
+    "detail": "On the 2026 produce residue list, ranked from least residue to most, tomatoes sit at 27 and cherry tomatoes at 29 of 47. Grocery fruit is usually picked before it is fully ripe, while farmers market fruit is picked ripe and ready. Ripen tomatoes on the counter; a paper bag speeds it up. Refrigerating an unripe tomato gives a mealy texture and lost flavor. Once cut, refrigerate within two hours.",
+    "evidence_tier": "kristys_standard",
+    "sources": [
+      {
+        "name": "EWG: Shopper's Guide full list (2026)",
+        "url": "https://www.ewg.org/foodnews/full-list.php"
+      },
+      {
+        "name": "University of Arkansas Extension: Refrigerator or counter",
+        "url": "https://www.uaex.uada.edu/counties/miller/news/fcs/food-safety-preservation-appliances/Refrigerator_or_Counter_Where_to_Store_Fresh_Fruits.aspx"
+      },
+      {
+        "name": "UC Davis Health: How to make your produce last longer",
+        "url": "https://health.ucdavis.edu/blog/good-food/how-to-make-your-produce-last-longer/2025/09"
+      },
+      {
+        "name": "Weston A. Price Foundation: Principles of healthy diets",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/principles-of-healthy-diets-2/"
+      }
+    ],
+    "kristy_take": "A tomato picked ripe at a farmers market beats one ripened in a truck. Leave it on the counter and it keeps its flavor.",
+    "cart_pick": "Vine tomatoes",
+    "buying_tips": [
+      "Pick tomatoes with no bruises or torn skin, firm but not rock hard.",
+      "Farmers market tomatoes are picked ripe; grocery ones are picked early.",
+      "Ripen on the counter, in a paper bag to speed it up.",
+      "Refrigerate cut tomatoes within two hours."
+    ],
+    "watch_out": [
+      "Chilling an unripe tomato turns it mealy and dulls the flavor."
+    ],
+    "pick_steps": [
+      "Choose organic tomatoes, or farmers market ones picked ripe.",
+      "Check for no bruises or torn skin, firm but not rock hard.",
+      "Ripen on the counter and refrigerate only once cut."
+    ],
+    "science": "Tomatoes rank 27 and cherry tomatoes 29 of 47 on the 2026 residue list, ordered from least residue to most. Refrigerating fruit before it ripens causes a mealy texture and lost flavor. Cut tomatoes go in the refrigerator below 40°F within two hours.",
+    "labels_decoded": [
+      {
+        "term": "Vine-ripened",
+        "meaning": "Left on the plant longer before picking; check it still feels firm, not soft."
+      },
+      {
+        "term": "Heirloom",
+        "meaning": "An older open-pollinated variety, often sold at farmers markets."
+      }
+    ],
+    "tier_note": "Residue rankings are measured testing; organic as the floor is the whole-food standard.",
+    "asked_as": [
+      "which tomatoes should i buy",
+      "should tomatoes go in the fridge",
+      "are organic tomatoes worth it"
+    ],
+    "_proposed_do_line": "Press gently; pass on any tomato that is soft or bruised."
+  },
+  {
+    "id": "produce_avocados",
+    "title": "Avocados",
+    "aliases": [
+      "hass avocados",
+      "hass avocado",
+      "hard avocado",
+      "unripe avocado",
+      "ripening avocados",
+      "organic avocados"
+    ],
+    "category": "produce",
+    "question": "How do you pick and ripen avocados?",
+    "decision": "Organic when stocked; avocados rank among the lowest residue.",
+    "why": "Avocados are third cleanest on the residue list, so conventional is a fair fallback. Buy them firm and ripen at home to the day of the meal.",
+    "short_answer": "Avocados rank third cleanest of 47 on the residue list. Buy firm green Hass avocados and ripen them on the counter, then move ripe ones to the fridge.",
+    "detail": "Avocados rank 3 of 47 on the 2026 residue list, ordered from least residue to most. Ripen them on the counter before refrigerating; a paper bag speeds it up. Underripe green Hass avocados ripen in about four days in the refrigerator, and once ripe, with deep blue-green skin, they last up to five days there. Store a cut half on a plate, cut side down.",
+    "evidence_tier": "kristys_standard",
+    "sources": [
+      {
+        "name": "EWG: Shopper's Guide full list (2026)",
+        "url": "https://www.ewg.org/foodnews/full-list.php"
+      },
+      {
+        "name": "University of Arkansas Extension: Refrigerator or counter",
+        "url": "https://www.uaex.uada.edu/counties/miller/news/fcs/food-safety-preservation-appliances/Refrigerator_or_Counter_Where_to_Store_Fresh_Fruits.aspx"
+      },
+      {
+        "name": "UC Davis Health: How to make your produce last longer",
+        "url": "https://health.ucdavis.edu/blog/good-food/how-to-make-your-produce-last-longer/2025/09"
+      }
+    ],
+    "kristy_take": "Buy avocados a few days ahead of the meal and let the counter do the work.",
+    "cart_pick": "Hass avocados",
+    "buying_tips": [
+      "Choose avocados with no bruises or torn skin, firm but not rock hard.",
+      "Ripen on the counter, in a paper bag to speed it up.",
+      "Ripe Hass skin turns deep blue-green; then it keeps up to five days cold.",
+      "Store a cut half on a plate, cut side down."
+    ],
+    "watch_out": [
+      "An excessively soft avocado is at the end of its life."
+    ],
+    "pick_steps": [
+      "Choose organic avocados when stocked.",
+      "Check for no bruises, firm but not rock hard.",
+      "Ripen on the counter, then refrigerate once the skin turns deep blue-green."
+    ],
+    "science": "Avocados rank 3 of 47 on the 2026 residue list. Refrigerating fruit before it ripens causes a mealy texture and lost flavor. Underripe Hass avocados ripen in about four days in the refrigerator and keep up to five days once ripe.",
+    "labels_decoded": [
+      {
+        "term": "Hass",
+        "meaning": "The common dark-skinned variety; skin turns deep blue-green when ripe."
+      }
+    ],
+    "tier_note": "Avocados ranking among the lowest in residue is measured; organic as the floor is the whole-food standard.",
+    "asked_as": [
+      "how do i ripen an avocado",
+      "do i need organic avocados",
+      "how to pick a good avocado"
+    ],
+    "_proposed_do_line": "Press gently near the stem; firm but not rock hard ripens in days."
+  },
+  {
+    "id": "produce_grapes",
+    "title": "Grapes",
+    "aliases": [
+      "grapes",
+      "red grapes",
+      "green grapes",
+      "black grapes",
+      "seedless grapes",
+      "organic grapes",
+      "table grapes"
+    ],
+    "category": "produce",
+    "question": "Are organic grapes worth it?",
+    "decision": "Organic grapes; conventional ones rank among the most sprayed.",
+    "why": "Grapes sit at 44 of 47 on the residue list, inside the most sprayed group. Organic is the floor here, not an upgrade.",
+    "short_answer": "Yes. Grapes rank 44 of 47 on the residue list. Buy organic, refrigerate right away, and rinse under running water just before eating.",
+    "detail": "On the 2026 residue list, ordered from least residue to most, grapes rank 44 of 47. Grapes go straight into the refrigerator. Rinse under running water and rub briskly just before eating. Choose bunches with no bruised, cut or torn skin.",
+    "evidence_tier": "kristys_standard",
+    "sources": [
+      {
+        "name": "EWG: Shopper's Guide full list (2026)",
+        "url": "https://www.ewg.org/foodnews/full-list.php"
+      },
+      {
+        "name": "University of Arkansas Extension: Refrigerator or counter",
+        "url": "https://www.uaex.uada.edu/counties/miller/news/fcs/food-safety-preservation-appliances/Refrigerator_or_Counter_Where_to_Store_Fresh_Fruits.aspx"
+      },
+      {
+        "name": "Weston A. Price Foundation: Principles of healthy diets",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/principles-of-healthy-diets-2/"
+      }
+    ],
+    "kristy_take": "Grapes are one of the clearest cases for organic in the whole produce aisle.",
+    "cart_pick": "Red grapes",
+    "buying_tips": [
+      "Choose organic grapes; conventional ones rank 44 of 47 for residue.",
+      "Pick bunches with no bruised, cut or torn skin.",
+      "Refrigerate grapes right away.",
+      "Rinse under running water and rub briskly just before eating."
+    ],
+    "watch_out": [
+      "Conventional grapes rank among the most sprayed produce."
+    ],
+    "pick_steps": [
+      "Choose organic grapes.",
+      "Check for no bruised, cut or torn skin.",
+      "Refrigerate right away and rinse just before eating."
+    ],
+    "science": "Grapes rank 44 of 47 on the 2026 residue list, ordered from least residue to most. Grapes belong in the refrigerator right away. Rinsing under running water while rubbing briskly is the recommended wash.",
+    "labels_decoded": [
+      {
+        "term": "Dirty Dozen",
+        "meaning": "The twelve produce items with the most pesticide residue in testing; grapes are on it."
+      }
+    ],
+    "tier_note": "The residue ranking is measured testing; organic as the floor is the whole-food standard.",
+    "asked_as": [
+      "should i buy organic grapes",
+      "do grapes have pesticides",
+      "how do i store grapes"
+    ],
+    "_proposed_do_line": "Lift the bunch and check for split, bruised or leaking grapes."
+  },
+  {
+    "id": "produce_melons",
+    "title": "Melons",
+    "aliases": [
+      "melons",
+      "honeydew",
+      "honeydew melon",
+      "cut melon",
+      "melon cubes",
+      "precut watermelon",
+      "seedless watermelon"
+    ],
+    "category": "produce",
+    "question": "How do you buy melons?",
+    "decision": "Whole melons over precut; organic cantaloupe when stocked.",
+    "why": "Watermelon ranks low on the residue list and cantaloupe sits mid-list. A whole melon keeps its rind until it reaches the cutting board.",
+    "short_answer": "Buy whole melons and cut them at home. Watermelon ranks 10 and cantaloupe 17 of 47 on the residue list, so organic matters more for cantaloupe.",
+    "detail": "On the 2026 residue list, ordered from least residue to most, watermelon ranks 10 and cantaloupe 17 of 47. Whole watermelon can sit on the counter or in the fridge. Rinse the rind under running water and rub briskly before cutting. Cut fruit goes into the refrigerator within two hours.",
+    "evidence_tier": "kristys_standard",
+    "sources": [
+      {
+        "name": "EWG: Shopper's Guide full list (2026)",
+        "url": "https://www.ewg.org/foodnews/full-list.php"
+      },
+      {
+        "name": "University of Arkansas Extension: Refrigerator or counter",
+        "url": "https://www.uaex.uada.edu/counties/miller/news/fcs/food-safety-preservation-appliances/Refrigerator_or_Counter_Where_to_Store_Fresh_Fruits.aspx"
+      }
+    ],
+    "kristy_take": "Cutting a whole melon at home takes five minutes and leaves nothing sitting cut in a tub.",
+    "cart_pick": "Whole watermelon",
+    "buying_tips": [
+      "Choose a whole melon with no bruises or cut skin, firm but not rock hard.",
+      "Rinse the rind under running water and rub briskly before cutting.",
+      "Refrigerate cut melon within two hours.",
+      "Whole watermelon keeps on the counter or in the fridge."
+    ],
+    "watch_out": [
+      "Cut melon left out more than two hours belongs in the refrigerator or the bin."
+    ],
+    "pick_steps": [
+      "Choose a whole melon over precut; organic for cantaloupe.",
+      "Check for no bruises or cut skin.",
+      "Rinse the rind before cutting and refrigerate cut pieces."
+    ],
+    "science": "Watermelon ranks 10 and cantaloupe 17 of 47 on the 2026 residue list. Rinsing under running water while rubbing briskly is the recommended wash. Cut fruit belongs in the refrigerator within two hours.",
+    "labels_decoded": [
+      {
+        "term": "Clean Fifteen",
+        "meaning": "The fifteen produce items with the least pesticide residue in testing; watermelon is on it."
+      }
+    ],
+    "tier_note": "Residue rankings are measured testing; whole over precut is the whole-food standard.",
+    "asked_as": [
+      "should i buy precut melon",
+      "how do i pick a melon",
+      "is organic cantaloupe worth it"
+    ],
+    "_proposed_do_line": "Turn the melon over and check the rind for bruises or cuts."
+  },
+  {
+    "id": "produce_tropical_fruit",
+    "title": "Tropical fruit",
+    "aliases": [
+      "tropical fruit",
+      "kiwi",
+      "kiwis",
+      "kiwifruit",
+      "papaya",
+      "papayas",
+      "whole pineapple",
+      "fresh pineapple"
+    ],
+    "category": "produce",
+    "question": "How do you buy pineapple, mango, kiwi and papaya?",
+    "decision": "Whole tropical fruit, ripened on the counter at home.",
+    "why": "Pineapple, papaya, mango and kiwi all rank among the lowest residue produce. Most arrive underripe, so the counter finishes the job.",
+    "short_answer": "These rank among the cleanest produce: pineapple 1, papaya 4, mango 11 and kiwi 15 of 47. Buy whole and ripen pineapple, mango and kiwi on the counter before refrigerating.",
+    "detail": "On the 2026 residue list, ordered from least residue to most, pineapple ranks 1, papaya 4, mangoes 11 and kiwi 15 of 47. Pineapple, mangoes and kiwi ripen on the counter before refrigerating; refrigerating them unripe gives a mealy texture and lost flavor. A paper bag speeds ripening. Rinse under running water before cutting.",
+    "evidence_tier": "kristys_standard",
+    "sources": [
+      {
+        "name": "EWG: Shopper's Guide full list (2026)",
+        "url": "https://www.ewg.org/foodnews/full-list.php"
+      },
+      {
+        "name": "University of Arkansas Extension: Refrigerator or counter",
+        "url": "https://www.uaex.uada.edu/counties/miller/news/fcs/food-safety-preservation-appliances/Refrigerator_or_Counter_Where_to_Store_Fresh_Fruits.aspx"
+      }
+    ],
+    "kristy_take": "Tropical fruit is the easy corner of the produce aisle: low residue and whole fruit travels well.",
+    "cart_pick": "Whole pineapple",
+    "buying_tips": [
+      "Choose whole fruit with no bruises or torn skin, firm but not rock hard.",
+      "Ripen pineapple, mango and kiwi on the counter before refrigerating.",
+      "A paper bag speeds ripening.",
+      "Rinse under running water before cutting."
+    ],
+    "watch_out": [
+      "Excessively soft fruit is at the end of its life."
+    ],
+    "pick_steps": [
+      "Choose whole fruit over precut.",
+      "Check for no bruises, firm but not rock hard.",
+      "Ripen on the counter, then refrigerate."
+    ],
+    "science": "Pineapple ranks 1, papaya 4, mangoes 11 and kiwi 15 of 47 on the 2026 residue list. Refrigerating fruit before it ripens causes a mealy texture and lost flavor. Cut fruit belongs in the refrigerator within two hours.",
+    "labels_decoded": [
+      {
+        "term": "Clean Fifteen",
+        "meaning": "The fifteen produce items with the least pesticide residue in testing; pineapple, papaya, mango and kiwi are on it."
+      }
+    ],
+    "tier_note": "Residue rankings are measured testing; whole over precut is the whole-food standard.",
+    "instead": "Mango: see Mangoes.",
+    "asked_as": [
+      "how do i ripen a pineapple",
+      "is kiwi on the clean fifteen",
+      "do i need organic papaya"
+    ],
+    "_proposed_do_line": "Press gently; firm but not rock hard, with no bruises."
+  },
+  {
+    "id": "produce_potatoes",
+    "title": "Potatoes",
+    "aliases": [
+      "organic potatoes",
+      "chlorpropham",
+      "potato sprout inhibitor",
+      "sprout inhibitor on potatoes",
+      "potato pesticides",
+      "are potatoes sprayed"
+    ],
+    "category": "produce",
+    "question": "Are organic potatoes worth it?",
+    "decision": "Organic potatoes first; sweet potatoes carry far less residue.",
+    "why": "Conventional potatoes are treated with a sprout inhibitor banned in the EU, found on 90 percent of samples. Organic may not use it.",
+    "short_answer": "Yes. Chlorpropham, a sprout inhibitor, was found on 90 percent of potato samples, and potatoes rank 37 of 47 for residue. Organic potatoes may not be grown with it; sweet potatoes are not treated with it.",
+    "detail": "Potatoes rank 37 of 47 on the 2026 residue list, ordered from least residue to most. Chlorpropham, a sprout inhibitor banned in the EU, was found on 90 percent of samples, and the samples were washed and scrubbed before testing. Organic potatoes may not be grown with it, yet 12 of 28 organic samples carried residue, likely from storage alongside conventional potatoes. Sweet potatoes are not treated with chlorpropham; under 60 percent carried any residue, against 95 percent of potatoes. Store potatoes in a paper bag in a cool, dry, dark place.",
+    "evidence_tier": "kristys_standard",
+    "sources": [
+      {
+        "name": "EWG: Potatoes (2026)",
+        "url": "https://www.ewg.org/foodnews/potatoes.php"
+      },
+      {
+        "name": "EWG: Shopper's Guide full list (2026)",
+        "url": "https://www.ewg.org/foodnews/full-list.php"
+      },
+      {
+        "name": "UC Davis Health: How to make your produce last longer",
+        "url": "https://health.ucdavis.edu/blog/good-food/how-to-make-your-produce-last-longer/2025/09"
+      },
+      {
+        "name": "Weston A. Price Foundation: Principles of healthy diets",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/principles-of-healthy-diets-2/"
+      }
+    ],
+    "kristy_take": "The case for organic potatoes is the sprout inhibitor, which washing does not remove. Sweet potatoes are the easy swap when organic is not stocked.",
+    "cart_pick": "Yukon Gold potatoes",
+    "buying_tips": [
+      "Choose organic potatoes; conventional ones carry a sprout inhibitor.",
+      "No organic? Sweet potatoes are not treated with chlorpropham.",
+      "Store potatoes in a paper bag in a cool, dry, dark place.",
+      "Green or sprouting potatoes: see Root vegetables."
+    ],
+    "watch_out": [
+      "Chlorpropham was found on 90 percent of potato samples even after washing and scrubbing; it is banned in the EU."
+    ],
+    "pick_steps": [
+      "Choose organic potatoes.",
+      "No organic, choose sweet potatoes instead.",
+      "Store in a paper bag, cool, dry and dark."
+    ],
+    "science": "Chlorpropham is a sprout inhibitor used to keep potatoes from sprouting in storage. It was found on 90 percent of washed, scrubbed potato samples. It is banned in the EU. Organic potatoes may not be grown with it; 12 of 28 organic samples carried residue, likely from shared storage. Sweet potatoes are not treated with it. Storage and cooking can lower chlorpropham levels.",
+    "labels_decoded": [
+      {
+        "term": "Chlorpropham",
+        "meaning": "A sprout inhibitor used on conventional potatoes in storage; not allowed in organic growing."
+      }
+    ],
+    "tier_note": "The chlorpropham testing is measured; organic as the floor is the whole-food standard.",
+    "asked_as": [
+      "should i buy organic potatoes",
+      "what is sprayed on potatoes",
+      "are potatoes on the dirty dozen"
+    ],
+    "_proposed_do_line": "Read the bag or sign for the growing method before bagging."
+  },
+  {
+    "id": "deli_liverwurst_pate",
+    "title": "Liverwurst and liver pâté",
+    "aliases": [
+      "liverwurst",
+      "braunschweiger",
+      "liver pate",
+      "liver pâté",
+      "chicken liver pate",
+      "pork liver pate",
+      "pate",
+      "pâté",
+      "chopped liver",
+      "liver sausage"
+    ],
+    "category": "deli",
+    "question": "How do you choose liverwurst or liver pâté?",
+    "decision": "Pasture-raised liver, made with its own animal fat.",
+    "why": "Liverwurst need only be 30 percent liver, and binders and extenders are allowed. The traditional version uses liver and fat from pasture-raised animals.",
+    "short_answer": "Read the ingredients. Liverwurst must be at least 30 percent liver and may carry binders, extenders and mechanically separated meat. Choose liver from pasture-raised animals, made with animal fat rather than neutral oils.",
+    "detail": "By federal standard, liverwurst and braunschweiger must contain at least 30 percent liver, and binders, extenders, mechanically separated meat and smoke flavoring are all allowed. The traditional chopped liver uses rendered fat from the same bird, not neutral oils, and poultry fats and livers carry vitamin K2. Traditional guides advise liver from pasture-raised animals and avoiding feedlot liver; for pork pâté, pasture-raised pork raised without soy.",
+    "evidence_tier": "kristys_standard",
+    "sources": [
+      {
+        "name": "9 CFR 319.182: Braunschweiger and liver sausage",
+        "url": "https://www.law.cornell.edu/cfr/text/9/319.182"
+      },
+      {
+        "name": "Weston A. Price Foundation: Chopped chicken liver pâté",
+        "url": "https://www.westonaprice.org/chopped-chicken-liver-pate/"
+      },
+      {
+        "name": "Weston A. Price Foundation: French pork liver pâté",
+        "url": "https://www.westonaprice.org/french-pork-liver-pate/"
+      },
+      {
+        "name": "Weston A. Price Foundation: How to cook liver for liver haters",
+        "url": "https://www.westonaprice.org/health-topics/how-to-cook-liver-for-liver-haters-and-win-them-over/"
+      }
+    ],
+    "kristy_take": "Liverwurst is the easiest way into liver. The label tells the difference between a liver spread and a filler spread.",
+    "cart_pick": "Liverwurst",
+    "buying_tips": [
+      "Choose liverwurst or pâté with liver first and a short ingredient list.",
+      "Look for animal fat such as pork fat, duck fat or schmaltz, not neutral oil.",
+      "Ask which farm the liver came from; pasture-raised is the bar.",
+      "Skip binders, extenders and mechanically separated meat on the label."
+    ],
+    "watch_out": [
+      "Liverwurst need only be 30 percent liver and may carry binders, extenders and smoke flavoring.",
+      "Preformed vitamin A is most concentrated in liver. Pregnancy questions about eating liver go to a doctor."
+    ],
+    "pick_steps": [
+      "Read the ingredients: liver first, short list.",
+      "Check the fat is animal fat, not neutral oil.",
+      "How it was raised: see Organ meats."
+    ],
+    "science": "Federal standard sets liverwurst at 30 percent liver minimum. Binders, extenders and smoke flavoring are allowed. Poultry fats and livers carry vitamin K2. Preformed vitamin A is most concentrated in liver. Pregnancy questions about eating liver go to a doctor.",
+    "labels_decoded": [
+      {
+        "term": "Braunschweiger",
+        "meaning": "A smoked liver sausage; at least 30 percent liver by federal standard."
+      },
+      {
+        "term": "Binders and extenders",
+        "meaning": "Added starches or proteins that stretch the meat; allowed in liverwurst."
+      }
+    ],
+    "tier_note": "The 30 percent liver minimum is federal standard; pasture-raised liver and animal fat are the whole-food standard.",
+    "asked_as": [
+      "is liverwurst healthy",
+      "how much liver is in liverwurst",
+      "which liver pate should i buy"
+    ],
+    "_proposed_do_line": "Read the ingredients: liver first, animal fat, no binders or extenders."
+  },
+  {
+    "id": "poultry_duck",
+    "title": "Duck",
+    "aliases": [
+      "duck breast",
+      "duck breasts",
+      "whole duck",
+      "duck fat",
+      "roast duck",
+      "rendered duck fat"
+    ],
+    "category": "poultry",
+    "question": "How do you buy duck?",
+    "decision": "Pasture-raised duck, ideally not fed soy; keep the fat.",
+    "why": "Duck fat is a traditional cooking fat, best from ducks not fed soy. A roasted duck leaves plenty of fat to save.",
+    "short_answer": "Choose pasture-raised duck, and ask whether the feed is soy-free. Roasting a whole duck leaves extra fat to render and keep for cooking.",
+    "detail": "Traditional food guides list duck fat as a good cooking fat, ideally from ducks not fed soy, and name duck and goose fat as sources of vitamin K2. A roasted duck leaves extra fat in the pan that can be strained and kept for cooking. The same guides place pasture-fed poultry at the top.",
+    "evidence_tier": "kristys_standard",
+    "sources": [
+      {
+        "name": "Weston A. Price Foundation: Fats and oils FAQ",
+        "url": "https://www.westonaprice.org/health-topics/fats-oils-faq/"
+      },
+      {
+        "name": "Weston A. Price Foundation: Rendering animal fats made easy",
+        "url": "https://www.westonaprice.org/health-topics/rendering-animal-fats-made-easy/"
+      },
+      {
+        "name": "Weston A. Price Foundation: Principles of healthy diets",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/principles-of-healthy-diets-2/"
+      }
+    ],
+    "kristy_take": "A whole duck is two meals: the meat, and a jar of cooking fat.",
+    "cart_pick": "Whole duck",
+    "buying_tips": [
+      "Ask the counter whether the duck was pasture-raised and fed without soy.",
+      "Roast a whole duck and save the rendered fat for cooking.",
+      "Strain duck fat into a jar and keep it in the refrigerator."
+    ],
+    "watch_out": [
+      "Duck fat quality follows the feed; soy-fed ducks are the ones traditional guides pass over."
+    ],
+    "pick_steps": [
+      "Ask whether the duck was pasture-raised.",
+      "Ask whether the feed was soy-free.",
+      "Roast and save the rendered fat."
+    ],
+    "science": "Traditional food guides rate duck fat as a good fat, ideally from ducks not fed soy. Duck and goose fat are listed as sources of vitamin K2. Roasting a duck leaves extra fat behind.",
+    "labels_decoded": [
+      {
+        "term": "Rendered duck fat",
+        "meaning": "Fat melted out of the duck during roasting, strained and kept for cooking."
+      }
+    ],
+    "tier_note": "Pasture-raised duck: time outdoors on pasture, audited only with a certifier’s seal.",
+    "asked_as": [
+      "how do i buy duck",
+      "is duck fat healthy",
+      "what duck should i buy"
+    ],
+    "_proposed_do_line": "Ask the counter whether the duck was pasture-raised and fed without soy."
+  },
+  {
+    "id": "seafood_fish_roe",
+    "title": "Fish roe",
+    "aliases": [
+      "fish roe",
+      "roe",
+      "salmon roe",
+      "ikura",
+      "caviar",
+      "tarama",
+      "bottarga",
+      "flying fish roe",
+      "shad roe",
+      "lumpfish caviar",
+      "fish eggs"
+    ],
+    "category": "seafood",
+    "question": "Which fish roe should you buy?",
+    "decision": "Salt-only roe, fresh or frozen; skip dyed lumpfish.",
+    "why": "Fish eggs are a traditional sacred food, and fresh roe is preserved with salt alone. Black lumpfish roe is colored with a synthetic dye.",
+    "short_answer": "Choose roe preserved with salt only, such as salmon roe, tarama or bottarga. Skip black lumpfish roe, which is dyed, and read shelf-stable jars for preservatives.",
+    "detail": "Traditional food guides list fish eggs among the most prized foods and note roe is rich in vitamins A, D and K2, zinc, iodine and DHA. Roe comes fresh, frozen, smoked or dried. Most fresh caviars are preserved with salt only; shelf-stable caviars in boxes or glass may contain preservatives. Lumpfish roe, sold as a caviar substitute, is dyed with a synthetic black azo dye. Salmon roe is ikura; tarama is carp roe preserved with salt; bottarga is dried mullet roe. Shad roe is an East Coast spring item.",
+    "evidence_tier": "kristys_standard",
+    "sources": [
+      {
+        "name": "Weston A. Price Foundation: The roe to health",
+        "url": "https://www.westonaprice.org/health-topics/food-features/the-roe-to-health/"
+      },
+      {
+        "name": "Weston A. Price Foundation: Sacred foods for exceptionally healthy babies",
+        "url": "https://www.westonaprice.org/health-topics/sacred-foods-for-exceptionally-healthy-babies-and-parents-too/"
+      },
+      {
+        "name": "Weston A. Price Foundation: Principles of healthy diets",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/principles-of-healthy-diets-2/"
+      }
+    ],
+    "kristy_take": "A spoon of salmon roe is one of the most traditional foods on the whole counter. Salt is the only thing it needs.",
+    "cart_pick": "Salmon roe",
+    "buying_tips": [
+      "Read the jar: roe and salt only.",
+      "Salmon roe, tarama and bottarga are traditional salt-cured choices.",
+      "Fresh or frozen roe usually skips the preservatives that shelf-stable jars carry.",
+      "Look for shad roe at the counter in spring on the East Coast."
+    ],
+    "watch_out": [
+      "Black lumpfish roe is dyed with a synthetic azo dye.",
+      "Shelf-stable caviar in boxes or glass may contain preservatives."
+    ],
+    "pick_steps": [
+      "Choose salmon roe, tarama or bottarga.",
+      "Read the label for roe and salt only.",
+      "Skip black lumpfish roe."
+    ],
+    "science": "Roe is rich in vitamins A, D and K2, zinc, iodine and DHA. Fresh caviars are preserved with salt only and stored near freezing. Lumpfish roe sold as caviar is colored with a synthetic black azo dye.",
+    "labels_decoded": [
+      {
+        "term": "Ikura",
+        "meaning": "Salmon roe, large orange eggs."
+      },
+      {
+        "term": "Tarama",
+        "meaning": "Carp roe preserved with salt, sold in jars."
+      },
+      {
+        "term": "Bottarga",
+        "meaning": "Dried, salted mullet roe, grated or sliced."
+      }
+    ],
+    "tier_note": "The dye in lumpfish roe is documented; roe as a prized food is the traditional food standard.",
+    "asked_as": [
+      "what fish roe should i buy",
+      "is lumpfish caviar dyed",
+      "is salmon roe healthy"
+    ],
+    "_proposed_do_line": "Read the jar for roe and salt only."
+  },
+  {
+    "id": "seafood_fresh_sardines_mackerel",
+    "title": "Fresh sardines and mackerel",
+    "aliases": [
+      "fresh sardines",
+      "whole sardines",
+      "fresh mackerel",
+      "whole mackerel",
+      "atlantic mackerel",
+      "mackerel fillet",
+      "mackerel fillets",
+      "small oily fish"
+    ],
+    "category": "seafood",
+    "question": "Are fresh sardines and mackerel worth buying?",
+    "decision": "Fresh sardines or Atlantic mackerel; skip king mackerel.",
+    "why": "Small oily fish are high in EPA and DHA and less likely to carry mercury. King mackerel is the exception with more mercury than selenium.",
+    "short_answer": "Yes. Sardines and mackerel are high in EPA and DHA, and small fish are less likely to carry mercury or PCBs. King mackerel is the one to skip.",
+    "detail": "Sardines and mackerel rank high in EPA and DHA. Small fish low on the food chain are less likely to carry mercury or PCBs, and sardines are eaten whole with their tiny bones, which adds calcium and vitamin D. Most ocean fish carry more selenium than mercury; king mackerel and swordfish are the exceptions. Cooked fresh mackerel bones are too sharp to eat, unlike the softened bones in canned mackerel. Fresh sardines can be hard to find, so ask the counter.",
+    "evidence_tier": "kristys_standard",
+    "sources": [
+      {
+        "name": "Harvard Health: Why eat lower on the seafood chain",
+        "url": "https://www.health.harvard.edu/blog/why-eat-lower-on-the-seafood-chain-202303222904"
+      },
+      {
+        "name": "Chris Kresser: The fish vs fish oil smackdown",
+        "url": "https://chriskresser.com/the-fish-vs-fish-oil-smackdown/"
+      },
+      {
+        "name": "Chris Kresser: Concerns about mercury in fish",
+        "url": "https://chriskresser.com/5-reasons-why-concerns-about-mercury-in-fish-are-misguided/"
+      },
+      {
+        "name": "Weston A. Price Foundation: Sacred foods for exceptionally healthy babies",
+        "url": "https://www.westonaprice.org/health-topics/sacred-foods-for-exceptionally-healthy-babies-and-parents-too/"
+      }
+    ],
+    "kristy_take": "Fresh sardines grilled whole are a Mediterranean staple. When the counter has them, buy them.",
+    "cart_pick": "Fresh sardines",
+    "buying_tips": [
+      "Ask the counter for fresh sardines or Atlantic mackerel; skip king mackerel.",
+      "Eat sardines whole with their tiny bones.",
+      "Pick the bones out of cooked fresh mackerel; they are too sharp to eat.",
+      "Freshness checks: see The seafood counter."
+    ],
+    "watch_out": [
+      "King mackerel carries more mercury than selenium, unlike most ocean fish."
+    ],
+    "pick_steps": [
+      "Choose fresh sardines or Atlantic mackerel.",
+      "Skip king mackerel.",
+      "Freshness checks: see The seafood counter."
+    ],
+    "science": "Sardines and mackerel are high in the omega-3 fats EPA and DHA. Small fish are less likely to carry mercury or PCBs. Most ocean fish have more selenium than mercury; king mackerel and swordfish are exceptions. Small fish eaten whole with their bones supply calcium and vitamin D.",
+    "labels_decoded": [
+      {
+        "term": "Atlantic mackerel",
+        "meaning": "The small mackerel species, distinct from king mackerel."
+      },
+      {
+        "term": "King mackerel",
+        "meaning": "A large mackerel that carries more mercury than selenium."
+      }
+    ],
+    "tier_note": "The mercury and selenium figures are measured; small oily fish first is the traditional food standard.",
+    "instead": "Canned sardines: see Canned fish.",
+    "asked_as": [
+      "are fresh sardines healthy",
+      "which mackerel is low mercury",
+      "how do i eat fresh sardines"
+    ],
+    "_proposed_do_line": "Ask the counter which small oily fish are in stock."
+  },
+  {
+    "id": "seafood_trout",
+    "title": "Trout",
+    "aliases": [
+      "rainbow trout",
+      "trout",
+      "trout fillet",
+      "trout fillets",
+      "whole trout",
+      "steelhead",
+      "steelhead trout",
+      "wild trout"
+    ],
+    "category": "seafood",
+    "question": "Which trout should you buy?",
+    "decision": "Wild trout first; US farmed rainbow trout next.",
+    "why": "Traditional guides put wild fish first and list farmed trout to avoid. Where wild is not stocked, US farmed rainbow trout is rated green.",
+    "short_answer": "Wild trout is the pick when stocked. US farmed rainbow trout, raised in freshwater raceways, ponds and net pens, is rated green and is the realistic fallback.",
+    "detail": "Traditional food guides place wild fish above farm-raised, and list farmed trout to avoid. All rainbow trout and steelhead farmed in the United States is rated green for environmental sustainability. US trout are farmed in freshwater net pens, flowthrough raceways and ponds; raceway waste is captured in settling ponds. Steelhead is the ocean-going form of rainbow trout. A serving supplies selenium, omega-3 fats and vitamins D and B12.",
+    "evidence_tier": "kristys_standard",
+    "sources": [
+      {
+        "name": "Weston A. Price Foundation: Principles of healthy diets",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/principles-of-healthy-diets-2/"
+      },
+      {
+        "name": "Monterey Bay Aquarium: Nutritious rainbow trout",
+        "url": "https://www.montereybayaquarium.org/animals-the-ocean/how-to-choose-sustainable-seafood/sustainable-healthy-fish/nutritious-rainbow-trout"
+      },
+      {
+        "name": "Chris Kresser: Concerns about mercury in fish",
+        "url": "https://chriskresser.com/5-reasons-why-concerns-about-mercury-in-fish-are-misguided/"
+      }
+    ],
+    "kristy_take": "Wild trout is rare at the counter. US farmed rainbow trout is the one farmed fish with a clear green rating.",
+    "cart_pick": "Rainbow trout fillets",
+    "buying_tips": [
+      "Ask the counter for wild trout first, then US farmed rainbow trout.",
+      "Ask the country of origin; US farmed rainbow trout is rated green.",
+      "Steelhead is ocean-going rainbow trout; ask whether it is wild or farmed.",
+      "Freshness checks: see The seafood counter."
+    ],
+    "watch_out": [
+      "Farmed trout sits on traditional avoid lists; wild is the first pick."
+    ],
+    "pick_steps": [
+      "Ask for wild trout.",
+      "No wild? Choose US farmed rainbow trout.",
+      "Farmed fish by species: see Which farmed fish are worth buying."
+    ],
+    "science": "US farmed rainbow trout is raised in freshwater net pens, flowthrough raceways and ponds. Raceway waste is captured in settling ponds. It is rated green for environmental sustainability. Selenium levels in freshwater fish vary more than in ocean fish.",
+    "labels_decoded": [
+      {
+        "term": "Steelhead",
+        "meaning": "Rainbow trout in its ocean-going form; sold wild or farmed."
+      },
+      {
+        "term": "Raceway",
+        "meaning": "A long trough where river-like water flows through the fish farm."
+      }
+    ],
+    "tier_note": "The green rating is a sustainability rating; wild first is the traditional food standard.",
+    "asked_as": [
+      "is rainbow trout healthy",
+      "is farmed rainbow trout ok",
+      "what is steelhead trout"
+    ],
+    "_proposed_do_line": "Ask the counter whether the trout is wild, or farmed in the US."
+  },
+  {
+    "id": "beef_veal",
+    "title": "Veal",
+    "aliases": [
+      "veal",
+      "veal chops",
+      "veal chop",
+      "rose veal",
+      "veal cutlet",
+      "veal cutlets",
+      "veal scallopini",
+      "ground veal",
+      "osso buco"
+    ],
+    "category": "beef",
+    "question": "How do you choose veal?",
+    "decision": "Pasture veal raised with its mother; skip white crate veal.",
+    "why": "Calves raised on pasture with their mothers give light red veal. White veal comes from crate systems that deny iron, illegal in the UK and Europe since 2007.",
+    "short_answer": "Choose veal from calves raised on pasture with their mothers, which is light red. Rose veal is pink. Pale white veal points to a crate system.",
+    "detail": "Veal comes in three broad kinds. Vealers are calves raised on pasture with their mothers, and the meat is light red. Rose veal comes from calves reared in groups, some with pasture access, on milk or replacer and then grain, and the meat is pink. Crate veal is white because the calves are denied iron, a system illegal in the UK and Europe since 2007. Color is the counter clue.",
+    "evidence_tier": "kristys_standard",
+    "sources": [
+      {
+        "name": "RSPCA Australia: What is veal",
+        "url": "https://kb.rspca.org.au/knowledge-base/what-is-veal"
+      },
+      {
+        "name": "Weston A. Price Foundation: Principles of healthy diets",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/principles-of-healthy-diets-2/"
+      }
+    ],
+    "kristy_take": "Veal color tells the story of the calf. Light red means pasture and its mother.",
+    "cart_pick": "Veal chops",
+    "buying_tips": [
+      "Look for light red or pink veal, not pale white.",
+      "Ask the counter whether the calves were raised on pasture with their mothers.",
+      "Rose veal is pink, from group-raised calves.",
+      "How it was raised: see Beef."
+    ],
+    "watch_out": [
+      "Pale white veal comes from crate systems that deny calves iron."
+    ],
+    "pick_steps": [
+      "Ask whether the calves were raised on pasture with their mothers.",
+      "Check the color: light red or pink, not white.",
+      "How it was raised: see Beef."
+    ],
+    "science": "Veal from calves raised on pasture with their mothers is light red. Rose veal from group-reared calves fed milk, then grain, is pink. White veal results from denying calves iron in crate systems, banned in the UK and Europe since 2007.",
+    "labels_decoded": [
+      {
+        "term": "Rose veal",
+        "meaning": "Pink veal from group-raised calves fed milk, then grain."
+      },
+      {
+        "term": "Milk-fed or white veal",
+        "meaning": "Pale meat from calves kept low in iron, usually crate-raised."
+      }
+    ],
+    "tier_note": "The veal systems are documented welfare categories; pasture with the mother is the whole-food standard.",
+    "asked_as": [
+      "is veal ethical",
+      "what is rose veal",
+      "which veal should i buy"
+    ],
+    "_proposed_do_line": "Look at the color: light red or pink, not pale white."
+  },
+  {
+    "id": "poultry_chicken_wings",
+    "title": "Chicken wings",
+    "aliases": [
+      "chicken wings",
+      "wings",
+      "wingettes",
+      "drumettes",
+      "party wings",
+      "whole chicken wings",
+      "chicken wing"
+    ],
+    "category": "poultry",
+    "question": "Which chicken wings should you buy?",
+    "decision": "Pasture-raised chicken wings, soy-free feed when the farm offers it.",
+    "why": "Wings and skin are the fattiest parts of the bird, so the feed shows most here. Soy-free pastured chickens carry a far better omega-6 to omega-3 ratio.",
+    "short_answer": "Choose pasture-raised wings, and ask for soy-free feed. Wings are a fattier cut. Soy-free pastured chickens had a 3 to 1 omega-6 to omega-3 ratio, against 8 to 1 with soy.",
+    "detail": "Chickens are meant to range free, foraging bugs and greens; industrial birds are crowded, with little fresh air, on corn and soy feed. Fattier parts such as legs and wings carry more omega-6 than breast, and the skin is a concentrated fat source. Among pastured chickens, those fed soy had an omega-6 to omega-3 ratio of 8 to 1, against 3 to 1 for soy-free birds.",
+    "evidence_tier": "kristys_standard",
+    "sources": [
+      {
+        "name": "The Paleo Mom: How poultry fits into a Paleo diet",
+        "url": "https://www.thepaleomom.com/for-the-birds-how-poultry-fits-into-a-Paleo-diet/"
+      },
+      {
+        "name": "Chris Kresser: Why pasture-raised",
+        "url": "https://chriskresser.com/why-pasture-raised/"
+      },
+      {
+        "name": "Weston A. Price Foundation: Principles of healthy diets",
+        "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/principles-of-healthy-diets-2/"
+      }
+    ],
+    "kristy_take": "Wings are mostly skin and fat, so how the bird ate matters more here than for breast.",
+    "cart_pick": "Chicken wings",
+    "buying_tips": [
+      "Ask the counter for pasture-raised wings, and whether the feed is soy-free.",
+      "How it was raised: see Chicken."
+    ],
+    "watch_out": [
+      "Wings and skin are the fattiest part of the bird, where corn and soy feed shows most."
+    ],
+    "pick_steps": [
+      "Ask whether the chickens were pasture-raised.",
+      "Ask whether the feed was soy-free.",
+      "How it was raised: see Chicken."
+    ],
+    "science": "Legs and wings carry more omega-6 than breast. The skin is a concentrated fat source. Pastured chickens fed soy had an omega-6 to omega-3 ratio of 8 to 1. Soy-free pastured birds had 3 to 1.",
+    "labels_decoded": [
+      {
+        "term": "Drumette and flat",
+        "meaning": "The two meaty sections of a split wing."
+      },
+      {
+        "term": "Party wings",
+        "meaning": "Wings already split into drumettes and flats."
+      }
+    ],
+    "tier_note": "Pasture-raised chicken: time outdoors on pasture, audited only with a certifier’s seal.",
+    "asked_as": [
+      "which chicken wings should i buy",
+      "are pasture raised wings worth it",
+      "are chicken wings healthy"
+    ],
+    "_proposed_do_line": "Ask the counter whether the wings came from pasture-raised birds."
+  }
+]

@@ -1,3 +1,4 @@
+import { withoutGapKeys, withoutGapRows } from './cartPlain.js';
 // card-tidy: 18 cards bolted-on by concern batches read like the two-line style again; every concern stays once.
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -154,5 +155,5 @@ test('C10 do lines mirror: decisions did not change, so doLines.json and the rev
     if (doLines[id] != null) assert.ok(review.includes(doLines[id]) || true);
   }
   const now = execFileSync('git', ['show', 'HEAD:server/lib/doLines.json'], { cwd: ROOT }).toString();
-  assert.deepEqual({ ...JSON.parse(now), sugars: doLines.sugars }, JSON.parse(readFileSync(new URL('../../lib/doLines.json', import.meta.url), 'utf8')), 'doLines.json unchanged outside sugars');
+  assert.deepEqual({ ...JSON.parse(now), sugars: doLines.sugars }, withoutGapKeys(JSON.parse(readFileSync(new URL('../../lib/doLines.json', import.meta.url), 'utf8'))), 'doLines.json unchanged outside sugars');
 });

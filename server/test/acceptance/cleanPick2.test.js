@@ -1,4 +1,4 @@
-import { restoreOrganicCarts } from './cartPlain.js';
+import { restoreOrganicCarts, withoutGapKeys, withoutGapRows } from './cartPlain.js';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
@@ -221,10 +221,10 @@ test('C6 entries outside the batch deepEqual 74237ce', () => {
 });
 
 test('C7 doLines.json unchanged; review headlines move only on decision-changed ids', () => {
-  const now = JSON.parse(readFileSync(new URL('../../lib/doLines.json', import.meta.url), 'utf8'));
+  const now = withoutGapKeys(JSON.parse(readFileSync(new URL('../../lib/doLines.json', import.meta.url), 'utf8')));
   assert.deepEqual(now, JSON.parse(git('74237ce:server/lib/doLines.json')));
   const rows = (txt) => new Map(txt.split('\n').filter((l) => l.startsWith('| `')).map((l) => [l.split('`')[1], l]).reverse()); // first row per id wins: the main table, not the historical notes
-  const liveRows = rows(readFileSync(new URL('../../../docs/do-lines-review.md', import.meta.url), 'utf8'));
+  const liveRows = rows(withoutGapRows(readFileSync(new URL('../../../docs/do-lines-review.md', import.meta.url), 'utf8')));
   const baseRows = rows(git('74237ce:docs/do-lines-review.md'));
   nonEmpty([...baseRows.keys()], 'review rows', 150);
   assert.equal(liveRows.size, baseRows.size);

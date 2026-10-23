@@ -87,7 +87,7 @@ test('the three list-surface aliases landed and still resolve', () => {
   // These were authored FROM the list item, not from the card's vocabulary — the defect
   // that had shipped five times running. Pinned so a corpus edit cannot quietly undo them.
   for (const [name, slug] of [
-    ['tomatoes', 'produce_ripeness_by_item'],
+    ['tomatoes', 'produce_tomatoes'], // gap pass (2026-10-23): the tomatoes alias moved off the ripeness hub
     ['almonds', 'nuts_raw_vs_roasted'],
     ['cheddar', 'cheese_real_vs_processed'],
   ]) {
@@ -371,8 +371,9 @@ test('Canned tomatoes never reaches the ripeness card through the matcher', () =
 test('an item naming no state is never vetoed, and one naming the shared state still matches', () => {
   // The item side of the both-sides rule is untouched: "tomatoes" names nothing, so the
   // implicit fresh has nothing to contradict and the card attaches exactly as before.
-  assert.equal(matchItemToCard('tomatoes')?.slug, 'produce_ripeness_by_item');
-  assert.equal(matchItemToCard('Fresh tomatoes')?.slug, 'produce_ripeness_by_item');
+  // Gap pass (2026-10-23): produce_tomatoes owns the noun now; the both-sides rule reads the same.
+  assert.equal(matchItemToCard('tomatoes')?.slug, 'produce_tomatoes');
+  assert.equal(matchItemToCard('Fresh tomatoes')?.slug, 'produce_tomatoes');
 });
 
 test('a produce card that names its own states keeps its own read', () => {

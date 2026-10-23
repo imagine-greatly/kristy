@@ -219,6 +219,30 @@ Also: imperative, starts with a verb, ≤14 words.
 | `frozen_waffles` | bulk_pantry | Whole grain frozen waffles with no dyes or enriched flour. | Read the list for “wheat flour”, which is not a whole grain flour. | — |
 | `frozen_nuggets` | bulk_pantry | Organic or pasture-raised white meat nuggets, one solid piece. | Check for “natural proportions”, which means 50 to 65 percent light meat. | — |
 | `frozen` | bulk_pantry | Frozen food that is frozen solid, picked up last. | Check for grayish-brown or white dried patches; that is freezer burn. | — |
+| `dark_chocolate` | bulk_pantry | An occasional bar, short list, lower cocoa percentage. | Read the cocoa percentage, then count the ingredients on the back. | — |
+| `molasses_whole_cane_sweeteners` | bulk_pantry | Organic molasses or dried whole cane juice over white sugar. | Read the list for one ingredient: molasses or dehydrated cane juice. | — |
+| `baking_powder` | bulk_pantry | Aluminum-free baking powder. | Turn the can and read the ingredient list for aluminum. | — |
+| `cornmeal_polenta_grits` | bulk_pantry | Organic whole grain corn, lime-treated when offered, soaked first. | Read the bag for whole grain corn, then skip anything marked instant. | — |
+| `rice_cakes_puffed_grains` | bulk_pantry | Skip puffed grains; whole grain crackers or soaked grains instead. | Pass the puffed aisle and grab whole grain rice to soak. | — |
+| `wild_rice` | bulk_pantry | Wildcrafted wild rice, soaked seven hours before cooking. | Read the bag for where it was gathered, then soak it overnight at home. | — |
+| `split_peas` | bulk_pantry | Organic dried split peas or lentils, soaked before cooking. | Grab a sealed bag of dried peas or lentils and soak them overnight. | — |
+| `applesauce` | bulk_pantry | Organic unsweetened applesauce, apples alone on the list. | Read the ingredient list; it should stop after one word. | — |
+| `salad_dressing` | bulk_pantry | Olive oil dressing, short list, no seed oils. | Read the oil on the list first, then count the ingredients. | — |
+| `bbq_sauce_marinades` | bulk_pantry | Short-list sauce, natural sweetener, no corn syrup or smoke flavoring. | Read the first three ingredients for corn syrup and smoke. | — |
+| `pesto` | bulk_pantry | Olive oil pesto: basil, pine nuts, parmesan; no seed oils. | Read the oil on the list; olive oil should be the only one. | — |
+| `produce_tomatoes` | produce | Organic tomatoes, ripened on the counter, never chilled whole. | Press gently; pass on any tomato that is soft or bruised. | — |
+| `produce_avocados` | produce | Organic when stocked; avocados rank among the lowest residue. | Press gently near the stem; firm but not rock hard ripens in days. | — |
+| `produce_grapes` | produce | Organic grapes; conventional ones rank among the most sprayed. | Lift the bunch and check for split, bruised or leaking grapes. | — |
+| `produce_melons` | produce | Whole melons over precut; organic cantaloupe when stocked. | Turn the melon over and check the rind for bruises or cuts. | — |
+| `produce_tropical_fruit` | produce | Whole tropical fruit, ripened on the counter at home. | Pick whole fruit with no bruises, then ripen on the counter. | — |
+| `produce_potatoes` | produce | Organic potatoes first; sweet potatoes carry far less residue. | Read the bag or sign for the growing method before bagging. | — |
+| `deli_liverwurst_pate` | meat | Pasture-raised liver, made with its own animal fat. | Read the ingredients: liver first, animal fat, no binders or extenders. | — |
+| `poultry_duck` | meat | Pasture-raised duck, ideally not fed soy; keep the fat. | Ask the counter whether the duck was pasture-raised and fed without soy. | — |
+| `seafood_fish_roe` | seafood | Salt-only roe, fresh or frozen; skip dyed lumpfish. | Read the jar for roe and salt only. | — |
+| `seafood_fresh_sardines_mackerel` | seafood | Fresh sardines or Atlantic mackerel; skip king mackerel. | Ask the counter which small oily fish are in stock. | — |
+| `seafood_trout` | seafood | Wild trout first; US farmed rainbow trout next. | Ask the counter whether the trout is wild, or farmed in the US. | — |
+| `beef_veal` | meat | Pasture veal raised with its mother; skip white crate veal. | Look at the color: light red or pink, not pale white. | — |
+| `poultry_chicken_wings` | meat | Pasture-raised chicken wings, soy-free feed when the farm offers it. | Ask the counter whether the wings came from pasture-raised birds. | — |
 
 **80 cards · 0 flagged · 33 redrafted in the 2026-07-31 sweep.**
 

@@ -155,8 +155,12 @@ test('C16 food only: no household use on vinegar, no seed oil named on mayo', ()
 });
 
 // chf-5: baking_soda_powder retired with no absorber; its aliases are honest misses now.
-for (const row of ['baking powder', 'double acting baking powder', 'aluminum free baking powder', 'bicarbonate of soda', 'sodium bicarbonate']) {
+for (const row of ['bicarbonate of soda', 'sodium bicarbonate']) {
   test(`C1b "${row}" is an honest miss after the chf-5 fold`, () => assert.equal(rowMatch(row), null));
+}
+// Gap pass (2026-10-23): the baking powder rows now reach the new baking_powder card.
+for (const row of ['baking powder', 'double acting baking powder', 'aluminum free baking powder']) {
+  test(`C1b "${row}" reaches baking_powder after the gap pass`, () => assert.equal(rowMatch(row), 'baking_powder'));
 }
 
 

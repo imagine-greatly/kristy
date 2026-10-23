@@ -497,11 +497,13 @@
       "Coffee beans can carry mold from hot, humid growing and storage.",
       "Look for organic whole beans from a roaster that states it tests for mold.",
       "Check that the packaging is sealed.",
-      "Keep the sealed coffee away from heat; the storage studies describe heat-related changes."
+      "Keep the sealed coffee away from heat; the storage studies describe heat-related changes.",
+      "For decaf, pick Swiss Water or another water-only process."
     ],
     "watch_out": [
       "Coffee sits off the staple list in traditional food guides. Keep it occasional.",
-      "No universal number of fresh days is established for all retail bags."
+      "No universal number of fresh days is established for all retail bags.",
+      "Solvent decaf soaks the beans in methylene chloride or ethyl acetate."
     ],
     "tier_note": "Mold testing is the roaster’s claim to check, and keeping coffee occasional is the traditional stance.",
     "science": "Coffee beans have been found to carry mycotoxins, likely from hot, humid growing, storage and processing. Coffee studies document changes in aroma and chemical composition during storage, including oxidation associated with oxygen exposure. Packaging and storage conditions affect that chemistry. No universal number of fresh days is established for all retail bags.",
@@ -514,7 +516,18 @@
       "Weston A. Price Foundation, Shopping Guide (Best/Good/Avoid tiers), beverages",
       "Chris Kresser, Food for Mold Illness (coffee beans and mycotoxins; roasters that verify beans by testing)",
       "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11243642/fullTextXML",
-      "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12607991/fullTextXML"
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12607991/fullTextXML",
+      "Mamavation, Decaffeinated Coffee & Methyl Chloride https://mamavation.com/food/decaffeinated-coffee-methyl-chloride.html"
+    ],
+    "labels_decoded": [
+      {
+        "term": "Packaging barrier",
+        "meaning": "The packaging’s resistance to exchange with the surrounding air."
+      },
+      {
+        "term": "Swiss Water Process",
+        "meaning": "Decaf made without a chemical solvent."
+      }
     ]
   },
   "sprouted_grain_bread": {

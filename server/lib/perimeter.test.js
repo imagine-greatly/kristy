@@ -319,8 +319,13 @@ test('produce guidance teaches picking SKILL, never an origin ranking', () => {
     byItem.buying_tips.some((t) => /stem/i.test(t)),
     'the stem check moved to the by-item hub, it did not evaporate'
   );
-  for (const alias of ['avocado', 'how to pick an avocado', 'cantaloupe', 'pineapple']) {
+  for (const alias of ['how to pick an avocado', 'cantaloupe']) {
     assert.ok(byItem.aliases.includes(alias), `by-item hub did not absorb the alias "${alias}"`);
+  }
+  // Gap pass (2026-10-23): the bare fruit nouns moved to their own cards, never duplicated.
+  for (const [alias, owner] of [['avocado', 'produce_avocados'], ['pineapple', 'produce_tropical_fruit']]) {
+    assert.ok(!byItem.aliases.includes(alias), `by-item hub still holds "${alias}"`);
+    assert.ok(perimeterKb.entries.find((e) => e.id === owner)?.aliases.includes(alias), `${owner} lacks "${alias}"`);
   }
 });
 
