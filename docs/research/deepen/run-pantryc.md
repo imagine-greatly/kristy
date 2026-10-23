@@ -1,0 +1,3 @@
+TIER: T2
+Read docs/research/deepen/BRIEF.md and docs/research/completeness/DECISIONS-2026-10-22.md first. Group: pantryc. Cards (ids in server/kristy_perimeter_kb.json): nutritional_yeast canned_coconut_milk dried_herbs tea vinegar pasta_sauce jam ketchup_mustard mayo hot_soy_sauce canned_soup olives seaweed salsa coconut_water condiments crackers tortilla_chips potato_chips popcorn pretzels snack_bars trail_mix.
+Use live web search for holistic sources only; every cited URL must be one you actually opened this run. Write ONLY docs/research/deepen/pantryc.md in the format the brief names. Do not edit the KB or any other file. No git writes.

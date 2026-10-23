@@ -1,0 +1,3 @@
+TIER: T2
+Read docs/research/deepen/BRIEF.md and docs/research/completeness/DECISIONS-2026-10-22.md first. Group: dairy. Cards (ids in server/kristy_perimeter_kb.json): grassfed_butter whole_vs_reduced_fat_milk cheese_real_vs_processed yogurt_plain_vs_flavored raw_milk cream_vs_creamer raw_kefir raw_aged_cheese oat_milk plain_kefir sour_cream cream_cheese cottage_cheese ice_cream ghee goat_sheep_dairy almond_milk soy_milk coconut_milk_beverage plant_butter dairy_case.
+Use live web search for holistic sources only; every cited URL must be one you actually opened this run. Write ONLY docs/research/deepen/dairy.md in the format the brief names. Do not edit the KB or any other file. No git writes.

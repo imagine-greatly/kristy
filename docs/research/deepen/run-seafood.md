@@ -1,0 +1,3 @@
+TIER: T2
+Read docs/research/deepen/BRIEF.md and docs/research/completeness/DECISIONS-2026-10-22.md first. Group: seafood. Cards (ids in server/kristy_perimeter_kb.json): salmon_wild_vs_farmed shrimp_imported_vs_domestic mercury_by_fish canned_fish_choosing farmed_fish_by_species seafood_certifications canned_tuna white_fish crab lobster scallops clams_mussels_oysters smoked_salmon seafood_counter seafood_fish_roe seafood_fresh_sardines_mackerel seafood_trout.
+Use live web search for holistic sources only; every cited URL must be one you actually opened this run. Write ONLY docs/research/deepen/seafood.md in the format the brief names. Do not edit the KB or any other file. No git writes.

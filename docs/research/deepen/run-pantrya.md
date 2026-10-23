@@ -1,0 +1,3 @@
+TIER: T2
+Read docs/research/deepen/BRIEF.md and docs/research/completeness/DECISIONS-2026-10-22.md first. Group: pantrya. Cards (ids in server/kristy_perimeter_kb.json): rice_arsenic oats_steelcut_rolled_instant nuts_raw_vs_roasted honey_adulteration beans_dried_vs_canned flour_basics bulk_bins_buying whole_spices rancidity_check olive_oil_grades nut_butter_ingredients grains_beyond_rice bottled_water_buying sandwich_bread sourdough bagels tortillas breakfast_cereal pasta_dry coffee_beans sprouted_grain_bread sprouted_grains specialty_flours.
+Use live web search for holistic sources only; every cited URL must be one you actually opened this run. Write ONLY docs/research/deepen/pantrya.md in the format the brief names. Do not edit the KB or any other file. No git writes.

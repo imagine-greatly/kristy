@@ -1,0 +1,3 @@
+TIER: T2
+Read docs/research/deepen/BRIEF.md and docs/research/completeness/DECISIONS-2026-10-22.md first. Group: pantryd. Cards (ids in server/kristy_perimeter_kb.json): snacks hummus deli_salads prepared_meals fresh_pasta deli frozen_pizza frozen_meals frozen_fries frozen_waffles frozen_nuggets frozen dark_chocolate molasses_whole_cane_sweeteners baking_powder cornmeal_polenta_grits rice_cakes_puffed_grains wild_rice split_peas applesauce salad_dressing bbq_sauce_marinades pesto.
+Use live web search for holistic sources only; every cited URL must be one you actually opened this run. Write ONLY docs/research/deepen/pantryd.md in the format the brief names. Do not edit the KB or any other file. No git writes.

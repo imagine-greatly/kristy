@@ -1,0 +1,3 @@
+TIER: T2
+Read docs/research/deepen/BRIEF.md and docs/research/completeness/DECISIONS-2026-10-22.md first. Group: pantryb. Cards (ids in server/kristy_perimeter_kb.json): gluten_free_bread buns_rolls pastries_muffins muesli bread_aisle kombucha sauerkraut kimchi fermented_pickles raw_cider_vinegar miso tempeh natto fermented broth salt sugars maple_syrup cooking_oils lard_tallow cocoa seeds dried_fruit.
+Use live web search for holistic sources only; every cited URL must be one you actually opened this run. Write ONLY docs/research/deepen/pantryb.md in the format the brief names. Do not edit the KB or any other file. No git writes.
