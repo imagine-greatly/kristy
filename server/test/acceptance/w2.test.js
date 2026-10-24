@@ -4,8 +4,8 @@ import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
-import { preCleanJ4, preCleanJ7, preCleanJ8, preCleanJ9, preCompleteness, notGap } from './cartPlain.js';
-kb.entries = kb.entries.filter(notGap).map(preCompleteness).map(preCleanJ7).map(preCleanJ8).map(preCleanJ9); // clean-sweep-J7/J8/J9: pins read 974ec27/e8cf851/53c6f90; cleanPickJ7/J8/J9.test.js own live copies.
+import { preFamilyCascade, preCleanJ4, preCleanJ7, preCleanJ8, preCleanJ9, preCompleteness, notGap } from './cartPlain.js';
+kb.entries = preFamilyCascade(kb.entries).filter(notGap).map(preCompleteness).map(preCleanJ7).map(preCleanJ8).map(preCleanJ9); // clean-sweep-J7/J8/J9: pins read 974ec27/e8cf851/53c6f90; cleanPickJ7/J8/J9.test.js own live copies.
 kb.entries = kb.entries.map(preCleanJ4); // clean-sweep-J4: seafood pins read 6d98564; cleanPickJ4.test.js owns live copy.
 import { preSwapPicks1 } from './twoLinePin.js';
 kb.entries = preSwapPicks1(kb.entries); // swap-picks-1: 8 swap picks + 2 aliases after 58d6160; swap_picks_1.test.js owns them.

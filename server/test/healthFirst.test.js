@@ -3,7 +3,7 @@
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import kb from '../kristy_perimeter_kb.json' with { type: 'json' };
+import liveKb from '../kristy_perimeter_kb.json' with { type: 'json' };
 import doLines from '../lib/doLines.json' with { type: 'json' };
 import { nonEmpty } from '../lib/testGuards.js';
 import {
@@ -11,6 +11,9 @@ import {
 } from '../lib/counterCardLint.js';
 import { assertPassRule, HEALTH_FIRST_REWRITE } from './acceptance/passRule.js';
 
+import { preFamilyCascade } from './acceptance/cartPlain.js';
+// familyCascade.test.js owns the new entries and member fields.
+const kb = { ...liveKb, entries: preFamilyCascade(liveKb.entries) };
 const byId = new Map(kb.entries.map((e) => [e.id, e]));
 const inFamily = new Set(OWNED_FACTS.flatMap((r) => r.family));
 // Question cards, plus the picks a family or the pending list names.

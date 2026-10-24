@@ -263,8 +263,17 @@ export const notGap = (e) => !GAP_ADDS.has(e.id);
 export const withoutGapKeys = (o) => Object.fromEntries(Object.entries(o).filter(([k]) => !GAP_ADDS.has(k)));
 export const withoutGapRows = (txt) => txt.split('\n').filter((l) => !(l.startsWith('| `') && GAP_ADDS.has(l.split('`')[1]))).join('\n');
 export const preCompleteness = (e) => (e && COMPLETENESS.has(e.id) ? structuredClone(PRE_COMPLETENESS.entries.find((x) => x.id === e.id)) : e);
+// Family cascade: familyCascade.test.js owns the live entries, member fields and flour decision.
+// Older snapshots retain every other field; pin the pre-cascade wording independently of HEAD.
+const PRE_FAMILY_FLOUR_DECISION = 'Organic sprouted flour, or fresh-ground whole grain, soaked.';
+export const preFamilyCascade = (entries) => entries
+  .filter((e) => e.kind !== 'family' && e.kind !== 'aisle')
+  .map(({ family, delta, ...entry }) => entry.id === 'flour_basics'
+    ? { ...entry, decision: PRE_FAMILY_FLOUR_DECISION }
+    : entry);
+
 export const restoreOrganicCarts = (kb) => {
-  kb.entries = kb.entries.filter((e) => !GAP_ADDS.has(e.id)).map(preCompleteness).map(preDialed).map(preCleanJ9).map(preCleanJ8).map(preCleanJ7).map(preCleanJ6).map(preCleanJ5).map(preCleanJ4).map(preCleanJ3).map(preCleanJ1);
+  kb.entries = preFamilyCascade(kb.entries).filter((e) => !GAP_ADDS.has(e.id)).map(preCompleteness).map(preDialed).map(preCleanJ9).map(preCleanJ8).map(preCleanJ7).map(preCleanJ6).map(preCleanJ5).map(preCleanJ4).map(preCleanJ3).map(preCleanJ1);
   for (const e of kb.entries) if (OLD[e.id]) Object.assign(e, OLD[e.id]);
   return kb;
 };

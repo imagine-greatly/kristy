@@ -105,7 +105,10 @@ test('essentials stay full for everyone', () => {
 
 test('a premium viewer receives the same full card as a guest', () => {
   for (const card of CARDS) {
-    assert.deepEqual(forViewer(card, { premium: true }), forViewer(card));
+    // delta is the one paid-only field (free/paid split B); everything else is identical.
+    const { delta, ...rest } = forViewer(card, { premium: true });
+    assert.deepEqual(rest, forViewer(card));
+    assert.equal(delta ?? null, card.delta ?? null);
     assert.ok(forViewer(card, { premium: true }).why, `${card.slug}: member has no why`);
   }
 });
@@ -235,8 +238,14 @@ test('viewer serializers omit paid keys for guests/free users and allow only aut
 });
 
 test('family and aisle routes enforce guest/free/paid boundaries and canonical briefings', async (t) => {
+  // the shipped KB now has a real aisle_produce; swap it for the fixture, restore after
+  const realAt = perimeterKb.entries.findIndex((e) => e.id === AISLE.id);
+  const real = realAt >= 0 ? perimeterKb.entries.splice(realAt, 1)[0] : null;
   perimeterKb.entries.push(FAMILY, AISLE);
-  t.after(() => perimeterKb.entries.splice(perimeterKb.entries.indexOf(FAMILY), 2));
+  t.after(() => {
+    perimeterKb.entries.splice(perimeterKb.entries.indexOf(FAMILY), 2);
+    if (real) perimeterKb.entries.splice(realAt, 0, real);
+  });
   let subscriptionReads = 0;
   t.mock.method(supabase, 'from', (table) => {
     assert.equal(table, 'subscriptions');

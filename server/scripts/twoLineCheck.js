@@ -14,7 +14,7 @@ const byId = new Map(kb.entries.map((e) => [e.id, e]));
 const FIRST_PERSON = /\b(I|me|my|mine|we|our|us)\b/;
 const APPROVED_LONG = new Set(['ground_beef_lean_ratio', 'whole_vs_reduced_fat_milk']);
 let bad = 0;
-const ids = Object.keys(proposals).length ? Object.keys(proposals) : kb.entries.filter((e) => e.kind !== 'pick').map((e) => e.id);
+const ids = Object.keys(proposals).length ? Object.keys(proposals) : kb.entries.filter((e) => !['pick', 'family', 'aisle'].includes(e.kind)).map((e) => e.id);
 for (const id of ids) {
   const base = byId.get(id);
   if (!base) { console.log(`${id}: NO_SUCH_ENTRY`); bad++; continue; }
