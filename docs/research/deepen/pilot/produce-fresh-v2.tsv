@@ -1,0 +1,63 @@
+# premise: Organic on anything where you eat the skin.
+id	name	verdict	cue	home_step	why_tap	frozen_angle	source_id
+f_apples	Apples	Organic	Firm, smooth skin that does not wrinkle when you rub a thumb across it.		The peel is eaten, and a study found contamination fell once the peel was removed with some pulp.	none	F001,F002
+f_pears	Pears	Organic	Sweet aroma means ripe; skip soft spots or scars deeper than the skin.		Pear skin is eaten, so organic keeps surface residue out.	none	F003,F004
+f_grapes	Grapes	Organic	Plump, uniform color, firmly attached to the stem; they do not ripen off the vine.		Grapes are eaten whole, skin included, and are named among thin-skinned fruits worth buying organic.	none	F005,F006,F007
+f_peaches	Peaches and nectarines	Organic	Yellowish or creamy background; a green background means picked immature.		The skin is eaten, and peaches and nectarines are named among thin-skinned fruits worth buying organic.	good_offseason	F008,F009,F007
+f_plums	Plums	Organic	Fairly firm to slightly soft with smooth skin; avoid rough or punctured skin.		Plum skin is eaten, so organic keeps surface residue out.	none	F010,F011
+f_cherries	Cherries	Organic	Large, firm, deep even color; skip wrinkled, leaking or sticky ones.		Cherry skin is eaten, so organic keeps surface residue out.	good_offseason	F012,F013
+f_strawberries	Strawberries	Organic	Even bright color, firm not rock-hard; green or white at caps will not ripen.		The whole berry surface is eaten, and strawberries are named among thin-skinned fruits worth buying organic.	good_offseason	F014,F015,F007
+f_blueberries	Blueberries	Organic	Deep purple to nearly black with a silver-white frost on the skin.		Blueberries are eaten whole, skin included, so organic keeps surface residue out.	good_offseason	F016,F017
+f_wild_blueberries	Wild blueberries	Organic	Smaller berries sold as wild or lowbush; deep blue with a light frost.		Eaten whole, skin included, so organic applies here too.	good_offseason	F018,F019
+f_caneberries	Raspberries and blackberries	Organic	Deep color with no tinges of white or green; firm, plump and dry.		Raspberries and blackberries are eaten whole, so organic keeps surface residue out.	good_offseason	F020,F021
+f_bell_peppers	Bell peppers	Organic	Bright, glossy, firm and light for their size; mold shows first at stem and bottom.		Pepper skin is eaten, so organic keeps surface residue out.	none	F022,F023
+f_tomatoes	Tomatoes	Organic	Firm, smooth-skinned and at least pink; partly green ones will ripen at home.		Tomato skin is eaten, so organic keeps surface residue out.	none	F024,F025
+f_cucumbers	Cucumbers	Organic	Even dark green, firm and relatively thin; check the sign or label for wax.	Peel only if the cucumber is waxed.	The thin skin is eaten, and waxed produce must be declared on the label or a bulk sign.	none	F026,F027,F028
+f_green_beans	Green beans	Organic	Brightly colored and snap easily when bent; skip blemished or stiff pods.		The whole pod is eaten, so organic keeps surface residue out.	good_offseason	F029,F030
+f_snap_peas	Snap and snow peas	Organic	Plump, snug pod bulging away from the peas; firm, crisp, medium to dark green.		The whole pod is eaten, so organic keeps surface residue out.	good_offseason	F031,F032
+f_okra	Okra	Organic	Brightly colored, dry and firm; young pods about 2 to 4 inches long.		The whole pod is eaten, so organic keeps surface residue out.	none	F033,F034
+f_eggplant	Eggplant	Organic	Firm, dark, smooth shiny skin and light for its size; dull wrinkled skin means old.		Skin is eaten, and eggplant is on the Non-GMO Project High-Risk List.	none	F035,F036,F037
+f_potatoes	Potatoes	Organic	Firm with shallow eyes; skip green tint, sprouts and wrinkles.	Throw away any sprouts and never eat potato that is green below the skin.	Skin is eaten, and potato is on the Non-GMO Project High-Risk List.	none	F038,F039,F040,F037
+f_sweet_potatoes	Sweet potatoes	Organic	Firm with smooth skin; avoid deep cracks, bruises, mold and dark spots.		Skin is commonly eaten, so organic keeps surface residue out.	none	F041,F042
+f_carrots	Carrots	Organic	Firm, smooth-skinned, uniform color; skip hair-like roots and brown areas.		Skin is eaten, so organic keeps surface residue out.	good_offseason	F043,F044
+f_beets	Beets	Organic	Firm, smooth and 2-3 inches across; attached greens should be bright with red veins.		Skin and greens are eaten, so organic keeps surface residue out (no ruling lists beets as peeled).	none	F045,F046
+f_radishes	Radishes	Organic	Smooth, firm, even bright cherry red; tops bright green and crisp.		Radishes are eaten whole, skin included, so organic keeps surface residue out.	none	F047,F048
+f_turnips	Turnips	Organic	Very firm, smooth-skinned and heavy for their size; skip spongy or brown-spotted.		Skin is commonly eaten, so organic keeps surface residue out.	none	F049,F050
+f_celery	Celery	Organic	Solid feel and fresh-looking leaflets; soft branches may be pithy.		The whole stalk is eaten, so organic keeps surface residue out.	none	F051,F052
+f_kohlrabi	Kohlrabi	Organic	Attached leaves bright green and firm; skip wilted leaves, brown spots and cracks.		Judgment call: bulb skin is often peeled, but leaves are eaten, so organic.	none	F053,F054
+f_ginger	Ginger	Organic	Firm, smooth skin with a spicy smell and few knobs or branches.		Judgment call: skin is often peeled, but no ruling discards it, so organic.	none	F055
+f_turmeric	Turmeric root	Organic	Firm, plump root without soft spots or mold ?		Judgment call: skin is often peeled, but no ruling discards it, so organic.	none	
+f_spinach	Spinach	Organic	Broad, crisp, dark green leaves; stems unblemished and free of mud.		Leaves are eaten raw and whole, so organic keeps surface residue out.	good_offseason	F056,F057
+f_kale_collards	Kale and collard greens	Organic	Dark, crisp, plump leaves in small to medium size; skip yellowish or torn.		Leaves are eaten whole, so organic keeps surface residue out.	good_offseason	F058,F059
+f_romaine_leaf	Romaine and leaf lettuce	Organic	Good color, no wilted leaves, insects or dirt; solid pale romaine heads are all core.		Leaves are eaten raw and whole, so organic keeps surface residue out.	none	F060,F061
+f_iceberg	Iceberg lettuce	Organic	Fairly firm with crisp medium-green outer leaves; rock-hard, pale heads are overmature.		Leaves are eaten raw, so organic keeps surface residue out.	none	F062,F063
+f_chard	Swiss chard	Organic	Deep-green leaves with colorful stems; skip slimy, yellowing or wilted.		Leaves and stems are eaten, so organic keeps surface residue out.	none	F064,F065
+f_cilantro_parsley	Cilantro and parsley	Organic	Bright green cilantro or deep-green crisp parsley; no yellow, brown or wilted leaves.		Fresh herbs are eaten raw and whole, so organic keeps surface residue out.	none	F066,F067
+f_basil	Basil	Organic	Smooth whole leaves, strong aroma, bright color.		Fresh herbs are eaten raw and whole, so organic keeps surface residue out.	none	F068
+f_microgreens	Microgreens	Organic	Crisp, fresh leaves and stems; avoid limp or wilted greens.		Microgreens are eaten whole, so organic keeps surface residue out.	none	F069
+f_raw_sprouts	Raw sprouts	Organic	Crisp and firm; avoid dry or slimy sprouts.		Sprouts are eaten whole, so organic keeps surface residue out.	none	F070
+f_broccoli	Broccoli	Organic	Dark green to almost blue, flower end tightly budded; no yellow blooming.		The florets are eaten whole, so organic keeps surface residue out.	good_offseason	F071,F072
+f_cauliflower	Cauliflower	Organic	White or slightly off-white, firm with no space between curds; fresh green leaves.		The curds are eaten whole, so organic keeps surface residue out.	good_offseason	F073,F074
+f_brussels	Brussels sprouts	Organic	Firm and tight, bright green leaves, white stems; skip yellowing and brown spots.		Judgment call: outer leaves are trimmed but the sprout is eaten whole, so organic.	good_offseason	F075,F076
+f_cabbage	Cabbage	Organic	Semi-solid, well rounded and heavy for its size; thick, pliable leaves.		Judgment call: outer leaves are often trimmed, but no ruling discards them, so organic.	none	F077,F078
+f_asparagus	Asparagus	Organic	Green stalks with tightly closed tips; thick stalks are fine, wrinkled ones are not.		The whole spear is eaten, so organic keeps surface residue out.	good_offseason	F079,F080
+f_mushrooms	Mushrooms	Organic	Caps closed or moderately open with pink or light tan gills; no slimy surface.		The whole mushroom surface is eaten, so organic keeps surface residue out.	none	F081,F082
+f_leeks	Leeks	Organic	Firm, crisp stalks with plenty of white to pale green; no yellowing leaves.		Judgment call: outer leaves are trimmed, but the stalk is eaten whole, so organic.	none	F083,F084
+f_rhubarb	Rhubarb	Organic	Firm stems with glossy look, pink or red color; never eat the leaves.	Cut off and discard the leaves.	The stalk skin is eaten, so organic keeps surface residue out.	good_offseason	F085,F086
+f_sweet_corn	Sweet corn	Organic	Fresh bright green husks, silk ends free of decay or worm damage.		Strict organic because this crop is on the Non-GMO Project High-Risk List for genetic modification exposure.	good_offseason	F087,F088,F089
+f_summer_squash	Zucchini and yellow squash	Organic	About 4 inches long, firm, heavy for size, bright and healthy skin.		Strict organic because this crop is on the Non-GMO Project High-Risk List for genetic modification exposure.	good_offseason	F090,F091,F092
+f_papaya	Papaya	Organic	Yellow to orange-red with a few green spots; faint sweet smell near the stem.		Strict organic because this crop is on the Non-GMO Project High-Risk List for genetic modification exposure.	none	F093,F094,F095
+f_bananas	Bananas	Conventional OK	Evenly yellow; first brown flecks mean best taste; buy green to ripen at home.		Conventional is fine because the outer layer is discarded.	good_offseason	F096,F097,F098
+f_avocados	Avocados	Conventional OK	Firm but yields to pressure; skin that feels loose from the flesh is brown inside.		Conventional is fine because the outer layer is discarded.	none	F099,F100
+f_cantaloupe	Cantaloupe	Conventional OK	Large webbing on yellowish-brown skin, smooth round stem scar, sweet smell at stem end.		Conventional is fine because the outer layer is discarded.	none	F101,F102
+f_honeydew	Honeydew	Conventional OK	Creamy white or pale green rind, slightly waxy feel; seeds rattle when shaken.		Conventional is fine because the outer layer is discarded.	none	F103,F104
+f_watermelon	Watermelon	Conventional OK	Yellow underside, not white; healthy sheen on the rind; heavy for its size.		Conventional is fine because the outer layer is discarded.	none	F105,F106
+f_pineapple	Pineapple	Conventional OK	Golden yellow; green leaves that do not pull out easily; sweet smell at the stem.		Conventional is fine because the rind is discarded, though pineapple is on the Non-GMO Project High-Risk List.	good_offseason	F107,F108,F109
+f_mangoes	Mangoes	Conventional OK	Soft to the touch and fragrant near the stem end; skin may wrinkle when ripe.		Conventional is fine because the outer layer is discarded.	good_offseason	F110,F111
+f_kiwi	Kiwi	Conventional OK	Plump, free of soft spots, bruises and wrinkled skin; ripe ones yield to pressure.		Conventional is fine because the outer layer is discarded.	none	F112,F113
+f_citrus	Oranges and grapefruit	Conventional OK	Firm, heavy for their size, sweet clean fragrance; green tinge can still be ripe.		Conventional is fine because the outer layer is discarded.	none	F114,F115,F116
+f_lemons_limes	Lemons and limes	Conventional OK	Firm and heavy for their size; avoid blemishes, moldy spots and shriveled skin.	If the zest is used, buy organic.	Conventional is fine for juice because the rind is discarded, but zest eats the rind, so choose organic then.	none	F117,F114
+f_pomegranate	Pomegranate	Conventional OK	Heavy for its size with deep skin color; cracks mean bursting seeds.		Judgment call: the rind is discarded and only the seeds are eaten.	good_offseason	F118,F119
+f_onions	Dry onions	Conventional OK	Firm with even-colored, paper-dry skin; no sprouts, wet skin or mold.		Conventional is fine because the papery skin is discarded.	none	F120,F121
+f_garlic	Garlic	Conventional OK	Plump, firm and dry; skip bulbs that give when pressed with a thumb.		Conventional is fine because the papery skin is discarded.	none	F122,F123
+f_winter_squash	Winter squash and pumpkin	Conventional OK	Hard, rigid skin without cracks; dry firm stem; heavy for its size.		Conventional is fine because the hard shell is discarded.	good_offseason	F124,F125,F126
