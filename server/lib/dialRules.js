@@ -73,7 +73,8 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const file = process.argv[2];
   if (!file) { console.error('usage: node server/lib/dialRules.js <file.json>'); process.exit(2); }
   const json = JSON.parse(readFileSync(file, 'utf8'));
-  const entries = Array.isArray(json) ? json : json.entries;
+  const entries = Array.isArray(json) ? json
+    : json.entries || (json.patches ? [...(json.families || []), ...(json.aisles || []), ...Object.entries(json.patches).map(([id, p]) => ({ id, ...p }))] : undefined);
   if (!Array.isArray(entries)) { console.error('expected an array or {entries:[]}'); process.exit(2); }
   const found = dialFindings(entries);
   for (const f of found) console.log(`${f.code}\t${f.id}\t${f.field}\t${f.msg}`);
