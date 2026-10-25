@@ -48,7 +48,7 @@ guided shopping (10-02), concern register (10-18), fewer ingredients (10-19), so
    live. Cards talk: the why at the shelf, not a label recital. Every label term gets a plain, true
    gloss where used. Section rules hold one holistic principle per aisle, never safety or handling
    trivia. Language is a neutral "look for"; "ask" only where a person exists (meat, fish, deli
-   counter, bakery, farmers market). Calm and skimmable. The scan stays plain.
+   counter, bakery, farmers market). Calm and skimmable. The scan stays plain (2026-10-25: warm one-sentence headline + summary line, no score, no evidence-tier words).
 7. **Sources.** Holistic and independent sources set the position (EWG, Weston A. Price, Cornucopia,
    Real Organic Project, AGA, independent residue testing, farmers, ranchers, traditional food
    writers). Government sources give raw fact only: what a label legally means, that a residue was
