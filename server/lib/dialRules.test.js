@@ -41,7 +41,7 @@ test('DIAL_FAMILY_SHAPE: 5 tips, long tip, bad verb', () => {
 
 test('DIAL_DELTA: long, clause-heavy, or repeats a family tip', () => {
   assert.ok(codes([{ id: 'a', delta: 'x'.repeat(121) }]).includes('DIAL_DELTA'));
-  assert.ok(codes([{ id: 'a', delta: 'No wax, firm, in season Aug-Nov.' }]).includes('DIAL_DELTA'));
+  assert.ok(codes([{ id: 'a', delta: 'No wax; firm; in season Aug-Nov.' }]).includes('DIAL_DELTA'));
   assert.ok(codes([family(GOOD_TIPS), { id: 'a', family: 'fam_x', delta: 'Check the origin sticker.' }]).includes('DIAL_DELTA'));
 });
 
