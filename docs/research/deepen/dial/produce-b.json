@@ -1,0 +1,162 @@
+{
+  "families": [
+    {
+      "id": "fam_buy_at_eating_quality",
+      "kind": "family",
+      "decision": "Whole organic produce from a named small farm, selected fresh and intact.",
+      "buying_tips": [
+        "Look for USDA Organic; prefer the added Real Organic seal.",
+        "Read the farm sign for a small grower, growing location and seasonal harvest.",
+        "Pick whole produce with intact skins or leaves; skip mold and wet decay.",
+        "Read the organic label; a voluntary PLU alone is not reliable certification."
+      ]
+    },
+    {
+      "id": "fam_crisp_heads_pods",
+      "kind": "family",
+      "decision": "Whole organic vegetables from a named small farm, with firm heads, pods or peppers.",
+      "buying_tips": [
+        "Look for USDA Organic; prefer the added Real Organic seal.",
+        "Read the farm sign for a small grower, growing location and seasonal harvest.",
+        "Check heads, pods and peppers for firmness, split skins and visible decay.",
+        "Read the organic label; a voluntary PLU alone is not reliable certification."
+      ]
+    },
+    {
+      "id": "fam_storage_crops",
+      "kind": "family",
+      "decision": "Whole organic roots, potatoes and bulbs from a named small local farm.",
+      "buying_tips": [
+        "Look for USDA Organic; prefer the added Real Organic seal.",
+        "Read the farm label for a small grower's name and growing location.",
+        "Pick firm roots, tubers or bulbs with intact skins.",
+        "Skip soft spots, wet decay and packs that hide the crop."
+      ]
+    },
+    {
+      "id": "fam_living_leaf",
+      "kind": "family",
+      "decision": "Organic greens from a named small farm, with intact leaves and stems.",
+      "buying_tips": [
+        "Look for USDA Organic; prefer Real Organic on soil-grown greens.",
+        "Read the farm label for a small local grower.",
+        "Pick intact heads, bunches or shoots; skip mold, slime and wet decay.",
+        "Check the pack's storage instructions and use-by date."
+      ]
+    },
+    {
+      "id": "fam_dry_firm_mushrooms",
+      "kind": "family",
+      "decision": "Whole organic mushrooms from a named small local grower, dry and springy.",
+      "buying_tips": [
+        "Look for USDA Organic on the mushroom pack or grower's sign.",
+        "Read the label for the mushroom variety, small grower's name and growing location.",
+        "Pick whole mushrooms with firm caps and intact stems.",
+        "Check beneath the pack for slime, wet patches or mold."
+      ]
+    }
+  ],
+  "aisles": [],
+  "patches": {
+    "organic_worth_it_by_type": {
+      "decision": "Real Organic produce from a named small local farm.",
+      "delta": "The Real Organic seal adds a soil-grown standard to USDA Organic.",
+      "family": "fam_buy_at_eating_quality"
+    },
+    "frozen_vs_fresh_produce": {
+      "decision": "Fresh organic produce from a named small local farm in its harvest season.",
+      "delta": "Frozen backup: organic bag listing only the fruit or vegetable, without sauce or added sugar.",
+      "family": "fam_buy_at_eating_quality"
+    },
+    "freezing_produce": {
+      "decision": "Fresh organic vegetables from a named small farm, young and tender for freezing.",
+      "delta": "For freezer batches, choose broccoli, peas, carrots or cooking greens; skip lettuce.",
+      "family": "fam_buy_at_eating_quality"
+    },
+    "washing_produce": {
+      "decision": "Whole organic produce from a named small farm, with intact skins and leaves.",
+      "delta": "Bagged salads: read whether the pack says pre-washed or ready-to-eat.",
+      "family": "fam_buy_at_eating_quality"
+    },
+    "baking_soda_soak": {
+      "decision": "Whole organic produce from a named small farm with the added Real Organic seal.",
+      "delta": "For a baking soda soak, read sodium bicarbonate on the box; baking powder is a different blend.",
+      "family": "fam_buy_at_eating_quality"
+    },
+    "precut_produce_tradeoffs": {
+      "decision": "Whole organic vegetables and heads from a named small farm, ready to cut at home.",
+      "delta": "If buying cut or peeled produce, pick it from refrigeration.",
+      "family": "fam_buy_at_eating_quality"
+    },
+    "produce_storage": {
+      "decision": "Whole organic storage crops from a named small farm, with unbroken skins.",
+      "delta": "Unwashed roots for keeping, with soil still on the skin.",
+      "family": "fam_storage_crops"
+    },
+    "revive_greens": {
+      "decision": "Crisp organic greens from a named small farm, with sound stems and leaves.",
+      "delta": "Slightly wilted greens are the revival option.",
+      "family": "fam_living_leaf"
+    },
+    "sprouts_raw": {
+      "decision": "Organic mung bean sprouts from a named small farm, refrigerated and bought for cooking.",
+      "delta": "Choose the mung bean variety for thoroughly cooked dishes.",
+      "family": "fam_living_leaf"
+    },
+    "produce_root_vegetables": {
+      "decision": "Whole Real Organic carrots, beets and parsnips from a named small local farm.",
+      "delta": "Bunched beets have fresh tops; carrots should be smooth, without cracks or rubbery bends.",
+      "family": "fam_storage_crops"
+    },
+    "produce_brassicas": {
+      "decision": "Whole Real Organic broccoli, cauliflower and cabbage from a named small local farm.",
+      "delta": "Tight broccoli buds without yellowing; compact cauliflower curds and solid cabbage heads.",
+      "family": "fam_crisp_heads_pods"
+    },
+    "produce_onions_garlic": {
+      "decision": "Whole Real Organic onions and garlic from a named small local farm, firm and dry.",
+      "delta": "For keeping, bulbs have dry, papery skins; skip sprouting onions or soft garlic cloves.",
+      "family": "fam_storage_crops"
+    },
+    "produce_leafy_greens": {
+      "decision": "Whole Real Organic lettuce and greens from a named small local farm.",
+      "delta": "Romaine has a long head; butter lettuce has naturally loose, tender leaves.",
+      "family": "fam_living_leaf"
+    },
+    "produce_mushrooms": {
+      "decision": "Whole organic mushrooms from a named small local grower, dry and springy.",
+      "delta": "Dry brown bruises differ from wet, spreading dark patches.",
+      "family": "fam_dry_firm_mushrooms"
+    },
+    "produce_green_beans": {
+      "decision": "Whole Real Organic green beans from a named small local farm, slender and crisp.",
+      "delta": "Young, slender pods; Northern California green beans Jun-Sep.",
+      "family": "fam_crisp_heads_pods"
+    },
+    "produce_potatoes": {
+      "decision": "Whole Real Organic potatoes from a named small local farm, firm with intact skins.",
+      "delta": "Skip green patches and sprouts; russets for baking, waxy red potatoes for boiling.",
+      "family": "fam_storage_crops"
+    }
+  },
+  "groups": [
+    {
+      "id": "produce_whole_roots",
+      "title": "Whole roots and potatoes",
+      "members": [
+        "produce_root_vegetables",
+        "produce_potatoes"
+      ],
+      "why_same": "Both use the named organic grower, whole form, firmness and skin checks, with beet tops and potato greening checked by crop."
+    },
+    {
+      "id": "produce_heads_and_beans",
+      "title": "Broccoli, cauliflower, cabbage and green beans",
+      "members": [
+        "produce_brassicas",
+        "produce_green_beans"
+      ],
+      "why_same": "Both use the same organic grower and whole-vegetable checks, with tight heads or young pods showing usable maturity."
+    }
+  ]
+}

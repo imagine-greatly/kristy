@@ -1,0 +1,123 @@
+{
+  "families": [
+    {
+      "id": "fam_ruminant_meat",
+      "kind": "family",
+      "decision": "Organic, 100% grass-fed and grass-finished meat from a named local family farm.",
+      "buying_tips": [
+        "Look for USDA Organic; prefer a Real Organic Project seal too.",
+        "Read '100% grass-fed and grass-finished' on the label or farm card.",
+        "Check for AGA certification or a farm statement of no grain through finishing.",
+        "Pick a named local family farm; skip a bare 'grass-fed' claim."
+      ],
+      "sources": [
+        {
+          "name": "Grassfed production and family-farm standards",
+          "url": "https://www.americangrassfed.org/about-us/our-standards/"
+        },
+        {
+          "name": "Organic certification and pasture label",
+          "url": "https://realorganicproject.org/get-certified/"
+        },
+        {
+          "name": "Pasture and ruminant feed criteria",
+          "url": "https://eatwild.com/criteria.php"
+        }
+      ]
+    },
+    {
+      "id": "fam_poultry_pork",
+      "kind": "family",
+      "decision": "Organic, pasture-raised poultry or pork from a named local family farm.",
+      "buying_tips": [
+        "Look for USDA Organic and 'pasture-raised' on the meat label.",
+        "Pick a named local family farm on the pack or counter sign.",
+        "Read the farm card for pasture access and organic feed."
+      ],
+      "sources": [
+        {
+          "name": "Pasture and supplemental feed criteria",
+          "url": "https://eatwild.com/criteria.php"
+        },
+        {
+          "name": "Organic certification and pasture label",
+          "url": "https://realorganicproject.org/get-certified/"
+        },
+        {
+          "name": "Product-specific organic labels and pasture feeding",
+          "url": "https://applecreekfarm.me/pages/how-we-farm"
+        }
+      ]
+    }
+  ],
+  "aisles": [],
+  "patches": {
+    "beef_grassfed_vs_grainfed": {
+      "decision": "100% grass-fed and grass-finished organic beef, farm named.",
+      "delta": "Look for liver or heart cuts alongside muscle cuts, where legally sold.",
+      "family": "fam_ruminant_meat"
+    },
+    "beef_cuts_basics": {
+      "decision": "Organic 100% grass-fed and grass-finished beef in whole cuts.",
+      "delta": "Whole cuts; skip 'mechanically tenderized', 'needle tenderized' or 'blade tenderized'.",
+      "family": "fam_ruminant_meat"
+    },
+    "ground_beef_lean_ratio": {
+      "decision": "Look for 100% grass-fed and grass-finished beef, liver and heart blend where legally sold.",
+      "delta": "Liver and heart percentages on the ingredient list; lean/fat ratio is a separate number.",
+      "family": "fam_ruminant_meat"
+    },
+    "beef_veal": {
+      "decision": "Organic pasture-raised veal, mother's milk and grass stated on the farm label.",
+      "delta": "Milk from its mother plus grass or hay; skip milk-replacer-fed veal.",
+      "family": "fam_ruminant_meat"
+    },
+    "pork_cuts_and_enhanced": {
+      "decision": "Organic pasture-raised pork, farm named, with no added solution.",
+      "delta": "Skip 'contains added solution' and water or phosphates listed with the pork.",
+      "family": "fam_poultry_pork"
+    },
+    "judging_meat_at_the_case": {
+      "decision": "Organic 100% grass-fed and grass-finished meat in sealed, leak-free packs.",
+      "delta": "Intact wrap and seams; skip packs with punctures or broken vacuum seals.",
+      "family": "fam_ruminant_meat"
+    },
+    "butcher_counter_asking": {
+      "decision": "Ask for organic 100% grass-fed and grass-finished beef at the staffed counter.",
+      "delta": "At the staffed counter, ask for a beef, liver and heart blend with written shares, where legally sold.",
+      "family": "fam_ruminant_meat"
+    },
+    "lamb_goat": {
+      "decision": "Organic pasture-raised lamb or goat, farm named, 100% grass-fed and grass-finished.",
+      "delta": "Lamb or goat named on the label; goat forage may include browse.",
+      "family": "fam_ruminant_meat"
+    },
+    "organ_meats": {
+      "decision": "Look for 100% grass-fed and grass-finished beef organs where legally sold.",
+      "delta": "Beef liver or heart named as the cut; plain organ cuts alongside organ blends.",
+      "family": "fam_ruminant_meat"
+    },
+    "bison": {
+      "decision": "Organic 100% grass-fed and grass-finished bison from a named farm.",
+      "delta": "Read 'bison' as the sole meat ingredient; skip grinds blended with beef or pork.",
+      "family": "fam_ruminant_meat"
+    },
+    "venison_game": {
+      "decision": "Organic pasture-raised venison, farm named, with a grass-and-forage finish.",
+      "delta": "Read the deer species, such as red, fallow or sika; pick single-species cuts.",
+      "family": "fam_ruminant_meat"
+    }
+  },
+  "groups": [
+    {
+      "id": "grass_finished_red_meats",
+      "title": "Grass-finished beef, bison, lamb and goat",
+      "members": [
+        "beef_grassfed_vs_grainfed",
+        "lamb_goat",
+        "bison"
+      ],
+      "why_same": "The same organic, pasture, full grass finish and named-farm checks apply to these ruminants; species stays visible on the label."
+    }
+  ]
+}
