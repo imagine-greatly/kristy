@@ -1,0 +1,67 @@
+id	url	quote
+# flags: TRANSCRIBED (typed from exa/search highlights or scrapling output) = F129,F130,F131,F132,F133,F134,F135,F136; F135 is a produce-guide site, not an extension guide
+# flags: F127,F128 fetched law.cornell.edu text; F137+ copied from extension PDFs/pages and checked as substrings; Hawaii PDF text had spaced letters, quote retyped
+# v2 ids reused unchanged: F002,F007,F028,F055,F059,F064,F066,F068,F069,F018
+F127	https://www.law.cornell.edu/cfr/text/7/205.105	To be sold or labeled as "organic," the product must be produced and handled without the use of: (a) Synthetic substances and ingredients ... (e) Excluded methods ... (f) Ionizing radiation ... and (g) Sewage sludge.
+F128	https://www.law.cornell.edu/cfr/text/7/205.203	The producer must manage crop nutrients and soil fertility through rotations, cover crops, and the application of plant and animal materials.
+F129	https://www.ifpsglobal.com/plu-codes	The 4-digit codes are for conventionally grown produce. The prefix of '9' would be placed in front of the 4-digit conventionally grown code for organic produce.
+F130	https://www.nongmoproject.org/risk-status/	The following crops are currently on the High-Risk List. Alfalfa Apple Canola Corn Cotton Eggplant Papaya Pineapple Potato Soy Sugar Beet Zucchini & yellow summer squash
+F131	https://www.nongmoproject.org/blog/dont-be-caught-off-gourd-by-gmo-zucchini/	Genetically modified zucchini and yellow summer squash have been on the market since the 1990s. GMO squash is grown on roughly 2,500 acres in the U.S.
+F132	https://www.nongmoproject.org/blog/the-gmo-high-risk-list-corn/	In 2024, GMO corn made up an estimated 94% of the corn planted in the US.
+F133	https://www.nongmoproject.org/blog/the-gmo-high-risk-list-potatoes/	The varieties of GMO potatoes which are currently available entered the market in 2015. By 2018, these spuds had sufficient presence in the US supply chain and were added to the Non-GMO Project's High-Risk List.
+F134	https://www.nongmoproject.org/wp-content/uploads/non-gmo-project-produce-pocket-guide.pdf	GMO fruits and vegetables currently in the market: Arctic apples, Corn, Gaba tomato, Innate potato, Papaya, Pink pineapple, Purple tomato, Zucchini and yellow summer squash. To avoid GMOs, look for the Butterfly or the USDA organic certification.
+F135	https://www.theproducemoms.com/produce/turmeric/	Fresh turmeric will snap apart easily.
+F136	https://www.nongmoproject.org/blog/new-gmo-alert-navigating-gmos-in-the-produce-section/	In October 2020, the genetically modified pink pineapple was launched in the US.
+F137	https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf	rough and scab-like conditions found on the stem end
+F138	https://www.extension.purdue.edu/foodlink/foods.php	Check the "neck" for ripeness by gently applying pressure to the narrow end
+F139	https://extension.usu.edu/fscreate/files/2020-22-staff/Shopping_for_Fruit.pdf	The stems of grapes should be green
+F140	https://extension.usu.edu/fscreate/files/2020-22-staff/Shopping_for_Fruit.pdf	A ripe peach should be fuzzy and red or yellow
+F141	https://www.ndsu.edu/agriculture/extension/publications/focus-whole-fruits-how-select-and-store-fruit	A white or gray sheen is natural
+F142	https://extension.usu.edu/fscreate/files/2020-22-staff/Shopping_for_Fruit.pdf	Bright green stems
+F143	https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf	more than a touch of green or white around the caps
+F144	https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf	silver to white frost on the skin
+F145	https://extension.usu.edu/fscreate/files/2020-22-staff/Shopping_for_Fruit.pdf	no juice stains on the packages
+F146	https://www.extension.purdue.edu/foodlink/foods.php	stem should be fresh and green
+F147	https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf	blotchy green or brown areas
+F148	https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf	does not require peeling unless waxed
+F149	https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf	lumpy sections along the length
+F150	https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf	plump, snug pod
+F151	https://www.ndsu.edu/agriculture/extension/publications/vary-your-veggies-how-select-and-store-vegetables	2 to 4 inches long
+F152	https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf	firm, dark in color with smooth and shiny skin, and relatively light for its size
+F153	https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf	Green tint indicates that the poison solanine has developed
+F154	https://www.ndsu.edu/agriculture/extension/publications/vary-your-veggies-how-select-and-store-vegetables	Firm, well-shaped with clean, smooth skin
+F155	https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf	large green areas at the top
+F156	https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf	bright green leaves with red veins
+F157	https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf	tops will be bright green and crisp
+F158	https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf	too many leaf scars around the top
+F159	https://www.extension.purdue.edu/foodlink/foods.php	pale to bright green and crisp when you pull apart
+F160	https://www.extension.purdue.edu/foodlink/foods.php	If leaves are still attached, make sure they are bright green and firm
+F161	https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf	broad, crisp, dark green leaves
+F162	https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf	Extremely solid, light-colored heads mean all core
+F163	https://www.ndsu.edu/agriculture/extension/publications/vary-your-veggies-how-select-and-store-vegetables	hard bumps on top
+F164	https://nutritioncenter.ctahr.hawaii.edu/wp-content/uploads/2022/06/BuyFreshItMatters_Seasonality.pdf	Avoid dry or slimy sprouts
+F165	https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf	soft enough to easily part with your fingertips
+F166	https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf	no space between the curds
+F167	https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf	bright green and the stems white
+F168	https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf	Oblong and cracked heads mean poor quality
+F169	https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf	tips firmly closed
+F170	https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf	pink or light tan gills
+F171	https://www.ndsu.edu/agriculture/extension/publications/vary-your-veggies-how-select-and-store-vegetables	No more than 1
+F172	https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf	many good-quality stems will be predominantly light green
+F173	https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf	silk ends free of decay or worm damage
+F174	https://extension.usu.edu/fscreate/files/2020-22-staff/Shopping_for_Vegetables.pdf	(about 4 inches long)
+F175	https://nutritioncenter.ctahr.hawaii.edu/wp-content/uploads/2022/06/BuyFreshItMatters_Seasonality.pdf	some yellow streaks
+F176	https://nutritioncenter.ctahr.hawaii.edu/wp-content/uploads/2022/06/BuyFreshItMatters_Seasonality.pdf	slight green on stem and tip
+F177	https://www.ndsu.edu/agriculture/extension/publications/focus-whole-fruits-how-select-and-store-fruit	large indentations
+F178	https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf	smooth and well-rounded cavity
+F179	https://www.ndsu.edu/agriculture/extension/publications/focus-whole-fruits-how-select-and-store-fruit	pale yellow to light lemon, with little green
+F180	https://extension.usu.edu/fscreate/files/2020-22-staff/Shopping_for_Fruit.pdf	yellow, not white
+F181	https://www.ndsu.edu/agriculture/extension/publications/focus-whole-fruits-how-select-and-store-fruit	dry, brown leaves
+F182	https://www.ndsu.edu/agriculture/extension/publications/focus-whole-fruits-how-select-and-store-fruit	sap on the skin
+F183	https://www.ndsu.edu/agriculture/extension/publications/focus-whole-fruits-how-select-and-store-fruit	release gently to pressure
+F184	https://www.ndsu.edu/agriculture/extension/publications/focus-whole-fruits-how-select-and-store-fruit	fragrant, have smooth skin
+F185	https://nutritioncenter.ctahr.hawaii.edu/wp-content/uploads/2022/06/BuyFreshItMatters_Seasonality.pdf	glossy dark green skin
+F186	https://extension.usu.edu/fscreate/files/2020-22-staff/Shopping_for_Fruit.pdf	slightly square
+F187	https://www.ndsu.edu/agriculture/extension/publications/vary-your-veggies-how-select-and-store-vegetables	Moisture at the neck indicates decay
+F188	https://www.extension.purdue.edu/foodlink/foods.php	heavy, closed, firm bulbs, with dry outside skins
+F189	https://extension.usu.edu/fscreate/files/2020-22-staff/Shopping_for_Vegetables.pdf	The stem should be dry and firm
