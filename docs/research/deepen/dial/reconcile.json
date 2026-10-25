@@ -1,0 +1,1010 @@
+{
+  "families": [
+    {
+      "id": "fam_whole_grains",
+      "kind": "family",
+      "decision": "Plain organic whole grains from a named small grower, sprouted packs first.",
+      "buying_tips": [
+        "Look for USDA Organic; prefer an added Real Organic seal.",
+        "Read the ingredient line for the whole grain alone, without flavorings or sweeteners.",
+        "Check the pack for a named small grower or mill, growing region and crop or packing date.",
+        "Pick sprouted grain packs first; skip damp, torn or insect-damaged bags."
+      ]
+    },
+    {
+      "id": "fam_nuts_seeds",
+      "kind": "family",
+      "decision": "Organic nuts and seeds labeled soaked-and-dried or sprouted, from a named grower.",
+      "buying_tips": [
+        "Look for an organic seal and soaked-and-dried, sprouted or activated wording.",
+        "Read the ingredients for named nuts or seeds, with optional salt or unsweetened fruit.",
+        "Pick sealed packs naming a grower or region; plain raw or dry-roasted if none are soaked.",
+        "Skip added oils, sugars, syrups, candy pieces and protein isolates in the ingredients."
+      ]
+    },
+    {
+      "id": "fam_named_sweeteners",
+      "kind": "family",
+      "decision": "Organic single-ingredient sweeteners from a named beekeeper, sugarhouse or farm.",
+      "buying_tips": [
+        "Look for an organic seal and the actual sweetener named as the ingredient.",
+        "Read the ingredient list for the named honey, sap, syrup or sugar alone.",
+        "Check the label for the beekeeper, sugarhouse or farm, its region and a lot number.",
+        "Skip flavored syrups and blends listing corn syrup or artificial sweeteners."
+      ]
+    },
+    {
+      "id": "fam_pulses",
+      "kind": "family",
+      "decision": "Plain organic dried beans, peas and lentils from a named small farm.",
+      "buying_tips": [
+        "Look for USDA Organic; prefer an added Real Organic seal.",
+        "Read the label for the named bean, pea or lentil, with no seasoning packet.",
+        "Check the bag for the grower, region and crop year or lot, and for damp clumps or insects.",
+        "Pick plain dried pulses, or cooked ones without gums or flavor powders."
+      ]
+    },
+    {
+      "id": "fam_specialty_flours",
+      "kind": "family",
+      "decision": "Organic whole-grain, nut or root flour from a named small mill, with a milling date.",
+      "buying_tips": [
+        "Look for an organic seal and the grain, nut or root named on the pack.",
+        "Read grain-flour labels for whole grain, sprouted whole grain or 100% extraction.",
+        "Check for a recent milling date and a small farm or mill named on the bag.",
+        "Skip flour labeled refined, enriched, bleached or degerminated, and starch-led blends."
+      ]
+    },
+    {
+      "id": "fam_botanicals",
+      "kind": "family",
+      "title": "Dry seasonings and infusions",
+      "decision": "Organic, minimally processed dry seasonings and infusions with source and origin named.",
+      "buying_tips": [
+        "Look for an organic seal on herbs, spices, tea, coffee and yeast; plain salt has none.",
+        "Read every ingredient for the named plant, yeast or salt and its country or harvest area.",
+        "Pick packs naming a small grower or maker, with whole leaves, seeds or beans where sold.",
+        "Skip added flavors, colors, fillers and anti-caking agents, and damp or clumped packs."
+      ]
+    },
+    {
+      "id": "fam_cooking_fats",
+      "kind": "family",
+      "decision": "Organic single-source fats, plant or animal, with the source and process named.",
+      "buying_tips": [
+        "Look for an organic seal and the farm, dairy, olive estate or producer on the label.",
+        "Read every fat in the ingredient list, including any blend.",
+        "Pick pressed plant oils, grass-fed dairy fat or pasture-raised lard and tallow.",
+        "Skip hydrogenated fats, unnamed vegetable-oil blends and added flavors."
+      ]
+    },
+    {
+      "id": "fam_whole_grain_baking",
+      "kind": "family",
+      "decision": "Organic whole-grain baking, sprouted or sourdough-fermented, from a named small bakery.",
+      "buying_tips": [
+        "Look for an organic seal and a named local or small bakery.",
+        "Read every flour ingredient for whole-grain or whole-wheat wording.",
+        "Check for sprouted whole grain, soaking or a stated sourdough fermentation process.",
+        "Skip enriched flour, added gluten, dough conditioners and unspecified oil blends."
+      ]
+    },
+    {
+      "id": "fam_whole_grain_sourdough",
+      "kind": "family",
+      "decision": "Organic whole-grain sourdough fermented with a live starter by a named small bakery.",
+      "buying_tips": [
+        "Look for USDA Organic and whole-grain flour throughout the ingredient list.",
+        "Read the pack or shelf card for live-starter fermentation.",
+        "Check for a named small bakery and its grain or mill source.",
+        "Skip added baker's yeast, sourdough flavoring and vinegar or acid used for souring."
+      ]
+    },
+    {
+      "id": "fam_masa_foods",
+      "kind": "family",
+      "decision": "Organic lime-treated corn masa foods from a named small maker, with a short list.",
+      "buying_tips": [
+        "Look for an organic seal and a named small tortilla maker or corn-growing region.",
+        "Read 'nixtamalized', 'lime-treated corn' or 'corn treated with lime' on the pack.",
+        "Check every added fat or frying oil for coconut oil, pastured lard or ghee.",
+        "Skip oil blends, flavor powders, artificial colors and preservatives in the ingredients."
+      ]
+    },
+    {
+      "id": "fam_unheated_refrigerated_ferments",
+      "kind": "family",
+      "decision": "Organic live ferments labeled unpasteurized, kept cold, from a named small maker.",
+      "buying_tips": [
+        "Look for an organic seal and fermented or live-cultures wording on the jar or bottle.",
+        "Read unpasteurized, raw or not heated after fermentation on the label.",
+        "Check the cold case, keep-refrigerated wording, the date and an intact seal.",
+        "Pick short recipes of named whole foods, salt and cultures from a named small maker."
+      ]
+    },
+    {
+      "id": "fam_vinegar",
+      "kind": "family",
+      "decision": "Organic raw, unpasteurized vinegar with its fruit named, from an orchard or small maker.",
+      "buying_tips": [
+        "Look for an organic seal and raw or unpasteurized wording.",
+        "Read the ingredients for the named fermented fruit or wine and any added water.",
+        "Pick glass bottles naming a small orchard, farm or vinegar maker and its location.",
+        "Skip caramel color, added flavors, sweeteners and sweetened vinegar glazes."
+      ]
+    },
+    {
+      "id": "fam_fermented_soy",
+      "kind": "family",
+      "decision": "Organic naturally fermented soy with named cultures and a short ingredient list.",
+      "buying_tips": [
+        "Look for an organic seal and 'naturally fermented' or 'traditionally brewed' wording.",
+        "Read the ingredients for whole soybeans, named grains, salt and cultures.",
+        "Pick packs naming a small maker or brewer and the beans' growing origin.",
+        "Skip hydrolyzed soy protein, caramel color and flavorings, including in sauce packets."
+      ]
+    },
+    {
+      "id": "fam_bone_broth_soups",
+      "kind": "family",
+      "decision": "Organic bone broth, and soups made with it, from a named pasture-based farm.",
+      "buying_tips": [
+        "Look for an organic seal, a farm name and pasture-raised or grass-fed wording.",
+        "Read the broth ingredients for bones and the animal species.",
+        "Pick short recipes of broth, meat, vegetables, herbs and salt.",
+        "Skip yeast extract, MSG, hydrolyzed protein and flavor powders in the ingredients."
+      ]
+    },
+    {
+      "id": "fam_occasional_cocoa",
+      "kind": "family",
+      "decision": "Organic cocoa or chocolate with a short ingredient list and its cacao origin named.",
+      "buying_tips": [
+        "Look for an organic seal; Regenerative Organic Certified is the top rung.",
+        "Read a short list led by cocoa or cacao; skip lecithin, flavorings and non-cocoa fats.",
+        "Check for a small maker and the cacao's farm, co-op or growing region.",
+        "Look for dated lead and cadmium results matching the pack's product and lot."
+      ]
+    },
+    {
+      "id": "fam_plain_fruit_preparations",
+      "kind": "family",
+      "decision": "Organic fruit-only preparations with no added sweetener, from a named grower.",
+      "buying_tips": [
+        "Look for an organic seal and a named orchard, farm or small producer.",
+        "Read the ingredient list for the named fruit alone, or fruit with plain water.",
+        "Skip added sugar, syrups, sweetening juice concentrates, oil coatings and sulfites.",
+        "Check for an intact seal, the fruit's growing region and the storage label."
+      ]
+    },
+    {
+      "id": "fam_whole_coconut_cooking_milk",
+      "kind": "family",
+      "decision": "Organic unsweetened whole coconut milk made with coconut and water.",
+      "buying_tips": [
+        "Look for an organic seal and unsweetened wording.",
+        "Read the ingredient line for coconut or coconut extract and water.",
+        "Pick an intact can naming the coconut origin, with no bulging, leaks or seam dents.",
+        "Skip added sugar, gums and emulsifiers in the ingredient list."
+      ]
+    },
+    {
+      "id": "fam_dressings_deli_salads",
+      "kind": "family",
+      "decision": "Organic dressings and salads made with extra virgin olive oil or plain cultured dairy.",
+      "buying_tips": [
+        "Look for an organic seal and a named local kitchen or small maker.",
+        "Read every oil, mayonnaise and dairy sublist, including the dressing on salads.",
+        "Pick extra virgin olive oil or plain cultured dairy as the base.",
+        "Skip soybean, canola, corn or unnamed oil blends, EDTA and added flavors."
+      ]
+    },
+    {
+      "id": "fam_prepared_meats",
+      "kind": "family",
+      "decision": "Organic pasture-raised meat, simply prepared, from a named small family farm.",
+      "buying_tips": [
+        "Look for USDA Organic and pasture-raised wording; Real Organic is the top rung.",
+        "Check for a named small family farm, and AGA grassfed or grass-finished on beef.",
+        "Read every meat, fat and seasoning ingredient, including sauce sublists.",
+        "Skip nitrite, nitrate or celery curing, smoke flavor, MSG and unnamed oil blends."
+      ],
+      "sources": [
+        {
+          "name": "Traditional processed-meat criteria",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        },
+        {
+          "name": "Organic certification and pasture label",
+          "url": "https://realorganicproject.org/get-certified/"
+        },
+        {
+          "name": "Celery powder as a curing ingredient",
+          "url": "https://www.omri.org/omri-articles/celery-powder"
+        }
+      ]
+    },
+    {
+      "id": "fam_poultry_pork",
+      "kind": "family",
+      "decision": "Organic, pasture-raised poultry or pork from a named small family farm.",
+      "buying_tips": [
+        "Look for USDA Organic and pasture-raised on the pack; Real Organic is the top rung.",
+        "Pick a named small family farm on the pack or counter sign, with its location.",
+        "Read USDA Organic for feed; pasture-raised alone names outdoor rearing, not feed.",
+        "Check the ingredient line for plain meat, or salt, named seasonings and a simple coating."
+      ],
+      "sources": [
+        {
+          "name": "Pasture and supplemental feed criteria",
+          "url": "https://eatwild.com/criteria.php"
+        },
+        {
+          "name": "Organic certification and pasture label",
+          "url": "https://realorganicproject.org/get-certified/"
+        },
+        {
+          "name": "Product-specific organic labels and pasture feeding",
+          "url": "https://applecreekfarm.me/pages/how-we-farm"
+        },
+        {
+          "name": "Organic feed rule",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.237"
+        }
+      ]
+    },
+    {
+      "id": "fam_buy_at_eating_quality",
+      "kind": "family",
+      "decision": "Whole organic produce from a named small farm, picked at eating quality.",
+      "buying_tips": [
+        "Look for USDA Organic; prefer the added Real Organic seal.",
+        "Read the farm sign for a small grower, growing location and seasonal harvest.",
+        "Pick whole produce ripe and intact; skip mold, split skins, wet decay and wilting.",
+        "Read the organic label; a voluntary PLU alone is not reliable certification."
+      ]
+    }
+  ],
+  "aisles": [
+    {
+      "id": "aisle_produce",
+      "kind": "aisle",
+      "buying_tips": [
+        "Read the seal: USDA Organic, Real Organic or Certified Naturally Grown; local or greenhouse alone is not a seal.",
+        "Choose fruit to finish at home or buy at eating quality; mixed-species fruit and sprouts need their own card checks.",
+        "Inspect bases, stem ends and pack bottoms; choose sound whole produce or plain organic prepared forms where suitable.",
+        "Plan storage by form: ripening fruit, cold leaves or vegetables, cured storage crops, or mushrooms in cold breathable packs.",
+        "Prefer qualifying small seasonal sources; local stored crops, disclosed living lettuce and cultivated mushrooms also qualify."
+      ],
+      "watch_out": [
+        "Local or greenhouse alone does not establish how produce was grown; only a seal on the sign or sticker says it."
+      ]
+    },
+    {
+      "id": "aisle_ferments",
+      "kind": "aisle",
+      "buying_tips": [
+        "Choose vegetable, tea, milk or soy ferments, or vinegar, before applying a process rule.",
+        "Read the label for “fermented” and “unpasteurized”; a cold case alone proves neither.",
+        "Read recipe-specific sugar, vinegar, seafood and alcohol information; keep raw-milk evaluation separate.",
+        "Prefer traceable organic ingredients and follow the specific jar or bottle storage instructions."
+      ],
+      "watch_out": [
+        "Cold sale alone does not establish fermentation or the absence of heat after fermentation."
+      ]
+    }
+  ],
+  "patches": {
+    "canned_coconut_milk": {
+      "family": "fam_whole_coconut_cooking_milk",
+      "delta": "Choose whole or full-fat rather than lite."
+    },
+    "hot_dogs": {
+      "family": "fam_prepared_meats",
+      "delta": "Skip mechanically separated poultry, starch and phosphates.",
+      "decision": "100% grass-fed beef hot dogs with a short ingredient list.",
+      "cart_pick": "100% grass-fed beef hot dogs"
+    },
+    "plant_butter": {
+      "family": "fam_cooking_fats",
+      "delta": "For a spread, coconut or olive oil should lead the list.",
+      "decision": "Virgin coconut oil as the plant-based solid fat."
+    },
+    "deli_salads": {
+      "family": "fam_dressings_deli_salads",
+      "delta": "A prepared-on or use-by date on the salad tub.",
+      "decision": "Organic cold-case salads dressed in extra virgin olive oil."
+    },
+    "whole_spices": {
+      "family": "fam_botanicals",
+      "delta": "Peppercorns, cumin seeds and cinnamon sticks instead of powders.",
+      "decision": "Organic whole spices from a small grower, in sealed packs."
+    },
+    "label_grass_fed_term": {
+      "decision": "USDA Organic beef with an AGA seal, grass-fed through finishing."
+    },
+    "label_organic_scope": {
+      "decision": "100% organic wording, a named farm and Real Organic seal.",
+      "watch_out": [
+        "Organic rules permit a short list of approved sprays.",
+        "It is a production standard, not a quality grade. An organic cookie is still a cookie.",
+        "“Made with organic ___” needs only 70%, and cannot carry the USDA seal.",
+        "Hydroponic crops can carry the USDA Organic seal, grown in water rather than soil.",
+        "No Real Organic seal on the shelf? “100% organic” wording from a named farm is the next pick."
+      ]
+    },
+    "label_lightly_sweetened": {
+      "tier_note": "Sweetener names on the ingredient list are a label fact; the phrase itself has no legal definition.",
+      "decision": "USDA Organic unsweetened food with no sweetener listed."
+    },
+    "label_no_artificial_flavors": {
+      "decision": "USDA Organic with real fruit, herbs or spices named."
+    },
+    "judging_meat_at_the_case": {
+      "tier_note": "A sealed, leak-free package and a clean smell are the freshness checks; color is not.",
+      "decision": "100% grass-fed meat in sealed, leak-free packs."
+    },
+    "farmed_fish_by_species": {
+      "decision": "Wild fish first; shellfish is the one exception."
+    },
+    "produce_ripeness_by_item": {
+      "decision": "Organic fruit, variety and farm named, at eating ripeness."
+    },
+    "rancidity_check": {
+      "decision": "Harvest-dated organic extra virgin olive oil, dark bottle or tin."
+    },
+    "label_front_vs_back": {
+      "decision": "USDA Organic with a short whole-food list and named producer."
+    },
+    "label_ingredient_order": {
+      "tier_note": "The trace cutoff is a labeling rule: weight order ends where the 2% section starts.",
+      "decision": "USDA Organic with whole foods first and every sweetener named."
+    },
+    "produce_onions_garlic": {
+      "decision": "Firm, dry Real Organic onions and garlic, locally grown.",
+      "buying_tips": [
+        "A dry neck and papery skins mark a well-cured bulb; soft or scented ones are fading.",
+        "Look for Real Organic or Certified Naturally Grown on the sign or sticker, then USDA Organic.",
+        "Onions firm for their size, with little to no scent.",
+        "An onion neck that is completely dry to the touch, not slippery.",
+        "Garlic well cured: dried neck, dry outer skins, cloves firm to the touch.",
+        "Some loose skins on an onion are normal.",
+        "Whole onions: cool, dry, dark, with air moving. Never in plastic.",
+        "Cut onions go in a sealed container for up to seven days."
+      ]
+    },
+    "produce_potatoes": {
+      "decision": "Firm Real Organic potatoes, skins intact, from a local farm."
+    },
+    "produce_green_beans": {
+      "decision": "Slender, crisp Real Organic green beans from a local farm.",
+      "buying_tips": [
+        "Bulging seeds mean an older bean, turning tough, stringy and starchy.",
+        "Look for local, in-season beans with Real Organic or Certified Naturally Grown on the sign or sticker.",
+        "Organic beans, fresh or frozen, are the fallback; the organic list still permits approved sprays.",
+        "Pick smooth, slender pods with no seeds bulging through.",
+        "Leave beans with brown or rust spots behind.",
+        "Store them cold and cook them within five days."
+      ]
+    },
+    "organ_meats": {
+      "tier_note": "The use-by date is a storage fact: organ meats keep only 1 to 2 days chilled.",
+      "decision": "100% grass-fed beef organs, where legally sold.",
+      "cart_pick": "100% grass-fed beef liver or organ meat"
+    },
+    "clams_mussels_oysters": {
+      "decision": "Live shellfish with a tag, closed shells and none cracked."
+    },
+    "tea": {
+      "decision": "Organic loose-leaf herbal tea from a small grower, unflavored."
+    },
+    "seaweed": {
+      "decision": "Organic air-dried sea vegetables, species and harvest region named."
+    },
+    "popcorn": {
+      "decision": "Organic kernels, home-popped in coconut oil, butter or lard."
+    },
+    "snacks": {
+      "tier_note": "Whole foods rank above any packaged snack; whole grain first is the floor.",
+      "decision": "Whole-food snacks, or organic whole grain listed first."
+    },
+    "frozen_meals": {
+      "tier_note": "The inspection mark and heating directions are food-safety steps, not a quality ranking.",
+      "decision": "Organic frozen meals of pasture-raised meat, vegetables and bone broth."
+    },
+    "split_peas": {
+      "decision": "Organic dried split peas, peas alone, with the grower’s name."
+    },
+    "seafood_fish_roe": {
+      "tier_note": "Roe and salt alone is an ingredient-list read; the lumpfish dye is documented.",
+      "decision": "Wild salmon roe with only roe and salt listed."
+    },
+    "beef_veal": {
+      "decision": "Veal raised beside its mother on pasture, as labeled."
+    },
+    "bagels": {
+      "decision": "Organic sourdough or sprouted whole-grain bagels from a small bakery."
+    },
+    "precut_produce_tradeoffs": {
+      "decision": "Whole organic vegetables from a named farm, cut at home."
+    },
+    "label_nonGMO_vs_organic": {
+      "decision": "USDA Organic first, with the Real Organic seal.",
+      "watch_out": [
+        "Most U.S. soybeans, corn, sugar beets, cotton and canola are bioengineered. On oils, sugars and syrups, “derived from bioengineering” is voluntary because processing leaves no modified DNA.",
+        "Restaurants, very small companies and most alcohol are exempt, as are foods whose major ingredient is meat, poultry or eggs.",
+        "Non-GMO says nothing about pesticides, feed or practices, and the government does not approve non-GMO claims. The Non-GMO Project says its Verified mark follows its own standard, including testing, traceability and segregation.",
+        "No Real Organic seal on the shelf? USDA Organic alone already covers the non-GMO rule."
+      ]
+    },
+    "organic_worth_it_by_type": {
+      "buying_tips": [
+        "Residue sits on the skin, so a peel you throw away takes it with it.",
+        "Above the USDA Organic seal: Real Organic or Certified Naturally Grown on the sign or sticker.",
+        "The USDA Organic seal on the sign or sticker is the floor to read.",
+        "One question at the shelf: does the skin get eaten? Berries, greens, apples, grapes and potatoes, yes. Those come first."
+      ],
+      "pick_steps": [
+        "On skin-on produce, look for Real Organic or Certified Naturally Grown.",
+        "When organic runs short, start with skin-on produce: berries, greens, apples, grapes, potatoes.",
+        "Read the USDA Organic seal as the floor; Natural means nothing on produce."
+      ],
+      "short_answer": "On skin-on produce, look for Real Organic or Certified Naturally Grown first, then USDA Organic. When organic runs thin, start with skin-on produce: berries, greens, apples, grapes, potatoes. Peeled fruit like avocado, kiwi, mango and citrus can wait.",
+      "decision": "Grown under a Real Organic or Certified Naturally Grown seal."
+    },
+    "baking_soda_soak": {
+      "buying_tips": [
+        "The pick is set at the farm: Real Organic or Certified Naturally Grown, then USDA Organic.",
+        "Ask the grower how it was grown; a plain rinse at home is the habit.",
+        "Start with produce eaten skin-on: apples, grapes, berries."
+      ],
+      "pick_steps": [
+        "Look for Real Organic or Certified Naturally Grown on the sign, then USDA Organic.",
+        "Start with produce eaten skin-on: apples, grapes, berries.",
+        "Rinse under cold running water right before eating."
+      ],
+      "short_answer": "The surest answer comes before the sink: Real Organic or Certified Naturally Grown on the sign, then USDA Organic. What a soak does to residue is not settled. Rinse under cold running water right before eating.",
+      "decision": "Real Organic or Certified Naturally Grown produce over any soak."
+    },
+    "berries_picking": {
+      "buying_tips": [
+        "The bottom berries carry the weight and mold first, while the top still looks fresh.",
+        "Look for berries from a local farm or u-pick with Real Organic or Certified Naturally Grown on the sign.",
+        "Organic is the store fallback, and organic frozen out of season; organic rules still allow approved sprays.",
+        "Berries are eaten whole, so the USDA Organic seal on the clamshell is the floor.",
+        "A dry, unstained bottom on the carton. That is the whole check.",
+        "No fuzzy white or gray spot on any berry. One takes the punnet.",
+        "Green caps still fresh on strawberries, not browned and dry.",
+        "Deep, even color for the variety, and uniform size in the container.",
+        "Buy them cold, from the refrigerated display rather than a room-temperature stack.",
+        "No USDA Organic seal on the clamshell means conventional, whatever the box says.",
+        "Read the seal, not the photograph; the two cartons look almost identical.",
+        "Frozen organic strawberries: same seal and same rules."
+      ],
+      "decision": "Real Organic berries from a local farm, in dry packs."
+    },
+    "produce_root_vegetables": {
+      "buying_tips": [
+        "Roots are often eaten skin-on, so how the grower raised them comes first.",
+        "Look for local roots with Real Organic or Certified Naturally Grown on the sign or sticker.",
+        "Organic is the fallback for potatoes and carrots; the standard still permits approved sprays.",
+        "Potatoes: firm, with no bruises, nicks, or soft spots.",
+        "Carrots: firm and well colored. With the tops on, choose bright green, fresh-looking tops.",
+        "Sweet potatoes: smooth and firm, even in shape and size, peel color even for the variety, free of damage.",
+        "Beets: firm and round with a slender tap root. The leaves on top say nothing certain about the root. Wilted leaves say little as long as the root is firm.",
+        "Potatoes: a cool, dark, ventilated place, 45 to 50°F, for up to a month.",
+        "Carrots: a closed bag or container in the refrigerator, tops removed, up to two weeks. A wilted carrot revives in cold water.",
+        "Beets: stem trimmed to an inch, root end left on, refrigerated in a food-safe container up to two weeks."
+      ],
+      "decision": "Real Organic carrots, beets and parsnips from a local farm."
+    },
+    "produce_brassicas": {
+      "buying_tips": [
+        "Florets and leaves are eaten whole, with no peel to take surface residue away.",
+        "Look for local heads with Real Organic or Certified Naturally Grown on the sign or sticker.",
+        "Organic is the store fallback for broccoli, cauliflower and cabbage.",
+        "Broccoli: dark green florets, closed tight, on stems that are not thick and tough.",
+        "Cauliflower: a head with no bruises or damage.",
+        "Cabbage: outer leaves fresh, not wilted or insect-damaged. Remove any that are.",
+        "Broccoli keeps in the refrigerator in a plastic bag with holes. Use it within three days.",
+        "Cabbage keeps several weeks in a plastic bag or wrap in the refrigerator, at 41°F or below.",
+        "Cut out the cabbage core and rinse the leaves under cool running water before using."
+      ],
+      "pick_steps": [
+        "Look for local heads with Real Organic or Certified Naturally Grown, then USDA Organic.",
+        "Press each head; leave any soft, slippery, bruised or damaged one.",
+        "Pick broccoli with dark green, tight florets on stems not thick or tough."
+      ],
+      "decision": "Real Organic broccoli, cauliflower and cabbage from a local farm."
+    },
+    "produce_leafy_greens": {
+      "buying_tips": [
+        "Lettuce is eaten as the leaf, and the leaf is what gets sprayed.",
+        "Look for lettuce with Real Organic or Certified Naturally Grown on the sign; greenhouse or hydroponic is not a seal.",
+        "Living lettuce sold with the root ball on keeps longest; keep the roots damp.",
+        "Organic is the store fallback; organic rules still allow approved sprays.",
+        "In a big store, organic spring mix or romaine is the fallback.",
+        "Lettuce: crisp leaves, bright to dark green outside and pale at the heart, free of decay or damage.",
+        "Romaine: a head that is neither very loose nor very hard. Loose is immature; hard is overmature.",
+        "Spinach: uniformly green, fully crisp, fairly clean.",
+        "Kale: firm, deep colored leaves on moist, hardy stems. Smaller leaves are more tender and milder.",
+        "Store lettuce and spinach as close to 32°F as the refrigerator gets.",
+        "Kale: plastic bag, air pressed out, unwashed, about five days in the refrigerator."
+      ],
+      "decision": "Whole Real Organic lettuce and greens from a local farm."
+    },
+    "produce_peppers": {
+      "buying_tips": [
+        "A firm pepper still holds its water; wrinkled skin means it dried out in storage.",
+        "Look for peppers with Real Organic or Certified Naturally Grown on the sign; greenhouse alone is not a seal.",
+        "Organic peppers are the fallback; organic growers may still use approved sprays when other controls fail.",
+        "Firm, with uniform shape, size, and color for the variety.",
+        "Colored peppers: at least half of the surface colored.",
+        "Free of cracks, decay, sunburn, disease, or insect damage.",
+        "Skip a bruised or damaged pepper.",
+        "Store around 45°F where possible; at 41°F, plan on about two weeks.",
+        "Red, yellow, and orange peppers tolerate the cold better than green."
+      ],
+      "decision": "Firm, smooth Real Organic bell peppers from a local farm."
+    },
+    "produce_apples_pears": {
+      "buying_tips": [
+        "Bruised fruit makes the sound fruit beside it ripen and rot faster.",
+        "Look for Real Organic or Certified Naturally Grown on the sign or sticker.",
+        "At the orchard or stand, ask: waxed or coated? Uncoated is the pick.",
+        "Organic is the fallback, and the organic standard still permits approved sprays when other pest controls fall short.",
+        "Apples: firm and crisp, free of bruising, decay, cracks, and insect injury.",
+        "Pears: free of bruising, insect damage, and decay; a firm green Bartlett ripens off the tree.",
+        "Store in the dark at 30 to 32°F, up to 40°F, in a ventilated box or a perforated bag.",
+        "Do not wash before storing; the moisture hastens decay.",
+        "McIntosh and Honeycrisp: store at 38°F, since they are prone to chilling injury.",
+        "Refrigerated apples keep up to a month."
+      ],
+      "decision": "Organic apples and pears from a small orchard, apples unwaxed."
+    },
+    "produce_stone_fruit": {
+      "buying_tips": [
+        "A bruise stays for good, and peaches and cherries both make the Dirty Dozen.",
+        "In season, look for Real Organic or Certified Naturally Grown on a local farm’s sign; at a market, ask.",
+        "Organic stone fruit is the fallback; the organic list still allows approved sprays when other controls fail.",
+        "Peaches and nectarines: ground color gone from green to yellow, no bruises or damage.",
+        "Plums: skin color turned for the variety, no bruises or damage.",
+        "Cherries: full color across the surface, green fleshy stems, no cracks, pecks, or shriveling.",
+        "Store just above freezing, 30.5 to 32°F; cherries at or below 41°F.",
+        "Plums that still need to ripen: keep them out of the 36 to 46°F range.",
+        "Skin staining on a peach or nectarine is cosmetic; a bruise is not."
+      ],
+      "decision": "Real Organic peaches, plums and cherries from a small orchard."
+    },
+    "produce_mushrooms": {
+      "buying_tips": [
+        "Moisture is what spoils mushrooms, so a dry, firm cap is the fresh one.",
+        "Look for Real Organic or Certified Naturally Grown on the sign or sticker, then USDA Organic.",
+        "Feel for a dry, firm cap and pass on any with dark spots.",
+        "Pick closed caps for a mild flavor and open caps for a stronger one.",
+        "Buy them loose to take only the amount needed."
+      ],
+      "decision": "Whole organic mushrooms from a local grower, dry and springy."
+    },
+    "frozen_vs_fresh_produce": {
+      "decision": "Fresh organic produce from a small local farm, in season."
+    },
+    "freezing_produce": {
+      "decision": "Fresh organic vegetables from a small farm, frozen at peak."
+    },
+    "produce_seasonality": {
+      "decision": "Organic fruit from a named local farm during its harvest."
+    },
+    "washing_produce": {
+      "decision": "Whole organic produce from a named farm, skins intact."
+    },
+    "produce_storage": {
+      "decision": "Whole organic storage crops from a named farm, skins unbroken."
+    },
+    "revive_greens": {
+      "decision": "Crisp organic greens from a named farm, with sound stems."
+    },
+    "sprouts_raw": {
+      "decision": "Organic mung bean sprouts, refrigerated, bought for cooking."
+    },
+    "produce_bananas": {
+      "decision": "Organic bananas from small farmers, yellow for eating now."
+    },
+    "produce_tomatoes": {
+      "decision": "Real Organic local tomatoes with a slight give."
+    },
+    "produce_avocados": {
+      "decision": "Organic avocados that yield gently, from a small farm."
+    },
+    "produce_grapes": {
+      "decision": "Real Organic grapes from a small vineyard, plump and attached."
+    },
+    "produce_melons": {
+      "decision": "Whole organic melons from a local farm, rinds intact."
+    },
+    "produce_tropical_fruit": {
+      "decision": "Whole organic tropical fruit with grower and origin named."
+    },
+    "nuts_raw_vs_roasted": {
+      "decision": "Organic soaked and dehydrated nuts from a small grower."
+    },
+    "beans_dried_vs_canned": {
+      "decision": "Organic dried beans from a named farm, skins intact."
+    },
+    "flour_basics": {
+      "decision": "Freshly milled organic sprouted whole-grain flour from a small mill."
+    },
+    "bulk_bins_buying": {
+      "decision": "Organic dried beans or lentils from clean, covered, labeled bins."
+    },
+    "olive_oil_grades": {
+      "decision": "Organic extra virgin olive oil with a recent harvest date."
+    },
+    "nut_butter_ingredients": {
+      "decision": "Organic sprouted nut butter, just nuts and optional salt."
+    },
+    "bottled_water_buying": {
+      "decision": "Mineral or spring water from a named source, in glass."
+    },
+    "sandwich_bread": {
+      "decision": "Organic whole-grain sourdough or sprouted sandwich bread from a bakery."
+    },
+    "tortillas": {
+      "decision": "Organic nixtamal corn tortillas of corn, water and lime."
+    },
+    "pasta_dry": {
+      "decision": "Organic whole-durum pasta of just flour and water."
+    },
+    "sprouted_grain_bread": {
+      "decision": "Organic sprouted whole-grain sourdough: grains, water, starter, salt."
+    },
+    "specialty_flours": {
+      "decision": "Freshly milled organic sprouted whole-grain specialty flour, mill named."
+    },
+    "buns_rolls": {
+      "decision": "Organic whole-wheat sourdough buns or rolls from a small bakery."
+    },
+    "bread_aisle": {
+      "decision": "Organic sourdough or sprouted whole-grain loaves from a local bakery."
+    },
+    "kombucha": {
+      "decision": "Organic plain raw kombucha in glass, live and refrigerated."
+    },
+    "sauerkraut": {
+      "decision": "Organic raw sauerkraut of cabbage and salt, refrigerated in glass."
+    },
+    "kimchi": {
+      "decision": "Organic unpasteurised kimchi, salt-fermented, refrigerated in glass."
+    },
+    "raw_cider_vinegar": {
+      "decision": "Organic raw unfiltered apple cider vinegar with the mother."
+    },
+    "vinegar": {
+      "decision": "Organic raw, unpasteurised apple cider vinegar from a small orchard."
+    },
+    "tempeh": {
+      "decision": "Organic plain unpasteurised tempeh, sold chilled or frozen."
+    },
+    "natto": {
+      "decision": "Organic plain whole-bean natto with live culture, chilled or frozen."
+    },
+    "fermented": {
+      "decision": "Organic live, unpasteurised vegetable ferments from a small maker."
+    },
+    "broth": {
+      "decision": "Organic pasture-raised bone broth, chilled or frozen."
+    },
+    "salt": {
+      "decision": "Unrefined sea salt with salt alone and its source named."
+    },
+    "lard_tallow": {
+      "decision": "Organic pastured lard or 100% grass-fed tallow, no added oils."
+    },
+    "seeds": {
+      "decision": "Organic sprouted, dried seeds, species named, no added oil."
+    },
+    "dried_fruit": {
+      "decision": "Organic unsulphured dried fruit, fruit alone on the list."
+    },
+    "pasta_sauce": {
+      "decision": "Organic tomato sauce with olive oil and no sweetener."
+    },
+    "jam": {
+      "decision": "Organic fruit jam sweetened with honey or maple syrup."
+    },
+    "ketchup_mustard": {
+      "decision": "Organic fermented ketchup, or mustard of seed, vinegar and salt."
+    },
+    "mayo": {
+      "decision": "Organic olive-oil mayonnaise with pasture-raised eggs, no other oils."
+    },
+    "canned_soup": {
+      "decision": "Organic canned soup with bone broth, meat and vegetables."
+    },
+    "salsa": {
+      "decision": "Organic fermented salsa, live and unpasteurised, in the chilled case."
+    },
+    "coconut_water": {
+      "decision": "Fresh water from inside a whole organic coconut."
+    },
+    "condiments": {
+      "decision": "Organic fermented ketchup or mustard, unpasteurised, from a small maker."
+    },
+    "tortilla_chips": {
+      "decision": "Organic nixtamalized corn chips in coconut oil, lard or ghee."
+    },
+    "pretzels": {
+      "decision": "Organic sprouted whole-wheat pretzels made with olive oil."
+    },
+    "hummus": {
+      "decision": "Organic hummus: chickpeas, tahini, lemon, extra virgin olive oil."
+    },
+    "prepared_meals": {
+      "decision": "Organic pastured meat and vegetable meals, every ingredient printed."
+    },
+    "deli": {
+      "decision": "Organic pasture-raised whole-muscle deli meat from a named farm."
+    },
+    "frozen": {
+      "decision": "Plain organic frozen fruit and vegetables, produce alone listed."
+    },
+    "dark_chocolate": {
+      "decision": "Organic dark chocolate, short cacao list, dated lead/cadmium results."
+    },
+    "cornmeal_polenta_grits": {
+      "decision": "Organic whole-grain cornmeal, polenta or grits from a small mill."
+    },
+    "rice_cakes_puffed_grains": {
+      "decision": "Organic fermented whole-grain crackers in place of rice cakes."
+    },
+    "salad_dressing": {
+      "decision": "Organic extra virgin olive oil dressing with vinegar or lemon."
+    },
+    "pesto": {
+      "decision": "Organic basil pesto with extra virgin olive oil."
+    },
+    "label_natural": {
+      "decision": "USDA Organic with named food ingredients and a named farm."
+    },
+    "label_made_with_real": {
+      "decision": "USDA Organic with the named fruit or whole grain first."
+    },
+    "label_no_added_hormones": {
+      "decision": "USDA Organic meat or dairy with a pasture seal."
+    },
+    "label_cage_free": {
+      "decision": "USDA Organic pasture-raised eggs with a Real Organic seal."
+    },
+    "label_pasture_raised_feed": {
+      "decision": "Real Organic pasture-raised eggs from soy-free, corn-free feed."
+    },
+    "label_multigrain_vs_whole_grain": {
+      "decision": "Organic bread with every grain ingredient listed as whole.",
+      "aliases": [
+        "multigrain",
+        "multi grain",
+        "whole grain",
+        "whole wheat",
+        "is multigrain whole grain",
+        "bread labels"
+      ]
+    },
+    "label_third_party_seals": {
+      "decision": "USDA Organic plus Real Organic, or AGA for grass-fed livestock."
+    },
+    "label_cold_pressed_expeller": {
+      "decision": "Organic extra virgin olive oil or unrefined cold-pressed coconut oil."
+    },
+    "label_sugar_free_substitutes": {
+      "decision": "USDA Organic unsweetened food with no sugar substitutes listed."
+    },
+    "label_wild_vs_farm_raised": {
+      "decision": "Wild-caught fish with species, country and catch method named."
+    },
+    "label_serving_size": {
+      "decision": "USDA Organic whole foods, panels compared at equal grams."
+    },
+    "label_artificial_color": {
+      "decision": "USDA Organic food with no added coloring listed."
+    },
+    "mercury_by_fish": {
+      "decision": "Sardines, anchovies, salmon and canned light tuna, small and short-lived."
+    },
+    "canned_fish_choosing": {
+      "decision": "Fish in olive oil or water, bone-in and skin-on."
+    },
+    "seafood_certifications": {
+      "decision": "Wild fish with a named origin and catch method."
+    },
+    "canned_tuna": {
+      "decision": "Canned light tuna, or a can naming skipjack."
+    },
+    "crab": {
+      "decision": "Live crab that moves, or cooked with bright orange-red shells."
+    },
+    "smoked_salmon": {
+      "decision": "Wild-caught smoked salmon, nova or lox, kept cold."
+    },
+    "seafood_counter": {
+      "decision": "Named species on ice, clean briny smell, springy flesh."
+    },
+    "seafood_trout": {
+      "decision": "Whole wild trout, or rainbow trout from a spring-fed farm."
+    },
+    "ground_beef_lean_ratio": {
+      "decision": "100% grass-fed, grass-finished beef with liver and heart ground in."
+    },
+    "cheese_real_vs_processed": {
+      "decision": "Grass-fed raw cheese aged 60+ days, where legally sold."
+    },
+    "raw_milk": {
+      "decision": "Grass-fed raw milk from a named farm, where legally sold."
+    },
+    "butcher_counter_asking": {
+      "decision": "Ask the staffed counter for grass-finished beef, cut to order."
+    },
+    "raw_kefir": {
+      "decision": "Plain grass-fed raw whole-milk kefir, where legally sold."
+    },
+    "egg_duck_quail": {
+      "decision": "Pasture-raised duck or quail eggs, corn- and soy-free feed named.",
+      "cart_pick": "Pasture-raised duck or quail eggs"
+    },
+    "turkey_bacon": {
+      "decision": "Pasture-raised turkey bacon, turkey named, no added sugar.",
+      "cart_pick": "Pasture-raised turkey bacon strips"
+    },
+    "lamb_goat": {
+      "decision": "100% grass-fed and grass-finished lamb or goat, farm named."
+    },
+    "ghee": {
+      "decision": "Grass-fed ghee with butter as its only ingredient."
+    },
+    "goat_sheep_dairy": {
+      "decision": "Grass-fed raw goat or sheep milk, where legally sold."
+    },
+    "soy_milk": {
+      "decision": "Unsweetened soy milk of whole soybeans and water."
+    },
+    "coconut_milk_beverage": {
+      "decision": "Unsweetened whole coconut milk of coconut and water."
+    },
+    "deli_liverwurst_pate": {
+      "decision": "Pasture-raised liverwurst, with butter or named animal fat."
+    },
+    "beef_grassfed_vs_grainfed": {
+      "decision": "100% grass-fed and grass-finished beef, farm named."
+    },
+    "beef_cuts_basics": {
+      "decision": "100% grass-fed and grass-finished beef, in whole cuts."
+    },
+    "chicken_cuts_basics": {
+      "decision": "Pasture-raised, soy-free whole chicken, air-chilled."
+    },
+    "turkey_whole": {
+      "decision": "Pasture-raised whole turkey with no basting solution."
+    },
+    "bison": {
+      "decision": "100% grass-fed, grass-finished bison from a named farm."
+    },
+    "venison_game": {
+      "decision": "Grass-and-forage finished venison from a named farm."
+    },
+    "poultry_duck": {
+      "decision": "Pasture-raised, soy-free whole duck with the skin on."
+    },
+    "poultry_chicken_wings": {
+      "decision": "Pasture-raised chicken wings, air-chilled and uncoated."
+    },
+    "rotisserie_chicken": {
+      "cart_pick": "Pasture-raised rotisserie chicken",
+      "decision": "Pasture-raised rotisserie chicken, with salt and named herbs."
+    },
+    "pork_cuts_and_enhanced": {
+      "cart_pick": "Pasture-raised pork shoulder",
+      "decision": "Pasture-raised pork, farm named, with no added solution."
+    },
+    "ground_turkey": {
+      "cart_pick": "Pasture-raised plain ground turkey",
+      "decision": "Pasture-raised ground turkey, breast and thigh meat only."
+    },
+    "bacon": {
+      "cart_pick": "Pasture-raised sliced bacon",
+      "decision": "Pasture-raised bacon, dry-cured with salt and wood-smoked."
+    },
+    "chicken_breast": {
+      "cart_pick": "Pasture-raised chicken breast",
+      "decision": "Pasture-raised, air-chilled breast with bone and skin."
+    },
+    "ham": {
+      "cart_pick": "Pasture-raised sliced ham",
+      "decision": "Pasture-raised whole-muscle ham, dry-cured with pork and salt."
+    },
+    "cured_pork": {
+      "cart_pick": "Pasture-raised prosciutto or salami",
+      "decision": "Pasture-raised whole pork cuts, dry-cured with salt."
+    },
+    "grassfed_butter": {
+      "decision": "Grass-fed raw butter, where legally sold."
+    },
+    "cream_vs_creamer": {
+      "decision": "Grass-fed cream, with cream alone on the list."
+    },
+    "oat_milk": {
+      "decision": "Unsweetened oat milk made with oats and water."
+    },
+    "sour_cream": {
+      "decision": "Grass-fed sour cream made with cream and cultures."
+    },
+    "cream_cheese": {
+      "decision": "Plain grass-fed cream cheese made with live cultures."
+    },
+    "cottage_cheese": {
+      "decision": "Grass-fed full-fat cottage cheese with cultured curds."
+    },
+    "ice_cream": {
+      "decision": "Grass-fed ice cream of cream, milk, sugar and yolks."
+    },
+    "almond_milk": {
+      "decision": "Unsweetened almond milk made with almonds and water."
+    },
+    "egg_labels": {
+      "decision": "Soy-free, corn-free eggs from hens on pasture."
+    },
+    "whole_vs_reduced_fat_milk": {
+      "decision": "Trusted raw milk from a farm, or low-temp pasteurized 100% grass-fed."
+    },
+    "yogurt_plain_vs_flavored": {
+      "decision": "Plain Greek yogurt made from 100% grass-fed milk."
+    },
+    "plain_kefir": {
+      "decision": "Plain kefir from 100% grass-fed whole milk."
+    },
+    "raw_aged_cheese": {
+      "decision": "Aged raw milk or lait cru cheese, 60 days minimum."
+    },
+    "dairy_case": {
+      "decision": "Choose the dairy type first, then read the carton."
+    },
+    "breakfast_cereal": {
+      "decision": "Soaked, cooked oats; if boxed, organic soaked granola."
+    },
+    "frozen_waffles": {
+      "decision": "Organic whole grain waffles, no dyes or enriched flour."
+    },
+    "snack_bars": {
+      "decision": "Whole nuts, fruit, jerky or cheese ahead of any bar."
+    },
+    "crackers": {
+      "decision": "Sourdough or sprouted organic crackers in olive oil or butter."
+    },
+    "potato_chips": {
+      "decision": "Organic sliced potato chips in lard, coconut or olive oil."
+    },
+    "frozen_nuggets": {
+      "decision": "Pasture-raised white meat nuggets, one solid piece."
+    },
+    "frozen_fries": {
+      "decision": "Organic frozen fries in tallow, lard or coconut oil."
+    },
+    "cooking_oils": {
+      "decision": "Olive or coconut oil, tallow, lard, butter or ghee."
+    },
+    "salmon_wild_vs_farmed": {
+      "decision": "Wild salmon, frozen wild Alaskan before fresh farmed."
+    },
+    "shrimp_imported_vs_domestic": {
+      "decision": "Wild American or Gulf shrimp; read the country of origin."
+    },
+    "white_fish": {
+      "decision": "Wild-caught white fish by its named species, firm, mild-smelling."
+    },
+    "scallops": {
+      "decision": "Dry or dry-packed scallops, with no phosphate or water listed."
+    },
+    "lobster": {
+      "decision": "A live lobster that moves, or hard-frozen tails."
+    }
+  },
+  "groups": []
+}

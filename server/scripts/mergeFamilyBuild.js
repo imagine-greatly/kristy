@@ -8,6 +8,7 @@ import { applyPatches } from './applyCardPatches.js';
 import { lintCard, lintCorpus, lintFamilyReferences } from '../lib/counterCardLint.js';
 import { isQuestionEntry, questionEntries } from '../lib/perimeter.js';
 import { projectEntry } from '../lib/counterCards.js';
+import { dialFindings } from '../lib/dialRules.js';
 import doLines from '../lib/doLines.json' with { type: 'json' };
 
 export function mergeFamilyBuild(kb, builds, { reviewed = doLines } = {}) {
@@ -24,7 +25,7 @@ export function mergeFamilyBuild(kb, builds, { reviewed = doLines } = {}) {
         if (!entry || entry.kind !== kind || !entry.id) throw new Error(`${key}: invalid entry kind or id`);
         const old = byId.get(entry.id);
         if (old && old.kind !== kind) throw new Error(`${entry.id}: cannot change kind`);
-        byId.set(entry.id, structuredClone(entry));
+        byId.set(entry.id, structuredClone({ ...old, ...entry })); // dial batches carry only the fields they change
       }
     }
     patches.push(build.patches);
@@ -48,15 +49,26 @@ export function mergeFamilyBuild(kb, builds, { reviewed = doLines } = {}) {
   return result;
 }
 
+// A delta differentiates a family member; a standalone card (labels, frozen) keeps its own copy.
+function dropFamilylessDeltas(build) {
+  const patches = Object.fromEntries(Object.entries(build.patches).map(([id, p]) => {
+    if (p.delta && !p.family) { const { delta, ...rest } = p; return [id, rest]; }
+    return [id, p];
+  }));
+  return { ...build, patches };
+}
+
 function main() {
   const args = process.argv.slice(2);
   const check = args.includes('--check');
-  const dir = args.find((arg) => arg !== '--check') || fileURLToPath(new URL('../../docs/research/deepen/build/', import.meta.url));
-  const files = readdirSync(dir).filter((f) => f.endsWith('.json')).sort();
+  const dir = args.find((arg) => arg !== '--check') || fileURLToPath(new URL('../../docs/research/deepen/dial/', import.meta.url));
+  const files = readdirSync(dir).filter((f) => f.endsWith('.json')).sort((a, b) => (a === 'reconcile.json') - (b === 'reconcile.json') || a.localeCompare(b));
   if (!files.length) throw new Error(`no build JSON files in ${dir}`);
   const path = fileURLToPath(new URL('../kristy_perimeter_kb.json', import.meta.url));
   const kb = mergeFamilyBuild(JSON.parse(readFileSync(path, 'utf8')),
-    files.map((file) => JSON.parse(readFileSync(join(dir, file), 'utf8'))));
+    files.map((file) => JSON.parse(readFileSync(join(dir, file), 'utf8'))).map(dropFamilylessDeltas));
+  const dial = dialFindings(kb.entries.filter((e) => e.kind === 'family' || e.kind === 'aisle' || e.delta));
+  if (dial.length) throw new Error(dial.map((f) => `${f.id}: ${f.code}: ${f.msg}`).join('\n'));
   if (!check) {
     const temporary = `${path}.${process.pid}.tmp`;
     try {
