@@ -225,10 +225,10 @@ Open/closed rules/history: `docs/OPEN-ITEMS.md`, “Open items”.
   Apply before push-token code deploys. Everything else: `docs/SCHEMA-AUDIT.md`.
 - ⚠️ The corpus count lives here and nowhere else; re-count it, never carry it forward.
   - LIVE `counter_cards`: **206 rows — 205 `curated` + 1 `generated`**, migration's post-upsert
-    count 2026-10-23, read back.
-  - `kristy_perimeter_kb.json`: **243 entries — 205 cards + 38 picks** at `3e1a094`, 2026-10-23.
-    Picks never migrate; `listMatch.js` reads the KB file, push publishes.
-  - KB and table agree at 205 curated. Migrate: `set -a;. ./.env`. A migration publishes what the KB is ahead by.
+    count 2026-10-25, read back.
+  - `kristy_perimeter_kb.json`: **314 entries**: 205 cards, 38 picks, 59 families, 12 aisles; 10-25.
+    Picks never migrate; `listMatch.js` reads the KB, push publishes.
+  - KB and table agree: 205 curated. Migrate: `set -a;. ./.env`. A migration publishes what the KB is ahead by.
 - ⚠️ Accounts gate revenue; rail is SIWA. Only a completed token exchange proves the client id
   (`/auth/v1/settings` can't); none has. No accounts yet.
 - 🐞 Simulator can't prove the exchange (no Apple account; read the account store, not
