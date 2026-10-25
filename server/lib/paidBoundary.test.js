@@ -7,7 +7,7 @@ import { DEPTH_FIELDS, summarize, forViewer, projectEntry, projectAll } from './
 import { nonEmpty } from './testGuards.js';
 import { lintCard } from './counterCardLint.js';
 import { supabase } from './supabase.js';
-import { familyForViewer, publicAisle, FAMILY_DEPTH_FIELDS } from './perimeter.js';
+import { familyForViewer, publicAisle, FAMILY_DEPTH_FIELDS, FAMILY_FREE_FIELDS } from './perimeter.js';
 import { perimeterKb, publicEntry, questionEntries } from './perimeter.js';
 import { loadCounterSectionRules } from './sectionRules.js';
 import { anthropic } from './anthropic.js';
@@ -105,10 +105,8 @@ test('essentials stay full for everyone', () => {
 
 test('a premium viewer receives the same full card as a guest', () => {
   for (const card of CARDS) {
-    // delta is the one paid-only field (free/paid split B); everything else is identical.
-    const { delta, ...rest } = forViewer(card, { premium: true });
-    assert.deepEqual(rest, forViewer(card));
-    assert.equal(delta ?? null, card.delta ?? null);
+    // delta is free since the shelf checklist ruling (Devon 2026-10-25): premium and guest match exactly.
+    assert.deepEqual(forViewer(card, { premium: true }), forViewer(card));
     assert.ok(forViewer(card, { premium: true }).why, `${card.slug}: member has no why`);
   }
 });
@@ -125,8 +123,7 @@ test('full and summary shapes omit teasers and retain full depth on every card',
       assert.ok(out.locked === undefined || out.locked === false, `${card.slug}: card must be unlocked`);
       assert.ok('why' in out, `${card.slug}: missing why`);
       assert.ok('sources' in out, `${card.slug}: missing sources`);
-      const { delta, ...freeCard } = card;
-      assert.deepEqual(out, freeCard, `${card.slug}: existing full depth must be preserved`);
+      assert.deepEqual(out, card, `${card.slug}: existing full depth must be preserved`);
     }
   }
 });
@@ -214,7 +211,8 @@ const AISLE = {
   id: 'aisle_produce', kind: 'aisle', title: 'Produce', category: 'aisle_produce', decision: 'Inspect whole produce.',
   buying_tips: ['Check skin.', 'Check stems.', 'Skip leaks.'], why: 'Not an aisle response field.', delta: 'Not free.',
 };
-const FREE_FAMILY_KEYS = ['id', 'kind', 'title', 'section', 'rule'].sort();
+const FREE_FAMILY_KEYS = nonEmpty(['id', 'kind', 'title', 'section', 'rule', ...FAMILY_FREE_FIELDS], 'free family keys', 7).sort();
+const PAID_FAMILY_FIELDS = nonEmpty(FAMILY_DEPTH_FIELDS.filter((f) => !FAMILY_FREE_FIELDS.includes(f)), 'paid family fields', 6);
 
 test('viewer serializers omit paid keys for guests/free users and allow only authored paid family depth', () => {
   const card = { slug: 'fixture', family: FAMILY.id, delta: 'Item exception.', why: 'Old free depth.' };
@@ -222,14 +220,15 @@ test('viewer serializers omit paid keys for guests/free users and allow only aut
     const out = forViewer(card, options);
     assert.equal(out.family, FAMILY.id);
     assert.equal(out.why, card.why);
-    assert.equal(Object.hasOwn(out, 'delta'), options?.premium === true);
+    assert.equal(out.delta, card.delta, 'delta is free for every viewer');
     const family = familyForViewer(FAMILY, options);
-    for (const field of FAMILY_DEPTH_FIELDS) assert.equal(Object.hasOwn(family, field), options?.premium === true, field);
+    for (const field of FAMILY_FREE_FIELDS) assert.deepEqual(family[field], FAMILY[field], `free: ${field}`);
+    for (const field of PAID_FAMILY_FIELDS) assert.equal(Object.hasOwn(family, field), options?.premium === true, field);
     assert.ok(!('extra' in family));
     assert.ok(!('delta' in family));
     if (!options?.premium) assert.deepEqual(Object.keys(family).sort(), FREE_FAMILY_KEYS);
   }
-  assert.ok(!('delta' in summarize(card)));
+  assert.equal(summarize(card).delta, card.delta);
   assert.equal(card.delta, 'Item exception.', 'serialization must not mutate shared cards');
   assert.deepEqual(Object.keys(publicEntry(FAMILY)).sort(), FREE_FAMILY_KEYS);
   assert.ok(!('delta' in publicEntry({ id: 'item', family: FAMILY.id, delta: 'Secret.' })));
@@ -261,7 +260,8 @@ test('family and aisle routes enforce guest/free/paid boundaries and canonical b
     assert.equal(subscriptionReads - before, user ? 1 : 0);
     const family = response.body.family;
     if (id !== 'paid') assert.deepEqual(Object.keys(family).sort(), FREE_FAMILY_KEYS);
-    for (const field of FAMILY_DEPTH_FIELDS) {
+    for (const field of FAMILY_FREE_FIELDS) assert.deepEqual(family[field], FAMILY[field], `${id}: ${field}`);
+    for (const field of PAID_FAMILY_FIELDS) {
       assert.equal(Object.hasOwn(family, field), id === 'paid', `${id}: ${field}`);
     }
     const aisles = await get('/counter/aisles', user);
@@ -274,7 +274,7 @@ test('family and aisle routes enforce guest/free/paid boundaries and canonical b
   assert.equal(routeRules.body.rules.find((rule) => rule.section === 'produce').rule, AISLE.decision);
 });
 
-test('all item routes filter delta with one server entitlement lookup, including ask', async (t) => {
+test('all item routes serve delta free with one server entitlement lookup, including ask', async (t) => {
   const fixture = {
     slug: 'boundary_item', kind: 'shelf', section: 'produce', headline: 'Choose intact fruit.',
     family: FAMILY.id, delta: 'Choose softer fruit.', why: 'Existing free item depth.',
@@ -324,8 +324,7 @@ test('all item routes filter delta with one server entitlement lookup, including
       assert.ok(card, `${id}: ${url}`);
       assert.equal(card.family, FAMILY.id, url);
       assert.ok(card.why, url);
-      assert.equal(Object.hasOwn(card, 'delta'), id === 'paid', `${id}: ${url}`);
-      if (id === 'paid') assert.equal(card.delta, fixture.delta);
+      assert.equal(card.delta, fixture.delta, `${id}: ${url}`);
       assert.ok(!('entries' in response.body), 'raw ask entries never reach the client');
     }
   }

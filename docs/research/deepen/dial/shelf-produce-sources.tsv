@@ -1,0 +1,108 @@
+aisle_produce	https://www.ifpsglobal.com/plu-codes	The 4-digit codes are for conventionally grown produce.
+aisle_produce	https://www.ifpsglobal.com/plu-codes	The prefix of '9' would be placed in front of the 4-digit conventionally grown code for organic produce.
+aisle_produce	https://www.law.cornell.edu/cfr/text/7/205.311	The USDA seal described in paragraphs (b) and (c) of this section may be used
+aisle_produce	https://www.ewg.org/foodnews/dirty-dozen.php	Spinach has more pesticide residues by weight than any other type of produce
+aisle_produce	https://www.ewg.org/foodnews/dirty-dozen.php	Kale, Collard, and Mustard Greens
+aisle_produce	https://extension.illinois.edu/small-fruits/handling-care	Visually check each package, making sure there are no signs of mold growth. If one berry is molded, mold spores will have traveled throughout the entire package.
+aisle_produce	https://www.law.cornell.edu/cfr/text/7/65.400	The declaration of the country of origin of a product may be in the form of a statement such as “Product of USA,” “Produce of the USA”, or “Grown in Mexico,”
+aisle_produce	https://www.law.cornell.edu/cfr/text/21/101.4	coated with food-grade vegetable-, petroleum-, beeswax-, and/or shellac-based wax or resin, to maintain freshness
+fam_produce_signs	https://www.ifpsglobal.com/plu-codes	The 4-digit codes are for conventionally grown produce.
+fam_produce_signs	https://www.ifpsglobal.com/plu-codes	The prefix of '9' would be placed in front of the 4-digit conventionally grown code for organic produce.
+fam_produce_signs	https://www.ifpsglobal.com/plu-codes	The PLU coding system is voluntary and not mandated by any governing body.
+fam_produce_signs	https://www.law.cornell.edu/cfr/text/7/205.311	The USDA seal described in paragraphs (b) and (c) of this section may be used
+fam_produce_signs	https://realorganicproject.org/get-certified/standards/	By mandating that crops grow directly in living soil, connected to subsoil and bedrock
+fam_produce_signs	https://www.naturallygrown.org/about/who-we-are/	Certified Naturally Grown (CNG) offers peer-review certification to farmers and beekeepers producing food, flowers, and fiber
+fam_produce_signs	https://www.law.cornell.edu/cfr/text/21/101.4	coated with food-grade vegetable-, petroleum-, beeswax-, and/or shellac-based wax or resin, to maintain freshness
+fam_produce_signs	https://www.law.cornell.edu/cfr/text/7/65.400	The declaration of the country of origin of a product may be in the form of a statement such as “Product of USA,” “Produce of the USA”, or “Grown in Mexico,”
+fam_finish_at_home	https://www.ewg.org/foodnews/dirty-dozen.php	Peaches
+fam_finish_at_home	https://www.ewg.org/foodnews/clean-fifteen.php	Avocados
+fam_finish_at_home	https://www.ewg.org/foodnews/clean-fifteen.php	Bananas
+fam_finish_at_home	https://www.ifpsglobal.com/plu-codes	The prefix of '9' would be placed in front of the 4-digit conventionally grown code for organic produce.
+fam_finish_at_home	https://www.froghollow.com/pages/storage-and-handling	They are ripe when yielding gently to the touch
+fam_finish_at_home	https://californiaavocado.com/faqs/	If the fruit is overly soft or the stem end appears to be drying out (shriveled), inspect the fruit carefully
+fam_buy_at_eating_quality	https://www.ewg.org/foodnews/dirty-dozen.php	Strawberries
+fam_buy_at_eating_quality	https://www.ewg.org/foodnews/dirty-dozen.php	Grapes
+fam_buy_at_eating_quality	https://extension.illinois.edu/small-fruits/handling-care	Visually check each package, making sure there are no signs of mold growth. If one berry is molded, mold spores will have traveled throughout the entire package.
+fam_buy_at_eating_quality	https://www.ecoliteracy.org/sites/default/files/media/cel-table-grapes-lesson-grades3-5.pdf	select ones that are firm, plump, and firmly attached to the stems.
+fam_buy_at_eating_quality	https://www.law.cornell.edu/cfr/text/21/101.4	coated with food-grade vegetable-, petroleum-, beeswax-, and/or shellac-based wax or resin, to maintain freshness
+fam_living_leaf	https://www.ewg.org/foodnews/dirty-dozen.php	Spinach has more pesticide residues by weight than any other type of produce
+fam_living_leaf	https://www.ewg.org/foodnews/dirty-dozen.php	Kale, Collard, and Mustard Greens
+fam_living_leaf	https://food.unl.edu/fruit-and-vegetable-safety/	Purchase produce that is not bruised or damaged and is free of mold.
+fam_living_leaf	https://food.unl.edu/fruit-and-vegetable-safety/	All produce that is purchased pre-cut or peeled should be refrigerated to maintain both quality and safety.
+fam_living_leaf	https://food.unl.edu/fruit-and-vegetable-safety/	Many precut, bagged, or packaged produce items like lettuce are pre-washed and ready to eat. You can use these products without further washing.
+fam_storage_crops	https://www.ewg.org/foodnews/dirty-dozen.php	Potatoes
+fam_storage_crops	https://www.pcfma.org/produce/potatoes?page=1	Pick those with good color without cuts, dark or soft spots, wrinkles or wilted skin, or any that have started to sprout.
+fam_storage_crops	https://www.pcfma.org/produce/potatoes?page=1	firm with relatively smooth skin
+fam_storage_crops	https://www.law.cornell.edu/cfr/text/7/65.400	The declaration of the country of origin of a product may be in the form of a statement such as “Product of USA,” “Produce of the USA”, or “Grown in Mexico,”
+fam_crisp_heads_pods	https://www.ewg.org/foodnews/dirty-dozen.php	Bell and Hot Peppers
+fam_crisp_heads_pods	https://www.ewg.org/foodnews/clean-fifteen.php	Cabbage
+fam_crisp_heads_pods	https://www.ewg.org/foodnews/clean-fifteen.php	Cauliflower
+fam_crisp_heads_pods	https://extension.usu.edu/nutrition/research/cauliflower	Select cauliflower that has a compact, space-free head, firmly attached bright green leaves, and is heavy for its size.
+fam_crisp_heads_pods	https://www.pcfma.org/produce/cabbage	a firm head and is heavy for its size.
+fam_dry_firm_mushrooms	https://www.law.cornell.edu/cfr/text/7/205.311	The USDA seal described in paragraphs (b) and (c) of this section may be used
+fam_dry_firm_mushrooms	https://www.mushroom.direct/blogs/news/how-to-tell-if-mushrooms-are-fresh	Fresh mushrooms should feel dry and springy, smell earthy and mild, and show no slime or dark patches.
+fam_dry_firm_mushrooms	https://www.mushroom.direct/blogs/news/how-to-tell-if-mushrooms-are-fresh	Most people rely on the sell-by date alone.
+fam_frozen_plain_produce	https://www.law.cornell.edu/cfr/text/7/205.311	The USDA seal described in paragraphs (b) and (c) of this section may be used
+fam_frozen_plain_produce	https://www.eatingwell.com/mistakes-when-buying-frozen-fruits-and-veggies-11930658	Check labels for added sugar, sodium or fat, and opt for plain, unseasoned frozen fruits and vegetables.
+fam_frozen_plain_produce	https://www.eatingwell.com/mistakes-when-buying-frozen-fruits-and-veggies-11930658	You should feel individual pieces moving freely. If the bag is a solid clump, put it back—it has likely been thawed and refrozen,
+fam_frozen_plain_produce	https://www.eatingwell.com/mistakes-when-buying-frozen-fruits-and-veggies-11930658	if there’s heavy frost visible through the packaging
+fam_frozen_plain_produce	https://extension.purdue.edu/extmedia/HHS/HHS-800-W.pdf	Freezing only slows enzyme activity.
+fam_plain_fruit_preparations	https://www.law.cornell.edu/cfr/text/7/205.311	The USDA seal described in paragraphs (b) and (c) of this section may be used
+fam_plain_fruit_preparations	https://www.law.cornell.edu/cfr/text/21/101.4	shall be listed by common or usual name in descending order of predominance by weight
+fam_plain_fruit_preparations	https://www.law.cornell.edu/cfr/text/21/101.100	A detectable amount of sulfiting agent is 10 parts per million (ppm or mg/kg) or more of the sulfite in the finished food.
+fam_fruit_preserves	https://www.law.cornell.edu/cfr/text/21/150.160	If the fruit ingredient is a single fruit, the name is “Preserve” or “Jam”, preceded or followed by the name or synonym whereby such fruit is designated
+fam_fruit_preserves	https://www.law.cornell.edu/cfr/text/21/101.4	shall be listed by common or usual name in descending order of predominance by weight
+fam_fruit_preserves	https://www.law.cornell.edu/cfr/text/7/205.311	The USDA seal described in paragraphs (b) and (c) of this section may be used
+produce_bananas	https://equalexchange.coop/sites/default/files/eebananaripeningguide2011.pdf	Yellow with Brown Spots
+produce_bananas	https://equalexchange.coop/sites/default/files/eebananaripeningguide2011.pdf	Completely ripe, sweetest flavor.
+produce_avocados	https://californiaavocado.com/faqs/	gently squeeze the fruit in the palm of your hand (avoid squeezing with your fingertips). Ripe, ready-to-eat fruit will be firm yet will yield to gentle pressure.
+produce_avocados	https://californiaavocado.com/faqs/	Avocados do not “ripen” on the tree so they do not get soft while on the tree.
+produce_tomatoes	https://untiedts.com/products/grape-tomatoes	A slight "give" when squeezed gently indicates they are ready for immediate eating.
+produce_stone_fruit	https://www.froghollow.com/pages/storage-and-handling	They are ripe when yielding gently to the touch
+produce_stone_fruit	https://foodwise.org/foods/cherries/	Cherries will not ripen once picked
+produce_stone_fruit	https://foodwise.org/foods/cherries/	firm, plump fruit with unblemished skin and the stem intact
+produce_tropical_fruit	https://www.mango.org/choose-a-mango/	A ripe mango will give slightly.
+produce_tropical_fruit	https://wadco.ch/en/producers/wad-farm-somanya-krodua-botoku	The sugarloaf pineapple remains green even when ripe.
+produce_tropical_fruit	https://wadco.ch/en/producers/wad-farm-somanya-krodua-botoku	It must therefore get ripe before harvest.
+produce_tropical_fruit	https://www.ewg.org/foodnews/clean-fifteen.php	Pineapples
+produce_tropical_fruit	https://www.ewg.org/foodnews/clean-fifteen.php	Papaya
+produce_tropical_fruit	https://www.ewg.org/foodnews/clean-fifteen.php	Mangoes
+produce_tropical_fruit	https://www.ewg.org/foodnews/clean-fifteen.php	Kiwi
+produce_tropical_fruit	https://www.law.cornell.edu/cfr/text/7/65.400	The declaration of the country of origin of a product may be in the form of a statement such as “Product of USA,” “Produce of the USA”, or “Grown in Mexico,”
+produce_ripeness_by_item	https://www.froghollow.com/pages/storage-and-handling	yielding slightly near the stem
+berries_picking	https://extension.illinois.edu/small-fruits/handling-care	Visually check each package, making sure there are no signs of mold growth. If one berry is molded, mold spores will have traveled throughout the entire package.
+berries_picking	https://www.law.cornell.edu/cfr/text/7/205.311	The USDA seal described in paragraphs (b) and (c) of this section may be used
+produce_grapes	https://www.ecoliteracy.org/sites/default/files/media/cel-table-grapes-lesson-grades3-5.pdf	select ones that are firm, plump, and firmly attached to the stems.
+produce_grapes	https://www.ewg.org/foodnews/dirty-dozen.php	Grapes
+produce_citrus	https://www.law.cornell.edu/cfr/text/21/101.4	coated with food-grade vegetable-, petroleum-, beeswax-, and/or shellac-based wax or resin, to maintain freshness
+produce_melons	https://chippewa.extension.wisc.edu/2025/08/20/harvesting-the-fruits-of-your-labor-2/	turns from a greenish white to a yellowish or cream color.
+produce_melons	https://chippewa.extension.wisc.edu/2025/08/20/harvesting-the-fruits-of-your-labor-2/	Ripe watermelons also tend to lose their glossy look and take on a dull appearance.
+produce_melons	https://chippewa.extension.wisc.edu/2025/08/20/harvesting-the-fruits-of-your-labor-2/	skin between the netting turns light tan to yellow
+produce_apples_pears	https://www.zavaranch.com/product/california-organic-apples-unwaxed-seasonal-varieties/	“Unwaxed” means that no additional coating has been applied to the fruit.
+produce_leafy_greens	https://www.pcfma.org/produce/lettuce	Pick lettuce heads or bunches that are heavy for their size and have nice crisp colorful leaves.
+precut_produce_tradeoffs	https://food.unl.edu/fruit-and-vegetable-safety/	All produce that is purchased pre-cut or peeled should be refrigerated to maintain both quality and safety.
+produce_root_vegetables	https://www.pcfma.org/produce/carrots	Avoid any carrots that are cracked, forked, or feel limp and rubbery.
+produce_onions_garlic	https://www.pcfma.org/produce/garlic	Choose garlic heads that are firm with no cuts or soft cloves.
+produce_onions_garlic	https://www.pcfma.org/produce/onions	choose those that are heavy for their size with dry, papery skins
+produce_potatoes	https://www.pcfma.org/produce/potatoes?page=1	Pick those with good color without cuts, dark or soft spots, wrinkles or wilted skin, or any that have started to sprout.
+produce_brassicas	https://extension.usu.edu/nutrition/research/cauliflower	Select cauliflower that has a compact, space-free head, firmly attached bright green leaves, and is heavy for its size.
+produce_brassicas	https://appleannies.com/farm-vegetable-pick-your-own/	Select tightly formed, deep-green heads. Avoid heads that have yellowed.
+produce_brassicas	https://realorganicproject.org/get-certified/standards/	By mandating that crops grow directly in living soil, connected to subsoil and bedrock
+produce_peppers	https://untiedts.com/products/peppers-sweet	Colored bell peppers are simply green peppers that were allowed to ripen to their full color change.
+produce_green_beans	https://www.pcfma.org/produce/beans-fresh	If the bean is fresh, it will snap in two rather than bend.
+produce_mushrooms	https://www.mushroom.direct/blogs/news/how-to-tell-if-mushrooms-are-fresh	Fresh mushrooms should feel dry and springy, smell earthy and mild, and show no slime or dark patches.
+organic_worth_it_by_type	https://www.ewg.org/foodnews/dirty-dozen.php	Spinach has more pesticide residues by weight than any other type of produce
+organic_worth_it_by_type	https://www.ewg.org/foodnews/dirty-dozen.php	Strawberries
+organic_worth_it_by_type	https://www.ewg.org/foodnews/clean-fifteen.php	Pineapples
+organic_worth_it_by_type	https://www.ewg.org/foodnews/clean-fifteen.php	Avocados
+washing_produce	https://food.unl.edu/fruit-and-vegetable-safety/	Wash fruits and vegetables under running water just before eating, cutting, or cooking, not before you store them.
+washing_produce	https://food.unl.edu/fruit-and-vegetable-safety/	Scrub firm produce like melons, potatoes, carrots and cucumbers with a clean vegetable brush.
+washing_produce	https://food.unl.edu/fruit-and-vegetable-safety/	Many precut, bagged, or packaged produce items like lettuce are pre-washed and ready to eat. You can use these products without further washing.
+washing_produce	https://www.law.cornell.edu/cfr/text/21/101.4	coated with food-grade vegetable-, petroleum-, beeswax-, and/or shellac-based wax or resin, to maintain freshness
+produce_seasonality	https://www.law.cornell.edu/cfr/text/7/65.400	The declaration of the country of origin of a product may be in the form of a statement such as “Product of USA,” “Produce of the USA”, or “Grown in Mexico,”
+frozen_vs_fresh_produce	https://www.eatingwell.com/mistakes-when-buying-frozen-fruits-and-veggies-11930658	Some frozen fruits come packaged in syrup or added sugar
+frozen_vs_fresh_produce	https://www.westonaprice.org/health-topics/wisely-stocked-kitchen/	a few frozen vegetables, mainly broccoli, spinach or kale, and green beans.
+freezing_produce	https://extension.umn.edu/food/preparing/cooking-at-home/food-preservation/freezing	Because of this, celery and lettuce are not usually frozen.
+freezing_produce	https://extension.purdue.edu/extmedia/HHS/HHS-800-W.pdf	Freezing only slows enzyme activity.
+produce_storage	https://food.unl.edu/fruit-and-vegetable-safety/	Purchase produce that is not bruised or damaged and is free of mold.
+revive_greens	https://www.pcfma.org/produce/lettuce	Pick lettuce heads or bunches that are heavy for their size and have nice crisp colorful leaves.

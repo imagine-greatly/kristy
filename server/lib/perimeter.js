@@ -53,9 +53,13 @@ export const FAMILY_DEPTH_FIELDS = Object.freeze([
   'science', 'pick_steps',
 ]);
 
+export const FAMILY_FREE_FIELDS = Object.freeze(['buying_tips', 'pick_steps']);
+
 export function familyForViewer(entry, { premium = false } = {}) {
   if (entry?.kind !== 'family') return null;
   const out = { id: entry.id, kind: entry.kind, title: entry.title, section: entry.category, rule: entry.decision };
+  // The shelf checklist is the product (Devon 2026-10-25): free viewers get it, depth stays paid.
+  for (const field of FAMILY_FREE_FIELDS) if (entry[field] != null) out[field] = entry[field];
   if (premium) {
     for (const field of FAMILY_DEPTH_FIELDS) {
       if (entry[field] != null) out[field] = entry[field];

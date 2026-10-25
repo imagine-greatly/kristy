@@ -69,3 +69,10 @@ test('CLI: exit 1 with findings, 0 when clean; accepts array or {entries}', () =
   assert.equal(spawnSync(process.execPath, [cli, good], { encoding: 'utf8' }).status, 0);
 });
 
+
+test('DIAL_VAGUE: local / small farm / named farm wording', () => {
+  for (const v of ['Organic from a local farm.', 'From a small orchard.', 'Named small farm produce.', 'Locally grown.']) {
+    assert.ok(codes([{ id: 'v', decision: v }]).includes('DIAL_VAGUE'), v);
+  }
+  assert.deepEqual(codes([{ id: 'v', decision: 'Look for the 9 prefix on the PLU sticker.' }]), []);
+});

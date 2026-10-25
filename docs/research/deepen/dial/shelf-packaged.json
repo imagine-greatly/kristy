@@ -1,0 +1,251 @@
+{
+  "families": [
+    {
+      "id": "fam_potato_chips",
+      "kind": "family",
+      "buying_tips": [
+        "Look for the USDA Organic seal on the front of the bag.",
+        "Read the fat line for coconut oil, pastured lard or ghee.",
+        "Pick the plain salted recipe with the shortest ingredient list.",
+        "Skip partially hydrogenated oil, unnamed oil blends and flavorings."
+      ]
+    },
+    {
+      "id": "fam_frozen_fries",
+      "kind": "family",
+      "buying_tips": [
+        "Look for the USDA Organic seal and potatoes listed first.",
+        "Read every listed oil, including the coating and seasoning sublists.",
+        "Pick potatoes alone, or potatoes with tallow or lard and optional salt.",
+        "Skip listed vegetable-oil blends, sugar and starch-based coatings."
+      ]
+    },
+    {
+      "id": "fam_popcorn_kernels",
+      "kind": "family",
+      "decision": "Plain organic popcorn kernels in a sealed bag, for popping at home.",
+      "buying_tips": [
+        "Look for an organic seal on a sealed bag of popcorn kernels.",
+        "Read the ingredient line for popcorn alone.",
+        "Skip prepopped bags cooked in partially hydrogenated or unnamed oils.",
+        "Skip microwave bags and kits with oil or flavor packets."
+      ]
+    },
+    {
+      "id": "fam_whole_grain_waffles",
+      "kind": "family",
+      "buying_tips": [
+        "Look for organic certification and whole grain as the first listed flour.",
+        "Read the pack for sourdough fermentation, soaking or sprouted whole grains.",
+        "Read every fat ingredient for butter, ghee or coconut oil.",
+        "Pick a plain recipe; skip filled, iced or syrup-filled versions."
+      ]
+    },
+    {
+      "id": "fam_occasional_cocoa",
+      "kind": "family",
+      "buying_tips": [
+        "Look for an organic seal; Regenerative Organic Certified is the top rung.",
+        "Read a short list led by cocoa or cacao; skip lecithin, flavorings and non-cocoa fats.",
+        "Skip bars that list sugar ahead of cocoa or cacao.",
+        "Look for dated lead and cadmium results matching the pack’s product and lot."
+      ]
+    },
+    {
+      "id": "fam_frozen_produce",
+      "kind": "family",
+      "title": "Frozen fruit and vegetables",
+      "category": "aisle_frozen",
+      "decision": "Organic frozen produce with nothing else on the ingredient list, frozen loose.",
+      "why": "Plain frozen fruit and vegetables are frozen piece by piece soon after harvest. A bag that has frozen into one block has likely thawed and refrozen on the way, and packs at the back of the case see the least temperature swing.",
+      "buying_tips": [
+        "Look for the USDA Organic seal on the bag or box.",
+        "Read the list for the produce alone; skip citric acid, ascorbic acid and sugar.",
+        "Check the bag feels loose, pieces moving, not one solid block.",
+        "Pick packs from the back of the freezer shelf."
+      ],
+      "sources": [
+        {
+          "name": "Traditional shopping preference framework",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        },
+        {
+          "name": "Shake rule for frozen vegetables",
+          "url": "https://www.thekitchn.com/shake-bag-of-frozen-vegetables-tip-23655327"
+        }
+      ]
+    },
+    {
+      "id": "fam_bottled_water",
+      "kind": "family",
+      "title": "Bottled water",
+      "category": "aisle_drinks",
+      "decision": "Spring or mineral water bottled in glass or cans, nothing added.",
+      "why": "Spring and mineral water are defined by an underground source; distilled and treated-tap water are defined by a treatment. Glass bottles or cans, with no sweeteners or flavorings, are the traditional pick.",
+      "buying_tips": [
+        "Read the name: spring or mineral water comes from an underground source.",
+        "Check for “distilled” or “municipal source” wording; it names a treatment, not a spring.",
+        "Pick glass bottles or cans over plastic bottles.",
+        "Skip waters with added sweeteners or flavorings."
+      ],
+      "sources": [
+        {
+          "name": "21 CFR 165.110 Bottled water",
+          "url": "https://www.law.cornell.edu/cfr/text/21/165.110"
+        },
+        {
+          "name": "Traditional shopping preference framework",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    {
+      "id": "fam_fresh_egg_pasta",
+      "kind": "family",
+      "buying_tips": [
+        "Look for organic certification on the chilled pack.",
+        "Read the flour line for whole grain or sprouted whole grain.",
+        "Look for pasture-raised eggs in the ingredient or sourcing statement.",
+        "Check the sealed pack's use-by date and keep-refrigerated instructions."
+      ]
+    },
+    {
+      "id": "fam_masa_foods",
+      "kind": "family",
+      "decision": "Organic lime-treated corn masa foods with a short list."
+    },
+    {
+      "id": "fam_fermented_soy",
+      "kind": "family",
+      "buying_tips": [
+        "Look for an organic seal and 'naturally fermented' or 'traditionally brewed' wording.",
+        "Read the ingredients for whole soybeans, named grains, salt and cultures.",
+        "Pick packs naming the beans’ growing origin.",
+        "Skip hydrolyzed soy protein, caramel color and flavorings, including in sauce packets."
+      ],
+      "why": "Miso, tempeh and natto use different cultures and recipes. Fermentation does not establish ready-to-eat status, and pasteurization does not erase fermentation. Prefer a label with useful origin and batch details."
+    },
+    {
+      "id": "fam_olive_oil_pesto",
+      "kind": "family",
+      "buying_tips": [
+        "Look for organic certification on the jar.",
+        "Read the complete oil list for extra virgin olive oil alone.",
+        "Check that every herb, nut, seed and cheese ingredient is named.",
+        "Skip sunflower, canola or soybean oil, starch fillers and added flavors."
+      ]
+    },
+    {
+      "id": "fam_mayonnaise_oils",
+      "kind": "family",
+      "buying_tips": [
+        "Look for an organic seal and pasture-raised egg wording.",
+        "Read the entire oil list for olive oil alone.",
+        "Pick jars naming the egg supplier.",
+        "Skip jars listing soybean, canola or unspecified vegetable oil alongside olive oil."
+      ]
+    },
+    {
+      "id": "fam_dressings_deli_salads",
+      "kind": "family",
+      "buying_tips": [
+        "Look for an organic seal on the tub or bottle.",
+        "Read every oil, mayonnaise and dairy sublist, including the dressing on salads.",
+        "Pick extra virgin olive oil or plain cultured dairy as the base.",
+        "Skip soybean, canola, corn or unnamed oil blends, EDTA and added flavors."
+      ]
+    }
+  ],
+  "aisles": [
+    {
+      "id": "aisle_frozen",
+      "kind": "aisle",
+      "buying_tips": [
+        "Pick the food first: produce, fries, waffles, pizza and meals each have a family.",
+        "Check packages are frozen solid and loose inside, not one block.",
+        "Pick packs from the back of the case, where they thaw least.",
+        "Read the ingredient list before any front-of-pack claim."
+      ]
+    },
+    {
+      "id": "aisle_snacks",
+      "kind": "aisle",
+      "buying_tips": [
+        "Pick whole nuts, fruit or popcorn kernels ahead of a packaged snack.",
+        "Read the frying fat by name; skip partially hydrogenated oil.",
+        "Check that a whole grain is the first ingredient on crackers.",
+        "Skip packs with flavor packets, artificial colors or unnamed oil blends."
+      ]
+    },
+    {
+      "id": "aisle_drinks",
+      "kind": "aisle",
+      "buying_tips": [
+        "Read the name: spring, mineral and distilled water are different products.",
+        "Pick glass bottles or cans over plastic.",
+        "Check that raw kombucha sits in the cold case, labeled Keep Refrigerated.",
+        "Read the Added Sugars line on the panel of any sweet drink."
+      ]
+    },
+    {
+      "id": "aisle_deli_prepared",
+      "kind": "aisle",
+      "buying_tips": [
+        "Look for USDA Organic on packaged deli meat and meals.",
+        "Read every ingredient on the label, sauces and seasonings included.",
+        "Read the list for salt, a little sugar and natural smoke, nothing more.",
+        "Read the first ingredient: the meat itself should lead the list."
+      ]
+    }
+  ],
+  "patches": {
+    "coffee_beans": {
+      "decision": "Organic whole-bean coffee with a printed roast date.",
+      "short_answer": "Coffee is an occasional item. Pick organic whole beans in a sealed bag, and read the roast date first. Ground coffee loses flavor faster than whole beans, and open bins expose beans to air and light.",
+      "pick_steps": [
+        "Read the bag for a printed roast date; skip bags without one.",
+        "Pick whole beans over pre-ground.",
+        "Pick a sealed bag with an organic seal over open bins."
+      ]
+    },
+    "tea": {
+      "decision": "Organic loose-leaf herbal tea, no added flavors listed."
+    },
+    "fermented": {
+      "decision": "Organic raw vegetable ferments in glass, from the cold case."
+    },
+    "deli": {
+      "decision": "Organic pasture-raised whole-muscle deli meat, sliced at the counter."
+    },
+    "frozen": {
+      "family": "fam_frozen_produce",
+      "short_answer": "Most frozen fruit and vegetables are frozen piece by piece, quickly. A plain bag lists the produce alone. A bag frozen into one solid block has likely thawed and refrozen. Packs at the back of the shelf thaw least.",
+      "pick_steps": [
+        "Shake the bag: pieces should move freely, not sit in one block.",
+        "Read the list for the fruit or vegetable alone.",
+        "Pick packs from the back of the freezer shelf."
+      ]
+    },
+    "bottled_water_buying": {
+      "family": "fam_bottled_water"
+    },
+    "label_natural": {
+      "decision": "USDA Organic seal over a bare “natural” claim."
+    },
+    "label_organic_scope": {
+      "decision": "100% organic or USDA Organic, plus a Real Organic seal.",
+      "buying_tips": [
+        "The seal covers inputs and practices, and an organic cookie is still a cookie.",
+        "Organic is about inputs and practices. Read the ingredient panel separately.",
+        "Organic is the floor. Real Organic Project or Certified Naturally Grown sits above it.",
+        "A short list of approved sprays is permitted under the organic standard.",
+        "It carries the most weight on thin-skinned produce you eat whole, and the least on processed food.",
+        "On animal products it does reach feed. It means organic feed, not a different kind of feed.",
+        "Real Organic Project on top of the USDA seal means soil-grown, never hydroponic."
+      ]
+    },
+    "label_front_vs_back": {
+      "decision": "USDA Organic with a short whole-food ingredient list."
+    }
+  }
+}

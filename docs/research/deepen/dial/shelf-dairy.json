@@ -1,0 +1,229 @@
+{
+  "families": [
+    {
+      "id": "fam_fluid_animal_milk",
+      "kind": "family",
+      "decision": "Organic or grass-fed whole milk, not ultra-pasteurized, cream-top when sold.",
+      "buying_tips": [
+        "Look for the USDA Organic seal or the AGA 100% Grassfed logo on the carton.",
+        "Read the carton for “ultra-pasteurized” and pick one without it.",
+        "Pick non-homogenized or cream-top milk when the case carries it.",
+        "Skip lowfat, skim and flavored milk; pick plain whole milk."
+      ]
+    },
+    {
+      "id": "fam_plain_cultured_dairy",
+      "kind": "family",
+      "decision": "Plain whole-milk organic cultured dairy with live cultures and no thickeners.",
+      "buying_tips": [
+        "Read the label for named cultures or “contains live and active cultures”.",
+        "Skip tubs listing pectin, gums, starch or carrageenan as thickeners.",
+        "Pick plain and check that Added Sugars reads 0g on the panel.",
+        "Look for the USDA Organic seal or the AGA 100% Grassfed logo on the tub."
+      ]
+    },
+    {
+      "id": "fam_real_cheese",
+      "kind": "family",
+      "decision": "Organic or grass-fed block cheese of milk, cultures, salt and rennet.",
+      "buying_tips": [
+        "Read the front name and skip “cheese food”, “cheese product” and spreads.",
+        "Check the list for sodium citrate or other emulsifying salts and skip them.",
+        "Pick a block or wedge over individually wrapped slices.",
+        "Look for the USDA Organic seal or the AGA 100% Grassfed logo on the label."
+      ]
+    },
+    {
+      "id": "fam_concentrated_dairy_fats",
+      "kind": "family",
+      "decision": "Organic or grass-fed butter, cream and ghee with nothing added but salt.",
+      "buying_tips": [
+        "Read the butter list: cream, and salt if salted, nothing else.",
+        "Skip whipped butter and spreads that blend butter with vegetable oils.",
+        "Check cream cartons for “ultra-pasteurized” and added gums or emulsifiers.",
+        "Look for the AGA 100% Grassfed logo or the USDA Organic seal on the pack."
+      ]
+    },
+    {
+      "id": "fam_plain_plant_drinks",
+      "kind": "family",
+      "decision": "Organic unsweetened plant milk of the named plant and water, no oils or gums.",
+      "buying_tips": [
+        "Read the list: the named nut, grain or bean and water, little else.",
+        "Pick “unsweetened” and check that Added Sugars reads 0g.",
+        "Skip cartons listing vegetable oil, carrageenan or gums.",
+        "Look for the USDA Organic seal and a printed plant percentage."
+      ]
+    },
+    {
+      "id": "fam_whole_coconut_cooking_milk",
+      "kind": "family",
+      "decision": "Organic full-fat coconut milk listing only coconut and water.",
+      "buying_tips": [
+        "Read the list for coconut and water only, no guar gum or thickeners.",
+        "Skip cans labeled light or low-fat; they are diluted with water.",
+        "Look for “BPA-free lining” on the can, or pick an aseptic carton.",
+        "Look for the USDA Organic seal on the can or carton."
+      ]
+    },
+    {
+      "id": "fam_actual_ice_cream",
+      "kind": "family",
+      "decision": "Organic ice cream of cream, milk, sugar and egg yolks, without gums.",
+      "buying_tips": [
+        "Read the front name for “ice cream” or “frozen custard”.",
+        "Skip tubs listing guar gum, carrageenan or other stabilizers.",
+        "Pick a pint that feels heavy for its size, since whipped-in air weighs little.",
+        "Look for the USDA Organic seal or the AGA 100% Grassfed logo on the carton."
+      ]
+    },
+    {
+      "id": "fam_unheated_refrigerated_ferments",
+      "kind": "family",
+      "decision": "Organic live ferments labeled unpasteurized, kept cold, short ingredient list.",
+      "buying_tips": [
+        "Look for an organic seal and fermented or live-cultures wording on the jar or bottle.",
+        "Read unpasteurized, raw or not heated after fermentation on the label.",
+        "Check the cold case, keep-refrigerated wording, the date and an intact seal.",
+        "Pick short recipes of named whole foods, salt and cultures."
+      ]
+    }
+  ],
+  "aisles": [
+    {
+      "id": "aisle_dairy_alt",
+      "kind": "aisle",
+      "decision": "Plain, whole, organic or grass-fed dairy first; plant milks with the shortest list.",
+      "buying_tips": [
+        "Look for the USDA Organic seal or the AGA 100% Grassfed logo on each pack.",
+        "Read each ingredient list and pick the shortest one with nothing added.",
+        "Check milk and cream for “ultra-pasteurized” and pick the carton without it.",
+        "Ask staff whether the store sells raw milk, where state law allows it."
+      ]
+    }
+  ],
+  "patches": {
+    "whole_vs_reduced_fat_milk": {
+      "family": "fam_fluid_animal_milk",
+      "short_answer": "Pick plain organic or grass-fed whole milk without “ultra-pasteurized” on the carton. Cream-top or non-homogenized milk is the next step up when the case has it.",
+      "pick_steps": [
+        "100% grass-fed on milk means the cows ate grass and hay, never grain.",
+        "Read the carton for “ultra-pasteurized” and skip it.",
+        "Look for “low-temperature” or “vat pasteurized” printed on the label."
+      ]
+    },
+    "raw_milk": {
+      "family": "fam_fluid_animal_milk",
+      "decision": "Cream-top grass-fed milk; raw only where stores sell it.",
+      "delta": "Raw milk is sold in stores in only a few states, labeled raw on the bottle.",
+      "short_answer": "Most stores sell no raw milk. The closest shelf option is organic or grass-fed whole milk, low-temperature pasteurized and non-homogenized. Where a store does sell raw milk, the bottle says raw.",
+      "pick_steps": [
+        "Look for “vat pasteurized” or “low-temperature” on the bottle.",
+        "Pick non-homogenized, cream-top milk with an AGA Grassfed seal.",
+        "Ask staff whether the store sells raw milk, where state law allows."
+      ]
+    },
+    "goat_sheep_dairy": {
+      "family": "fam_fluid_animal_milk",
+      "decision": "Plain whole goat or sheep milk first, then organic.",
+      "pick_steps": [
+        "Read the ingredients for goat milk or sheep milk.",
+        "For sheep milk cheese, look for feta, pecorino romano, Roquefort or Manchego.",
+        "Look for USDA Organic: certified organic feed and outdoor access."
+      ],
+      "cart_pick": "Plain whole goat or sheep milk",
+      "buying_tips": [
+        "The animal on the list decides the food; goat butter, for one, comes out white.",
+        "Look for goat or sheep milk, cultures and salt alone on a cheese or yogurt list.",
+        "Read the ingredients for goat milk or sheep milk.",
+        "Look for feta, pecorino romano, Roquefort or Manchego for sheep milk cheese.",
+        "Expect goat butter to be white, not yellow.",
+        "Homogenized or ultra-pasteurized: see Milk."
+      ]
+    },
+    "cheese_real_vs_processed": {
+      "family": "fam_real_cheese",
+      "decision": "Grass-fed block cheese first, then organic; never cheese food.",
+      "cart_pick": "Grass-fed block cheese",
+      "pick_steps": [
+        "Read the front name: ‘cheese product’, ‘cheese food’ or ‘process’ means emulsifiers.",
+        "Look for USDA Organic: certified organic feed and outdoor access.",
+        "Buy the block; bagged shreds carry starch, cellulose and natamycin."
+      ],
+      "buying_tips": [
+        "Bagged shreds are coated in starch to keep them apart, which is why they melt poorly.",
+        "Look for 100% grass-fed milk named on the block.",
+        "Look for a short list: milk, salt, cultures, enzymes/rennet.",
+        "Raw-milk cheese from grass-fed herds is the top rung. Imported and deli-counter wheels are the easiest raw finds.",
+        "Skip cheese made from homogenized milk.",
+        "Smoked cheese should be smoked over real smoke, not liquid smoke or smoke flavoring.",
+        "‘Parmesan’ is a generic word in the US. ‘Parmigiano-Reggiano’ is a protected one with a stamped rind.",
+        "Keep hard-cheese rinds. They belong in a pot of beans or soup.",
+        "The milk for cheese may come from cows given the synthetic growth hormone rBST. Certified organic rules exclude its use.",
+        "Certified organic block cheese is the first choice. Next, find a wrapper stating the cheese uses milk from cows given no rBST. Cheese with neither claim is last. US labeling does not require a statement about rBST use.",
+        "“rBST free” on a wrapper points to milk from cows not given rBST."
+      ]
+    },
+    "raw_aged_cheese": {
+      "family": "fam_real_cheese",
+      "pick_steps": [
+        "Read the rind label for “raw milk” or “lait cru” and an age.",
+        "Ask the cheese counter whether the wedge was aged 60 days or more.",
+        "Start with hard, aged styles: alpine, aged cheddar, manchego, pecorino."
+      ]
+    },
+    "grassfed_butter": {
+      "family": "fam_concentrated_dairy_fats",
+      "decision": "Grass-fed butter of cream and salt first, then organic.",
+      "delta": "Butter must be at least 80 percent milkfat, made from milk or cream alone.",
+      "pick_steps": [
+        "Skip tubs and spreads; butter comes as a block or a stick.",
+        "Look for USDA Organic: certified organic feed and outdoor access.",
+        "Look for the AGA Grassfed logo on the wrapper."
+      ],
+      "cart_pick": "Grass-fed butter, cream and salt only"
+    },
+    "cream_vs_creamer": {
+      "family": "fam_concentrated_dairy_fats",
+      "pick_steps": [
+        "Read the milkfat: heavy cream is 36% or more, half-and-half 10.5 to 18%.",
+        "Read the list too: even real cream can carry carrageenan or gellan gum.",
+        "Skip a creamer whose list opens on water, sugar and oil."
+      ]
+    },
+    "ghee": {
+      "family": "fam_concentrated_dairy_fats",
+      "pick_steps": [
+        "For plain ghee, pick a jar listing butter alone.",
+        "Skip jars listing natural flavors.",
+        "Look for the AGA 100% Grassfed logo or USDA Organic seal."
+      ]
+    },
+    "oat_milk": {
+      "family": "fam_plain_plant_drinks",
+      "short_answer": "Pick organic unsweetened oat milk listing oats and water, with no added oil or gums. Check that the Added Sugars line reads 0g, barista versions included.",
+      "pick_steps": [
+        "Read the list for oats and water first.",
+        "Skip cartons listing sunflower, canola, rapeseed or other oils.",
+        "Skip cartons listing gellan, guar or locust bean gum."
+      ]
+    },
+    "almond_milk": {
+      "family": "fam_plain_plant_drinks",
+      "pick_steps": [
+        "Pick unsweetened over sweetened, vanilla or chocolate.",
+        "Skip cartons listing sunflower, safflower, canola or other oils."
+      ]
+    },
+    "raw_kefir": {
+      "family": "fam_unheated_refrigerated_ferments",
+      "decision": "Plain whole-milk kefir first, then organic or raw where sold.",
+      "pick_steps": [
+        "Take it from the refrigerated case; shelf-stable kefir’s cultures are no longer live.",
+        "Read the label for live and active cultures named on the bottle.",
+        "Look for USDA Organic: certified organic feed and outdoor access."
+      ],
+      "cart_pick": "Plain whole-milk kefir"
+    }
+  }
+}

@@ -12,6 +12,7 @@ export const MAX_DELTA_CHARS = 120; // [PLACEHOLDER]
 export const MAX_DELTA_CLAUSES = 2;
 export const TIP_VERBS = ['Look for', 'Read', 'Check', 'Pick', 'Skip', 'Ask'];
 export const UNLEGIBLE = /grown without sprays|no sprays|no[- ]pesticides?\b|unsprayed|pesticide[- ]free|not sprayed/i;
+export const VAGUE = /\b(locally|local|small (family )?(farm|farms|farmer|farmers|orchard|grower|growers|roaster|maker|beekeeper)|named (small )?(family )?(farm|farms|grove|orchard|grower|roaster|beekeeper|farmer)|small grove)\b/i;
 export const HEDGE = /does not establish|not a health ranking|editorial preference/i;
 
 const LEGIBLE_FIELDS = ['decision', 'delta', 'buying_tips', 'pick_steps', 'short_answer'];
@@ -32,6 +33,12 @@ export function dialFindings(entries) {
       for (const t of texts(e[field])) {
         const m = t.match(UNLEGIBLE);
         if (m) add(e.id, 'DIAL_UNLEGIBLE', field, `"${m[0]}" is not on the shelf; name a seal or label`);
+      }
+    }
+    for (const field of LEGIBLE_FIELDS) {
+      for (const t of texts(e[field])) {
+        const m = t.match(VAGUE);
+        if (m) add(e.id, 'DIAL_VAGUE', field, `"${m[0]}" cannot be checked in a store; name a seal, sticker or label word`);
       }
     }
     for (const field of HEDGE_FIELDS) {

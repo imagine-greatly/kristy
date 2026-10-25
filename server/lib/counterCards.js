@@ -592,8 +592,7 @@ export const DEPTH_FIELDS = [
 // Public summaries retain existing depth, without paid delta or obsolete lock fields.
 export function summarize(card, { premium = false } = {}) {
   if (!card) return card;
-  const { teaser, locked, delta, ...full } = card;
-  if (premium && delta != null) full.delta = delta;
+  const { teaser, locked, ...full } = card; // delta is free: the item-specific shelf cue (Devon 2026-10-25)
   return full;
 }
 

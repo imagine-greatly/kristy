@@ -1,0 +1,388 @@
+{
+  "families": [
+    {
+      "id": "fam_finish_at_home",
+      "kind": "family",
+      "decision": "Organic fruit at the firmness that matches the day it gets eaten.",
+      "buying_tips": [
+        "Pick organic peaches, nectarines and cherries first; avocados and bananas rank cleaner.",
+        "Read the PLU sticker: a 5-digit code starting with 9 is organic.",
+        "Pick fruit that gives gently for today and firmer fruit for later in the week.",
+        "Skip bruised, split or leaking fruit and any with a shriveled stem end."
+      ],
+      "title": "Fruit that finishes ripening at home"
+    },
+    {
+      "id": "fam_buy_at_eating_quality",
+      "kind": "family",
+      "decision": "Organic fruit already ripe on the shelf, with no mold, leaks or soft spots.",
+      "buying_tips": [
+        "Pick organic first for strawberries, grapes, apples, pears and blueberries.",
+        "Check the bottom of each clamshell for mold, juice stains or crushed fruit.",
+        "Look for stems still attached and fruit that is firm and plump.",
+        "Read the sign for “coated with food-grade wax” on apples, pears and citrus."
+      ],
+      "title": "Fruit bought ready to eat"
+    },
+    {
+      "id": "fam_living_leaf",
+      "kind": "family",
+      "decision": "Organic whole heads and bunches, crisp and dry, from the cold case.",
+      "buying_tips": [
+        "Pick organic spinach, kale, collards and mustard greens first; EWG ranks them top.",
+        "Check bags and clamshells for mold or bruised, damaged leaves.",
+        "Look for cut and bagged greens only in the refrigerated case.",
+        "Read “pre-washed” or “ready to eat” on bagged greens before rinsing again."
+      ],
+      "watch_out": [
+        "Skip slimy bases, wet collapse, decay and pooled-liquid packs.",
+        "Year-round living lettuce can qualify; roots attached is not an option for every leaf species.",
+        "Red leaves, small holes and slight loss of crispness are not interchangeable with decay.",
+        "Salad-kit additions need the shared ingredient screen within its scope; washing directions vary by pack."
+      ]
+    },
+    {
+      "id": "fam_storage_crops",
+      "kind": "family",
+      "decision": "Organic roots, potatoes and bulbs that are firm, dry-skinned and unsprouted.",
+      "buying_tips": [
+        "Pick organic potatoes first; EWG puts them on its Dirty Dozen.",
+        "Check for soft spots, cuts, wrinkles or sprouting before bagging.",
+        "Look for firm, smooth skins in good color on roots and tubers.",
+        "Read the bin sign for “Product of” to see where the crop was grown."
+      ]
+    },
+    {
+      "id": "fam_crisp_heads_pods",
+      "kind": "family",
+      "decision": "Organic heads, pods and peppers that are firm, heavy and bright in color.",
+      "buying_tips": [
+        "Pick organic first for peppers and green beans; cabbage and cauliflower rank cleaner.",
+        "Pick heads that are compact and heavy for their size.",
+        "Check that leaves on heads are bright green and firmly attached.",
+        "Skip heads or pods with soft spots, bruises or mold."
+      ]
+    },
+    {
+      "id": "fam_dry_firm_mushrooms",
+      "kind": "family",
+      "decision": "Organic mushrooms in a dry pack, judged by look and feel, not the date.",
+      "buying_tips": [
+        "Look for USDA Organic on the mushroom pack or the bin sign.",
+        "Check under the film for slime, wet spots or dark patches.",
+        "Pick caps that feel dry and springy and smell earthy and mild.",
+        "Skip choosing by the sell-by date alone; look at the mushrooms."
+      ],
+      "watch_out": [
+        "Year-round indoor cultivation is not a defect.",
+        "Cap or gill color alone does not establish freshness or identity.",
+        "Compostable packaging does not establish the growing substrate or every production material.",
+        "Seasoned dried and prepared mushrooms need their own ingredient checks."
+      ]
+    },
+    {
+      "id": "fam_produce_signs",
+      "kind": "family",
+      "decision": "Read the sticker and sign first: organic code, seal, wax and country of origin.",
+      "buying_tips": [
+        "Read the PLU: 4 digits is conventional; 5 digits starting with 9 is organic.",
+        "Look for USDA Organic; Real Organic adds soil-grown, CNG is peer-reviewed.",
+        "Read the sign for “coated with” to see what wax or resin is on the skin.",
+        "Check the sign or sticker for “Product of” to see where it was grown."
+      ],
+      "title": "Produce signs and stickers",
+      "category": "aisle_produce",
+      "why": "Most of what a produce shelf tells a shopper is printed on the PLU sticker, the bin sign and the seal. The PLU system is voluntary, so the USDA Organic seal or an organic sign is the firmer check. Real Organic Project certifies soil-grown organic crops; Certified Naturally Grown is a peer-review certification without synthetic chemicals or GMOs. Coated fruit must be disclosed as waxed or coated, and country of origin must be on a sign, sticker, band or tag."
+    },
+    {
+      "id": "fam_frozen_plain_produce",
+      "kind": "family",
+      "decision": "Organic frozen produce whose ingredient list names only the fruit or vegetable.",
+      "buying_tips": [
+        "Look for USDA Organic on the front of the bag.",
+        "Read the ingredient list for the fruit or vegetable alone, no sauce or sugar.",
+        "Check that pieces move freely when the bag is shaken; skip a solid clump.",
+        "Skip bags with heavy frost visible through the packaging."
+      ],
+      "title": "Frozen plain fruit and vegetables",
+      "category": "aisle_frozen",
+      "why": "Plain frozen produce is the store fallback when fresh is out of season or tired. Freezing slows ripening enzymes rather than stopping them, so blanched, quick-frozen pieces hold best. A bag frozen into one block or thick with frost has likely thawed and refrozen. Some frozen fruit comes in syrup and some vegetables come sauced, so the ingredient list is the check."
+    },
+    {
+      "id": "fam_plain_fruit_preparations",
+      "kind": "family",
+      "decision": "Organic fruit-only preparations with no added sweetener.",
+      "buying_tips": [
+        "Look for USDA Organic on the bag, jar or carton.",
+        "Read the ingredient list for the named fruit alone, or fruit with plain water.",
+        "Skip added sugar, syrups, sweetening juice concentrates, oil coatings and sulfites.",
+        "Check that the fruit is the first ingredient, listed before anything else."
+      ]
+    },
+    {
+      "id": "fam_fruit_preserves",
+      "kind": "family",
+      "decision": "Organic fruit preserves sweetened with honey or maple syrup.",
+      "buying_tips": [
+        "Look for USDA Organic and the fruit named beside “Jam” or “Preserve”.",
+        "Read the ingredients for fruit, honey or maple syrup and optional pectin or lemon.",
+        "Pick jars that list the fruit before any sugar or syrup.",
+        "Skip corn syrup, artificial sweeteners and added citric or ascorbic acid."
+      ]
+    }
+  ],
+  "aisles": [
+    {
+      "id": "aisle_produce",
+      "kind": "aisle",
+      "buying_tips": [
+        "Read the PLU sticker: a 5-digit code starting with 9 is organic, 4 digits is conventional; the USDA Organic seal or sign confirms it.",
+        "Pick organic first for EWG’s Dirty Dozen: spinach, kale and greens, strawberries, grapes, stone fruit, apples, pears, potatoes.",
+        "Check the bottom of clamshells and bags for mold, leaks and crushed or bruised pieces.",
+        "Read the sign or sticker for “Product of” and for “coated with” wax before choosing skin-on fruit."
+      ],
+      "watch_out": [
+        "The PLU sticker is voluntary; the USDA Organic seal or an organic sign is the firmer check."
+      ]
+    }
+  ],
+  "patches": {
+    "produce_bananas": {
+      "family": "fam_finish_at_home",
+      "decision": "Organic bananas, green-tipped for later or yellow for today.",
+      "delta": "Yellow with brown spots is the fully ripe, sweetest stage."
+    },
+    "produce_avocados": {
+      "family": "fam_finish_at_home",
+      "decision": "Organic avocados that yield to a gentle palm squeeze.",
+      "delta": "Squeeze in the palm, not with fingertips; avocados ripen only after picking."
+    },
+    "produce_tomatoes": {
+      "family": "fam_finish_at_home",
+      "decision": "Organic tomatoes with plump, shiny, unwrinkled skins.",
+      "delta": "A slight give when squeezed gently means ready to eat now."
+    },
+    "produce_stone_fruit": {
+      "family": "fam_finish_at_home",
+      "decision": "Organic peaches, nectarines and cherries, plump with stems on.",
+      "delta": "Peaches yield gently when ripe; cherries will not ripen once picked.",
+      "buying_tips": [
+        "A bruise stays for good, and peaches and cherries both make the Dirty Dozen.",
+        "In season, look for Real Organic or Certified Naturally Grown on the sign; at a market, ask.",
+        "Organic stone fruit is the fallback; the organic list still allows approved sprays when other controls fail.",
+        "Peaches and nectarines: ground color gone from green to yellow, no bruises or damage.",
+        "Plums: skin color turned for the variety, no bruises or damage.",
+        "Cherries: full color across the surface, green fleshy stems, no cracks, pecks, or shriveling.",
+        "Store just above freezing, 30.5 to 32°F; cherries at or below 41°F.",
+        "Plums that still need to ripen: keep them out of the 36 to 46°F range.",
+        "Skin staining on a peach or nectarine is cosmetic; a bruise is not."
+      ]
+    },
+    "produce_tropical_fruit": {
+      "family": "fam_finish_at_home",
+      "decision": "Whole tropical fruit, uncut, with origin on the sticker.",
+      "delta": "A ripe mango gives slightly; Sugarloaf pineapple stays green even when ripe.",
+      "short_answer": "Pineapple, papaya, mango and kiwi rank among EWG’s cleanest produce. Buy whole fruit over precut. A ripe mango gives slightly, and pineapple must ripen before harvest.",
+      "pick_steps": [
+        "Choose whole fruit over precut.",
+        "Press a mango gently; ripe fruit gives slightly.",
+        "Read the sticker for the country of origin."
+      ]
+    },
+    "produce_ripeness_by_item": {
+      "family": "fam_finish_at_home",
+      "decision": "Ripeness read by touch, stem and weight, item by item.",
+      "delta": "European pears yield slightly near the stem when ripe."
+    },
+    "berries_picking": {
+      "family": "fam_buy_at_eating_quality",
+      "decision": "Organic berries, dry and mold-free through the whole box.",
+      "delta": "One moldy berry means spores have traveled through the whole package.",
+      "buying_tips": [
+        "The bottom berries carry the weight and mold first, while the top still looks fresh.",
+        "Look for Real Organic or Certified Naturally Grown on the sign.",
+        "Organic is the store fallback, and organic frozen out of season; organic rules still allow approved sprays.",
+        "Berries are eaten whole, so the USDA Organic seal on the clamshell is the floor.",
+        "A dry, unstained bottom on the carton. That is the whole check.",
+        "No fuzzy white or gray spot on any berry. One takes the punnet.",
+        "Green caps still fresh on strawberries, not browned and dry.",
+        "Deep, even color for the variety, and uniform size in the container.",
+        "Buy them cold, from the refrigerated display rather than a room-temperature stack.",
+        "No USDA Organic seal on the clamshell means conventional, whatever the box says.",
+        "Read the seal, not the photograph; the two cartons look almost identical.",
+        "Frozen organic strawberries: same seal and same rules."
+      ]
+    },
+    "produce_grapes": {
+      "family": "fam_buy_at_eating_quality",
+      "decision": "Organic, always: a Dirty Dozen fruit eaten skin-on.",
+      "delta": "Plump grapes stay firmly attached to the stems."
+    },
+    "produce_citrus": {
+      "family": "fam_buy_at_eating_quality",
+      "decision": "Organic citrus, unwaxed when the peel gets zested.",
+      "delta": "Before zesting, check the sign for a shellac-based or petroleum wax."
+    },
+    "produce_melons": {
+      "family": "fam_buy_at_eating_quality",
+      "decision": "Whole watermelon with a cream ground spot and dull skin.",
+      "delta": "On cantaloupe, the skin between the netting turns light tan to yellow."
+    },
+    "produce_apples_pears": {
+      "family": "fam_buy_at_eating_quality",
+      "decision": "Organic apples and pears, firm, unbruised, unwaxed when possible.",
+      "delta": "“Unwaxed” on the sign means no coating was added to the fruit."
+    },
+    "produce_leafy_greens": {
+      "family": "fam_living_leaf",
+      "decision": "Organic spinach, kale and lettuce with crisp, colorful leaves.",
+      "delta": "Lettuce heads or bunches should feel heavy for their size."
+    },
+    "precut_produce_tradeoffs": {
+      "family": "fam_living_leaf",
+      "decision": "Whole produce over precut; precut only from the cold case.",
+      "delta": "Cut fruit and peeled vegetables need refrigeration, the same as bagged greens."
+    },
+    "revive_greens": {
+      "family": "fam_living_leaf",
+      "decision": "Organic greens bought crisp, so less reviving is needed."
+    },
+    "produce_root_vegetables": {
+      "family": "fam_storage_crops",
+      "decision": "Organic carrots and roots, firm, smooth and bright in color.",
+      "delta": "Skip carrots that are cracked, forked, limp or rubbery.",
+      "buying_tips": [
+        "Roots are often eaten skin-on, so how the grower raised them comes first.",
+        "Look for Real Organic or Certified Naturally Grown on the sign or sticker.",
+        "Organic is the fallback for potatoes and carrots; the standard still permits approved sprays.",
+        "Potatoes: firm, with no bruises, nicks, or soft spots.",
+        "Carrots: firm and well colored. With the tops on, choose bright green, fresh-looking tops.",
+        "Sweet potatoes: smooth and firm, even in shape and size, peel color even for the variety, free of damage.",
+        "Beets: firm and round with a slender tap root. The leaves on top say nothing certain about the root. Wilted leaves say little as long as the root is firm.",
+        "Potatoes: a cool, dark, ventilated place, 45 to 50°F, for up to a month.",
+        "Carrots: a closed bag or container in the refrigerator, tops removed, up to two weeks. A wilted carrot revives in cold water.",
+        "Beets: stem trimmed to an inch, root end left on, refrigerated in a food-safe container up to two weeks."
+      ]
+    },
+    "produce_onions_garlic": {
+      "family": "fam_storage_crops",
+      "decision": "Organic onions and garlic, firm, dry and papery-skinned.",
+      "delta": "Garlic heads should be firm with no cuts or soft cloves."
+    },
+    "produce_potatoes": {
+      "family": "fam_storage_crops",
+      "decision": "Organic potatoes with good color and no sprouts or wrinkles.",
+      "delta": "Skip potatoes with dark spots or wilted skin."
+    },
+    "produce_storage": {
+      "family": "fam_storage_crops",
+      "decision": "Produce bought firm and unbruised, then stored by type."
+    },
+    "produce_brassicas": {
+      "family": "fam_crisp_heads_pods",
+      "decision": "Organic broccoli, cabbage and cauliflower, compact and heavy.",
+      "delta": "Cauliflower heads should be compact with no spaces between florets.",
+      "pick_steps": [
+        "Look for Real Organic or Certified Naturally Grown, then USDA Organic.",
+        "Press each head; leave any soft, slippery, bruised or damaged one.",
+        "Pick broccoli with dark green, tight florets on stems not thick or tough."
+      ],
+      "buying_tips": [
+        "Florets and leaves are eaten whole, with no peel to take surface residue away.",
+        "Look for heads with Real Organic or Certified Naturally Grown on the sign or sticker.",
+        "Organic is the store fallback for broccoli, cauliflower and cabbage.",
+        "Broccoli: dark green florets, closed tight, on stems that are not thick and tough.",
+        "Cauliflower: a head with no bruises or damage.",
+        "Cabbage: outer leaves fresh, not wilted or insect-damaged. Remove any that are.",
+        "Broccoli keeps in the refrigerator in a plastic bag with holes. Use it within three days.",
+        "Cabbage keeps several weeks in a plastic bag or wrap in the refrigerator, at 41°F or below.",
+        "Cut out the cabbage core and rinse the leaves under cool running water before using."
+      ]
+    },
+    "produce_peppers": {
+      "family": "fam_crisp_heads_pods",
+      "decision": "Organic bell peppers, firm, in full red or yellow color.",
+      "delta": "Red and yellow bells are green peppers left to ripen fully."
+    },
+    "produce_green_beans": {
+      "family": "fam_crisp_heads_pods",
+      "decision": "Organic green beans, slim and firm, free of soft spots.",
+      "delta": "A fresh bean snaps in two rather than bending.",
+      "buying_tips": [
+        "Bulging seeds mean an older bean, turning tough, stringy and starchy.",
+        "Look for in-season beans with Real Organic or Certified Naturally Grown on the sign or sticker.",
+        "Organic beans, fresh or frozen, are the fallback; the organic list still permits approved sprays.",
+        "Pick smooth, slender pods with no seeds bulging through.",
+        "Leave beans with brown or rust spots behind.",
+        "Store them cold and cook them within five days."
+      ]
+    },
+    "produce_mushrooms": {
+      "family": "fam_dry_firm_mushrooms",
+      "decision": "Whole organic mushrooms with dry, springy caps."
+    },
+    "organic_worth_it_by_type": {
+      "family": "fam_produce_signs",
+      "decision": "Grown organic first for skin-on produce and EWG’s Dirty Dozen.",
+      "delta": "Spinach and strawberries lead EWG’s Dirty Dozen; pineapple and avocado lead its Clean Fifteen.",
+      "kristy_take": "Organic is the floor across the produce aisle, and Real Organic or Certified Naturally Grown sits above it. An avocado or kiwi can feel delicate and still have a peel you throw away, so it waits when organic runs short."
+    },
+    "washing_produce": {
+      "family": "fam_produce_signs",
+      "decision": "Whole organic produce, rinsed under running water before eating.",
+      "short_answer": "Rinse under running water right before eating and scrub firm produce with a brush. Bags marked pre-washed need no rewash. Read the sign for any wax coating.",
+      "pick_steps": [
+        "Read the sign for “coated with” wax before buying skin-on fruit.",
+        "Rinse under running water right before eating, not before storing.",
+        "Scrub melons, potatoes and carrots with a clean vegetable brush."
+      ]
+    },
+    "baking_soda_soak": {
+      "family": "fam_produce_signs",
+      "kristy_take": "Spend the effort at the shelf, not the sink: look for the USDA Organic seal. Rinse in plain water before eating."
+    },
+    "produce_seasonality": {
+      "family": "fam_produce_signs",
+      "decision": "In-season produce, with the country of origin on the sticker.",
+      "delta": "“Product of USA” or “Grown in Mexico” on the sticker names the country.",
+      "short_answer": "Yes. In season and organic is the top tier. Out of season, organic frozen is the store fallback.",
+      "buying_tips": [
+        "In season, it travels less and reaches you closer to ripe, so it tastes better.",
+        "At a farmers’ market, ask how the crop was grown.",
+        "Organic in season is the fallback, fresh or frozen.",
+        "The cheapest, most abundant produce this week is usually what’s in season.",
+        "Off-season, reach for frozen instead of sad ‘fresh’.",
+        "Farmers’ markets are a fast read on what is in season.",
+        "Spring: asparagus, peas, radishes, artichokes, strawberries, tender greens.",
+        "Summer: tomatoes, corn, zucchini, peppers, cucumbers, stone fruit, melon, berries.",
+        "Autumn: winter squash, sweet potatoes, apples, pears, brussels sprouts, grapes.",
+        "Winter: citrus, cabbage, kale, leeks, beets, parsnips, storage onions and potatoes.",
+        "Storage crops (apples, onions, potatoes, squash, carrots) stay good long past their season."
+      ]
+    },
+    "frozen_vs_fresh_produce": {
+      "family": "fam_frozen_plain_produce",
+      "decision": "Organic frozen fruit or vegetables, single ingredient, free-flowing.",
+      "delta": "Frozen fruit sometimes comes packed in syrup or added sugar.",
+      "short_answer": "Fresh and in season comes first. Out of season, organic frozen with one ingredient on the bag is the store fallback. A real-food kitchen keeps some frozen vegetables on hand for soups and sides.",
+      "pick_steps": [
+        "Buy fresh, in-season organic produce first.",
+        "Out of season, take organic frozen listing only the vegetable or fruit.",
+        "Keep broccoli, spinach or kale and green beans in the freezer."
+      ],
+      "buying_tips": [
+        "In season, fresh produce reaches the shelf riper than produce shipped across the country.",
+        "Out of season, organic frozen is the store fallback, with one ingredient on the bag.",
+        "Check the bag lists just the vegetable or fruit. No sauces or added sugar.",
+        "Broccoli, spinach or kale and green beans are the frozen staples worth keeping.",
+        "Freezing your own: steam-blanch, freeze soon, thaw in the fridge."
+      ],
+      "tier_note": "Fresh in-season produce first is the whole-food standard, with organic frozen as the fallback."
+    },
+    "freezing_produce": {
+      "family": "fam_frozen_plain_produce",
+      "decision": "Organic vegetables at peak, blanched before home freezing.",
+      "delta": "Celery and lettuce are not usually frozen."
+    }
+  }
+}

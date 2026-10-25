@@ -266,11 +266,23 @@ export const preCompleteness = (e) => (e && COMPLETENESS.has(e.id) ? structuredC
 // Family cascade: familyCascade.test.js owns the live entries, member fields and flour decision.
 // Older snapshots retain every other field; pin the pre-cascade wording independently of HEAD.
 const PRE_FAMILY_FLOUR_DECISION = 'Organic sprouted flour, or fresh-ground whole grain, soaked.';
+// Shelf rule (Devon 2026-10-25, docs/research/deepen/SHELF-BRIEF.md): these pick decisions dropped
+// 'local' / 'grown without sprays' after 5c0f9ff; older snapshots read the pre-shelf wording.
+export const PRE_SHELF_DECISIONS = {
+  pick_cucumbers: 'Local or greenhouse cucumbers labeled grown without sprays, firm to the touch, else organic.',
+  pick_cilantro: 'Local cilantro labeled grown without sprays, else organic, in bright, upright bunches.',
+  pick_parsley: 'Local parsley labeled grown without sprays, else organic, upright and bright green.',
+  pick_basil: 'Basil labeled grown without sprays from a small local grower, else organic, bright and upright.',
+  pick_swiss_chard: 'Local chard labeled grown without sprays, else organic, dark green with unsplit stalks.',
+  pick_celery: 'Celery labeled grown without sprays from a local grower, else organic, with crisp stalks.',
+  pick_microgreens: 'Microgreens labeled grown without sprays from a small local grower, else organic; rinse before use.',
+  pick_sausage: 'Pastured local-farm sausage, then certified organic feed and outdoor access; “uncured” celery powder supplies nitrite.',
+};
 export const preFamilyCascade = (entries) => entries
   .filter((e) => e.kind !== 'family' && e.kind !== 'aisle')
   .map(({ family, delta, ...entry }) => entry.id === 'flour_basics'
     ? { ...entry, decision: PRE_FAMILY_FLOUR_DECISION }
-    : entry);
+    : PRE_SHELF_DECISIONS[entry.id] ? { ...entry, decision: PRE_SHELF_DECISIONS[entry.id] } : entry);
 
 export const restoreOrganicCarts = (kb) => {
   kb.entries = preFamilyCascade(kb.entries).filter((e) => !GAP_ADDS.has(e.id)).map(preCompleteness).map(preDialed).map(preCleanJ9).map(preCleanJ8).map(preCleanJ7).map(preCleanJ6).map(preCleanJ5).map(preCleanJ4).map(preCleanJ3).map(preCleanJ1);

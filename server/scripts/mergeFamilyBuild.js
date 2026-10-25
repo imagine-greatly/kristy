@@ -62,7 +62,8 @@ function main() {
   const args = process.argv.slice(2);
   const check = args.includes('--check');
   const dir = args.find((arg) => arg !== '--check') || fileURLToPath(new URL('../../docs/research/deepen/dial/', import.meta.url));
-  const files = readdirSync(dir).filter((f) => f.endsWith('.json')).sort((a, b) => (a === 'reconcile.json') - (b === 'reconcile.json') || a.localeCompare(b));
+  const rank = (f) => (f.startsWith('shelf-') ? 2 : f === 'reconcile.json' ? 1 : 0); // shelf-* are the last word
+  const files = readdirSync(dir).filter((f) => f.endsWith('.json')).sort((a, b) => rank(a) - rank(b) || a.localeCompare(b));
   if (!files.length) throw new Error(`no build JSON files in ${dir}`);
   const path = fileURLToPath(new URL('../kristy_perimeter_kb.json', import.meta.url));
   const kb = mergeFamilyBuild(JSON.parse(readFileSync(path, 'utf8')),

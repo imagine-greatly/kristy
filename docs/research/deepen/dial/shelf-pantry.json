@@ -1,0 +1,506 @@
+{
+  "families": [
+    {
+      "id": "fam_whole_grains",
+      "kind": "family",
+      "decision": "Plain organic whole grain in a sealed bag, one grain listed, sprouted if sold.",
+      "buying_tips": [
+        "Look for the USDA Organic seal; the Real Organic Project label ranks above it.",
+        "Read the ingredient list for the grain alone, no flavor packet or sweetener.",
+        "Pick sealed bags over open bins for brown rice and hot cereals.",
+        "Skip quick-cooking grain packs and bulgur."
+      ]
+    },
+    {
+      "id": "fam_specialty_flours",
+      "kind": "family",
+      "decision": "Organic sprouted or whole-grain flour in a sealed bag, freshest date on the shelf.",
+      "buying_tips": [
+        "Look for “whole” in the flour name or first ingredient, plus the USDA Organic seal.",
+        "Pick sprouted flour first, then whole-grain, in the smallest bag you will use.",
+        "Check the milling or best-by date and pick the freshest bag.",
+        "Skip flour labeled bleached or enriched, and soy flour."
+      ]
+    },
+    {
+      "id": "fam_dry_pasta",
+      "kind": "family",
+      "decision": "Organic whole-grain, buckwheat, brown rice or legume pasta with a short list.",
+      "buying_tips": [
+        "Look for the USDA Organic seal on the box or bag.",
+        "Read the first ingredient for a whole grain or a named bean or lentil flour.",
+        "Pick the shortest ingredient list on the shelf.",
+        "Skip white-flour pasta and quinoa pasta."
+      ]
+    },
+    {
+      "id": "fam_whole_grain_baking",
+      "kind": "family",
+      "decision": "Organic whole-grain loaves, sourdough or sprouted, with no added gluten or soy.",
+      "buying_tips": [
+        "Look for the USDA Organic seal and the 100% Whole Grain Stamp.",
+        "Read every flour for “whole”; “wheat flour” and “enriched flour” are refined.",
+        "Check the bag for sourdough, sprouted or soaked wording.",
+        "Skip added gluten, soy, bran and partially hydrogenated oils on the list."
+      ]
+    },
+    {
+      "id": "fam_sprouted_whole_grain_bread",
+      "kind": "family",
+      "decision": "Organic sprouted whole-grain loaf with sprouted grains listed first.",
+      "buying_tips": [
+        "Look for the USDA Organic seal and “sprouted whole” on the bag.",
+        "Read the first ingredients for sprouted whole grains, not wheat flour.",
+        "Check the list for a sourdough starter or culture alongside the sprouts.",
+        "Skip loaves listing added gluten, soy or bran."
+      ]
+    },
+    {
+      "id": "fam_whole_grain_sourdough",
+      "kind": "family",
+      "decision": "Organic whole-grain sourdough of flour, water, salt and starter, no baker’s yeast.",
+      "buying_tips": [
+        "Look for the USDA Organic seal and whole-grain flour first on the list.",
+        "Read for flour, water, salt and a starter or culture, and little else.",
+        "Skip a sourdough that lists yeast, raising agents or other additives.",
+        "Ask the in-store bakery whether the loaf rises on starter alone."
+      ]
+    },
+    {
+      "id": "fam_cooking_fats",
+      "kind": "family",
+      "decision": "Organic single-source fat: extra virgin olive oil, virgin coconut oil, butter, lard.",
+      "buying_tips": [
+        "Look for the USDA Organic seal and one named fat, not a blend.",
+        "Read every oil on the list and skip one that says only “vegetable oil”.",
+        "Pick dark glass or tin with a harvest date over clear bottles.",
+        "Skip margarine, shortening and partially hydrogenated oils."
+      ]
+    },
+    {
+      "id": "fam_vinegar",
+      "kind": "family",
+      "decision": "Organic raw, unfiltered vinegar with the mother, its fruit or wine named.",
+      "buying_tips": [
+        "Look for the USDA Organic seal and “raw” or “unpasteurized” on the label.",
+        "Check for “with the mother” and “unfiltered” on the bottle.",
+        "Read the ingredients for the named fruit or wine vinegar alone.",
+        "Skip distilled vinegar and bottles listing caramel or natural flavors."
+      ]
+    },
+    {
+      "id": "fam_nuts_seeds",
+      "kind": "family",
+      "decision": "Organic raw or dry-roasted nuts and seeds in sealed packs, nothing added.",
+      "buying_tips": [
+        "Look for the USDA Organic seal and “sprouted” or “soaked” wording.",
+        "Pick sealed packs over open bins, and skip nuts marked product of China.",
+        "Read the list for the nut or seed, with salt at most.",
+        "Skip added oils, sugar, agave and partially hydrogenated oils."
+      ]
+    },
+    {
+      "id": "fam_named_sweeteners",
+      "kind": "family",
+      "decision": "Organic single-ingredient sweetener: raw honey, pure maple, molasses or coconut sugar.",
+      "buying_tips": [
+        "Look for the USDA Organic seal on the jar, bottle or bag.",
+        "Read the list for one sweetener alone, with nothing blended in.",
+        "Pick honey, maple, molasses or coconut sugar over white sugar.",
+        "Skip corn syrup, brown rice syrup, agave and imitation syrups."
+      ]
+    },
+    {
+      "id": "fam_botanicals",
+      "kind": "family",
+      "decision": "Organic, non-irradiated herbs, spices and teas with nothing added.",
+      "buying_tips": [
+        "Look for the USDA Organic seal on herbs, spices, tea and coffee.",
+        "Check for “Treated with radiation” or the irradiation logo, and skip it.",
+        "Read the list for the plant alone, no fillers, flavors or anti-caking agents.",
+        "Skip spices, herbs and seaweed marked product of China."
+      ]
+    },
+    {
+      "id": "fam_pulses",
+      "kind": "family",
+      "decision": "Organic dried beans, peas and lentils, plain, in a sealed bag.",
+      "buying_tips": [
+        "Look for the USDA Organic seal; a Real Organic Project label is a step above.",
+        "Read the list for the bean alone, and skip seasoning packets.",
+        "Pick dried pulses in sealed bags, with cans as the fallback.",
+        "Check the best-by date and pick the newest bag."
+      ]
+    },
+    {
+      "id": "fam_vegetable_sauces",
+      "kind": "family",
+      "decision": "Organic sauce with vegetables first, a short list, and no added sugar.",
+      "buying_tips": [
+        "Look for the USDA Organic seal on the jar.",
+        "Read the first ingredient for tomatoes or the named vegetable.",
+        "Pick glass jars or BPA-free cans for tomato products.",
+        "Skip sugar, corn syrup, citric acid and “natural flavors” on the list."
+      ]
+    },
+    {
+      "id": "fam_barbecue_marinades",
+      "kind": "family",
+      "decision": "Organic fermented sauces with live, unpasteurized and refrigerated wording.",
+      "buying_tips": [
+        "Look for the USDA Organic seal on the bottle.",
+        "Read the pack for fermented, live and unpasteurized wording.",
+        "Check for keep-refrigerated instructions and a chilled display.",
+        "Skip corn syrup, smoke flavoring and unspecified vegetable oils in the recipe."
+      ]
+    }
+  ],
+  "aisles": [
+    {
+      "id": "aisle_pantry_bulk",
+      "kind": "aisle",
+      "decision": "Pick the plainest organic pack: one named food, sealed, freshest date.",
+      "buying_tips": [
+        "Read the ingredient list for one named grain, bean, nut or sweetener.",
+        "Look for the USDA Organic seal on the pack or the bin label.",
+        "Pick sealed packs for nuts, flour and brown rice; bins suit beans and lentils.",
+        "Check harvest, milling or roast dates and pick the newest on the shelf."
+      ]
+    },
+    {
+      "id": "aisle_bread_bakery",
+      "kind": "aisle",
+      "decision": "Pick organic whole-grain loaves, sourdough or sprouted, with a short list.",
+      "buying_tips": [
+        "Read the first ingredient for “whole”; “enriched” means refined flour.",
+        "Look for the 100% Whole Grain Stamp, not the 50%+ or Basic Stamp.",
+        "Pick sourdough that lists only flour, water, salt and a starter.",
+        "Skip loaves listing added gluten, soy, bran or hydrogenated oils."
+      ]
+    },
+    {
+      "id": "aisle_condiments",
+      "kind": "aisle",
+      "decision": "Pick organic jars with a short list: vegetables, vinegar, salt, spices.",
+      "buying_tips": [
+        "Read the first ingredient for tomatoes, mustard seed or the named vegetable.",
+        "Skip high fructose corn syrup, distilled vinegar and MSG on the list.",
+        "Look for glass jars or BPA-free cans for tomato products.",
+        "Check for fermented or raw wording on refrigerated sauces."
+      ]
+    }
+  ],
+  "patches": {
+    "rice_arsenic": {
+      "decision": "Organic white basmati grown in California, in a sealed bag.",
+      "pick_steps": [
+        "Pick white basmati over brown rice.",
+        "Read the bag for California as the growing state.",
+        "Pick a sealed bag over the open bulk bin."
+      ]
+    },
+    "oats_steelcut_rolled_instant": {
+      "decision": "Plain organic steel-cut or rolled oats, oats only."
+    },
+    "nuts_raw_vs_roasted": {
+      "decision": "Organic raw or dry-roasted nuts, nut and salt only."
+    },
+    "honey_adulteration": {
+      "decision": "Organic raw, unfiltered honey, honey the only ingredient.",
+      "delta": "Look for “raw” and “unfiltered” on the jar label.",
+      "short_answer": "Pick a raw, unfiltered jar with honey as the only ingredient, USDA Organic where shelved. Skip heated honey and syrup blends. It is still a sugar, to use with intention.",
+      "pick_steps": [
+        "Read the list for one ingredient: honey.",
+        "Look for “raw” and “unfiltered” on the label.",
+        "Pick a jar with the USDA Organic seal when one is shelved."
+      ],
+      "buying_tips": [
+        "Commercial honey is often blended, and some has corn syrup added.",
+        "Ingredient list should read ‘honey’ and nothing else.",
+        "Look for raw, preferably unfiltered, with the producer named on the jar.",
+        "Ask the seller whether it was heated or filtered. Crystallized honey is normal.",
+        "It’s still a sweetener. Use it with intention."
+      ],
+      "cart_pick": "Raw, unfiltered honey",
+      "kristy_take": "Raw, unfiltered honey with honey the only ingredient. Use it because you like it; it is still sugar, just a real, old one.",
+      "detail": "Raw honey has not been heated, so it keeps its enzymes, and unfiltered honey keeps more of what came from the hive. Heating does not spoil honey as a food, but the enzymes may be compromised. Commercial honey is often blended, and some has corn syrup added. A jar that names its producer and says “raw” or “unfiltered” is the reliable route. Crystallizing is what raw honey does over time. Being an old, traditional food is a fair reason to prefer real honey. Tradition speaks to it being a real food, and it is still sugar."
+    },
+    "beans_dried_vs_canned": {
+      "decision": "Organic dried beans, or canned beans in a BPA-free can.",
+      "pick_steps": [
+        "Pick a sealed bag of organic dried beans first.",
+        "Read canned labels for beans, water and salt only.",
+        "Look for “BPA-free” printed on the can."
+      ]
+    },
+    "label_multigrain_vs_whole_grain": {
+      "pick_steps": [
+        "Read the first ingredient for “whole wheat flour”, not “wheat flour”.",
+        "Look for the 100% Whole Grain Stamp over “made with whole grains”.",
+        "Ignore a brown color and read the flour instead."
+      ]
+    },
+    "flour_basics": {
+      "decision": "Organic sprouted flour, or whole-grain flour with a recent date.",
+      "pick_steps": [
+        "Pick organic sprouted flour first, then organic whole-grain flour.",
+        "Check the milling or best-by date for the freshest bag.",
+        "Read white flour bags for “unbleached” and skip “bleached”."
+      ],
+      "buying_tips": [
+        "Whole grain flour keeps the bran and germ; soak it, or buy it sprouted.",
+        "Look for organic sprouted flour.",
+        "Soak whole grain flour overnight with a little yogurt, whey or vinegar before baking.",
+        "On white flour, read for “unbleached”, and pass on “bromated”.",
+        "Whole grain flour carries the oil in the germ. Buy small and keep it cold.",
+        "Choose certified organic wheat flour over conventional. Conventional wheat may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic wheat."
+      ]
+    },
+    "bulk_bins_buying": {
+      "pick_steps": [
+        "Pick busy, covered bins with a clean scoop for beans and lentils.",
+        "Buy nuts, seeds, flour and brown rice in sealed packages.",
+        "Smell before bagging; crayons, putty or wet cardboard means rancid."
+      ]
+    },
+    "whole_spices": {
+      "decision": "Organic whole spices, non-irradiated, in sealed jars.",
+      "pick_steps": [
+        "Pick whole peppercorns, seeds or sticks over ground powder.",
+        "Check the jar for “Treated with radiation” and skip it.",
+        "Buy the smallest jar you will finish."
+      ]
+    },
+    "nut_butter_ingredients": {
+      "decision": "Organic nut butter of nuts and salt, oil on top.",
+      "pick_steps": [
+        "Read the list for nuts, and salt if wanted, nothing else.",
+        "Pick a jar with an oil layer over a no-stir jar.",
+        "Skip jars listing sugar, agave, flavorings or hydrogenated oil."
+      ]
+    },
+    "grains_beyond_rice": {
+      "decision": "Organic intact grains with their bran left on.",
+      "pick_steps": [
+        "Read the bag for “hulled” or “whole” and skip “pearled”.",
+        "Pick buckwheat, millet or sorghum when avoiding gluten.",
+        "Skip bulgur and quick-cooking grain packs."
+      ]
+    },
+    "label_cold_pressed_expeller": {
+      "pick_steps": [
+        "Pick olive or coconut oil first, cold-pressed or expeller-pressed.",
+        "Read “refined”, “pure” or no press wording as likely solvent-extracted.",
+        "Pick a dark bottle in a size you will finish."
+      ]
+    },
+    "sandwich_bread": {
+      "decision": "Organic whole-grain sourdough or sprouted sliced sandwich loaf."
+    },
+    "sourdough": {
+      "decision": "Organic whole-grain sourdough listing a starter, no baker’s yeast."
+    },
+    "bagels": {
+      "decision": "Organic sprouted or sourdough whole-grain bagels, no added gluten.",
+      "pick_steps": [
+        "Look for a sourdough or sprouted bagel, whole grain flour first.",
+        "Skip added gluten, sugar or soy on the list.",
+        "Skip ascorbic acid on the list."
+      ]
+    },
+    "pasta_dry": {
+      "delta": "Buckwheat, corn, brown rice and legume pastas count alongside whole wheat."
+    },
+    "coffee_beans": {
+      "decision": "Organic whole-bean coffee with a roasted-on date.",
+      "pick_steps": [
+        "Pick whole beans over preground coffee.",
+        "Look for a “roasted on” date, not just an expiration date.",
+        "Pick a sealed bag with a one-way degassing valve."
+      ]
+    },
+    "sprouted_grain_bread": {
+      "pick_steps": [
+        "Read the list for sprouted whole grains first.",
+        "Check the rest for added flour or wheat gluten.",
+        "Look in the refrigerated or freezer case."
+      ]
+    },
+    "sprouted_grains": {
+      "decision": "Organic dried grains labeled sprouted whole, grain named."
+    },
+    "specialty_flours": {
+      "decision": "Organic sprouted or whole specialty flour, “whole” in its name.",
+      "pick_steps": [
+        "Look for “whole” in the flour name or first ingredient.",
+        "Check the fat line: about 2.5% for whole wheat, under 1% for white.",
+        "Read spelt and einkorn as wheat, so both contain gluten."
+      ]
+    },
+    "buns_rolls": {
+      "decision": "Organic whole-wheat sourdough or sprouted buns and rolls.",
+      "pick_steps": [
+        "Look for sourdough or sprouted, organic whole grain buns.",
+        "Read the bag name: “whole wheat” buns use no white flour.",
+        "Skip bags named “enriched buns”."
+      ]
+    },
+    "bread_aisle": {
+      "decision": "Organic sourdough or sprouted whole-grain loaves, 100% whole grain.",
+      "pick_steps": [
+        "Pick the loaf type first, then read the first ingredient for “whole”.",
+        "Look for the 100% Whole Grain Stamp, not the Basic Stamp.",
+        "Skip “enriched flour”, “bran” and “wheat germ” as whole-grain stand-ins."
+      ]
+    },
+    "plant_butter": {
+      "pick_steps": [
+        "Find each oil named and note which comes first.",
+        "Skip spreads listing sunflower, safflower, canola, soybean, corn or cottonseed oil.",
+        "Pick virgin coconut oil when a solid plant fat is needed."
+      ]
+    },
+    "salt": {
+      "decision": "Unrefined gray, pink or beige salt, salt alone.",
+      "delta": "Unrefined salt shows color, so bright white and iodized salt sit lower.",
+      "pick_steps": [
+        "Look for gray, pink or beige crystals, not bright white.",
+        "Read the list for salt alone, no anti-caking agent.",
+        "Skip iodized salt and blends with additives."
+      ],
+      "short_answer": "Look for unrefined salt that is gray, pink or beige, with salt alone on the list. Skip iodized salt and salts with anti-caking agents or other additives."
+    },
+    "sugars": {
+      "decision": "Organic coconut or maple sugar, sugar alone.",
+      "pick_steps": [
+        "Read the list for coconut sugar or maple sugar alone.",
+        "Look for the USDA Organic seal on plain cane sugar.",
+        "Skip white sugar and fructose."
+      ]
+    },
+    "maple_syrup": {
+      "decision": "Organic pure maple syrup, Dark or Very Dark grade.",
+      "pick_steps": [
+        "Read the list for maple syrup alone.",
+        "Pick the Dark Robust or Very Dark Strong grade.",
+        "Skip table or pancake syrup."
+      ]
+    },
+    "cooking_oils": {
+      "pick_steps": [
+        "Pick olive oil or virgin coconut oil first.",
+        "Read every oil on the list and skip plain “vegetable oil”.",
+        "Check the label for “refined” or “unrefined”."
+      ]
+    },
+    "lard_tallow": {
+      "pick_steps": [
+        "Read the list for one fat: pork for lard, beef for tallow.",
+        "Check for lard stearin or hydrogenated lard on the label.",
+        "Skip shortening tubs, which are not plain lard."
+      ]
+    },
+    "seeds": {
+      "decision": "Organic raw seeds in sealed packs, species named.",
+      "pick_steps": [
+        "Pick flax whole to grind at home, or ground and sealed.",
+        "Pick chia seeds whole or ground.",
+        "Skip hemp seeds and hemp products."
+      ]
+    },
+    "dried_herbs": {
+      "decision": "Organic non-irradiated dried herbs, single herb named.",
+      "buying_tips": [
+        "Basil and oregano count as spices, so a blend can list them only as “spice.”",
+        "Look for non-irradiated herbs with nothing added, and no Radura symbol.",
+        "Pick a single herb when the name on the jar matters.",
+        "Read a blend’s list for “spice” standing in for herb names.",
+        "Look for “spice and coloring” where a spice also adds color.",
+        "Read the origin and pass on herbs from China, organic or not.",
+        "Fresh herbs are the first rung when the dish allows."
+      ]
+    },
+    "tea": {
+      "decision": "Organic loose-leaf herbal tea, no natural flavors."
+    },
+    "vinegar": {
+      "decision": "Organic raw apple cider vinegar, percent acidity on the label."
+    },
+    "seaweed": {
+      "pick_steps": [
+        "Read for the kind by name: nori, kombu, kelp or dulse.",
+        "Skip packs that say only “seaweed” with no kind named.",
+        "Skip seaweed marked product of China."
+      ],
+      "decision": "Organic sea vegetables in a sealed pack, kind named."
+    },
+    "condiments": {
+      "decision": "Organic fermented ketchup or mustard, short ingredient list."
+    },
+    "pretzels": {
+      "pick_steps": [
+        "Read the list for flour, malt syrup, oil, salt, yeast and soda.",
+        "Check crust color; a paler pretzel can point to a baking soda bath.",
+        "Skip partially hydrogenated oils on the list."
+      ]
+    },
+    "trail_mix": {
+      "decision": "Organic nuts and unsweetened dried fruit, nothing else.",
+      "delta": "Skip mixes with candy or chocolate pieces stirred through.",
+      "pick_steps": [
+        "Check that nuts and dried fruit lead the list.",
+        "Pick the mix with the shortest list beyond nuts and fruit.",
+        "Skip mixes listing sugar, added oil or chocolate pieces."
+      ]
+    },
+    "hummus": {
+      "pick_steps": [
+        "Read the list for chickpeas and tahini at the top.",
+        "Look for olive oil as the named oil.",
+        "Pick the tub with the shortest list."
+      ]
+    },
+    "molasses_whole_cane_sweeteners": {
+      "decision": "Organic whole cane sweetener, nothing added.",
+      "delta": "Read the molasses jar for molasses alone, nothing blended in."
+    },
+    "cornmeal_polenta_grits": {
+      "decision": "Organic whole-grain cornmeal, polenta or grits, germ kept."
+    },
+    "split_peas": {
+      "decision": "Organic dried split peas, peas alone, sealed bag."
+    },
+    "olives": {
+      "buying_tips": [
+        "Lye works quickly and leaves a neutral olive; brine keeps a salty, fermented flavor.",
+        "Look for a jar of olives, water and salt, with no ferrous gluconate.",
+        "Look for organic olives cured in brine.",
+        "Read the jar for the curing method: brine, lye or dry salt.",
+        "Greek-style olives are near-ripe purple fruit cured in brine.",
+        "Spanish-style green olives are treated with lye, rinsed, then fermented.",
+        "Finish an opened jar within about 2 weeks."
+      ],
+      "decision": "Organic olives labeled naturally brine-fermented and unpasteurized."
+    },
+    "kimchi": {
+      "decision": "Organic unpasteurized kimchi, salt-fermented, refrigerated in glass."
+    },
+    "miso": {
+      "decision": "Organic naturally aged, unpasteurized miso with soybeans, koji and salt."
+    },
+    "tempeh": {
+      "decision": "Organic plain unpasteurized tempeh, sold chilled or frozen."
+    },
+    "salsa": {
+      "decision": "Organic fermented salsa, live and unpasteurized, in the chilled case."
+    },
+    "bbq_sauce_marinades": {
+      "decision": "Organic live fermented BBQ sauce or marinade, unpasteurized and refrigerated."
+    },
+    "hot_soy_sauce": {
+      "family": "fam_fermented_soy",
+      "decision": "Organic, traditionally brewed soy sauce labeled raw or unpasteurized.",
+      "delta": "'Nama shoyu' means unpasteurized soy sauce; soybeans and wheat are named in its recipe."
+    }
+  }
+}
