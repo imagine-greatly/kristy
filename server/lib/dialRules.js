@@ -19,7 +19,7 @@ const HEDGE_FIELDS = ['decision', 'buying_tips', 'delta'];
 
 const texts = (v) => (Array.isArray(v) ? v : v == null ? [] : [v]).filter((s) => typeof s === 'string');
 const sentences = (s) => s.split(/(?<=[.!?;])\s+/).map(norm).filter(Boolean);
-const clauses = (s) => s.split(/[;:,.!?—]+/).filter((c) => norm(c)).length;
+const clauses = (s) => s.split(/[;:.!?—]+/).filter((c) => norm(c)).length;
 
 export function dialFindings(entries) {
   const out = [];
