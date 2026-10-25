@@ -1,0 +1,267 @@
+{
+  "families": [
+    {
+      "id": "fam_unheated_refrigerated_ferments",
+      "kind": "family",
+      "decision": "Organic, live, unpasteurised ferments from a named small maker, kept refrigerated.",
+      "buying_tips": [
+        "Look for an organic seal and the words live, fermented and unpasteurised.",
+        "Check the chilled shelf and the label's keep-refrigerated instruction.",
+        "Read the ingredients for the named food, salt and any cultures or seasonings.",
+        "Pick jars naming a small farm or maker and its location."
+      ]
+    },
+    {
+      "id": "fam_bone_broth_soups",
+      "kind": "family",
+      "decision": "Organic broth made from pasture-raised bones, with the farm and animal named.",
+      "buying_tips": [
+        "Look for an organic seal and pasture-raised or grass-fed wording.",
+        "Read the broth sublist for bones, animal species, vegetables and herbs.",
+        "Pick packs naming a small livestock farm or broth maker.",
+        "Skip ingredient lists with yeast extract, hydrolysed protein or flavour powders."
+      ]
+    },
+    {
+      "id": "fam_botanicals",
+      "kind": "family",
+      "title": "Dry seasonings and infusions",
+      "decision": "Named, minimally processed dry seasonings and infusions from a small grower or maker.",
+      "buying_tips": [
+        "Look for an organic seal on herbs, tea and yeast; plain salt has no USDA Organic seal.",
+        "Read the full ingredient list for the named leaves, yeast or salt.",
+        "Pick packs naming a small grower or maker and the ingredient's origin.",
+        "Skip added flavours, colours, sweeteners and anti-caking agents in the ingredient list."
+      ]
+    },
+    {
+      "id": "fam_named_sweeteners",
+      "kind": "family",
+      "decision": "Organic, single-ingredient sweeteners from a named farm or sugarhouse.",
+      "buying_tips": [
+        "Look for an organic seal and the actual sweetener's name.",
+        "Read the ingredient list for the named sap, syrup or sugar alone.",
+        "Pick packs naming a small farm or sugarhouse and its region.",
+        "Skip flavoured syrups and blends listing corn syrup or artificial sweeteners."
+      ]
+    },
+    {
+      "id": "fam_cooking_fats",
+      "kind": "family",
+      "decision": "Organic, single-source cooking fats with their plant or animal and process named.",
+      "buying_tips": [
+        "Look for an organic seal on the jar, bottle or wrapper.",
+        "Read every fat in the ingredient list, including any blend.",
+        "Pick packs naming a small farm, olive estate or producer and its region.",
+        "Skip hydrogenated fats and unnamed vegetable-oil blends on the ingredient list."
+      ]
+    },
+    {
+      "id": "fam_occasional_cocoa",
+      "kind": "family",
+      "decision": "Organic single-ingredient cocoa or cacao with its growing origin named.",
+      "buying_tips": [
+        "Look for an organic seal, with Regenerative Organic Certified preferred.",
+        "Read the ingredient list for cocoa or cacao alone.",
+        "Pick packs naming the growing region and a small grower or grower cooperative.",
+        "Skip sweetened drinking-chocolate mixes and added flavours."
+      ]
+    },
+    {
+      "id": "fam_nuts_seeds",
+      "kind": "family",
+      "decision": "Organic nuts and seeds labelled soaked-and-dried or sprouted, with no added oil.",
+      "buying_tips": [
+        "Look for an organic seal and soaked-and-dried or sprouted wording.",
+        "Read the ingredients for named nuts or seeds and optional salt.",
+        "Pick sealed packs naming a grower or region and showing a best-before date.",
+        "Skip added roasting oils, sugars and sweet coatings in the ingredient list."
+      ]
+    },
+    {
+      "id": "fam_plain_fruit_preparations",
+      "kind": "family",
+      "decision": "Organic fruit-only preparations from a named orchard or grower.",
+      "buying_tips": [
+        "Look for an organic seal and the fruit's name.",
+        "Read the full ingredient list for fruit alone, with water allowed in purees.",
+        "Pick packs naming a small orchard or grower and its region.",
+        "Skip sugar, syrup, oil coatings and sulphites in the ingredient list."
+      ]
+    },
+    {
+      "id": "fam_whole_coconut_cooking_milk",
+      "kind": "family",
+      "decision": "Organic coconut cooking milk made with coconut and water.",
+      "buying_tips": [
+        "Look for an organic seal and unsweetened wording.",
+        "Read the ingredient list for coconut or coconut extract and water.",
+        "Check the can for an intact seal, with no bulging, leaks or deep seam dents.",
+        "Skip added gums, emulsifiers and sweeteners in the ingredient list."
+      ]
+    },
+    {
+      "id": "fam_vinegar",
+      "kind": "family",
+      "decision": "Organic raw, unpasteurised vinegar from a named orchard or small maker.",
+      "buying_tips": [
+        "Look for an organic seal and raw or unpasteurised wording.",
+        "Read the ingredients for the fermented fruit or wine and any added water.",
+        "Pick bottles naming a small orchard or maker and its location.",
+        "Skip caramel colour, added flavours and sweetened vinegar glazes."
+      ]
+    },
+    {
+      "id": "fam_vegetable_sauces",
+      "kind": "family",
+      "title": "Vegetable and seed condiments",
+      "decision": "Organic vegetable or seed sauces with short, fully named ingredient lists.",
+      "buying_tips": [
+        "Look for an organic seal on the jar or bottle.",
+        "Read the ingredients for named vegetables or seeds, herbs and seasonings.",
+        "Pick jars naming a small farm or maker and its region.",
+        "Skip corn syrup, artificial colours and unspecified flavours in the ingredient list."
+      ]
+    },
+    {
+      "id": "fam_fruit_preserves",
+      "kind": "family",
+      "decision": "Organic fruit preserves sweetened with honey or maple syrup from a named small maker.",
+      "buying_tips": [
+        "Look for an organic seal and a named fruit.",
+        "Read the ingredients for fruit, honey or maple syrup and optional pectin or lemon.",
+        "Pick jars naming a small orchard or preserve maker and its location.",
+        "Skip corn syrup, artificial sweeteners and added citric or ascorbic acid."
+      ]
+    },
+    {
+      "id": "fam_mayonnaise_oils",
+      "kind": "family",
+      "decision": "Organic mayonnaise with olive oil as its only oil and pasture-raised eggs.",
+      "buying_tips": [
+        "Look for an organic seal and pasture-raised egg wording.",
+        "Read the entire oil list for olive oil alone.",
+        "Pick jars naming a small maker and its egg supplier.",
+        "Skip jars listing soybean, canola or unspecified vegetable oil alongside olive oil."
+      ]
+    }
+  ],
+  "aisles": [],
+  "patches": {
+    "fermented": {
+      "decision": "Organic, live, unpasteurised vegetable ferments from a small maker, kept chilled.",
+      "delta": "Sauerkraut starts with cabbage and salt; vinegar-pickled vegetables use a different process.",
+      "family": "fam_unheated_refrigerated_ferments"
+    },
+    "broth": {
+      "decision": "Organic pasture-raised bone broth from a named farm, chilled or frozen.",
+      "delta": "Frozen liquid stock comes in ready-to-thaw pouches or tubs.",
+      "family": "fam_bone_broth_soups"
+    },
+    "salt": {
+      "decision": "Unrefined sea salt with salt alone listed and its source named.",
+      "delta": "Fine, coarse or flaked crystals.",
+      "family": "fam_botanicals"
+    },
+    "sugars": {
+      "decision": "Organic pure maple sugar from a named small sugarhouse.",
+      "delta": "Granulated maple sugar comes from further-boiled maple syrup.",
+      "family": "fam_named_sweeteners"
+    },
+    "maple_syrup": {
+      "decision": "Organic 100% pure maple syrup from a named small sugarhouse.",
+      "delta": "Grade A dark has a robust taste; amber has a rich taste.",
+      "family": "fam_named_sweeteners"
+    },
+    "cooking_oils": {
+      "decision": "Organic extra virgin olive oil or virgin coconut oil from a named grower.",
+      "delta": "Extra virgin for olive oil; virgin for coconut oil.",
+      "family": "fam_cooking_fats"
+    },
+    "lard_tallow": {
+      "decision": "Organic pastured lard or 100% grass-fed, grass-finished tallow, with no added oils.",
+      "delta": "Leaf lard names the kidney fat; tallow is sold rendered rather than as raw suet.",
+      "family": "fam_cooking_fats"
+    },
+    "cocoa": {
+      "decision": "Regenerative Organic Certified cocoa or cacao, non-alkalized and single-ingredient.",
+      "delta": "Natural or non-alkalized powder; skip 'processed with alkali'.",
+      "family": "fam_occasional_cocoa"
+    },
+    "seeds": {
+      "decision": "Organic sprouted, dried seeds with the species named and no added oil.",
+      "delta": "Pepitas are hulled pumpkin seeds.",
+      "family": "fam_nuts_seeds"
+    },
+    "dried_fruit": {
+      "decision": "Organic unsulphured dried fruit with fruit alone listed, from a named grower.",
+      "delta": "Unsulphured dried apricots are dark brown.",
+      "family": "fam_plain_fruit_preparations"
+    },
+    "nutritional_yeast": {
+      "decision": "Organic, non-fortified nutritional yeast with yeast as the only ingredient.",
+      "delta": "Inactive flakes or powder; skip folic acid or B12 listed as added ingredients.",
+      "family": "fam_botanicals"
+    },
+    "canned_coconut_milk": {
+      "decision": "Organic full-fat canned coconut milk listing only coconut and water.",
+      "delta": "Compare the printed coconut percentage; choose whole or full-fat rather than lite.",
+      "family": "fam_whole_coconut_cooking_milk"
+    },
+    "dried_herbs": {
+      "decision": "Organic non-irradiated dried leaves from a named small herb farm.",
+      "delta": "Whole, cut or rubbed leaves; non-irradiated wording on the jar.",
+      "family": "fam_botanicals"
+    },
+    "tea": {
+      "decision": "Organic loose-leaf herbal tea from a named small grower, with no added flavours.",
+      "delta": "Loose peppermint leaves make a caffeine-free infusion.",
+      "family": "fam_botanicals"
+    },
+    "vinegar": {
+      "decision": "Organic raw, unpasteurised apple cider vinegar from a named small orchard.",
+      "delta": "Apple cider vinegar labelled 'with the mother'.",
+      "family": "fam_vinegar"
+    },
+    "pasta_sauce": {
+      "decision": "Organic tomato sauce with olive oil and no sweetener, from a named small maker.",
+      "delta": "Olive oil is the sole added oil; passata is a plain tomato base.",
+      "family": "fam_vegetable_sauces"
+    },
+    "jam": {
+      "decision": "Organic fruit jam sweetened with honey or maple syrup, from a named small maker.",
+      "delta": "Fruit pulp or pieces distinguish jam from clear fruit jelly.",
+      "family": "fam_fruit_preserves"
+    },
+    "ketchup_mustard": {
+      "decision": "Organic live-fermented ketchup or organic mustard of seed, vinegar, water and salt.",
+      "delta": "Ketchup uses tomato puree; mustard uses mustard seed and vinegar.",
+      "family": "fam_vegetable_sauces"
+    },
+    "mayo": {
+      "decision": "Look for organic olive-oil mayonnaise with pasture-raised eggs and no other oils.",
+      "delta": "Garlic mayonnaise lists garlic alongside the egg-and-oil base.",
+      "family": "fam_mayonnaise_oils"
+    }
+  },
+  "groups": [
+    {
+      "id": "maple_sweeteners",
+      "title": "Pure maple sugar and syrup",
+      "members": [
+        "sugars",
+        "maple_syrup"
+      ],
+      "why_same": "Both use the organic seal, one maple ingredient and a named sugarhouse; sugar is granulated and syrup carries a colour grade."
+    },
+    {
+      "id": "dried_leaves",
+      "title": "Dried culinary herbs and herbal tea",
+      "members": [
+        "dried_herbs",
+        "tea"
+      ],
+      "why_same": "Both use organic named leaves, an identified grower and a plain ingredient list; whole or cut leaves suit cooking or infusion."
+    }
+  ]
+}

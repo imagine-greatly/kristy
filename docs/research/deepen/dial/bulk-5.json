@@ -1,0 +1,277 @@
+{
+  "families": [
+    {
+      "id": "fam_fresh_egg_pasta",
+      "kind": "family",
+      "decision": "Organic fresh egg pasta with whole-grain flour and a named egg source.",
+      "buying_tips": [
+        "Look for organic certification and a small maker's name on the chilled pack.",
+        "Read the flour line for whole grain or sprouted whole grain.",
+        "Look for pasture-raised eggs in the ingredient or sourcing statement.",
+        "Check the sealed pack's use-by date and keep-refrigerated instructions."
+      ]
+    },
+    {
+      "id": "fam_prepared_meats",
+      "kind": "family",
+      "decision": "Organic pasture-raised prepared meat from a named farm, with a short recipe.",
+      "buying_tips": [
+        "Look for organic and pasture-raised wording with a named family farm.",
+        "Look for AGA grassfed or 100% grass-fed and grass-finished wording on beef.",
+        "Read every meat, fat and seasoning ingredient, including sublists.",
+        "Skip ingredient lists with added smoke flavor, MSG or unspecified oil blends."
+      ]
+    },
+    {
+      "id": "fam_whole_grain_sourdough",
+      "kind": "family",
+      "decision": "Organic whole-grain sourdough with starter fermentation stated on the pack.",
+      "buying_tips": [
+        "Look for organic certification and whole-grain flour in the ingredient list.",
+        "Read the pack for starter fermentation or a stated fermentation time.",
+        "Pick a small baker named on the pack, with the grain or mill source listed.",
+        "Skip sourdough flavoring and acid-only recipes without starter fermentation."
+      ]
+    },
+    {
+      "id": "fam_frozen_fries",
+      "kind": "family",
+      "decision": "Organic potato fries with no added oil, or with clearly named tallow or lard.",
+      "buying_tips": [
+        "Look for organic potatoes and a named grower or independent maker.",
+        "Read every listed oil, including the coating and seasoning sublists.",
+        "Pick potatoes alone, or potatoes with tallow or lard and optional salt.",
+        "Skip listed vegetable-oil blends, sugar and starch-based coatings."
+      ]
+    },
+    {
+      "id": "fam_whole_grain_waffles",
+      "kind": "family",
+      "decision": "Organic whole-grain waffles with fermented batter and butter.",
+      "buying_tips": [
+        "Look for organic certification and whole grain as the first listed flour.",
+        "Read the pack for sourdough fermentation, soaking or sprouted whole grains.",
+        "Read every fat ingredient for butter, ghee or coconut oil.",
+        "Pick a plain recipe from a named small baker; skip filled or iced versions."
+      ]
+    },
+    {
+      "id": "fam_poultry_pork",
+      "kind": "family",
+      "decision": "Organic pasture-raised poultry or pork from a named family farm.",
+      "buying_tips": [
+        "Look for organic and pasture-raised wording on the actual meat pack.",
+        "Check the label for a family farm's name and location.",
+        "Read any coating, seasoning and cooking-oil ingredient sublists.",
+        "Skip packs listing unspecified oil blends, added flavors or protein isolates."
+      ]
+    },
+    {
+      "id": "fam_occasional_cocoa",
+      "kind": "family",
+      "decision": "Organic cocoa foods with a short ingredient list and traceable cacao.",
+      "buying_tips": [
+        "Look for organic certification on the selected cocoa product.",
+        "Check the pack for a small maker and the cacao's farm, co-op or origin.",
+        "Look for dated lead and cadmium results matching the pack's product and lot.",
+        "Skip ingredient lists with lecithin, flavorings or non-cocoa added fats."
+      ]
+    },
+    {
+      "id": "fam_named_sweeteners",
+      "kind": "family",
+      "decision": "Organic sweeteners with the source plant and process named on the label.",
+      "buying_tips": [
+        "Look for organic certification and the actual sweetener named as an ingredient.",
+        "Check the label for a small producer, growing region and lot.",
+        "Read the process wording for raw, whole-cane or unrefined, as appropriate.",
+        "Skip syrup blends, added flavorings and artificial sweeteners on the list."
+      ]
+    },
+    {
+      "id": "fam_specialty_flours",
+      "kind": "family",
+      "decision": "Plain organic flour or meal with its grain, nut or root clearly named.",
+      "buying_tips": [
+        "Look for organic certification and a named grain, nut or root ingredient.",
+        "Read grain labels for whole grain or sprouted whole grain.",
+        "Check for a recent milling date and a small farm or mill named on the bag.",
+        "Skip grain flour labeled refined, enriched or degerminated."
+      ]
+    },
+    {
+      "id": "fam_whole_grain_baking",
+      "kind": "family",
+      "decision": "Organic whole-grain baking with sprouting, soaking or fermentation disclosed.",
+      "buying_tips": [
+        "Look for organic certification and whole grain in every flour ingredient.",
+        "Read the pack for sprouting, soaking or starter fermentation.",
+        "Pick a small baker's named recipe with butter, olive oil or coconut oil.",
+        "Skip enriched-flour-led lists, added gluten and unspecified oil blends."
+      ]
+    },
+    {
+      "id": "fam_whole_grains",
+      "kind": "family",
+      "decision": "Plain organic whole grains from an identified grower or harvest region.",
+      "buying_tips": [
+        "Look for organic certification and the grain's name on the bag.",
+        "Read the ingredient list for the grain alone.",
+        "Check for a named small grower, harvest region and crop or packing date.",
+        "Skip flavored mixes and damp, torn or insect-damaged packs."
+      ]
+    },
+    {
+      "id": "fam_pulses",
+      "kind": "family",
+      "decision": "Plain organic dried pulses with a named grower and a single ingredient.",
+      "buying_tips": [
+        "Look for organic certification; prefer an added Real Organic seal.",
+        "Read the ingredient list for beans, peas or lentils alone.",
+        "Check the bag for a small grower's name, origin and crop or lot.",
+        "Skip seasoning packets and bags with damp clumps or visible insects."
+      ]
+    },
+    {
+      "id": "fam_plain_fruit_preparations",
+      "kind": "family",
+      "decision": "Organic fruit preparations made from the named fruit, without added sweetener.",
+      "buying_tips": [
+        "Look for organic certification and a named orchard or small producer.",
+        "Read the ingredient list for fruit alone, or fruit with water.",
+        "Skip added sugar, syrups, sweetening concentrates and flavorings on the list.",
+        "Check that the jar or pouch is sealed and the fruit origin is stated."
+      ]
+    },
+    {
+      "id": "fam_dressings_deli_salads",
+      "kind": "family",
+      "decision": "Organic dressings and salads with extra virgin olive oil or plain cultured dairy.",
+      "buying_tips": [
+        "Look for organic certification and a small maker named on the bottle or tub.",
+        "Read every oil, mayonnaise and dairy sublist, including the dressing on salads.",
+        "Pick extra virgin olive oil or plain cultured dairy as the base.",
+        "Skip soybean, canola and corn oil, EDTA and added flavors on the ingredient list."
+      ]
+    },
+    {
+      "id": "fam_barbecue_marinades",
+      "kind": "family",
+      "decision": "Organic fermented sauces with live, unpasteurised and refrigerated wording.",
+      "buying_tips": [
+        "Look for organic certification and a named small sauce maker.",
+        "Read the pack for fermented, live and unpasteurised wording.",
+        "Check for keep-refrigerated instructions and a chilled display.",
+        "Skip corn syrup, smoke flavoring and unspecified vegetable oils in the recipe."
+      ]
+    },
+    {
+      "id": "fam_olive_oil_pesto",
+      "kind": "family",
+      "decision": "Organic pesto with extra virgin olive oil as its only added oil.",
+      "buying_tips": [
+        "Look for organic certification and a named small maker or herb farm.",
+        "Read the complete oil list for extra virgin olive oil alone.",
+        "Check that every herb, nut, seed and cheese ingredient is named.",
+        "Skip sunflower, canola or soybean oil, starch fillers and added flavors."
+      ]
+    }
+  ],
+  "aisles": [],
+  "patches": {
+    "fresh_pasta": {
+      "decision": "Organic fresh egg pasta with whole-grain flour and pasture-raised eggs.",
+      "delta": "Plain ribbons have no filling; filled pasta needs a separate filling ingredient list.",
+      "family": "fam_fresh_egg_pasta"
+    },
+    "deli": {
+      "decision": "Organic pasture-raised whole-roast deli meat from a named farm.",
+      "delta": "A whole roast or salt-cured loin sliced at the counter; skip formed meat loaf wording.",
+      "family": "fam_prepared_meats"
+    },
+    "frozen_pizza": {
+      "decision": "Organic whole-grain sourdough pizza with olive oil and real mozzarella.",
+      "delta": "Tomato sauce and real mozzarella on the topping list; olive oil in the crust ingredients.",
+      "family": "fam_whole_grain_sourdough"
+    },
+    "frozen_meals": {
+      "decision": "Organic frozen stew with pasture-raised meat, vegetables and bone broth.",
+      "delta": "Meat and vegetables lead the recipe; bone broth is named in the sauce ingredients.",
+      "family": "fam_prepared_meats"
+    },
+    "frozen_fries": {
+      "decision": "Organic frozen potato strips with no added oil, or with tallow.",
+      "delta": "Skin-on potato strips; skip reconstituted potato shapes.",
+      "family": "fam_frozen_fries"
+    },
+    "frozen_waffles": {
+      "decision": "Organic whole-grain sourdough waffles made with butter.",
+      "delta": "Eggs and plain yogurt or buttermilk in the batter; a plain waffle without syrup filling.",
+      "family": "fam_whole_grain_waffles"
+    },
+    "frozen_nuggets": {
+      "decision": "Organic pasture-raised chicken nuggets made from whole chicken pieces.",
+      "delta": "Whole chicken pieces or whole-muscle tenders on the pack; a simple flour coating.",
+      "family": "fam_poultry_pork"
+    },
+    "frozen": {
+      "decision": "Plain organic frozen fruit and vegetables, with produce alone on the ingredient list.",
+      "delta": "Freezer-case packs sealed and frozen solid."
+    },
+    "dark_chocolate": {
+      "decision": "Organic dark chocolate with a short cacao recipe and dated lead/cadmium results.",
+      "delta": "Plain solid bars; cacao with a named sweetener and optional cocoa butter.",
+      "family": "fam_occasional_cocoa"
+    },
+    "molasses_whole_cane_sweeteners": {
+      "decision": "Organic unsulphured molasses or dried whole cane juice.",
+      "delta": "Unsulphured on liquid molasses; dried whole cane juice on granules.",
+      "family": "fam_named_sweeteners"
+    },
+    "baking_powder": {
+      "decision": "Aluminum-free baking powder with organic starch.",
+      "delta": "Cream of tartar or monocalcium phosphate; skip sodium aluminum sulfate or sodium aluminum phosphate."
+    },
+    "cornmeal_polenta_grits": {
+      "decision": "Organic whole-grain cornmeal, polenta or grits from a named small mill.",
+      "delta": "Germ and bran retained on the label; fine cornmeal or coarse polenta and grits.",
+      "family": "fam_specialty_flours"
+    },
+    "rice_cakes_puffed_grains": {
+      "decision": "Pick organic fermented whole-grain crackers in place of puffed rice cakes.",
+      "delta": "Puffed or extruded rice cakes are the form to skip.",
+      "family": "fam_whole_grain_baking"
+    },
+    "wild_rice": {
+      "decision": "Certified organic, hand-harvested lake or river wild rice.",
+      "delta": "Hand-harvested lake or river origin stated on the pack; wild rice alone, without a rice blend.",
+      "family": "fam_whole_grains"
+    },
+    "split_peas": {
+      "decision": "Organic dried split peas, peas alone, with the grower's name.",
+      "delta": "Husked, split halves are the intended pea form.",
+      "family": "fam_pulses"
+    },
+    "applesauce": {
+      "decision": "Organic unsweetened applesauce with apples alone on the ingredient list.",
+      "delta": "Smooth or chunky texture on the jar; cinnamon should be a named spice.",
+      "family": "fam_plain_fruit_preparations"
+    },
+    "salad_dressing": {
+      "decision": "Organic extra virgin olive oil dressing with vinegar or lemon and herbs.",
+      "delta": "Vinaigrette uses vinegar or lemon; creamy versions name plain yogurt or cultured cream.",
+      "family": "fam_dressings_deli_salads"
+    },
+    "bbq_sauce_marinades": {
+      "decision": "Organic live fermented BBQ sauce or marinade, unpasteurised and refrigerated.",
+      "delta": "BBQ sauce names tomato and molasses; smoked paprika supplies the smoky seasoning.",
+      "family": "fam_barbecue_marinades"
+    },
+    "pesto": {
+      "decision": "Organic basil pesto with extra virgin olive oil and raw-milk cheese where legally sold.",
+      "delta": "Basil, pine nuts, Parmesan, garlic and salt; named walnut or seed versions are alternatives.",
+      "family": "fam_olive_oil_pesto"
+    }
+  },
+  "groups": []
+}

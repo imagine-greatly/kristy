@@ -1,0 +1,180 @@
+{
+  "families": [
+    {
+      "id": "fam_wild_first_seafood",
+      "kind": "family",
+      "decision": "Plain wild seafood, with species and harvest origin named.",
+      "buying_tips": [
+        "Read wild-caught, the species and harvest origin on the label.",
+        "Look for a named fishing boat or small fishery on the pack.",
+        "Read the ingredients: seafood alone, with optional salt.",
+        "Pick sealed frozen packs or firm fish displayed on ice."
+      ]
+    },
+    {
+      "id": "fam_trout_conditional",
+      "kind": "family",
+      "decision": "Wild trout first; farmed rainbow trout with water, feed and farm details.",
+      "buying_tips": [
+        "Look for wild-caught trout with harvest waters named.",
+        "Check farmed rainbow trout for a farm name and spring-fed wording.",
+        "Ask at the fish counter for the farm's water, feed and treatment records.",
+        "Skip trout labeled color added."
+      ]
+    },
+    {
+      "id": "fam_tinned_fish",
+      "kind": "family",
+      "decision": "Named wild fish, plain or in water or olive oil, with a short ingredient list.",
+      "buying_tips": [
+        "Read the fish species and origin on the tin.",
+        "Read fish alone, or fish with water or olive oil and optional salt.",
+        "Skip tins listing soy oil, sunflower oil or hydrolyzed protein.",
+        "Check for an intact tin with no bulging, leaks or damaged seams."
+      ]
+    },
+    {
+      "id": "fam_live_crustaceans",
+      "kind": "family",
+      "decision": "Named wild crab or lobster, moving when live or plainly cooked or frozen.",
+      "buying_tips": [
+        "Read the species and harvest origin on the tag.",
+        "Look for a named fisher or small fishery on the label.",
+        "Check live animals for moving legs or claws.",
+        "Read raw or cooked on chilled or frozen portions."
+      ]
+    },
+    {
+      "id": "fam_tagged_live_bivalves",
+      "kind": "family",
+      "decision": "Live clams, mussels or oysters with a harvest tag and intact shells.",
+      "buying_tips": [
+        "Look for a named grower or harvester on the sack tag.",
+        "Read the harvest waters and harvest date on the tag.",
+        "Check oysters, mussels and hard-shell clams for intact shells that close when tapped.",
+        "Ask at the fish counter to see the harvest tag for loose shellfish."
+      ]
+    },
+    {
+      "id": "fam_dry_packed_scallops",
+      "kind": "family",
+      "decision": "Dayboat scallops with harvest details, scallops-only ingredients and no soaking.",
+      "buying_tips": [
+        "Look for dayboat scallops with harvest area and date on the pack.",
+        "Read scallops as the only ingredient; skip added water or phosphates.",
+        "Ask at the fish counter to see the original tub and confirm no soaking.",
+        "Pick sealed frozen dayboat scallops when fresh dayboat catch is absent."
+      ]
+    },
+    {
+      "id": "fam_cured_seafood",
+      "kind": "family",
+      "decision": "Wild seafood from a named fishery, with the curing method and ingredients shown.",
+      "buying_tips": [
+        "Read the species, wild-caught wording and harvest origin.",
+        "Look for a named small fishery or curer on the pack.",
+        "Check the curing method and storage directions on the label.",
+        "Pick intact packs kept chilled or frozen as their label directs."
+      ]
+    }
+  ],
+  "aisles": [],
+  "patches": {
+    "salmon_wild_vs_farmed": {
+      "decision": "Wild Alaskan salmon, fresh or frozen, with the species named.",
+      "delta": "Alaskan fresh season, May-Oct; sockeye and coho are named Pacific salmon species.",
+      "family": "fam_wild_first_seafood"
+    },
+    "shrimp_imported_vs_domestic": {
+      "decision": "Wild American shrimp with species and harvest waters named.",
+      "delta": "Gulf white, pink or brown shrimp.",
+      "family": "fam_wild_first_seafood"
+    },
+    "mercury_by_fish": {
+      "decision": "Wild sardines or salmon with the species named on the label.",
+      "delta": "Skip swordfish, shark, king mackerel and bigeye tuna.",
+      "family": "fam_wild_first_seafood"
+    },
+    "canned_fish_choosing": {
+      "decision": "Plain wild sardines or Alaskan salmon, with skin and bones retained.",
+      "delta": "Sardines and canned salmon with edible bones; skip skinless, boneless versions.",
+      "family": "fam_tinned_fish"
+    },
+    "farmed_fish_by_species": {
+      "decision": "Farmed clams, mussels or oysters from a named grower, with a harvest tag.",
+      "delta": "These bivalves feed on plankton in the growing water.",
+      "family": "fam_tagged_live_bivalves"
+    },
+    "seafood_certifications": {
+      "decision": "Wild seafood with species, origin and the MSC blue fish label.",
+      "delta": "MSC marks wild fisheries; ASC marks farmed seafood.",
+      "family": "fam_wild_first_seafood"
+    },
+    "canned_tuna": {
+      "decision": "Wild skipjack tuna in its own juices, water or olive oil.",
+      "delta": "Skipjack named on the can; light names a color category, not a species.",
+      "family": "fam_tinned_fish"
+    },
+    "white_fish": {
+      "decision": "Plain wild Pacific cod with Alaska origin on the label.",
+      "delta": "Pacific cod and sablefish are different species; black cod means sablefish.",
+      "family": "fam_wild_first_seafood"
+    },
+    "crab": {
+      "decision": "Wild crab with species and origin named, live and moving or plainly cooked.",
+      "delta": "Real crab meat; skip imitation crab or surimi.",
+      "family": "fam_live_crustaceans"
+    },
+    "lobster": {
+      "decision": "Live wild lobster with moving claws and a curling tail.",
+      "delta": "New-shell Maine lobster is a summer and fall choice.",
+      "family": "fam_live_crustaceans"
+    },
+    "scallops": {
+      "decision": "Dayboat scallops, dry-packed, with scallops as the only ingredient.",
+      "delta": "Maine inshore season, Dec-Apr; bay scallops are a different species from sea scallops.",
+      "family": "fam_dry_packed_scallops"
+    },
+    "clams_mussels_oysters": {
+      "decision": "Live clams, mussels or oysters from a named grower or harvester, with a harvest tag.",
+      "delta": "Littleneck hard clams are smaller than middlenecks and topnecks.",
+      "family": "fam_tagged_live_bivalves"
+    },
+    "smoked_salmon": {
+      "decision": "Wild Alaskan salmon smoked over wood, with a short curing ingredient list.",
+      "delta": "Natural wood smoke and salt, with optional organic sugar; skip liquid smoke or smoke flavoring.",
+      "family": "fam_cured_seafood"
+    },
+    "seafood_counter": {
+      "decision": "Whole wild fish on ice, with clear eyes, shiny skin and intact fins.",
+      "delta": "Whole fish show the gills and eyes; skip sunken eyes or brown gills.",
+      "family": "fam_wild_first_seafood"
+    },
+    "seafood_fish_roe": {
+      "decision": "Wild salmon roe with roe and salt as the only ingredients.",
+      "delta": "Ikura means salmon roe; skip added dyes or taramasalata dip when buying plain roe.",
+      "family": "fam_cured_seafood"
+    },
+    "seafood_fresh_sardines_mackerel": {
+      "decision": "Whole wild sardines or Atlantic mackerel on ice.",
+      "delta": "Atlantic or chub mackerel; skip king mackerel.",
+      "family": "fam_wild_first_seafood"
+    },
+    "seafood_trout": {
+      "decision": "Whole wild trout, or rainbow trout from a named spring-fed small farm.",
+      "delta": "Whole trout with an intact snout and fins.",
+      "family": "fam_trout_conditional"
+    }
+  },
+  "groups": [
+    {
+      "id": "seafood_crab_lobster",
+      "title": "Crab and lobster",
+      "members": [
+        "crab",
+        "lobster"
+      ],
+      "why_same": "Both use species and harvest tags, named fishers, movement in live stock, and raw or cooked labels on portions."
+    }
+  ]
+}

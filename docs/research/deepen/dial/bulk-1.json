@@ -1,0 +1,233 @@
+{
+  "families": [
+    {
+      "id": "fam_whole_grains",
+      "kind": "family",
+      "decision": "Organic whole grains from a named farm, with sprouted packs first.",
+      "buying_tips": [
+        "Look for USDA Organic; prefer an added Real Organic seal.",
+        "Read the ingredient line for whole grains without sweeteners or flavourings.",
+        "Pick a named small farm or mill with the growing region on the pack.",
+        "Check for sprouted wording and an intact, sealed package."
+      ]
+    },
+    {
+      "id": "fam_nuts_seeds",
+      "kind": "family",
+      "decision": "Organic soaked and dried nuts or seeds from a named small grower.",
+      "buying_tips": [
+        "Look for USDA Organic and soaked, sprouted or activated wording.",
+        "Read the ingredients for nuts or seeds, with optional salt or unsweetened fruit.",
+        "Pick sealed raw or dry-roasted packs when soaked-and-dried nuts are absent.",
+        "Skip added oils, sugar, syrups and flavourings in the ingredient list."
+      ]
+    },
+    {
+      "id": "fam_named_sweeteners",
+      "kind": "family",
+      "decision": "Organic single-source sweeteners from a named beekeeper or small farm.",
+      "buying_tips": [
+        "Look for USDA Organic and the actual sweetener named on the label.",
+        "Check the beekeeper or farm name, region and lot number.",
+        "Read the ingredient line for the named sweetener itself.",
+        "Skip flavoured syrup blends and added corn syrup."
+      ]
+    },
+    {
+      "id": "fam_pulses",
+      "kind": "family",
+      "decision": "Organic dried beans, peas and lentils from a named small farm.",
+      "buying_tips": [
+        "Look for USDA Organic; prefer an added Real Organic seal.",
+        "Check the farm name, growing region and crop year or lot number.",
+        "Read whole, split or sprouted on the pack to identify the form.",
+        "Skip packs with insects, webbing or damp clumps."
+      ]
+    },
+    {
+      "id": "fam_specialty_flours",
+      "kind": "family",
+      "decision": "Organic flour from a named small mill, with the plant and milling date disclosed.",
+      "buying_tips": [
+        "Look for USDA Organic and the grain, nut or root named on the pack.",
+        "Pick whole-grain flour when choosing a grain-based flour.",
+        "Check the milling date and choose the freshest sealed pack.",
+        "Read the ingredients for plain flour without bleaching agents or flavourings."
+      ]
+    },
+    {
+      "id": "fam_botanicals",
+      "kind": "family",
+      "decision": "Organic herbs, spices and tea with named plants and a disclosed growing origin.",
+      "buying_tips": [
+        "Look for USDA Organic and a named farm, grower group or growing region.",
+        "Read every ingredient in a blend; skip added flavours and fillers.",
+        "Pick sealed packs with visible whole leaves, seeds or bark where practical.",
+        "Check harvest or packing dates and skip damp, clumped or faded stock."
+      ]
+    },
+    {
+      "id": "fam_cooking_fats",
+      "kind": "family",
+      "decision": "Organic traditional fats with the source and processing named.",
+      "buying_tips": [
+        "Look for USDA Organic and the farm, dairy or olive estate on the label.",
+        "Read every fat named in the ingredients, including blends.",
+        "Pick extra virgin olive oil, virgin coconut oil or pasture-raised animal fats.",
+        "Skip hydrogenated fats and added flavours in the ingredient list."
+      ]
+    },
+    {
+      "id": "fam_whole_grain_baking",
+      "kind": "family",
+      "decision": "Organic whole-grain sourdough or sprouted baking from a named small bakery.",
+      "buying_tips": [
+        "Look for USDA Organic and a named local or small bakery.",
+        "Read every flour ingredient for whole-grain or whole-wheat wording.",
+        "Check for sprouted grains or a printed starter-fermentation process.",
+        "Skip added gluten, soy flour, isolated bran and dough conditioners."
+      ]
+    },
+    {
+      "id": "fam_whole_grain_sourdough",
+      "kind": "family",
+      "decision": "Organic whole-grain bread fermented with a live starter by a named small bakery.",
+      "buying_tips": [
+        "Look for USDA Organic and whole-grain flours throughout the ingredient list.",
+        "Read the pack or shelf card for live-starter fermentation.",
+        "Check for a named local bakery and its grain or mill source.",
+        "Skip added baker's yeast, sourdough flavouring and vinegar used for souring."
+      ]
+    },
+    {
+      "id": "fam_masa_foods",
+      "kind": "family",
+      "decision": "Organic corn masa foods from a named small maker, with lime treatment disclosed.",
+      "buying_tips": [
+        "Look for USDA Organic and the corn grower or growing region.",
+        "Read nixtamalized, lime-treated corn or corn with calcium hydroxide.",
+        "Check every ingredient, including any frying or coating oil.",
+        "Skip artificial colours, flavours and preservatives in the ingredient list."
+      ]
+    }
+  ],
+  "aisles": [],
+  "patches": {
+    "rice_arsenic": {
+      "decision": "Organic California-grown white basmati from a named farm.",
+      "delta": "Basmati is the variety; California-grown is the origin wording to find."
+    },
+    "oats_steelcut_rolled_instant": {
+      "decision": "Plain organic sprouted oats from a named farm.",
+      "delta": "Steel-cut oats are chopped groats; rolled and quick oats are flattened flakes.",
+      "family": "fam_whole_grains"
+    },
+    "nuts_raw_vs_roasted": {
+      "decision": "Organic soaked and dehydrated nuts from a small grower, in sealed packs.",
+      "delta": "For almonds labelled raw, check the pack for steam-pasteurization details.",
+      "family": "fam_nuts_seeds"
+    },
+    "honey_adulteration": {
+      "decision": "Organic raw, unfiltered honey from a named local beekeeper.",
+      "delta": "Raw and unfiltered on the jar; crystallization is normal.",
+      "family": "fam_named_sweeteners"
+    },
+    "beans_dried_vs_canned": {
+      "decision": "Organic dried beans from a named small farm, with intact skins.",
+      "delta": "Whole dried beans have unbroken skins; canned beans need only beans, water and optional salt.",
+      "family": "fam_pulses"
+    },
+    "flour_basics": {
+      "decision": "Freshly milled organic sprouted whole-grain flour from a named small mill.",
+      "delta": "A 100% extraction label means the bran, germ and endosperm are all retained.",
+      "family": "fam_specialty_flours"
+    },
+    "bulk_bins_buying": {
+      "decision": "Organic dried beans or lentils in clean, covered bins with clear source labels.",
+      "delta": "Choose sealed packs for nuts, brown rice and milled whole-grain flour."
+    },
+    "whole_spices": {
+      "decision": "Organic whole spices from a named small grower, in sealed packs.",
+      "delta": "Peppercorns, cumin seeds and cinnamon sticks instead of powders.",
+      "family": "fam_botanicals"
+    },
+    "rancidity_check": {
+      "decision": "Organic extra virgin olive oil in a sealed dark bottle or tin, with a harvest date.",
+      "delta": "Skip bottles in direct sun or beside heat; avoid dusty stock.",
+      "family": "fam_cooking_fats"
+    },
+    "olive_oil_grades": {
+      "decision": "Organic extra virgin olive oil from a named estate, with a recent harvest date.",
+      "delta": "Harvest month and year on the bottle; choose the newest harvest shown.",
+      "family": "fam_cooking_fats"
+    },
+    "nut_butter_ingredients": {
+      "decision": "Organic soaked or sprouted nut butter, just nuts and optional salt.",
+      "delta": "An oil layer is normal in unstabilized nut butter.",
+      "family": "fam_nuts_seeds"
+    },
+    "grains_beyond_rice": {
+      "decision": "Organic sprouted whole grains from a named small farm.",
+      "delta": "For barley, choose hulled or hulless on the label; pearled barley has bran removed.",
+      "family": "fam_whole_grains"
+    },
+    "bottled_water_buying": {
+      "decision": "Plain natural mineral or spring water from a named source, in glass.",
+      "delta": "Read the source name and the bottler's latest dated water-quality report."
+    },
+    "sandwich_bread": {
+      "decision": "Organic whole-grain sourdough or sprouted sandwich bread from a small bakery.",
+      "delta": "For a sliced loaf, read keep-frozen or freeze-upon-arrival instructions on the bag.",
+      "family": "fam_whole_grain_baking"
+    },
+    "sourdough": {
+      "decision": "Organic whole-grain sourdough, live-starter fermented, from a named small bakery.",
+      "delta": "Flour, water and salt can include the starter; read a stated fermentation time.",
+      "family": "fam_whole_grain_sourdough"
+    },
+    "bagels": {
+      "decision": "Organic whole-grain sourdough or sprouted bagels from a named small bakery.",
+      "delta": "Boiled then baked on the pack.",
+      "family": "fam_whole_grain_baking"
+    },
+    "tortillas": {
+      "decision": "Organic fresh-nixtamal corn tortillas, corn, water and lime with optional salt.",
+      "delta": "Fresh wet masa first, masa harina next; lime here means calcium hydroxide.",
+      "family": "fam_masa_foods"
+    },
+    "breakfast_cereal": {
+      "decision": "Plain organic sprouted whole-grain hot cereal in a sealed pack.",
+      "delta": "Choose flakes or groats for hot cereal; boxed granola should say soaked.",
+      "family": "fam_whole_grains"
+    }
+  },
+  "groups": [
+    {
+      "id": "whole_grain_loaves_bagels",
+      "title": "Whole-grain sandwich loaves and bagels",
+      "members": [
+        "sandwich_bread",
+        "bagels"
+      ],
+      "why_same": "Both use the organic seal, whole-grain flour list, sprouting or starter fermentation and a named small bakery."
+    },
+    {
+      "id": "plain_sprouted_cooking_grains",
+      "title": "Plain sprouted oats and other cooking grains",
+      "members": [
+        "oats_steelcut_rolled_instant",
+        "grains_beyond_rice"
+      ],
+      "why_same": "Both use organic certification, a named grower, sprouted whole-grain wording and a plain sealed pack."
+    },
+    {
+      "id": "olive_oil_grade_freshness",
+      "title": "Extra virgin olive oil and shelf freshness",
+      "members": [
+        "olive_oil_grades",
+        "rancidity_check"
+      ],
+      "why_same": "Both use extra virgin wording, organic certification, a named estate, a harvest date and protective packaging."
+    }
+  ]
+}

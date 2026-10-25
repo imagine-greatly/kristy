@@ -1,0 +1,251 @@
+{
+  "families": [
+    {
+      "id": "fam_fermented_soy",
+      "kind": "family",
+      "decision": "Organic soy foods labelled naturally fermented, with a short ingredient list.",
+      "buying_tips": [
+        "Look for an organic seal and a named small brewer or producer on the label.",
+        "Read 'naturally fermented' or 'traditionally brewed' on the pack.",
+        "Check the ingredient list for whole soybeans, named grains, salt and cultures.",
+        "Skip sauces listing hydrolysed soy protein, caramel colour or added flavourings."
+      ]
+    },
+    {
+      "id": "fam_bone_broth_soups",
+      "kind": "family",
+      "decision": "Organic bone broth and soups made with it, from a named pasture-based farm.",
+      "buying_tips": [
+        "Look for an organic seal, a farm name and pasture-raised wording.",
+        "Read the broth ingredients for bones and the animal species.",
+        "Pick short recipes of broth, meat, vegetables, herbs and salt.",
+        "Skip lists with MSG, hydrolysed protein or flavour powders."
+      ]
+    },
+    {
+      "id": "fam_unheated_refrigerated_ferments",
+      "kind": "family",
+      "decision": "Organic ferments labelled unpasteurised, from a named small producer.",
+      "buying_tips": [
+        "Look for an organic seal and the name of a local farm or small fermenter.",
+        "Read 'fermented' plus 'live cultures' or 'unpasteurised' on the label.",
+        "Check the pack's refrigeration instructions and the store's display.",
+        "Pick short recipes of named whole foods, salt, spices and optional cultures."
+      ]
+    },
+    {
+      "id": "fam_botanicals",
+      "kind": "family",
+      "decision": "Organic herbs, spices and sea vegetables with named species and origins.",
+      "buying_tips": [
+        "Look for an organic seal and a named grower or harvester on the pack.",
+        "Read the plant name and country or harvest region on the label.",
+        "Pick intact leaves or whole pieces where the form allows.",
+        "Skip damp packs and ingredient lists with added colours or flavourings."
+      ]
+    },
+    {
+      "id": "fam_plain_fruit_preparations",
+      "kind": "family",
+      "decision": "Organic fruit preparations with no added sweetener and a named fruit source.",
+      "buying_tips": [
+        "Look for an organic seal and a named farm or growing region.",
+        "Read the ingredients for the fruit itself, with plain water where needed.",
+        "Check the label for added sugar, syrup or sweetening juice concentrate.",
+        "Pick a small producer named on the pack and follow its storage label."
+      ]
+    },
+    {
+      "id": "fam_whole_grain_baking",
+      "kind": "family",
+      "decision": "Organic whole-grain baking labelled sprouted or fermented with sourdough starter.",
+      "buying_tips": [
+        "Look for an organic seal and a named local baker or small bakery.",
+        "Read every flour ingredient for 'whole grain' or 'whole wheat'.",
+        "Check for sprouted whole flour or a stated sourdough fermentation process.",
+        "Pick short recipes with butter, olive oil or coconut oil when fat is added."
+      ]
+    },
+    {
+      "id": "fam_masa_foods",
+      "kind": "family",
+      "decision": "Organic lime-treated corn masa foods with a short ingredient list.",
+      "buying_tips": [
+        "Look for an organic seal and a named small tortilla maker.",
+        "Read 'nixtamalized', 'lime-treated corn' or 'corn treated with lime' on the pack.",
+        "Check added fats for coconut oil, pastured lard or ghee.",
+        "Skip lists with oil blends, flavour powders or artificial colours."
+      ]
+    },
+    {
+      "id": "fam_potato_chips",
+      "kind": "family",
+      "decision": "Organic potato chips cooked in coconut oil, pastured lard or ghee.",
+      "buying_tips": [
+        "Look for an organic seal and a named potato farm or small chip maker.",
+        "Read the fat line for coconut oil, pastured lard or ghee.",
+        "Pick the plain salted recipe with the shortest ingredient list.",
+        "Skip lists with unspecified oil blends, flavourings or artificial colours."
+      ]
+    },
+    {
+      "id": "fam_popcorn_kernels",
+      "kind": "family",
+      "decision": "Plain organic popcorn kernels from a named grower, for popping at home.",
+      "buying_tips": [
+        "Look for an organic seal on a sealed bag of popcorn kernels.",
+        "Read the ingredient line for popcorn alone.",
+        "Check for the grower's name, origin and a readable lot code.",
+        "Skip microwave bags and kits with oil or flavour packets."
+      ]
+    },
+    {
+      "id": "fam_nuts_seeds",
+      "kind": "family",
+      "decision": "Organic nuts and seeds labelled soaked and dried or sprouted, from a named grower.",
+      "buying_tips": [
+        "Look for an organic seal and a named grower or small producer.",
+        "Read 'soaked and dried' or 'sprouted' on the pack.",
+        "Pick plain nuts, seeds or mixtures with unsweetened dried fruit.",
+        "Skip ingredient lists with added oils, syrups, candy pieces or protein isolates."
+      ]
+    },
+    {
+      "id": "fam_pulses",
+      "kind": "family",
+      "decision": "Organic beans, peas and lentils, plain or in simple cooked recipes.",
+      "buying_tips": [
+        "Look for an organic seal and a named pulse grower or small producer.",
+        "Read the label for the bean, pea or lentil variety.",
+        "Check for 'soaked' or 'sprouted' plus 'cooked' on ready-to-eat pulse foods.",
+        "Pick plain dried pulses or short cooked recipes without gums or flavour powders."
+      ]
+    },
+    {
+      "id": "fam_dressings_deli_salads",
+      "kind": "family",
+      "decision": "Organic salads and dressings made with extra virgin olive oil or cultured dairy.",
+      "buying_tips": [
+        "Look for an organic seal and a named local kitchen or small maker.",
+        "Read the dressing ingredients for extra virgin olive oil or plain cultured dairy.",
+        "Check all mayonnaise and sauce subingredients for the named oils.",
+        "Skip lists with soybean, canola or unspecified vegetable-oil blends."
+      ]
+    },
+    {
+      "id": "fam_prepared_meats",
+      "kind": "family",
+      "decision": "Organic prepared meat from a named pasture-based farm, with a short recipe.",
+      "buying_tips": [
+        "Look for organic, pasture-raised wording and a farm name on the label.",
+        "Check '100% grass-fed and grass-finished' for beef, lamb or goat.",
+        "Read the full meat, fat, seasoning and sauce ingredient lists.",
+        "Pick recipes with butter, ghee, olive oil, coconut oil or named animal fats."
+      ]
+    }
+  ],
+  "aisles": [],
+  "patches": {
+    "hot_soy_sauce": {
+      "decision": "Organic, traditionally brewed soy sauce labelled raw or unpasteurised.",
+      "delta": "'Nama shoyu' means unpasteurised soy sauce; soybeans and wheat are named in its recipe.",
+      "family": "fam_fermented_soy"
+    },
+    "canned_soup": {
+      "decision": "Organic canned soup with real bone broth, meat and vegetables in a short recipe.",
+      "delta": "'Ready to serve' on the can; follow its heating instructions.",
+      "family": "fam_bone_broth_soups"
+    },
+    "olives": {
+      "decision": "Organic olives labelled naturally brine-fermented and unpasteurised.",
+      "delta": "Whole olives in water-and-salt brine; the label names the olive variety.",
+      "family": "fam_unheated_refrigerated_ferments"
+    },
+    "seaweed": {
+      "decision": "Organic, air-dried whole seaweed with a named species and harvest region.",
+      "delta": "Dulse comes as reddish leaves; nori is pressed into sheets.",
+      "family": "fam_botanicals"
+    },
+    "salsa": {
+      "decision": "Organic fermented salsa labelled live and unpasteurised in the chilled case.",
+      "delta": "Tomatoes, onions, peppers and cilantro in the recipe; pico de gallo has visible chopped pieces.",
+      "family": "fam_unheated_refrigerated_ferments"
+    },
+    "coconut_water": {
+      "decision": "Fresh water inside a whole organic coconut carrying an organic label.",
+      "delta": "'Not from concentrate' on packaged coconut water.",
+      "family": "fam_plain_fruit_preparations"
+    },
+    "condiments": {
+      "decision": "Organic fermented ketchup or mustard labelled unpasteurised, from a small maker.",
+      "delta": "Ketchup starts with tomatoes; mustard names mustard seed in its recipe.",
+      "family": "fam_unheated_refrigerated_ferments"
+    },
+    "crackers": {
+      "decision": "Organic whole-grain sourdough crackers with a short recipe and named bakery.",
+      "delta": "Plain, tomato-basil or rosemary versions; check any sandwich filling separately.",
+      "family": "fam_whole_grain_baking"
+    },
+    "tortilla_chips": {
+      "decision": "Organic nixtamalized corn chips cooked in coconut oil, pastured lard or ghee.",
+      "delta": "Corn masa triangles; lime means calcium hydroxide in the corn treatment.",
+      "family": "fam_masa_foods"
+    },
+    "potato_chips": {
+      "decision": "Organic whole potato slices cooked in coconut oil, pastured lard or ghee.",
+      "delta": "Potatoes, rather than potato flakes or potato starch, start the ingredient line.",
+      "family": "fam_potato_chips"
+    },
+    "popcorn": {
+      "decision": "Plain organic popcorn kernels in a sealed bag bearing the grower's name.",
+      "delta": "'Mushroom' popcorn pops into domes; white and yellow types also come as butterfly kernels.",
+      "family": "fam_popcorn_kernels"
+    },
+    "pretzels": {
+      "decision": "Organic sprouted whole-wheat pretzels with olive oil and a short ingredient list.",
+      "delta": "Split-open puffs or soft pretzels with a plain salt crust.",
+      "family": "fam_whole_grain_baking"
+    },
+    "snack_bars": {
+      "decision": "Organic bars of soaked-and-dried nuts, seeds and dried fruit, without added syrup.",
+      "delta": "A pressed bar with visible nuts, seeds and dried fruit.",
+      "family": "fam_nuts_seeds"
+    },
+    "trail_mix": {
+      "decision": "Organic soaked-and-dried nuts with unsweetened, unsulphured dried fruit.",
+      "delta": "Loose nuts and fruit pieces; apricots labelled unsulphured.",
+      "family": "fam_nuts_seeds"
+    },
+    "snacks": {
+      "decision": "Plain organic soaked-and-dried nuts or seeds in a sealed pack.",
+      "delta": "Whole nuts or seeds visible through the pack window.",
+      "family": "fam_nuts_seeds"
+    },
+    "hummus": {
+      "decision": "Organic hummus of cooked sprouted chickpeas, tahini, lemon and extra virgin olive oil.",
+      "delta": "Cooked chickpeas and sesame tahini form the base; lemon and garlic flavour it.",
+      "family": "fam_pulses"
+    },
+    "deli_salads": {
+      "decision": "Organic cold-case salads with extra virgin olive oil dressing and a short recipe.",
+      "delta": "A prepared-on or use-by date on the salad tub; all dressing ingredients printed.",
+      "family": "fam_dressings_deli_salads"
+    },
+    "prepared_meals": {
+      "decision": "Organic pastured meat and vegetable meals with a short, fully printed recipe.",
+      "delta": "Recognisable meat and vegetable pieces; reheating directions printed on the meal pack.",
+      "family": "fam_prepared_meats"
+    }
+  },
+  "groups": [
+    {
+      "id": "crackers_pretzels",
+      "title": "Whole-grain crackers and pretzels",
+      "members": [
+        "crackers",
+        "pretzels"
+      ],
+      "why_same": "Both use the same organic seal, whole-flour, sprouting or sourdough, and added-fat checks."
+    }
+  ]
+}

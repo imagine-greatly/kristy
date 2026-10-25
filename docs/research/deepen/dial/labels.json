@@ -1,0 +1,109 @@
+{
+  "families": [],
+  "aisles": [],
+  "patches": {
+    "label_natural": {
+      "decision": "USDA Organic with named food ingredients and a named small farm where listed.",
+      "delta": "Natural has no general farming standard; on meat it means minimal processing and no artificial ingredients."
+    },
+    "label_made_with_real": {
+      "decision": "USDA Organic with the named fruit or whole grain leading the ingredient list.",
+      "delta": "Made with real promises presence, not a percentage; ingredient position alone never reveals the amount."
+    },
+    "label_no_added_hormones": {
+      "decision": "USDA Organic meat or dairy with a pasture seal and a named farm.",
+      "delta": "No added hormones describes hormone use, not feed or pasture; poultry and pork already prohibit growth hormones."
+    },
+    "label_nonGMO_vs_organic": {
+      "decision": "USDA Organic first, with the Real Organic seal where available.",
+      "delta": "Non-GMO verification checks genetic engineering, not organic farming; organic also sets growing and feed rules."
+    },
+    "label_cage_free": {
+      "decision": "USDA Organic pasture-raised eggs with a Real Organic seal and a named small farm.",
+      "delta": "Cage-free means uncaged hens, not outdoor access; free-range adds outdoor access, not a soy-free feed promise.",
+      "family": "fam_eggs"
+    },
+    "label_grass_fed_term": {
+      "decision": "USDA Organic beef with an AGA seal, 100% grass-fed and grass-finished on the label.",
+      "delta": "Grass-fed describes diet, not organic farming or an independent audit; the AGA seal verifies forage through finishing.",
+      "family": "fam_ruminant_meat"
+    },
+    "label_pasture_raised_feed": {
+      "decision": "USDA Organic pasture-raised eggs with a Real Organic seal and soy-free, corn-free feed.",
+      "delta": "Pasture-raised describes outdoor rearing, not the full feed ration; organic feed can include soy and corn.",
+      "family": "fam_eggs"
+    },
+    "label_organic_scope": {
+      "decision": "100% organic wording, a named small farm and the Real Organic seal where available.",
+      "delta": "Organic is at least 95%, not 100%, and made with organic is at least 70%; both exclude water and salt."
+    },
+    "label_multigrain_vs_whole_grain": {
+      "decision": "USDA Organic sprouted or sourdough bread with every grain ingredient listed as whole.",
+      "delta": "Multigrain means several grains, not whole grains; 100% whole grain means all grain ingredients are whole.",
+      "family": "fam_whole_grain_baking"
+    },
+    "label_lightly_sweetened": {
+      "decision": "USDA Organic unsweetened food with no sweetener in the ingredient list.",
+      "delta": "On cereal, lightly sweetened describes taste with no defined sugar limit; Added Sugars gives grams per serving."
+    },
+    "label_no_artificial_flavors": {
+      "decision": "USDA Organic with fruit, herbs or spices named in ingredients, without added flavors.",
+      "delta": "No artificial flavors still allows natural flavor mixtures; it promises neither whole fruit nor a flavor-free recipe."
+    },
+    "label_front_vs_back": {
+      "decision": "USDA Organic with a short ingredient list of whole foods and a named small producer.",
+      "delta": "Front claims cover selected traits, not the whole recipe; ingredients can appear on the front or information panel."
+    },
+    "label_ingredient_order": {
+      "decision": "USDA Organic with whole foods leading the list and every sweetener named.",
+      "delta": "Ingredients descend by weight, not exact percentage; a marked 2%-or-less section can list its ingredients in any order."
+    },
+    "label_third_party_seals": {
+      "decision": "USDA Organic plus Real Organic for soil and pasture, or AGA for grass-fed livestock.",
+      "delta": "A third-party seal verifies its own standard, not every farming trait; a farm picture is no certification."
+    },
+    "label_cold_pressed_expeller": {
+      "decision": "USDA Organic extra virgin olive oil or unrefined cold-pressed coconut oil.",
+      "delta": "Expeller means mechanical pressing, not cool processing; cold-pressed names low-heat extraction, not organic farming.",
+      "family": "fam_cooking_fats"
+    },
+    "label_sugar_free_substitutes": {
+      "decision": "USDA Organic unsweetened food with no sugar substitutes in the ingredient list.",
+      "delta": "Sugar-free allows under half a gram per serving and reference amount; it can still contain sweeteners or sugar alcohols."
+    },
+    "label_wild_vs_farm_raised": {
+      "decision": "Wild-caught fish with species, country and catch method on the tag or counter label.",
+      "delta": "Wild means harvest from non-controlled waters, not necessarily wild-born; farm-raised means a controlled environment.",
+      "family": "fam_wild_first_seafood"
+    },
+    "label_serving_size": {
+      "decision": "USDA Organic whole-food ingredients, with panel numbers compared at equal gram amounts.",
+      "delta": "Serving size is a usual eating amount, not a portion recommendation; a pack can contain multiple servings."
+    },
+    "label_artificial_color": {
+      "decision": "USDA Organic food with no added coloring in the ingredient list.",
+      "delta": "Artificial color means added color, not just synthetic dye; plant-derived coloring can use that wording too."
+    }
+  },
+  "groups": [
+    {
+      "id": "label_ingredient_checks",
+      "title": "Front claims and ingredient order",
+      "members": [
+        "label_made_with_real",
+        "label_front_vs_back",
+        "label_ingredient_order"
+      ],
+      "why_same": "Check the organic seal, then read the entire ingredient list and locate the named food and sweeteners by weight order."
+    },
+    {
+      "id": "label_egg_claims",
+      "title": "Egg housing and feed claims",
+      "members": [
+        "label_cage_free",
+        "label_pasture_raised_feed"
+      ],
+      "why_same": "Check the organic and pasture seals, named farm, and separate soy-free and corn-free feed wording on the carton."
+    }
+  ]
+}

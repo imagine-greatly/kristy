@@ -1,0 +1,239 @@
+{
+  "families": [
+    {
+      "id": "fam_dry_pasta",
+      "kind": "family",
+      "decision": "Organic whole-grain or legume pasta with a short ingredient list.",
+      "buying_tips": [
+        "Look for an organic seal on the pasta pack.",
+        "Read ingredients for whole-grain flour or a named bean or lentil flour.",
+        "Pick packs naming the farm or mill that supplied the flour.",
+        "Skip ingredient lists with colours, flavourings or added sugar."
+      ]
+    },
+    {
+      "id": "fam_botanicals",
+      "kind": "family",
+      "decision": "Organic whole leaves, seeds or beans with the grower and origin named.",
+      "buying_tips": [
+        "Look for an organic seal on a sealed pack.",
+        "Read the ingredient line for each named plant in a blend.",
+        "Pick labels naming a farm, grower cooperative or family producer.",
+        "Skip packs listing added flavourings or showing damp, clumped contents."
+      ]
+    },
+    {
+      "id": "fam_sprouted_whole_grain_bread",
+      "kind": "family",
+      "decision": "Organic sprouted whole-grain sourdough with a short ingredient list.",
+      "buying_tips": [
+        "Look for an organic seal and sprouted whole-grain wording.",
+        "Read ingredients for sprouted whole grains or whole sprouted flour.",
+        "Check for sourdough starter and whole-grain flour in the starter.",
+        "Pick packs naming a small bakery; skip added gluten and dough conditioners."
+      ]
+    },
+    {
+      "id": "fam_whole_grains",
+      "kind": "family",
+      "decision": "Organic whole grains with the grain and farm named on the pack.",
+      "buying_tips": [
+        "Look for an organic seal and whole-grain wording.",
+        "Read the ingredient line for a single named grain.",
+        "Pick sealed packs naming the grower and growing region.",
+        "Skip mixes listing added flavourings or sweeteners."
+      ]
+    },
+    {
+      "id": "fam_specialty_flours",
+      "kind": "family",
+      "decision": "Organic whole-grain, nut or root flour from a named mill.",
+      "buying_tips": [
+        "Look for an organic seal and the grain, nut or root named.",
+        "Read grain-flour labels for whole grain or 100% extraction.",
+        "Check the milling date and pick sealed packs from a named small mill.",
+        "Skip blends led by isolated starch or listing added flavourings."
+      ]
+    },
+    {
+      "id": "fam_whole_grain_baking",
+      "kind": "family",
+      "decision": "Organic whole-grain sourdough or sprouted baking from a named small bakery.",
+      "buying_tips": [
+        "Look for an organic seal and whole-grain wording for every flour.",
+        "Read for sourdough starter or sprouted grains in the ingredient line.",
+        "Check sourdough labels for fermentation details, without added baker's yeast.",
+        "Pick packs naming a small bakery; skip added gluten and dough conditioners."
+      ]
+    },
+    {
+      "id": "fam_sweet_bakery",
+      "kind": "family",
+      "decision": "Organic whole-grain sourdough or sprouted baking with butter and a short recipe.",
+      "buying_tips": [
+        "Look for organic whole-grain flour and sprouted or sourdough wording.",
+        "Read the ingredient line for butter or coconut oil.",
+        "Pick a named small bakery using honey, maple syrup or fruit to sweeten.",
+        "Skip ingredient lists with margarine, shortening or artificial flavourings."
+      ]
+    },
+    {
+      "id": "fam_plain_muesli",
+      "kind": "family",
+      "decision": "Organic unsweetened muesli with sprouted whole grains and a short ingredient list.",
+      "buying_tips": [
+        "Look for an organic seal and sprouted grains on the label.",
+        "Read ingredients for whole grains, nuts, seeds and optional dried fruit.",
+        "Check the growing origin and prefer packs naming a farm or small producer.",
+        "Skip ingredient lists with syrup, added sugar, flavourings or puffed cereals."
+      ]
+    },
+    {
+      "id": "fam_unheated_refrigerated_ferments",
+      "kind": "family",
+      "decision": "Organic live ferments, labelled unpasteurised and sold refrigerated.",
+      "buying_tips": [
+        "Look for an organic seal and fermented wording on the jar or bottle.",
+        "Check for live cultures and raw or unpasteurised wording.",
+        "Read keep refrigerated instructions and choose from the cold case.",
+        "Pick glass jars or bottles naming a local maker and ingredient origins."
+      ]
+    },
+    {
+      "id": "fam_vinegar",
+      "kind": "family",
+      "decision": "Organic raw, unfiltered vinegar with its fruit source named.",
+      "buying_tips": [
+        "Look for an organic seal and raw or unpasteurised wording.",
+        "Read the ingredient line for the named fruit or fermented base.",
+        "Pick glass bottles naming the orchard, farm or small vinegar maker.",
+        "Skip bottles listing caramel colour, flavourings or added sweeteners."
+      ]
+    },
+    {
+      "id": "fam_fermented_soy",
+      "kind": "family",
+      "decision": "Plain organic fermented soy with named cultures and a short ingredient list.",
+      "buying_tips": [
+        "Look for an organic seal and fermented wording.",
+        "Read ingredients for whole soybeans, cultures and every added grain.",
+        "Pick packs naming a small maker and the beans' growing origin.",
+        "Check storage instructions and read any separate sauce packet's ingredients."
+      ]
+    }
+  ],
+  "aisles": [],
+  "patches": {
+    "pasta_dry": {
+      "decision": "Organic whole-durum pasta with just flour and water, from a named farm.",
+      "delta": "Bronze-cut wording describes a porous surface; look for slow drying at low temperature.",
+      "family": "fam_dry_pasta"
+    },
+    "coffee_beans": {
+      "decision": "Organic whole-bean coffee from a named small roaster.",
+      "delta": "Look for a roast date on the bag; Arabica is the bean species.",
+      "family": "fam_botanicals"
+    },
+    "sprouted_grain_bread": {
+      "decision": "Organic sprouted whole-grain sourdough with just grains, water, starter and salt.",
+      "delta": "Sprouted wheat, rye, barley and spelt still contain gluten.",
+      "family": "fam_sprouted_whole_grain_bread"
+    },
+    "sprouted_grains": {
+      "decision": "Organic dried sprouted whole grains from a named grower.",
+      "delta": "Sprouted must describe the kernels; read the pack's cooking instructions.",
+      "family": "fam_whole_grains"
+    },
+    "specialty_flours": {
+      "decision": "Organic freshly milled sprouted whole-grain flour from a named small mill.",
+      "delta": "Einkorn and spelt are wheat; stoneground flour can still be sifted.",
+      "family": "fam_specialty_flours"
+    },
+    "gluten_free_bread": {
+      "decision": "Organic gluten-free whole-grain sourdough with a short ingredient list.",
+      "delta": "Look for gluten-free wording; brown rice, buckwheat, millet or teff should lead the flours.",
+      "family": "fam_whole_grain_baking"
+    },
+    "buns_rolls": {
+      "decision": "Organic whole-wheat sourdough buns or rolls from a named small bakery.",
+      "delta": "Milk, eggs and butter can be bun ingredients; whole white wheat is still whole grain.",
+      "family": "fam_whole_grain_baking"
+    },
+    "pastries_muffins": {
+      "decision": "Organic sprouted whole-grain muffins or sourdough pastries made with butter.",
+      "delta": "Read filling and icing ingredients too; choose an unfilled pastry or plain muffin.",
+      "family": "fam_sweet_bakery"
+    },
+    "muesli": {
+      "decision": "Organic unsweetened muesli with sprouted oat flakes, buckwheat and seeds.",
+      "delta": "Oat flakes and buckwheat base; check cooking directions on the pack.",
+      "family": "fam_plain_muesli"
+    },
+    "bread_aisle": {
+      "decision": "Organic whole-grain sourdough or sprouted bread from a named small bakery.",
+      "delta": "Frozen loaves qualify; check keep-frozen or freeze-upon-arrival wording.",
+      "family": "fam_whole_grain_baking"
+    },
+    "kombucha": {
+      "decision": "Organic plain raw kombucha in glass, labelled live and sold refrigerated.",
+      "delta": "Black tea, sugar and culture make the base; read the bottle's alcohol declaration.",
+      "family": "fam_unheated_refrigerated_ferments"
+    },
+    "sauerkraut": {
+      "decision": "Organic raw sauerkraut of cabbage and salt, in a refrigerated glass jar.",
+      "delta": "Cabbage and salt are enough; red or green cabbage can be used.",
+      "family": "fam_unheated_refrigerated_ferments"
+    },
+    "kimchi": {
+      "decision": "Organic unpasteurised kimchi fermented with salt, in a refrigerated glass jar.",
+      "delta": "Napa cabbage or radish base; read fish sauce or shrimp ingredients when included.",
+      "family": "fam_unheated_refrigerated_ferments"
+    },
+    "fermented_pickles": {
+      "decision": "Organic live cucumber pickles fermented in salt brine, sold refrigerated.",
+      "delta": "Cucumbers, water, salt and spices; skip vinegar in the ingredient line.",
+      "family": "fam_unheated_refrigerated_ferments"
+    },
+    "raw_cider_vinegar": {
+      "decision": "Organic raw unfiltered apple cider vinegar with the mother, from a named orchard.",
+      "delta": "Look for with the mother wording and apple variety or harvest details.",
+      "family": "fam_vinegar"
+    },
+    "miso": {
+      "decision": "Organic naturally aged, unpasteurised miso with soybeans, koji and salt.",
+      "delta": "Read the named koji grain and aging time; Hatcho can contain barley flour.",
+      "family": "fam_fermented_soy"
+    },
+    "tempeh": {
+      "decision": "Organic plain unpasteurised tempeh, with soybeans and culture, sold chilled or frozen.",
+      "delta": "Rhizopus culture binds the bean cake; follow the pack's cooking directions.",
+      "family": "fam_fermented_soy"
+    },
+    "natto": {
+      "decision": "Organic plain whole-bean natto with live culture, sold chilled or frozen.",
+      "delta": "Look for Bacillus subtilis culture; plain beans can be sold without sauce packets.",
+      "family": "fam_fermented_soy"
+    }
+  },
+  "groups": [
+    {
+      "id": "live_fermented_vegetables",
+      "title": "Live fermented cabbage and cucumber pickles",
+      "members": [
+        "sauerkraut",
+        "kimchi",
+        "fermented_pickles"
+      ],
+      "why_same": "All use the same organic, live, unpasteurised and refrigerated label checks, with vegetables fermented in salt rather than added vinegar."
+    },
+    {
+      "id": "whole_grain_loaves_rolls",
+      "title": "Whole-grain loaves, buns and rolls",
+      "members": [
+        "bread_aisle",
+        "buns_rolls"
+      ],
+      "why_same": "Both use the same organic, whole-grain, starter or sprouted-ingredient checks and preference for a named small bakery."
+    }
+  ]
+}

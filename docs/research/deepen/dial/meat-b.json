@@ -1,0 +1,201 @@
+{
+  "families": [
+    {
+      "id": "fam_poultry_pork",
+      "kind": "family",
+      "decision": "Organic, pasture-raised poultry or pork from a named small local farm.",
+      "buying_tips": [
+        "Look for USDA Organic; pasture-raised plus Real Organic is the top rung.",
+        "Pick a named small local farm on the pack or counter sign.",
+        "Read USDA Organic for feed; pasture-raised alone names outdoor rearing.",
+        "Check the ingredient line for plain meat, or meat with salt and named seasonings."
+      ],
+      "sources": [
+        {
+          "name": "Pasture and supplemental feed criteria",
+          "url": "https://eatwild.com/criteria.php"
+        },
+        {
+          "name": "Organic certification and pasture label",
+          "url": "https://realorganicproject.org/get-certified/"
+        },
+        {
+          "name": "Organic feed rule",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.237"
+        }
+      ]
+    },
+    {
+      "id": "fam_eggs",
+      "kind": "family",
+      "decision": "Organic pasture-raised eggs, corn- and soy-free, from a named small farm.",
+      "buying_tips": [
+        "Look for USDA Organic plus pasture-raised; organic alone is the floor.",
+        "Check for the Real Organic seal to back outdoor access to vegetated ground.",
+        "Read corn-free and soy-free on a carton naming a small local farm.",
+        "Pick a refrigerated carton with clean, uncracked shells."
+      ],
+      "sources": [
+        {
+          "name": "Organic egg criteria",
+          "url": "https://www.cornucopia.org/egg-scorecard-criteria/"
+        },
+        {
+          "name": "Poultry outdoor-access standards",
+          "url": "https://realorganicproject.org/wp-content/uploads/2023/10/051823_2023UpdatedROPStandards.pdf"
+        },
+        {
+          "name": "Printed corn-free and soy-free feed claims",
+          "url": "https://millersbiofarm.com/store/eggs/chicken-eggs"
+        }
+      ]
+    },
+    {
+      "id": "fam_prepared_meats",
+      "kind": "family",
+      "decision": "Organic pasture-raised meat, simply prepared, from a named small local farm.",
+      "buying_tips": [
+        "Look for USDA Organic plus Real Organic on pasture-raised meat.",
+        "Pick a named small local farm on the pack or counter sign.",
+        "Read the shortest ingredient list with named meat, fat, salt and seasonings.",
+        "Skip nitrite, nitrate or celery curing ingredients, even on 'uncured' packs."
+      ],
+      "sources": [
+        {
+          "name": "Traditional processed-meat criteria",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        },
+        {
+          "name": "Organic certification and pasture label",
+          "url": "https://realorganicproject.org/get-certified/"
+        },
+        {
+          "name": "Celery powder as a curing ingredient",
+          "url": "https://www.omri.org/omri-articles/celery-powder"
+        }
+      ]
+    }
+  ],
+  "aisles": [],
+  "patches": {
+    "rotisserie_chicken": {
+      "decision": "Organic pasture-raised rotisserie chicken, with salt and named herbs.",
+      "delta": "Roasted whole bird; skip phosphate or starch in the seasoning.",
+      "family": "fam_poultry_pork"
+    },
+    "chicken_cuts_basics": {
+      "decision": "Organic pasture-raised, soy-free whole chicken, air-chilled.",
+      "delta": "Whole bird first, then bone-in thighs; air-chilled on the pack.",
+      "family": "fam_poultry_pork"
+    },
+    "turkey_whole": {
+      "decision": "Organic pasture-raised whole turkey, unbasted.",
+      "delta": "Whole, unbasted turkey; skip any added-solution percentage beside the name.",
+      "family": "fam_poultry_pork"
+    },
+    "ground_turkey": {
+      "decision": "Organic pasture-raised ground turkey, breast and thigh meat only.",
+      "delta": "Breast-and-thigh mince, with the cuts named on the pack.",
+      "family": "fam_poultry_pork"
+    },
+    "chicken_breast": {
+      "decision": "Organic pasture-raised, air-chilled breast with bone and skin.",
+      "delta": "Bone-in, skin-on breast rather than boneless, skinless fillets.",
+      "family": "fam_poultry_pork"
+    },
+    "poultry_duck": {
+      "decision": "Organic pasture-raised, soy-free whole duck with skin on.",
+      "delta": "Whole duck with skin intact; plain raw duck rather than confit.",
+      "family": "fam_poultry_pork"
+    },
+    "poultry_chicken_wings": {
+      "decision": "Organic pasture-raised chicken wings, air-chilled and uncoated.",
+      "delta": "Whole wings or split flats and drumettes; no breading or sauce.",
+      "family": "fam_poultry_pork"
+    },
+    "egg_labels": {
+      "decision": "Organic pasture-raised hen eggs, with corn-free and soy-free on the carton.",
+      "delta": "Hen shells may be white, brown or blue; color follows breed.",
+      "family": "fam_eggs"
+    },
+    "egg_duck_quail": {
+      "decision": "Organic pasture-raised duck or quail eggs, with corn- and soy-free feed named.",
+      "delta": "Duck or quail named on the carton.",
+      "family": "fam_eggs"
+    },
+    "deli_meat_uncured": {
+      "decision": "Organic pasture-raised whole roasted meat, sliced at the counter.",
+      "delta": "Whole roasted joint sliced to order, rather than a chopped or formed deli loaf.",
+      "family": "fam_prepared_meats"
+    },
+    "bacon": {
+      "decision": "Organic pasture-raised bacon, dry-cured with salt and wood-smoked.",
+      "delta": "Belly slices with dry-cured wording; wood-smoked without liquid smoke in the ingredients.",
+      "family": "fam_prepared_meats"
+    },
+    "hot_dogs": {
+      "decision": "Organic, 100% grass-fed and grass-finished beef hot dogs with a short ingredient list.",
+      "delta": "AGA grassfed seal for the beef; skip mechanically separated poultry, starch and phosphates.",
+      "family": "fam_prepared_meats"
+    },
+    "ham": {
+      "decision": "Organic pasture-raised whole-muscle ham, dry-cured with pork and salt.",
+      "delta": "Whole-leg dry-cured ham; check ready-to-eat or cook-before-eating wording.",
+      "family": "fam_prepared_meats"
+    },
+    "turkey_bacon": {
+      "decision": "Organic pasture-raised turkey bacon, with named turkey meat and no added sugar.",
+      "delta": "Turkey cut named beside 'bacon'; skip sugar, dextrose and mechanically separated turkey.",
+      "family": "fam_prepared_meats"
+    },
+    "cured_pork": {
+      "decision": "Organic pasture-raised whole pork cuts, dry-cured with salt.",
+      "delta": "Leg or belly named on the pack; whole-muscle slices rather than ground salami.",
+      "family": "fam_prepared_meats"
+    },
+    "deli_liverwurst_pate": {
+      "decision": "Organic pasture-raised liver pâté or liverwurst, with butter or named animal fat.",
+      "delta": "Liver first; butter or named animal fat, without starch or seed oil.",
+      "family": "fam_prepared_meats"
+    }
+  },
+  "groups": [
+    {
+      "id": "plain_chicken_cuts",
+      "title": "Whole chicken, breasts and wings",
+      "members": [
+        "chicken_cuts_basics",
+        "chicken_breast",
+        "poultry_chicken_wings"
+      ],
+      "why_same": "Same organic and pasture seals, farm label, plain-meat ingredient check and air-chilled wording; only the cut changes."
+    },
+    {
+      "id": "whole_turkey_duck",
+      "title": "Whole turkey and duck",
+      "members": [
+        "turkey_whole",
+        "poultry_duck"
+      ],
+      "why_same": "Both use the organic and pasture checks, a whole raw bird with skin, and the added-solution label check."
+    },
+    {
+      "id": "pastured_shell_eggs",
+      "title": "Hen, duck and quail eggs",
+      "members": [
+        "egg_labels",
+        "egg_duck_quail"
+      ],
+      "why_same": "Same organic and pasture seals, separate feed claims, farm name, refrigerated carton and intact-shell check."
+    },
+    {
+      "id": "salt_cured_pork_cuts",
+      "title": "Salt-cured ham and whole pork cuts",
+      "members": [
+        "ham",
+        "cured_pork"
+      ],
+      "why_same": "Same organic pasture sourcing, whole-muscle form, pork-and-salt ingredient screen and cooking-status label."
+    }
+  ]
+}
