@@ -1,0 +1,53 @@
+# premise-meat: Organic is the floor; grass-fed, pasture seals show the animal lived outdoors.
+# premise-eggs: Pick pasture-raised with a third-party seal over cage-free wording.
+# premise-seafood: Wild with named species and origin first; shellfish live, scallops dry.
+id	name	verdict	cue	why_tap	source_id
+beef_grassfed_vs_grainfed	Grass-fed beef	Organic	AGA Grassfed seal; label reads 100% grass-fed and grass-finished	AGA animals eat only grass and forage from weaning until harvest, on pasture, never given antibiotics.	S1
+beef_cuts_basics	Beef cuts	Organic	Whole cut in a sealed tray with AGA Grassfed seal and USDA Organic	Organic rules require a feed ration of organic pasture and forage, so the organic seal covers what the animal ate.	S3
+ground_beef_lean_ratio	Ground beef	Organic	Ground beef pack naming grass-finished; ratio printed beside the AGA seal	Antibiotic-treated animals cannot be sold as organic, so the seal covers that too.	S4
+hot_dogs	Hot dogs	Either	AGA seal on pack with a short ingredient list	AGA animals are fed only grass and forage and never given added growth hormones.	S1
+pick_jerky	Beef jerky	Either	First ingredient beef; AGA or organic seal on the bag	?	?
+pick_soup_bones	Soup bones	Organic	Marrow bones from the counter, tagged grass-finished or AGA	AGA animals graze pasture without confinement.	S1
+organ_meats	Organ meats	Organic	Liver or heart pack carrying an organic or AGA seal	?	?
+lamb_goat	Lamb and goat	Organic	Lamb tray stamped AWA pasture; chops with pale pink fat	AWA guarantees animals live outdoors on pasture or range for their entire lives.	S2
+bison	Bison	Organic	Pack lists bison only; AGA Grassfed mark beside the cut	AGA requires a 100% grass diet from weaning until harvest.	S1
+venison_game	Venison	Either	Tray names deer and shows an inspected and approved mark	Game sold at retail must be raised under voluntary USDA inspection, shown as inspected and approved, or an equivalent state program.	S17
+beef_veal	Veal	Skip	Only if label says pasture-raised with a humane seal	Pasture-Raised or Certified Humane stamps signal better welfare on veal.	S18
+chicken_breast	Chicken breast	Organic	Bone-in, skin-on breast with USDA Organic plus Certified Humane Pasture Raised	Certified Humane pasture raised requires 108 square feet per bird outdoors, matching AWA.	S5
+chicken_cuts_basics	Chicken cuts	Organic	Whole bird with AWA seal; skin cream-yellow, no basting solution listed	AWA guarantees outdoor pasture life for the whole animal.	S2
+poultry_chicken_wings	Chicken wings	Organic	Wings with skin intact, pack states organic and pasture-raised	Organic livestock eat feed grown under certified organic rules including pasture.	S3
+rotisserie_chicken	Rotisserie chicken	Either	Ingredients list only chicken and salt; organic seal on sticker	Organic livestock eat a feed ration of organically produced agricultural products, including pasture and forage.	S3
+turkey_whole	Whole turkey	Organic	Tag reads not basted; USDA Organic, Certified Humane Pasture Raised	Organic turkeys are fed certified organic feed with pasture and forage.	S3
+ground_turkey	Ground turkey	Organic	Pack states thigh and breast meat only, organic seal	Antibiotic-treated birds cannot carry the organic label.	S4
+poultry_duck	Duck	Organic	Whole duck with skin on and AWA or organic seal	AWA covers duck standards and requires pasture or range living.	S2
+pork_cuts_and_enhanced	Pork cuts	Organic	Chop pack without added solution; AWA or Certified Humane pasture seal	AWA guarantees pigs live outdoors on pasture or range.	S2
+bacon	Bacon	Either	Ingredients show pork, salt, celery powder only; pasture seal on pack	The USDA rule lets 'Uncured' appear in the name only for products cured without synthetic nitrite.	S9
+ham	Ham	Either	Whole-muscle ham whose name begins Uncured, ingredients listing salt and pork	'Uncured' must lead the product name under federal curing rules.	S9
+turkey_bacon	Turkey bacon	Either	Name reads Uncured turkey bacon; turkey listed first	9 CFR 317.17 requires the term Uncured before the product name on products cured without nitrite.	S9
+cured_pork	Cured pork	Either	Dry-cured wording on pack; ingredient list is pork and salt	'Uncured' wording is regulated product-name text for cured meats.	S9
+pick_sausage	Sausage	Organic	Casing ingredients short; third-party welfare seal for outdoor access	AWA guarantees pasture or range life for the whole animal.	S2
+deli_meat_uncured	Deli meat	Either	Uncured on the deli label; whole roast sliced fresh	The word 'Uncured' must precede the product name on cured-style meats.	S9
+egg_labels	Eggs	Organic	Carton shows USDA Organic and Certified Humane Pasture Raised	Pasture raised under Certified Humane means 108 square feet per hen versus 2 for free range.	S5
+label_cage_free	Cage-free eggs	Skip	Cage-free only on carton, no outdoor access seal	Certified Humane free range needs 2 square feet outdoors; cage-free carries no outdoor figure.	S5
+label_pasture_raised_feed	Pasture-raised eggs	Organic	Certified Humane or AWA Pasture Raised plus USDA Organic seal	Certified Humane and AWA pasture-raised standards both specify 108 square feet per bird.	S5
+egg_duck_quail	Duck and quail eggs	Either	Carton names duck and says pastured	The Weston A. Price shopping guide lists pastured duck eggs among its best eggs.	S19
+pick_egg_whites	Egg whites	Either	Carton lists egg whites only, with an organic seal	?	?
+salmon_wild_vs_farmed	Salmon	Organic	Label says wild Alaskan; sockeye flesh deep red	COOL law requires wild or farm-raised printed on fresh and frozen fish.	S8
+seafood_certifications	Seafood seals	Organic	Blue MSC fish checkmark with a chain-of-custody code	The MSC mark is only for wild fish from certified fisheries.	S7
+label_wild_vs_farm_raised	Wild vs farm-raised	Organic	Tag spells wild or farm-raised plus country and catch method	Fish sellers must label wild or farm-raised by federal rule.	S8
+farmed_fish_by_species	Farmed fish	Either	ASC logo on pack when fish is farmed	ASC says seafood carrying its label on pack was farmed with care.	S15
+seafood_trout	Trout	Either	Whole trout with bright eyes and shiny skin	?	?
+shrimp_imported_vs_domestic	Shrimp	Organic	Bag names Gulf or US wild shrimp, shell on, no additives	Wild or farm-raised plus origin must appear on the label.	S8
+white_fish	White fish	Organic	Pacific cod fillet, grey-brown skin side, species named on tag	Pacific cod are grayish-brown with a paler belly, helping check the species.	S13
+pick_fish_sticks	Fish sticks	Either	Pack says wild pollock fillet, not formed from minced pieces	Pollock is also made into surimi, so fillet wording matters.	S14
+canned_tuna	Canned tuna	Either	Label says pole-caught, troll-caught, FAD-free or school-caught	Seafood Watch points to canned tuna with pole-caught, troll-caught, FAD-free, free school or school-caught on the label.	S22
+canned_fish_choosing	Canned fish	Either	Sardines labelled skin and bones, wild-caught, in olive oil	Weston A. Price recommends sardines with skin and bones as high in vitamin D and a good source of calcium.	S21
+mercury_by_fish	Mercury choices	Either	Can names sardines or anchovies	?	?
+seafood_fresh_sardines_mackerel	Fresh sardines and mackerel	Organic	Mackerel with vivid stripes still bright; sardines with shiny skin	Mackerel colour fades quickly after death, so dull stripes signal age.	S12
+seafood_fish_roe	Fish roe	Either	Jar lists salmon roe and salt only	Weston A. Price calls roe a rich source of vitamins A and D, very long-chain fatty acids, and zinc.	S20
+scallops	Scallops	Organic	Dry-packed scallops sitting without milky liquid in the tray	Dry scallops have not been soaked in sodium tripolyphosphate.	S6
+lobster	Lobster	Organic	Live lobster moving its claws; frozen tails hard with no ice glaze	American lobster is mainly sold live or frozen.	S11
+crab	Crab	Either	Live crab showing leg movement	FDA says live crabs and lobsters should show some leg movement.	S23
+clams_mussels_oysters	Shellfish	Either	Shells close when tapped; harvest tag on the bag	FDA says live clams, oysters and mussels close when the shell is tapped, and those that do not should not be selected.	S23
+smoked_salmon	Smoked salmon	Either	Label says wild or farm-raised, with origin; sold chilled	Fish and shellfish must be labeled to indicate whether they are wild or farm-raised.	S8
+seafood_counter	Seafood counter	Either	Whole fish on ice with clear eyes and species sign	NOAA's sardine page says look for bright eyes, shiny skin and a mildly fishy aroma.	S10
