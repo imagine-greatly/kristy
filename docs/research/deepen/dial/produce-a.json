@@ -1,0 +1,116 @@
+{
+  "families": [
+    {
+      "id": "fam_finish_at_home",
+      "kind": "family",
+      "decision": "Organic fruit from a named small farm, with ripeness matched to the eating day.",
+      "buying_tips": [
+        "Look for USDA Organic; prefer the added Real Organic seal.",
+        "Read the farm sign for a small grower, growing location and seasonal harvest.",
+        "Check 'ripe and ready' or 'ripen at home' wording against the fruit's firmness.",
+        "Read the organic label; a voluntary PLU alone is not reliable certification."
+      ]
+    },
+    {
+      "id": "fam_buy_at_eating_quality",
+      "kind": "family",
+      "decision": "Whole organic fruit from a named small farm, selected at eating ripeness.",
+      "buying_tips": [
+        "Look for USDA Organic; prefer the added Real Organic seal.",
+        "Read the farm sign for a small grower, growing location and seasonal harvest.",
+        "Pick whole fruit at eating ripeness; skip mold, split skins and wet decay.",
+        "Read the organic label; a voluntary PLU alone is not reliable certification."
+      ]
+    },
+    {
+      "id": "fam_crisp_heads_pods",
+      "kind": "family",
+      "decision": "Whole organic vegetables from a named small farm, with firm heads, pods or peppers.",
+      "buying_tips": [
+        "Look for USDA Organic; prefer the added Real Organic seal.",
+        "Read the farm sign for a small grower, growing location and seasonal harvest.",
+        "Check heads, pods and peppers for firmness, split skins and visible decay.",
+        "Read the organic label; a voluntary PLU alone is not reliable certification."
+      ]
+    }
+  ],
+  "aisles": [],
+  "patches": {
+    "produce_apples_pears": {
+      "decision": "Organic apples and pears from a named small orchard, with apples labeled unwaxed.",
+      "delta": "Apples labeled unwaxed; European pears yield slightly near the stem.",
+      "family": "fam_buy_at_eating_quality"
+    },
+    "produce_citrus": {
+      "decision": "Organic citrus labeled unwaxed, from a named small grove.",
+      "delta": "For zest, read 'unwaxed' or 'uncoated' on the citrus label.",
+      "family": "fam_buy_at_eating_quality"
+    },
+    "produce_stone_fruit": {
+      "decision": "Real Organic peaches, nectarines, plums and cherries from a named small orchard.",
+      "delta": "Peaches, nectarines and plums give gently when ripe; cherries stay firm with stems attached.",
+      "family": "fam_buy_at_eating_quality"
+    },
+    "produce_bananas": {
+      "decision": "Organic bananas labeled as grown by small farmers, yellow for eating now.",
+      "delta": "Full yellow for eating now; brown speckles mark the fully ripe stage.",
+      "family": "fam_finish_at_home"
+    },
+    "produce_avocados": {
+      "decision": "Organic avocados from a named small farm, yielding gently for eating now.",
+      "delta": "Judge readiness with gentle palm pressure, not fingertips; skip overly soft fruit.",
+      "family": "fam_finish_at_home"
+    },
+    "produce_grapes": {
+      "decision": "Real Organic grapes from a named small vineyard, plump and firmly attached.",
+      "delta": "Plump grapes firmly attached to stems; Northern California harvest Jul-Nov.",
+      "family": "fam_buy_at_eating_quality"
+    },
+    "produce_melons": {
+      "decision": "Whole organic melons from a named small local farm, with intact rinds.",
+      "delta": "Watermelon with a creamy-yellow ground spot; cantaloupe with tan-yellow skin between the netting.",
+      "family": "fam_buy_at_eating_quality"
+    },
+    "produce_tropical_fruit": {
+      "decision": "Whole organic tropical fruit with the small grower and origin named.",
+      "delta": "Mangoes give slightly when ripe; buy pineapple already ripe, as it will not ripen after harvest.",
+      "family": "fam_buy_at_eating_quality"
+    },
+    "berries_picking": {
+      "decision": "Real Organic berries from a named small local farm, in dry, shallow packs.",
+      "delta": "Shallow packs with dry berries to the base; skip crushed berries beneath the top layer.",
+      "family": "fam_buy_at_eating_quality"
+    },
+    "produce_ripeness_by_item": {
+      "decision": "Organic fruit with its variety and farm named, at that variety's eating ripeness.",
+      "delta": "Match peel color to the named variety; Sugarloaf pineapples stay green when ripe.",
+      "family": "fam_buy_at_eating_quality"
+    },
+    "produce_seasonality": {
+      "decision": "Organic fruit from a named small local farm during its regional harvest.",
+      "delta": "Northern California tomatoes Jun-Oct, bell peppers Jul-Nov.",
+      "family": "fam_buy_at_eating_quality"
+    },
+    "produce_tomatoes": {
+      "decision": "Real Organic tomatoes from a named small local farm, with a slight give.",
+      "delta": "Slight give for eating today; Northern California tomatoes Jun-Oct.",
+      "family": "fam_finish_at_home"
+    },
+    "produce_peppers": {
+      "decision": "Real Organic bell peppers from a named small local farm, firm and smooth.",
+      "delta": "Colored bell peppers have ripened beyond green; Northern California bells Jul-Nov.",
+      "family": "fam_crisp_heads_pods"
+    }
+  },
+  "groups": [
+    {
+      "id": "produce_orchard_fruit",
+      "title": "Apples, pears and stone fruit",
+      "members": [
+        "produce_apples_pears",
+        "produce_stone_fruit"
+      ],
+      "why_same": "Both use the orchard's organic label, named small grower and whole-fruit inspection, with ripeness checked for the named fruit."
+    }
+  ]
+}

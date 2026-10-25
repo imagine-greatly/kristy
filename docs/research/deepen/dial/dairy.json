@@ -1,0 +1,250 @@
+{
+  "families": [
+    {
+      "id": "fam_fluid_animal_milk",
+      "kind": "family",
+      "decision": "Look for organic, grass-fed raw milk where legally sold.",
+      "buying_tips": [
+        "Look for USDA Organic; for cow's milk, add the AGA grassfed seal.",
+        "Read raw milk or unpasteurized milk on the bottle.",
+        "Pick a bottle naming the small farm that produced the milk.",
+        "Check the bottle date, intact cap and refrigerated shelf."
+      ]
+    },
+    {
+      "id": "fam_plain_cultured_dairy",
+      "kind": "family",
+      "decision": "Pick plain, full-fat organic cultured dairy from a named grass-fed farm.",
+      "buying_tips": [
+        "Look for USDA Organic and AGA grassfed seals.",
+        "Pick a tub or bottle naming the farm that supplies the milk.",
+        "Read plain, whole milk or full-fat on the label.",
+        "Skip ingredient lists with added sugar, flavors, starch, gums or carrageenan."
+      ]
+    },
+    {
+      "id": "fam_real_cheese",
+      "kind": "family",
+      "decision": "Look for organic grass-fed raw-milk cheese aged 60+ days where legally sold.",
+      "buying_tips": [
+        "Look for USDA Organic and AGA grassfed seals.",
+        "Pick farmstead cheese with the producing farm named on the label.",
+        "Read the stated aging time: 60 days or longer.",
+        "Read milk, cultures, salt and rennet or enzymes in the ingredient line."
+      ]
+    },
+    {
+      "id": "fam_concentrated_dairy_fats",
+      "kind": "family",
+      "decision": "Pick organic grass-fed cream, butter or ghee from a named small dairy.",
+      "buying_tips": [
+        "Look for USDA Organic and AGA grassfed seals.",
+        "Pick a pack naming the dairy farm that supplied the cream.",
+        "Read the ingredient line for added oils, gums and flavorings.",
+        "Skip blends listing vegetable oils or natural flavors."
+      ]
+    },
+    {
+      "id": "fam_plain_plant_drinks",
+      "kind": "family",
+      "decision": "Pick organic, unsweetened plant drinks with water and the named plant.",
+      "buying_tips": [
+        "Look for the USDA Organic seal and unsweetened wording.",
+        "Read the ingredients for water and the named nut, grain or bean.",
+        "Skip added oils, gums, flavors and vitamin or mineral blends.",
+        "Pick a carton naming the farm or origin of its nuts, grain or beans."
+      ]
+    },
+    {
+      "id": "fam_whole_coconut_cooking_milk",
+      "kind": "family",
+      "decision": "Pick organic, unsweetened whole coconut milk with coconut and water.",
+      "buying_tips": [
+        "Look for organic and whole or full-fat wording.",
+        "Read coconut and water in the ingredient line.",
+        "Pick an intact can with a named coconut origin.",
+        "Skip ingredient lists with sugar, gums or emulsifiers."
+      ]
+    },
+    {
+      "id": "fam_actual_ice_cream",
+      "kind": "family",
+      "decision": "Pick organic grass-fed ice cream with cream, milk, sugar and real vanilla.",
+      "buying_tips": [
+        "Look for USDA Organic and grass-fed wording.",
+        "Pick a tub naming the small dairy farm supplying the milk.",
+        "Read ice cream on the front and cream in the ingredients.",
+        "Skip ingredient lists with gums, vegetable oils or artificial flavors."
+      ]
+    },
+    {
+      "id": "fam_unheated_refrigerated_ferments",
+      "kind": "family",
+      "decision": "Pick organic ferments labeled unpasteurized and kept refrigerated.",
+      "buying_tips": [
+        "Look for USDA Organic and fermented wording.",
+        "Read unpasteurized or not heated after fermentation on the label.",
+        "Pick a jar or bottle naming the small farm or maker.",
+        "Check keep refrigerated wording, the date and an intact seal."
+      ]
+    },
+    {
+      "id": "fam_cooking_fats",
+      "kind": "family",
+      "decision": "Pick organic, named-source fats with the processing method on the label.",
+      "buying_tips": [
+        "Look for extra virgin olive oil, virgin coconut oil or grass-fed dairy fat.",
+        "Check the organic seal and named farm or oil origin.",
+        "Read every fat and oil in a blend's ingredient line.",
+        "Skip hydrogenated fats and added flavorings."
+      ]
+    }
+  ],
+  "aisles": [],
+  "patches": {
+    "grassfed_butter": {
+      "decision": "Look for organic grass-fed raw butter where legally sold.",
+      "delta": "Cream, with optional salt or cultures.",
+      "family": "fam_concentrated_dairy_fats"
+    },
+    "whole_vs_reduced_fat_milk": {
+      "decision": "Look for organic grass-fed raw whole milk where legally sold.",
+      "delta": "Whole milk on the label; skip skim, 1% and 2%.",
+      "family": "fam_fluid_animal_milk"
+    },
+    "cheese_real_vs_processed": {
+      "decision": "Look for organic grass-fed raw cheese aged 60+ days where legally sold.",
+      "delta": "Block or wedge; skip labels saying pasteurized process cheese food.",
+      "family": "fam_real_cheese"
+    },
+    "yogurt_plain_vs_flavored": {
+      "decision": "Pick plain organic grass-fed whole-milk yogurt with milk and cultures.",
+      "delta": "Greek or unstrained yogurt with milk and cultures; skip fruit-on-the-bottom pots.",
+      "family": "fam_plain_cultured_dairy"
+    },
+    "raw_milk": {
+      "decision": "Look for organic grass-fed raw milk from a named farm where legally sold.",
+      "delta": "Read the farm's posted lab results for the sample date and named tests.",
+      "family": "fam_fluid_animal_milk"
+    },
+    "cream_vs_creamer": {
+      "decision": "Pick organic grass-fed cream from a named small dairy.",
+      "delta": "Cream only in the ingredient line; skip ultra-pasteurized or UHT cartons.",
+      "family": "fam_concentrated_dairy_fats"
+    },
+    "raw_kefir": {
+      "decision": "Look for plain organic grass-fed raw whole-milk kefir where legally sold.",
+      "delta": "Read raw milk and kefir grains in the ingredients; skip bottles labeled for pets.",
+      "family": "fam_unheated_refrigerated_ferments"
+    },
+    "raw_aged_cheese": {
+      "decision": "Look for organic grass-fed raw-milk cheese aged 60+ days where legally sold.",
+      "delta": "Imported wedges still need explicit raw or unpasteurized milk wording.",
+      "family": "fam_real_cheese"
+    },
+    "oat_milk": {
+      "decision": "Pick organic unsweetened oat milk made with oats and water.",
+      "delta": "Check the Added Sugars line on oat cartons, including barista versions.",
+      "family": "fam_plain_plant_drinks"
+    },
+    "plain_kefir": {
+      "decision": "Pick plain organic grass-fed whole-milk kefir with live cultures.",
+      "delta": "Read kefir grains or kefir yeasts among the listed cultures.",
+      "family": "fam_plain_cultured_dairy"
+    },
+    "sour_cream": {
+      "decision": "Pick organic grass-fed sour cream made with cream and cultures.",
+      "delta": "Read cultured cream in the ingredients; skip acidified sour cream.",
+      "family": "fam_plain_cultured_dairy"
+    },
+    "cream_cheese": {
+      "decision": "Pick plain organic grass-fed cultured cream cheese.",
+      "delta": "Read cream cheese on the pack; milk, cream, cultures and salt, with optional lactase.",
+      "family": "fam_plain_cultured_dairy"
+    },
+    "cottage_cheese": {
+      "decision": "Pick organic grass-fed full-fat cottage cheese with cultured curds.",
+      "delta": "Read the curd and cream-dressing ingredients, including any stabilizer blend.",
+      "family": "fam_plain_cultured_dairy"
+    },
+    "ice_cream": {
+      "decision": "Pick organic grass-fed ice cream from a named small dairy.",
+      "delta": "For vanilla, read vanilla bean or vanilla extract; egg yolks fit a custard-style recipe.",
+      "family": "fam_actual_ice_cream"
+    },
+    "ghee": {
+      "decision": "Pick organic grass-fed ghee with butter or butterfat as its only ingredient.",
+      "delta": "Read ghee or clarified butter on the jar; cultured ghee starts with cultured butter.",
+      "family": "fam_concentrated_dairy_fats"
+    },
+    "goat_sheep_dairy": {
+      "decision": "Look for organic pasture-raised raw goat or sheep milk where legally sold.",
+      "delta": "Read goat or sheep in the milk description; check blends for cow's milk.",
+      "family": "fam_fluid_animal_milk"
+    },
+    "almond_milk": {
+      "decision": "Pick organic unsweetened almond milk made with almonds and water.",
+      "delta": "Compare the stated almond percentage; pick the higher almond content.",
+      "family": "fam_plain_plant_drinks"
+    },
+    "soy_milk": {
+      "decision": "Pick organic unsweetened soy milk made with whole soybeans and water.",
+      "delta": "Read whole soybeans in the ingredients; skip soy protein isolate.",
+      "family": "fam_plain_plant_drinks"
+    },
+    "coconut_milk_beverage": {
+      "decision": "Pick organic unsweetened whole coconut milk made with coconut and water.",
+      "delta": "Carton drinks are diluted; compare the printed coconut percentage.",
+      "family": "fam_whole_coconut_cooking_milk"
+    },
+    "plant_butter": {
+      "decision": "Pick organic virgin coconut oil for a plant-based solid fat.",
+      "delta": "For a spread, read every oil listed alongside coconut or olive oil.",
+      "family": "fam_cooking_fats"
+    },
+    "dairy_case": {
+      "decision": "Start with organic dairy from a named small farm and read the product type.",
+      "delta": "Milk, cultured dairy, aged cheese and cream have separate label checks.",
+      "family": "fam_fluid_animal_milk"
+    }
+  },
+  "groups": [
+    {
+      "id": "raw_whole_milk",
+      "title": "Raw whole milk",
+      "members": [
+        "whole_vs_reduced_fat_milk",
+        "raw_milk"
+      ],
+      "why_same": "Both use raw whole-milk wording, organic and grass-fed seals, a named farm and dated test results where legally sold."
+    },
+    {
+      "id": "raw_milk_aged_cheese",
+      "title": "Raw aged cheese",
+      "members": [
+        "cheese_real_vs_processed",
+        "raw_aged_cheese"
+      ],
+      "why_same": "Both use explicit raw-milk wording, a named farm, organic and grass-fed sourcing, and a stated age of at least 60 days where legally sold."
+    },
+    {
+      "id": "plain_yogurt_kefir",
+      "title": "Plain yogurt and kefir",
+      "members": [
+        "yogurt_plain_vs_flavored",
+        "plain_kefir"
+      ],
+      "why_same": "Both use plain whole-milk labels, organic and grass-fed sourcing, and a milk-and-cultures ingredient check."
+    },
+    {
+      "id": "simple_plant_drinks",
+      "title": "Plain oat, almond and soy drinks",
+      "members": [
+        "oat_milk",
+        "almond_milk",
+        "soy_milk"
+      ],
+      "why_same": "All use the organic seal, unsweetened wording, water plus the named plant, and the same screen for oils, gums and flavorings."
+    }
+  ]
+}
