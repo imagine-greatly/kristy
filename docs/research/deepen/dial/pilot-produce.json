@@ -1,0 +1,1587 @@
+{
+  "families": [],
+  "aisles": [
+    {
+      "id": "aisle_produce",
+      "kind": "aisle",
+      "decision": "Organic produce by default; check the USDA Organic seal or organic bin sign."
+    },
+    {
+      "id": "aisle_frozen",
+      "kind": "aisle",
+      "decision": "For frozen produce, choose organic bags listing only fruit or vegetables, with loose pieces."
+    }
+  ],
+  "picks": [
+    {
+      "id": "pick_f_pears",
+      "kind": "pick",
+      "decision": "Organic pears are the pick.",
+      "avoid": "Press the narrow neck by the stem, which should give slightly.",
+      "sources": [
+        {
+          "name": "F138 — extension.purdue.edu",
+          "url": "https://www.extension.purdue.edu/foodlink/foods.php"
+        },
+        {
+          "name": "F127 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ],
+      "title": "Pears",
+      "category": "produce",
+      "aliases": [
+        "whole pear",
+        "whole pears"
+      ]
+    },
+    {
+      "id": "pick_f_peaches",
+      "kind": "pick",
+      "decision": "Organic peaches and nectarines are the pick.",
+      "avoid": "Look for fuzzy peach skin in red or yellow.",
+      "sources": [
+        {
+          "name": "F140 — extension.usu.edu",
+          "url": "https://extension.usu.edu/fscreate/files/2020-22-staff/Shopping_for_Fruit.pdf"
+        },
+        {
+          "name": "F127 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        },
+        {
+          "name": "F199 — ewg.org",
+          "url": "https://www.ewg.org/foodnews/dirty-dozen.php"
+        }
+      ],
+      "title": "Peaches and nectarines",
+      "category": "produce",
+      "aliases": [
+        "whole peach",
+        "whole peaches"
+      ]
+    },
+    {
+      "id": "pick_f_plums",
+      "kind": "pick",
+      "decision": "Organic plums are the pick.",
+      "avoid": "Leave the natural white or gray sheen on plum skin.",
+      "sources": [
+        {
+          "name": "F141 — ndsu.edu",
+          "url": "https://www.ndsu.edu/agriculture/extension/publications/focus-whole-fruits-how-select-and-store-fruit"
+        },
+        {
+          "name": "F127 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ],
+      "title": "Plums",
+      "category": "produce",
+      "aliases": [
+        "whole plum",
+        "whole plums"
+      ]
+    },
+    {
+      "id": "pick_f_cherries",
+      "kind": "pick",
+      "decision": "Organic cherries are the pick.",
+      "avoid": "Pick shiny, dark cherries with green stems still attached.",
+      "sources": [
+        {
+          "name": "F197 — extension.purdue.edu",
+          "url": "https://www.extension.purdue.edu/foodlink/foods.php"
+        },
+        {
+          "name": "F142 — extension.usu.edu",
+          "url": "https://extension.usu.edu/fscreate/files/2020-22-staff/Shopping_for_Fruit.pdf"
+        },
+        {
+          "name": "F127 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ],
+      "title": "Cherries",
+      "category": "produce",
+      "aliases": [
+        "whole cherry",
+        "whole cherries"
+      ]
+    },
+    {
+      "id": "pick_f_strawberries",
+      "kind": "pick",
+      "decision": "Organic strawberries are the pick.",
+      "avoid": "Skip berries with white or green shoulders around the caps.",
+      "sources": [
+        {
+          "name": "F143 — extension.illinois.edu",
+          "url": "https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf"
+        },
+        {
+          "name": "F127 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        },
+        {
+          "name": "F199 — ewg.org",
+          "url": "https://www.ewg.org/foodnews/dirty-dozen.php"
+        }
+      ],
+      "title": "Strawberries",
+      "category": "produce",
+      "aliases": [
+        "whole strawberry",
+        "whole strawberries"
+      ]
+    },
+    {
+      "id": "pick_f_blueberries",
+      "kind": "pick",
+      "decision": "Organic blueberries are the pick.",
+      "avoid": "Look for silver-white frost on blueberry skins; reject boxes containing leaves.",
+      "sources": [
+        {
+          "name": "F144 — extension.illinois.edu",
+          "url": "https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf"
+        },
+        {
+          "name": "F127 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ],
+      "title": "Blueberries",
+      "category": "produce",
+      "aliases": [
+        "whole blueberry",
+        "whole blueberries"
+      ]
+    },
+    {
+      "id": "pick_f_caneberries",
+      "kind": "pick",
+      "decision": "Organic raspberries and blackberries are the pick.",
+      "avoid": "Check the clamshell bottom for juice stains.",
+      "sources": [
+        {
+          "name": "F145 — extension.usu.edu",
+          "url": "https://extension.usu.edu/fscreate/files/2020-22-staff/Shopping_for_Fruit.pdf"
+        },
+        {
+          "name": "F127 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ],
+      "title": "Raspberries and blackberries",
+      "category": "produce",
+      "aliases": [
+        "caneberry clamshell",
+        "caneberry clamshells"
+      ]
+    },
+    {
+      "id": "pick_snap_peas",
+      "kind": "pick",
+      "decision": "Organic snap and snow peas are the pick.",
+      "avoid": "Choose snap pods that look plump and snug around the peas.",
+      "sources": [
+        {
+          "name": "F150 — extension.illinois.edu",
+          "url": "https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf"
+        },
+        {
+          "name": "F127 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ]
+    },
+    {
+      "id": "pick_okra",
+      "kind": "pick",
+      "decision": "Organic okra are the pick.",
+      "avoid": "Pick pods two to four inches long, neither dull nor shriveled.",
+      "sources": [
+        {
+          "name": "F151 — ndsu.edu",
+          "url": "https://www.ndsu.edu/agriculture/extension/publications/vary-your-veggies-how-select-and-store-vegetables"
+        },
+        {
+          "name": "F127 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ]
+    },
+    {
+      "id": "pick_f_sweet_potatoes",
+      "kind": "pick",
+      "decision": "Organic sweet potatoes are the pick.",
+      "avoid": "Pick small or medium sweet potatoes; even, deep-colored skin, no holes.",
+      "sources": [
+        {
+          "name": "F191 — extension.purdue.edu",
+          "url": "https://www.extension.purdue.edu/foodlink/foods.php"
+        },
+        {
+          "name": "F154 — ndsu.edu",
+          "url": "https://www.ndsu.edu/agriculture/extension/publications/vary-your-veggies-how-select-and-store-vegetables"
+        },
+        {
+          "name": "F127 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ],
+      "title": "Sweet potatoes",
+      "category": "produce",
+      "aliases": [
+        "whole sweet potato",
+        "whole sweet potatoes"
+      ]
+    },
+    {
+      "id": "pick_f_carrots",
+      "kind": "pick",
+      "decision": "Organic carrots are the pick.",
+      "avoid": "Skip carrots with large green areas at the top.",
+      "sources": [
+        {
+          "name": "F155 — extension.illinois.edu",
+          "url": "https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf"
+        },
+        {
+          "name": "F128 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.203"
+        }
+      ],
+      "title": "Carrots",
+      "category": "produce",
+      "aliases": [
+        "whole carrot",
+        "whole carrots"
+      ]
+    },
+    {
+      "id": "pick_f_beets",
+      "kind": "pick",
+      "decision": "Organic beets are the pick.",
+      "avoid": "Pick small beets with slender tap roots and leaf stems attached.",
+      "sources": [
+        {
+          "name": "F194 — extension.purdue.edu",
+          "url": "https://www.extension.purdue.edu/foodlink/foods.php"
+        },
+        {
+          "name": "F195 — ndsu.edu",
+          "url": "https://www.ndsu.edu/agriculture/extension/publications/vary-your-veggies-how-select-and-store-vegetables"
+        },
+        {
+          "name": "F156 — extension.illinois.edu",
+          "url": "https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf"
+        },
+        {
+          "name": "F128 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.203"
+        }
+      ],
+      "title": "Beets",
+      "category": "produce",
+      "aliases": [
+        "whole beet",
+        "whole beets"
+      ]
+    },
+    {
+      "id": "pick_f_radishes",
+      "kind": "pick",
+      "decision": "Organic radishes are the pick.",
+      "avoid": "Pick brightly colored radishes still topped with fresh green leaves.",
+      "sources": [
+        {
+          "name": "F193 — extension.purdue.edu",
+          "url": "https://www.extension.purdue.edu/foodlink/foods.php"
+        },
+        {
+          "name": "F157 — extension.illinois.edu",
+          "url": "https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf"
+        },
+        {
+          "name": "F128 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.203"
+        }
+      ],
+      "title": "Radishes",
+      "category": "produce",
+      "aliases": [
+        "whole radish",
+        "whole radishes"
+      ]
+    },
+    {
+      "id": "pick_f_turnips",
+      "kind": "pick",
+      "decision": "Organic turnips are the pick.",
+      "avoid": "Skip turnips with many leaf scars ringing the top.",
+      "sources": [
+        {
+          "name": "F158 — extension.illinois.edu",
+          "url": "https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf"
+        },
+        {
+          "name": "F128 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.203"
+        }
+      ],
+      "title": "Turnips",
+      "category": "produce",
+      "aliases": [
+        "whole turnip",
+        "whole turnips"
+      ]
+    },
+    {
+      "id": "pick_celery",
+      "kind": "pick",
+      "decision": "Organic celery is the pick.",
+      "avoid": "Split celery; the inside should look pale to bright green, crisp.",
+      "sources": [
+        {
+          "name": "F159 — extension.purdue.edu",
+          "url": "https://www.extension.purdue.edu/foodlink/foods.php"
+        },
+        {
+          "name": "F127 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ]
+    },
+    {
+      "id": "pick_kohlrabi",
+      "kind": "pick",
+      "decision": "Organic kohlrabi is the pick.",
+      "avoid": "Skip cracked or brown-spotted kohlrabi; attached leaves should be firm.",
+      "sources": [
+        {
+          "name": "F192 — extension.purdue.edu",
+          "url": "https://www.extension.purdue.edu/foodlink/foods.php"
+        },
+        {
+          "name": "F128 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.203"
+        }
+      ]
+    },
+    {
+      "id": "pick_f_spinach",
+      "kind": "pick",
+      "decision": "Organic spinach is the pick.",
+      "avoid": "Pick spinach with broad, crisp, dark green leaves.",
+      "sources": [
+        {
+          "name": "F161 — extension.illinois.edu",
+          "url": "https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf"
+        },
+        {
+          "name": "F127 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ],
+      "title": "Spinach",
+      "category": "produce",
+      "aliases": [
+        "spinach bunch",
+        "spinach bunches"
+      ]
+    },
+    {
+      "id": "pick_f_romaine_leaf",
+      "kind": "pick",
+      "decision": "Organic romaine and leaf lettuce are the pick.",
+      "avoid": "Skip extremely solid, pale heads, which are mostly core.",
+      "sources": [
+        {
+          "name": "F162 — extension.illinois.edu",
+          "url": "https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf"
+        },
+        {
+          "name": "F127 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ],
+      "title": "Romaine and leaf lettuce",
+      "category": "produce",
+      "aliases": [
+        "romaine lettuce head",
+        "romaine lettuce heads"
+      ]
+    },
+    {
+      "id": "pick_f_iceberg",
+      "kind": "pick",
+      "decision": "Organic iceberg lettuce is the pick.",
+      "avoid": "Press the top of the head and avoid hard bumps.",
+      "sources": [
+        {
+          "name": "F163 — ndsu.edu",
+          "url": "https://www.ndsu.edu/agriculture/extension/publications/vary-your-veggies-how-select-and-store-vegetables"
+        },
+        {
+          "name": "F127 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ],
+      "title": "Iceberg lettuce",
+      "category": "produce",
+      "aliases": [
+        "iceberg lettuce head",
+        "iceberg lettuce heads"
+      ]
+    },
+    {
+      "id": "pick_f_broccoli",
+      "kind": "pick",
+      "decision": "Organic broccoli is the pick.",
+      "avoid": "Skip heads whose flower ends part easily or show yellow blooms.",
+      "sources": [
+        {
+          "name": "F165 — extension.illinois.edu",
+          "url": "https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf"
+        },
+        {
+          "name": "F127 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ],
+      "title": "Broccoli",
+      "category": "produce",
+      "aliases": [
+        "whole broccoli crown",
+        "whole broccoli crowns"
+      ]
+    },
+    {
+      "id": "pick_f_cauliflower",
+      "kind": "pick",
+      "decision": "Organic cauliflower is the pick.",
+      "avoid": "Skip heads with gaps between the curds.",
+      "sources": [
+        {
+          "name": "F166 — extension.illinois.edu",
+          "url": "https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf"
+        },
+        {
+          "name": "F127 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ],
+      "title": "Cauliflower",
+      "category": "produce",
+      "aliases": [
+        "whole cauliflower head",
+        "whole cauliflower heads"
+      ]
+    },
+    {
+      "id": "pick_f_brussels",
+      "kind": "pick",
+      "decision": "Organic brussels sprouts are the pick.",
+      "avoid": "Look for bright green heads with white stem ends.",
+      "sources": [
+        {
+          "name": "F167 — extension.illinois.edu",
+          "url": "https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf"
+        },
+        {
+          "name": "F127 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ],
+      "title": "Brussels sprouts",
+      "category": "produce",
+      "aliases": [
+        "fresh brussels sprout",
+        "fresh brussels sprouts"
+      ]
+    },
+    {
+      "id": "pick_f_cabbage",
+      "kind": "pick",
+      "decision": "Organic cabbage is the pick.",
+      "avoid": "Skip heads that are oblong or cracked.",
+      "sources": [
+        {
+          "name": "F168 — extension.illinois.edu",
+          "url": "https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf"
+        },
+        {
+          "name": "F127 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ],
+      "title": "Cabbage",
+      "category": "produce",
+      "aliases": [
+        "whole cabbage head",
+        "whole cabbage heads"
+      ]
+    },
+    {
+      "id": "pick_asparagus",
+      "kind": "pick",
+      "decision": "Organic asparagus is the pick.",
+      "avoid": "Choose spears with tips firmly closed.",
+      "sources": [
+        {
+          "name": "F169 — extension.illinois.edu",
+          "url": "https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf"
+        },
+        {
+          "name": "F127 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ]
+    },
+    {
+      "id": "pick_f_leeks",
+      "kind": "pick",
+      "decision": "Organic leeks are the pick.",
+      "avoid": "Leek tops fresh green; necks at most one and a half inches.",
+      "sources": [
+        {
+          "name": "F171 — ndsu.edu",
+          "url": "https://www.ndsu.edu/agriculture/extension/publications/vary-your-veggies-how-select-and-store-vegetables"
+        },
+        {
+          "name": "F127 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ],
+      "title": "Leeks",
+      "category": "produce",
+      "aliases": [
+        "whole leek",
+        "whole leeks"
+      ]
+    },
+    {
+      "id": "pick_f_cantaloupe",
+      "kind": "pick",
+      "decision": "Organic cantaloupe is the pick.",
+      "avoid": "Look for a smooth, rounded scar where the stem was.",
+      "sources": [
+        {
+          "name": "F178 — extension.illinois.edu",
+          "url": "https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf"
+        },
+        {
+          "name": "F127 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ],
+      "title": "Cantaloupe",
+      "category": "produce",
+      "aliases": [
+        "whole cantaloupe",
+        "whole cantaloupes"
+      ]
+    },
+    {
+      "id": "pick_f_honeydew",
+      "kind": "pick",
+      "decision": "Organic honeydew is the pick.",
+      "avoid": "Choose pale yellow to light lemon skin with little green.",
+      "sources": [
+        {
+          "name": "F179 — ndsu.edu",
+          "url": "https://www.ndsu.edu/agriculture/extension/publications/focus-whole-fruits-how-select-and-store-fruit"
+        },
+        {
+          "name": "F127 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ],
+      "title": "Honeydew",
+      "category": "produce",
+      "aliases": [
+        "whole honeydew",
+        "whole honeydews"
+      ]
+    },
+    {
+      "id": "pick_f_watermelon",
+      "kind": "pick",
+      "decision": "Organic watermelon is the pick.",
+      "avoid": "Turn it over and look for a yellow, not white, underside.",
+      "sources": [
+        {
+          "name": "F180 — extension.usu.edu",
+          "url": "https://extension.usu.edu/fscreate/files/2020-22-staff/Shopping_for_Fruit.pdf"
+        },
+        {
+          "name": "F127 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ],
+      "title": "Watermelon",
+      "category": "produce",
+      "aliases": [
+        "whole watermelon",
+        "whole watermelons"
+      ]
+    },
+    {
+      "id": "pick_mangoes",
+      "kind": "pick",
+      "decision": "Organic mangoes are the pick.",
+      "avoid": "Skip mangoes with sap on the skin.",
+      "sources": [
+        {
+          "name": "F182 — ndsu.edu",
+          "url": "https://www.ndsu.edu/agriculture/extension/publications/focus-whole-fruits-how-select-and-store-fruit"
+        },
+        {
+          "name": "F127 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ]
+    },
+    {
+      "id": "pick_f_kiwi",
+      "kind": "pick",
+      "decision": "Organic kiwi is the pick.",
+      "avoid": "Press lightly: ripe kiwi releases to gentle pressure.",
+      "sources": [
+        {
+          "name": "F183 — ndsu.edu",
+          "url": "https://www.ndsu.edu/agriculture/extension/publications/focus-whole-fruits-how-select-and-store-fruit"
+        },
+        {
+          "name": "F127 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ],
+      "title": "Kiwi",
+      "category": "produce",
+      "aliases": [
+        "whole kiwi",
+        "whole kiwis"
+      ]
+    },
+    {
+      "id": "pick_f_citrus",
+      "kind": "pick",
+      "decision": "Organic oranges and grapefruit are the pick.",
+      "avoid": "Pick oranges and grapefruit heavy for their size, with smooth skin.",
+      "sources": [
+        {
+          "name": "F190 — ndsu.edu",
+          "url": "https://www.ndsu.edu/agriculture/extension/publications/focus-whole-fruits-how-select-and-store-fruit"
+        },
+        {
+          "name": "F127 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ],
+      "title": "Oranges and grapefruit",
+      "category": "produce",
+      "aliases": [
+        "whole citrus fruit",
+        "whole citrus fruits"
+      ]
+    },
+    {
+      "id": "pick_f_lemons_limes",
+      "kind": "pick",
+      "decision": "Organic lemons and limes are the pick.",
+      "avoid": "For limes, look for smooth, glossy dark green skin.",
+      "sources": [
+        {
+          "name": "F185 — nutritioncenter.ctahr.hawaii.edu",
+          "url": "https://nutritioncenter.ctahr.hawaii.edu/wp-content/uploads/2022/06/BuyFreshItMatters_Seasonality.pdf"
+        },
+        {
+          "name": "F127 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ],
+      "title": "Lemons and limes",
+      "category": "produce",
+      "aliases": [
+        "whole lime",
+        "whole limes"
+      ]
+    },
+    {
+      "id": "pick_f_pomegranate",
+      "kind": "pick",
+      "decision": "Organic pomegranate is the pick.",
+      "avoid": "Look for a slightly square shape, not perfectly round.",
+      "sources": [
+        {
+          "name": "F186 — extension.usu.edu",
+          "url": "https://extension.usu.edu/fscreate/files/2020-22-staff/Shopping_for_Fruit.pdf"
+        },
+        {
+          "name": "F127 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ],
+      "title": "Pomegranate",
+      "category": "produce",
+      "aliases": [
+        "whole pomegranate",
+        "whole pomegranates"
+      ]
+    },
+    {
+      "id": "pick_f_onions",
+      "kind": "pick",
+      "decision": "Organic dry onions are the pick.",
+      "avoid": "Check the neck: small and dry, with no moisture.",
+      "sources": [
+        {
+          "name": "F187 — ndsu.edu",
+          "url": "https://www.ndsu.edu/agriculture/extension/publications/vary-your-veggies-how-select-and-store-vegetables"
+        },
+        {
+          "name": "F127 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ],
+      "title": "Dry onions",
+      "category": "produce",
+      "aliases": [
+        "whole dry onion",
+        "whole dry onions"
+      ]
+    },
+    {
+      "id": "pick_f_garlic",
+      "kind": "pick",
+      "decision": "Organic garlic is the pick.",
+      "avoid": "Choose heavy bulbs that stay closed, with dry outer skins.",
+      "sources": [
+        {
+          "name": "F188 — extension.purdue.edu",
+          "url": "https://www.extension.purdue.edu/foodlink/foods.php"
+        },
+        {
+          "name": "F127 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ],
+      "title": "Garlic",
+      "category": "produce",
+      "aliases": [
+        "whole garlic bulb",
+        "whole garlic bulbs"
+      ]
+    },
+    {
+      "id": "pick_winter_squash",
+      "kind": "pick",
+      "decision": "Organic winter squash and pumpkin are the pick.",
+      "avoid": "Check the stem: it should be dry and firm.",
+      "sources": [
+        {
+          "name": "F189 — extension.usu.edu",
+          "url": "https://extension.usu.edu/fscreate/files/2020-22-staff/Shopping_for_Vegetables.pdf"
+        },
+        {
+          "name": "F127 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ]
+    },
+    {
+      "id": "pick_frozen_wild_blueberry",
+      "kind": "pick",
+      "decision": "Organic frozen wild blueberries are the pick over fresh.",
+      "avoid": "Bag says “wild”; ingredients list blueberries alone.",
+      "sources": [
+        {
+          "name": "S01 — extension.umaine.edu",
+          "url": "https://extension.umaine.edu/blueberries/about/"
+        },
+        {
+          "name": "S02 — cdn.dal.ca",
+          "url": "https://cdn.dal.ca/content/dam/dalhousie/images/sites/wild-blueberry/pdfs/Growing_Wild_Lowbush_Blueberries_NS.pdf"
+        },
+        {
+          "name": "S03 — legislature.maine.gov",
+          "url": "https://legislature.maine.gov/testimony/resources/ENR20220307Cook132914754141858618.pdf"
+        },
+        {
+          "name": "S04 — europepmc.org",
+          "url": "https://europepmc.org/article/MED/11600018"
+        },
+        {
+          "name": "S05 — europepmc.org",
+          "url": "https://europepmc.org/article/MED/22175691"
+        }
+      ],
+      "title": "Frozen wild blueberries",
+      "category": "produce",
+      "aliases": [
+        "frozen wild blueberry",
+        "frozen wild blueberries"
+      ]
+    },
+    {
+      "id": "pick_frozen_cultivated_blueberry",
+      "kind": "pick",
+      "decision": "Organic frozen cultivated blueberries are the pick.",
+      "avoid": "No “wild” on the bag means planted highbush; ingredients blueberries alone.",
+      "sources": [
+        {
+          "name": "S05 — europepmc.org",
+          "url": "https://europepmc.org/article/MED/22175691"
+        },
+        {
+          "name": "S06 — calblueberry.org",
+          "url": "https://www.calblueberry.org/frequently-asked-questions.html"
+        },
+        {
+          "name": "S02 — cdn.dal.ca",
+          "url": "https://cdn.dal.ca/content/dam/dalhousie/images/sites/wild-blueberry/pdfs/Growing_Wild_Lowbush_Blueberries_NS.pdf"
+        }
+      ],
+      "title": "Frozen cultivated blueberries",
+      "category": "produce",
+      "aliases": [
+        "frozen cultivated blueberry",
+        "frozen cultivated blueberries"
+      ]
+    },
+    {
+      "id": "pick_frozen_strawberry",
+      "kind": "pick",
+      "decision": "Organic frozen strawberries are the pick.",
+      "avoid": "Berries loose, not one clump; ingredients strawberries alone.",
+      "sources": [
+        {
+          "name": "S54 — blogs.extension.iastate.edu",
+          "url": "https://blogs.extension.iastate.edu/answerline/2024/03/05/tray-pack-for-freezing-food-why-and-how/"
+        },
+        {
+          "name": "S07 — europepmc.org",
+          "url": "https://europepmc.org/article/MED/25526594"
+        }
+      ],
+      "title": "Frozen strawberries",
+      "category": "produce",
+      "aliases": [
+        "frozen strawberry",
+        "frozen strawberries"
+      ]
+    },
+    {
+      "id": "pick_frozen_raspberry",
+      "kind": "pick",
+      "decision": "Organic frozen raspberries are the pick.",
+      "avoid": "Whole berries, loose in the bag; ingredients raspberries alone.",
+      "sources": [
+        {
+          "name": "S42 — nchfp.uga.edu",
+          "url": "https://nchfp.uga.edu/how/freeze/fruits/freezing-raspberries/"
+        },
+        {
+          "name": "S46 — ndsu.edu",
+          "url": "https://www.ndsu.edu/agriculture/extension/publications/freezing-fruits"
+        },
+        {
+          "name": "S43 — europepmc.org",
+          "url": "https://europepmc.org/article/MED/11052701"
+        }
+      ],
+      "title": "Frozen raspberries",
+      "category": "produce",
+      "aliases": [
+        "frozen raspberry",
+        "frozen raspberries"
+      ]
+    },
+    {
+      "id": "pick_frozen_blackberry",
+      "kind": "pick",
+      "decision": "Organic frozen blackberries are the pick.",
+      "avoid": "Plump glossy berries loose in the bag; ingredients blackberries alone.",
+      "sources": [
+        {
+          "name": "S45 — nchfp.uga.edu",
+          "url": "https://nchfp.uga.edu/how/freeze/fruits/freezing-blackberries-or-dewberries/"
+        },
+        {
+          "name": "S46 — ndsu.edu",
+          "url": "https://www.ndsu.edu/agriculture/extension/publications/freezing-fruits"
+        }
+      ],
+      "title": "Frozen blackberries",
+      "category": "produce",
+      "aliases": [
+        "frozen blackberry",
+        "frozen blackberries"
+      ]
+    },
+    {
+      "id": "pick_frozen_cherry",
+      "kind": "pick",
+      "decision": "Organic frozen pitted cherries are the pick.",
+      "avoid": "Cherries loose, deep dark color; ingredients cherries alone, no sweeteners.",
+      "sources": [
+        {
+          "name": "S48 — extension.oregonstate.edu",
+          "url": "https://extension.oregonstate.edu/food/preservation/preserving-cherries-sp-50-883"
+        },
+        {
+          "name": "S49 — extension.psu.edu",
+          "url": "https://extension.psu.edu/try-preserving-some-cherries"
+        }
+      ],
+      "title": "Frozen pitted cherries",
+      "category": "produce",
+      "aliases": [
+        "frozen pitted cherry",
+        "frozen pitted cherries"
+      ]
+    },
+    {
+      "id": "pick_frozen_berry_blend",
+      "kind": "pick",
+      "decision": "Organic frozen berry blends are the pick.",
+      "avoid": "Ingredients name berries like strawberry and blueberry; no sweeteners or juice.",
+      "sources": [
+        {
+          "name": "S17 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/21/101.4"
+        }
+      ],
+      "title": "Frozen berry blends",
+      "category": "produce",
+      "aliases": [
+        "frozen berry blend",
+        "frozen berry blends"
+      ]
+    },
+    {
+      "id": "pick_frozen_mango",
+      "kind": "pick",
+      "decision": "Organic frozen mango chunks are the pick.",
+      "avoid": "Chunks loose, not fused; ingredients mango alone, no sweetener line.",
+      "sources": [
+        {
+          "name": "S51 — extension.oregonstate.edu",
+          "url": "https://extension.oregonstate.edu/food/preservation/preserving-fruits-mangoes"
+        },
+        {
+          "name": "S50 — nchfp.uga.edu",
+          "url": "https://nchfp.uga.edu/how/freeze/fruits/freezing-mangos/"
+        },
+        {
+          "name": "S54 — blogs.extension.iastate.edu",
+          "url": "https://blogs.extension.iastate.edu/answerline/2024/03/05/tray-pack-for-freezing-food-why-and-how/"
+        }
+      ],
+      "title": "Frozen mango chunks",
+      "category": "produce",
+      "aliases": [
+        "frozen mango chunk",
+        "frozen mango chunks"
+      ]
+    },
+    {
+      "id": "pick_frozen_tropical_blend",
+      "kind": "pick",
+      "decision": "Organic frozen tropical fruit is the pick.",
+      "avoid": "Ingredients name mango, pineapple or papaya; no sweeteners, syrup or juice.",
+      "sources": [
+        {
+          "name": "S17 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/21/101.4"
+        }
+      ],
+      "title": "Frozen tropical fruit",
+      "category": "produce",
+      "aliases": [
+        "frozen tropical blend",
+        "frozen tropical blends"
+      ]
+    },
+    {
+      "id": "pick_frozen_papaya",
+      "kind": "pick",
+      "decision": "Organic frozen papaya chunks are the pick.",
+      "avoid": "Organic seal on the bag; ingredients papaya alone.",
+      "sources": [
+        {
+          "name": "S14 — nongmoproject.org",
+          "url": "https://www.nongmoproject.org/wp-content/uploads/High-Risk-Inputs-Examples.pdf"
+        },
+        {
+          "name": "S15 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ],
+      "title": "Frozen papaya chunks",
+      "category": "produce",
+      "aliases": [
+        "frozen papaya chunk",
+        "frozen papaya chunks"
+      ]
+    },
+    {
+      "id": "pick_frozen_acai",
+      "kind": "pick",
+      "decision": "Organic frozen acai packs are the pick.",
+      "avoid": "Ingredients name acai alone; skip packs listing sweeteners before the fruit.",
+      "sources": [
+        {
+          "name": "S52 — doi.org",
+          "url": "https://doi.org/10.1007/s42452-020-2340-0"
+        },
+        {
+          "name": "S17 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/21/101.4"
+        }
+      ],
+      "title": "Frozen acai packs",
+      "category": "produce",
+      "aliases": [
+        "frozen acai pack",
+        "frozen acai packs"
+      ]
+    },
+    {
+      "id": "pick_frozen_peas",
+      "kind": "pick",
+      "decision": "Organic frozen peas are the pick over fresh.",
+      "avoid": "Bright round peas, loose in the bag; ingredients peas alone.",
+      "sources": [
+        {
+          "name": "S11 — ricardocuisine.com",
+          "url": "https://www.ricardocuisine.com/en/articles/the-ingredient/970-frozen-peas-from-the-field-to-your-freezer"
+        },
+        {
+          "name": "S29 — extension.oregonstate.edu",
+          "url": "https://extension.oregonstate.edu/food/preservation/preserving-peas-edible-pea-pods"
+        },
+        {
+          "name": "S30 — nchfp.uga.edu",
+          "url": "https://nchfp.uga.edu/how/freeze/vegetable/freezing-green-peas/"
+        }
+      ]
+    },
+    {
+      "id": "pick_frozen_sweet_corn",
+      "kind": "pick",
+      "decision": "Organic frozen corn kernels are the pick over fresh.",
+      "avoid": "Kernels loose, not one block; ingredients corn alone, organic seal.",
+      "sources": [
+        {
+          "name": "S13 — ipm.org",
+          "url": "https://www.ipm.org/show/amomentofscience/2023-04-11/keeping-sweet-corn-sweet"
+        },
+        {
+          "name": "S14 — nongmoproject.org",
+          "url": "https://www.nongmoproject.org/wp-content/uploads/High-Risk-Inputs-Examples.pdf"
+        },
+        {
+          "name": "S15 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        },
+        {
+          "name": "S54 — blogs.extension.iastate.edu",
+          "url": "https://blogs.extension.iastate.edu/answerline/2024/03/05/tray-pack-for-freezing-food-why-and-how/"
+        }
+      ],
+      "title": "Frozen corn kernels",
+      "category": "produce",
+      "aliases": [
+        "frozen corn kernel",
+        "frozen corn kernels"
+      ]
+    },
+    {
+      "id": "pick_frozen_spinach",
+      "kind": "pick",
+      "decision": "Organic frozen spinach is the pick.",
+      "avoid": "Ingredients spinach alone; skip creamed bags listing cream or starch.",
+      "sources": [
+        {
+          "name": "S08 — europepmc.org",
+          "url": "https://europepmc.org/article/MED/25526594"
+        },
+        {
+          "name": "S17 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/21/101.4"
+        }
+      ],
+      "title": "Frozen spinach",
+      "category": "produce",
+      "aliases": [
+        "frozen spinach bag",
+        "frozen spinach bags"
+      ]
+    },
+    {
+      "id": "pick_frozen_greens",
+      "kind": "pick",
+      "decision": "Organic frozen greens are the pick.",
+      "avoid": "Chopped leaves loose, not one solid block; ingredients name greens only.",
+      "sources": [
+        {
+          "name": "S39 — extension.psu.edu",
+          "url": "https://extension.psu.edu/preserving-greens"
+        },
+        {
+          "name": "S38 — nchfp.uga.edu",
+          "url": "https://nchfp.uga.edu/how/freeze/vegetable/freezing-greens-including-spinach/"
+        }
+      ],
+      "title": "Frozen greens",
+      "category": "produce",
+      "aliases": [
+        "frozen greens bag",
+        "frozen greens bags"
+      ]
+    },
+    {
+      "id": "pick_frozen_broccoli",
+      "kind": "pick",
+      "decision": "Organic frozen broccoli florets are the pick.",
+      "avoid": "Dark green compact florets, no yellow buds; ingredients broccoli alone.",
+      "sources": [
+        {
+          "name": "S27 — extension.wsu.edu",
+          "url": "https://extension.wsu.edu/skagit/2025/07/13/skagit-food-preservation-broccoli/"
+        },
+        {
+          "name": "S28 — nchfp.uga.edu",
+          "url": "https://nchfp.uga.edu/how/freeze/vegetables/freezing-broccoli/"
+        },
+        {
+          "name": "S09 — hgic.clemson.edu",
+          "url": "https://hgic.clemson.edu/why-blanch/"
+        },
+        {
+          "name": "S10 — extension.psu.edu",
+          "url": "https://extension.psu.edu/freezing-vegetables"
+        }
+      ]
+    },
+    {
+      "id": "pick_frozen_cauliflower",
+      "kind": "pick",
+      "decision": "Organic frozen cauliflower florets are the pick.",
+      "avoid": "Creamy white florets, no gray or brown; ingredients cauliflower alone.",
+      "sources": [
+        {
+          "name": "S34 — extension.wsu.edu",
+          "url": "https://extension.wsu.edu/skagit/2025/07/25/skagit-food-preservation-cauliflower/"
+        },
+        {
+          "name": "S33 — nchfp.uga.edu",
+          "url": "https://nchfp.uga.edu/how/freeze/vegetable/freezing-cauliflower/"
+        },
+        {
+          "name": "S09 — hgic.clemson.edu",
+          "url": "https://hgic.clemson.edu/why-blanch/"
+        }
+      ],
+      "title": "Frozen cauliflower florets",
+      "category": "produce",
+      "aliases": [
+        "frozen cauliflower floret",
+        "frozen cauliflower florets"
+      ]
+    },
+    {
+      "id": "pick_frozen_riced_veg",
+      "kind": "pick",
+      "decision": "Organic frozen riced vegetables are the pick.",
+      "avoid": "Riced cauliflower bag: ingredients say cauliflower alone, no starch or seasoning.",
+      "sources": [
+        {
+          "name": "S17 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/21/101.4"
+        }
+      ],
+      "title": "Frozen riced vegetables",
+      "category": "produce",
+      "aliases": [
+        "frozen riced vegetable",
+        "frozen riced vegetables"
+      ]
+    },
+    {
+      "id": "pick_frozen_carrots",
+      "kind": "pick",
+      "decision": "Organic fresh carrots are the pick over frozen carrots.",
+      "avoid": "Pieces separate, not a frozen clump; ingredients carrots alone, organic seal.",
+      "sources": [
+        {
+          "name": "S08 — europepmc.org",
+          "url": "https://europepmc.org/article/MED/25526594"
+        },
+        {
+          "name": "S09 — hgic.clemson.edu",
+          "url": "https://hgic.clemson.edu/why-blanch/"
+        }
+      ],
+      "title": "Frozen carrots",
+      "category": "produce",
+      "aliases": [
+        "frozen carrot",
+        "frozen carrots"
+      ]
+    },
+    {
+      "id": "pick_frozen_green_beans",
+      "kind": "pick",
+      "decision": "Organic frozen green beans are the pick.",
+      "avoid": "Slim crisp-looking pods, ingredients green beans alone, no white frost.",
+      "sources": [
+        {
+          "name": "S22 — europepmc.org",
+          "url": "https://europepmc.org/article/MED/42221874"
+        },
+        {
+          "name": "S08 — europepmc.org",
+          "url": "https://europepmc.org/article/MED/25526594"
+        },
+        {
+          "name": "S31 — nchfp.uga.edu",
+          "url": "https://nchfp.uga.edu/how/freeze/vegetable/freezing-beans-green-snap-or-wax/"
+        },
+        {
+          "name": "S32 — extension.umaine.edu",
+          "url": "https://extension.umaine.edu/publications/4046e/"
+        }
+      ],
+      "title": "Frozen green beans",
+      "category": "produce",
+      "aliases": [
+        "frozen green bean",
+        "frozen green beans"
+      ]
+    },
+    {
+      "id": "pick_frozen_brussels",
+      "kind": "pick",
+      "decision": "Organic frozen brussels sprouts are the pick.",
+      "avoid": "Small tight sprouts; ingredients Brussels sprouts alone, no loose leaves.",
+      "sources": [
+        {
+          "name": "S36 — nchfp.uga.edu",
+          "url": "https://nchfp.uga.edu/how/freeze/vegetable/freezing-brussels-sprouts/"
+        }
+      ],
+      "title": "Frozen Brussels sprouts",
+      "category": "produce",
+      "aliases": [
+        "frozen brussels sprout",
+        "frozen brussels sprouts"
+      ]
+    },
+    {
+      "id": "pick_frozen_edamame",
+      "kind": "pick",
+      "decision": "Organic frozen edamame is the pick over fresh.",
+      "avoid": "Beans or pods loose; ingredients edamame alone, organic seal on bag.",
+      "sources": [
+        {
+          "name": "S21 — europepmc.org",
+          "url": "https://europepmc.org/article/MED/36771696"
+        },
+        {
+          "name": "S14 — nongmoproject.org",
+          "url": "https://www.nongmoproject.org/wp-content/uploads/High-Risk-Inputs-Examples.pdf"
+        },
+        {
+          "name": "S15 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        },
+        {
+          "name": "S54 — blogs.extension.iastate.edu",
+          "url": "https://blogs.extension.iastate.edu/answerline/2024/03/05/tray-pack-for-freezing-food-why-and-how/"
+        }
+      ],
+      "title": "Frozen edamame",
+      "category": "produce",
+      "aliases": [
+        "frozen edamame bean",
+        "frozen edamame beans"
+      ]
+    },
+    {
+      "id": "pick_frozen_stir_fry",
+      "kind": "pick",
+      "decision": "Organic frozen stir-fry blends are the pick.",
+      "avoid": "Skip bags with a sauce packet; ingredients name vegetables only.",
+      "sources": [
+        {
+          "name": "S19 — foodrepublic.com",
+          "url": "https://www.foodrepublic.com/1857579/frozen-vegetables-clumped-together-red-flag/"
+        }
+      ],
+      "title": "Frozen stir-fry blends",
+      "category": "produce",
+      "aliases": [
+        "frozen stir-fry blend",
+        "frozen stir-fry blends"
+      ]
+    },
+    {
+      "id": "pick_frozen_mixed_veg",
+      "kind": "pick",
+      "decision": "Organic frozen mixed vegetables are the pick.",
+      "avoid": "Ingredients: peas, carrots, corn, green beans; bag loose, not a block.",
+      "sources": [
+        {
+          "name": "S19 — foodrepublic.com",
+          "url": "https://www.foodrepublic.com/1857579/frozen-vegetables-clumped-together-red-flag/"
+        }
+      ],
+      "title": "Frozen mixed vegetables",
+      "category": "produce",
+      "aliases": [
+        "frozen vegetable mix",
+        "frozen vegetable mixes"
+      ]
+    },
+    {
+      "id": "pick_frozen_zucchini",
+      "kind": "pick",
+      "decision": "Organic frozen summer squash is the pick.",
+      "avoid": "Slices separate; ingredients squash or zucchini alone, organic seal.",
+      "sources": [
+        {
+          "name": "S14 — nongmoproject.org",
+          "url": "https://www.nongmoproject.org/wp-content/uploads/High-Risk-Inputs-Examples.pdf"
+        },
+        {
+          "name": "S15 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ],
+      "title": "Frozen summer squash",
+      "category": "produce",
+      "aliases": [
+        "frozen zucchini slice",
+        "frozen zucchini slices"
+      ]
+    },
+    {
+      "id": "pick_frozen_butternut",
+      "kind": "pick",
+      "decision": "Organic frozen winter squash cubes are the pick.",
+      "avoid": "Orange cubes loose; ingredients squash alone, no butter or sweeteners.",
+      "sources": [
+        {
+          "name": "S41 — nchfp.uga.edu",
+          "url": "https://nchfp.uga.edu/how/freeze/vegetable/freezing-winter-squash/"
+        }
+      ],
+      "title": "Frozen winter squash cubes",
+      "category": "produce",
+      "aliases": [
+        "frozen squash cube",
+        "frozen squash cubes"
+      ]
+    },
+    {
+      "id": "pick_frozen_sauced_bags",
+      "kind": "pick",
+      "decision": "Skip sauced frozen vegetables; choose plain organic frozen vegetables instead.",
+      "avoid": "Skip butter, cream, cheese, sauce or seasoning in frozen vegetable ingredients.",
+      "sources": [
+        {
+          "name": "S17 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/21/101.4"
+        }
+      ],
+      "title": "Sauced frozen vegetables",
+      "category": "produce",
+      "aliases": [
+        "sauced frozen vegetable",
+        "sauced frozen vegetables"
+      ]
+    },
+    {
+      "id": "pick_frozen_sweetened_fruit",
+      "kind": "pick",
+      "decision": "Skip sweetened frozen fruit; choose plain organic frozen fruit instead.",
+      "avoid": "Skip sweeteners, syrup or juice concentrate; fruit should be the whole list.",
+      "sources": [
+        {
+          "name": "S17 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/21/101.4"
+        }
+      ],
+      "title": "Sweetened frozen fruit",
+      "category": "produce",
+      "aliases": [
+        "sweetened frozen fruit",
+        "sweetened frozen fruits"
+      ]
+    }
+  ],
+  "patches": {
+    "produce_grapes": {
+      "decision": "Organic grapes.",
+      "why": "Grapes are eaten whole with the skin on; organic growing rules restrict synthetic substances and exclude GMOs.",
+      "sources": [
+        {
+          "name": "F196 — extension.purdue.edu",
+          "url": "https://www.extension.purdue.edu/foodlink/foods.php"
+        },
+        {
+          "name": "F139 — extension.usu.edu",
+          "url": "https://extension.usu.edu/fscreate/files/2020-22-staff/Shopping_for_Fruit.pdf"
+        },
+        {
+          "name": "F127 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        },
+        {
+          "name": "F199 — ewg.org",
+          "url": "https://www.ewg.org/foodnews/dirty-dozen.php"
+        }
+      ],
+      "pick_steps": [
+        "Lift the bunch and check for split, bruised or leaking grapes."
+      ]
+    },
+    "produce_peppers": {
+      "decision": "Organic bell peppers.",
+      "why": "The pepper wall and skin are eaten, and organic rules bar synthetic substances and GMOs in growing.",
+      "sources": [
+        {
+          "name": "F198 — ndsu.edu",
+          "url": "https://www.ndsu.edu/agriculture/extension/publications/vary-your-veggies-how-select-and-store-vegetables"
+        },
+        {
+          "name": "F146 — extension.purdue.edu",
+          "url": "https://www.extension.purdue.edu/foodlink/foods.php"
+        },
+        {
+          "name": "F127 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ],
+      "pick_steps": [
+        "Pick a firm, unbruised pepper and pass on any that has shriveled or softened."
+      ]
+    },
+    "produce_tomatoes": {
+      "decision": "Organic tomatoes.",
+      "why": "The skin is eaten, and organic rules bar synthetic substances and GMOs in growing.",
+      "sources": [
+        {
+          "name": "F147 — extension.illinois.edu",
+          "url": "https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf"
+        },
+        {
+          "name": "F127 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ],
+      "pick_steps": [
+        "Press gently; pass on any tomato that is soft or bruised."
+      ]
+    },
+    "produce_green_beans": {
+      "decision": "Organic green beans.",
+      "why": "The whole pod is eaten, and organic rules bar synthetic substances and GMOs in growing.",
+      "sources": [
+        {
+          "name": "F149 — extension.illinois.edu",
+          "url": "https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf"
+        },
+        {
+          "name": "F127 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ],
+      "pick_steps": [
+        "Check the pods and leave any that are flabby, rust-spotted or sticky."
+      ]
+    },
+    "sprouts_raw": {
+      "decision": "Organic raw sprouts.",
+      "why": "Sprouts are eaten whole and raw, and organic rules bar synthetic substances and GMOs in growing.",
+      "sources": [
+        {
+          "name": "F164 — nutritioncenter.ctahr.hawaii.edu",
+          "url": "https://nutritioncenter.ctahr.hawaii.edu/wp-content/uploads/2022/06/BuyFreshItMatters_Seasonality.pdf"
+        },
+        {
+          "name": "F127 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ],
+      "pick_steps": [
+        "Check the roots are still white and the clamshell is not fogged."
+      ]
+    },
+    "produce_mushrooms": {
+      "decision": "Organic mushrooms.",
+      "why": "The whole cap is eaten, and organic rules bar synthetic substances and GMOs in growing.",
+      "sources": [
+        {
+          "name": "F170 — extension.illinois.edu",
+          "url": "https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf"
+        },
+        {
+          "name": "F127 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ],
+      "pick_steps": [
+        "Check each cap and leave any that feels damp or soft."
+      ]
+    },
+    "produce_bananas": {
+      "decision": "Organic bananas.",
+      "why": "The peel is discarded, but organic is still the default. Organic rules (7 CFR 205.105) bar synthetic substances, GMOs, irradiation and sewage sludge in growing.",
+      "sources": [
+        {
+          "name": "F176 — nutritioncenter.ctahr.hawaii.edu",
+          "url": "https://nutritioncenter.ctahr.hawaii.edu/wp-content/uploads/2022/06/BuyFreshItMatters_Seasonality.pdf"
+        },
+        {
+          "name": "F127 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ],
+      "pick_steps": [
+        "Take a bunch that is still green and keep it out of the fridge."
+      ]
+    },
+    "produce_avocados": {
+      "decision": "Organic avocados.",
+      "why": "The skin is discarded, but organic is still the default. Organic rules (7 CFR 205.105) bar synthetic substances, GMOs, irradiation and sewage sludge in growing.",
+      "sources": [
+        {
+          "name": "F177 — ndsu.edu",
+          "url": "https://www.ndsu.edu/agriculture/extension/publications/focus-whole-fruits-how-select-and-store-fruit"
+        },
+        {
+          "name": "F127 — law.cornell.edu",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ],
+      "pick_steps": [
+        "Press gently near the stem; firm but not rock hard ripens in days."
+      ]
+    }
+  },
+  "do_lines": {
+    "produce_grapes": "Grapes should hang firmly on green stems, not brown ones.",
+    "produce_peppers": "Pick firm, thick-walled, brightly colored peppers with a fresh green stem.",
+    "produce_tomatoes": "Skip tomatoes with blotchy green or brown patches on the skin.",
+    "produce_green_beans": "Run a finger along the pod and skip lumpy sections.",
+    "sprouts_raw": "Reject any tub holding dry or slimy sprouts.",
+    "produce_mushrooms": "Peek under the cap for pink or light tan gills.",
+    "produce_bananas": "Check for slight green at the stem and tip.",
+    "produce_avocados": "Skip avocados with large indentations in the skin."
+  }
+}
