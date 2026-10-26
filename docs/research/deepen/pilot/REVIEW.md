@@ -87,10 +87,6 @@ Scope: KB categories produce, seafood, beef, poultry, poultry_eggs, pork, meat_c
 ### 5. New verdict contradicts today's decision
 
 - **Hard** (new Skip on the carton name; today recommends that product)
-  - oat_milk: Skip vs "Unsweetened oat milk made with oats and water"
-  - almond_milk: Skip vs "Unsweetened almond milk made with almonds and water"
-  - soy_milk: Skip vs "Unsweetened soy milk of whole soybeans and water"
-  - coconut_milk_beverage: Skip vs "Unsweetened whole coconut milk of coconut and water"
   - pick_margarine: Skip vs "...or plant butter made with only coconut or olive oil"
 - **Produce** (new "Organic for every item" ruling, 2026-10-26, vs today text)
   - f_pineapple / f_avocados: new Organic; KB organic_worth_it_by_type delta still says "pineapple and avocado lead its Clean Fifteen"
@@ -299,10 +295,10 @@ Not flagged as contradictions: every other row agrees in direction with its KB d
 | Cottage cheese `cottage_cheese` | **Organic** — Cultures named; carrageenan or gums not in the ingredient list. | Grass-fed full-fat cottage cheese with cultured curds. | FETCHED (D044) |
 | Ice cream `ice_cream` | **Organic** — Cream, milk, egg yolks and real vanilla; no 'flavor' words or extenders. | Grass-fed ice cream of cream, milk, sugar and yolks. | FETCHED (D032) |
 | Goat and sheep dairy `goat_sheep_dairy` | **Organic** — Ingredients: milk and cultures only. | Plain whole goat or sheep milk first, then organic. | UNSOURCED (?) |
-| Oat milk `oat_milk` | **Skip** — 'Oat milk' or 'oat drink' on the carton means skip. | Unsweetened oat milk made with oats and water. | FETCHED (D037) |
-| Almond milk `almond_milk` | **Skip** — 'Almond milk' or 'almond drink' on the carton means skip. | Unsweetened almond milk made with almonds and water. | FETCHED (D037) |
-| Soy milk `soy_milk` | **Skip** — 'Soy protein isolate' in the ingredients, or 'soy milk' on the carton. | Unsweetened soy milk of whole soybeans and water. | FETCHED (D037 D028~) |
-| Coconut milk drink `coconut_milk_beverage` | **Skip** — Boxed (aseptic) carton means skip; canned coconut milk passes. | Unsweetened whole coconut milk of coconut and water. | FETCHED (D003) |
+| Oat milk `oat_milk` | **Organic** — Ingredients: oats, water, salt; no added oil. Sweetened or seed-oil versions skip. | Unsweetened oat milk made with oats and water. | UNSOURCED (?) |
+| Almond milk `almond_milk` | **Organic** — Ingredients: almonds and water; unsweetened. Sweetened or gum-and-oil blends skip. | Unsweetened almond milk made with almonds and water. | UNSOURCED (?) |
+| Soy milk `soy_milk` | **Organic** — Ingredients: organic soybeans and water. Soy protein isolate or sweetened versions skip. | Unsweetened soy milk of whole soybeans and water. | UNSOURCED (?) |
+| Coconut milk drink `coconut_milk_beverage` | **Organic** — Ingredients: coconut and water; unsweetened. Sweetened or oil-blend versions skip. | Unsweetened whole coconut milk of coconut and water. | UNSOURCED (?) |
 | Canned coconut milk `canned_coconut_milk` | **Organic** — Can with coconut and water only; BPA-free lining stated. | Organic full-fat canned coconut milk listing only coconut and water. | FETCHED (D003 D022~) |
 | Margarine `pick_margarine` | **Skip** — 'Vegetable oil' leads the ingredient list of any tub or stick. | Look for deep yellow grass-fed butter, or plant butter made with only coconut or olive oil. | HIGHLIGHT (D001~) |
 | Plant butter `plant_butter` | **Skip** — Palm, canola or 'vegetable oil blend' in the ingredient list. | Virgin coconut oil as the plant-based solid fat. | HIGHLIGHT (D001~) |

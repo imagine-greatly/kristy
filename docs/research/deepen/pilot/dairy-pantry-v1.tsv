@@ -16,10 +16,10 @@ cream_cheese	Cream cheese	Organic	Ingredients: cream, milk, salt, cultures; no g
 cottage_cheese	Cottage cheese	Organic	Cultures named; carrageenan or gums not in the ingredient list.	WAPF lists lowfat and fat-free cottage cheese, and cottage cheese made with additives, under avoid.	D044
 ice_cream	Ice cream	Organic	Cream, milk, egg yolks and real vanilla; no 'flavor' words or extenders.	WAPF rates simple flavors made with milk, cream, egg yolks and real vanilla as good and avoids extenders and natural flavors.	D032
 goat_sheep_dairy	Goat and sheep dairy	Organic	Ingredients: milk and cultures only.	?	?
-oat_milk	Oat milk	Skip	'Oat milk' or 'oat drink' on the carton means skip.	WAPF lists processed imitation milk made from soy, rice, almonds, oats or hemp under avoid.	D037
-almond_milk	Almond milk	Skip	'Almond milk' or 'almond drink' on the carton means skip.	WAPF lists processed imitation milk made from soy, rice, almonds, oats or hemp under avoid.	D037
-soy_milk	Soy milk	Skip	'Soy protein isolate' in the ingredients, or 'soy milk' on the carton.	WAPF lists imitation milk made from soy under avoid and says industrially processed soy protein isolate carries natural toxins and ones created in processing.	D037,D028
-coconut_milk_beverage	Coconut milk drink	Skip	Boxed (aseptic) carton means skip; canned coconut milk passes.	WAPF lists coconut products in aseptic boxes under avoid.	D003
+oat_milk	Oat milk	Organic	Ingredients: oats, water, salt; no added oil. Sweetened or seed-oil versions skip.	?	?
+almond_milk	Almond milk	Organic	Ingredients: almonds and water; unsweetened. Sweetened or gum-and-oil blends skip.	?	?
+soy_milk	Soy milk	Organic	Ingredients: organic soybeans and water. Soy protein isolate or sweetened versions skip.	?	?
+coconut_milk_beverage	Coconut milk drink	Organic	Ingredients: coconut and water; unsweetened. Sweetened or oil-blend versions skip.	?	?
 canned_coconut_milk	Canned coconut milk	Organic	Can with coconut and water only; BPA-free lining stated.	WAPF recommends canned whole coconut milk without additives, preferably in BPA-free containers; BPA-free claims are not standardized.	D003,D022
 pick_margarine	Margarine	Skip	'Vegetable oil' leads the ingredient list of any tub or stick.	WAPF lists all margarines, spreads and partially hydrogenated shortenings under avoid.	D001
 plant_butter	Plant butter	Skip	Palm, canola or 'vegetable oil blend' in the ingredient list.	WAPF avoid list covers most commercial vegetable and seed oils and spreads.	D001
