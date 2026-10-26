@@ -163,20 +163,19 @@
       ],
       "category": "beef",
       "question": "Is grass-fed beef worth it?",
-      "decision": "Organic grass-finished beef with the AGA Grassfed seal.",
+      "decision": "Grass-finished beef first, then AGA Grassfed or USDA Organic.",
       "why": "Grass after weaning, no grain and no feedlot. A grass finish gives you leaner beef with a different fat balance.",
       "short_answer": "Look for the AGA Grassfed seal: grass and forage from weaning to harvest, on pasture. Without it, USDA Organic is the floor, and organic beef can be grain-finished for up to 120 days.",
       "detail": "The federal grass-fed marketing standard was withdrawn in 2016, so a bare ‘grass-fed’ claim rests on the producer. The fat profile follows the finish, not the start, so grass to the end is the bar. Traditional food guides put meat from animals allowed to graze at the top, fat and organs included. A grazing farm sold direct, or a butcher who names the farm, is how to know the finish.",
       "evidence_tier": "kristys_standard",
       "sources": [
-        {
-          "name": "American Grassfed Association",
-          "url": "https://www.americangrassfedcertified.com/"
-        }
+        "Weston A. Price Foundation: Shopping Guide (Best, Good and Avoid tiers)",
+        "Weston A. Price Foundation: Splendor from Grass",
+        "Weston A. Price Foundation: Grass-fed culinary guide"
       ],
       "kristy_take": "Go gently with the heat: this leaner beef dries out at feedlot-beef heat. Look for 100% grass-fed from a farm that names its finish.",
       "instead": "Grass-finished ground beef or chuck: grass after weaning, no grain or feedlot, in the everyday cuts.",
-      "cart_pick": "Organic grass-finished ground beef",
+      "cart_pick": "Grass-finished ground beef",
       "buying_tips": [
         "“Grass-fed” alone can mean a grain finish; grass to the end makes leaner beef.",
         "‘100% grass-fed’ and ‘grass-finished’ mean the same thing. Either one is the claim.",
@@ -241,10 +240,6 @@
       "detail": "Two label rules do the work. 9 CFR 381.117(h): a raw poultry product with added solution must carry a descriptive designation stating the percentage of added solution as a number with the % sign, e.g. ‘contains 15% added solution of water and salt’, plus the common or usual name of every solution ingredient in descending order; the word ‘enhanced’ may not appear in the product name. 9 CFR 381.118(a): any poultry product fabricated from two or more ingredients lists them by common or usual name in descending order of predominance; ingredients at 2 percent or less may trail the list under a ‘contains 2% or less of’ line. 9 CFR 424.21 permits sodium and potassium phosphates in poultry ‘to decrease the amount of cooked out juices’, capped at 0.5 percent of total product, and sodium hydroxide only alongside phosphate at one part to four. FSIS’s labeling glossary defines a bone-in bird injected or marinated with broth, water, fat or flavor enhancers as ‘basted’ or ‘self basted’, about 3 percent solution, with the solution ingredients named on the label. At the shelf the two kinds read differently: a plain bird’s panel is one line (one store’s organic rotisserie chicken lists ‘organic chicken’ and nothing else); a solution bird lists water and its seasoning after the chicken, in descending order as 381.118 requires; a phosphate, a starch and a sweetener are the usual entries. On the sticker, the second word on the list settles it: ‘salt’ or ‘spices’ is a plain bird; ‘water’ followed by ‘sodium phosphate’, ‘modified food starch’, ‘sugar’ is a solution bird, roasted. Both are cooked chicken. One of them is also a marinade injection. Two federal label rules settle it; the ingredient list just needs reading.",
       "evidence_tier": "kristys_standard",
       "sources": [
-        {
-          "name": "Electronic Code of Federal Regulations",
-          "url": "https://www.ecfr.gov/current/title-7/section-205.237"
-        },
         {
           "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
           "url": "https://drcate.com/hateful-eight/"
@@ -342,19 +337,19 @@
       ],
       "category": "beef",
       "question": "Which beef cut should I buy?",
-      "decision": "Grass-fed organic whole beef cuts with AGA certification.",
+      "decision": "100% grass-fed and grass-finished beef, in whole cuts.",
       "why": "Grass-fed sourcing: see Beef.",
       "short_answer": "Chuck and round are working muscles; loin and rib sit along the back and do little work. Any raw cut pushed through needles or blades must carry ‘mechanically tenderized’, ‘needle tenderized’ or ‘blade tenderized’ in its name.",
       "detail": "Chuck is shoulder and round is rear leg; both are working muscles. Loin and rib sit along the back and do little work. The product name for raw beef that has been mechanically tenderized, by needle or by blade, must say so.",
       "evidence_tier": "kristys_standard",
       "sources": [
-        {
-          "name": "Cornell Legal Information Institute",
-          "url": "https://www.law.cornell.edu/cfr/text/7/205.237"
-        }
+        "Flannery Beef “The Complete Guide to Beef Cuts” https://flannerybeef.com/blogs/news/the-complete-guide-to-beef-cuts",
+        "9 CFR 317.2 (label rule, raw meaning of the term)",
+        "Weston A. Price Foundation: Shopping Guide (Best, Good and Avoid tiers)",
+        "Weston A. Price Foundation: Grass-fed culinary guide"
       ],
       "kristy_take": "The cut name tells you where on the animal the meat came from. Raw beef pushed through needles or blades must also say ‘mechanically tenderized’ in its name.",
-      "cart_pick": "Organic grass-fed whole beef cuts",
+      "cart_pick": "100% grass-fed or grass-finished whole chuck",
       "buying_tips": [
         "How it was raised matters more than the cut; Prime and Choice only grade marbling.",
         "Chuck is shoulder and round is rear leg: the working muscles.",
@@ -435,19 +430,21 @@
       ],
       "category": "beef",
       "question": "What ground beef lean ratio should I get?",
-      "decision": "Organic grass-finished ground beef with its lean ratio printed.",
+      "decision": "Grass-fed ground beef first, then organic, nothing added.",
       "why": "Ground beef and grass-fed sourcing: see Beef.",
       "short_answer": "Pick organic ground beef with beef as the only ingredient. The lean/fat ratio on the front is a separate number.",
       "detail": "Both ‘ground beef’ and ‘hamburger’ cap at 30% fat, so the name is where the difference lives. ‘Ground chuck’, ‘round’ or ‘sirloin’ names the cut it came from. The ingredient list should be beef, with seasoning at most. ‘Ground beef’ may not contain added water, phosphates, binders or extenders, and may not have beef fat added as such. ‘Hamburger’ may. The ratio on the pack is lean to fat by weight. 80/20 is 20% fat; 90/10 is leaner. The name ‘ground beef’ allows no added water, phosphates, binders or extenders. 9 CFR 319.15(a) defines ‘Ground Beef’ as chopped fresh or frozen beef, fat capped at 30 percent, no added water, binders or extenders, with trimmed cheek meat the one allowed addition and capped at 25 percent. A product with liver or heart in it falls outside that definition, and 9 CFR 317.2 then requires a common or usual name or a truthful descriptive designation plus a full ingredient statement in descending order. ‘Ancestral blend’ and ‘primal blend’ are producer names for exactly this product, not standardized terms. Two label examples: one blend states 8 percent organ meats (4 percent liver, 4 percent heart, 92 percent muscle); another states 92 percent ground beef, 5 percent liver, 3 percent heart. Liver is the retinol-dense ingredient: the NIH fact sheet lists pan-fried beef liver at 6,582 mcg RAE per 3 ounces, against a tolerable upper intake of 3,000 mcg a day for adults. A blend that states its shares is plain ground beef with a measured amount of organ folded in. A blend carries its own descriptive name and a full ingredient list. By NIH figures, 3 ounces of pan-fried beef liver holds more than twice the adult daily vitamin A upper intake. Producers print shares such as 8 percent organ, or 5 percent liver plus 3 percent heart. Organs are part of eating the whole animal, and a blend puts them in a familiar grind.",
       "evidence_tier": "established",
       "sources": [
-        {
-          "name": "Cornell Legal Information Institute",
-          "url": "https://www.law.cornell.edu/cfr/text/7/205.238"
-        }
+        "9 CFR 319.15 (label rule, raw meaning of the term)",
+        "9 CFR 317.2 (label rule, raw meaning of the term)",
+        "Force of Nature, Grass Fed Beef Ancestral Blend, product page (8% organ meats; 4% heart, 4% liver, 92% muscle meat) https://forceofnature.com/products/regenerative-beef-ancestral-blend",
+        "Seven Sons Farms, Ground Beef Primal Blend, product page (92% ground beef, 5% liver, 3% heart) https://sevensons.net/store/product/ground-beef-ancestral-blend",
+        "Weston A. Price Foundation: Shopping Guide (Best, Good and Avoid tiers)",
+        "Weston A. Price Foundation: The Liver Files"
       ],
       "kristy_take": "Federal rules keep added water, binders and organs out of ‘ground beef’, so a blend needs its own name. Plain ‘ground beef’ allows no added fat either; ‘hamburger’ may add fat.",
-      "cart_pick": "Organic grass-finished ground beef",
+      "cart_pick": "Grass-fed ground beef, beef only",
       "buying_tips": [
         "A few percent liver and heart still tastes like regular ground beef.",
         "Read the name: ‘ground beef’ may not have beef fat added as such; ‘hamburger’ may.",
@@ -593,19 +590,32 @@
       ],
       "category": "poultry_eggs",
       "question": "What do cage-free, free-range, and pasture-raised eggs actually mean?",
-      "decision": "Organic eggs with a Certified Humane Pasture Raised seal.",
-      "why": "Pasture raised under Certified Humane means 108 square feet per hen versus 2 for free range.",
+      "decision": "Soy-free, corn-free eggs from hens on pasture.",
+      "why": "A hen eats what she is given. Organic, pasture and feed words tell you about both her food and her life.",
       "short_answer": "Pick USDA Organic pasture-raised eggs with a Certified Humane or AWA seal. Certified Humane pasture-raised means 108 square feet per hen, outdoors daily. Cage-free and vegetarian-fed say nothing about time outdoors.",
       "detail": "Both ‘soy-free’ and ‘corn-free’ have to be printed outright, because nothing else on the carton implies them, and most cartons never do. The claim clusters on small regional brands, farm stands and farmers markets rather than on the national pasture-raised labels, so the supermarket case is often the wrong place to look for it. Organic reaches the ration from a different direction: organic feed, no GMOs, no routine antibiotics, no added hormones. Pasture-raised paired with a third-party certification (Certified Humane, Animal Welfare Approved) is a real and audited claim about space, the strongest of the space words, and it still sits below feed here. Cage-free and free-range are weaker again, and the words on their own are not worth paying up for. Cage-free, free-range and pasture-raised describe how much room the hen had and whether she got outside, and not one of them says a word about what went in the trough. The standard is all three on one carton: what she ate, how it was grown, and how much room she had.",
       "evidence_tier": "kristys_standard",
       "sources": [
+        "The Cornucopia Institute “Organic Egg Scorecard Criteria”, “Add On Labels” section https://www.cornucopia.org/egg-scorecard-criteria/",
+        "Poultry-science references on eggshell pigmentation",
+        "Hendrix Genetics “Eggshell color Eggsplained” https://layinghens.hendrix-genetics.com/en/articles/eggshell-color-eggsplained/",
+        "American Egg Board “Egg Grades and Sizes” (Grade AA, A and B scored on interior and shell quality at packing, separate from the weight classes)",
+        "Pete & Gerry’s “Guide to Egg Sizes and Weights” https://www.peteandgerrys.com/blogs/field-notes/egg-size-guide",
+        "7 CFR 205.237 (label rule, raw meaning of the term)",
+        "Poultry-science literature on omega-3 enrichment of eggs",
+        "The Cornucopia Institute, egg scorecard criteria, “Feed Sourcing” section https://www.cornucopia.org/egg-scorecard-criteria/ (feed grown on-farm ranks above local organic growers, above multiple suppliers with no traceability standard; feed traceability concerns, no brands named)",
+        "EU marketing standards for eggs (unwashed, ambient storage)",
+        "Feed Strategy, “Feed formulations for US white layers in the production phase” (corn the main energy source, soybean meal the main protein) https://www.feedstrategy.com/animal-feed-formulations-library/us-white-layers-production-phase",
         {
-          "name": "Certified Humane",
-          "url": "https://certifiedhumane.org/decoding-the-carton-how-to-buy-clean-humane-eggs/"
-        }
+          "name": "100 Days of Real Food: Egg labels",
+          "url": "https://www.100daysofrealfood.com/egg-labels-whats-to-look-for/"
+        },
+        "Weston A. Price Foundation: Shopping Guide (Best, Good and Avoid tiers)",
+        "Weston A. Price Foundation: Eat Your Eggs",
+        "Miller's Bio Farm: Soy-free eggs"
       ],
       "kristy_take": "Pasture alone leaves the feed question open. Find all three claims together, then check the pack date: a fresh egg fries with a tall yolk and tight white.",
-      "cart_pick": "Organic Certified Humane pasture-raised eggs",
+      "cart_pick": "Corn- and soy-free eggs from hens on pasture",
       "buying_tips": [
         "Most hens eat corn and soy, organic ones too, and her feed becomes the egg.",
         "‘Soy-free’ and ‘corn-free’ are the only words on the carton about the ration.",
@@ -7777,10 +7787,6 @@
       "decision": "Organic winter squash and pumpkin are the pick.",
       "sources": [
         {
-          "name": "F189 — extension.usu.edu",
-          "url": "https://extension.usu.edu/fscreate/files/2020-22-staff/Shopping_for_Vegetables.pdf"
-        },
-        {
           "name": "F127 — law.cornell.edu",
           "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
         }
@@ -8393,11 +8399,15 @@
         "beef bones",
         "knuckle bones"
       ],
-      "decision": "Organic grass-finished marrow bones: certified organic feed and outdoor access, with an AGA seal.",
+      "decision": "Ask your meat counter for grass-fed, grass-finished marrow or knuckle soup bones.",
       "sources": [
         {
-          "name": "American Grassfed Association",
-          "url": "https://www.americangrassfedcertified.com/"
+          "name": "MSU Extension: Are you throwing away valuable food? Part three: Meat",
+          "url": "https://www.canr.msu.edu/news/are_you_throwing_away_valuable_food_part_three_meat"
+        },
+        {
+          "name": "American Grassfed Association: Our Standards",
+          "url": "https://www.americangrassfed.org/about-us/our-standards/"
         }
       ]
     },
@@ -8448,10 +8458,10 @@
       "detail": "Seafood must be labeled with an acceptable market name for its species, so the name is the check. Wild cod or halibut by name, fresh or frozen at sea, is the pick. Tilapia, catfish and trout from farms sit on traditional avoid lists. Fillets should sit on ice, not buried in it. For frozen packs, skip tears, ice crystals, liquid inside, or soft flesh.",
       "evidence_tier": "established",
       "sources": [
-        {
-          "name": "NOAA Fisheries",
-          "url": "https://www.fisheries.noaa.gov/species/pacific-cod"
-        }
+        "https://www.americastestkitchen.com/lessons/articles/431-buying-and-storing-white-fish",
+        "Weston A. Price Foundation: Shopping Guide (Best, Good and Avoid tiers)",
+        "Wellness Mama: Fish farming",
+        "Wellness Mama: Homemade fish sticks"
       ],
       "kristy_take": "The species name comes first. Firm flesh and a clean smell confirm the piece.",
       "cart_pick": "Wild-caught white fish fillet",
@@ -8670,10 +8680,7 @@
       "detail": "Wet-packed scallops are treated with water and sodium tripolyphosphate (STPP), a sodium phosphate. The treatment makes them hold extra water. Packaged wet scallops should disclose the phosphate and water in the ingredients. Dry-packed scallops are untreated. Sea scallop meat is white, orange or pink. Smaller bay scallops are white, light tan or pinkish.",
       "evidence_tier": "established",
       "sources": [
-        {
-          "name": "Maine Sea Grant",
-          "url": "https://seagrant.umaine.edu/maine-seafood-guide-scallops/"
-        }
+        "Maine Sea Grant"
       ],
       "kristy_take": "The ingredients line settles wet or dry. Dry is the one with nothing added.",
       "cart_pick": "Dry-packed scallops",
@@ -8743,10 +8750,7 @@
       "detail": "Tags on live shellfish sacks name the certified shipper, the harvest date and the harvest area. The tag stays on until the container is empty, then is kept on file for 90 days. Unfrozen shucked containers under a half gallon carry a “Sell By” or “Best If Used By” date. Shucked oysters should be plump, with a mild odor and clear liquid.",
       "evidence_tier": "established",
       "sources": [
-        {
-          "name": "Pacific Coast Shellfish Growers Association",
-          "url": "https://pcsga.org/buying-tips/"
-        }
+        "Pacific Coast Shellfish Growers Association"
       ],
       "kristy_take": "The tag first, then the tap. A shell that will not close stays at the store.",
       "cart_pick": "Tagged live shellfish with closed shells",

@@ -425,6 +425,10 @@
         {
           "name": "Weston A. Price Foundation",
           "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        },
+        {
+          "name": "CSPI: Artificial colorings (synthetic food dyes)",
+          "url": "https://www.cspi.org/node/7436"
         }
       ],
       "avoid": "Skip juice drinks listing benzoates, benzoic acid, BVO or artificial color."
@@ -468,11 +472,15 @@
     {
       "id": "pick_soup_bones",
       "kind": "pick",
-      "decision": "Organic grass-finished marrow bones: certified organic feed and outdoor access, with an AGA seal.",
+      "decision": "Ask your meat counter for grass-fed, grass-finished marrow or knuckle soup bones.",
       "sources": [
         {
-          "name": "American Grassfed Association",
-          "url": "https://www.americangrassfedcertified.com/"
+          "name": "MSU Extension: Are you throwing away valuable food? Part three: Meat",
+          "url": "https://www.canr.msu.edu/news/are_you_throwing_away_valuable_food_part_three_meat"
+        },
+        {
+          "name": "American Grassfed Association: Our Standards",
+          "url": "https://www.americangrassfed.org/about-us/our-standards/"
         }
       ]
     },
@@ -1308,7 +1316,7 @@
         }
       ],
       "why": "Grass after weaning, no grain and no feedlot. A grass finish gives you leaner beef with a different fat balance.",
-      "cart_pick": "Organic grass-finished ground beef"
+      "cart_pick": "100% grass-fed or grass-finished ground beef"
     },
     "beef_cuts_basics": {
       "decision": "Grass-fed organic whole beef cuts with AGA certification.",
