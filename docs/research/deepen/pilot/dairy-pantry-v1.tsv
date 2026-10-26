@@ -1,96 +1,96 @@
 # aisles: dairy, oils, grains-bread, sweeteners, nuts-seeds, canned-jarred, snacks-condiments, beverages
-id	name	verdict	cue	why_tap	source_id
+id	name	verdict	cue	why_tap	source_id	status
 # premise-dairy: Plain, whole, cultured; milk and cultures are the only ingredients.
-whole_vs_reduced_fat_milk	Milk	Organic	Whole fat on the front; 'ultra-pasteurized' printed near the date means skip.	Ultra-pasteurized means heated at or above 280 °F for at least 2 seconds, and WAPF lists ultrapasteurized milk products to avoid.	D013,D007
-yogurt_plain_vs_flavored	Plain yogurt	Organic	Ingredient list reads milk and named cultures, with no sugar, pectin or flavors.	Cornucopia scores yogurts down for flavors, preservatives and pectin or gums, and plain tubs let the shopper control sugar.	D009,D010
-yogurt_flavored	Flavored yogurt	Skip	Skip when 'organic sugar' or 'natural flavors' sits in the ingredient list.	Cornucopia gives zero points to yogurts listing only organic sugar, and organic rules permit natural flavors.	D011
-plain_kefir	Kefir	Organic	Whole milk kefir; ingredients are milk and kefir cultures.	WAPF rates plain, whole yogurt and kefir without added vitamins, preferably grass-fed, as good.	D041
-sour_cream	Sour cream	Organic	Ingredients: cream and cultures; no starch, gums or flavor words.	WAPF puts cream, cultured cream and sour cream with additives on its avoid list.	D008
-cream_vs_creamer	Cream	Organic	Cream is the only ingredient; 'ultra-pasteurized' not stamped on the carton.	WAPF lists ultra-pasteurized cream under avoid; ultra-pasteurized means 280 °F for at least 2 seconds.	D043,D013
-creamer_nondairy	Non-dairy creamer	Skip	Oil or sugar listed ahead of any dairy word in the ingredients.	WAPF lists non-dairy creamers under avoid.	D043
-grassfed_butter	Butter	Organic	Ingredients: cream, salt; skip any 'natural flavor' entry.	WAPF rates pasteurized butter without natural flavors, preferably grass-fed, as good.	D042
-ghee	Ghee	Organic	Ingredient reads butterfat or clarified butter alone; no oil blended in.	WAPF rates pasteurized ghee without natural flavors, preferably grass-fed, as good.	D042
-cheese_real_vs_processed	Cheese	Organic	Name reads 'cheese', never 'cheese food' or 'cheese product'.	Pasteurized process cheese is cheeses ground and mixed with heat, a different standard of identity than the cheese itself.	D014
-cheese_food_slices	Cheese food slices	Skip	'Pasteurized process cheese food' or 'cheese product' printed on the wrapper.	Process cheese is comminuted and mixed with heat from one or more cheeses, not a single made cheese.	D014
-cream_cheese	Cream cheese	Organic	Ingredients: cream, milk, salt, cultures; no gums or added thickeners.	WAPF lists lowfat and fat-free cream cheese, and cream cheese made with additives, under avoid.	D044
-cottage_cheese	Cottage cheese	Organic	Cultures named; carrageenan or gums not in the ingredient list.	WAPF lists lowfat and fat-free cottage cheese, and cottage cheese made with additives, under avoid.	D044
-ice_cream	Ice cream	Organic	Cream, milk, egg yolks and real vanilla; no 'flavor' words or extenders.	WAPF rates simple flavors made with milk, cream, egg yolks and real vanilla as good and avoids extenders and natural flavors.	D032
-goat_sheep_dairy	Goat and sheep dairy	Organic	Ingredients: milk and cultures only.	?	?
-oat_milk	Oat milk	Organic	Ingredients: oats, water, salt; no added oil. Sweetened or seed-oil versions skip.	?	?
-almond_milk	Almond milk	Organic	Ingredients: almonds and water; unsweetened. Sweetened or gum-and-oil blends skip.	?	?
-soy_milk	Soy milk	Organic	Ingredients: organic soybeans and water. Soy protein isolate or sweetened versions skip.	?	?
-coconut_milk_beverage	Coconut milk drink	Organic	Ingredients: coconut and water; unsweetened. Sweetened or oil-blend versions skip.	?	?
-canned_coconut_milk	Canned coconut milk	Organic	Can with coconut and water only; BPA-free lining stated.	WAPF recommends canned whole coconut milk without additives, preferably in BPA-free containers; BPA-free claims are not standardized.	D003,D022
-pick_margarine	Margarine	Skip	'Vegetable oil' leads the ingredient list of any tub or stick.	WAPF lists all margarines, spreads and partially hydrogenated shortenings under avoid.	D001
-plant_butter	Plant butter	Skip	Palm, canola or 'vegetable oil blend' in the ingredient list.	WAPF avoid list covers most commercial vegetable and seed oils and spreads.	D001
-pick_whipped_topping	Whipped topping	Skip	'Hydrogenated' or vegetable oil on a canned or tub topping.	WAPF lists canned whipped cream and imitation whipped cream made with vegetable oils under avoid.	D008
+whole_vs_reduced_fat_milk	Milk	Organic	Whole fat on the front; 'ultra-pasteurized' printed near the date means skip.	Ultra-pasteurized means heated at or above 280 °F for at least 2 seconds, and WAPF lists ultrapasteurized milk products to avoid.	D013,D007	
+yogurt_plain_vs_flavored	Plain yogurt	Organic	Ingredient list reads milk and named cultures, with no sugar, pectin or flavors.	Cornucopia notes certified organic yogurt can still carry a high amount of sugar, and plain organic tubs let the shopper add their own fruit; WAPF rates plain, whole yogurt as good.	D061,D041	
+yogurt_flavored	Flavored yogurt	Skip	Skip when 'organic sugar' or 'natural flavors' sits in the ingredient list.	WAPF lists sweetened yogurt and kefir under avoid, and Cornucopia scores yogurts on flavors, thickeners and the type of sweetener used.	D041,D062	
+plain_kefir	Kefir	Organic	Whole milk kefir; ingredients are milk and kefir cultures.	WAPF rates plain, whole yogurt and kefir without added vitamins, preferably grass-fed, as good.	D041	
+sour_cream	Sour cream	Organic	Ingredients: cream and cultures; no starch, gums or flavor words.	WAPF lists sour cream with additives, and homogenized cream, under avoid.	D049	
+cream_vs_creamer	Cream	Organic	Cream is the only ingredient; 'ultra-pasteurized' not stamped on the carton.	WAPF lists ultra-pasteurized cream under avoid; ultra-pasteurized means 280 °F for at least 2 seconds.	D043,D013	
+creamer_nondairy	Non-dairy creamer	Skip	Oil or sugar listed ahead of any dairy word in the ingredients.	WAPF lists non-dairy creamers under avoid.	D043	
+grassfed_butter	Butter	Organic	Ingredients: cream, salt; skip any 'natural flavor' entry.	WAPF rates pasteurized butter without natural flavors, preferably grass-fed, as good.	D042	
+ghee	Ghee	Organic	Ingredient reads butterfat or clarified butter alone; no oil blended in.	WAPF rates pasteurized ghee without natural flavors, preferably grass-fed, as good.	D042	
+cheese_real_vs_processed	Cheese	Organic	Name reads 'cheese', never 'cheese food' or 'cheese product'.	Pasteurized process cheese is cheeses ground and mixed with heat, a different standard of identity than the cheese itself.	D014	
+cheese_food_slices	Cheese food slices	Skip	'Pasteurized process cheese food' or 'cheese product' printed on the wrapper.	Process cheese is comminuted and mixed with heat from one or more cheeses, not a single made cheese.	D014	
+cream_cheese	Cream cheese	Organic	Ingredients: cream, milk, salt, cultures; no gums or added thickeners.	WAPF lists lowfat and fat-free cream cheese, and cream cheese made with additives, under avoid.	D044	
+cottage_cheese	Cottage cheese	Organic	Cultures named; carrageenan or gums not in the ingredient list.	WAPF lists lowfat and fat-free cottage cheese, and cottage cheese made with additives, under avoid.	D044	
+ice_cream	Ice cream	Organic	Cream, milk, egg yolks and real vanilla; no 'flavor' words or extenders.	WAPF rates simple flavors made with milk, cream, egg yolks and real vanilla as good and avoids extenders and natural flavors.	D032	
+goat_sheep_dairy	Goat and sheep dairy	Organic	Ingredients: milk and cultures only.	?	?	HOLD
+oat_milk	Oat milk	Organic	Ingredients: oats, water, salt; no added oil. Sweetened or seed-oil versions skip.	?	?	HOLD
+almond_milk	Almond milk	Organic	Ingredients: almonds and water; unsweetened. Sweetened or gum-and-oil blends skip.	?	?	HOLD
+soy_milk	Soy milk	Organic	Ingredients: organic soybeans and water. Soy protein isolate or sweetened versions skip.	?	?	HOLD
+coconut_milk_beverage	Coconut milk drink	Organic	Ingredients: coconut and water; unsweetened. Sweetened or oil-blend versions skip.	?	?	HOLD
+canned_coconut_milk	Canned coconut milk	Organic	Can with coconut and water only; BPA-free lining stated.	WAPF recommends canned whole coconut milk without additives, preferably in BPA-free containers.	D003	
+pick_margarine	Margarine	Skip	'Vegetable oil' leads the ingredient list of any tub or stick.	WAPF lists all margarines, spreads and partially hydrogenated shortenings under avoid.	D050,D051	
+plant_butter	Plant butter	Skip	Palm, canola or 'vegetable oil blend' in the ingredient list.	WAPF avoid list covers spreads combining butter with vegetable oils and most commercial vegetable and seed oils.	D050,D051	
+pick_whipped_topping	Whipped topping	Skip	'Hydrogenated' or vegetable oil on a canned or tub topping.	WAPF lists canned whipped cream and imitation whipped cream made with vegetable oils under avoid.	D049	
 # premise-oils: One named oil, dated and dark-bottled; unnamed vegetable oil blends are the skip.
-cooking_oils	Cooking oil	Organic	One oil named on the label: olive, coconut or avocado, not a blend.	WAPF avoids most commercial vegetable and seed oils, so a single named oil is the alternative.	D001
-oil_blend_vegetable	Vegetable oil blend	Skip	Bottle reads 'vegetable oil' or lists soybean, canola, corn, cottonseed.	WAPF avoid list names cottonseed, soy, corn and canola oils.	D001
-olive_oil_grades	Olive oil	Organic	Harvest date printed, dark glass or tin, 'extra virgin' on the front.	UC Davis says dark glass and tins protect oil and a harvest date shows freshness.	D015
-avocado_oil	Avocado oil	Organic	Harvest or production date printed; virgin, not 'refined', on the label.	UC Davis advises choosing avocado oil close to its harvest or production date.	D016
-label_cold_pressed_expeller	Cold-pressed oils	Organic	'Cold pressed' or 'expeller pressed' printed on the front of the bottle.	Organic handling rules bar volatile synthetic solvents as processing aids.	D017
-lard_tallow	Lard and tallow	Organic	Lard or tallow the only ingredient; 'pastured' or 'grass-fed' on the label.	WAPF rates lard from pigs raised outdoors and tallow from grass-fed cows and sheep as best fats.	D031
-rancidity_check	Rancid oil check	Organic	Smell of stale nuts or Play-Doh on opening; clear plastic bottle gets skipped.	UC Davis names stale nuts or Play-Doh as the smell of rancid oil and clear plastic as least protective.	D016,D015
+cooking_oils	Cooking oil	Organic	One oil named on the label: olive, coconut or avocado, not a blend.	WAPF avoids most commercial vegetable and seed oils and lists extra virgin olive oil and avocado oil among good fats, so a single named oil is the alternative.	D051,D059	
+oil_blend_vegetable	Vegetable oil blend	Skip	Bottle reads 'vegetable oil' or lists soybean, canola, corn, cottonseed.	WAPF avoid list names cottonseed, soy, corn and canola oils.	D051	
+olive_oil_grades	Olive oil	Organic	Harvest date printed, dark glass or tin, 'extra virgin' on the front.	UC Davis says dark glass, metal tins and bag-in-box protect oil from light and a harvest date shows freshness; WAPF lists extra virgin olive oil among good fats.	D065,D069,D059	
+avocado_oil	Avocado oil	Organic	Harvest or production date printed; virgin, not 'refined', on the label.	UC Davis advises choosing avocado oil close to its harvest or production date, and WAPF lists avocado oil among good fats.	D064,D059	
+label_cold_pressed_expeller	Cold-pressed oils	Organic	'Cold pressed' or 'expeller pressed' printed on the front of the bottle.	Organic handling rules bar volatile synthetic solvents as processing aids.	D017	
+lard_tallow	Lard and tallow	Organic	Lard or tallow the only ingredient; 'pastured' or 'grass-fed' on the label.	WAPF rates lard from pigs raised outdoors and tallow from grass-fed cows and sheep as best fats.	D031	
+rancidity_check	Rancid oil check	Organic	Smell of stale nuts or Play-Doh on opening; clear plastic bottle gets skipped.	UC Davis names stale nuts or Play-Doh as the smell of rancid oil and clear plastic as least protective.	D066,D065	
 # premise-grains-bread: One whole grain named first; sourdough over enriched; organic for glyphosate.
-fam_whole_grains	Whole grains	Organic	Ingredient list is one grain, with 'whole' before its name.	WAPF says grains are sprayed with glyphosate just before harvest, so buy organic.	D018
-oats_steelcut_rolled_instant	Oats	Organic	Ingredient reads whole grain oats; instant packets listing flavor or sugar fail.	Organic bars excluded methods, and WAPF says grains are soaked, sprouted or fermented to neutralize phytic acid.	D029,D027
-rice_arsenic	Rice	Organic	Rice the only ingredient; brown rice syrup is a separate skip.	Consumer Reports found arsenic in organic rice baby cereal, rice cereals, brown rice and white rice products.	D026
-grains_beyond_rice	Quinoa, millet, buckwheat	Organic	Quinoa, millet or buckwheat the only ingredient; organic seal.	WAPF lists all non-organic grains and legumes under avoid; MSU Extension lists millet as a whole grain.	D033,D046
-wild_rice	Wild rice	Organic	'Wild rice' is the sole ingredient; no blend with white rice.	WAPF rates wildcrafted wild rice as best and lists white rice under avoid; MSU Extension lists wild rice as a whole grain.	D033,D046
-cornmeal_polenta_grits	Cornmeal and grits	Organic	USDA Organic seal on the bag; skip 'degerminated' cornmeal.	Corn is on the Non-GMO Project High-Risk List, and the Whole Grains Council says degerminated corn meal never describes a whole grain.	F130,D047
-fam_pulses	Lentils and split peas	Organic	One legume named; soak-and-cook directions printed on the bag.	WAPF says legumes are soaked or sprouted to neutralize phytic acid and enzyme inhibitors.	D027
-beans_dried_vs_canned	Beans	Organic	Dry bag lists beans alone; canned label states a BPA-free lining.	BPA-free can claims are not standardized, so a dry bag removes the question.	D022
-fam_dry_pasta	Pasta	Organic	Durum or whole wheat semolina named; no 'enriched' entry in the ingredients.	WAPF rates organic whole grain pasta as good and lists white flour products including pasta under avoid.	D033
-flour_basics	Flour	Organic	'Whole wheat' on the bag; 'bleached' or 'enriched' flour means skip.	WAPF says avoid white flour and white flour products, and lists bleached white flour under avoid.	D007,D039
-specialty_flours	Alternative flours	Organic	One flour named in the ingredient list; organic printed on the bag.	?	?
-label_multigrain_vs_whole_grain	Whole grain label	Organic	'100% whole grain' or 'whole' before the grain name; 'multigrain' alone is not enough.	MSU Extension says multigrain is a mixture of grains, possibly all or mostly refined; the Whole Grains Council says it may describe refined grains.	D046,D047
-breakfast_cereal	Breakfast cereal	Skip	Extruded o's, flakes or puffs, or 'natural' printed on the box.	WAPF says extrusion distorts grain proteins, and Cornucopia flags misuse of the term natural on cereal.	D019,D025
-sourdough	Sourdough bread	Organic	'Sourdough' with a starter or culture named in the ingredients.	WAPF rates sourdough bread from organic whole grain flour as best and says genuine sourdough fermentation breaks down gluten.	D038,D020
-sprouted_grain_bread	Sprouted grain bread	Organic	'Sprouted' before each grain in the ingredient list, not flour first.	WAPF says seeds and grains are soaked, sprouted, fermented or leavened to neutralize phytic acid.	D027
-sandwich_bread	Sandwich bread	Skip	'Enriched wheat flour', sugar or soybean oil near the top of the ingredient list.	WAPF says avoid white flour and white flour products.	D007
-gluten_free_bread	Gluten-free bread	Skip	Skip unless the first ingredient names a flour with 'whole' before it.	The Whole Grains Council says a first ingredient containing the word whole likely, though not surely, means a mostly whole grain product.	D047
-bagels_buns	Bagels and buns	Skip	Skip when ascorbic acid is listed; sourdough or sprouted on the bag passes.	WAPF rates sourdough, soaked or sprouted breads from organic whole grain flour as best and lists breads containing ascorbic acid under avoid.	D038
+fam_whole_grains	Whole grains	Organic	Ingredient list is one grain, with 'whole' before its name.	WAPF lists all non-organic grains and legumes, most sprayed with Roundup, under avoid.	D052	
+oats_steelcut_rolled_instant	Oats	Organic	Ingredient reads whole grain oats; instant packets listing flavor or sugar fail.	Organic bars excluded methods, and WAPF says grains are soaked, sprouted or fermented to neutralize phytic acid.	D029,D027	
+rice_arsenic	Rice	Organic	Rice the only ingredient; brown rice syrup is a separate skip.	WAPF rates organic whole grain rice among the best grains and lists white rice under avoid.	D053,D052	
+grains_beyond_rice	Quinoa, millet, buckwheat	Organic	Quinoa, millet or buckwheat the only ingredient; organic seal.	WAPF lists all non-organic grains and legumes under avoid; MSU Extension lists millet as a whole grain.	D033,D046	
+wild_rice	Wild rice	Organic	'Wild rice' is the sole ingredient; no blend with white rice.	WAPF rates wildcrafted wild rice as best and lists white rice under avoid; MSU Extension lists wild rice as a whole grain.	D033,D046	
+cornmeal_polenta_grits	Cornmeal and grits	Organic	USDA Organic seal on the bag; skip 'degerminated' cornmeal.	Corn is on the Non-GMO Project High-Risk List, and the Whole Grains Council says degerminated corn meal never describes a whole grain.	F130,D047	
+fam_pulses	Lentils and split peas	Organic	One legume named; soak-and-cook directions printed on the bag.	WAPF rates organic dried beans and lentils as best, with grains and legumes soaked to minimize enzyme inhibitors and phytic acid.	D053,D060	
+beans_dried_vs_canned	Beans	Organic	Dry bag lists beans alone; canned label states a BPA-free lining.	WAPF rates organic dried beans as best and organic canned legumes as good, eaten only once or twice a month.	D053,D054	
+fam_dry_pasta	Pasta	Organic	Durum or whole wheat semolina named; no 'enriched' entry in the ingredients.	WAPF rates organic whole grain pasta as good and lists white flour products including pasta under avoid.	D033	
+flour_basics	Flour	Organic	'Whole wheat' on the bag; 'bleached' or 'enriched' flour means skip.	WAPF says avoid white flour and white flour products, and lists bleached white flour under avoid.	D007,D039	
+specialty_flours	Alternative flours	Organic	One flour named in the ingredient list; organic printed on the bag.	WAPF rates freshly ground, soaked organic whole grain flours as best and organic sprouted flours as good.	D056,D057	
+label_multigrain_vs_whole_grain	Whole grain label	Organic	'100% whole grain' or 'whole' before the grain name; 'multigrain' alone is not enough.	MSU Extension says multigrain is a mixture of grains, possibly all or mostly refined; the Whole Grains Council says it may describe refined grains.	D046,D047	
+breakfast_cereal	Breakfast cereal	Skip	Extruded o's, flakes or puffs, or 'natural' printed on the box.	WAPF lists extruded cold breakfast cereals under avoid, and Cornucopia flags misuse of the term natural on cereal.	D052,D063	
+sourdough	Sourdough bread	Organic	'Sourdough' with a starter or culture named in the ingredients.	WAPF rates sourdough bread from organic whole grain flour as best and says genuine sourdough fermentation breaks down gluten.	D038,D020	
+sprouted_grain_bread	Sprouted grain bread	Organic	'Sprouted' before each grain in the ingredient list, not flour first.	WAPF rates sourdough, soaked or sprouted breads from freshly ground organic whole grain flour as best.	D038	
+sandwich_bread	Sandwich bread	Skip	'Enriched wheat flour', sugar or soybean oil near the top of the ingredient list.	WAPF lists most commercial breads, based on white flour with hydrogenated oils, added gluten, soy or additives, under avoid.	D055	
+gluten_free_bread	Gluten-free bread	Skip	Skip unless the first ingredient names a flour with 'whole' before it.	The Whole Grains Council says a first ingredient containing the word whole likely, though not surely, means a mostly whole grain product.	D047	
+bagels_buns	Bagels and buns	Skip	Skip when ascorbic acid is listed; sourdough or sprouted on the bag passes.	WAPF rates sourdough, soaked or sprouted breads from organic whole grain flour as best and lists breads containing ascorbic acid under avoid.	D038	
 # premise-sweeteners: Name the sweetener on the label; unnamed sugar and syrups are the skip.
-sugars	Sugar	Organic	'Dehydrated cane juice' or organic cane sugar named, not 'sugar' alone.	WAPF lists dehydrated sugar cane juice among best sweeteners and white sugar under avoid.	D006
-maple_syrup	Maple syrup	Organic	'Pure maple syrup' only; corn syrup in the ingredients means imitation.	WAPF lists maple syrup as a best sweetener and imitation syrups under avoid.	D006
-honey_adulteration	Honey	Organic	'Raw' and 'unfiltered' on the jar; cloudy with pollen, not clear.	Ultra-filtration removes all pollen, and pollen is the only sure way to trace honey to a place.	D021,D006
-molasses_whole_cane_sweeteners	Molasses	Organic	Ingredient reads molasses or dehydrated cane juice, no 'sugar' ahead of it.	WAPF names molasses and dehydrated sugar cane juice among its best sweeteners.	D006
-fam_named_sweeteners	Date and coconut sugar	Organic	Sweetener named by its plant in the ingredients, not 'natural sweetener'.	?	?
-refined_syrups	Corn, agave, rice syrups	Skip	Corn syrup, agave or brown rice syrup anywhere in the ingredients.	WAPF avoid list names corn syrup, high fructose corn syrup, brown rice syrup and agave.	D006
+sugars	Sugar	Organic	'Dehydrated cane juice' or organic cane sugar named, not 'sugar' alone.	WAPF lists dehydrated sugar cane juice among best sweeteners and white sugar under avoid.	D006	
+maple_syrup	Maple syrup	Organic	'Pure maple syrup' only; corn syrup in the ingredients means imitation.	WAPF lists maple syrup as a best sweetener and imitation syrups under avoid.	D006	
+honey_adulteration	Honey	Organic	'Raw' and 'unfiltered' on the jar; cloudy with pollen, not clear.	Ultra-filtration removes all pollen, and pollen is the only sure way to trace honey to a place.	D021,D006	
+molasses_whole_cane_sweeteners	Molasses	Organic	Ingredient reads molasses or dehydrated cane juice, no 'sugar' ahead of it.	WAPF names molasses and dehydrated sugar cane juice among its best sweeteners.	D006	
+fam_named_sweeteners	Date and coconut sugar	Organic	Sweetener named by its plant in the ingredients, not 'natural sweetener'.	WAPF lists organic coconut sugar, palm sugar and date sugar among its best natural sweeteners.	D068	
+refined_syrups	Corn, agave, rice syrups	Skip	Corn syrup, agave or brown rice syrup anywhere in the ingredients.	WAPF avoid list names corn syrup, high fructose corn syrup, brown rice syrup and agave.	D006	
 # premise-nuts-seeds: Raw or dry-roasted, sealed, ingredient list is the nut or seed alone.
-fam_nuts_seeds	Nuts and seeds	Organic	Sealed package, ingredient list the nut alone; skip open bins.	WAPF rates fresh organic raw nuts in sealed packages, not from bins, as best.	D002
-nuts_raw_vs_roasted	Roasted nuts	Organic	'Raw' printed on a sealed pack; coated or sugared nuts mean skip.	WAPF rates fresh organic raw nuts in sealed packages as best and lists nut mixtures with sugar, agave or flavorings under avoid.	D002
-nut_butter_ingredients	Nut butter	Organic	Ingredients: nuts, maybe salt; sugar, palm or 'hydrogenated' words mean skip.	WAPF avoid list covers nut butters with hydrogenated oils, sugar, agave or flavorings.	D002
-seeds	Seeds	Organic	Raw seeds sealed with a date; the seed is the lone ingredient.	WAPF rates fresh organic raw seeds in sealed packages as best.	D002
-trail_mix	Trail mix	Skip	Sugar, chocolate or vegetable oil listed beside the nuts.	WAPF avoid list names nut mixtures with partially hydrogenated oils, sugar, chocolate or flavorings.	D002
-nutritional_yeast	Nutritional yeast	Either	Flakes list yeast alone in the ingredients.	?	?
+fam_nuts_seeds	Nuts and seeds	Organic	Sealed package, ingredient list the nut alone; skip open bins.	WAPF rates fresh organic raw nuts in sealed packages, not from bins, as best.	D002	
+nuts_raw_vs_roasted	Roasted nuts	Organic	'Raw' printed on a sealed pack; coated or sugared nuts mean skip.	WAPF rates fresh organic raw nuts in sealed packages as best and lists nut mixtures with sugar, agave or flavorings under avoid.	D002	
+nut_butter_ingredients	Nut butter	Organic	Ingredients: nuts, maybe salt; sugar, palm or 'hydrogenated' words mean skip.	WAPF avoid list covers nut butters with hydrogenated oils, sugar, agave or flavorings.	D002	
+seeds	Seeds	Organic	Raw seeds sealed with a date; the seed is the lone ingredient.	WAPF rates fresh organic raw seeds in sealed packages as best.	D002	
+trail_mix	Trail mix	Skip	Sugar, chocolate or vegetable oil listed beside the nuts.	WAPF avoid list names nut mixtures with partially hydrogenated oils, sugar, chocolate or flavorings.	D002	
+nutritional_yeast	Nutritional yeast	Either	Flakes list yeast alone in the ingredients.	?	?	HOLD
 # premise-canned-jarred: Glass or stated BPA-free cans; ingredients are the food, salt, named oil.
-canned_foods	Canned vegetables and fish	Organic	Label states BPA-free lining; ingredients are the food, water, salt.	BPA-free can claims have no national standard, so a stated claim is a floor, not proof.	D022
-pasta_sauce	Pasta sauce	Organic	Tomatoes first, oil named; no sugar or 'natural flavors' listed.	WAPF lists most commercial sauces, ketchup and other condiments under avoid.	D004
-fam_vegetable_sauces	Jarred vegetable sauces	Organic	Glass jar; vegetables, oil by name, salt and spices, nothing else.	WAPF lists most commercial sauces, ketchup and other condiments under avoid.	D004
-seaweed	Seaweed	Organic	Sea vegetable named alone; country of origin printed, and not China.	WAPF rates whole or powdered sea vegetables not from China as best and lists seaweed from China, even organic, under avoid.	D034
-hummus	Hummus	Organic	Chickpeas, tahini, olive oil named; canola or soybean oil means skip.	WAPF avoid list names canola and soy oils.	D001
+canned_foods	Canned vegetables and fish	Organic	Label states BPA-free lining; ingredients are the food, water, salt.	WAPF rates canned organic tomato products in BPA-free containers as good and lists most canned fruits and vegetables under avoid.	D058	
+pasta_sauce	Pasta sauce	Organic	Tomatoes first, oil named; no sugar or 'natural flavors' listed.	WAPF lists most commercial sauces, ketchup and other condiments under avoid.	D004	
+fam_vegetable_sauces	Jarred vegetable sauces	Organic	Glass jar; vegetables, oil by name, salt and spices, nothing else.	WAPF lists most commercial sauces, ketchup and other condiments under avoid.	D004	
+seaweed	Seaweed	Organic	Sea vegetable named alone; country of origin printed, and not China.	WAPF rates whole or powdered sea vegetables not from China as best and lists seaweed from China, even organic, under avoid.	D034	
+hummus	Hummus	Organic	Chickpeas, tahini, olive oil named; canola or soybean oil means skip.	WAPF avoid list names canola and soy oils.	D051	
 # premise-snacks-condiments: Short list you could stock yourself; no natural flavors, no unnamed oil.
-dried_herbs	Dried herbs	Organic	One herb named on the jar; no blend listing citric acid or MSG.	WAPF avoid list covers spices and blends containing MSG, citric acid or hydrolyzed protein.	D005
-whole_spices	Whole spices	Organic	Whole seeds or sticks of one spice named; no 'spices' blend.	WAPF lists spices and blends containing MSG, citric acid, hydrolyzed protein or other additives under avoid.	D005
-salt	Salt	Either	Grey, pink, red or beige colour; 'iodized' on the label means skip.	WAPF lists unrefined salt in light grey, pink, red or beige as best and iodized salt as avoid.	D005
-baking_powder	Baking powder	Either	'Aluminum-free' printed on the tin.	WAPF lists aluminum-free baking powder as best and baking powder containing aluminum under avoid.	D039
-raw_cider_vinegar	Raw apple cider vinegar	Organic	'Raw' and 'unfiltered' printed; cloudy strands of mother at the bottom.	WAPF lists organic raw vinegars as best.	D004
-vinegar	Distilled vinegar	Skip	'Distilled white vinegar' printed; apple cider, wine or balsamic named passes.	WAPF avoid list names distilled vinegar.	D004
-ketchup_mustard	Ketchup and mustard	Organic	Tomatoes, vinegar, spices listed; no 'natural flavors' entry.	WAPF lists organic mustard and organic fermented ketchup among best condiments.	D004
-soy_sauce	Soy sauce	Organic	Naturally fermented or brewed on the label; liquid amino acids mean skip.	WAPF lists organic raw naturally fermented soy sauce among best and liquid amino acids under avoid.	D004
-condiments	Mayonnaise and dressings	Skip	Soybean or canola oil named as the first oil on the label.	WAPF avoid list names soy and canola oils.	D001
-crackers	Crackers	Skip	Skip when white flour, hydrogenated oil or soy flour is listed.	WAPF lists most commercial crackers based on white flour with partially hydrogenated oils, soy flour or additives under avoid.	D040
-pretzels	Pretzels	Skip	Skip when refined white flour leads the ingredient list.	WAPF says avoid white flour and white flour products.	D007
-snack_bars	Snack bars	Skip	Brown rice syrup, agave or soy protein isolate in the ingredients means skip.	WAPF lists brown rice syrup and agave under avoid and says soy protein isolate carries natural toxins and ones created in processing.	D006,D028
-snacks	Chips	Organic	Potatoes or corn, olive or coconut oil named, salt; nothing else.	WAPF lists most commercial vegetable and seed oils under avoid and olive and organic virgin coconut oil among best.	D001,D031
-rice_cakes_puffed_grains	Rice cakes and puffs	Skip	Puffed grain with flavor coating, 'natural flavor' or syrup in ingredients.	WAPF lists puffed grain products such as rice cakes under avoid.	D033
+dried_herbs	Dried herbs	Organic	One herb named on the jar; no blend listing citric acid or MSG.	WAPF avoid list covers spices and blends containing MSG, citric acid or hydrolyzed protein.	D005	
+whole_spices	Whole spices	Organic	Whole seeds or sticks of one spice named; no 'spices' blend.	WAPF lists spices and blends containing MSG, citric acid, hydrolyzed protein or other additives under avoid.	D005	
+salt	Salt	Either	Grey, pink, red or beige colour; 'iodized' on the label means skip.	WAPF lists unrefined salt in light grey, pink, red or beige as best and iodized salt as avoid.	D005	
+baking_powder	Baking powder	Either	'Aluminum-free' printed on the tin.	WAPF lists aluminum-free baking powder as best and baking powder containing aluminum under avoid.	D039	
+raw_cider_vinegar	Raw apple cider vinegar	Organic	'Raw' and 'unfiltered' printed; cloudy strands of mother at the bottom.	WAPF lists organic raw vinegars as best.	D004	
+vinegar	Distilled vinegar	Skip	'Distilled white vinegar' printed; apple cider, wine or balsamic named passes.	WAPF avoid list names distilled vinegar.	D004	
+ketchup_mustard	Ketchup and mustard	Organic	Tomatoes, vinegar, spices listed; no 'natural flavors' entry.	WAPF lists organic mustard and organic fermented ketchup among best condiments.	D004	
+soy_sauce	Soy sauce	Organic	Naturally fermented or brewed on the label; liquid amino acids mean skip.	WAPF lists organic raw naturally fermented soy sauce among best and liquid amino acids under avoid.	D004	
+condiments	Mayonnaise and dressings	Skip	Soybean or canola oil named as the first oil on the label.	WAPF avoid list names soy and canola oils.	D051	
+crackers	Crackers	Skip	Skip when white flour, hydrogenated oil or soy flour is listed.	WAPF lists most commercial crackers based on white flour with partially hydrogenated oils, soy flour or additives under avoid.	D040	
+pretzels	Pretzels	Skip	Skip when refined white flour leads the ingredient list.	WAPF lists white flour products under avoid.	D052	
+snack_bars	Snack bars	Skip	Brown rice syrup, agave or soy protein isolate in the ingredients means skip.	WAPF lists brown rice syrup and agave under avoid and says soy protein isolate carries natural toxins and ones created in processing.	D006,D028	
+snacks	Chips	Organic	Potatoes or corn, olive or coconut oil named, salt; nothing else.	WAPF lists most commercial vegetable and seed oils under avoid and olive and organic virgin coconut oil among best.	D001,D031	
+rice_cakes_puffed_grains	Rice cakes and puffs	Skip	Puffed grain with flavor coating, 'natural flavor' or syrup in ingredients.	WAPF lists puffed grain products such as rice cakes under avoid.	D033	
 # premise-beverages: Water, tea, coffee beans; sugar or natural flavors listed means skip.
-p_bottled_water	Bottled water	Either	'Spring water' printed on the label.	Spring water must be collected only at the spring or through a bore hole tapping the underground formation feeding the spring.	D024
-coffee_beans	Coffee beans	Organic	Organic seal on the coffee bag.	Cornucopia says harmful chemicals banned in the U.S. are still widely used on coffee abroad, and recommends USDA certified organic.	D045
-tea	Tea	Organic	Leaves or herbs named alone; 'natural flavors' not in the ingredients.	Federal rules define natural flavor as including essential oil, extractive and any product of roasting, heating or enzymolysis.	D023
-p_juice	Juice	Skip	'From concentrate' or 'juice cocktail' on the front, sugar listed.	WAPF lists fruit and vegetable juices under avoid.	D036
-p_soda	Soda	Skip	Sugar, caramel color or 'natural flavors' in the ingredients.	WAPF lists soft drinks and beverages containing natural flavors under avoid.	D036
-p_kombucha	Kombucha	Organic	Organic on the label, in a glass bottle; black tea listed.	WAPF recommends organic lacto-fermented beverages in glass jars, such as kombucha made with organic black tea.	D035
-p_coconut_water	Coconut water	Organic	Coconut water the sole ingredient; aseptic box means skip.	WAPF lists coconut products in aseptic boxes under avoid.	D003
+p_bottled_water	Bottled water	Either	'Spring water' printed on the label.	Spring water must be collected only at the spring or through a bore hole tapping the underground formation feeding the spring.	D024	
+coffee_beans	Coffee beans	Organic	Organic seal on the coffee bag.	Cornucopia says harmful chemicals banned in the U.S. are still widely used on coffee abroad, and recommends USDA certified organic.	D045	HOLD
+tea	Tea	Organic	Leaves or herbs named alone; 'natural flavors' not in the ingredients.	Federal rules define natural flavor as including essential oil, extractive and any product of roasting, heating or enzymolysis.	D023	HOLD
+p_juice	Juice	Skip	'From concentrate' or 'juice cocktail' on the front, sugar listed.	WAPF lists fruit and vegetable juices under avoid.	D036	
+p_soda	Soda	Skip	Sugar, caramel color or 'natural flavors' in the ingredients.	WAPF lists soft drinks and beverages containing natural flavors under avoid.	D036	
+p_kombucha	Kombucha	Organic	Organic on the label, in a glass bottle; black tea listed.	WAPF recommends organic lacto-fermented beverages in glass jars, such as kombucha made with organic black tea.	D035	
+p_coconut_water	Coconut water	Organic	Coconut water the sole ingredient; aseptic box means skip.	WAPF lists coconut products in aseptic boxes under avoid.	D003	
