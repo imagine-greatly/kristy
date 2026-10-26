@@ -1,3 +1,31 @@
+# flags: FETCHED (quote found verbatim in fetched page text, 2026-10-26; curl with browser UA for most, scrapling stealthy_fetch for europepmc S04 S05 S07 S08 S21 S22 S43 S44 and doi S52, PDF text extracted from the downloaded file for S02 S03 S14) = S01 S02 S03 S04 S05 S06 S07 S08 S09 S10 S11 S12 S13 S14 S15 S16 S17 S19 S21 S22 S23 S24 S25 S26 S27 S28 S29 S30 S31 S32 S33 S34 S36 S38 S39 S41 S42 S43 S44 S45 S46 S48 S49 S50 S51 S52 S54
+# flags: HIGHLIGHT (page blocked or text not extractable here; quote is from an earlier search highlight, not re-verified) = S18 S20 S35 S37 S40 S47 S53 (S35 S40 Missouri 403; S37 MSU bot wall; S20 S47 Europe PMC/PubMed challenge; S53 Embrapa fetch error; S18 PDF text not extractable). S43 URL moved to the Europe PMC record of the same PMID after PubMed served a bot check.
+S01	https://extension.umaine.edu/blueberries/about/	In Maine, this crop is not planted but inhabits large fields on mountaintops and in glacial outwash plains
+S02	https://cdn.dal.ca/content/dam/dalhousie/images/sites/wild-blueberry/pdfs/Growing_Wild_Lowbush_Blueberries_NS.pdf	Since the harvested crop comes from fields composed of managed, native plants, these blueberries are marketed as "wild" blueberries.
+S03	https://legislature.maine.gov/testimony/resources/ENR20220307Cook132914754141858618.pdf	Where ordinary blueberries are bred to increase things like shelf-life, wild blueberries are not bred, and therefore have a short shelf life in their fresh form. Because of their short shelf life, we freeze approximately 98% of the crop each year.
+S04	https://europepmc.org/article/MED/11600018	Regardless of the method, lowbush blueberries were consistently higher in anthocyanins, total phenolics, and antioxidant capacity, compared with highbush blueberries.
+S05	https://europepmc.org/article/MED/22175691	The highbush varieties Bluecrop, O'Neal, Bluejay, and Brigitta had significantly greater levels of anthocyanidins compared to the other varieties
+S06	https://www.calblueberry.org/frequently-asked-questions.html	The lowbush is grown in Northern Maine and parts of Canada. It is from a different plant, but part of the vacinnium family.
+S07	https://europepmc.org/article/MED/25526594	Overall, the vitamin content of the frozen commodities was comparable to and occasionally higher than that of their fresh counterparts.
+S08	https://europepmc.org/article/MED/25526594	Peas, carrots, and spinach were lower in β-carotene in the frozen samples
+S09	https://hgic.clemson.edu/why-blanch/	Blanching vegetables before freezing them is critical to their quality, but not their safety.
+S10	https://extension.psu.edu/freezing-vegetables	Most frozen vegetables will lose quality in the freezer unless they have been blanched.
+S11	https://www.ricardocuisine.com/en/articles/the-ingredient/970-frozen-peas-from-the-field-to-your-freezer	From the moment the pea pods are torn from the plant to when the peas are chilled at –20°C, ideally, no more than three hours should pass.
+S12	https://www.ricardocuisine.com/en/articles/the-ingredient/970-frozen-peas-from-the-field-to-your-freezer	Just a few hours after they’ve been harvested
+S13	https://www.ipm.org/show/amomentofscience/2023-04-11/keeping-sweet-corn-sweet	Left at room temperature about a third of the sugar in an ear of corn will be lost within 24 hours
+S14	https://www.nongmoproject.org/wp-content/uploads/High-Risk-Inputs-Examples.pdf	Alfalfa, canola, corn (except popcorn), cotton, papaya, potato, soy, sugar beets, zucchini and yellow summer squash
+S15	https://www.law.cornell.edu/cfr/text/7/205.105	(e) Excluded methods
+S16	https://www.law.cornell.edu/cfr/text/7/205.301	(a) Products sold, labeled, or represented as “100 percent organic .” A raw or processed agricultural product sold, labeled, or represented as “100 percent organic ” must contain (by weight or fluid volume, excluding water and salt) 100 percent organically produced ingredients
+S17	https://www.law.cornell.edu/cfr/text/21/101.4	shall be listed by common or usual name in descending order of predominance by weight
+S18	https://fns-prod.azureedge.us/sites/default/files/resource-files/StrawberriesFrozenAug2023.pdf	Frozen strawberries are individually-quick frozen, which means, you can open the package, take as much or as little as needed, close the bag and put the rest back in the freezer.
+S19	https://www.foodrepublic.com/1857579/frozen-vegetables-clumped-together-red-flag/	Frozen vegetables that have thawed and then refrozen can get clumped together with the freezer burn frost
+S20	https://europepmc.org/article/MED/41596823	Mechanical fragmentation exceeded acceptable limits in 30% of samples, and complete clumping of vegetable pieces (100%) was observed. Additional defects included frostbite and color deviations
+S21	https://europepmc.org/article/MED/36771696	Green pods with physiologically mature beans are harvested, and whole pods or shelled beans are used as a fresh or frozen vegetable. Vegetable soybeans are prepared in diverse ways, and they are highly nutritious, with excellent taste properties. Unlike grain soybeans, it is perishable.
+S22	https://europepmc.org/article/MED/42221874	Blanching is a critical step in the industrial production of frozen vegetables, primarily intended to inactivate enzymes and preserve quality during storage.
+S23	https://extension.umaine.edu/blueberries/about/	fresh markets that currently account for 1% of all Maine wild blueberry production
+S24	https://extension.umaine.edu/blueberries/about/	The other 99% are frozen, allowing for storability and transport to the end user.
+S25	https://extension.umaine.edu/publications/4263e/	The lowbush berry grown in Maine is valued for its small size and sweet taste. The larger, cultivated highbush berry is also becoming popular in Maine markets.
+S26	https://extension.unh.edu/resource/freezing-vegetables	Under-blanching stimulates the activity of enzymes and is worse than not blanching.
 S27	https://extension.wsu.edu/skagit/2025/07/13/skagit-food-preservation-broccoli/	They should have bright green heads, leaves and stems with compact dark green buds. Avoid broccoli that looks limp, has an odor, or has buds opening to show yellow.
 S28	https://nchfp.uga.edu/how/freeze/vegetables/freezing-broccoli/	Select firm, young, tender stalks with compact heads.
 S29	https://extension.oregonstate.edu/food/preservation/preserving-peas-edible-pea-pods	Select bright green, plump, firm pods.
@@ -10,19 +38,19 @@ S35	https://extension.missouri.edu/publications/gh1503	Blanching... brightens th
 S36	https://nchfp.uga.edu/how/freeze/vegetable/freezing-brussels-sprouts/	Select green, firm and compact heads... Sort into small, medium and large sizes.
 S37	https://www.canr.msu.edu/resources/michigan_fresh_brussels_sprouts	Small, firm, compact sprouts are the best choice.
 S38	https://nchfp.uga.edu/how/freeze/vegetable/freezing-greens-including-spinach/	Select young, tender green leaves.
-S39	https://extension.psu.edu/preserving-greens	Tray frozen greens will separate more easily; greens that are frozen as a solid block should be partially thawed before heating.
+S39	https://extension.psu.edu/preserving-greens	Tray frozen greens will separate more easily... greens that are frozen as a solid block should be partially thawed before heating.
 S40	https://extension.missouri.edu/news/preserving-winter-squash	spread them in a single layer on trays. Freeze the squash... The frozen cubes can be added directly to your recipe.
 S41	https://nchfp.uga.edu/how/freeze/vegetable/freezing-winter-squash/	Select firm, mature squash with a hard rind.
 S42	https://nchfp.uga.edu/how/freeze/fruits/freezing-raspberries/	Harvest fully ripe, firm, well-colored berries... Raspberries can also be frozen first on a tray.
-S43	https://pubmed.ncbi.nlm.nih.gov/11052701/	significant decreases of 14-21% in ellagic acid and of 33-55% in vitamin C were quantified (raspberries, 12 months at -20 C)
-S44	https://pubmed.ncbi.nlm.nih.gov/22417493/	The total anthocyanins in raspberries fluctuated during 378 d of storage at -20 and -35, and -80 C.
+S43	https://europepmc.org/article/MED/11052701	At the end of long-term frozen storage (12 months), no significant change of total phenolic content extracted was observed, but significant decreases of 14-21% in ellagic acid and of 33-55% in vitamin C were quantified.
+S44	https://pubmed.ncbi.nlm.nih.gov/22417493/	The total anthocyanins in raspberries fluctuated during 378 d of storage at -20 and -35, and -80 °C.
 S45	https://nchfp.uga.edu/how/freeze/fruits/freezing-blackberries-or-dewberries/	Select fully ripe, firm berries.
-S46	https://www.ndsu.edu/agriculture/extension/publications/freezing-fruits	Select firm, plump, fully ripe berries with glossy skins. Tray pack... The fruit pieces remain loose.
+S46	https://www.ndsu.edu/agriculture/extension/publications/freezing-fruits	Select firm, plump, fully ripe berries with glossy skins... Tray pack: ... The fruit pieces remain loose.
 S47	https://pubmed.ncbi.nlm.nih.gov/24422506/	vitamin C loss up to 80% in frozen storage; most phenolic groups showed better extraction after storage (berries)
-S48	https://extension.oregonstate.edu/food/preservation/preserving-cherries-sp-50-883	Cherries can be frozen individually on a cookie sheet; dark color is the best indication of good flavor.
+S48	https://extension.oregonstate.edu/food/preservation/preserving-cherries-sp-50-883	Cherries can be frozen individually on a cookie sheet... dark color is the best indication of good flavor.
 S49	https://extension.psu.edu/try-preserving-some-cherries	Cherries can also be frozen without sugar, but the texture will be softer when thawed.
 S50	https://nchfp.uga.edu/how/freeze/fruits/freezing-mangos/	Select firm, ripe mangos that yield to gentle pressure... Unsweetened Tray Pack.
 S51	https://extension.oregonstate.edu/food/preservation/preserving-fruits-mangoes	Mangoes are usually picked and shipped for the commercial market while still green.
-S52	https://doi.org/10.1007/s42452-020-2340-0	The pulp was composed only by acai berry and water.
+S52	https://doi.org/10.1007/s42452-020-2340-0	The pulp was composed only by açaí berry and water
 S53	https://alice.cnptia.embrapa.br/handle/doc/659145	frozen acai pulp at -18 C, 15 days, 267.2 mg/100 mL anthocyanin, 21% loss (Portuguese text)
 S54	https://blogs.extension.iastate.edu/answerline/2024/03/05/tray-pack-for-freezing-food-why-and-how/	This prevents individual pieces of food from fusing together during freezing.

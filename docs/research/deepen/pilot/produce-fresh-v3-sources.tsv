@@ -1,6 +1,7 @@
 id	url	quote
 # flags: TRANSCRIBED (typed from exa/search highlights or scrapling output) = F129,F130,F131,F132,F133,F134,F135,F136; F135 is a produce-guide site, not an extension guide
 # flags: F127,F128 fetched law.cornell.edu text; F137+ copied from extension PDFs/pages and checked as substrings; Hawaii PDF text had spaced letters, quote retyped
+# flags: F199 FETCHED (scrapling stealthy_fetch, quote grepped verbatim; page lists Strawberries, Grapes, Nectarines, Peaches). F007 (MedlinePlus) retired from v3 why_tap rows.
 # v2 ids reused unchanged: F002,F007,F028,F055,F059,F064,F066,F068,F069,F018
 F127	https://www.law.cornell.edu/cfr/text/7/205.105	To be sold or labeled as "organic," the product must be produced and handled without the use of: (a) Synthetic substances and ingredients ... (e) Excluded methods ... (f) Ionizing radiation ... and (g) Sewage sludge.
 F128	https://www.law.cornell.edu/cfr/text/7/205.203	The producer must manage crop nutrients and soil fertility through rotations, cover crops, and the application of plant and animal materials.
@@ -74,3 +75,4 @@ F195	https://www.ndsu.edu/agriculture/extension/publications/vary-your-veggies-h
 F196	https://www.extension.purdue.edu/foodlink/foods.php	Grapes that are firmly attached to the stem are fresh.
 F197	https://www.extension.purdue.edu/foodlink/foods.php	Look for large, firm, bright, shiny cherries. Make sure stems are nice and green.
 F198	https://www.ndsu.edu/agriculture/extension/publications/vary-your-veggies-how-select-and-store-vegetables	Fresh-looking, firm, thick-fleshed and of bright color
+F199	https://www.ewg.org/foodnews/dirty-dozen.php	these 12 fruits and vegetables were most contaminated with pesticides
