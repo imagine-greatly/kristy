@@ -822,3 +822,16 @@ test('picks forbid family and delta even if null', () => {
     assert.ok(codes(lintPick({ kind: 'pick', [field]: null })).includes('PICK_FIELD_FORBIDDEN'));
   }
 });
+
+// SHOP-DIAL-PLAN P4: the dial rules hold on the whole corpus, not only inside the merge.
+test('dial corpus: dialFindings is empty on every KB entry, families are slim', async () => {
+  const { dialFindings } = await import('./dialRules.js');
+  const { OLD_FAMILY_FIELDS } = await import('../scripts/mergeFamilyBuild.js');
+  nonEmpty(perimeterKb.entries, 'KB entries', 300);
+  const families = perimeterKb.entries.filter((e) => e.kind === 'family');
+  nonEmpty(families, 'family entries', 50);
+  assert.deepEqual(dialFindings(perimeterKb.entries).map((f) => `${f.id}: ${f.code}: ${f.msg}`), []);
+  assert.deepEqual(families.filter((e) => OLD_FAMILY_FIELDS.some((k) => k in e)).map((e) => e.id), []);
+  const spray = /without sprays|no sprays|unsprayed|no[- ]pesticide/i;
+  assert.deepEqual(perimeterKb.entries.filter((e) => spray.test(JSON.stringify(e))).map((e) => e.id), []);
+});

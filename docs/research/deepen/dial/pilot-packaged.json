@@ -624,12 +624,25 @@
     },
     "egg_labels": {
       "decision": "Organic eggs with a Certified Humane Pasture Raised seal.",
-      "why": "Pasture raised under Certified Humane means 108 square feet per hen versus 2 for free range.",
+      "why": "A hen eats what she is given. Organic, pasture and feed words tell you about both her food and her life.",
       "sources": [
+        "The Cornucopia Institute “Organic Egg Scorecard Criteria”, “Add On Labels” section https://www.cornucopia.org/egg-scorecard-criteria/",
+        "Poultry-science references on eggshell pigmentation",
+        "Hendrix Genetics “Eggshell color Eggsplained” https://layinghens.hendrix-genetics.com/en/articles/eggshell-color-eggsplained/",
+        "American Egg Board “Egg Grades and Sizes” (Grade AA, A and B scored on interior and shell quality at packing, separate from the weight classes)",
+        "Pete & Gerry’s “Guide to Egg Sizes and Weights” https://www.peteandgerrys.com/blogs/field-notes/egg-size-guide",
+        "7 CFR 205.237 (label rule, raw meaning of the term)",
+        "Poultry-science literature on omega-3 enrichment of eggs",
+        "The Cornucopia Institute, egg scorecard criteria, “Feed Sourcing” section https://www.cornucopia.org/egg-scorecard-criteria/ (feed grown on-farm ranks above local organic growers, above multiple suppliers with no traceability standard; feed traceability concerns, no brands named)",
+        "EU marketing standards for eggs (unwashed, ambient storage)",
+        "Feed Strategy, “Feed formulations for US white layers in the production phase” (corn the main energy source, soybean meal the main protein) https://www.feedstrategy.com/animal-feed-formulations-library/us-white-layers-production-phase",
         {
-          "name": "Certified Humane",
-          "url": "https://certifiedhumane.org/decoding-the-carton-how-to-buy-clean-humane-eggs/"
-        }
+          "name": "100 Days of Real Food: Egg labels",
+          "url": "https://www.100daysofrealfood.com/egg-labels-whats-to-look-for/"
+        },
+        "Weston A. Price Foundation: Shopping Guide (Best, Good and Avoid tiers)",
+        "Weston A. Price Foundation: Eat Your Eggs",
+        "Miller's Bio Farm: Soy-free eggs"
       ],
       "cart_pick": "Organic Certified Humane pasture-raised eggs"
     },
@@ -725,10 +738,7 @@
       "decision": "Dry or dry-packed scallops, with no phosphate or water listed.",
       "why": "Dry scallops have not been soaked in sodium tripolyphosphate; skip milky liquid pooling in the tray.",
       "sources": [
-        {
-          "name": "Maine Sea Grant",
-          "url": "https://seagrant.umaine.edu/maine-seafood-guide-scallops/"
-        }
+        "Maine Sea Grant"
       ]
     },
     "crab": {
@@ -745,10 +755,7 @@
       "decision": "Live shellfish with a tag, closed shells and none cracked.",
       "why": "Pacific Coast Shellfish Growers say oysters should always be tightly closed and mussels should close when tapped.",
       "sources": [
-        {
-          "name": "Pacific Coast Shellfish Growers Association",
-          "url": "https://pcsga.org/buying-tips/"
-        }
+        "Pacific Coast Shellfish Growers Association"
       ]
     },
     "yogurt_plain_vs_flavored": {
@@ -1308,38 +1315,39 @@
       "tier_note": "A single ingredient and the absence of aseptic boxes are visible package checks."
     },
     "beef_grassfed_vs_grainfed": {
-      "decision": "Organic grass-finished beef with the AGA Grassfed seal.",
+      "decision": "Grass-finished beef first, then AGA Grassfed or USDA Organic.",
       "sources": [
-        {
-          "name": "American Grassfed Association",
-          "url": "https://www.americangrassfedcertified.com/"
-        }
+        "Weston A. Price Foundation: Shopping Guide (Best, Good and Avoid tiers)",
+        "Weston A. Price Foundation: Splendor from Grass",
+        "Weston A. Price Foundation: Grass-fed culinary guide"
       ],
       "why": "Grass after weaning, no grain and no feedlot. A grass finish gives you leaner beef with a different fat balance.",
-      "cart_pick": "100% grass-fed or grass-finished ground beef"
+      "cart_pick": "Grass-finished ground beef"
     },
     "beef_cuts_basics": {
-      "decision": "Grass-fed organic whole beef cuts with AGA certification.",
+      "decision": "100% grass-fed and grass-finished beef, in whole cuts.",
       "sources": [
-        {
-          "name": "Cornell Legal Information Institute",
-          "url": "https://www.law.cornell.edu/cfr/text/7/205.237"
-        }
+        "Flannery Beef “The Complete Guide to Beef Cuts” https://flannerybeef.com/blogs/news/the-complete-guide-to-beef-cuts",
+        "9 CFR 317.2 (label rule, raw meaning of the term)",
+        "Weston A. Price Foundation: Shopping Guide (Best, Good and Avoid tiers)",
+        "Weston A. Price Foundation: Grass-fed culinary guide"
       ],
       "why": "Grass-fed sourcing: see Beef.",
       "tier_note": "The ‘mechanically tenderized’ name is federal label text; an untouched whole cut is held as a standard; certified organic feed and outdoor access.",
-      "cart_pick": "Organic grass-fed whole beef cuts"
+      "cart_pick": "100% grass-fed or grass-finished whole chuck"
     },
     "ground_beef_lean_ratio": {
-      "decision": "Organic grass-finished ground beef with its lean ratio printed.",
+      "decision": "Grass-fed ground beef first, then organic, nothing added.",
       "sources": [
-        {
-          "name": "Cornell Legal Information Institute",
-          "url": "https://www.law.cornell.edu/cfr/text/7/205.238"
-        }
+        "9 CFR 319.15 (label rule, raw meaning of the term)",
+        "9 CFR 317.2 (label rule, raw meaning of the term)",
+        "Force of Nature, Grass Fed Beef Ancestral Blend, product page (8% organ meats; 4% heart, 4% liver, 92% muscle meat) https://forceofnature.com/products/regenerative-beef-ancestral-blend",
+        "Seven Sons Farms, Ground Beef Primal Blend, product page (92% ground beef, 5% liver, 3% heart) https://sevensons.net/store/product/ground-beef-ancestral-blend",
+        "Weston A. Price Foundation: Shopping Guide (Best, Good and Avoid tiers)",
+        "Weston A. Price Foundation: The Liver Files"
       ],
       "why": "Ground beef and grass-fed sourcing: see Beef.",
-      "cart_pick": "Organic grass-finished ground beef"
+      "cart_pick": "Grass-fed ground beef, beef only"
     },
     "hot_dogs": {
       "decision": "Grass-fed beef hot dogs, AGA seal and short ingredient list.",
@@ -1399,10 +1407,6 @@
     "rotisserie_chicken": {
       "decision": "Rotisserie chicken listing only chicken and salt.",
       "sources": [
-        {
-          "name": "Electronic Code of Federal Regulations",
-          "url": "https://www.ecfr.gov/current/title-7/section-205.237"
-        },
         {
           "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
           "url": "https://drcate.com/hateful-eight/"
@@ -1501,10 +1505,10 @@
     "white_fish": {
       "decision": "Wild-caught white fish by its named species, firm, mild-smelling.",
       "sources": [
-        {
-          "name": "NOAA Fisheries",
-          "url": "https://www.fisheries.noaa.gov/species/pacific-cod"
-        }
+        "https://www.americastestkitchen.com/lessons/articles/431-buying-and-storing-white-fish",
+        "Weston A. Price Foundation: Shopping Guide (Best, Good and Avoid tiers)",
+        "Wellness Mama: Fish farming",
+        "Wellness Mama: Homemade fish sticks"
       ],
       "why": "Wild Pacific cod is the pick; its gray or brown skin and paler belly provide a visible species check."
     },

@@ -11,6 +11,8 @@ import { projectEntry } from '../lib/counterCards.js';
 import { dialFindings } from '../lib/dialRules.js';
 import doLines from '../lib/doLines.json' with { type: 'json' };
 
+export const OLD_FAMILY_FIELDS = ['watch_out', 'shopper_questions', 'season_storage'];
+
 export function mergeFamilyBuild(kb, builds, { reviewed = doLines } = {}) {
   let result = structuredClone(kb);
   const byId = new Map(result.entries.map((entry) => [entry.id, entry]));
@@ -39,6 +41,10 @@ export function mergeFamilyBuild(kb, builds, { reviewed = doLines } = {}) {
     }
   }
   result = applyPatches(result, patches).kb;
+  // SHOP-DIAL-PLAN §2/P3: a slim family is decision + buying_tips (+ optional why, sources); old depth keys go.
+  for (const entry of result.entries) {
+    if (entry.kind === 'family') for (const key of OLD_FAMILY_FIELDS) delete entry[key];
+  }
   const cards = questionEntries(result.entries).map((entry) => projectEntry(entry, { doLine: reviewed[entry.id] || '' }));
   const errors = [
     ...result.entries.filter((entry) => !isQuestionEntry(entry)).flatMap((entry) =>

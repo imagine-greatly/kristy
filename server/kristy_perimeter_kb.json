@@ -791,7 +791,7 @@
       "decision": "Grown organic first for skin-on produce and EWG’s Dirty Dozen.",
       "why": "Surface residue leaves with a discarded peel. On berries and apples, you eat the skin along with the flesh.",
       "short_answer": "On skin-on produce, look for Real Organic or Certified Naturally Grown first, then USDA Organic. When organic runs thin, start with skin-on produce: berries, greens, apples, grapes, potatoes. Peeled fruit like avocado, kiwi, mango and citrus can wait.",
-      "detail": "The surface-residue reasoning is sound as a prioritization tool: the peel carries the residue, so what gets discarded carries it away. Organic is not the finish line: the standard still permits approved sprays when other controls fall short, so a local grower who grows without sprays sits above it. Avocado tests among the cleanest produce in the country. The part that was sprayed is the part that goes in the bin. Anything peeled goes in plain, however soft it looks. Avocado, kiwi, mango, banana, citrus and onion all test low. Soak the conventional eaten-whole ones. A baking soda soak takes more surface residue off than a rinse.",
+      "detail": "The surface-residue reasoning is sound as a prioritization tool: the peel carries the residue, so what gets discarded carries it away. Organic is not the finish line: the standard still permits approved sprays when other controls fall short. Avocado tests among the cleanest produce in the country. The part that was sprayed is the part that goes in the bin. Anything peeled goes in plain, however soft it looks. Avocado, kiwi, mango, banana, citrus and onion all test low. Soak the conventional eaten-whole ones. A baking soda soak takes more surface residue off than a rinse.",
       "evidence_tier": "credible_concern",
       "sources": [
         "USDA Pesticide Data Program",
@@ -828,7 +828,7 @@
         "When organic runs short, start with skin-on produce: berries, greens, apples, grapes, potatoes.",
         "Read the USDA Organic seal as the floor; Natural means nothing on produce."
       ],
-      "science": "Residue sits on the surface, so the part that gets peeled takes it away. A potato is eaten skin-on, so it counts; sturdy vegetables like cabbage and carrots test low anyway. Organic is not pesticide-free, just a different approved list with fewer synthetic residues. A grower who uses no sprays at all sits above the seal.",
+      "science": "Residue sits on the surface, so the part that gets peeled takes it away. A potato is eaten skin-on, so it counts; sturdy vegetables like cabbage and carrots test low anyway. Organic is not pesticide-free, just a different approved list with fewer synthetic residues.",
       "labels_decoded": [
         {
           "term": "USDA Organic",
@@ -1090,9 +1090,9 @@
       "category": "produce",
       "question": "Does washing actually get the pesticide residue off?",
       "decision": "Real Organic or Certified Naturally Grown produce over any soak.",
-      "why": "Residue is settled at the farm, not the sink. A grower who uses no sprays answers it before the produce is bought.",
+      "why": "Residue is settled at the farm, not the sink, so the seal counts for more than the soak.",
       "short_answer": "The surest answer comes before the sink: Real Organic or Certified Naturally Grown on the sign, then USDA Organic. What a soak does to residue is not settled. Rinse under cold running water right before eating.",
-      "detail": "Baking soda soaks circulate widely as a residue fix, and no holistic source backs that claim, so it is left unmade here. The dependable step is choosing produce grown without sprays from a local grower, then organic, starting with what gets eaten skin-on: apples, grapes, berries. Ask the grower how the crop was grown. At home, rinse under cold running water right before eating.",
+      "detail": "Baking soda soaks circulate widely as a residue fix, and no holistic source backs that claim, so it is left unmade here. The dependable step is choosing organic produce, starting with what gets eaten skin-on: apples, grapes, berries. Read the seal or sign at the bin for how the crop was grown. At home, rinse under cold running water right before eating.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "Weston A. Price Foundation: Shopping Guide Categories"
@@ -1104,16 +1104,16 @@
         "Start with produce eaten skin-on: apples, grapes, berries."
       ],
       "watch_out": [
-        "A home soak is not a substitute for produce grown without sprays."
+        "A home soak is not a substitute for choosing organic produce."
       ],
       "pick_steps": [
         "Look for Real Organic or Certified Naturally Grown on the sign, then USDA Organic.",
         "Start with produce eaten skin-on: apples, grapes, berries.",
         "Rinse under cold running water right before eating."
       ],
-      "science": "No holistic source backs a home soak for residue, so no removal claim is made. Growing without sprays keeps residue off from the start, and organic is the floor.",
+      "science": "No holistic source backs a home soak for residue, so no removal claim is made. How the crop was grown settles residue from the start, and organic is the floor.",
       "labels_decoded": [],
-      "tier_note": "Choosing produce grown without sprays is the standard; a soak’s effect on residue is unverified.",
+      "tier_note": "Choosing organic produce is the standard; a soak’s effect on residue is unverified.",
       "eyebrow_short": "Residue",
       "asked_as": [
         "how do i get pesticides off produce",
@@ -2456,7 +2456,7 @@
       "decision": "100% organic or USDA Organic, plus a Real Organic seal.",
       "why": "It covers inputs and practices, not nutrition or processing. Approved sprays are still allowed.",
       "short_answer": "Organic is a production standard. It excludes prohibited pesticides and GMOs. Animals get organic feed, with no routine antibiotics or added hormones. Approved sprays are allowed. An organic cookie is a cookie.",
-      "detail": "The National Organic Program defines organic as a set of permitted and prohibited INPUTS and practices, verified by certification. That is a real, enforced standard and worth something. What it is not is a nutrition claim: the seal is silent on whether the food is nutrient-dense or minimally processed, and ultra-processed foods can carry it in full compliance. Reading it as a shorthand for “good food” is the most common way it gets misused. Organic tells you how something was grown or raised, and you still have to look at what the thing actually is. Certified organic means no pesticides from the prohibited list. A short list of approved sprays is permitted, and it makes no claim at all about nutrient density, how well an animal was raised beyond the baseline, or how processed the food is. Organic is a floor, not the finish line: a grower who uses no sprays sits above it, and hydroponic crops can carry the seal too. Organic rules prohibit ionizing radiation. On non-organic foods, the Radura symbol and “treated with irradiation” identify this process.",
+      "detail": "The National Organic Program defines organic as a set of permitted and prohibited INPUTS and practices, verified by certification. That is a real, enforced standard and worth something. What it is not is a nutrition claim: the seal is silent on whether the food is nutrient-dense or minimally processed, and ultra-processed foods can carry it in full compliance. Reading it as a shorthand for “good food” is the most common way it gets misused. Organic tells you how something was grown or raised, and you still have to look at what the thing actually is. Certified organic bars every pesticide on the prohibited list. A short list of approved sprays is permitted, and it makes no claim at all about nutrient density, how well an animal was raised beyond the baseline, or how processed the food is. Organic is a floor, not the finish line, and hydroponic crops can carry the seal too. Organic rules prohibit ionizing radiation. On non-organic foods, the Radura symbol and “treated with irradiation” identify this process.",
       "evidence_tier": "established",
       "sources": [
         "Real Organic Project: Standards",
@@ -2503,7 +2503,7 @@
         "“Made with organic” needs only 70% and cannot carry the USDA seal.",
         "It counts most on thin-skinned produce you eat whole, least on processed food."
       ],
-      "science": "Certified organic is a production standard, not a quality grade. It means no pesticides from the prohibited list, no GMOs, and organic feed for animals. A short list of approved sprays is permitted. It makes no claim about nutrient density or how processed the food is. An organic cookie is still a cookie.",
+      "science": "Certified organic is a production standard, not a quality grade. It bars pesticides on the prohibited list and GMOs, and requires organic feed for animals. A short list of approved sprays is permitted. It makes no claim about nutrient density or how processed the food is. An organic cookie is still a cookie.",
       "tier_note": "What the organic seal covers and excludes is written into the standard, approved pesticides included.",
       "asked_as": [
         "what does the organic seal guarantee",
@@ -5324,7 +5324,7 @@
       "decision": "Organic carrots and roots, firm, smooth and bright in color.",
       "why": "Roots grow in the soil and the skin often gets eaten, so how they were grown comes first.",
       "short_answer": "Firm is the test at every root. Potatoes: no bruises, nicks or soft spots, never green. Carrots: well colored, no green shoulders, wilt, flab or cracks. Sweet potatoes: smooth, even shape, even peel color. Beets: round, slender tap root.",
-      "detail": "Top tier is local and in season from a grower who uses no sprays, then organic; ask the grower how the crop was grown. Potatoes keep up to a month in a cool, dark place with good ventilation, ideally 45 to 50°F. Throw away any that turn shriveled or green or grow many sprouts. Sweet potatoes want cool and dry, 55 to 59°F: colder brings chilling injury (fungal decay, internal browning, shriveling) and warmer speeds sprouting. Carrots go in a closed bag or container in the refrigerator for up to two weeks. Cut the tops off first, since attached tops wilt the root, and a wilted carrot revives in a soak of cold water. Beets: trim the leafy stem to an inch, leave the root end on, and refrigerate in a food-safe container for up to two weeks. Stored potatoes are often treated with a sprout inhibitor, so fresh-dug local potatoes come first.",
+      "detail": "Top tier is in season with an organic seal; read the sign or sticker at the bin for the growing method. Potatoes keep up to a month in a cool, dark place with good ventilation, ideally 45 to 50°F. Throw away any that turn shriveled or green or grow many sprouts. Sweet potatoes want cool and dry, 55 to 59°F: colder brings chilling injury (fungal decay, internal browning, shriveling) and warmer speeds sprouting. Carrots go in a closed bag or container in the refrigerator for up to two weeks. Cut the tops off first, since attached tops wilt the root, and a wilted carrot revives in a soak of cold water. Beets: trim the leafy stem to an inch, leave the root end on, and refrigerate in a food-safe container for up to two weeks. Stored potatoes are often treated with a sprout inhibitor, so fresh-dug local potatoes come first.",
       "evidence_tier": "established",
       "sources": [
         "Weston A. Price Foundation: Shopping Guide Categories",
@@ -5430,7 +5430,7 @@
       "decision": "Organic broccoli, cabbage and cauliflower, compact and heavy.",
       "why": "Tight, dark green broccoli florets are fresh. Enlarged, open or yellowish-green ones are past fresh.",
       "short_answer": "Broccoli: dark green florets, closed, not yellowish or wilted, on stems that are not thick and tough. Cauliflower: no bruises or damage. Cabbage: strip wilted or insect-damaged outer leaves. A soft or slippery head stays on the shelf.",
-      "detail": "Top tier is local and in season from a grower who uses no sprays, then organic; ask the grower how the crop was grown. Broccoli is the short keeper of the three: refrigerate it in a plastic bag with holes and use it within three days. Cabbage goes the other way, staying fresh for several weeks in a plastic bag or wrap in the refrigerator at 41°F or below; before using, cut out the core and rinse the leaves under cool running water. Cauliflower gets kept away from raw meat and meat juices.",
+      "detail": "Top tier is in season with an organic seal; read the sign or sticker at the bin for the growing method. Broccoli is the short keeper of the three: refrigerate it in a plastic bag with holes and use it within three days. Cabbage goes the other way, staying fresh for several weeks in a plastic bag or wrap in the refrigerator at 41°F or below; before using, cut out the core and rinse the leaves under cool running water. Cauliflower gets kept away from raw meat and meat juices.",
       "evidence_tier": "established",
       "sources": [
         "Weston A. Price Foundation: Shopping Guide Categories",
@@ -5533,7 +5533,7 @@
       "decision": "Organic onions and garlic, firm, dry and papery-skinned.",
       "why": "A well-cured bulb feels dry at the neck and papery outside. A soft, scented or sprouting bulb is already on its way out.",
       "short_answer": "Onions: firm for their size, little to no scent, a dry neck, no cuts, bruises or mold, no sprouting. Some loose skins are normal. Garlic: clean, white or true to the variety, well cured, cloves firm.",
-      "detail": "Top tier is local and in season from a grower who uses no sprays, then organic; ask the grower how the crop was grown. Whole dry onions live in a cool, dry, dark place with plenty of air movement: no plastic bags, no wrap, and not beside potatoes or anything else that releases moisture. Storage between 41 and 75°F favors sprouting, so the cooler the spot the better. Refrigeration is only for sweet or mild high-water varieties, on a low-humidity setting, and a cut onion goes in a sealed container for up to seven days. Garlic keeps one to two months at room temperature in low humidity before it softens, goes spongy, and shrivels from water loss; it sprouts fastest between 41 and 65°F, and its odor moves into other foods, so it gets stored on its own.",
+      "detail": "Top tier is in season with an organic seal; read the sign or sticker at the bin for the growing method. Whole dry onions live in a cool, dry, dark place with plenty of air movement: no plastic bags, no wrap, and not beside potatoes or anything else that releases moisture. Storage between 41 and 75°F favors sprouting, so the cooler the spot the better. Refrigeration is only for sweet or mild high-water varieties, on a low-humidity setting, and a cut onion goes in a sealed container for up to seven days. Garlic keeps one to two months at room temperature in low humidity before it softens, goes spongy, and shrivels from water loss; it sprouts fastest between 41 and 65°F, and its odor moves into other foods, so it gets stored on its own.",
       "evidence_tier": "established",
       "sources": [
         "Weston A. Price Foundation: Shopping Guide Categories",
@@ -5563,7 +5563,7 @@
       ],
       "science": "A sound bulb has a dry neck and dry outer skins, and some loose onion skin is normal. Whole onions keep cool, dry and dark with air moving, never in plastic. Keep them apart from potatoes and anything else that releases moisture. A cut onion goes in a sealed container for up to seven days.",
       "labels_decoded": [],
-      "tier_note": "Onions and garlic from a grower who uses no sprays come first, then organic.",
+      "tier_note": "In-season onions and garlic with an organic seal come first.",
       "eyebrow_short": "Onions and garlic",
       "asked_as": [
         "how do i store garlic",
@@ -5637,10 +5637,10 @@
       "decision": "Organic spinach, kale and lettuce with crisp, colorful leaves.",
       "why": "Spinach is highly perishable, and kale wilts in warmth. A leaf that still stands crisp tells you it has freshness left.",
       "short_answer": "Lettuce: crisp, green outside, pale at the heart. Romaine: neither very loose nor very hard. Spinach: uniformly green and fully crisp. Kale: firm, deep colored leaves on moist, hardy stems.",
-      "detail": "Cold is the whole storage story. Romaine keeps about 21 days near 32°F and noticeably less at 41°F, so the coldest shelf of the refrigerator is the right one. Spinach wants 32°F too and will not hold good quality past two weeks; at 41 to 50°F it wilts and yellows faster. Kale goes in a plastic bag with as much air pressed out as possible, unwashed, for about five days; water on the leaves speeds spoilage, so wash at the point of use. Small greenhouse growers sell living lettuce with the root ball on, grown with no sprays of any kind; one says the root ball doubles the shelf life, and another packs it to stay fresh up to three weeks. Greenhouse or hydroponic alone does not say how it was grown, so look for the no-sprays word. In a big store, organic spring mix and romaine are the fallback. At the shelf, lettuce runs bright to dark green outside and yellow or light green at the heart, free of insects, decay, or damage. A very loose romaine head is immature; a very firm or hard one is overmature. Spinach should be fairly clean with no serious damage. Kale should show no browning, yellow, or small holes.",
+      "detail": "Cold is the whole storage story. Romaine keeps about 21 days near 32°F and noticeably less at 41°F, so the coldest shelf of the refrigerator is the right one. Spinach wants 32°F too and will not hold good quality past two weeks; at 41 to 50°F it wilts and yellows faster. Kale goes in a plastic bag with as much air pressed out as possible, unwashed, for about five days; water on the leaves speeds spoilage, so wash at the point of use. Small greenhouse growers sell living lettuce with the root ball on; one says the root ball doubles the shelf life, and another packs it to stay fresh up to three weeks. Greenhouse or hydroponic alone does not say how it was grown, so look for the organic seal. In a big store, organic spring mix and romaine are the fallback. At the shelf, lettuce runs bright to dark green outside and yellow or light green at the heart, free of insects, decay, or damage. A very loose romaine head is immature; a very firm or hard one is overmature. Spinach should be fairly clean with no serious damage. Kale should show no browning, yellow, or small holes.",
       "evidence_tier": "established",
       "sources": [
-        "CanvasRebel: interview with Forest Valley Acres (greenhouse grower, no sprays, living lettuce)",
+        "CanvasRebel: interview with Forest Valley Acres (greenhouse grower, living lettuce)",
         "Reading Eagle: Big Leaf Hydroponics living lettuce (2019)",
         "Weston A. Price Foundation: Feeding Your Family Well From the Big Box Stores",
         "Paleo.com.au: Why You Must Wash Your Pre-Washed Salad"
@@ -7539,7 +7539,7 @@
       "decision": "Organic mushrooms.",
       "why": "The whole cap is eaten, and organic rules bar synthetic substances and GMOs in growing.",
       "short_answer": "Choose mushrooms that feel dry and firm, with no dark spots. Closed caps taste milder. Open caps with gills showing taste stronger. Keep them cold in a paper bag.",
-      "detail": "A local grower who uses no sprays comes first, then organic. Look for caps closed around the stem or moderately open, with pink or light tan gills. The cap surface should be white, creamy or an even light brown. Portobello is a large, mature cremini. Shiitake has broad, umbrella-shaped caps and is best cooked. Store mushrooms unwashed in the refrigerator, in the original container or a paper bag. A plastic bag or airtight container collects moisture that spoils them. Use fresh mushrooms within a week for best quality. Only an expert can tell poisonous wild mushrooms from edible ones, and no amount of cooking or drying destroys the toxins.",
+      "detail": "Certified organic mushrooms come first. Look for caps closed around the stem or moderately open, with pink or light tan gills. The cap surface should be white, creamy or an even light brown. Portobello is a large, mature cremini. Shiitake has broad, umbrella-shaped caps and is best cooked. Store mushrooms unwashed in the refrigerator, in the original container or a paper bag. A plastic bag or airtight container collects moisture that spoils them. Use fresh mushrooms within a week for best quality. Only an expert can tell poisonous wild mushrooms from edible ones, and no amount of cooking or drying destroys the toxins.",
       "evidence_tier": "established",
       "sources": [
         {
@@ -15745,19 +15745,6 @@
         "Check the certifier’s name and website printed beside any grass-fed claim.",
         "Pick a GAP-rated pack when no AGA seal is on the shelf; GAP bars feedlot finishing."
       ],
-      "watch_out": [
-        "Name the species and disclose blend ingredients; an organ blend or frank need not be one ingredient.",
-        "Apply the shared ingredient screen to formulated products, including added oils, flavor additives, phosphates and extenders.",
-        "Water in a frank recipe differs from added solution in a raw cut; casing and curing checks belong to the frank.",
-        "A local address or prominent branding does not establish the selected product’s organic status or finish."
-      ],
-      "shopper_questions": [
-        "Does organic mean 100% grass-finished?",
-        "Does winter hay change the forage-finish preference?",
-        "Can seasonal frozen meat qualify?",
-        "Does the farm description cover this product and its finishing ration?"
-      ],
-      "season_storage": "Seasonal frozen meat can retain its sourcing rung. Follow the selected pack’s fresh, frozen, raw or fully cooked instructions; choose portions for the intended use. No single refrigerator window covers every form.",
       "sources": [
         {
           "name": "AGA grassfed standards",
@@ -15794,19 +15781,6 @@
         "Read the name for ‘added solution’ or a retained-water percentage; pick neither.",
         "Check the ingredient line for plain meat, or salt, named seasonings and a simple coating."
       ],
-      "watch_out": [
-        "For plain raw cuts, skip enhanced, self-basted or added-solution products.",
-        "Air chilling, retained processing water and added solution are separate checks; retained water does not establish injection.",
-        "Apply the shared ingredient screen to preparations and subingredients; a coating alone does not disqualify a nugget.",
-        "A grain-free requirement would exclude ordinary organic pasture rations without support from this family’s rule."
-      ],
-      "shopper_questions": [
-        "Does pasture-raised mean grass-only feeding?",
-        "Does organic feed establish organic meat?",
-        "Can a pasture-raised bird have added brine or breading?",
-        "Are frozen prepared poultry products necessarily cooked?"
-      ],
-      "season_storage": "Use the selected product’s raw, hot-cooked or frozen-prepared storage and cooking directions. Frozen farm birds remain eligible; frozen nuggets are not necessarily fully cooked. No shared harvest month or refrigerator window covers this family.",
       "sources": [
         {
           "name": "Organic livestock living conditions, 7 CFR 205.239",
@@ -15847,19 +15821,6 @@
         "Read ‘cage-free’ and ‘vegetarian fed’ as housing and feed words, not outdoor time.",
         "Pick a refrigerated carton with clean, uncracked shells."
       ],
-      "watch_out": [
-        "Organic does not mean corn-free or soy-free; one feed exclusion does not establish the other.",
-        "A sinking egg is not clearance to eat it; float behavior is not a reliable contamination test.",
-        "Farm eggs may already be washed; farm fresh wording supplies no storage instructions.",
-        "Plain shell eggs differ from preserved or flavored eggs; apply the shared ingredient screen to any brine or sauce."
-      ],
-      "shopper_questions": [
-        "Does organic mean corn-free and soy-free?",
-        "Does the outdoor description establish pasture for this species?",
-        "Can farm eggs already be washed?",
-        "Are these table eggs or hatching eggs?"
-      ],
-      "season_storage": "Follow the carton’s storage directions and keep refrigerated purchases refrigerated. Laying seasons vary by flock; some quail producers report a winter pause. Keep batch-specific washing and storage information rather than assuming farm eggs can sit at room temperature.",
       "sources": [
         {
           "name": "Certified Humane egg labels",
@@ -15892,21 +15853,6 @@
         "Skip nitrite, nitrate or celery curing, smoke flavor, MSG and unnamed oil blends.",
         "Read for ‘mechanically separated’ meat in the ingredients and pick a pack without it."
       ],
-      "watch_out": [
-        "Uncured does not establish whether celery was used; read the complete recipe.",
-        "Ordinary curing ingredients, declared traditional fats, starter cultures and small curing or fermentation sugar are allowed within the relevant form.",
-        "The shared screen excludes phosphates here even though the traditional shopping source permits a phosphate-containing lower tier.",
-        "Named nitrite with ascorbate or erythorbate is accommodated by the traditional guide; this is not a health assurance.",
-        "No added sugar is specific to turkey bacon, not every preparation.",
-        "Made with organic ingredients and organic-feed claims do not establish finished-product organic status."
-      ],
-      "shopper_questions": [
-        "Does uncured mean no celery or other curing ingredients?",
-        "Can a whole roast still contain added solution?",
-        "Can a traditional preparation contain a starter culture or some sugar?",
-        "Is the product ready to eat, and when does refrigeration begin?"
-      ],
-      "season_storage": "Read Keep Refrigerated versus Refrigerate After Opening and the actual cooking directions. Dry curing alone does not establish a storage method. No universal season or unopened shelf life covers roasts, cured meats and liver preparations.",
       "sources": [
         {
           "name": "AGA grassfed standards",
@@ -15965,16 +15911,6 @@
         "Pick non-homogenized or cream-top milk when the case carries it.",
         "Skip lowfat, skim and flavored milk; pick plain whole milk."
       ],
-      "watch_out": [
-        "Use the shared ingredient screen in FAMILIES.md#one-shared-ingredient-list-avoid-list with its recipe exceptions.",
-        "Cream-top, glass and a short date do not identify the heat process.",
-        "Farm pickup and herdshare access depend on location; a named farm does not replace the raw-dairy review."
-      ],
-      "shopper_questions": [
-        "Does cream-top mean raw?",
-        "Which whole milk is the practical fallback?"
-      ],
-      "season_storage": "Keep cold during transport and at home, protected from light at the back of the refrigerator. Follow bottle instructions; freeze only in suitable packaging, allowing for texture changes.",
       "sources": [
         {
           "name": "Traditional whole-milk preferences and farm access",
@@ -16007,16 +15943,6 @@
         "Pick plain and check that Added Sugars reads 0g on the panel.",
         "Look for the USDA Organic seal or the AGA 100% Grassfed logo on the tub."
       ],
-      "watch_out": [
-        "Use the shared ingredient screen in FAMILIES.md#one-shared-ingredient-list-avoid-list with its recipe exceptions.",
-        "Nonfat milk as one component does not establish a low-fat finished food.",
-        "Raw kefir has a separate ferment route; no shared raw fresh-cheese retail rung is established."
-      ],
-      "shopper_questions": [
-        "Does Greek automatically outrank regular yogurt?",
-        "Does cultured mean live at eating?"
-      ],
-      "season_storage": "Buy chilled and keep refrigerated. Follow each pack after opening; freezing suitability and shelf life differ by product.",
       "sources": [
         {
           "name": "Cultured sour cream ingredient specification",
@@ -16065,16 +15991,6 @@
         "Pick a block or wedge over individually wrapped slices.",
         "Look for the USDA Organic seal or the AGA 100% Grassfed logo on the label."
       ],
-      "watch_out": [
-        "Use the shared ingredient screen in FAMILIES.md#one-shared-ingredient-list-avoid-list with its recipe exceptions.",
-        "A regional name, hard texture or merely unpasteurized wording does not establish the full heat history.",
-        "Aging duration alone does not guarantee raw-cheese safety; no universal legal age is established here."
-      ],
-      "shopper_questions": [
-        "Does pasteurized milk mean process cheese?",
-        "What does enzymes disclose about the coagulant?"
-      ],
-      "season_storage": "Refrigerate cut pieces in cheese paper inside a box and follow style-specific directions. Only an identified edible rind belongs in food; wax and cloth are not edible rinds.",
       "sources": [
         {
           "name": "Traditional cheese preferences and formula checks",
@@ -16111,16 +16027,6 @@
         "Check cream cartons for “ultra-pasteurized” and added gums or emulsifiers.",
         "Look for the AGA 100% Grassfed logo or the USDA Organic seal on the pack."
       ],
-      "watch_out": [
-        "Use the shared ingredient screen in FAMILIES.md#one-shared-ingredient-list-avoid-list with its recipe exceptions.",
-        "Raw starting butter does not make ghee raw.",
-        "Yellow color does not certify feeding, and cultured does not establish 100% grass-fed sourcing."
-      ],
-      "shopper_questions": [
-        "Is ghee raw if its butter started raw?",
-        "Which dairy fats need refrigeration?"
-      ],
-      "season_storage": "Follow the particular item and label. Butter and cream handling differs from ghee; there is no shared temperature, freezing rule or seasonal color test.",
       "sources": [
         {
           "name": "Cultured butter, seasonal color and storage FAQ",
@@ -16161,16 +16067,6 @@
         "Skip cartons listing vegetable oil, carrageenan or gums.",
         "Look for the USDA Organic seal and a printed plant percentage."
       ],
-      "watch_out": [
-        "Use the shared ingredient screen in FAMILIES.md#one-shared-ingredient-list-avoid-list with its recipe exceptions.",
-        "Unfortified is an editorial formula preference, not evidence of nutritional equivalence to dairy.",
-        "Cold sale and organic wording do not establish an unheated finished drink."
-      ],
-      "shopper_questions": [
-        "Can an oat drink declare added sugars without a sugar ingredient?",
-        "Does barista necessarily mean added oil?"
-      ],
-      "season_storage": "Follow the exact unopened chilled or ambient storage instructions. Refrigerate opened or freshly prepared drinks for their stated window; shake normal separation where instructed.",
       "sources": [
         {
           "name": "Whole-ingredient plant drinks, processing and storage FAQ",
@@ -16199,16 +16095,6 @@
         "Look for “BPA-free lining” on the can, or pick an aseptic carton.",
         "Look for the USDA Organic seal on the can or carton."
       ],
-      "watch_out": [
-        "Use the shared ingredient screen in FAMILIES.md#one-shared-ingredient-list-avoid-list with its recipe exceptions.",
-        "Cooking milk, coconut cream and diluted beverage cartons need recipe-specific substitutions.",
-        "Glass is optional; a non-BPA statement does not identify every lining material."
-      ],
-      "shopper_questions": [
-        "Is water acceptable in coconut milk?",
-        "Is the solid fat layer normal?"
-      ],
-      "season_storage": "Natural fat and water separation can be recombined. Refrigerate opened leftovers covered and follow the specific pack window; no universal opened duration is established.",
       "sources": [
         {
           "name": "Fresh coconut extraction; access unverified, preference corroborated by traditional shopping guide",
@@ -16237,16 +16123,6 @@
         "Pick a pint that feels heavy for its size, since whipped-in air weighs little.",
         "Look for the USDA Organic seal or the AGA 100% Grassfed logo on the carton."
       ],
-      "watch_out": [
-        "Use the shared ingredient screen in FAMILIES.md#one-shared-ingredient-list-avoid-list with its recipe exceptions.",
-        "Super premium does not establish sourcing; frozen dairy dessert alone does not establish air or fat content.",
-        "Homemade or raw starting cream does not establish an unheated finished dessert."
-      ],
-      "shopper_questions": [
-        "Can cream plus nonfat milk qualify?",
-        "Do cookie or swirl ingredients need their own check?"
-      ],
-      "season_storage": "Choose a sound, frozen-solid pack, carry it home frozen and keep covered. Avoid repeated thawing and refreezing; use the maker's opened-storage directions.",
       "sources": [
         {
           "name": "Organic ice cream ingredient specification",
@@ -16279,17 +16155,6 @@
         "Check the cold case, keep-refrigerated wording, the date and an intact seal.",
         "Pick short recipes of named whole foods, salt and cultures."
       ],
-      "watch_out": [
-        "Use the shared ingredient screen in FAMILIES.md#one-shared-ingredient-list-avoid-list with its recipe exceptions.",
-        "Vinegar or small amounts of fermentation sugar do not by themselves prove fermentation is absent.",
-        "Raw kefir retains the raw-milk household-suitability review; fermentation does not replace it.",
-        "Packing date alone omits earlier fermentation, and refrigeration does not establish zero alcohol."
-      ],
-      "shopper_questions": [
-        "Does the cold case establish fermentation?",
-        "Does raw mean every starting ingredient was uncooked?"
-      ],
-      "season_storage": "Keep refrigerated and follow the particular jar or bottle directions. Refrigeration slows continuing fermentation; vegetable, tea and dairy ferments do not share one opened shelf life or seasonal calendar.",
       "sources": [
         {
           "name": "Regional organic vegetable fermentation methods",
@@ -16388,16 +16253,6 @@
         "Pick sealed bags over open bins for brown rice and hot cereals.",
         "Skip quick-cooking grain packs and bulgur."
       ],
-      "watch_out": [
-        "An ancient-grain name does not establish whole-grain form.",
-        "Wild harvest does not establish organic status; require both disclosures for that preferred route.",
-        "Quick cooking alone does not disqualify oats or establish how wild rice was harvested."
-      ],
-      "shopper_questions": [
-        "Is the grain whole, hulled or pearled?",
-        "Does the label distinguish soaked, sprouted and ready-to-cook forms?"
-      ],
-      "season_storage": "Keep dry kernels sealed, cool and dry. Whole-grain flour benefits from airtight cold storage; fresh wet sprouts need separate handling. Follow grain-specific cooking directions.",
       "sources": [
         {
           "name": "Traditional shopping preference framework",
@@ -16450,16 +16305,6 @@
         "Pick dried pulses in sealed bags, with cans as the fallback.",
         "Check the best-by date and pick the newest bag."
       ],
-      "watch_out": [
-        "Unbroken skins apply to whole dry beans, not intentionally split pulses.",
-        "There is no single soaking duration or cooking time for every pulse.",
-        "Glass is a packaging preference; a lining claim alone does not describe an entire can."
-      ],
-      "shopper_questions": [
-        "Is this pulse whole, split or already cooked?",
-        "Does the pack give preparation directions for this particular pulse?"
-      ],
-      "season_storage": "Keep dried pulses sealed, cool and dry. Follow the cooked pack’s storage and opened-use instructions separately.",
       "sources": [
         {
           "name": "Traditional shopping preference framework",
@@ -16492,16 +16337,6 @@
         "Read the list for the nut or seed, with salt at most.",
         "Skip added oils, sugar, agave and partially hydrogenated oils."
       ],
-      "watch_out": [
-        "Raw wording alone does not fully describe treatment.",
-        "The nuts’ own separated oil is not an added oil; no visible layer does not prove added fat.",
-        "Whole seeds and extracted oils are different ingredients."
-      ],
-      "shopper_questions": [
-        "What treatment and storage does this form require?",
-        "Do fruit pieces or coatings add oil or sweetener?"
-      ],
-      "season_storage": "Keep packs closed and follow their storage directions. Ground seeds, nut butter and moist fruit mixtures need form-specific keeping; fully dry soaked nuts before storing a dry mixture.",
       "sources": [
         {
           "name": "Traditional shopping preference framework",
@@ -16546,17 +16381,6 @@
         "Check the milling or best-by date and pick the freshest bag.",
         "Skip flour labeled bleached or enriched, and soy flour."
       ],
-      "watch_out": [
-        "Stoneground and ancient-grain wording do not establish whole grain.",
-        "Cassava root flour and isolated tapioca starch have different recipe uses.",
-        "Spelt and einkorn contain gluten; sprouting does not remove it.",
-        "A deliberately selected gluten-free blend has separate binder and recipe requirements."
-      ],
-      "shopper_questions": [
-        "Is this a whole-grain flour, nut flour, root flour or blend?",
-        "Does the recipe suit this flour’s actual ingredient and process?"
-      ],
-      "season_storage": "Follow the flour’s package directions. Buy whole-grain flour in usable quantities and keep it airtight and cold for longer storage.",
       "sources": [
         {
           "name": "Traditional shopping preference framework",
@@ -16597,16 +16421,6 @@
         "Check the bag for sourdough, sprouted or soaked wording.",
         "Skip added gluten, soy, bran and partially hydrogenated oils on the list."
       ],
-      "watch_out": [
-        "A whole-grain first ingredient does not make every flour whole.",
-        "No single no-yeast, no-fat or no-sweetener rule fits every baked product.",
-        "Toppings, a glossy crust and a twist shape do not establish flour or fermentation."
-      ],
-      "shopper_questions": [
-        "Are all grain ingredients whole?",
-        "What process is disclosed for the actual dough?"
-      ],
-      "season_storage": "Follow fresh and thawed instructions for soft bread, bagels and rolls; freeze suitable excess. Keep dry crackers and hard pretzels sealed.",
       "sources": [
         {
           "name": "Traditional shopping preference framework",
@@ -16663,16 +16477,6 @@
         "Skip a sourdough that lists yeast, raising agents or other additives.",
         "Ask the in-store bakery whether the loaf rises on starter alone."
       ],
-      "watch_out": [
-        "Starter contains yeast; no commercial yeast does not mean yeast-free.",
-        "A flour, water and salt list may include starter implicitly; a missing separate starter word is not conclusive.",
-        "Ordinary yeast bread is not this family’s fallback."
-      ],
-      "shopper_questions": [
-        "Does the product disclose fermentation with a live starter?",
-        "Does sour flavor come from fermentation or added acid and flavoring?"
-      ],
-      "season_storage": "Follow the loaf’s storage and thawing instructions; freeze suitable portions for longer keeping.",
       "sources": [
         {
           "name": "Traditional shopping preference framework",
@@ -16729,16 +16533,6 @@
         "Check the list for a sourdough starter or culture alongside the sprouts.",
         "Skip loaves listing added gluten, soy or bran."
       ],
-      "watch_out": [
-        "Flourless does not mean gluten-free.",
-        "Sprouted wheat still contains gluten.",
-        "An ordinary unsprouted loaf is not this family’s fallback."
-      ],
-      "shopper_questions": [
-        "Which whole ingredients are actually sprouted?",
-        "Are additional flours whole grain, including any starter flour?"
-      ],
-      "season_storage": "Follow the loaf’s refrigeration, freezing and thawed-use instructions.",
       "sources": [
         {
           "name": "Traditional shopping preference framework",
@@ -16795,16 +16589,6 @@
         "Pick the shortest ingredient list on the shelf.",
         "Skip white-flour pasta and quinoa pasta."
       ],
-      "watch_out": [
-        "Durum alone does not prove whole grain; whole durum semolina is not automatically refined.",
-        "Quinoa pasta has conflicting source preferences; quinoa alone is not a supported universal exclusion.",
-        "Pasta extrusion does not establish the separate puffed-cereal decision."
-      ],
-      "shopper_questions": [
-        "Which flours are listed, and which are whole grain?",
-        "Does a legume or grain name actually come with a sprouting disclosure?"
-      ],
-      "season_storage": "Keep intact dry packs cool and dry; follow their cooking instructions. Fresh refrigerated pasta has a separate route.",
       "sources": [
         {
           "name": "Traditional shopping preference framework",
@@ -16837,16 +16621,6 @@
         "Look for pasture-raised eggs in the ingredient or sourcing statement.",
         "Check the sealed pack's use-by date and keep-refrigerated instructions."
       ],
-      "watch_out": [
-        "Filled, egg-free and gluten-free pasta require separate formula checks.",
-        "A token starter ingredient does not establish fermentation of the whole dough.",
-        "No universal opened-use deadline or oxygen-packet preference is established."
-      ],
-      "shopper_questions": [
-        "Is this plain flour-and-egg pasta or a different dough or filled product?",
-        "What storage and use instructions apply after opening?"
-      ],
-      "season_storage": "Keep refrigerated and follow the actual pack’s use-by and opened-use instructions. Freeze only as directed.",
       "sources": [
         {
           "name": "Traditional shopping preference framework",
@@ -16879,16 +16653,6 @@
         "Check every added fat or frying oil for coconut oil, pastured lard or ghee.",
         "Skip oil blends, flavor powders, artificial colors and preservatives in the ingredients."
       ],
-      "watch_out": [
-        "Cal or calcium hydroxide is part of the alkaline corn process, not citrus flavor.",
-        "A baked or air-fried claim does not erase oil already in the ingredients.",
-        "Wheat tortillas require a separate flour-and-fat decision."
-      ],
-      "shopper_questions": [
-        "Was the corn nixtamalized or is it ordinary cornmeal?",
-        "Which fats appear in the dough, frying or coating ingredients?"
-      ],
-      "season_storage": "Follow tortilla refrigeration or freezing instructions. Keep chips dry and sealed; the two forms do not share one storage rule.",
       "sources": [
         {
           "name": "Traditional shopping preference framework",
@@ -16925,16 +16689,6 @@
         "Pick the plain salted recipe with the shortest ingredient list.",
         "Skip partially hydrogenated oil, unnamed oil blends and flavorings."
       ],
-      "watch_out": [
-        "Kettle-cooked, baked and sea-salt wording do not identify the frying fat.",
-        "A seed-oil-free claim does not replace the complete ingredient check.",
-        "Chip and frozen-fry fat options overlap; their product forms and storage differ."
-      ],
-      "shopper_questions": [
-        "Are these potato slices or formed flakes?",
-        "Which fat is named in every ingredient and coating?"
-      ],
-      "season_storage": "Choose an intact pack in a usable quantity; reseal and follow its keeping directions.",
       "sources": [
         {
           "name": "Traditional shopping preference framework",
@@ -16967,16 +16721,6 @@
         "Pick potatoes alone, or potatoes with tallow or lard and optional salt.",
         "Skip listed vegetable-oil blends, sugar and starch-based coatings."
       ],
-      "watch_out": [
-        "Potato-only retail fries are a conditional option, not verified stock.",
-        "Formed hash browns and plain potato pieces can have different formulas.",
-        "No universal appliance conversion, cut thickness or browning rule follows from the sources."
-      ],
-      "shopper_questions": [
-        "Which oils or fats are already in the bag?",
-        "Are these plain potato pieces or a coated or formed product?"
-      ],
-      "season_storage": "Buy frozen, keep frozen and follow the bag’s cooking directions.",
       "sources": [
         {
           "name": "Traditional shopping preference framework",
@@ -17005,17 +16749,6 @@
         "Pick dark glass or tin with a harvest date over clear bottles.",
         "Skip margarine, shortening and partially hydrogenated oils."
       ],
-      "watch_out": [
-        "Pure wording alone does not establish an unrefined process.",
-        "Organic animal fat must still meet its species-specific feed or pasture requirement.",
-        "Whole seeds and extracted seed oils have separate formulation rules.",
-        "An oil and a water-containing spread are not automatically interchangeable in a recipe."
-      ],
-      "shopper_questions": [
-        "What process and source are disclosed for this fat?",
-        "Which other oils or hardening ingredients appear in the full formula?"
-      ],
-      "season_storage": "Keep sealed and protect oils from heat and light. Follow form-specific cold-storage directions and use clean, dry utensils; oils, rendered fats and water-containing spreads differ.",
       "sources": [
         {
           "name": "Traditional shopping preference framework",
@@ -17048,17 +16781,6 @@
         "Pick honey, maple, molasses or coconut sugar over white sugar.",
         "Skip corn syrup, brown rice syrup, agave and imitation syrups."
       ],
-      "watch_out": [
-        "Intentional sweeteners are permitted here; this is not a no-added-sugar family.",
-        "Dark maple syrup is a flavor choice, not a health grade.",
-        "Raw, natural and pure wording alone does not describe the whole process.",
-        "Brown or raw cane sugar wording does not establish retained whole cane juice."
-      ],
-      "shopper_questions": [
-        "Is this the named sweetener or a syrup blend?",
-        "Which process and flavor suit the recipe?"
-      ],
-      "season_storage": "Follow the product’s directions. Keep dry sugars protected from moisture; honey and opened maple syrup have different storage needs. Refrigerate maple syrup after opening.",
       "sources": [
         {
           "name": "Traditional shopping preference framework",
@@ -17103,17 +16825,6 @@
         "Skip added sugar, syrups, sweetening juice concentrates, oil coatings and sulfites.",
         "Check that the fruit is the first ingredient, listed before anything else."
       ],
-      "watch_out": [
-        "Unsweetened, 100% and unsulphured wording alone does not establish the entire formula.",
-        "Freeze-drying and ordinary drying are process and texture alternatives, not established health grades.",
-        "A cinnamon applesauce is an explicit variant outside the strict plain-fruit formula.",
-        "Cold or pink coconut water does not identify its treatment."
-      ],
-      "shopper_questions": [
-        "Does the ingredient list add sweetener, oil or preservation ingredients?",
-        "What storage does this dried, cooked, chilled or frozen form require?"
-      ],
-      "season_storage": "Follow the specific pack’s sealed, opened and thawing instructions. Dried fruit, opened sauce and coconut water do not share one temperature or shelf life.",
       "sources": [
         {
           "name": "Traditional shopping preference framework",
@@ -17193,16 +16904,6 @@
         "Pick packs naming the beans’ growing origin.",
         "Skip hydrolyzed soy protein, caramel color and flavorings, including in sauce packets."
       ],
-      "watch_out": [
-        "Whole soybeans and cultures are outside the added-oil screen.",
-        "Unpasteurized tempeh still requires its cooking directions.",
-        "Use the [shared ingredient screen](FAMILIES.md#one-shared-ingredient-list-avoid-list) within its stated scope."
-      ],
-      "shopper_questions": [
-        "Which culture and grains are included?",
-        "Does this product require cooking?"
-      ],
-      "season_storage": "No shared buying season. Follow the individual storage, thawing, cooking and opened-use instructions.",
       "sources": [
         {
           "name": "Miso ingredients, grain disclosure and aging",
@@ -17235,16 +16936,6 @@
         "Read the ingredients for the named fruit or wine vinegar alone.",
         "Skip distilled vinegar and bottles listing caramel or natural flavors."
       ],
-      "watch_out": [
-        "Mother or cloudiness does not establish acidity.",
-        "Named culinary acids are outside a blanket acid exclusion.",
-        "Use the [shared ingredient screen](FAMILIES.md#one-shared-ingredient-list-avoid-list) within its stated scope."
-      ],
-      "shopper_questions": [
-        "Is this for dressing or preservation?",
-        "What process and acidity are printed?"
-      ],
-      "season_storage": "Aging is intentional for balsamic. Keep bottles closed and follow their storage directions; cider vinegar may specify cool, shaded storage.",
       "sources": [
         {
           "name": "Raw cider vinegar process, acidity and storage",
@@ -17273,16 +16964,6 @@
         "Pick short recipes of broth, meat, vegetables, herbs and salt.",
         "Skip yeast extract, MSG, hydrolyzed protein and flavor powders in the ingredients."
       ],
-      "watch_out": [
-        "MSG, yeast extract and hydrolyzed protein are separate ingredients.",
-        "Shelf-stable unopened broth needs its own opened-storage instructions.",
-        "Use the [shared ingredient screen](FAMILIES.md#one-shared-ingredient-list-avoid-list) within its stated scope."
-      ],
-      "shopper_questions": [
-        "Is the base made from bones, and which species?",
-        "Is a cube frozen stock or powdered bouillon?"
-      ],
-      "season_storage": "Follow the individual chilled, frozen or shelf-stable directions and opened-use limit. Home stock can use meaty joints, frames and feet.",
       "sources": [
         {
           "name": "WAPF shopping guide",
@@ -17307,16 +16988,6 @@
         "Pick glass jars or BPA-free cans for tomato products.",
         "Skip sugar, corn syrup, citric acid and “natural flavors” on the list."
       ],
-      "watch_out": [
-        "Refrigeration and glass do not prove fermentation or absence of heat.",
-        "Lime juice can be an intentional salsa ingredient; the preserve acid preference does not apply here.",
-        "Use the [shared ingredient screen](FAMILIES.md#one-shared-ingredient-list-avoid-list) within its stated scope."
-      ],
-      "shopper_questions": [
-        "Is this a plain tomato base or a finished sauce?",
-        "Is the salsa fermented, fresh or shelf-stable?"
-      ],
-      "season_storage": "Use seasonal vegetables when available. Follow each product’s unopened and opened directions; fresh salsa and tomato jars have different use windows.",
       "sources": [
         {
           "name": "Preserved tomato sourcing and storage",
@@ -17341,16 +17012,6 @@
         "Check that every herb, nut, seed and cheese ingredient is named.",
         "Skip sunflower, canola or soybean oil, starch fillers and added flavors."
       ],
-      "watch_out": [
-        "Whole nuts and seeds are outside the extracted-oil screen.",
-        "A shelf jar can be unpasteurized; display temperature alone does not establish processing.",
-        "Use the [shared ingredient screen](FAMILIES.md#one-shared-ingredient-list-avoid-list) within its stated scope."
-      ],
-      "shopper_questions": [
-        "Which oils are added?",
-        "Are the nuts, cheese and processing method disclosed?"
-      ],
-      "season_storage": "Seasonal herbs can be used for home pesto. Follow the specific unopened and opened storage directions.",
       "sources": [
         {
           "name": "Traditional mortar pesto recipe",
@@ -17375,15 +17036,6 @@
         "Pick jars naming the egg supplier.",
         "Skip jars listing soybean, canola or unspecified vegetable oil alongside olive oil."
       ],
-      "watch_out": [
-        "Homemade mayonnaise does not share the handling of a shelf-stable unopened jar.",
-        "Use the [shared ingredient screen](FAMILIES.md#one-shared-ingredient-list-avoid-list) within its stated scope."
-      ],
-      "shopper_questions": [
-        "Is the complete oil blend disclosed?",
-        "Are egg source and storage directions printed?"
-      ],
-      "season_storage": "Follow the particular recipe or pack’s handling directions and opened-use limit.",
       "sources": [
         {
           "name": "Mayonnaise ingredients and oil alternatives",
@@ -17404,16 +17056,6 @@
         "Pick extra virgin olive oil or plain cultured dairy as the base.",
         "Skip soybean, canola, corn or unnamed oil blends, EDTA and added flavors."
       ],
-      "watch_out": [
-        "Cold display does not establish the recipe.",
-        "Creamy texture does not establish mayonnaise or added oil.",
-        "Use the [shared ingredient screen](FAMILIES.md#one-shared-ingredient-list-avoid-list) within its stated scope."
-      ],
-      "shopper_questions": [
-        "Is the base olive oil or cultured dairy?",
-        "Are all ingredients in the dressing or mayonnaise listed?"
-      ],
-      "season_storage": "Follow the specific product’s cold-storage and use instructions. Choose salad portions that fit the printed use window.",
       "sources": [
         {
           "name": "Mayonnaise ingredients and oil alternatives",
@@ -17442,16 +17084,6 @@
         "Read the list for the plant alone, no fillers, flavors or anti-caking agents.",
         "Skip spices, herbs and seaweed marked product of China."
       ],
-      "watch_out": [
-        "A fully named botanical blend can qualify.",
-        "Imported tea and tropical spices need no invented local growing season.",
-        "Use the [shared ingredient screen](FAMILIES.md#one-shared-ingredient-list-avoid-list) within its stated scope."
-      ],
-      "shopper_questions": [
-        "Which plants and forms are in the pack?",
-        "What does the date or processing statement actually describe?"
-      ],
-      "season_storage": "Store dry botanicals sealed away from heat, damp and light. Seasonal local herbs are an alternative where suitable for the dish.",
       "sources": [
         {
           "name": "Spice sourcing, freshness and packing dates",
@@ -17484,16 +17116,6 @@
         "Skip bars that list sugar ahead of cocoa or cacao.",
         "Look for dated lead and cadmium results matching the pack’s product and lot."
       ],
-      "watch_out": [
-        "Cacao wording does not establish that beans were unroasted.",
-        "Cocoa percentage is a composition cue, not a measured contaminant result.",
-        "Use the [shared ingredient screen](FAMILIES.md#one-shared-ingredient-list-avoid-list) within its stated scope."
-      ],
-      "shopper_questions": [
-        "Is this plain powder or an eating bar?",
-        "Which processing, sweetener and fat are disclosed?"
-      ],
-      "season_storage": "Keep packs closed, dry and away from heat, following the specific product instructions.",
       "sources": [
         {
           "name": "Organic cacao powder processing and ingredients",
@@ -17526,16 +17148,6 @@
         "Pick a named small bakery using honey, maple syrup or fruit to sweeten.",
         "Skip ingredient lists with margarine, shortening or artificial flavourings."
       ],
-      "watch_out": [
-        "Bran, vegan and baked-in-store wording do not establish the formula.",
-        "All-butter describes fat, not whole-grain flour or soaking.",
-        "Use the [shared ingredient screen](FAMILIES.md#one-shared-ingredient-list-avoid-list) within its stated scope."
-      ],
-      "shopper_questions": [
-        "Which flour, fat and sweetener are in each component?",
-        "Is soaking or sprouting actually disclosed?"
-      ],
-      "season_storage": "Cool home muffins before airtight storage or freezing. Follow separate directions for cream-filled pastry and other perishable fillings.",
       "sources": [
         {
           "name": "Soaked whole-grain muffin recipe and storage",
@@ -17560,16 +17172,6 @@
         "Pick jars that list the fruit before any sugar or syrup.",
         "Skip corn syrup, artificial sweeteners and added citric or ascorbic acid."
       ],
-      "watch_out": [
-        "The citric and ascorbic acid exclusion is a shopping preference, not a harm finding.",
-        "Keep required recipe acid, including lemon or lime; pectin itself can qualify.",
-        "Use the [shared ingredient screen](FAMILIES.md#one-shared-ingredient-list-avoid-list) within its stated scope."
-      ],
-      "shopper_questions": [
-        "Is this jam, jelly or a fruit spread?",
-        "Which sweetener, pectin and storage method are specified?"
-      ],
-      "season_storage": "Use seasonal fruit for home batches. Follow the recipe’s preservation method and refrigerate after opening as directed; keeping times differ by form.",
       "sources": [
         {
           "name": "Honey-sweetened pear jam recipe",
@@ -17598,16 +17200,6 @@
         "Check for keep-refrigerated instructions and a chilled display.",
         "Skip corn syrup, smoke flavoring and unspecified vegetable oils in the recipe."
       ],
-      "watch_out": [
-        "Named smoked paprika is a distinct ingredient choice.",
-        "A fermented ingredient does not establish that the finished sauce is an unheated ferment.",
-        "Use the [shared ingredient screen](FAMILIES.md#one-shared-ingredient-list-avoid-list) within its stated scope."
-      ],
-      "shopper_questions": [
-        "What is the base, and does sweetener lead?",
-        "Is smoke supplied by a named spice or an added flavor?"
-      ],
-      "season_storage": "Follow the bottle’s opened refrigeration instructions or the home recipe’s handling method.",
       "sources": [
         {
           "name": "Barbecue sauce ingredients and styles",
@@ -17632,16 +17224,6 @@
         "Check the growing origin and prefer packs naming a farm or small producer.",
         "Skip ingredient lists with syrup, added sugar, flavourings or puffed cereals."
       ],
-      "watch_out": [
-        "Wheat flakes can be included; muesli does not automatically mean gluten-free.",
-        "A cold overnight soak does not establish a particular reduction in phytate.",
-        "Use the [shared ingredient screen](FAMILIES.md#one-shared-ingredient-list-avoid-list) within its stated scope."
-      ],
-      "shopper_questions": [
-        "Is sweetener or oil added to the mix or fruit?",
-        "Which rolled grains are included?"
-      ],
-      "season_storage": "Keep dry mix sealed, cool and dry. Refrigerate mixtures prepared with liquid according to the recipe and ingredients; add seasonal fruit at serving.",
       "sources": [
         {
           "name": "Organic muesli ingredients and storage",
@@ -17666,16 +17248,6 @@
         "Skip prepopped bags cooked in partially hydrogenated or unnamed oils.",
         "Skip microwave bags and kits with oil or flavor packets."
       ],
-      "watch_out": [
-        "Ready-popped bags are a separate purchase route.",
-        "Butter can burn during popping; no comparative health ranking of suitable methods is established.",
-        "Use the [shared ingredient screen](FAMILIES.md#one-shared-ingredient-list-avoid-list) within its stated scope."
-      ],
-      "shopper_questions": [
-        "Are these plain organic kernels?",
-        "Which method and fat will be used at home?"
-      ],
-      "season_storage": "Keep kernels sealed in cool, dry conditions while retaining their internal moisture. Do not deliberately dehydrate them or import a grain-soaking rule.",
       "sources": [
         {
           "name": "Organic popcorn origin and storage",
@@ -17708,16 +17280,6 @@
         "Read every fat ingredient for butter, ghee or coconut oil.",
         "Pick a plain recipe; skip filled, iced or syrup-filled versions."
       ],
-      "watch_out": [
-        "Belgian, multigrain, protein and gluten-free wording do not establish the flour or fat.",
-        "Check an actual retail ingredient list before assuming a prepared-grain recipe is available.",
-        "Use the [shared ingredient screen](FAMILIES.md#one-shared-ingredient-list-avoid-list) within its stated scope."
-      ],
-      "shopper_questions": [
-        "Is the leading flour actually whole grain?",
-        "Which fat and grain-preparation method are disclosed?"
-      ],
-      "season_storage": "Keep frozen according to the pack. For home batches, cool separately and freeze flat or with separators before reheating; add seasonal fruit separately.",
       "sources": [
         {
           "name": "Soaked whole-grain waffle recipe",
@@ -17761,25 +17323,13 @@
       "title": "Fruit that finishes ripening at home",
       "category": "aisle_produce",
       "decision": "Organic fruit at the firmness that matches the day it gets eaten.",
-      "why": "Bananas, avocados and tomatoes can finish at room temperature, but readiness checks differ. Prefer small growers with disclosed organic practices, no pesticide sprays and a stated origin; otherwise choose sound whole organic fruit. Organic certification alone does not establish no sprays.",
+      "why": "Bananas, avocados and tomatoes can finish at room temperature, but readiness checks differ.",
       "buying_tips": [
         "Pick organic peaches, nectarines and cherries first; avocados and bananas rank cleaner.",
         "Read the PLU sticker: a 5-digit code starting with 9 is organic.",
         "Pick fruit that gives gently for today and firmer fruit for later in the week.",
         "Skip bruised, split or leaking fruit and any with a shriveled stem end."
       ],
-      "watch_out": [
-        "Skip leaking flesh, rotten softness and visible decay.",
-        "Color and variety names alone do not establish readiness.",
-        "Frozen flesh is not a shared fallback; check the item, ingredients and intended use.",
-        "Prepared fruit needs its own ingredient check; apply the shared ingredient screen only within its stated scope."
-      ],
-      "shopper_questions": [
-        "Ready tonight or bought ahead?",
-        "Which fruit should finish at room temperature?",
-        "When can ripe fruit move to the refrigerator?"
-      ],
-      "season_storage": "Finish unripe fruit at room temperature and check regularly. Refrigerate ripe bananas or avocados for extra holding time; keep near-term tomatoes at room temperature and briefly chill very ripe surplus. Seasons and ripening times vary by crop and origin.",
       "sources": [
         {
           "name": "Banana maturity and storage guide",
@@ -17817,26 +17367,13 @@
       "title": "Fruit bought ready to eat",
       "category": "aisle_produce",
       "decision": "Organic fruit already ripe on the shelf, with no mold, leaks or soft spots.",
-      "why": "These fruits need usable maturity at purchase, with checks suited to each crop. Prefer small seasonal growers with disclosed organic practices and no pesticide sprays, then sound whole organic fruit. Natural grape bloom and green citrus peel can be normal.",
+      "why": "These fruits need usable maturity at purchase, with checks suited to each crop; natural grape bloom and green citrus peel can be normal.",
       "buying_tips": [
         "Pick organic first for strawberries, grapes, apples, pears and blueberries.",
         "Check the bottom of each clamshell for mold, juice stains or crushed fruit.",
         "Look for stems still attached and fruit that is firm and plump.",
         "Read the sign for “coated with food-grade wax” on apples, pears and citrus."
       ],
-      "watch_out": [
-        "Skip fuzzy mold, pooled juice and crushed, wet fruit underneath.",
-        "Natural bloom does not reveal grape spray history; ordinary berry aroma alone is not decay.",
-        "Organic, unwaxed and no post-harvest treatment are separate disclosures.",
-        "Frozen berries or grapes suit particular uses; there is no shared frozen substitute for whole citrus.",
-        "Fruit cups, syrups and dried fruit need their own ingredient and storage checks."
-      ],
-      "shopper_questions": [
-        "Is this fruit ready for its intended use?",
-        "What is underneath the top layer?",
-        "Does green peel or white bloom indicate a problem?"
-      ],
-      "season_storage": "Refrigerate for keeping, protect from crushing and pooled moisture, and wash near use. Use berries promptly; citrus does not share the same use window. Seasons depend on region and variety.",
       "sources": [
         {
           "name": "Berry growing and handling guide",
@@ -17874,25 +17411,13 @@
       "title": "Living leaf",
       "category": "aisle_produce",
       "decision": "Organic whole heads and bunches, crisp and dry, from the cold case.",
-      "why": "Whole heads and bunches offer a useful keeping option before chopped leaves. Prefer small local growers with organic practices and no pesticide sprays; living lettuce with an explicit no-pesticide statement is another accepted option. Greenhouse, hydroponic and roots-attached wording alone do not establish spray practices.",
+      "why": "Whole heads and bunches keep longer than chopped leaves.",
       "buying_tips": [
         "Pick organic spinach, kale, collards and mustard greens first; EWG ranks them top.",
         "Check bags and clamshells for mold or bruised, damaged leaves.",
         "Look for cut and bagged greens only in the refrigerated case.",
         "Read “pre-washed” or “ready to eat” on bagged greens before rinsing again."
       ],
-      "watch_out": [
-        "Skip slimy bases, wet collapse, decay and pooled-liquid packs.",
-        "Year-round living lettuce can qualify; roots attached is not an option for every leaf species.",
-        "Red leaves, small holes and slight loss of crispness are not interchangeable with decay.",
-        "Salad-kit additions need the shared ingredient screen within its scope; washing directions vary by pack."
-      ],
-      "shopper_questions": [
-        "Whole head, loose leaves or living lettuce?",
-        "Is no-pesticide growing explicitly disclosed?",
-        "Does this pack require washing?"
-      ],
-      "season_storage": "Keep harvested greens cold and protected from drying without pooled water. Follow each living-lettuce pack’s root and storage directions. Check condition and dates rather than assuming a fixed home shelf life; local farm shares and market pickups can supply current harvests.",
       "sources": [
         {
           "name": "Living lettuce cultivation and market disclosures",
@@ -17926,25 +17451,13 @@
       "title": "Storage crops: check the form",
       "category": "aisle_produce",
       "decision": "Organic roots, potatoes and bulbs that are firm, dry-skinned and unsprouted.",
-      "why": "Cured onions and garlic and storage potatoes can suit cool, ventilated storage, but their needs are not identical. Fresh alliums and new or salad potatoes need a colder route; peeled or cut forms follow refrigeration directions. Prefer small growers with organic practices and no pesticide sprays, then sound whole organic crops.",
+      "why": "Cured onions and garlic and storage potatoes suit cool, ventilated storage; fresh alliums and new potatoes need a colder route.",
       "buying_tips": [
         "Pick organic potatoes first; EWG puts them on its Dirty Dozen.",
         "Check for soft spots, cuts, wrinkles or sprouting before bagging.",
         "Look for firm, smooth skins in good color on roots and tubers.",
         "Read the bin sign for “Product of” to see where the crop was grown."
       ],
-      "watch_out": [
-        "Fresh or green alliums and new potatoes do not inherit a pantry-storage rule.",
-        "Organic and sprout-free appearance do not establish no post-harvest treatment.",
-        "Sprouting needs an item-specific judgment; garlic and potatoes are not interchangeable.",
-        "Prepared or minced forms need their own ingredient and refrigeration checks."
-      ],
-      "shopper_questions": [
-        "Is this a storage crop or a fresh form?",
-        "Does this form need refrigeration?",
-        "Is any post-harvest treatment explicitly disclosed?"
-      ],
-      "season_storage": "Keep whole storage potatoes cool, dark and ventilated; keep cured bulbs cool, dry and airy, without moisture-trapping bags. These crops need not share a container or identical humidity. Refrigerate fresh garlic, bunching onions and new or salad potatoes; follow peeled or cut packs’ refrigeration directions.",
       "sources": [
         {
           "name": "Potato forms, uses and storage",
@@ -17982,25 +17495,13 @@
       "title": "Crisp heads and pods",
       "category": "aisle_produce",
       "decision": "Organic heads, pods and peppers that are firm, heavy and bright in color.",
-      "why": "Broccoli, cauliflower, cabbage, peppers and snap beans need different variety and maturity checks. Prefer whole vegetables from small seasonal growers with organic practices and no pesticide sprays, then whole organic vegetables. Plain organic prepared or frozen forms suit appropriate cooked dishes.",
+      "why": "Broccoli, cauliflower, cabbage, peppers and snap beans need different variety and maturity checks.",
       "buying_tips": [
         "Pick organic first for peppers and green beans; cabbage and cauliflower rank cleaner.",
         "Pick heads that are compact and heavy for their size.",
         "Check that leaves on heads are bright green and firmly attached.",
         "Skip heads or pods with soft spots, bruises or mold."
       ],
-      "watch_out": [
-        "Skip wet breakdown, mold and slimy packs.",
-        "Unusual colors and shapes can be variety traits; slight softening alone is not rot.",
-        "Florets, rice, strips and French-cut describe form, not growing practices.",
-        "Sauces and additions need the shared ingredient screen within its stated scope."
-      ],
-      "shopper_questions": [
-        "Whole, plain cut or frozen for cooking?",
-        "Which part shows this vegetable’s condition?",
-        "Does the variety and maturity suit the dish?"
-      ],
-      "season_storage": "Refrigerate fresh heads, peppers and pods. Protect beans and leafy heads from drying. Crop seasons and keeping times differ; use the item’s condition and pack directions.",
       "sources": [
         {
           "name": "Organic protected growing without pesticides",
@@ -18046,25 +17547,13 @@
       "title": "Dry, firm mushrooms",
       "category": "aisle_produce",
       "decision": "Organic mushrooms in a dry pack, judged by look and feel, not the date.",
-      "why": "Species and product form determine the useful condition checks. Prefer nearby cultivators with disclosed organic substrate practices and no pesticides, then whole organic mushrooms. Wood or grain substrates and year-round indoor cultivation can qualify without a soil-grown requirement.",
+      "why": "Species and product form determine the useful condition checks.",
       "buying_tips": [
         "Look for USDA Organic on the mushroom pack or the bin sign.",
         "Check under the film for slime, wet spots or dark patches.",
         "Pick caps that feel dry and springy and smell earthy and mild.",
         "Skip choosing by the sell-by date alone; look at the mushrooms."
       ],
-      "watch_out": [
-        "Year-round indoor cultivation is not a defect.",
-        "Cap or gill color alone does not establish freshness or identity.",
-        "Compostable packaging does not establish the growing substrate or every production material.",
-        "Seasoned dried and prepared mushrooms need their own ingredient checks."
-      ],
-      "shopper_questions": [
-        "Which culinary species and product form is this?",
-        "What growing practices are disclosed?",
-        "Can the fresh mushrooms be used within days?"
-      ],
-      "season_storage": "Refrigerate fresh mushrooms in breathable paper or suitable original packaging; buy an amount usable within days and clean near cooking. Follow dried products’ storage directions. Cultivated mushrooms do not share one outdoor season.",
       "sources": [
         {
           "name": "Organic mushroom substrate and handling disclosures",
@@ -18121,18 +17610,6 @@
         "Read the ingredients: seafood alone, with optional salt.",
         "Pick sealed frozen packs or firm fish displayed on ice."
       ],
-      "watch_out": [
-        "Protective surface ice glaze differs from an absorbed solution; glaze alone is not a reason to reject a pack.",
-        "Fresh wording does not establish the catch date. Supplier size and transport distance alone do not establish quality.",
-        "Use the shared ingredient screen within its stated scope for formulated seafood.",
-        "Use the species, mercury and farming cards before transferring a rule between fish; trout has a separate conditional family.",
-        "Organic or sustainability wording does not establish wild-caught status; use the seafood certification card for label scope."
-      ],
-      "shopper_questions": [
-        "Can frozen wild fish qualify alongside seasonal fresh fish?",
-        "Which species, harvest and ingredient details should the pack disclose?"
-      ],
-      "season_storage": "Seasons vary by species and region. Keep chilled seafood cold and frozen packs sealed; thaw meal-sized portions in the refrigerator, following instructions to open or remove vacuum packaging before thawing.",
       "sources": [
         {
           "name": "Seafood country-of-origin labeling, 7 CFR 60.200",
@@ -18161,15 +17638,6 @@
         "Look for the ASC label on farmed trout packs.",
         "Skip trout labeled color added."
       ],
-      "watch_out": [
-        "Disclosure is a prerequisite to evaluating the farmed fallback, not proof of nutritional equivalence or an acceptable ration.",
-        "Apply the shared ingredient screen only within its scope; sourcing claims do not disclose processing additions."
-      ],
-      "shopper_questions": [
-        "Does spring-fed wording disclose the feed formula?",
-        "What information is needed before considering farmed rainbow trout?"
-      ],
-      "season_storage": "No common trout season is established. Keep chilled fish cold and frozen packs sealed; follow package thawing instructions, including any vacuum-pack opening requirement.",
       "sources": [
         {
           "name": "Seafood Watch national guide",
@@ -18198,16 +17666,6 @@
         "Skip tins listing soy oil, sunflower oil or hydrolyzed protein.",
         "Check for an intact tin with no bulging, leaks or damaged seams."
       ],
-      "watch_out": [
-        "Water-packed does not mean fish and water are the only ingredients; broth or herbs do not automatically imply hydrolyzed protein.",
-        "Hand-packed does not establish species, ingredients or cooking history.",
-        "A tin or jar does not establish pantry storage. A BPA-related declaration does not describe every lining material."
-      ],
-      "shopper_questions": [
-        "Can fish in its own juices qualify?",
-        "Does a metal tin always belong in the pantry?"
-      ],
-      "season_storage": "Follow unopened and after-opening directions. Sterilized preserves and salt-matured semi-preserves can require different storage; an after-opening refrigeration instruction does not settle unopened storage.",
       "sources": [
         {
           "name": "Skipjack species, fishing method and recipe",
@@ -18252,16 +17710,6 @@
         "Check live animals for moving legs or claws.",
         "Read raw or cooked on chilled or frozen portions."
       ],
-      "watch_out": [
-        "A pasteurized metal can can require refrigeration; packaging material does not establish storage.",
-        "Protective ice glaze differs from absorbed water. Use the shared ingredient screen for formulated meat and tails.",
-        "Shell redness alone does not establish freshness. No blanket recommendation to eat internal organs is supported."
-      ],
-      "shopper_questions": [
-        "Does the movement test apply to cooked legs or frozen tails?",
-        "Can canned picked crab require refrigeration?"
-      ],
-      "season_storage": "Crab and lobster do not share one season. Keep live purchases cold and ventilated and plan prompt cooking; follow the actual chilled or frozen directions for processed formats. Regional seafood clubs may offer seasonal frozen portions.",
       "sources": [
         {
           "name": "FDA seafood selection",
@@ -18290,17 +17738,6 @@
         "Check oysters, mussels and hard-shell clams for intact shells that close when tapped.",
         "Pick farmed mussels or oysters as readily as wild; both rate Super Green."
       ],
-      "watch_out": [
-        "Hard-shell closure checks do not cover every soft-shell or steamer clam.",
-        "A tag, live sale or named grower does not establish suitability for raw consumption.",
-        "There is no universal months-with-R season. Current growing conditions and region matter.",
-        "Use the shared ingredient screen for canned, smoked or sauced forms; processed packs do not inherit live-shell tests."
-      ],
-      "shopper_questions": [
-        "Can farmed clams, mussels and oysters qualify?",
-        "Which checks change when shellfish is shucked, frozen or canned?"
-      ],
-      "season_storage": "Refrigerate loose live shellfish under a damp cloth in a ventilated container; keep out of freshwater and meltwater, and do not seal airtight. Processed sealed packs follow their own directions. A shellfish farm store is a direct route when the same harvest traceability is available.",
       "sources": [
         {
           "name": "Shellstock tags, 21 CFR 1240.60",
@@ -18329,16 +17766,6 @@
         "Ask at the fish counter whether the scallops are dry or wet-packed.",
         "Pick sealed frozen dry scallops when the counter has only wet ones."
       ],
-      "watch_out": [
-        "Sea and bay identify scallop types; size does not establish a health ranking.",
-        "Whiteness or liquid alone does not establish treatment.",
-        "Protective frozen glaze differs from absorbed soaking water. Apply the shared ingredient screen within scope."
-      ],
-      "shopper_questions": [
-        "Does dry-packed wording prove the scallops were never soaked?",
-        "Can documented frozen dayboat scallops qualify?"
-      ],
-      "season_storage": "Seasons vary by region and fishery; there is no universal winter season. Keep scallops cold, use promptly or keep portions frozen, and follow thawing directions. Direct seasonal suppliers may also offer frozen catch.",
       "sources": [
         {
           "name": "Dry vs wet scallops",
@@ -18363,16 +17790,6 @@
         "Check the curing method and storage directions on the label.",
         "Pick intact packs kept chilled or frozen as their label directs."
       ],
-      "watch_out": [
-        "A vacuum pouch, jar, tin or dried appearance alone does not establish shelf stability.",
-        "Actual wood smoking differs from added smoke flavor; a simple salmon curing sweetener does not extend to salt-only roe.",
-        "Use the shared ingredient screen within scope. Origin, appearance and preservation wording do not replace the full recipe."
-      ],
-      "shopper_questions": [
-        "Does a sealed pouch establish pantry storage?",
-        "Do salmon and roe share the same curing recipe and freezing instructions?"
-      ],
-      "season_storage": "Follow the actual refrigerated, frozen or ambient storage category and after-opening instructions. No common season or opening window is established; do not transfer salmon freezing advice to every roe. Fisher-direct ranges may offer both smoked fish and salt-cured roe.",
       "sources": [
         {
           "name": "WAPF shopping guide",
