@@ -381,7 +381,7 @@
       "family": "fam_ruminant_meat",
       "decision": "Grass-fed lamb or goat first, then AGA or organic.",
       "pick_steps": [
-        "Look for USDA Organic: certified organic feed and outdoor access.",
+        "Look for an AWA or other pasture seal; organic is a bonus.",
         "Pick lamb that is fine textured and firm, with white marbling.",
         "Pick goat with firm, fine-grained flesh and well-distributed white fat."
       ],

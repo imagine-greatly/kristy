@@ -1360,7 +1360,7 @@
       "why": "AGA animals are fed only grass and forage and never given added growth hormones."
     },
     "lamb_goat": {
-      "decision": "Organic lamb or goat with an AWA pasture seal.",
+      "decision": "Pasture-raised lamb or goat with an AWA or grassfed seal.",
       "sources": [
         {
           "name": "A Greener World",
@@ -1368,7 +1368,7 @@
         }
       ],
       "why": "Grass-fed sourcing: see “Grass-fed” (the label).",
-      "cart_pick": "Organic lamb or goat with an AWA seal"
+      "cart_pick": "Pasture-raised lamb or goat with an AWA seal"
     },
     "bison": {
       "decision": "AGA-certified 100% grass-fed bison, bison alone listed.",

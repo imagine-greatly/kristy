@@ -8170,7 +8170,7 @@
       ],
       "category": "meat_counter",
       "question": "How do you judge lamb and goat meat quality?",
-      "decision": "Organic lamb or goat with an AWA pasture seal.",
+      "decision": "Pasture-raised lamb or goat with an AWA or grassfed seal.",
       "why": "Grass-fed sourcing: see “Grass-fed” (the label).",
       "short_answer": "Graded lamb at retail is Prime, Choice, or Good. Goat is not graded, so read the flesh: light pink to bright red, firm, fine-grained, with white fat.",
       "detail": "Sheep carcasses are classed as lamb, yearling mutton, or mutton by age. Lamb comes from animals typically under a year old. Goats under a year old are called kids. Meat from older goats is darker.",
@@ -8182,7 +8182,7 @@
         }
       ],
       "kristy_take": "Lamb grading is voluntary and takes age into account. Check for firm, fine-textured meat with white marbling, and read the cut name, such as shoulder or leg.",
-      "cart_pick": "Organic lamb or goat with an AWA seal",
+      "cart_pick": "Pasture-raised lamb or goat with an AWA seal",
       "buying_tips": [
         "Goat has no quality grade, so firm, fine-grained flesh with white fat is the check.",
         "Pick goat with firm, fine-grained flesh and well-distributed white fat.",
@@ -8196,7 +8196,7 @@
         "Skip pre-seasoned or marinated packs; buy the plain cut."
       ],
       "pick_steps": [
-        "Look for USDA Organic: certified organic feed and outdoor access.",
+        "Look for an AWA or other pasture seal; organic is a bonus.",
         "Pick lamb that is fine textured and firm, with white marbling.",
         "Pick goat with firm, fine-grained flesh and well-distributed white fat."
       ],
@@ -8215,7 +8215,7 @@
           "meaning": "Goat under a year of age."
         }
       ],
-      "tier_note": "Grass seals cover sheep and goats, and “grass-fed” is the producer’s own word unless a certifier’s seal audits it.",
+      "tier_note": "Grass seals cover sheep and goats, and “grass-fed” is the producer’s own word unless a certifier’s seal audits it; pasture-raised means time outdoors on pasture, audited only with a certifier’s seal.",
       "asked_as": [
         "how do i judge goat meat quality",
         "how do you choose lamb chops",
