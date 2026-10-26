@@ -20,8 +20,10 @@ export function mergeFamilyBuild(kb, builds, { reviewed = doLines } = {}) {
       !build.patches || typeof build.patches !== 'object' || Array.isArray(build.patches)) {
       throw new Error('build needs families[], aisles[], and patches{}');
     }
-    for (const [key, kind] of [['families', 'family'], ['aisles', 'aisle']]) {
-      for (const entry of build[key]) {
+    if (build.picks !== undefined && !Array.isArray(build.picks)) throw new Error('build picks must be an array');
+    // Any other top-level key (e.g. do_lines, applied via doLines.json) is ignored here.
+    for (const [key, kind] of [['families', 'family'], ['aisles', 'aisle'], ['picks', 'pick']]) {
+      for (const entry of build[key] || []) {
         if (!entry || entry.kind !== kind || !entry.id) throw new Error(`${key}: invalid entry kind or id`);
         const old = byId.get(entry.id);
         if (old && old.kind !== kind) throw new Error(`${entry.id}: cannot change kind`);
@@ -58,12 +60,15 @@ function dropFamilylessDeltas(build) {
   return { ...build, patches };
 }
 
+// shelf-* outrank older dial batches; pilot-* are the last word.
+const rank = (f) => (f.startsWith('pilot-') ? 3 : f.startsWith('shelf-') ? 2 : f === 'reconcile.json' ? 1 : 0);
+export const sortBuildFiles = (files) => [...files].sort((a, b) => rank(a) - rank(b) || a.localeCompare(b));
+
 function main() {
   const args = process.argv.slice(2);
   const check = args.includes('--check');
   const dir = args.find((arg) => arg !== '--check') || fileURLToPath(new URL('../../docs/research/deepen/dial/', import.meta.url));
-  const rank = (f) => (f.startsWith('shelf-') ? 2 : f === 'reconcile.json' ? 1 : 0); // shelf-* are the last word
-  const files = readdirSync(dir).filter((f) => f.endsWith('.json')).sort((a, b) => rank(a) - rank(b) || a.localeCompare(b));
+  const files = sortBuildFiles(readdirSync(dir).filter((f) => f.endsWith('.json')));
   if (!files.length) throw new Error(`no build JSON files in ${dir}`);
   const path = fileURLToPath(new URL('../kristy_perimeter_kb.json', import.meta.url));
   const kb = mergeFamilyBuild(JSON.parse(readFileSync(path, 'utf8')),
