@@ -198,6 +198,10 @@ const PILOT_FIELDS = {
       {
         "name": "Weston A. Price Foundation",
         "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+      },
+      {
+        "name": "CSPI: Artificial colorings (synthetic food dyes)",
+        "url": "https://www.cspi.org/node/7436"
       }
     ]
   }
