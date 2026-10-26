@@ -21,6 +21,7 @@ test('produce carts are plain names', () => {
   assert.ok(Object.keys(OLD_CARTS).length > Object.keys(NEW).length, 'old names kept');
 });
 
-test('no cart_pick in the whole KB says organic', () => {
-  for (const e of picks) assert.doesNotMatch(e.cart_pick, /organic/i, e.id);
+test('produce cart_picks never say organic', () => {
+  // retired: whole-KB form; the pilot merge (P4) names organic as the floor on animal-product picks (stance 2026-10-20).
+  for (const id of Object.keys(NEW)) assert.doesNotMatch(picks.find((e) => e.id === id).cart_pick, /organic/i, id);
 });

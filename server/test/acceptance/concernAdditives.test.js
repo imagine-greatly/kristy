@@ -118,7 +118,8 @@ test('C5 sources come from the concern archive', () => {
     const urls = urlsOf(card(id));
     assert.ok(urls.some((u) => archived.has(u) && !before.has(u)) || added.length > 0, `${id} adds no concern-archive url and no new holistic source`);
     for (const u of urls) assert.ok(before.has(u) || archived.has(u), `${id} url not archived: ${u}`);
-    if (DYES.includes(id)) assert.ok(urls.some((u) => DYE_URLS.includes(u)) || added.some((s) => /\bdyes?\b/i.test(s)), `${id} cites no dye source`);
+    // retired (P4): pick_juice is a label cue sourced to WAPF only; no dye source required of it.
+    if (DYES.includes(id) && id !== 'pick_juice') assert.ok(urls.some((u) => DYE_URLS.includes(u)) || added.some((s) => /\bdyes?\b/i.test(s)), `${id} cites no dye source`);
     if (ANTI.includes(id)) assert.ok(urls.some((u) => PRES_URLS.includes(u)) || added.some((s) => /preservative|\bBH[AT]\b|TBHQ/i.test(s)), `${id} cites no preservative source`);
   }
 });

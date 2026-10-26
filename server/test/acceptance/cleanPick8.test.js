@@ -356,17 +356,8 @@ const SET = {
 };
 
 // P4 current owned-field pins; historical fixtures below still serve their archive guards.
-const PILOT_FIELDS = {
-  "pick_soup_bones": {
-    "decision": "Organic grass-finished marrow bones: certified organic feed and outdoor access, with an AGA seal.",
-    "sources": [
-      {
-        "name": "American Grassfed Association",
-        "url": "https://www.americangrassfedcertified.com/"
-      }
-    ]
-  }
-};
+// retired (P4): the pilot soup_bones text named a brand-free seal we could not archive; the base text stays (C11/C14/C15).
+const PILOT_FIELDS = {};
 const IDS = Object.keys(SET);
 const MEMBERS = ['pick_sausage', 'pick_egg_whites', 'pick_soup_bones', 'pick_jerky', 'popcorn', 'oats_steelcut_rolled_instant', 'beans_dried_vs_canned', 'pasta_dry', 'grains_beyond_rice', 'coffee_beans', 'tea', 'cocoa', 'maple_syrup', 'raw_cider_vinegar', 'vinegar', 'potato_chips', 'dried_fruit'];
 // Already at their own top rung or waiting on a source: byte-equal to the base.
