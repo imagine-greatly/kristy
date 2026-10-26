@@ -1,0 +1,1645 @@
+{
+  "families": [],
+  "aisles": [
+    {
+      "id": "aisle_meat_eggs",
+      "kind": "aisle",
+      "decision": "Choose organic meat and eggs with pasture-raising certification, checking grass-fed wording on organ meats."
+    },
+    {
+      "id": "aisle_seafood",
+      "kind": "aisle",
+      "decision": "Choose wild seafood with a species label, live shellfish with closing shells, and dry scallops."
+    },
+    {
+      "id": "aisle_dairy_alt",
+      "kind": "aisle",
+      "decision": "Choose plain whole cultured dairy with milk and cultures listed, and cream without additives."
+    },
+    {
+      "id": "aisle_pantry_bulk",
+      "kind": "aisle",
+      "decision": "Choose sealed organic foods with grain, nut, sweetener or oil named, and stated BPA-free can linings."
+    },
+    {
+      "id": "aisle_bread_bakery",
+      "kind": "aisle",
+      "decision": "Choose organic sourdough or sprouted bread with whole grain named first, without enriched flour."
+    },
+    {
+      "id": "aisle_snacks",
+      "kind": "aisle",
+      "decision": "Read snack ingredients for named foods and oils, skipping natural flavors and added syrups."
+    },
+    {
+      "id": "aisle_condiments",
+      "kind": "aisle",
+      "decision": "Choose organic condiments listing vegetables, vinegar, salt, spices and any oil by name."
+    },
+    {
+      "id": "aisle_drinks",
+      "kind": "aisle",
+      "decision": "Choose plain water or organic kombucha in glass, checking for added sugar or natural flavors."
+    }
+  ],
+  "picks": [
+    {
+      "id": "pick_jerky",
+      "kind": "pick",
+      "decision": "Grass-fed, grass-finished beef jerky with simple ingredients.",
+      "avoid": "First ingredient beef; AGA or organic seal on the bag.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/best-healthy-snacks/"
+        }
+      ]
+    },
+    {
+      "id": "pick_venison",
+      "kind": "pick",
+      "title": "Venison",
+      "category": "meat_counter",
+      "aliases": [
+        "inspected venison steak",
+        "inspected venison steaks"
+      ],
+      "decision": "Venison in a tray naming deer.",
+      "avoid": "Tray names deer and shows an inspected and approved mark.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/meat/"
+        }
+      ]
+    },
+    {
+      "id": "pick_flavored_yogurt",
+      "kind": "pick",
+      "title": "Flavored yogurt",
+      "category": "dairy",
+      "aliases": [
+        "sweetened flavored yogurt",
+        "sweetened flavored yogurts"
+      ],
+      "decision": "Skip sweetened or flavored yogurt; choose plain whole yogurt.",
+      "avoid": "Skip yogurt listing organic sweeteners or “natural flavors”.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        },
+        {
+          "name": "Cornucopia Institute",
+          "url": "https://www.cornucopia.org/research/yogurt/"
+        }
+      ]
+    },
+    {
+      "id": "pick_dairy_cream",
+      "kind": "pick",
+      "title": "Dairy cream",
+      "category": "dairy",
+      "aliases": [
+        "heavy dairy cream",
+        "heavy dairy creams"
+      ],
+      "decision": "Organic dairy cream with cream as the only ingredient.",
+      "avoid": "Check cream alone in ingredients; skip cartons stamped “ultra-pasteurized”.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        },
+        {
+          "name": "Cornell Legal Information Institute",
+          "url": "https://www.law.cornell.edu/cfr/text/21/131.3"
+        }
+      ]
+    },
+    {
+      "id": "pick_nondairy_creamer",
+      "kind": "pick",
+      "title": "Non-dairy creamer",
+      "category": "dairy",
+      "aliases": [
+        "nondairy coffee creamer",
+        "nondairy coffee creamers"
+      ],
+      "decision": "Skip non-dairy creamer; choose plain dairy cream.",
+      "avoid": "Skip creamer listing oil or sweeteners before any dairy ingredient.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    {
+      "id": "pick_cheese_food_slices",
+      "kind": "pick",
+      "title": "Cheese food slices",
+      "category": "dairy",
+      "aliases": [
+        "cheese food slice",
+        "cheese food slices"
+      ],
+      "decision": "Skip cheese food slices; choose slices labeled cheese.",
+      "avoid": "“Pasteurized process cheese food” or “cheese product” printed on the wrapper.",
+      "sources": [
+        {
+          "name": "Cornell Legal Information Institute",
+          "url": "https://www.law.cornell.edu/cfr/text/21/133.169"
+        }
+      ]
+    },
+    {
+      "id": "pick_margarine",
+      "kind": "pick",
+      "decision": "Skip margarine; choose butter with cream and salt.",
+      "avoid": "“Vegetable oil” leads the ingredient list of any tub or stick.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    {
+      "id": "pick_whipped_topping",
+      "kind": "pick",
+      "decision": "Skip imitation whipped topping; choose plain cream to whip.",
+      "avoid": "“Hydrogenated” or vegetable oil on a canned or tub topping.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    {
+      "id": "pick_vegetable_oil_blend",
+      "kind": "pick",
+      "title": "Vegetable oil blend",
+      "category": "bulk_pantry",
+      "aliases": [
+        "vegetable oil blend",
+        "vegetable oil blends"
+      ],
+      "decision": "Skip vegetable oil blends; choose a single named olive oil.",
+      "avoid": "Bottle reads “vegetable oil” or lists soybean, canola, corn, cottonseed.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    {
+      "id": "pick_avocado_oil",
+      "kind": "pick",
+      "title": "Avocado oil",
+      "category": "bulk_pantry",
+      "aliases": [
+        "virgin avocado oil",
+        "virgin avocado oils"
+      ],
+      "decision": "Organic virgin avocado oil with a harvest or production date.",
+      "avoid": "Check harvest or production date; choose “virgin”, not “refined”.",
+      "sources": [
+        {
+          "name": "UC Davis",
+          "url": "https://www.ucdavis.edu/food/news/buying-better-olive-avocado-oil"
+        },
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    {
+      "id": "pick_whole_grains",
+      "kind": "pick",
+      "title": "Whole grains",
+      "category": "bulk_pantry",
+      "aliases": [
+        "whole grain bag",
+        "whole grain bags"
+      ],
+      "decision": "Organic whole grains with one grain named in the ingredients.",
+      "avoid": "Ingredient list is one grain, with “whole” before its name.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    {
+      "id": "pick_dried_pulses",
+      "kind": "pick",
+      "title": "Dried pulses",
+      "category": "bulk_pantry",
+      "aliases": [
+        "dried pulse",
+        "dried pulses"
+      ],
+      "decision": "Organic dried lentils or split peas with one legume listed.",
+      "avoid": "One legume named; soak-and-cook directions printed on the bag.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    {
+      "id": "pick_dry_pasta",
+      "kind": "pick",
+      "title": "Dry pasta",
+      "category": "bulk_pantry",
+      "aliases": [
+        "dry pasta bag",
+        "dry pasta bags"
+      ],
+      "decision": "Organic whole-wheat pasta with semolina named and no enriched flour.",
+      "avoid": "Read durum or whole-wheat semolina; skip “enriched” in the pasta ingredients.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    {
+      "id": "pick_molasses",
+      "kind": "pick",
+      "title": "Molasses",
+      "category": "bulk_pantry",
+      "aliases": [
+        "cane molasses bottle",
+        "cane molasses bottles"
+      ],
+      "decision": "Organic molasses with molasses listed before other sweeteners.",
+      "avoid": "Read molasses or dehydrated cane juice first, before other sweeteners.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    {
+      "id": "pick_plant_sugars",
+      "kind": "pick",
+      "title": "Date and coconut sugar",
+      "category": "bulk_pantry",
+      "aliases": [
+        "plant sugar",
+        "plant sugars"
+      ],
+      "decision": "Organic date or coconut sweeteners named by their plant.",
+      "avoid": "Read the sweetener’s plant name, not “natural sweetener”, in ingredients.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    {
+      "id": "pick_refined_syrups",
+      "kind": "pick",
+      "title": "Refined syrups",
+      "category": "bulk_pantry",
+      "aliases": [
+        "refined syrup",
+        "refined syrups"
+      ],
+      "decision": "Skip corn, agave and brown rice syrups; choose pure maple syrup.",
+      "avoid": "Corn syrup, agave or brown rice syrup anywhere in the ingredients.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    {
+      "id": "pick_packaged_nuts_seeds",
+      "kind": "pick",
+      "title": "Nuts and seeds",
+      "category": "bulk_pantry",
+      "aliases": [
+        "sealed nut pack",
+        "sealed nut packs"
+      ],
+      "decision": "Organic raw nuts and seeds in sealed packages.",
+      "avoid": "Check sealed packaging and nuts alone in ingredients; skip open bins.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    {
+      "id": "pick_canned_foods",
+      "kind": "pick",
+      "title": "Canned vegetables and fish",
+      "category": "bulk_pantry",
+      "aliases": [
+        "canned food",
+        "canned foods"
+      ],
+      "decision": "Organic canned foods with stated BPA-free lining and simple ingredients.",
+      "avoid": "Label states BPA-free lining; ingredients are the food, water, salt.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    {
+      "id": "pick_jarred_vegetable_sauces",
+      "kind": "pick",
+      "title": "Jarred vegetable sauces",
+      "category": "bulk_pantry",
+      "aliases": [
+        "jarred vegetable sauce",
+        "jarred vegetable sauces"
+      ],
+      "decision": "Organic jarred vegetable sauces with named oil, salt and spices.",
+      "avoid": "Glass jar; vegetables, oil by name, salt and spices, nothing else.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    {
+      "id": "pick_fermented_soy_sauce",
+      "kind": "pick",
+      "title": "Soy sauce",
+      "category": "bulk_pantry",
+      "aliases": [
+        "fermented soy sauce",
+        "fermented soy sauces"
+      ],
+      "decision": "Organic naturally fermented or brewed soy sauce.",
+      "avoid": "Read naturally fermented or brewed; skip liquid amino acids.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    {
+      "id": "pick_juice",
+      "kind": "pick",
+      "decision": "Skip juice and juice cocktails; choose plain water.",
+      "avoid": "Read “from concentrate” or “juice cocktail”; check for listed sweeteners.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    {
+      "id": "pick_soda",
+      "kind": "pick",
+      "decision": "Skip soda; choose plain water without flavors or sweeteners.",
+      "avoid": "Skip soda listing sweeteners, caramel color or “natural flavors”.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    {
+      "id": "pick_breakfast_cereal",
+      "kind": "pick",
+      "title": "Breakfast cereal",
+      "category": "bulk_pantry",
+      "aliases": [
+        "boxed breakfast cereal",
+        "boxed breakfast cereals"
+      ],
+      "decision": "Skip extruded breakfast cereal; choose organic whole-grain hot cereal.",
+      "avoid": "Skip extruded rings, flakes, puffs, or cereal boxes marked “natural”.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        },
+        {
+          "name": "Cornucopia Institute",
+          "url": "https://www.cornucopia.org/about-the-cereal-scorecard/"
+        }
+      ]
+    },
+    {
+      "id": "pick_soup_bones",
+      "kind": "pick",
+      "decision": "Organic grass-finished marrow bones with an AGA label at the counter.",
+      "sources": [
+        {
+          "name": "American Grassfed Association",
+          "url": "https://www.americangrassfedcertified.com/"
+        }
+      ],
+      "avoid": "Read grass-finished or AGA on marrow bones at the counter."
+    },
+    {
+      "id": "pick_sausage",
+      "kind": "pick",
+      "decision": "Organic sausage with a third-party welfare seal for outdoor access.",
+      "sources": [
+        {
+          "name": "A Greener World",
+          "url": "https://agreenerworld.org/certifications/animal-welfare-approved/"
+        }
+      ],
+      "avoid": "Check short casing ingredients and a welfare seal for outdoor access."
+    },
+    {
+      "id": "pick_fish_sticks",
+      "kind": "pick",
+      "decision": "Wild pollock fish sticks made from fillet, not minced pieces.",
+      "sources": [
+        {
+          "name": "NOAA Fisheries",
+          "url": "https://www.fisheries.noaa.gov/species/alaska-pollock"
+        }
+      ],
+      "avoid": "Read wild pollock fillet; skip fish sticks made from minced pieces."
+    }
+  ],
+  "patches": {
+    "organ_meats": {
+      "decision": "Organic organ meats from pasture-raised animals.",
+      "why": "Weston A. Price says sourcing is key for organ meats and points to pasture-raised, 100% grass-fed animals.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/podcast/eat-your-liver-other-organ-meats-too/"
+        }
+      ]
+    },
+    "beef_veal": {
+      "decision": "Pasture-raised veal with a humane seal.",
+      "why": "Pasture-raised veal means calves raised on open pasture beside the mother, never in feedlots.",
+      "sources": [
+        {
+          "name": "Pasture-raised veal production",
+          "url": "https://www.wholefoodsmarket.com/tips-and-ideas/archive/strauss-free-raised-e2-84-a2-veal"
+        }
+      ],
+      "instead": "Pasture-raised veal with a humane seal."
+    },
+    "chicken_breast": {
+      "decision": "Organic, pasture-raised chicken breast, bone-in and skin-on.",
+      "why": "Certified Humane pasture raised requires 108 square feet per bird outdoors, matching AWA.",
+      "sources": [
+        {
+          "name": "Certified Humane",
+          "url": "https://certifiedhumane.org/decoding-the-carton-how-to-buy-clean-humane-eggs/"
+        }
+      ]
+    },
+    "bacon": {
+      "decision": "Pasture-raised bacon with pork, salt and celery powder.",
+      "why": "The USDA rule lets “Uncured” appear in the name only for products cured without synthetic nitrite.",
+      "sources": [
+        {
+          "name": "Electronic Code of Federal Regulations",
+          "url": "https://www.ecfr.gov/current/title-9/section-317.17"
+        }
+      ]
+    },
+    "ham": {
+      "decision": "Uncured whole-muscle ham with pork and salt.",
+      "why": "“Uncured” must lead the product name under federal curing rules.",
+      "sources": [
+        {
+          "name": "Electronic Code of Federal Regulations",
+          "url": "https://www.ecfr.gov/current/title-9/section-317.17"
+        }
+      ],
+      "tier_note": "Uncured is regulated wording at the start of the product name, not a pasture certification."
+    },
+    "turkey_bacon": {
+      "decision": "Uncured turkey bacon with turkey listed first.",
+      "why": "9 CFR 317.17 requires the term Uncured before the product name on products cured without nitrite.",
+      "sources": [
+        {
+          "name": "Electronic Code of Federal Regulations",
+          "url": "https://www.ecfr.gov/current/title-9/section-317.17"
+        }
+      ]
+    },
+    "cured_pork": {
+      "decision": "Dry-cured pork with pork and salt only.",
+      "why": "“Uncured” wording is regulated product-name text for cured meats.",
+      "sources": [
+        {
+          "name": "Electronic Code of Federal Regulations",
+          "url": "https://www.ecfr.gov/current/title-9/section-317.17"
+        }
+      ]
+    },
+    "deli_meat_uncured": {
+      "decision": "Uncured deli meat sliced from a whole roast.",
+      "why": "The word “Uncured” must precede the product name on cured-style meats.",
+      "sources": [
+        {
+          "name": "Electronic Code of Federal Regulations",
+          "url": "https://www.ecfr.gov/current/title-9/section-317.17"
+        }
+      ]
+    },
+    "egg_labels": {
+      "decision": "Organic eggs with a Certified Humane Pasture Raised seal.",
+      "why": "Pasture raised under Certified Humane means 108 square feet per hen versus 2 for free range.",
+      "sources": [
+        {
+          "name": "Certified Humane",
+          "url": "https://certifiedhumane.org/decoding-the-carton-how-to-buy-clean-humane-eggs/"
+        }
+      ]
+    },
+    "label_cage_free": {
+      "decision": "Pasture-raised eggs with an outdoor-access certification.",
+      "why": "Certified Humane free range needs 2 square feet outdoors; cage-free carries no outdoor figure.",
+      "sources": [
+        {
+          "name": "Certified Humane",
+          "url": "https://certifiedhumane.org/decoding-the-carton-how-to-buy-clean-humane-eggs/"
+        }
+      ],
+      "instead": "Pasture-raised eggs with an outdoor-access certification."
+    },
+    "label_pasture_raised_feed": {
+      "decision": "Organic pasture-raised eggs with Certified Humane or AWA certification.",
+      "why": "Certified Humane and AWA pasture-raised standards both specify 108 square feet per bird.",
+      "sources": [
+        {
+          "name": "Certified Humane",
+          "url": "https://certifiedhumane.org/decoding-the-carton-how-to-buy-clean-humane-eggs/"
+        }
+      ]
+    },
+    "egg_duck_quail": {
+      "decision": "Pastured duck eggs in a carton naming duck.",
+      "why": "The Weston A. Price shopping guide lists pastured duck eggs among its best eggs.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/wp-content/uploads/Shopping-Guide-2023.pdf"
+        }
+      ]
+    },
+    "seafood_certifications": {
+      "decision": "Wild seafood with the MSC fish checkmark and chain-of-custody code.",
+      "why": "The MSC mark is only for wild fish from certified fisheries.",
+      "sources": [
+        {
+          "name": "Marine Stewardship Council",
+          "url": "https://www.msc.org/en-us/what-we-are-doing/our-approach/see-the-label-know-youre-good"
+        }
+      ]
+    },
+    "canned_tuna": {
+      "decision": "Pole-caught, troll-caught, FAD-free or school-caught canned tuna.",
+      "why": "Seafood Watch points to canned tuna with pole-caught, troll-caught, FAD-free, free school or school-caught on the label.",
+      "sources": [
+        {
+          "name": "Seafood Watch",
+          "url": "https://www.seafoodwatch.org/stories/tips-for-choosing-sustainable-canned-tuna"
+        }
+      ]
+    },
+    "canned_fish_choosing": {
+      "decision": "Wild canned sardines with skin and bones in olive oil.",
+      "why": "Weston A. Price recommends sardines with skin and bones as high in vitamin D and a good source of calcium.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/sardine-or-anchovy-pate/"
+        }
+      ]
+    },
+    "mercury_by_fish": {
+      "decision": "Choose sardines with the fish named on the can.",
+      "why": "A Weston A. Price article lists sardines among a short list of recommended fish for low mercury.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/environmental-toxins/troubled-waters-mercury-build-up-in-the-seas/"
+        }
+      ]
+    },
+    "seafood_fish_roe": {
+      "decision": "Salmon roe with only roe and salt.",
+      "why": "Weston A. Price calls roe a rich source of vitamins A and D, very long-chain fatty acids, and zinc.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/food-features/the-roe-to-health/"
+        }
+      ]
+    },
+    "scallops": {
+      "decision": "Dry-packed scallops without milky liquid in the tray.",
+      "why": "Dry scallops have not been soaked in sodium tripolyphosphate.",
+      "sources": [
+        {
+          "name": "Maine Sea Grant",
+          "url": "https://seagrant.umaine.edu/maine-seafood-guide-scallops/"
+        }
+      ]
+    },
+    "crab": {
+      "decision": "Live crab with moving legs.",
+      "why": "Foodal advises choosing live crabs that are active and moving, and heavy in the hand.",
+      "sources": [
+        {
+          "name": "Foodal",
+          "url": "https://foodal.com/knowledge/how-to/crabs-ultimate-guide-to-buying-preparing-and-cooking/"
+        }
+      ]
+    },
+    "clams_mussels_oysters": {
+      "decision": "Live shellfish with closed shells and a harvest tag.",
+      "why": "Pacific Coast Shellfish Growers say oysters should always be tightly closed and mussels should close when tapped.",
+      "sources": [
+        {
+          "name": "Pacific Coast Shellfish Growers Association",
+          "url": "https://pcsga.org/buying-tips/"
+        }
+      ]
+    },
+    "yogurt_plain_vs_flavored": {
+      "decision": "Organic plain whole yogurt with milk and named cultures.",
+      "why": "Cornucopia notes certified organic yogurt can still carry a high amount of sugar. Plain organic tubs let the shopper add fruit; WAPF rates plain, whole yogurt as good.",
+      "sources": [
+        {
+          "name": "Cornucopia Institute",
+          "url": "https://www.cornucopia.org/research/yogurt/"
+        },
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    "plain_kefir": {
+      "decision": "Organic whole-milk kefir with milk and cultures only.",
+      "why": "WAPF rates plain, whole yogurt and kefir without added vitamins, preferably grass-fed, as good.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    "sour_cream": {
+      "decision": "Organic sour cream with cream and cultures only.",
+      "why": "WAPF lists sour cream with additives, and homogenized cream, under avoid.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    "grassfed_butter": {
+      "decision": "Organic butter with cream and salt, without natural flavors.",
+      "why": "WAPF rates pasteurized butter without natural flavors, preferably grass-fed, as good.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ],
+      "tier_note": "Butter’s ingredient list shows whether the cream and salt have added natural flavors."
+    },
+    "ghee": {
+      "decision": "Organic ghee with butterfat or clarified butter alone.",
+      "why": "WAPF rates pasteurized ghee without natural flavors, preferably grass-fed, as good.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    "cheese_real_vs_processed": {
+      "decision": "Organic cheese labeled cheese, without cheese-food or cheese-product wording.",
+      "why": "Pasteurized process cheese is cheeses ground and mixed with heat, a different standard of identity than the cheese itself.",
+      "sources": [
+        {
+          "name": "Cornell Legal Information Institute",
+          "url": "https://www.law.cornell.edu/cfr/text/21/133.169"
+        }
+      ]
+    },
+    "cream_cheese": {
+      "decision": "Organic cream cheese without gums or added thickeners.",
+      "why": "WAPF lists lowfat and fat-free cream cheese, and cream cheese made with additives, under avoid.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    "cottage_cheese": {
+      "decision": "Organic cottage cheese with named cultures and no gums.",
+      "why": "WAPF lists lowfat and fat-free cottage cheese, and cottage cheese made with additives, under avoid.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    "ice_cream": {
+      "decision": "Organic vanilla ice cream with cream, milk and egg yolks.",
+      "why": "WAPF rates simple flavors made with milk, cream, egg yolks and real vanilla as good. It avoids extenders and natural flavors.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    "canned_coconut_milk": {
+      "decision": "Organic canned coconut milk with coconut and water only.",
+      "why": "WAPF recommends canned whole coconut milk without additives, preferably in BPA-free containers.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    "plant_butter": {
+      "decision": "Butter with cream and salt instead of vegetable-oil spreads.",
+      "why": "WAPF avoid list covers spreads combining butter with vegetable oils and most commercial vegetable and seed oils.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ],
+      "instead": "Butter with cream and salt instead of vegetable-oil spreads."
+    },
+    "cooking_oils": {
+      "decision": "Organic cooking oil naming olive, coconut or avocado alone.",
+      "why": "WAPF avoids most commercial vegetable and seed oils. It lists extra virgin olive oil and avocado oil among good fats, favoring a single named oil.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    "olive_oil_grades": {
+      "decision": "Organic extra-virgin olive oil with a harvest date.",
+      "why": "UC Davis says dark glass, metal tins and bag-in-box protect oil from light. A harvest date shows freshness; WAPF lists extra virgin olive oil among good fats.",
+      "sources": [
+        {
+          "name": "UC Davis",
+          "url": "https://www.ucdavis.edu/food/news/buying-better-olive-avocado-oil"
+        },
+        {
+          "name": "UC Davis Food Quality",
+          "url": "https://ucfoodquality.ucdavis.edu/olive-oil/olive-oil-myths-and-facts"
+        },
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    "label_cold_pressed_expeller": {
+      "decision": "Organic oil labeled cold pressed or expeller pressed.",
+      "why": "Organic handling rules bar volatile synthetic solvents as processing aids.",
+      "sources": [
+        {
+          "name": "Cornell Legal Information Institute",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.270"
+        }
+      ]
+    },
+    "lard_tallow": {
+      "decision": "Organic lard or tallow with pasture or grass-fed wording.",
+      "why": "WAPF rates lard from pigs raised outdoors and tallow from grass-fed cows and sheep as best fats.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    "rancidity_check": {
+      "decision": "Organic oil in dark glass or tin, without a stale-nut smell.",
+      "why": "UC Davis names stale nuts as a smell of rancid oil and clear plastic as least protective.",
+      "sources": [
+        {
+          "name": "UC Davis",
+          "url": "https://www.ucdavis.edu/food/news/buying-better-olive-avocado-oil"
+        }
+      ]
+    },
+    "rice_arsenic": {
+      "decision": "Organic whole-grain rice with rice as the only ingredient.",
+      "why": "WAPF rates organic whole grain rice among the best grains and lists white rice under avoid.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    "grains_beyond_rice": {
+      "decision": "Organic quinoa, millet or buckwheat with one grain listed.",
+      "why": "WAPF lists all non-organic grains and legumes under avoid; MSU Extension lists millet as a whole grain.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        },
+        {
+          "name": "Michigan State University Extension",
+          "url": "https://www.canr.msu.edu/resources/grain-label-claims"
+        }
+      ]
+    },
+    "wild_rice": {
+      "decision": "Organic wild rice with no white-rice blend.",
+      "why": "WAPF rates wildcrafted wild rice as best and lists white rice under avoid. MSU Extension lists wild rice as a whole grain.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        },
+        {
+          "name": "Michigan State University Extension",
+          "url": "https://www.canr.msu.edu/resources/grain-label-claims"
+        }
+      ]
+    },
+    "beans_dried_vs_canned": {
+      "decision": "Organic dried beans first, canned beans with stated BPA-free lining next.",
+      "why": "WAPF rates organic dried beans as best and organic canned legumes as good, eaten only once or twice a month.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    "specialty_flours": {
+      "decision": "Organic alternative flours with one flour named.",
+      "why": "WAPF rates freshly ground, soaked organic whole grain flours as best and organic sprouted flours as good.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    "label_multigrain_vs_whole_grain": {
+      "decision": "Organic grains labeled whole grain, beyond multigrain wording.",
+      "why": "MSU Extension says multigrain is a mixture of grains, possibly all or mostly refined. The Whole Grains Council also says it may describe refined grains.",
+      "sources": [
+        {
+          "name": "Michigan State University Extension",
+          "url": "https://www.canr.msu.edu/resources/grain-label-claims"
+        },
+        {
+          "name": "Whole Grains Council",
+          "url": "https://wholegrainscouncil.org/whole-grains-101/identifying-whole-grain-products"
+        }
+      ]
+    },
+    "sprouted_grain_bread": {
+      "decision": "Organic sprouted-grain bread with sprouted grains named first.",
+      "why": "WAPF rates sourdough, soaked or sprouted breads from freshly ground organic whole grain flour as best.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    "sandwich_bread": {
+      "decision": "Organic sourdough or sprouted whole-grain sandwich bread.",
+      "why": "WAPF lists most commercial breads, based on white flour with hydrogenated oils, added gluten, soy or additives, under avoid.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ],
+      "instead": "Organic sourdough or sprouted whole-grain sandwich bread."
+    },
+    "gluten_free_bread": {
+      "decision": "Gluten-free bread with a named whole-grain flour first.",
+      "why": "The Whole Grains Council says a first ingredient containing “whole” likely means a mostly whole-grain product. That wording is not a guarantee.",
+      "sources": [
+        {
+          "name": "Whole Grains Council",
+          "url": "https://wholegrainscouncil.org/whole-grains-101/identifying-whole-grain-products"
+        }
+      ],
+      "instead": "Gluten-free bread with a named whole-grain flour first."
+    },
+    "bagels": {
+      "decision": "Organic sourdough or sprouted bagels without ascorbic acid.",
+      "why": "WAPF rates sourdough, soaked or sprouted breads from organic whole grain flour as best. It lists breads containing ascorbic acid under avoid.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ],
+      "instead": "Organic sourdough or sprouted bagels without ascorbic acid."
+    },
+    "sugars": {
+      "decision": "Organic cane sugar named as dehydrated cane juice.",
+      "why": "WAPF lists dehydrated sugar cane juice among best sweeteners and white sugar under avoid.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    "maple_syrup": {
+      "decision": "Organic pure maple syrup with no corn syrup.",
+      "why": "WAPF lists maple syrup as a best sweetener and imitation syrups under avoid.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    "nuts_raw_vs_roasted": {
+      "decision": "Organic raw nuts in sealed packs without sugar or coatings.",
+      "why": "WAPF rates fresh organic raw nuts in sealed packages as best. It lists nut mixtures with sugar, agave or flavorings under avoid.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    "nut_butter_ingredients": {
+      "decision": "Organic nut butter with nuts and optional salt only.",
+      "why": "WAPF avoid list covers nut butters with hydrogenated oils, sugar, agave or flavorings.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    "seeds": {
+      "decision": "Organic raw seeds with one seed named in a sealed pack.",
+      "why": "WAPF rates fresh organic raw seeds in sealed packages as best.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    "trail_mix": {
+      "decision": "Organic plain nuts instead of sweetened or oil-coated trail mix.",
+      "why": "WAPF avoid list names nut mixtures with partially hydrogenated oils, sugar, chocolate or flavorings.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ],
+      "instead": "Organic plain nuts instead of sweetened or oil-coated trail mix."
+    },
+    "pasta_sauce": {
+      "decision": "Organic pasta sauce with tomatoes first and no added sugar.",
+      "why": "WAPF lists most commercial sauces, ketchup and other condiments under avoid.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    "seaweed": {
+      "decision": "Organic sea vegetables with a named species and origin outside China.",
+      "why": "WAPF rates whole or powdered sea vegetables not from China as best. It lists seaweed from China, even organic, under avoid.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    "hummus": {
+      "decision": "Organic hummus with chickpeas, tahini and olive oil.",
+      "why": "WAPF avoid list names canola and soy oils.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    "dried_herbs": {
+      "decision": "Organic single-herb jars without citric acid or MSG.",
+      "why": "WAPF avoid list covers spices and blends containing MSG, citric acid or hydrolyzed protein.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    "whole_spices": {
+      "decision": "Organic whole spices with one seed or stick named.",
+      "why": "WAPF lists spices and blends containing MSG, citric acid, hydrolyzed protein or other additives under avoid.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    "salt": {
+      "decision": "Unrefined gray, pink, red or beige salt without iodized wording.",
+      "why": "WAPF lists unrefined salt in light gray, pink, red or beige as best and iodized salt as avoid.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    "baking_powder": {
+      "decision": "Aluminum-free baking powder in a labeled tin.",
+      "why": "WAPF lists aluminum-free baking powder as best and baking powder containing aluminum under avoid.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    "raw_cider_vinegar": {
+      "decision": "Organic raw, unfiltered apple cider vinegar with visible mother.",
+      "why": "WAPF lists organic raw vinegars as best.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    "vinegar": {
+      "decision": "Apple cider, wine or balsamic vinegar instead of distilled white vinegar.",
+      "why": "WAPF avoid list names distilled vinegar.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ],
+      "instead": "Apple cider, wine or balsamic vinegar instead of distilled white vinegar."
+    },
+    "ketchup_mustard": {
+      "decision": "Organic mustard or fermented ketchup without natural flavors.",
+      "why": "WAPF lists organic mustard and organic fermented ketchup among best condiments.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    "condiments": {
+      "decision": "Mayonnaise or dressings with olive oil instead of soy or canola.",
+      "why": "WAPF avoid list names soy and canola oils.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ],
+      "instead": "Mayonnaise or dressings with olive oil instead of soy or canola."
+    },
+    "crackers": {
+      "decision": "Organic whole-grain crackers without hydrogenated oil or soy flour.",
+      "why": "WAPF lists most commercial crackers based on white flour with partially hydrogenated oils, soy flour or additives under avoid.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ],
+      "instead": "Organic whole-grain crackers without hydrogenated oil or soy flour."
+    },
+    "pretzels": {
+      "decision": "Whole-grain pretzels with whole flour listed first.",
+      "why": "WAPF lists white flour products under avoid.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ],
+      "instead": "Whole-grain pretzels with whole flour listed first."
+    },
+    "rice_cakes_puffed_grains": {
+      "decision": "Organic whole-grain crackers instead of puffed rice cakes.",
+      "why": "WAPF lists puffed grain products such as rice cakes under avoid.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ],
+      "instead": "Organic whole-grain crackers instead of puffed rice cakes."
+    },
+    "bottled_water_buying": {
+      "decision": "Bottled spring water with spring water printed on the label.",
+      "why": "Spring water must come from the spring or a bore hole tapping the underground formation feeding it.",
+      "sources": [
+        {
+          "name": "Cornell Legal Information Institute",
+          "url": "https://www.law.cornell.edu/cfr/text/21/165.110"
+        }
+      ]
+    },
+    "kombucha": {
+      "decision": "Organic kombucha with black tea in a glass bottle.",
+      "why": "WAPF recommends organic lacto-fermented beverages in glass jars, such as kombucha made with organic black tea.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ]
+    },
+    "coconut_water": {
+      "decision": "Organic coconut water with coconut water alone, outside aseptic boxes.",
+      "why": "WAPF lists coconut products in aseptic boxes under avoid.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ],
+      "tier_note": "The coconut water ingredient list and aseptic packaging are visible product checks."
+    },
+    "beef_grassfed_vs_grainfed": {
+      "decision": "Organic grass-finished beef with the AGA Grassfed seal.",
+      "sources": [
+        {
+          "name": "American Grassfed Association",
+          "url": "https://www.americangrassfedcertified.com/"
+        }
+      ],
+      "why": "AGA animals eat only grass and forage from weaning until harvest, on pasture, never given antibiotics."
+    },
+    "beef_cuts_basics": {
+      "decision": "Organic whole beef cuts in sealed trays with AGA Grassfed certification.",
+      "sources": [
+        {
+          "name": "Electronic Code of Federal Regulations",
+          "url": "https://www.ecfr.gov/current/title-7/section-205.237"
+        }
+      ],
+      "why": "Whole cuts keep the meat intact; the organic seal identifies a certified organic feed ration, including pasture and forage."
+    },
+    "ground_beef_lean_ratio": {
+      "decision": "Organic grass-finished ground beef with its lean ratio printed.",
+      "sources": [
+        {
+          "name": "Electronic Code of Federal Regulations",
+          "url": "https://www.ecfr.gov/current/title-7/section-205.238"
+        }
+      ],
+      "why": "Grass-finished wording identifies the feeding choice; organic rules exclude meat from animals treated with antibiotics."
+    },
+    "hot_dogs": {
+      "decision": "Grass-fed beef hot dogs with an AGA seal and short ingredient list.",
+      "sources": [
+        {
+          "name": "American Grassfed Association",
+          "url": "https://www.americangrassfedcertified.com/"
+        }
+      ],
+      "why": "AGA animals are fed only grass and forage and never given added growth hormones."
+    },
+    "lamb_goat": {
+      "decision": "Organic lamb or goat with an AWA pasture seal.",
+      "sources": [
+        {
+          "name": "A Greener World",
+          "url": "https://agreenerworld.org/certifications/animal-welfare-approved/"
+        }
+      ],
+      "why": "AWA guarantees animals live outdoors on pasture or range for their entire lives."
+    },
+    "bison": {
+      "decision": "Organic bison with the AGA Grassfed mark and bison alone listed.",
+      "sources": [
+        {
+          "name": "American Grassfed Association",
+          "url": "https://www.americangrassfedcertified.com/"
+        }
+      ],
+      "why": "AGA requires a 100% grass diet from weaning until harvest."
+    },
+    "chicken_cuts_basics": {
+      "decision": "Organic whole chicken with an AWA seal and no basting solution.",
+      "sources": [
+        {
+          "name": "A Greener World",
+          "url": "https://agreenerworld.org/certifications/animal-welfare-approved/"
+        }
+      ],
+      "why": "AWA guarantees outdoor pasture life for the whole animal."
+    },
+    "poultry_chicken_wings": {
+      "decision": "Organic pasture-raised chicken wings with intact skin and no coating.",
+      "sources": [
+        {
+          "name": "Electronic Code of Federal Regulations",
+          "url": "https://www.ecfr.gov/current/title-7/section-205.237"
+        }
+      ],
+      "why": "Plain skin-on wings keep the cut intact; organic livestock rules require certified organic feed."
+    },
+    "rotisserie_chicken": {
+      "decision": "Rotisserie chicken listing only chicken and salt.",
+      "sources": [
+        {
+          "name": "Electronic Code of Federal Regulations",
+          "url": "https://www.ecfr.gov/current/title-7/section-205.237"
+        }
+      ],
+      "why": "Chicken and salt keep the recipe simple; the organic seal identifies certified organic livestock feed."
+    },
+    "turkey_whole": {
+      "decision": "Organic whole turkey with pasture-raising certification.",
+      "sources": [
+        {
+          "name": "Electronic Code of Federal Regulations",
+          "url": "https://www.ecfr.gov/current/title-7/section-205.237"
+        }
+      ],
+      "why": "An unbasted whole bird avoids added basting solution; organic rules require certified organic feed."
+    },
+    "ground_turkey": {
+      "decision": "Organic ground turkey listing breast and thigh meat only.",
+      "sources": [
+        {
+          "name": "Electronic Code of Federal Regulations",
+          "url": "https://www.ecfr.gov/current/title-7/section-205.238"
+        }
+      ],
+      "why": "Breast and thigh alone identify the meat in the pack; antibiotic-treated birds cannot be sold as organic."
+    },
+    "poultry_duck": {
+      "decision": "Organic whole duck with skin on and an AWA seal.",
+      "sources": [
+        {
+          "name": "A Greener World",
+          "url": "https://agreenerworld.org/certifications/animal-welfare-approved/"
+        }
+      ],
+      "why": "AWA covers duck standards and requires pasture or range living."
+    },
+    "pork_cuts_and_enhanced": {
+      "decision": "Organic pasture-raised pork chops without added solution.",
+      "sources": [
+        {
+          "name": "A Greener World",
+          "url": "https://agreenerworld.org/certifications/animal-welfare-approved/"
+        }
+      ],
+      "why": "AWA guarantees pigs live outdoors on pasture or range."
+    },
+    "salmon_wild_vs_farmed": {
+      "decision": "Wild Alaskan salmon with the species named and sockeye flesh deep red.",
+      "sources": [
+        {
+          "name": "Electronic Code of Federal Regulations",
+          "url": "https://www.ecfr.gov/current/title-7/section-60.200"
+        }
+      ],
+      "why": "Wild is the seafood premise; the wild or farm-raised label identifies the production method."
+    },
+    "label_wild_vs_farm_raised": {
+      "decision": "Wild fish with country and catch method named on the tag.",
+      "sources": [
+        {
+          "name": "Electronic Code of Federal Regulations",
+          "url": "https://www.ecfr.gov/current/title-7/section-60.200"
+        }
+      ],
+      "why": "Wild is the seafood premise; the production-method label distinguishes wild from farm-raised fish."
+    },
+    "farmed_fish_by_species": {
+      "decision": "Farmed fish carrying the ASC logo on the pack.",
+      "sources": [
+        {
+          "name": "Aquaculture Stewardship Council",
+          "url": "https://www.asc-aqua.org/"
+        }
+      ],
+      "why": "ASC says seafood carrying its label on pack was farmed with care."
+    },
+    "shrimp_imported_vs_domestic": {
+      "decision": "Wild Gulf or US shrimp, shell on, without additives.",
+      "sources": [
+        {
+          "name": "Electronic Code of Federal Regulations",
+          "url": "https://www.ecfr.gov/current/title-7/section-60.200"
+        }
+      ],
+      "why": "Shell-on shrimp without additives keep the product close to the catch; wild or farm-raised wording identifies its production method."
+    },
+    "white_fish": {
+      "decision": "Wild Pacific cod with species named and gray-brown skin visible.",
+      "sources": [
+        {
+          "name": "NOAA Fisheries",
+          "url": "https://www.fisheries.noaa.gov/species/pacific-cod"
+        }
+      ],
+      "why": "Pacific cod have gray or brown skin with a paler belly; skin left on provides a visible species check."
+    },
+    "seafood_fresh_sardines_mackerel": {
+      "decision": "Fresh wild sardines with shiny skin or mackerel with vivid stripes.",
+      "sources": [
+        {
+          "name": "NOAA Fisheries",
+          "url": "https://www.fisheries.noaa.gov/species/atlantic-mackerel"
+        }
+      ],
+      "why": "Mackerel color fades quickly after death, so dull stripes signal age."
+    },
+    "lobster": {
+      "decision": "Live lobster with moving claws, or hard-frozen tails without ice glaze.",
+      "sources": [
+        {
+          "name": "NOAA Fisheries",
+          "url": "https://www.fisheries.noaa.gov/species/american-lobster"
+        }
+      ],
+      "why": "American lobster is primarily sold live or frozen; those are the two forms to check at the counter."
+    },
+    "smoked_salmon": {
+      "decision": "Chilled smoked salmon with origin and wild or farm-raised wording.",
+      "sources": [
+        {
+          "name": "Electronic Code of Federal Regulations",
+          "url": "https://www.ecfr.gov/current/title-7/section-60.200"
+        }
+      ],
+      "why": "Wild or farm-raised wording identifies the fish production method when provided; it does not describe the smoking process."
+    },
+    "seafood_counter": {
+      "decision": "Whole fish on ice with clear eyes and a species sign.",
+      "sources": [
+        {
+          "name": "NOAA Fisheries",
+          "url": "https://www.fisheries.noaa.gov/species/pacific-sardine"
+        }
+      ],
+      "why": "Whole fish on ice should look bright-eyed with shiny skin, as the sardine guidance describes."
+    },
+    "whole_vs_reduced_fat_milk": {
+      "decision": "Organic whole milk without ultra-pasteurized wording near the date.",
+      "sources": [
+        {
+          "name": "Cornell Legal Information Institute",
+          "url": "https://www.law.cornell.edu/cfr/text/21/131.3"
+        },
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/principles-of-healthy-diets-2/"
+        }
+      ],
+      "why": "Whole milk keeps its milkfat, and WAPF lists ultra-pasteurized milk products under avoid. Ultra-pasteurized describes a heat-processing method."
+    },
+    "oats_steelcut_rolled_instant": {
+      "decision": "Organic whole-grain oats without flavorings or added sugar.",
+      "sources": [
+        {
+          "name": "Cornell Legal Information Institute",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        },
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/wp-content/uploads/11Principles-chapter6.pdf"
+        }
+      ],
+      "why": "Whole oats without flavor or sugar keep the ingredient list to the grain. Organic rules bar excluded methods; WAPF describes soaking, sprouting or fermenting grains."
+    },
+    "cornmeal_polenta_grits": {
+      "decision": "Organic whole-grain cornmeal or grits without degerminated wording.",
+      "sources": [
+        {
+          "name": "www.nongmoproject.org",
+          "url": "https://www.nongmoproject.org/risk-status/"
+        },
+        {
+          "name": "Whole Grains Council",
+          "url": "https://wholegrainscouncil.org/whole-grains-101/identifying-whole-grain-products"
+        }
+      ],
+      "why": "Corn is on the Non-GMO Project High-Risk List. The Whole Grains Council says degerminated cornmeal never describes a whole grain."
+    },
+    "flour_basics": {
+      "decision": "Organic whole-wheat flour without bleached or enriched wording.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/principles-of-healthy-diets-2/"
+        },
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ],
+      "why": "WAPF says avoid white flour and white flour products, and lists bleached white flour under avoid."
+    },
+    "sourdough": {
+      "decision": "Organic whole-grain sourdough bread.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        },
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/wp-content/uploads/11Principles-chapter6.pdf"
+        }
+      ],
+      "why": "WAPF rates sourdough bread from organic whole grain flour as best and says genuine sourdough fermentation breaks down gluten."
+    },
+    "honey_adulteration": {
+      "decision": "Organic raw, unfiltered honey with pollen left in the jar.",
+      "sources": [
+        {
+          "name": "www.cornucopia.org",
+          "url": "https://www.cornucopia.org/2011/11/smuggled-honey-makes-it-to-american-stores-under-cover-of-ultra-filtration/"
+        },
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ],
+      "why": "WAPF lists raw honey, preferably unfiltered, among its best sweeteners; ultra-filtration removes pollen."
+    },
+    "snack_bars": {
+      "decision": "Whole nuts or fruit instead of bars with syrups or soy protein isolate.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        },
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/wp-content/uploads/11Principles-chapter6.pdf"
+        }
+      ],
+      "why": "WAPF lists brown rice syrup and agave under avoid; whole nuts or fruit keep the snack ingredients recognizable.",
+      "instead": "Whole nuts or fruit instead of bars with syrups or soy protein isolate."
+    },
+    "snacks": {
+      "decision": "Organic potato or corn chips with olive or coconut oil and salt.",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ],
+      "why": "WAPF lists most commercial vegetable and seed oils under avoid and olive and organic virgin coconut oil among best.",
+      "tier_note": "Potato flour and vegetable powder are visible ingredient checks for veggie chips."
+    }
+  },
+  "do_lines": {
+    "organ_meats": "Liver or heart pack carrying an organic or AGA seal.",
+    "beef_veal": "Only if label says pasture-raised with a humane seal.",
+    "chicken_breast": "Bone-in, skin-on breast with USDA Organic plus Certified Humane Pasture Raised.",
+    "bacon": "Ingredients show pork, salt, celery powder only; pasture seal on pack.",
+    "ham": "Whole-muscle ham whose name begins Uncured, ingredients listing salt and pork.",
+    "turkey_bacon": "Name reads Uncured turkey bacon; turkey listed first.",
+    "cured_pork": "Dry-cured wording on pack; ingredient list is pork and salt.",
+    "deli_meat_uncured": "Uncured on the deli label; whole roast sliced fresh.",
+    "egg_labels": "Carton shows USDA Organic and Certified Humane Pasture Raised.",
+    "label_cage_free": "Cage-free only on carton, no outdoor access seal.",
+    "label_pasture_raised_feed": "Certified Humane or AWA Pasture Raised plus USDA Organic seal.",
+    "egg_duck_quail": "Carton names duck and says pastured.",
+    "seafood_certifications": "Blue MSC fish checkmark with a chain-of-custody code.",
+    "canned_tuna": "Label says pole-caught, troll-caught, FAD-free or school-caught.",
+    "canned_fish_choosing": "Sardines labeled skin and bones, wild-caught, in olive oil.",
+    "mercury_by_fish": "Can names sardines.",
+    "seafood_fish_roe": "Jar lists salmon roe and salt only.",
+    "scallops": "Dry-packed scallops sitting without milky liquid in the tray.",
+    "crab": "Live crab showing leg movement.",
+    "clams_mussels_oysters": "Shells close when tapped; harvest tag on the bag.",
+    "yogurt_plain_vs_flavored": "Ingredient list reads milk and named cultures, with no sugar, pectin or flavors.",
+    "plain_kefir": "Whole milk kefir; ingredients are milk and kefir cultures.",
+    "sour_cream": "Ingredients: cream and cultures; no starch, gums or flavor words.",
+    "grassfed_butter": "Ingredients: cream, salt; skip any “natural flavor” entry.",
+    "ghee": "Ingredient reads butterfat or clarified butter alone; no oil blended in.",
+    "cheese_real_vs_processed": "Name reads “cheese”, never “cheese food” or “cheese product”.",
+    "cream_cheese": "Ingredients: cream, milk, salt, cultures; no gums or added thickeners.",
+    "cottage_cheese": "Cultures named; carrageenan or gums not in the ingredient list.",
+    "ice_cream": "Cream, milk, egg yolks and real vanilla; no “flavor” words or extenders.",
+    "canned_coconut_milk": "Can with coconut and water only; BPA-free lining stated.",
+    "plant_butter": "Palm, canola or “vegetable oil blend” in the ingredient list.",
+    "cooking_oils": "One oil named on the label: olive, coconut or avocado, not a blend.",
+    "olive_oil_grades": "Harvest date printed, dark glass or tin, “extra virgin” on the front.",
+    "label_cold_pressed_expeller": "“Cold pressed” or “expeller pressed” printed on the front of the bottle.",
+    "lard_tallow": "Lard or tallow the only ingredient; “pastured” or “grass-fed” on the label.",
+    "rancidity_check": "Check oil for stale-nut smells on opening; skip clear plastic bottles.",
+    "rice_arsenic": "Rice the only ingredient; brown rice syrup is a separate skip.",
+    "grains_beyond_rice": "Quinoa, millet or buckwheat the only ingredient; organic seal.",
+    "wild_rice": "“Wild rice” is the sole ingredient; no blend with white rice.",
+    "beans_dried_vs_canned": "Dry bag lists beans alone; canned label states a BPA-free lining.",
+    "specialty_flours": "One flour named in the ingredient list; organic printed on the bag.",
+    "label_multigrain_vs_whole_grain": "Read “100% whole grain” or “whole” before the grain name; “multigrain” alone fails.",
+    "sprouted_grain_bread": "“Sprouted” before each grain in the ingredient list, not flour first.",
+    "sandwich_bread": "Skip “enriched wheat flour”, sugar or soybean oil near the ingredient list’s top.",
+    "gluten_free_bread": "Skip unless the first ingredient names a flour with “whole” before it.",
+    "bagels": "Skip when ascorbic acid is listed; sourdough or sprouted on the bag passes.",
+    "sugars": "“Dehydrated cane juice” or organic cane sugar named, not “sugar” alone.",
+    "maple_syrup": "“Pure maple syrup” only; corn syrup in the ingredients means imitation.",
+    "nuts_raw_vs_roasted": "“Raw” printed on a sealed pack; coated or sugared nuts mean skip.",
+    "nut_butter_ingredients": "Ingredients: nuts, maybe salt; sugar, palm or “hydrogenated” words mean skip.",
+    "seeds": "Raw seeds sealed with a date; the seed is the lone ingredient.",
+    "trail_mix": "Sugar, chocolate or vegetable oil listed beside the nuts.",
+    "pasta_sauce": "Tomatoes first, oil named; no sugar or “natural flavors” listed.",
+    "seaweed": "Sea vegetable named alone; country of origin printed, and not China.",
+    "hummus": "Chickpeas, tahini, olive oil named; canola or soybean oil means skip.",
+    "dried_herbs": "One herb named on the jar; no blend listing citric acid or MSG.",
+    "whole_spices": "Whole seeds or sticks of one spice named; no “spices” blend.",
+    "salt": "Gray, pink, red or beige color; “iodized” on the label means skip.",
+    "baking_powder": "“Aluminum-free” printed on the tin.",
+    "raw_cider_vinegar": "“Raw” and “unfiltered” printed; cloudy strands of mother at the bottom.",
+    "vinegar": "“Distilled white vinegar” printed; apple cider, wine or balsamic named passes.",
+    "ketchup_mustard": "Tomatoes, vinegar, spices listed; no “natural flavors” entry.",
+    "condiments": "Soybean or canola oil named as the first oil on the label.",
+    "crackers": "Skip when white flour, hydrogenated oil or soy flour is listed.",
+    "pretzels": "Skip when refined white flour leads the ingredient list.",
+    "rice_cakes_puffed_grains": "Puffed grain with flavor coating, “natural flavor” or syrup in ingredients.",
+    "bottled_water_buying": "“Spring water” printed on the label.",
+    "kombucha": "Organic on the label, in a glass bottle; black tea listed.",
+    "coconut_water": "Coconut water the sole ingredient; aseptic box means skip.",
+    "beef_grassfed_vs_grainfed": "AGA Grassfed seal; label reads 100% grass-fed and grass-finished.",
+    "beef_cuts_basics": "Whole cut in a sealed tray with AGA Grassfed seal and USDA Organic.",
+    "ground_beef_lean_ratio": "Ground beef pack naming grass-finished; ratio printed beside the AGA seal.",
+    "hot_dogs": "AGA seal on pack with a short ingredient list.",
+    "lamb_goat": "Lamb tray stamped AWA pasture; chops with pale pink fat.",
+    "bison": "Pack lists bison only; AGA Grassfed mark beside the cut.",
+    "chicken_cuts_basics": "Whole bird with AWA seal; skin cream-yellow, no basting solution listed.",
+    "poultry_chicken_wings": "Wings with skin intact, pack states organic and pasture-raised.",
+    "rotisserie_chicken": "Ingredients list only chicken and salt; organic seal on sticker.",
+    "turkey_whole": "Tag reads not basted; USDA Organic, Certified Humane Pasture Raised.",
+    "ground_turkey": "Pack states thigh and breast meat only, organic seal.",
+    "poultry_duck": "Whole duck with skin on and AWA or organic seal.",
+    "pork_cuts_and_enhanced": "Chop pack without added solution; AWA or Certified Humane pasture seal.",
+    "salmon_wild_vs_farmed": "Label says wild Alaskan; sockeye flesh deep red.",
+    "label_wild_vs_farm_raised": "Tag spells wild or farm-raised plus country and catch method.",
+    "farmed_fish_by_species": "ASC logo on pack when fish is farmed.",
+    "shrimp_imported_vs_domestic": "Bag names Gulf or US wild shrimp, shell on, no additives.",
+    "white_fish": "Pacific cod fillet, grey-brown skin side, species named on tag.",
+    "seafood_fresh_sardines_mackerel": "Mackerel with vivid stripes still bright; sardines with shiny skin.",
+    "lobster": "Live lobster moving its claws; frozen tails hard with no ice glaze.",
+    "smoked_salmon": "Label says wild or farm-raised, with origin; sold chilled.",
+    "seafood_counter": "Whole fish on ice with clear eyes and species sign.",
+    "whole_vs_reduced_fat_milk": "Read whole fat; skip milk stamped “ultra-pasteurized” near the date.",
+    "oats_steelcut_rolled_instant": "Read whole grain oats; skip instant packets listing flavor or sugar.",
+    "cornmeal_polenta_grits": "Check the USDA Organic seal; skip “degerminated” cornmeal.",
+    "flour_basics": "Read “whole wheat” on the bag; skip “bleached” or “enriched” flour.",
+    "sourdough": "Read “sourdough” and find a starter or culture in the ingredients.",
+    "honey_adulteration": "Look for “raw” and “unfiltered” honey, cloudy with pollen rather than clear.",
+    "snack_bars": "Skip bars listing brown rice syrup, agave or soy protein isolate.",
+    "snacks": "Read potatoes or corn, olive or coconut oil, salt; nothing else."
+  }
+}

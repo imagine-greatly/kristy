@@ -1,0 +1,145 @@
+READY
+Shipped rows before/after: 92/125 of 135; newly added ids: 33; held rows: 10.
+Counts exclude the eight aisle premises; do_lines are companion fields, not duplicate items.
+Final package: 99 card patches, 26 picks, 99 companion do lines, eight aisle premises. Added this round: 30 card patches and three existing-pick updates; no new KB ids required this round.
+Verification: dialRules.js = 0 findings {}; mergeFamilyBuild.js --check = 20 builds merged and linted; 387 entries (check only). All 125 shipped ids occur exactly once as entities; all 135 rows reconciled; ten held rows absent. Word limits, pick field restrictions, source URL deduplication, specific aliases and cross-item decision/do/avoid sentence uniqueness pass.
+Newly added ids: beef_grassfed_vs_grainfed, beef_cuts_basics, ground_beef_lean_ratio, hot_dogs, pick_soup_bones, lamb_goat, bison, chicken_cuts_basics, poultry_chicken_wings, rotisserie_chicken, turkey_whole, ground_turkey, poultry_duck, pork_cuts_and_enhanced, pick_sausage, salmon_wild_vs_farmed, label_wild_vs_farm_raised, farmed_fish_by_species, shrimp_imported_vs_domestic, white_fish, pick_fish_sticks, seafood_fresh_sardines_mackerel, lobster, smoked_salmon, seafood_counter, whole_vs_reduced_fat_milk, oats_steelcut_rolled_instant, cornmeal_polenta_grits, flour_basics, sourdough, honey_adulteration, snack_bars, snacks
+Source rule: ANY FETCHED source qualifies. REVIEW.md baseline: S1-S4 and S8-S15 FETCHED; S5-S7/S16-S23 HIGHLIGHT. Current meat source flags upgrade S5-S7 and S17-S27 to FETCHED, with S16 still HIGHLIGHT. Dairy baseline flags apply, plus D049-D069 FETCHED under P1b; F130 remains TRANSCRIBED. No current non-HOLD row is HIGHLIGHT-only.
+Soy sauce alias: left unchanged; KB card hot_soy_sauce owns the exact alias soy sauce.
+Rewording: organic seafood headlines use wild/species/handling cues; government sources supply raw label, feed or species facts, not the reason for a verdict. Rancidity check retains the oil-specific stale-nut smell without a named brand.
+Reconciliation (one line per source table row):
+meat-seafood-eggs-v1.tsv | beef_grassfed_vs_grainfed | SHIPPED | JSON id=beef_grassfed_vs_grainfed; kind=card (patch); sources=S1; new this round
+meat-seafood-eggs-v1.tsv | beef_cuts_basics | SHIPPED | JSON id=beef_cuts_basics; kind=card (patch); sources=S3; new this round
+meat-seafood-eggs-v1.tsv | ground_beef_lean_ratio | SHIPPED | JSON id=ground_beef_lean_ratio; kind=card (patch); sources=S4; new this round
+meat-seafood-eggs-v1.tsv | hot_dogs | SHIPPED | JSON id=hot_dogs; kind=card (patch); sources=S1; new this round
+meat-seafood-eggs-v1.tsv | pick_jerky | SHIPPED | JSON id=pick_jerky; kind=pick; sources=S25; already shipped
+meat-seafood-eggs-v1.tsv | pick_soup_bones | SHIPPED | JSON id=pick_soup_bones; kind=pick; sources=S1; new this round
+meat-seafood-eggs-v1.tsv | organ_meats | SHIPPED | JSON id=organ_meats; kind=card (patch); sources=S26; already shipped
+meat-seafood-eggs-v1.tsv | lamb_goat | SHIPPED | JSON id=lamb_goat; kind=card (patch); sources=S2; new this round
+meat-seafood-eggs-v1.tsv | bison | SHIPPED | JSON id=bison; kind=card (patch); sources=S1; new this round
+meat-seafood-eggs-v1.tsv | venison_game | SHIPPED | JSON id=pick_venison; kind=pick; remap venison_game -> pick_venison; new pick replacing table item/card row; sources=S17; already shipped
+meat-seafood-eggs-v1.tsv | beef_veal | SHIPPED | JSON id=beef_veal; kind=card (patch); sources=S18; already shipped
+meat-seafood-eggs-v1.tsv | chicken_breast | SHIPPED | JSON id=chicken_breast; kind=card (patch); sources=S5; already shipped
+meat-seafood-eggs-v1.tsv | chicken_cuts_basics | SHIPPED | JSON id=chicken_cuts_basics; kind=card (patch); sources=S2; new this round
+meat-seafood-eggs-v1.tsv | poultry_chicken_wings | SHIPPED | JSON id=poultry_chicken_wings; kind=card (patch); sources=S3; new this round
+meat-seafood-eggs-v1.tsv | rotisserie_chicken | SHIPPED | JSON id=rotisserie_chicken; kind=card (patch); sources=S3; new this round
+meat-seafood-eggs-v1.tsv | turkey_whole | SHIPPED | JSON id=turkey_whole; kind=card (patch); sources=S3; new this round
+meat-seafood-eggs-v1.tsv | ground_turkey | SHIPPED | JSON id=ground_turkey; kind=card (patch); sources=S4; new this round
+meat-seafood-eggs-v1.tsv | poultry_duck | SHIPPED | JSON id=poultry_duck; kind=card (patch); sources=S2; new this round
+meat-seafood-eggs-v1.tsv | pork_cuts_and_enhanced | SHIPPED | JSON id=pork_cuts_and_enhanced; kind=card (patch); sources=S2; new this round
+meat-seafood-eggs-v1.tsv | bacon | SHIPPED | JSON id=bacon; kind=card (patch); sources=S9; already shipped
+meat-seafood-eggs-v1.tsv | ham | SHIPPED | JSON id=ham; kind=card (patch); sources=S9; already shipped
+meat-seafood-eggs-v1.tsv | turkey_bacon | SHIPPED | JSON id=turkey_bacon; kind=card (patch); sources=S9; already shipped
+meat-seafood-eggs-v1.tsv | cured_pork | SHIPPED | JSON id=cured_pork; kind=card (patch); sources=S9; already shipped
+meat-seafood-eggs-v1.tsv | pick_sausage | SHIPPED | JSON id=pick_sausage; kind=pick; sources=S2; new this round
+meat-seafood-eggs-v1.tsv | deli_meat_uncured | SHIPPED | JSON id=deli_meat_uncured; kind=card (patch); sources=S9; already shipped
+meat-seafood-eggs-v1.tsv | egg_labels | SHIPPED | JSON id=egg_labels; kind=card (patch); sources=S5; already shipped
+meat-seafood-eggs-v1.tsv | label_cage_free | SHIPPED | JSON id=label_cage_free; kind=card (patch); sources=S5; already shipped
+meat-seafood-eggs-v1.tsv | label_pasture_raised_feed | SHIPPED | JSON id=label_pasture_raised_feed; kind=card (patch); sources=S5; already shipped
+meat-seafood-eggs-v1.tsv | egg_duck_quail | SHIPPED | JSON id=egg_duck_quail; kind=card (patch); sources=S19; already shipped
+meat-seafood-eggs-v1.tsv | pick_egg_whites | HELD | status HOLD; source_id ? (UNSOURCED); no holistic source found
+meat-seafood-eggs-v1.tsv | salmon_wild_vs_farmed | SHIPPED | JSON id=salmon_wild_vs_farmed; kind=card (patch); sources=S8; new this round
+meat-seafood-eggs-v1.tsv | seafood_certifications | SHIPPED | JSON id=seafood_certifications; kind=card (patch); sources=S7; already shipped
+meat-seafood-eggs-v1.tsv | label_wild_vs_farm_raised | SHIPPED | JSON id=label_wild_vs_farm_raised; kind=card (patch); sources=S8; new this round
+meat-seafood-eggs-v1.tsv | farmed_fish_by_species | SHIPPED | JSON id=farmed_fish_by_species; kind=card (patch); sources=S15; new this round
+meat-seafood-eggs-v1.tsv | seafood_trout | HELD | status HOLD; source_id ? (UNSOURCED); no holistic source found
+meat-seafood-eggs-v1.tsv | shrimp_imported_vs_domestic | SHIPPED | JSON id=shrimp_imported_vs_domestic; kind=card (patch); sources=S8; new this round
+meat-seafood-eggs-v1.tsv | white_fish | SHIPPED | JSON id=white_fish; kind=card (patch); sources=S13; new this round
+meat-seafood-eggs-v1.tsv | pick_fish_sticks | SHIPPED | JSON id=pick_fish_sticks; kind=pick; sources=S14; new this round
+meat-seafood-eggs-v1.tsv | canned_tuna | SHIPPED | JSON id=canned_tuna; kind=card (patch); sources=S22; already shipped
+meat-seafood-eggs-v1.tsv | canned_fish_choosing | SHIPPED | JSON id=canned_fish_choosing; kind=card (patch); sources=S21; already shipped
+meat-seafood-eggs-v1.tsv | mercury_by_fish | SHIPPED | JSON id=mercury_by_fish; kind=card (patch); sources=S27; already shipped
+meat-seafood-eggs-v1.tsv | seafood_fresh_sardines_mackerel | SHIPPED | JSON id=seafood_fresh_sardines_mackerel; kind=card (patch); sources=S12; new this round
+meat-seafood-eggs-v1.tsv | seafood_fish_roe | SHIPPED | JSON id=seafood_fish_roe; kind=card (patch); sources=S20; already shipped
+meat-seafood-eggs-v1.tsv | scallops | SHIPPED | JSON id=scallops; kind=card (patch); sources=S6; already shipped
+meat-seafood-eggs-v1.tsv | lobster | SHIPPED | JSON id=lobster; kind=card (patch); sources=S11; new this round
+meat-seafood-eggs-v1.tsv | crab | SHIPPED | JSON id=crab; kind=card (patch); sources=S24; already shipped
+meat-seafood-eggs-v1.tsv | clams_mussels_oysters | SHIPPED | JSON id=clams_mussels_oysters; kind=card (patch); sources=S23; already shipped
+meat-seafood-eggs-v1.tsv | smoked_salmon | SHIPPED | JSON id=smoked_salmon; kind=card (patch); sources=S8; new this round
+meat-seafood-eggs-v1.tsv | seafood_counter | SHIPPED | JSON id=seafood_counter; kind=card (patch); sources=S10; new this round
+dairy-pantry-v1.tsv | whole_vs_reduced_fat_milk | SHIPPED | JSON id=whole_vs_reduced_fat_milk; kind=card (patch); sources=D013,D007; new this round
+dairy-pantry-v1.tsv | yogurt_plain_vs_flavored | SHIPPED | JSON id=yogurt_plain_vs_flavored; kind=card (patch); sources=D061,D041; already shipped
+dairy-pantry-v1.tsv | yogurt_flavored | SHIPPED | JSON id=pick_flavored_yogurt; kind=pick; remap yogurt_flavored -> pick_flavored_yogurt; new pick replacing table item/card row; sources=D041,D062; already shipped
+dairy-pantry-v1.tsv | plain_kefir | SHIPPED | JSON id=plain_kefir; kind=card (patch); sources=D041; already shipped
+dairy-pantry-v1.tsv | sour_cream | SHIPPED | JSON id=sour_cream; kind=card (patch); sources=D049; already shipped
+dairy-pantry-v1.tsv | cream_vs_creamer | SHIPPED | JSON id=pick_dairy_cream; kind=pick; remap cream_vs_creamer -> pick_dairy_cream; new pick replacing table item/card row; sources=D043,D013; already shipped
+dairy-pantry-v1.tsv | creamer_nondairy | SHIPPED | JSON id=pick_nondairy_creamer; kind=pick; remap creamer_nondairy -> pick_nondairy_creamer; new pick replacing table item/card row; sources=D043; already shipped
+dairy-pantry-v1.tsv | grassfed_butter | SHIPPED | JSON id=grassfed_butter; kind=card (patch); sources=D042; already shipped
+dairy-pantry-v1.tsv | ghee | SHIPPED | JSON id=ghee; kind=card (patch); sources=D042; already shipped
+dairy-pantry-v1.tsv | cheese_real_vs_processed | SHIPPED | JSON id=cheese_real_vs_processed; kind=card (patch); sources=D014; already shipped
+dairy-pantry-v1.tsv | cheese_food_slices | SHIPPED | JSON id=pick_cheese_food_slices; kind=pick; remap cheese_food_slices -> pick_cheese_food_slices; new pick replacing table item/card row; sources=D014; already shipped
+dairy-pantry-v1.tsv | cream_cheese | SHIPPED | JSON id=cream_cheese; kind=card (patch); sources=D044; already shipped
+dairy-pantry-v1.tsv | cottage_cheese | SHIPPED | JSON id=cottage_cheese; kind=card (patch); sources=D044; already shipped
+dairy-pantry-v1.tsv | ice_cream | SHIPPED | JSON id=ice_cream; kind=card (patch); sources=D032; already shipped
+dairy-pantry-v1.tsv | goat_sheep_dairy | HELD | status HOLD; source_id ? (UNSOURCED); why_tap ?
+dairy-pantry-v1.tsv | oat_milk | HELD | status HOLD; source_id ? (UNSOURCED); why_tap ?
+dairy-pantry-v1.tsv | almond_milk | HELD | status HOLD; source_id ? (UNSOURCED); why_tap ?
+dairy-pantry-v1.tsv | soy_milk | HELD | status HOLD; source_id ? (UNSOURCED); why_tap ?
+dairy-pantry-v1.tsv | coconut_milk_beverage | HELD | status HOLD; source_id ? (UNSOURCED); why_tap ?
+dairy-pantry-v1.tsv | canned_coconut_milk | SHIPPED | JSON id=canned_coconut_milk; kind=card (patch); sources=D003; already shipped
+dairy-pantry-v1.tsv | pick_margarine | SHIPPED | JSON id=pick_margarine; kind=pick; sources=D050,D051; already shipped
+dairy-pantry-v1.tsv | plant_butter | SHIPPED | JSON id=plant_butter; kind=card (patch); sources=D050,D051; already shipped
+dairy-pantry-v1.tsv | pick_whipped_topping | SHIPPED | JSON id=pick_whipped_topping; kind=pick; sources=D049; already shipped
+dairy-pantry-v1.tsv | cooking_oils | SHIPPED | JSON id=cooking_oils; kind=card (patch); sources=D051,D059; already shipped
+dairy-pantry-v1.tsv | oil_blend_vegetable | SHIPPED | JSON id=pick_vegetable_oil_blend; kind=pick; remap oil_blend_vegetable -> pick_vegetable_oil_blend; new pick replacing table item/card row; sources=D051; already shipped
+dairy-pantry-v1.tsv | olive_oil_grades | SHIPPED | JSON id=olive_oil_grades; kind=card (patch); sources=D065,D069,D059; already shipped
+dairy-pantry-v1.tsv | avocado_oil | SHIPPED | JSON id=pick_avocado_oil; kind=pick; remap avocado_oil -> pick_avocado_oil; new pick replacing table item/card row; sources=D064,D059; already shipped
+dairy-pantry-v1.tsv | label_cold_pressed_expeller | SHIPPED | JSON id=label_cold_pressed_expeller; kind=card (patch); sources=D017; already shipped
+dairy-pantry-v1.tsv | lard_tallow | SHIPPED | JSON id=lard_tallow; kind=card (patch); sources=D031; already shipped
+dairy-pantry-v1.tsv | rancidity_check | SHIPPED | JSON id=rancidity_check; kind=card (patch); sources=D066,D065; already shipped
+dairy-pantry-v1.tsv | fam_whole_grains | SHIPPED | JSON id=pick_whole_grains; kind=pick; remap fam_whole_grains -> pick_whole_grains; new pick replacing table family row; sources=D052; already shipped
+dairy-pantry-v1.tsv | oats_steelcut_rolled_instant | SHIPPED | JSON id=oats_steelcut_rolled_instant; kind=card (patch); sources=D029,D027; new this round
+dairy-pantry-v1.tsv | rice_arsenic | SHIPPED | JSON id=rice_arsenic; kind=card (patch); sources=D053,D052; already shipped
+dairy-pantry-v1.tsv | grains_beyond_rice | SHIPPED | JSON id=grains_beyond_rice; kind=card (patch); sources=D033,D046; already shipped
+dairy-pantry-v1.tsv | wild_rice | SHIPPED | JSON id=wild_rice; kind=card (patch); sources=D033,D046; already shipped
+dairy-pantry-v1.tsv | cornmeal_polenta_grits | SHIPPED | JSON id=cornmeal_polenta_grits; kind=card (patch); sources=F130,D047; new this round
+dairy-pantry-v1.tsv | fam_pulses | SHIPPED | JSON id=pick_dried_pulses; kind=pick; remap fam_pulses -> pick_dried_pulses; new pick replacing table family row; sources=D053,D060; already shipped
+dairy-pantry-v1.tsv | beans_dried_vs_canned | SHIPPED | JSON id=beans_dried_vs_canned; kind=card (patch); sources=D053,D054; already shipped
+dairy-pantry-v1.tsv | fam_dry_pasta | SHIPPED | JSON id=pick_dry_pasta; kind=pick; remap fam_dry_pasta -> pick_dry_pasta; new pick replacing table family row; sources=D033; already shipped
+dairy-pantry-v1.tsv | flour_basics | SHIPPED | JSON id=flour_basics; kind=card (patch); sources=D007,D039; new this round
+dairy-pantry-v1.tsv | specialty_flours | SHIPPED | JSON id=specialty_flours; kind=card (patch); sources=D056,D057; already shipped
+dairy-pantry-v1.tsv | label_multigrain_vs_whole_grain | SHIPPED | JSON id=label_multigrain_vs_whole_grain; kind=card (patch); sources=D046,D047; already shipped
+dairy-pantry-v1.tsv | breakfast_cereal | SHIPPED | JSON id=pick_breakfast_cereal; kind=pick; remap breakfast_cereal -> pick_breakfast_cereal; new pick replacing table item/card row; sources=D052,D063; already shipped
+dairy-pantry-v1.tsv | sourdough | SHIPPED | JSON id=sourdough; kind=card (patch); sources=D038,D020; new this round
+dairy-pantry-v1.tsv | sprouted_grain_bread | SHIPPED | JSON id=sprouted_grain_bread; kind=card (patch); sources=D038; already shipped
+dairy-pantry-v1.tsv | sandwich_bread | SHIPPED | JSON id=sandwich_bread; kind=card (patch); sources=D055; already shipped
+dairy-pantry-v1.tsv | gluten_free_bread | SHIPPED | JSON id=gluten_free_bread; kind=card (patch); sources=D047; already shipped
+dairy-pantry-v1.tsv | bagels_buns | SHIPPED | JSON id=bagels; kind=card (patch); remap bagels_buns -> bagels; sources=D038; already shipped
+dairy-pantry-v1.tsv | sugars | SHIPPED | JSON id=sugars; kind=card (patch); sources=D006; already shipped
+dairy-pantry-v1.tsv | maple_syrup | SHIPPED | JSON id=maple_syrup; kind=card (patch); sources=D006; already shipped
+dairy-pantry-v1.tsv | honey_adulteration | SHIPPED | JSON id=honey_adulteration; kind=card (patch); sources=D021,D006; new this round
+dairy-pantry-v1.tsv | molasses_whole_cane_sweeteners | SHIPPED | JSON id=pick_molasses; kind=pick; remap molasses_whole_cane_sweeteners -> pick_molasses; new pick replacing table item/card row; sources=D006; already shipped
+dairy-pantry-v1.tsv | fam_named_sweeteners | SHIPPED | JSON id=pick_plant_sugars; kind=pick; remap fam_named_sweeteners -> pick_plant_sugars; new pick replacing table family row; sources=D068; already shipped
+dairy-pantry-v1.tsv | refined_syrups | SHIPPED | JSON id=pick_refined_syrups; kind=pick; remap refined_syrups -> pick_refined_syrups; new pick replacing table item/card row; sources=D006; already shipped
+dairy-pantry-v1.tsv | fam_nuts_seeds | SHIPPED | JSON id=pick_packaged_nuts_seeds; kind=pick; remap fam_nuts_seeds -> pick_packaged_nuts_seeds; new pick replacing table family row; sources=D002; already shipped
+dairy-pantry-v1.tsv | nuts_raw_vs_roasted | SHIPPED | JSON id=nuts_raw_vs_roasted; kind=card (patch); sources=D002; already shipped
+dairy-pantry-v1.tsv | nut_butter_ingredients | SHIPPED | JSON id=nut_butter_ingredients; kind=card (patch); sources=D002; already shipped
+dairy-pantry-v1.tsv | seeds | SHIPPED | JSON id=seeds; kind=card (patch); sources=D002; already shipped
+dairy-pantry-v1.tsv | trail_mix | SHIPPED | JSON id=trail_mix; kind=card (patch); sources=D002; already shipped
+dairy-pantry-v1.tsv | nutritional_yeast | HELD | status HOLD; source_id ? (UNSOURCED); why_tap ?
+dairy-pantry-v1.tsv | canned_foods | SHIPPED | JSON id=pick_canned_foods; kind=pick; remap canned_foods -> pick_canned_foods; new pick replacing table item/card row; sources=D058; already shipped
+dairy-pantry-v1.tsv | pasta_sauce | SHIPPED | JSON id=pasta_sauce; kind=card (patch); sources=D004; already shipped
+dairy-pantry-v1.tsv | fam_vegetable_sauces | SHIPPED | JSON id=pick_jarred_vegetable_sauces; kind=pick; remap fam_vegetable_sauces -> pick_jarred_vegetable_sauces; new pick replacing table family row; sources=D004; already shipped
+dairy-pantry-v1.tsv | seaweed | SHIPPED | JSON id=seaweed; kind=card (patch); sources=D034; already shipped
+dairy-pantry-v1.tsv | hummus | SHIPPED | JSON id=hummus; kind=card (patch); sources=D051; already shipped
+dairy-pantry-v1.tsv | dried_herbs | SHIPPED | JSON id=dried_herbs; kind=card (patch); sources=D005; already shipped
+dairy-pantry-v1.tsv | whole_spices | SHIPPED | JSON id=whole_spices; kind=card (patch); sources=D005; already shipped
+dairy-pantry-v1.tsv | salt | SHIPPED | JSON id=salt; kind=card (patch); sources=D005; already shipped
+dairy-pantry-v1.tsv | baking_powder | SHIPPED | JSON id=baking_powder; kind=card (patch); sources=D039; already shipped
+dairy-pantry-v1.tsv | raw_cider_vinegar | SHIPPED | JSON id=raw_cider_vinegar; kind=card (patch); sources=D004; already shipped
+dairy-pantry-v1.tsv | vinegar | SHIPPED | JSON id=vinegar; kind=card (patch); sources=D004; already shipped
+dairy-pantry-v1.tsv | ketchup_mustard | SHIPPED | JSON id=ketchup_mustard; kind=card (patch); sources=D004; already shipped
+dairy-pantry-v1.tsv | soy_sauce | SHIPPED | JSON id=pick_fermented_soy_sauce; kind=pick; remap soy_sauce -> pick_fermented_soy_sauce; new pick replacing table item/card row; sources=D004; already shipped
+dairy-pantry-v1.tsv | condiments | SHIPPED | JSON id=condiments; kind=card (patch); sources=D051; already shipped
+dairy-pantry-v1.tsv | crackers | SHIPPED | JSON id=crackers; kind=card (patch); sources=D040; already shipped
+dairy-pantry-v1.tsv | pretzels | SHIPPED | JSON id=pretzels; kind=card (patch); sources=D052; already shipped
+dairy-pantry-v1.tsv | snack_bars | SHIPPED | JSON id=snack_bars; kind=card (patch); sources=D006,D028; new this round
+dairy-pantry-v1.tsv | snacks | SHIPPED | JSON id=snacks; kind=card (patch); sources=D001,D031; new this round
+dairy-pantry-v1.tsv | rice_cakes_puffed_grains | SHIPPED | JSON id=rice_cakes_puffed_grains; kind=card (patch); sources=D033; already shipped
+dairy-pantry-v1.tsv | p_bottled_water | SHIPPED | JSON id=bottled_water_buying; kind=card (patch); remap p_bottled_water -> bottled_water_buying; sources=D024; already shipped
+dairy-pantry-v1.tsv | coffee_beans | HELD | status HOLD; PILOT-BUILD-PLAN.md open question 4 holds coffee/tea pending ruling because WAPF D036 lists them under avoid
+dairy-pantry-v1.tsv | tea | HELD | status HOLD; PILOT-BUILD-PLAN.md open question 4 holds coffee/tea pending ruling because WAPF D036 lists them under avoid
+dairy-pantry-v1.tsv | p_juice | SHIPPED | JSON id=pick_juice; kind=pick; remap p_juice -> pick_juice; existing KB pick updated under remapped id; sources=D036; already shipped
+dairy-pantry-v1.tsv | p_soda | SHIPPED | JSON id=pick_soda; kind=pick; remap p_soda -> pick_soda; existing KB pick updated under remapped id; sources=D036; already shipped
+dairy-pantry-v1.tsv | p_kombucha | SHIPPED | JSON id=kombucha; kind=card (patch); remap p_kombucha -> kombucha; sources=D035; already shipped
+dairy-pantry-v1.tsv | p_coconut_water | SHIPPED | JSON id=coconut_water; kind=card (patch); remap p_coconut_water -> coconut_water; sources=D003; already shipped
