@@ -163,9 +163,9 @@
       ],
       "category": "beef",
       "question": "Is grass-fed beef worth it?",
-      "decision": "Grass-finished beef first, then AGA Grassfed or USDA Organic.",
+      "decision": "Grass-finished beef with an AGA or PCO 100% Grassfed seal.",
       "why": "Grass after weaning, no grain and no feedlot. A grass finish gives you leaner beef with a different fat balance.",
-      "short_answer": "Look for the AGA Grassfed seal: grass and forage from weaning to harvest, on pasture. Without it, USDA Organic is the floor, and organic beef can be grain-finished for up to 120 days.",
+      "short_answer": "Look for the AGA or PCO Certified 100% Grassfed seal: grass and forage from weaning to harvest. Organic is a bonus, not the bar; organic beef can be grain-finished up to 120 days.",
       "detail": "The federal grass-fed marketing standard was withdrawn in 2016, so a bare ‘grass-fed’ claim rests on the producer. The fat profile follows the finish, not the start, so grass to the end is the bar. Traditional food guides put meat from animals allowed to graze at the top, fat and organs included. A grazing farm sold direct, or a butcher who names the farm, is how to know the finish.",
       "evidence_tier": "kristys_standard",
       "sources": [
@@ -192,8 +192,8 @@
         "The federal grass-fed claim standard was withdrawn in 2016. A bare ‘grass-fed’ label rests on the company, so ask the farm about the finish."
       ],
       "pick_steps": [
-        "Read for ‘grass-finished’ or ‘100% grass-fed’; pasture artwork is not a claim.",
-        "Without grass-finished, pick USDA Organic: certified organic feed and outdoor access.",
+        "Read for an AGA or PCO seal or ‘grass-finished’; artwork is not a claim.",
+        "Without grass-finished, USDA Organic is next; organic beef can still be grain-finished.",
         "At the counter, ask what it was finished on and whose definition."
       ],
       "science": "FSIS reads a ‘grass-fed’ claim as grass after weaning, no grain, and pasture access. The grass-fed claim standard was withdrawn in 2016, so the bare claim rests on the producer. The fat profile follows the finish, not the start. A grass finish leaves a leaner animal that dries out at feedlot-beef heat.",
@@ -378,7 +378,7 @@
           "meaning": "Never submitted for grading. Says nothing about quality either way."
         }
       ],
-      "tier_note": "The ‘mechanically tenderized’ name is federal label text; an untouched whole cut is held as a standard; certified organic feed and outdoor access.",
+      "tier_note": "The ‘mechanically tenderized’ name is federal label text; an untouched whole cut is held as a standard.",
       "watch_out": [
         "The cut name says where on the animal it came from.",
         "Chuck is shoulder and round is rear leg. Both are working muscles.",
@@ -430,9 +430,9 @@
       ],
       "category": "beef",
       "question": "What ground beef lean ratio should I get?",
-      "decision": "Grass-fed ground beef first, then organic, nothing added.",
+      "decision": "100% grass-fed, grass-finished ground beef, beef only.",
       "why": "Ground beef and grass-fed sourcing: see Beef.",
-      "short_answer": "Pick organic ground beef with beef as the only ingredient. The lean/fat ratio on the front is a separate number.",
+      "short_answer": "Pick ground beef with beef as the only ingredient. The lean/fat ratio on the front is a separate number.",
       "detail": "Both ‘ground beef’ and ‘hamburger’ cap at 30% fat, so the name is where the difference lives. ‘Ground chuck’, ‘round’ or ‘sirloin’ names the cut it came from. The ingredient list should be beef, with seasoning at most. ‘Ground beef’ may not contain added water, phosphates, binders or extenders, and may not have beef fat added as such. ‘Hamburger’ may. The ratio on the pack is lean to fat by weight. 80/20 is 20% fat; 90/10 is leaner. The name ‘ground beef’ allows no added water, phosphates, binders or extenders. 9 CFR 319.15(a) defines ‘Ground Beef’ as chopped fresh or frozen beef, fat capped at 30 percent, no added water, binders or extenders, with trimmed cheek meat the one allowed addition and capped at 25 percent. A product with liver or heart in it falls outside that definition, and 9 CFR 317.2 then requires a common or usual name or a truthful descriptive designation plus a full ingredient statement in descending order. ‘Ancestral blend’ and ‘primal blend’ are producer names for exactly this product, not standardized terms. Two label examples: one blend states 8 percent organ meats (4 percent liver, 4 percent heart, 92 percent muscle); another states 92 percent ground beef, 5 percent liver, 3 percent heart. Liver is the retinol-dense ingredient: the NIH fact sheet lists pan-fried beef liver at 6,582 mcg RAE per 3 ounces, against a tolerable upper intake of 3,000 mcg a day for adults. A blend that states its shares is plain ground beef with a measured amount of organ folded in. A blend carries its own descriptive name and a full ingredient list. By NIH figures, 3 ounces of pan-fried beef liver holds more than twice the adult daily vitamin A upper intake. Producers print shares such as 8 percent organ, or 5 percent liver plus 3 percent heart. Organs are part of eating the whole animal, and a blend puts them in a familiar grind.",
       "evidence_tier": "established",
       "sources": [
@@ -444,7 +444,7 @@
         "Weston A. Price Foundation: The Liver Files"
       ],
       "kristy_take": "Federal rules keep added water, binders and organs out of ‘ground beef’, so a blend needs its own name. Plain ‘ground beef’ allows no added fat either; ‘hamburger’ may add fat.",
-      "cart_pick": "Grass-fed ground beef, beef only",
+      "cart_pick": "100% grass-fed ground beef, beef only",
       "buying_tips": [
         "A few percent liver and heart still tastes like regular ground beef.",
         "Read the name: ‘ground beef’ may not have beef fat added as such; ‘hamburger’ may.",
@@ -497,7 +497,7 @@
       ],
       "science": "The numbers are lean to fat by weight, so a higher first number is leaner. ‘Ground beef’ may not have beef fat added as such, but ‘hamburger’ may. Both cap at 30% fat, so the name is where the difference lives. ‘Ground chuck’, ‘round’ or ‘sirloin’ names the cut it came from.",
       "pick_steps": [
-        "Look for USDA Organic: certified organic feed and outdoor access.",
+        "Look for an AGA or PCO seal; organic is a bonus.",
         "Read the ingredients: beef only, nothing added.",
         "Pick ‘ground beef’ over ‘hamburger’, which can include added beef fat."
       ],
@@ -978,7 +978,7 @@
       "question": "Does buying produce in season matter?",
       "decision": "In-season produce, with the country of origin on the sticker.",
       "why": "A January orange tastes better than a July one. Produce in season usually travels less and reaches you closer to ripe.",
-      "short_answer": "Yes. In season and organic is the top tier. Out of season, organic frozen is the store fallback.",
+      "short_answer": "Yes. In season with a Real Organic, Certified Naturally Grown or Demeter seal is the top tier, organic the floor. Out of season, organic frozen is the store fallback.",
       "detail": "Supermarket produce is often harvested long before its peak nutritional value so it can survive transit and storage. Fresh from a garden or a local farm stand is best, organic or biodynamic and in season. Ask the grower how the crop was grown; a farm directory or farmers market lists local farms. Off-season, produce is shipped long distances or grown under conditions that trade flavor for availability, and organic frozen is the fallback. Broadly: tender greens and berries in spring, tomatoes and stone fruit in summer, squash and apples in autumn, citrus and hardy brassicas in winter. Season shows up in the size of the pile before it shows up anywhere else. Some produce ignores the calendar because it stores well (apples, onions, potatoes, winter squash, carrots) or because it was shipped from the other hemisphere, which is why ‘available’ and ‘in season’ are different words. Citrus peaks in the dead of winter, which is why a January orange tastes better than a July one.",
       "evidence_tier": "kristys_standard",
       "sources": [
@@ -2116,7 +2116,7 @@
       ],
       "category": "label_terms",
       "question": "Does ‘no added hormones’ mean anything?",
-      "decision": "USDA Organic meat or dairy with a pasture seal.",
+      "decision": "AGA Grassfed beef; organic dairy with a pasture seal.",
       "why": "Hormones are already banned in pork and poultry, so every producer could print it.",
       "short_answer": "In pork and poultry, added hormones are banned by law. The claim there is true but meaningless; every producer could say it. Beef and dairy allow hormones, so there it is meaningful and should be third-party verified.",
       "detail": "By federal rule, hormones can’t be used in raising pigs or chickens, so any ‘hormone-free’ chicken label must also note that no poultry is raised with hormones. For beef and dairy the claim actually distinguishes producers. Knowing which animal you’re looking at tells you whether the claim is information or filler. It depends on the animal. rBST, also called rBGH, is a hormone given to dairy cows to increase milk production. The U.S. does not require a label declaring its use; “rBST free” is a voluntary claim.",
@@ -2131,7 +2131,7 @@
         "Pork and poultry ban hormones by law, so every producer there can print it.",
         "Chicken/pork: hormones are banned anyway. Look for the required explanatory statement.",
         "Beef/dairy: the claim is meaningful; look for verification.",
-        "On beef and dairy, start from organic, then look for a verified claim.",
+        "On beef, start from an AGA Grassfed seal; on dairy, start from organic, then a verified claim.",
         "Beef hormones are ear implants: estrogen, progesterone, testosterone, zeranol, trenbolone acetate.",
         "Poultry labels must add ‘no hormones are used in poultry’ by rule.",
         "On dairy, look for “from cows not treated with rBST”; this describes the producer’s claim."
@@ -2310,7 +2310,7 @@
       ],
       "category": "label_terms",
       "question": "Is ‘grass-fed’ on the label enough?",
-      "decision": "USDA Organic beef with an AGA seal, grass-fed through finishing.",
+      "decision": "Beef with an AGA or PCO 100% Grassfed seal.",
       "why": "The bare claim is weakly enforced and still allows a grain finish.",
       "short_answer": "Not by itself. ‘Grass-fed’ only means the animal ate grass at some point. It can still be grain-finished. Since the USDA withdrew its standard, the bare claim is weakly enforced. Look for ‘100% grass-fed’ or ‘grass-finished’, ideally third-party certified.",
       "detail": "This overlaps with the beef entries but it’s worth stating as a label rule: ‘grass-fed’ alone is soft; ‘100% grass-fed’, ‘grass-finished’, or certification (American Grassfed Association) is the honest version. Buy the specific claim, not the vague one. After the USDA withdrew its formal standard, the bare claim is weakly enforced. The claim that means what most people think is ‘100% grass-fed’ or ‘grass-finished’.",
@@ -5324,12 +5324,24 @@
       "decision": "Organic carrots and roots, firm, smooth and bright in color.",
       "why": "Roots grow in the soil and the skin often gets eaten, so how they were grown comes first.",
       "short_answer": "Firm is the test at every root. Potatoes: no bruises, nicks or soft spots, never green. Carrots: well colored, no green shoulders, wilt, flab or cracks. Sweet potatoes: smooth, even shape, even peel color. Beets: round, slender tap root.",
-      "detail": "Top tier is in season with an organic seal; read the sign or sticker at the bin for the growing method. Potatoes keep up to a month in a cool, dark place with good ventilation, ideally 45 to 50°F. Throw away any that turn shriveled or green or grow many sprouts. Sweet potatoes want cool and dry, 55 to 59°F: colder brings chilling injury (fungal decay, internal browning, shriveling) and warmer speeds sprouting. Carrots go in a closed bag or container in the refrigerator for up to two weeks. Cut the tops off first, since attached tops wilt the root, and a wilted carrot revives in a soak of cold water. Beets: trim the leafy stem to an inch, leave the root end on, and refrigerate in a food-safe container for up to two weeks. Stored potatoes are often treated with a sprout inhibitor, so fresh-dug local potatoes come first.",
+      "detail": "Top tier is in season with a Real Organic, Certified Naturally Grown, Demeter or Regenerative Organic Certified seal, then USDA Organic as the floor; read the sign or sticker at the bin for the growing method. Potatoes keep up to a month in a cool, dark place with good ventilation, ideally 45 to 50°F. Throw away any that turn shriveled or green or grow many sprouts. Sweet potatoes want cool and dry, 55 to 59°F: colder brings chilling injury (fungal decay, internal browning, shriveling) and warmer speeds sprouting. Carrots go in a closed bag or container in the refrigerator for up to two weeks. Cut the tops off first, since attached tops wilt the root, and a wilted carrot revives in a soak of cold water. Beets: trim the leafy stem to an inch, leave the root end on, and refrigerate in a food-safe container for up to two weeks. Stored potatoes are often treated with a sprout inhibitor, so fresh-dug local potatoes come first.",
       "evidence_tier": "established",
       "sources": [
         "Weston A. Price Foundation: Shopping Guide Categories",
         "Weston A. Price Foundation: Extend to the End, Prolonging Your Local Growing Season",
-        "Organic Federation of Canada: Organic sprout inhibitors for potatoes caught in red tape"
+        "Organic Federation of Canada: Organic sprout inhibitors for potatoes caught in red tape",
+        {
+          "name": "Real Organic Project: standards",
+          "url": "https://realorganicproject.org/standards/"
+        },
+        {
+          "name": "Regenerative Organic Certified",
+          "url": "https://regenorganic.org/"
+        },
+        {
+          "name": "Certified Naturally Grown: FAQs",
+          "url": "https://www.naturallygrown.org/faqs/"
+        }
       ],
       "kristy_take": "Wilted beet leaves need not put you off a firm root. Cut the tops off carrots before storing them; left attached, they wilt the carrot.",
       "cart_pick": "Carrots and potatoes",
@@ -5430,11 +5442,23 @@
       "decision": "Organic broccoli, cabbage and cauliflower, compact and heavy.",
       "why": "Tight, dark green broccoli florets are fresh. Enlarged, open or yellowish-green ones are past fresh.",
       "short_answer": "Broccoli: dark green florets, closed, not yellowish or wilted, on stems that are not thick and tough. Cauliflower: no bruises or damage. Cabbage: strip wilted or insect-damaged outer leaves. A soft or slippery head stays on the shelf.",
-      "detail": "Top tier is in season with an organic seal; read the sign or sticker at the bin for the growing method. Broccoli is the short keeper of the three: refrigerate it in a plastic bag with holes and use it within three days. Cabbage goes the other way, staying fresh for several weeks in a plastic bag or wrap in the refrigerator at 41°F or below; before using, cut out the core and rinse the leaves under cool running water. Cauliflower gets kept away from raw meat and meat juices.",
+      "detail": "Top tier is in season with a Real Organic, Certified Naturally Grown, Demeter or Regenerative Organic Certified seal, then USDA Organic as the floor; read the sign or sticker at the bin for the growing method. Broccoli is the short keeper of the three: refrigerate it in a plastic bag with holes and use it within three days. Cabbage goes the other way, staying fresh for several weeks in a plastic bag or wrap in the refrigerator at 41°F or below; before using, cut out the core and rinse the leaves under cool running water. Cauliflower gets kept away from raw meat and meat juices.",
       "evidence_tier": "established",
       "sources": [
         "Weston A. Price Foundation: Shopping Guide Categories",
-        "Weston A. Price Foundation: Extend to the End, Prolonging Your Local Growing Season"
+        "Weston A. Price Foundation: Extend to the End, Prolonging Your Local Growing Season",
+        {
+          "name": "Real Organic Project: standards",
+          "url": "https://realorganicproject.org/standards/"
+        },
+        {
+          "name": "Regenerative Organic Certified",
+          "url": "https://regenorganic.org/"
+        },
+        {
+          "name": "Certified Naturally Grown: FAQs",
+          "url": "https://www.naturallygrown.org/faqs/"
+        }
       ],
       "kristy_take": "A soft or slippery head is spoiling. Use broccoli early in the week; it keeps about three days, while wrapped cabbage can wait several weeks in the fridge.",
       "cart_pick": "Broccoli, cauliflower, or cabbage",
@@ -5533,11 +5557,23 @@
       "decision": "Organic onions and garlic, firm, dry and papery-skinned.",
       "why": "A well-cured bulb feels dry at the neck and papery outside. A soft, scented or sprouting bulb is already on its way out.",
       "short_answer": "Onions: firm for their size, little to no scent, a dry neck, no cuts, bruises or mold, no sprouting. Some loose skins are normal. Garlic: clean, white or true to the variety, well cured, cloves firm.",
-      "detail": "Top tier is in season with an organic seal; read the sign or sticker at the bin for the growing method. Whole dry onions live in a cool, dry, dark place with plenty of air movement: no plastic bags, no wrap, and not beside potatoes or anything else that releases moisture. Storage between 41 and 75°F favors sprouting, so the cooler the spot the better. Refrigeration is only for sweet or mild high-water varieties, on a low-humidity setting, and a cut onion goes in a sealed container for up to seven days. Garlic keeps one to two months at room temperature in low humidity before it softens, goes spongy, and shrivels from water loss; it sprouts fastest between 41 and 65°F, and its odor moves into other foods, so it gets stored on its own.",
+      "detail": "Top tier is in season with a Real Organic, Certified Naturally Grown, Demeter or Regenerative Organic Certified seal, then USDA Organic as the floor; read the sign or sticker at the bin for the growing method. Whole dry onions live in a cool, dry, dark place with plenty of air movement: no plastic bags, no wrap, and not beside potatoes or anything else that releases moisture. Storage between 41 and 75°F favors sprouting, so the cooler the spot the better. Refrigeration is only for sweet or mild high-water varieties, on a low-humidity setting, and a cut onion goes in a sealed container for up to seven days. Garlic keeps one to two months at room temperature in low humidity before it softens, goes spongy, and shrivels from water loss; it sprouts fastest between 41 and 65°F, and its odor moves into other foods, so it gets stored on its own.",
       "evidence_tier": "established",
       "sources": [
         "Weston A. Price Foundation: Shopping Guide Categories",
-        "Weston A. Price Foundation: Extend to the End, Prolonging Your Local Growing Season"
+        "Weston A. Price Foundation: Extend to the End, Prolonging Your Local Growing Season",
+        {
+          "name": "Real Organic Project: standards",
+          "url": "https://realorganicproject.org/standards/"
+        },
+        {
+          "name": "Regenerative Organic Certified",
+          "url": "https://regenorganic.org/"
+        },
+        {
+          "name": "Certified Naturally Grown: FAQs",
+          "url": "https://www.naturallygrown.org/faqs/"
+        }
       ],
       "kristy_take": "A few loose onion skins are normal. Squeeze for firmness and little scent, then store whole onions where air can move, away from damp potatoes.",
       "cart_pick": "Onions and garlic",
@@ -5563,7 +5599,7 @@
       ],
       "science": "A sound bulb has a dry neck and dry outer skins, and some loose onion skin is normal. Whole onions keep cool, dry and dark with air moving, never in plastic. Keep them apart from potatoes and anything else that releases moisture. A cut onion goes in a sealed container for up to seven days.",
       "labels_decoded": [],
-      "tier_note": "In-season onions and garlic with an organic seal come first.",
+      "tier_note": "In-season onions and garlic with a Real Organic, Certified Naturally Grown or Demeter seal come first, then organic.",
       "eyebrow_short": "Onions and garlic",
       "asked_as": [
         "how do i store garlic",
@@ -5637,13 +5673,25 @@
       "decision": "Organic spinach, kale and lettuce with crisp, colorful leaves.",
       "why": "Spinach is highly perishable, and kale wilts in warmth. A leaf that still stands crisp tells you it has freshness left.",
       "short_answer": "Lettuce: crisp, green outside, pale at the heart. Romaine: neither very loose nor very hard. Spinach: uniformly green and fully crisp. Kale: firm, deep colored leaves on moist, hardy stems.",
-      "detail": "Cold is the whole storage story. Romaine keeps about 21 days near 32°F and noticeably less at 41°F, so the coldest shelf of the refrigerator is the right one. Spinach wants 32°F too and will not hold good quality past two weeks; at 41 to 50°F it wilts and yellows faster. Kale goes in a plastic bag with as much air pressed out as possible, unwashed, for about five days; water on the leaves speeds spoilage, so wash at the point of use. Small greenhouse growers sell living lettuce with the root ball on; one says the root ball doubles the shelf life, and another packs it to stay fresh up to three weeks. Greenhouse or hydroponic alone does not say how it was grown, so look for the organic seal. In a big store, organic spring mix and romaine are the fallback. At the shelf, lettuce runs bright to dark green outside and yellow or light green at the heart, free of insects, decay, or damage. A very loose romaine head is immature; a very firm or hard one is overmature. Spinach should be fairly clean with no serious damage. Kale should show no browning, yellow, or small holes.",
+      "detail": "Cold is the whole storage story. Romaine keeps about 21 days near 32°F and noticeably less at 41°F, so the coldest shelf of the refrigerator is the right one. Spinach wants 32°F too and will not hold good quality past two weeks; at 41 to 50°F it wilts and yellows faster. Kale goes in a plastic bag with as much air pressed out as possible, unwashed, for about five days; water on the leaves speeds spoilage, so wash at the point of use. Small greenhouse growers sell living lettuce with the root ball on; one says the root ball doubles the shelf life, and another packs it to stay fresh up to three weeks. Greenhouse or hydroponic alone does not say how it was grown, so look for a Real Organic, Certified Naturally Grown, Demeter or Regenerative Organic Certified seal, then USDA Organic. In a big store, organic spring mix and romaine are the fallback. At the shelf, lettuce runs bright to dark green outside and yellow or light green at the heart, free of insects, decay, or damage. A very loose romaine head is immature; a very firm or hard one is overmature. Spinach should be fairly clean with no serious damage. Kale should show no browning, yellow, or small holes.",
       "evidence_tier": "established",
       "sources": [
         "CanvasRebel: interview with Forest Valley Acres (greenhouse grower, living lettuce)",
         "Reading Eagle: Big Leaf Hydroponics living lettuce (2019)",
         "Weston A. Price Foundation: Feeding Your Family Well From the Big Box Stores",
-        "Paleo.com.au: Why You Must Wash Your Pre-Washed Salad"
+        "Paleo.com.au: Why You Must Wash Your Pre-Washed Salad",
+        {
+          "name": "Real Organic Project: standards",
+          "url": "https://realorganicproject.org/standards/"
+        },
+        {
+          "name": "Regenerative Organic Certified",
+          "url": "https://regenorganic.org/"
+        },
+        {
+          "name": "Certified Naturally Grown: FAQs",
+          "url": "https://www.naturallygrown.org/faqs/"
+        }
       ],
       "kristy_take": "For milder, more tender kale, choose the smaller leaves on moist stems. Keep the bunch cold from the cart to the crisper, and wash it when you use it.",
       "cart_pick": "Lettuce",
@@ -7539,7 +7587,7 @@
       "decision": "Organic mushrooms.",
       "why": "The whole cap is eaten, and organic rules bar synthetic substances and GMOs in growing.",
       "short_answer": "Choose mushrooms that feel dry and firm, with no dark spots. Closed caps taste milder. Open caps with gills showing taste stronger. Keep them cold in a paper bag.",
-      "detail": "Certified organic mushrooms come first. Look for caps closed around the stem or moderately open, with pink or light tan gills. The cap surface should be white, creamy or an even light brown. Portobello is a large, mature cremini. Shiitake has broad, umbrella-shaped caps and is best cooked. Store mushrooms unwashed in the refrigerator, in the original container or a paper bag. A plastic bag or airtight container collects moisture that spoils them. Use fresh mushrooms within a week for best quality. Only an expert can tell poisonous wild mushrooms from edible ones, and no amount of cooking or drying destroys the toxins.",
+      "detail": "Mushrooms signed Real Organic or Certified Naturally Grown come first, then certified organic. Look for caps closed around the stem or moderately open, with pink or light tan gills. The cap surface should be white, creamy or an even light brown. Portobello is a large, mature cremini. Shiitake has broad, umbrella-shaped caps and is best cooked. Store mushrooms unwashed in the refrigerator, in the original container or a paper bag. A plastic bag or airtight container collects moisture that spoils them. Use fresh mushrooms within a week for best quality. Only an expert can tell poisonous wild mushrooms from edible ones, and no amount of cooking or drying destroys the toxins.",
       "evidence_tier": "established",
       "sources": [
         {
@@ -8198,7 +8246,7 @@
       ],
       "category": "meat_counter",
       "question": "How do you buy and handle organ meats?",
-      "decision": "Organic organ meats from pasture-raised animals.",
+      "decision": "Organ meats from grass-finished or pasture-raised animals.",
       "why": "Organ meats and grass-fed sourcing: see Beef.",
       "short_answer": "Liver, kidney, tripe, sweetbreads, and tongue keep 1 to 2 days in the refrigerator. Cook all organ meats to 160°F. Heart and tongue are tough and suit moist heat.",
       "detail": "Organ meats are also called variety meats or offal. Liver suits braising, pan broiling, or frying. Sweetbreads and kidneys suit braising, sautéing, or frying. Tripe, the beef stomach, is braised up to two hours to turn tender. Heart and tongue are best cooked in liquid because their muscle is tough. Organ meats keep a shorter time in the refrigerator than steaks and roasts.",
@@ -8212,7 +8260,7 @@
         "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/beef-farm-table"
       ],
       "kristy_take": "Choose the organ with a meal in mind: variety meats keep less time than steaks and roasts. Cook within one to two days, and take all organ meats to 160°F.",
-      "cart_pick": "Organic pasture-raised organ meats",
+      "cart_pick": "Grass-finished or pasture-raised organ meats",
       "buying_tips": [
         "Organ meats keep less time than steaks and roasts, just 1 to 2 days cold.",
         "Ask the counter which farm the liver or heart came from.",
@@ -8225,7 +8273,7 @@
       ],
       "pick_steps": [
         "Ask the meat counter which organs it stocks, fresh or frozen.",
-        "Look for USDA Organic: certified organic feed and outdoor access.",
+        "Look for an AGA seal on beef liver and heart; organic is a bonus.",
         "Match each organ to its method; heart and tongue go in liquid."
       ],
       "science": "Variety meats keep a shorter time than steaks and roasts, 1 to 2 days refrigerated. Cook all organ meats to 160°F. Heart and tongue have tough muscle, so they suit moist heat. Tripe, the beef stomach, braises up to two hours to turn tender. Preformed vitamin A is most concentrated in liver. Pregnancy questions about eating liver go to a doctor.",
@@ -8261,7 +8309,7 @@
       ],
       "category": "meat_counter",
       "question": "How do you buy bison?",
-      "decision": "Organic AGA-certified bison with bison alone listed.",
+      "decision": "AGA-certified 100% grass-fed bison, bison alone listed.",
       "why": "AGA requires a 100% grass diet from weaning until harvest.",
       "short_answer": "Bison is a bovine, not a true buffalo. Look for a federal or state inspection mark. The meat is deeper red because it has no marbling. Cook or freeze ground bison within 2 days.",
       "detail": "The American buffalo is bison, a member of the bovine family with domestic cattle. Bison may carry voluntary federal inspection or an equivalent state inspection. The triangle “U.S. Inspected and Passed” seal marks federal inspection. Bison raised on grass get grain for the last 90 to 120 days, because many shoppers prefer white fat. Cook ground bison to 160°F. Cook steaks and roasts to 145°F, then rest three minutes.",
@@ -8273,7 +8321,7 @@
         }
       ],
       "kristy_take": "Find a federal or state inspection mark, then follow beef’s keeping and cooking rules. Ground bison should be cooked or frozen within 2 days.",
-      "cart_pick": "Organic AGA-certified bison",
+      "cart_pick": "AGA-certified grass-finished bison",
       "buying_tips": [
         "Grass-raised bison often get grain for their last 90 to 120 days.",
         "Look for the triangle “U.S. Inspected and Passed” seal or a state mark.",
@@ -8300,7 +8348,7 @@
           "meaning": "A cross that is 3/8 bison and 5/8 domestic cattle."
         }
       ],
-      "tier_note": "Many bison finish on grain; “grass-fed” is the producer’s own word unless a certifier’s seal audits it; certified organic feed and outdoor access.",
+      "tier_note": "Many bison finish on grain; “grass-fed” is the producer’s own word unless a certifier’s seal audits it; organic is a bonus, not the bar.",
       "asked_as": [
         "how do you buy ground bison",
         "how do you choose a bison steak",
@@ -11321,7 +11369,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick lard or tallow?",
-      "decision": "Organic lard or tallow with pasture or grass-fed wording.",
+      "decision": "Organic pastured lard, or 100% grass-fed tallow.",
       "why": "WAPF rates lard from pigs raised outdoors and tallow from grass-fed cows and sheep as best fats.",
       "short_answer": "Lard is pork fat, and leaf lard comes from the abdominal fat. Tallow is beef fat. A lard hardened with lard stearin or hydrogenated lard must say so on its label.",
       "detail": "Under 9 CFR 319.702, lard is the fat rendered from clean and sound edible tissues from swine. Rendered fat is fat cooked out of the tissue. “Leaf lard” is lard from fresh leaf, or abdominal, fat. Lard may be hardened with lard stearin or hydrogenated lard, two lard-based hardeners, and the label must state it. Lard is white when solid. Tallow is the rendered fat from a beef animal, and no federal standard for it is cited here. Rendered animal fat, or a mix containing it, may contain no added water under 9 CFR 319.703. Skip shortening made from meat fats and vegetable oils; it is a different product, named for the fats in it under 9 CFR 319.701.",
@@ -15737,11 +15785,11 @@
       "kind": "family",
       "title": "Ruminant meat: grass-finished first",
       "category": "aisle_meat_eggs",
-      "decision": "AGA Grassfed or USDA Organic beef, lamb or bison; grass-finished on the label.",
-      "why": "Organic production and forage finishing are separate checks. Grass, hay and browse fit the preferred forage system, including winter feeding. The same source preference applies to cuts, grinds, organ blends and beef franks, while each form needs its own recipe check. This is a sourcing preference, not a demonstrated health ranking.",
+      "decision": "100% grass-fed, grass-finished beef, lamb or bison, AGA or PCO sealed; organic a bonus.",
+      "why": "Organic production and forage finishing are separate checks; grass-finished ranks first, and organic on top is a bonus. Grass, hay and browse fit the preferred forage system, including winter feeding. The same source preference applies to cuts, grinds, organ blends and beef franks, while each form needs its own recipe check. This is a sourcing preference, not a demonstrated health ranking.",
       "buying_tips": [
-        "Look for the AGA Grassfed or AWA seal: grass and forage only, through harvest.",
-        "Look for USDA Organic as the floor; organic beef can still be grain-finished.",
+        "Look for the AGA, PCO 100% Grassfed or AWA seal: grass and forage through harvest.",
+        "Pick grass-finished over organic; organic beef can still be grain-finished.",
         "Check the certifier’s name and website printed beside any grass-fed claim.",
         "Pick a GAP-rated pack when no AGA seal is on the shelf; GAP bars feedlot finishing."
       ],
@@ -15848,7 +15896,7 @@
       "decision": "USDA Organic or pasture-sealed meat, simply prepared, with a short ingredient list.",
       "why": "Preparation does not establish how an animal was raised. Ruminant ingredients need their forage-finish check, while poultry and pork need pasture and feed details. Roasts, bacon, fermented salami and liver preparations cannot share a whole-muscle, zero-water or zero-sugar rule. These are sourcing and recipe preferences, not demonstrated health rankings.",
       "buying_tips": [
-        "Look for USDA Organic, or the AGA Grassfed seal on beef products such as hot dogs.",
+        "Look for the AGA Grassfed seal on beef products such as hot dogs, or USDA Organic.",
         "Read every meat, fat and seasoning ingredient, including sauce sublists.",
         "Skip nitrite, nitrate or celery curing, smoke flavor, MSG and unnamed oil blends.",
         "Read for ‘mechanically separated’ meat in the ingredients and pick a pack without it."
@@ -15877,9 +15925,9 @@
       "kind": "aisle",
       "title": "Meat & eggs",
       "category": "aisle_meat_eggs",
-      "decision": "Choose organic meat and eggs with pasture-raising certification, checking grass-fed wording on organ meats.",
+      "decision": "Choose grass-finished beef and lamb, and organic pasture-raised poultry, pork and eggs.",
       "buying_tips": [
-        "Look for USDA Organic, then AGA Grassfed on beef and lamb or a welfare seal on poultry.",
+        "Look for AGA Grassfed on beef and lamb; USDA Organic plus a welfare seal on poultry.",
         "Check egg cartons for pasture-raised with a Certified Humane or AWA seal.",
         "Read the name for ‘added solution’, ‘tenderized’ or a retained-water percentage.",
         "Read the certifier’s name and website beside any grass-fed or pasture claim."

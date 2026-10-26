@@ -36,6 +36,9 @@ guided shopping (10-02), concern register (10-18), fewer ingredients (10-19), so
    - Packaged: a short list of real ingredients, natural fats only.
    - Sweeteners: raw honey, pure maple, organic coconut sugar, never the ordinary version.
    Every card gives the best version and a findable close second. Kristy never refuses an item.
+   - Beef (Devon 2026-10-26): the top rung is 100% grass-fed and grass-finished with an AGA or PCO 100% Grassfed seal; organic is a bonus, never the bar for beef.
+     Organic grain-finished beef ranks below grass-finished; grass-finished non-organic never ranks below organic.
+     Produce (same day): Real Organic, Certified Naturally Grown, Demeter or Regenerative Organic Certified sit above plain organic, which stays the floor where the skin is eaten.
 4. **Every item has an avoid list** of what the average shopper doesn't know, named on the item it
    applies to: seed oils, celery powder (hidden nitrite), carrageenan, gums, synthetic dyes and
    sweeteners, pre-harvest glyphosate on oats and beans, fungicide coatings on citrus, wax on apples,

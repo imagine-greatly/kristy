@@ -321,7 +321,7 @@
       "decision": "Organic whole spices from a small grower, in sealed packs."
     },
     "label_grass_fed_term": {
-      "decision": "USDA Organic beef with an AGA seal, grass-fed through finishing."
+      "decision": "Beef with an AGA or PCO 100% Grassfed seal."
     },
     "label_organic_scope": {
       "decision": "100% organic wording, a named farm and Real Organic seal.",
@@ -770,7 +770,7 @@
       "decision": "USDA Organic with the named fruit or whole grain first."
     },
     "label_no_added_hormones": {
-      "decision": "USDA Organic meat or dairy with a pasture seal."
+      "decision": "AGA Grassfed beef; organic dairy with a pasture seal."
     },
     "label_cage_free": {
       "decision": "USDA Organic pasture-raised eggs with a Real Organic seal."

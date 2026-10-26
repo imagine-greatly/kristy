@@ -3,10 +3,10 @@
     {
       "id": "fam_ruminant_meat",
       "kind": "family",
-      "decision": "AGA Grassfed or USDA Organic beef, lamb or bison; grass-finished on the label.",
+      "decision": "100% grass-fed, grass-finished beef, lamb or bison, AGA or PCO sealed; organic a bonus.",
       "buying_tips": [
-        "Look for the AGA Grassfed or AWA seal: grass and forage only, through harvest.",
-        "Look for USDA Organic as the floor; organic beef can still be grain-finished.",
+        "Look for the AGA, PCO 100% Grassfed or AWA seal: grass and forage through harvest.",
+        "Pick grass-finished over organic; organic beef can still be grain-finished.",
         "Check the certifier’s name and website printed beside any grass-fed claim.",
         "Pick a GAP-rated pack when no AGA seal is on the shelf; GAP bars feedlot finishing."
       ],
@@ -104,7 +104,7 @@
       "kind": "family",
       "decision": "USDA Organic or pasture-sealed meat, simply prepared, with a short ingredient list.",
       "buying_tips": [
-        "Look for USDA Organic, or the AGA Grassfed seal on beef products such as hot dogs.",
+        "Look for the AGA Grassfed seal on beef products such as hot dogs, or USDA Organic.",
         "Read every meat, fat and seasoning ingredient, including sauce sublists.",
         "Skip nitrite, nitrate or celery curing, smoke flavor, MSG and unnamed oil blends.",
         "Read for ‘mechanically separated’ meat in the ingredients and pick a pack without it."
@@ -298,7 +298,7 @@
       "kind": "aisle",
       "decision": "Pick the seal first, then read the cut, carton or ingredient list.",
       "buying_tips": [
-        "Look for USDA Organic, then AGA Grassfed on beef and lamb or a welfare seal on poultry.",
+        "Look for AGA Grassfed on beef and lamb; USDA Organic plus a welfare seal on poultry.",
         "Check egg cartons for pasture-raised with a Certified Humane or AWA seal.",
         "Read the name for ‘added solution’, ‘tenderized’ or a retained-water percentage.",
         "Read the certifier’s name and website beside any grass-fed or pasture claim."
@@ -338,13 +338,13 @@
     },
     "beef_grassfed_vs_grainfed": {
       "family": "fam_ruminant_meat",
-      "decision": "Grass-finished beef first, then AGA Grassfed or USDA Organic.",
+      "decision": "Grass-finished beef with an AGA or PCO 100% Grassfed seal.",
       "delta": "Grass-finished is a separate claim from grass-fed; read which one is printed.",
-      "short_answer": "Look for the AGA Grassfed seal: grass and forage from weaning to harvest, on pasture. Without it, USDA Organic is the floor, and organic beef can be grain-finished for up to 120 days.",
+      "short_answer": "Look for the AGA or PCO Certified 100% Grassfed seal: grass and forage from weaning to harvest. Organic is a bonus, not the bar; organic beef can be grain-finished up to 120 days.",
       "cart_pick": "Grass-finished ground beef",
       "pick_steps": [
-        "Read for ‘grass-finished’ or ‘100% grass-fed’; pasture artwork is not a claim.",
-        "Without grass-finished, pick USDA Organic: certified organic feed and outdoor access.",
+        "Read for an AGA or PCO seal or ‘grass-finished’; artwork is not a claim.",
+        "Without grass-finished, USDA Organic is next; organic beef can still be grain-finished.",
         "At the counter, ask what it was finished on and whose definition."
       ]
     },
@@ -358,15 +358,15 @@
     },
     "ground_beef_lean_ratio": {
       "family": "fam_ruminant_meat",
-      "decision": "Grass-fed ground beef first, then organic, nothing added.",
+      "decision": "100% grass-fed, grass-finished ground beef, beef only.",
       "delta": "Lean/fat ratio is a separate printed number; ‘hamburger’ may include added beef fat.",
-      "short_answer": "Pick organic ground beef with beef as the only ingredient. The lean/fat ratio on the front is a separate number.",
+      "short_answer": "Pick ground beef with beef as the only ingredient. The lean/fat ratio on the front is a separate number.",
       "pick_steps": [
-        "Look for USDA Organic: certified organic feed and outdoor access.",
+        "Look for an AGA or PCO seal; organic is a bonus.",
         "Read the ingredients: beef only, nothing added.",
         "Pick ‘ground beef’ over ‘hamburger’, which can include added beef fat."
       ],
-      "cart_pick": "Grass-fed ground beef, beef only"
+      "cart_pick": "100% grass-fed ground beef, beef only"
     },
     "pork_cuts_and_enhanced": {
       "family": "fam_poultry_pork",
@@ -393,7 +393,7 @@
       "delta": "Pick a single organ named as the cut, such as beef liver or heart.",
       "pick_steps": [
         "Ask the meat counter which organs it stocks, fresh or frozen.",
-        "Look for USDA Organic: certified organic feed and outdoor access.",
+        "Look for an AGA seal on beef liver and heart; organic is a bonus.",
         "Match each organ to its method; heart and tongue go in liquid."
       ],
       "cart_pick": "Grass-fed beef liver"

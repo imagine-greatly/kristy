@@ -345,7 +345,7 @@
       "family": "fam_produce_signs",
       "decision": "In-season produce, with the country of origin on the sticker.",
       "delta": "“Product of USA” or “Grown in Mexico” on the sticker names the country.",
-      "short_answer": "Yes. In season and organic is the top tier. Out of season, organic frozen is the store fallback.",
+      "short_answer": "Yes. In season with a Real Organic, Certified Naturally Grown or Demeter seal is the top tier, organic the floor. Out of season, organic frozen is the store fallback.",
       "buying_tips": [
         "In season, it travels less and reaches you closer to ripe, so it tastes better.",
         "At a farmers’ market, ask how the crop was grown.",

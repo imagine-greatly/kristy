@@ -4,7 +4,7 @@
     {
       "id": "aisle_meat_eggs",
       "kind": "aisle",
-      "decision": "Choose organic meat and eggs with pasture-raising certification, checking grass-fed wording on organ meats."
+      "decision": "Choose grass-finished beef and lamb, and organic pasture-raised poultry, pork and eggs."
     },
     {
       "id": "aisle_seafood",
@@ -531,7 +531,7 @@
   ],
   "patches": {
     "organ_meats": {
-      "decision": "Organic organ meats from pasture-raised animals.",
+      "decision": "Organ meats from grass-finished or pasture-raised animals.",
       "why": "Organ meats and grass-fed sourcing: see Beef.",
       "sources": [
         {
@@ -542,7 +542,7 @@
         "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/beef-farm-table"
       ],
       "tier_note": "The use-by date is a storage fact: organ meats keep only 1 to 2 days chilled; time outdoors on pasture, audited only with a certifier’s seal.",
-      "cart_pick": "Organic pasture-raised organ meats"
+      "cart_pick": "Grass-finished or pasture-raised organ meats"
     },
     "beef_veal": {
       "decision": "Pasture-raised veal with a humane seal.",
@@ -937,7 +937,7 @@
       ]
     },
     "lard_tallow": {
-      "decision": "Organic lard or tallow with pasture or grass-fed wording.",
+      "decision": "Organic pastured lard, or 100% grass-fed tallow.",
       "why": "WAPF rates lard from pigs raised outdoors and tallow from grass-fed cows and sheep as best fats.",
       "sources": [
         {
@@ -1315,7 +1315,7 @@
       "tier_note": "A single ingredient and the absence of aseptic boxes are visible package checks."
     },
     "beef_grassfed_vs_grainfed": {
-      "decision": "Grass-finished beef first, then AGA Grassfed or USDA Organic.",
+      "decision": "Grass-finished beef with an AGA or PCO 100% Grassfed seal.",
       "sources": [
         "Weston A. Price Foundation: Shopping Guide (Best, Good and Avoid tiers)",
         "Weston A. Price Foundation: Splendor from Grass",
@@ -1333,11 +1333,11 @@
         "Weston A. Price Foundation: Grass-fed culinary guide"
       ],
       "why": "Grass-fed sourcing: see Beef.",
-      "tier_note": "The ‘mechanically tenderized’ name is federal label text; an untouched whole cut is held as a standard; certified organic feed and outdoor access.",
+      "tier_note": "The ‘mechanically tenderized’ name is federal label text; an untouched whole cut is held as a standard.",
       "cart_pick": "100% grass-fed or grass-finished whole chuck"
     },
     "ground_beef_lean_ratio": {
-      "decision": "Grass-fed ground beef first, then organic, nothing added.",
+      "decision": "100% grass-fed, grass-finished ground beef, beef only.",
       "sources": [
         "9 CFR 319.15 (label rule, raw meaning of the term)",
         "9 CFR 317.2 (label rule, raw meaning of the term)",
@@ -1347,7 +1347,7 @@
         "Weston A. Price Foundation: The Liver Files"
       ],
       "why": "Ground beef and grass-fed sourcing: see Beef.",
-      "cart_pick": "Grass-fed ground beef, beef only"
+      "cart_pick": "100% grass-fed ground beef, beef only"
     },
     "hot_dogs": {
       "decision": "Grass-fed beef hot dogs, AGA seal and short ingredient list.",
@@ -1371,7 +1371,7 @@
       "cart_pick": "Organic lamb or goat with an AWA seal"
     },
     "bison": {
-      "decision": "Organic AGA-certified bison with bison alone listed.",
+      "decision": "AGA-certified 100% grass-fed bison, bison alone listed.",
       "sources": [
         {
           "name": "American Grassfed Association",
@@ -1379,8 +1379,8 @@
         }
       ],
       "why": "AGA requires a 100% grass diet from weaning until harvest.",
-      "tier_note": "Many bison finish on grain; “grass-fed” is the producer’s own word unless a certifier’s seal audits it; certified organic feed and outdoor access.",
-      "cart_pick": "Organic AGA-certified bison"
+      "tier_note": "Many bison finish on grain; “grass-fed” is the producer’s own word unless a certifier’s seal audits it; organic is a bonus, not the bar.",
+      "cart_pick": "AGA-certified grass-finished bison"
     },
     "chicken_cuts_basics": {
       "decision": "Organic whole chicken, AWA certified, without basting solution.",
