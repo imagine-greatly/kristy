@@ -30,8 +30,8 @@
       ],
       "category": "seafood",
       "question": "Is wild or farmed salmon better?",
-      "decision": "Wild Alaskan salmon, named species and deep-red sockeye flesh.",
-      "why": "Wild is a whole-food standard, not a health verdict; the production label distinguishes wild from farm-raised.",
+      "decision": "Wild salmon, frozen wild Alaskan before fresh farmed.",
+      "why": "Wild is a whole-food preference; read the species name, with deep-red flesh identifying sockeye.",
       "short_answer": "Two different animals sold under one name. Wild salmon eats krill and small fish across open ocean. Farmed salmon eats a ration of plant protein and vegetable oil, not krill.",
       "detail": "That ration leaves farmed salmon with far more omega-6 and a much worse omega-3 to omega-6 ratio. Astaxanthin goes into the ration because the flesh comes out gray without it. Sea lice and the treatments used against them are the cost of penning fish that close together, and antibiotic use varies enormously by country of origin. The ratio is the claim, not the amount. Farmed salmon is fatter, so a serving can carry as much total omega-3 as wild or more; what the feed changes is the balance against omega-6, and that is the difference worth naming. Country of origin does most of the work on the rest: Norwegian farming runs close to zero antibiotic use on the back of vaccination, and other producing countries run far higher. The fish never swam anywhere, and it was colored to look like one that did.",
       "evidence_tier": "kristys_standard",
@@ -244,6 +244,10 @@
         {
           "name": "Electronic Code of Federal Regulations",
           "url": "https://www.ecfr.gov/current/title-7/section-205.237"
+        },
+        {
+          "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+          "url": "https://drcate.com/hateful-eight/"
         }
       ],
       "kristy_take": "Take a steaming bird from under the lamp and turn to the sticker. Every ingredient runs in descending order; a solution must name its percent and contents.",
@@ -287,7 +291,7 @@
           "meaning": "A permitted poultry ingredient under 9 CFR 424.21 ‘to decrease the amount of cooked out juices’, capped at 0.5 percent of total product. On a rotisserie sticker it marks a solution bird."
         }
       ],
-      "tier_note": "Organic rotisserie chicken: certified organic feed and outdoor access; pasture: time outdoors on pasture, audited only with a certifier’s seal.",
+      "tier_note": "The sticker lists added starches and sweeteners; organic means certified organic feed and outdoor access.",
       "eyebrow_short": "Rotisserie chicken",
       "asked_as": [
         "is rotisserie chicken healthy",
@@ -1290,7 +1294,9 @@
         {
           "name": "Weston A. Price Foundation",
           "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/principles-of-healthy-diets-2/"
-        }
+        },
+        "University of Minnesota Extension “A2 milk and A2 genetics” https://extension.umn.edu/agriculture/animals-and-livestock/dairy/a2-milk-and-a2-genetics",
+        "Michigan State University Extension, dairy processing article https://www.canr.msu.edu/news/they_did_what_to_your_milk (homogenization forces milk at high pressure through small holes so fat does not rise; no health benefits or risks associated with it; non-homogenized milk available from some bottlers)"
       ],
       "kristy_take": "Whole milk, every time. Fewer steps between the cow and the carton.",
       "cart_pick": "Organic whole milk",
@@ -1501,12 +1507,16 @@
       "evidence_tier": "kristys_standard",
       "sources": [
         {
-          "name": "Cornucopia Institute",
-          "url": "https://www.cornucopia.org/research/yogurt/"
-        },
-        {
           "name": "Weston A. Price Foundation",
           "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        },
+        {
+          "name": "Cornucopia Institute: Dairy scorecard",
+          "url": "https://www.cornucopia.org/scorecard/dairy/"
+        },
+        {
+          "name": "CSPI: Artificial colorings (synthetic food dyes)",
+          "url": "https://www.cspi.org/node/7436"
         }
       ],
       "kristy_take": "Big tub of plain, add your own berries. Plain has no added sugar.",
@@ -1736,19 +1746,20 @@
       "category": "bulk_pantry",
       "question": "What kind of oats should you buy?",
       "decision": "Organic whole-grain oats without flavorings or added sugar.",
-      "why": "Whole oats keep the grain intact; organic rules bar excluded methods, and soaking is a traditional preparation.",
+      "why": "Whole oats keep the grain intact; organic farming bars glyphosate, and soaking is a traditional preparation.",
       "short_answer": "Same grain, three ways: steel-cut is least processed, rolled is steamed and flattened, instant is pre-cooked and often pre-sweetened. Buy plain organic oats in any form. Soak them overnight with a little yogurt, whey or cider vinegar, then cook them.",
       "detail": "Steel-cut are the least processed, chewy and slow to cook. Rolled or old-fashioned are steamed and flattened. Instant are pre-cooked and often come pre-sweetened, and the flavored packets are mostly added sugar. The traditional step is the soak. Oats go into warm water overnight with a spoonful of yogurt, whey or apple cider vinegar, which reduces their phytic acid, and get cooked in the morning. Many traditional cooks toasted the oats in butter or ghee first for flavor. Conventional oats may be sprayed with glyphosate shortly before harvest to dry the crop, and organic farming does not allow glyphosate.",
       "evidence_tier": "established",
       "sources": [
         {
-          "name": "Cornell Legal Information Institute",
-          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+          "name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest",
+          "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"
         },
         {
-          "name": "Weston A. Price Foundation",
-          "url": "https://www.westonaprice.org/wp-content/uploads/11Principles-chapter6.pdf"
-        }
+          "name": "FoodPrint: Glyphosate Residue in Food",
+          "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"
+        },
+        "https://www.westonaprice.org/health-topics/vegetarianism-and-plant-foods/living-with-phytic-acid/"
       ],
       "kristy_take": "A bag of plain organic oats. Soak them the night before and cook them in the morning. Sweeten with fruit; the flavored packets are candy with an oat garnish.",
       "cart_pick": "Rolled or steel-cut oats",
@@ -2361,8 +2372,8 @@
           "url": "https://certifiedhumane.org/decoding-the-carton-how-to-buy-clean-humane-eggs/"
         },
         {
-          "name": "Cornell Legal Information Institute: Organic livestock feed",
-          "url": "https://www.law.cornell.edu/cfr/text/7/205.237"
+          "name": "Cornucopia Institute: Organic Egg Scorecard Criteria",
+          "url": "https://www.cornucopia.org/egg-scorecard-criteria/"
         }
       ],
       "kristy_take": "Pasture-raised with a printed soy-free or corn-free feed claim. Next, pasture-raised organic, then organic, then cage-free. “Vegetarian fed” describes the supplied feed. It does not say whether the hen went outdoors.",
@@ -4692,7 +4703,7 @@
       ],
       "category": "label_terms",
       "question": "What do ‘cold-pressed’ and ‘expeller-pressed’ mean on an oil?",
-      "decision": "Organic oil labeled cold pressed or expeller pressed.",
+      "decision": "Organic olive or coconut oil, cold pressed or expeller pressed.",
       "why": "Organic handling rules bar volatile synthetic solvents as processing aids.",
       "short_answer": "Expeller-pressed means a mechanical screw press with no solvent, though friction still generates heat. Cold-pressed is the same press with the temperature held down. Most supermarket cooking oil is neither. It is solvent-extracted, then refined, bleached and deodorized.",
       "detail": "Extraction and refining are two separate steps and both matter. Mechanical pressing leaves more of the original flavor, color and aroma in the oil, which is exactly why unrefined oils taste like the thing they came from and refined ones taste like nothing. Solvent extraction pulls far more oil out of the same seed, which is why it dominates at commercial scale. In the US ‘cold-pressed’ has no federal definition for most oils, so it carries less weight on a sunflower bottle than on an olive one. But the press only sorts oils that already clear the bar. Which oil it is settles the purchase first, and the pressing decides between two good ones after that. Two of these words describe pressing and one describes what happens afterwards. For olive oil in the EU, cold-pressed is a defined temperature limit. “Pure” and “refined” both describe oil stripped of color, flavor and aroma.",
@@ -4701,6 +4712,10 @@
         {
           "name": "Cornell Legal Information Institute",
           "url": "https://www.law.cornell.edu/cfr/text/7/205.270"
+        },
+        {
+          "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+          "url": "https://drcate.com/hateful-eight/"
         }
       ],
       "kristy_take": "Pressed oil tastes like what it came from. Refined oil tastes like nothing, on purpose.",
@@ -6496,7 +6511,7 @@
         "orange juice",
         "orange juices"
       ],
-      "decision": "Skip juice and juice cocktails; choose plain water.",
+      "decision": "Water over juice; otherwise pasteurized, no warning label, no dyes, no added color.",
       "avoid": "Skip juice drinks listing benzoates, benzoic acid, BVO or artificial color.",
       "sources": [
         {
@@ -8182,7 +8197,9 @@
         {
           "name": "Weston A. Price Foundation",
           "url": "https://www.westonaprice.org/podcast/eat-your-liver-other-organ-meats-too/"
-        }
+        },
+        "https://www.canr.msu.edu/news/are_you_throwing_away_valuable_food_part_three_meat",
+        "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/beef-farm-table"
       ],
       "kristy_take": "Choose the organ with a meal in mind: variety meats keep less time than steaks and roasts. Cook within one to two days, and take all organ meats to 160°F.",
       "cart_pick": "Organic pasture-raised organ meats",
@@ -8425,8 +8442,8 @@
       ],
       "category": "seafood",
       "question": "How do you pick good white fish?",
-      "decision": "Wild Pacific cod with species named and gray-brown skin visible.",
-      "why": "Pacific cod have gray or brown skin with a paler belly; skin left on provides a visible species check.",
+      "decision": "Wild-caught white fish by its named species, firm, mild-smelling.",
+      "why": "Wild Pacific cod is the pick; its gray or brown skin and paler belly provide a visible species check.",
       "short_answer": "Ask the counter which species it is, since a fillet is hard to identify by eye. Then look for shiny, firm flesh that springs back, a mild sea smell, and no dried or dark edges.",
       "detail": "Seafood must be labeled with an acceptable market name for its species, so the name is the check. Wild cod or halibut by name, fresh or frozen at sea, is the pick. Tilapia, catfish and trout from farms sit on traditional avoid lists. Fillets should sit on ice, not buried in it. For frozen packs, skip tears, ice crystals, liquid inside, or soft flesh.",
       "evidence_tier": "established",
@@ -8578,8 +8595,8 @@
       ],
       "category": "seafood",
       "question": "How do you pick a good lobster?",
-      "decision": "Live lobster, moving claws; hard-frozen tails without ice glaze.",
-      "why": "American lobster is primarily sold live or frozen; those are the two forms to check at the counter.",
+      "decision": "A live lobster that moves, or hard-frozen tails.",
+      "why": "Moving claws identify a live lobster; frozen tails should feel hard without ice glaze.",
       "short_answer": "A live lobster moves its legs, and its tail curls under when it is lifted. Frozen spiny lobster tails should have clear white meat and no odor, and be hard-frozen.",
       "detail": "Only live lobsters should be chosen, since they spoil rapidly after death. Raw lobster flesh should be clear and pearl-like, with little or no odor. Hard-shell and soft-shell lobsters are the same animal at different growth stages. A soft-shell lobster recently shed its old shell, so water sits between shell and meat. Use live lobster within 1 to 2 days.",
       "evidence_tier": "established",
@@ -8647,8 +8664,8 @@
       ],
       "category": "seafood",
       "question": "Which scallops should you buy?",
-      "decision": "Dry-packed scallops without milky liquid in the tray.",
-      "why": "Dry scallops have not been soaked in sodium tripolyphosphate.",
+      "decision": "Dry or dry-packed scallops, with no phosphate or water listed.",
+      "why": "Dry scallops have not been soaked in sodium tripolyphosphate; skip milky liquid pooling in the tray.",
       "short_answer": "On packed scallops, read the ingredients: wet ones list a phosphate and water. At the counter, ask whether they are dry. Good scallops smell sweetish and sit in little liquid.",
       "detail": "Wet-packed scallops are treated with water and sodium tripolyphosphate (STPP), a sodium phosphate. The treatment makes them hold extra water. Packaged wet scallops should disclose the phosphate and water in the ingredients. Dry-packed scallops are untreated. Sea scallop meat is white, orange or pink. Smaller bay scallops are white, light tan or pinkish.",
       "evidence_tier": "established",
@@ -8720,7 +8737,7 @@
       ],
       "category": "seafood",
       "question": "How do you pick clams, mussels and oysters?",
-      "decision": "Live shellfish with closed shells and a harvest tag.",
+      "decision": "Live shellfish with a tag, closed shells and none cracked.",
       "why": "Pacific Coast Shellfish Growers say oysters should always be tightly closed and mussels should close when tapped.",
       "short_answer": "Ask to see the tag on the sack of live clams, mussels or oysters. Shells should be closed, or close when tapped. Skip any that are cracked or broken.",
       "detail": "Tags on live shellfish sacks name the certified shipper, the harvest date and the harvest area. The tag stays on until the container is empty, then is kept on file for 90 days. Unfrozen shucked containers under a half gallon carry a “Sell By” or “Best If Used By” date. Shucked oysters should be plump, with a mild odor and clear liquid.",
@@ -8791,8 +8808,8 @@
       ],
       "category": "seafood",
       "question": "How do you pick smoked salmon?",
-      "decision": "Chilled smoked salmon with origin and wild or farm-raised wording.",
-      "why": "Wild or farm-raised wording names the production method when provided, not the smoking process.",
+      "decision": "Wild-caught smoked salmon, nova or lox, kept cold.",
+      "why": "Read origin and wild or farm-raised wording on chilled salmon; these name production, not the smoking process.",
       "short_answer": "Read the label word. Nova-style, kippered and smoked mean refrigerated cold-smoked fish; lox is salt-cured, not smoked. Keep it cold from the case to the fridge. Shelf-stable smoked fish comes heat-treated in a sealed can, tin or jar.",
       "detail": "Refrigerated smoked seafood, such as salmon, trout or whitefish, is usually labeled nova-style, kippered, smoked or jerky. These are cold-smoked. Lox is salt-cured, not smoked, and is kept refrigerated too. Listeria is a germ that can contaminate cold-smoked fish. The cold-smoking process does not kill it, and refrigeration does not either. Shelf-stable smoked fish is heat-treated, then sealed in a can, tin or jar. It needs no refrigeration before opening. Store refrigerated seafood in the coldest part of the fridge, at or below 40°F.",
       "evidence_tier": "established",
@@ -9013,15 +9030,14 @@
       "category": "bulk_pantry",
       "question": "Which sprouted grain bread should you buy?",
       "decision": "Organic sprouted-grain bread with sprouted grains named first.",
-      "why": "WAPF rates sourdough, soaked or sprouted breads from freshly ground organic whole grain flour as best.",
+      "why": "Sprouted grains have begun to germinate; the first ingredient shows which grain leads the loaf.",
       "short_answer": "Read the ingredients: sprouted whole grains should come first. Some loaves add flour or wheat gluten. Look in the refrigerated or freezer case. Sprouted wheat still contains gluten.",
       "detail": "Sprouted bread is made from whole grains allowed to germinate, or sprout, before they are milled. Some sprouted breads are made with added flour or gluten. Besides wheat, a loaf may include millet, barley, lentils or soy. Most sprouted grain breads sit in the refrigerator or freezer section. The loaf tends to be denser and heavier than bread made from flour. Most are vegan, but check the label.",
       "evidence_tier": "kristys_standard",
       "sources": [
-        {
-          "name": "Weston A. Price Foundation",
-          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
-        }
+        "https://en.wikipedia.org/wiki/Sprouted_bread",
+        "https://www.healthline.com/nutrition/sprouted-grain-bread",
+        "https://sporked.com/article/what-is-sprouted-bread/"
       ],
       "kristy_take": "Look in the cold or freezer case for sprouted whole grains first on the list, with no extra flour following. Sprouted wheat still contains gluten.",
       "cart_pick": "Sprouted whole grain bread, no added flour",
@@ -9206,9 +9222,10 @@
       "evidence_tier": "established",
       "sources": [
         {
-          "name": "Whole Grains Council",
-          "url": "https://wholegrainscouncil.org/whole-grains-101/identifying-whole-grain-products"
-        }
+          "name": "Whole Grains Council: Identifying whole grain products",
+          "url": "https://wholegrainscouncil.org/node/13040"
+        },
+        "https://www.law.cornell.edu/cfr/text/21/101.91"
       ],
       "kristy_take": "The gluten-free claim covers gluten alone. Look for a sourdough or sprouted loaf with whole flours named, and the fewest gums and sugars.",
       "cart_pick": "Short-list gluten-free bread",
@@ -11232,8 +11249,8 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick a cooking oil?",
-      "decision": "Organic cooking oil naming olive, coconut or avocado alone.",
-      "why": "WAPF favors named fats; a single-oil ingredient list identifies what is in the bottle.",
+      "decision": "Organic cooking oil naming olive or coconut alone.",
+      "why": "The list names the fat. Avocado oil fits only when the maker states it is pure and pressed without heat.",
       "short_answer": "The standard is olive oil, virgin coconut oil, butter, ghee, or pastured animal fat. Read every oil on the list. “Vegetable oil” names no single oil. Store oils are usually refined, bleached and deodorized; the bottle says refined or unrefined.",
       "detail": "Most edible oils in stores are RBD oils: refined, bleached and deodorized. These steps make an oil consistent in taste, color and stability, and generally tasteless, odorless and colorless. Small-scale pressed oils that are minimally processed keep the flavors and smells of the original oilseed. The name “vegetable oil” names no single oil; the ingredient list names the oils. The smoke point is the temperature at which an oil begins to smoke and burn. An oil past its smoke point is no longer fit to use.",
       "evidence_tier": "established",
@@ -13074,8 +13091,8 @@
           "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
         },
         {
-          "name": "Weston A. Price Foundation",
-          "url": "https://www.westonaprice.org/wp-content/uploads/11Principles-chapter6.pdf"
+          "name": "Weston A. Price Foundation: Snack Attack",
+          "url": "https://www.westonaprice.org/health-topics/best-healthy-snacks/"
         }
       ],
       "kristy_take": "Granula was made in Dansville, New York, in 1863 by James Caleb Jackson. The food and name came back in the 1960s with fruit and nuts added. Granola bars caught on in the same decade.",

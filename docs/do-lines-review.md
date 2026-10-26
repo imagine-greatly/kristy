@@ -38,7 +38,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | --- | --- | --- | --- | --- |
 | `salmon_wild_vs_farmed` | seafood | Wild salmon, frozen wild Alaskan before fresh farmed. | Read for wild Alaskan, then check the flesh for a deep red color. | — |
 | `shrimp_imported_vs_domestic` | seafood | Wild American or Gulf shrimp; read the country of origin. | Read the bag for Gulf or US wild origin; check for shells. | — |
-| `rotisserie_chicken` | meat | Pasture-raised or organic rotisserie chicken, salt and spices only. | Check the sticker for added starches or sweeteners. | — |
+| `rotisserie_chicken` | meat | Pasture-raised or organic rotisserie chicken, salt and spices only. | Read the ingredient list for added starches or sweeteners. | — |
 | `beef_grassfed_vs_grainfed` | meat | 100% grass-fed or grass-finished beef. | Find the AGA seal and 100% grass-fed wording. | — |
 | `beef_cuts_basics` | meat | 100% grass-fed or grass-finished steak, not mechanically tenderized. | Check the tray’s seal and the AGA and USDA marks. | — |
 | `ground_beef_lean_ratio` | meat | An organ blend, or 100% grass-fed ground beef. | Find the lean ratio beside the AGA seal on the pack. | — |

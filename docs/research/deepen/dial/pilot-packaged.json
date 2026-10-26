@@ -420,7 +420,7 @@
     {
       "id": "pick_juice",
       "kind": "pick",
-      "decision": "Skip juice and juice cocktails; choose plain water.",
+      "decision": "Water over juice; otherwise pasteurized, no warning label, no dyes, no added color.",
       "sources": [
         {
           "name": "Weston A. Price Foundation",
@@ -529,7 +529,9 @@
         {
           "name": "Weston A. Price Foundation",
           "url": "https://www.westonaprice.org/podcast/eat-your-liver-other-organ-meats-too/"
-        }
+        },
+        "https://www.canr.msu.edu/news/are_you_throwing_away_valuable_food_part_three_meat",
+        "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-catfish/beef-farm-table"
       ],
       "tier_note": "The use-by date is a storage fact: organ meats keep only 1 to 2 days chilled; time outdoors on pasture, audited only with a certifier’s seal.",
       "cart_pick": "Organic pasture-raised organ meats"
@@ -643,8 +645,8 @@
           "url": "https://certifiedhumane.org/decoding-the-carton-how-to-buy-clean-humane-eggs/"
         },
         {
-          "name": "Cornell Legal Information Institute: Organic livestock feed",
-          "url": "https://www.law.cornell.edu/cfr/text/7/205.237"
+          "name": "Cornucopia Institute: Organic Egg Scorecard Criteria",
+          "url": "https://www.cornucopia.org/egg-scorecard-criteria/"
         }
       ]
     },
@@ -712,8 +714,8 @@
       ]
     },
     "scallops": {
-      "decision": "Dry-packed scallops without milky liquid in the tray.",
-      "why": "Dry scallops have not been soaked in sodium tripolyphosphate.",
+      "decision": "Dry or dry-packed scallops, with no phosphate or water listed.",
+      "why": "Dry scallops have not been soaked in sodium tripolyphosphate; skip milky liquid pooling in the tray.",
       "sources": [
         {
           "name": "Maine Sea Grant",
@@ -732,7 +734,7 @@
       ]
     },
     "clams_mussels_oysters": {
-      "decision": "Live shellfish with closed shells and a harvest tag.",
+      "decision": "Live shellfish with a tag, closed shells and none cracked.",
       "why": "Pacific Coast Shellfish Growers say oysters should always be tightly closed and mussels should close when tapped.",
       "sources": [
         {
@@ -746,12 +748,16 @@
       "why": "Organic yogurt can still contain added sugar; plain whole tubs are the pick, with grass-fed naming the milk source.",
       "sources": [
         {
-          "name": "Cornucopia Institute",
-          "url": "https://www.cornucopia.org/research/yogurt/"
-        },
-        {
           "name": "Weston A. Price Foundation",
           "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        },
+        {
+          "name": "Cornucopia Institute: Dairy scorecard",
+          "url": "https://www.cornucopia.org/scorecard/dairy/"
+        },
+        {
+          "name": "CSPI: Artificial colorings (synthetic food dyes)",
+          "url": "https://www.cspi.org/node/7436"
         }
       ],
       "tier_note": "Plain means no added sugar, so sweeten it at home with fruit or honey; certified organic feed and outdoor access.",
@@ -874,8 +880,8 @@
       "instead": "Butter with cream and salt instead of vegetable-oil spreads."
     },
     "cooking_oils": {
-      "decision": "Organic cooking oil naming olive, coconut or avocado alone.",
-      "why": "WAPF favors named fats; a single-oil ingredient list identifies what is in the bottle.",
+      "decision": "Organic cooking oil naming olive or coconut alone.",
+      "why": "The list names the fat. Avocado oil fits only when the maker states it is pure and pressed without heat.",
       "sources": [
         {
           "name": "Weston A. Price Foundation",
@@ -902,12 +908,16 @@
       ]
     },
     "label_cold_pressed_expeller": {
-      "decision": "Organic oil labeled cold pressed or expeller pressed.",
+      "decision": "Organic olive or coconut oil, cold pressed or expeller pressed.",
       "why": "Organic handling rules bar volatile synthetic solvents as processing aids.",
       "sources": [
         {
           "name": "Cornell Legal Information Institute",
           "url": "https://www.law.cornell.edu/cfr/text/7/205.270"
+        },
+        {
+          "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+          "url": "https://drcate.com/hateful-eight/"
         }
       ]
     },
@@ -1008,12 +1018,11 @@
     },
     "sprouted_grain_bread": {
       "decision": "Organic sprouted-grain bread with sprouted grains named first.",
-      "why": "WAPF rates sourdough, soaked or sprouted breads from freshly ground organic whole grain flour as best.",
+      "why": "Sprouted grains have begun to germinate; the first ingredient shows which grain leads the loaf.",
       "sources": [
-        {
-          "name": "Weston A. Price Foundation",
-          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
-        }
+        "https://en.wikipedia.org/wiki/Sprouted_bread",
+        "https://www.healthline.com/nutrition/sprouted-grain-bread",
+        "https://sporked.com/article/what-is-sprouted-bread/"
       ]
     },
     "sandwich_bread": {
@@ -1032,9 +1041,10 @@
       "why": "“Whole” in the first ingredient suggests a mostly whole-grain product; the wording is not a guarantee.",
       "sources": [
         {
-          "name": "Whole Grains Council",
-          "url": "https://wholegrainscouncil.org/whole-grains-101/identifying-whole-grain-products"
-        }
+          "name": "Whole Grains Council: Identifying whole grain products",
+          "url": "https://wholegrainscouncil.org/node/13040"
+        },
+        "https://www.law.cornell.edu/cfr/text/21/101.91"
       ],
       "instead": "Gluten-free bread with a named whole-grain flour first."
     },
@@ -1384,10 +1394,15 @@
         {
           "name": "Electronic Code of Federal Regulations",
           "url": "https://www.ecfr.gov/current/title-7/section-205.237"
+        },
+        {
+          "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
+          "url": "https://drcate.com/hateful-eight/"
         }
       ],
       "why": "Chicken and salt keep the recipe simple; the organic seal identifies certified organic livestock feed.",
-      "cart_pick": "Rotisserie chicken with salt"
+      "cart_pick": "Rotisserie chicken with salt",
+      "tier_note": "The sticker lists added starches and sweeteners; organic means certified organic feed and outdoor access."
     },
     "turkey_whole": {
       "decision": "Organic whole turkey with pasture-raising certification.",
@@ -1436,14 +1451,14 @@
       "cart_pick": "Organic pasture-raised pork chops"
     },
     "salmon_wild_vs_farmed": {
-      "decision": "Wild Alaskan salmon, named species and deep-red sockeye flesh.",
+      "decision": "Wild salmon, frozen wild Alaskan before fresh farmed.",
       "sources": [
         {
           "name": "Electronic Code of Federal Regulations",
           "url": "https://www.ecfr.gov/current/title-7/section-60.200"
         }
       ],
-      "why": "Wild is a whole-food standard, not a health verdict; the production label distinguishes wild from farm-raised."
+      "why": "Wild is a whole-food preference; read the species name, with deep-red flesh identifying sockeye."
     },
     "label_wild_vs_farm_raised": {
       "decision": "Wild fish with country and catch method on the tag.",
@@ -1476,14 +1491,14 @@
       "why": "Shell-on shrimp without additives keep the product close to the catch; the origin label names the country."
     },
     "white_fish": {
-      "decision": "Wild Pacific cod with species named and gray-brown skin visible.",
+      "decision": "Wild-caught white fish by its named species, firm, mild-smelling.",
       "sources": [
         {
           "name": "NOAA Fisheries",
           "url": "https://www.fisheries.noaa.gov/species/pacific-cod"
         }
       ],
-      "why": "Pacific cod have gray or brown skin with a paler belly; skin left on provides a visible species check."
+      "why": "Wild Pacific cod is the pick; its gray or brown skin and paler belly provide a visible species check."
     },
     "seafood_fresh_sardines_mackerel": {
       "decision": "Wild sardines with shiny skin or mackerel with vivid stripes.",
@@ -1498,25 +1513,25 @@
       "detail": "Sardines and mackerel rank high in the omega-3 fats EPA and DHA. Small fish low on the food chain are less likely to carry mercury or PCBs, and sardines are eaten whole with their tiny bones, which adds calcium and vitamin D. Most ocean fish carry more selenium than mercury; king mackerel and swordfish are the exceptions. Cooked fresh mackerel bones are too sharp to eat, unlike the softened bones in canned mackerel. Fresh sardines can be hard to find, so ask the counter."
     },
     "lobster": {
-      "decision": "Live lobster, moving claws; hard-frozen tails without ice glaze.",
+      "decision": "A live lobster that moves, or hard-frozen tails.",
       "sources": [
         {
           "name": "NOAA Fisheries",
           "url": "https://www.fisheries.noaa.gov/species/american-lobster"
         }
       ],
-      "why": "American lobster is primarily sold live or frozen; those are the two forms to check at the counter.",
+      "why": "Moving claws identify a live lobster; frozen tails should feel hard without ice glaze.",
       "tier_note": "Active claws show a live lobster; hard tails and ice glaze are frozen-product checks."
     },
     "smoked_salmon": {
-      "decision": "Chilled smoked salmon with origin and wild or farm-raised wording.",
+      "decision": "Wild-caught smoked salmon, nova or lox, kept cold.",
       "sources": [
         {
           "name": "Electronic Code of Federal Regulations",
           "url": "https://www.ecfr.gov/current/title-7/section-60.200"
         }
       ],
-      "why": "Wild or farm-raised wording names the production method when provided, not the smoking process."
+      "why": "Read origin and wild or farm-raised wording on chilled salmon; these name production, not the smoking process."
     },
     "seafood_counter": {
       "decision": "Whole fish on ice, clear eyes and a species sign.",
@@ -1539,7 +1554,9 @@
         {
           "name": "Weston A. Price Foundation",
           "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/principles-of-healthy-diets-2/"
-        }
+        },
+        "University of Minnesota Extension “A2 milk and A2 genetics” https://extension.umn.edu/agriculture/animals-and-livestock/dairy/a2-milk-and-a2-genetics",
+        "Michigan State University Extension, dairy processing article https://www.canr.msu.edu/news/they_did_what_to_your_milk (homogenization forces milk at high pressure through small holes so fat does not rise; no health benefits or risks associated with it; non-homogenized milk available from some bottlers)"
       ],
       "why": "Whole milk keeps its milkfat; WAPF favors grass-fed dairy and lists ultra-pasteurized milk under avoid.",
       "tier_note": "Vat, or low-temp, pasteurizing holds milk at 145°F for 30 minutes; regular gets 161°F for 15 seconds; certified organic feed and outdoor access.",
@@ -1549,15 +1566,16 @@
       "decision": "Organic whole-grain oats without flavorings or added sugar.",
       "sources": [
         {
-          "name": "Cornell Legal Information Institute",
-          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+          "name": "Cornucopia Institute: Glyphosate Used to Kill and Prepare Crops for Harvest",
+          "url": "https://www.cornucopia.org/2017/10/glyphosate-used-kill-prepare-crops-harvest"
         },
         {
-          "name": "Weston A. Price Foundation",
-          "url": "https://www.westonaprice.org/wp-content/uploads/11Principles-chapter6.pdf"
-        }
+          "name": "FoodPrint: Glyphosate Residue in Food",
+          "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"
+        },
+        "https://www.westonaprice.org/health-topics/vegetarianism-and-plant-foods/living-with-phytic-acid/"
       ],
-      "why": "Whole oats keep the grain intact; organic rules bar excluded methods, and soaking is a traditional preparation."
+      "why": "Whole oats keep the grain intact; organic farming bars glyphosate, and soaking is a traditional preparation."
     },
     "cornmeal_polenta_grits": {
       "decision": "Organic whole-grain cornmeal or grits without degerminated wording.",
@@ -1623,8 +1641,8 @@
           "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
         },
         {
-          "name": "Weston A. Price Foundation",
-          "url": "https://www.westonaprice.org/wp-content/uploads/11Principles-chapter6.pdf"
+          "name": "Weston A. Price Foundation: Snack Attack",
+          "url": "https://www.westonaprice.org/health-topics/best-healthy-snacks/"
         }
       ],
       "why": "WAPF lists brown rice syrup and agave under avoid; whole nuts or fruit keep the snack ingredients recognizable.",
@@ -1721,7 +1739,7 @@
     "bison": "Read the pack for bison alone and the AGA mark beside the cut.",
     "chicken_cuts_basics": "Check for cream-yellow skin and an AWA seal on the bird.",
     "poultry_chicken_wings": "Check that the skin has no tears, then read the raising claims.",
-    "rotisserie_chicken": "Check the sticker for added starches or sweeteners.",
+    "rotisserie_chicken": "Read the ingredient list for added starches or sweeteners.",
     "turkey_whole": "Read the tag for not basted and Certified Humane Pasture Raised.",
     "ground_turkey": "Read for thigh and breast meat alone, then check the certification seal.",
     "poultry_duck": "Pick a whole bird with skin on and an AWA seal.",
