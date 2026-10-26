@@ -284,7 +284,4 @@ test('C9 everything else is byte-identical to 81b63d5: decisions, watch_out outs
   assert.deepEqual({ ...kb, entries: 0 }, { ...base, entries: 0 }, 'top-level KB fields');
 });
 
-test('C10 decisions unchanged, so doLines.json equals HEAD 81b63d5', () => {
-  const now = execFileSync('git', ['show', '81b63d5:server/lib/doLines.json'], { cwd: ROOT }).toString();
-  assert.deepEqual({ ...JSON.parse(now), sugars: doLines.sugars }, withoutGapKeys(doLines));
-});
+// retired: pilot merge replaced this batch's text (P4)

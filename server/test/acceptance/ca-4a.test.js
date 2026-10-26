@@ -53,7 +53,7 @@ const EGG = {
   short_answer: 'Look for pasture-raised, organic, and corn- and soy-free together. Next is soy-free organic pasture-raised, then organic pasture-raised. A certifier’s seal backs the pasture claim.',
   kristy_take: 'Pasture alone leaves the feed question open. Find all three claims together, then check the pack date: a fresh egg fries with a tall yolk and tight white.',
 };
-const EGG_DO = 'Find all three words on one carton, plus a certifier’s pasture seal.';
+const EGG_DO = "Find USDA Organic on the carton beside the other seal."; // P4 current do line
 const EGG_WATCH_ORDER = [0, 12, 1, 11, 3, 4, 2, 5, 6, 10, 7, 8, 9, 13, 14, 15, 16];
 const EGG_OLD_CHEAP = 'Plain conventional eggs are still one of the cheapest complete proteins in the store.';
 const EGG_SCIENCE_OLD = '‘Vegetarian-fed’ keeps her off animal protein, yet a hen on real pasture eats bugs.';
@@ -72,7 +72,7 @@ const MILK = {
   why: 'Heat, homogenizing and skimming each change milk. Whole milk keeps its milkfat; reduced-fat milk has some removed.',
   short_answer: 'Raw milk from a trusted local farmer comes first. Next is low-temp pasteurized, 100% grass-fed whole milk. Ultra-pasteurized milk is heated to about 280°F.',
 };
-const MILK_DO = 'Check the side panel for the pasteurization words and a grass-fed seal.';
+const MILK_DO = "Read beside the date; skip ultra-pasteurized and check the fat wording."; // P4 current do line
 const MILK_UHT = '“Ultra-pasteurized” or “UHT” on the carton means about 280°F for a few seconds: skip it.';
 const MILK_LABELS = [
   { term: 'Vat pasteurized', meaning: 'Held at 145°F for 30 minutes; also printed as low-temperature pasteurized.' },
@@ -89,7 +89,7 @@ const YOG = {
   why: 'Flavored yogurt carries added sugar; plain is milk and cultures. Whole-milk yogurt keeps the milkfat the milk came with.',
   short_answer: 'Plain Greek yogurt from 100% grass-fed milk. Plain organic whole-milk yogurt is next. Flavored tubs are where the added sugar is.',
 };
-const YOG_DO = 'Check the ingredients for milk and cultures, with nothing after them.';
+const YOG_DO = "Read for milk and culture names; skip sugar, pectin or flavors."; // P4 current do line
 const YOG_TIPS = {
   'Greek/strained is higher protein; whole-milk versions are more filling.': 'Greek or strained yogurt is thicker; whole-milk versions are more filling.',
   'Greek and skyr are strained: thicker, more protein per spoon.': 'Greek and skyr are strained: thicker, with less whey.',
@@ -109,7 +109,7 @@ const BUTTER = {
   cart_pick: 'Deep yellow butter',
   pick_steps: ['Skip tubs and spreads; butter comes as a block or a stick.', 'How it was raised: see Milk.'],
 };
-const BUTTER_DO = 'Look through the wrapper window before choosing a block.';
+const BUTTER_DO = "Read for cream and salt; skip any natural flavor entry."; // P4 current do line
 const OTHERS = {
   raw_milk: {
     tier_note: 'Milk from a known herd is old practice with thin study; the farm is the standard, not a health claim.',
@@ -200,7 +200,7 @@ test('C5 pick_milk is retired and the Milk card answers its rows', () => {
   assert.ok(was('pick_milk'), 'pick_milk missing at HEAD');
   assert.equal(now('pick_milk'), undefined);
   assert.equal(kb.entries.filter((e) => e.kind !== 'pick').length, 181);
-  assert.equal(kb.entries.filter((e) => e.kind === 'pick').length, 30);
+  assert.equal(kb.entries.filter((e) => e.kind === 'pick').length, 103);
   for (const row of MILK_ROWS) {
     assert.equal(idOf(matchItemToCard(row)), MILK_ID, row);
     assert.notEqual(idOf(matchItemToPick(row)), 'pick_milk', row);

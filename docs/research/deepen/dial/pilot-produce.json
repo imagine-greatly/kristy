@@ -17,7 +17,6 @@
       "id": "pick_f_pears",
       "kind": "pick",
       "decision": "Organic pears are the pick.",
-      "avoid": "Press the narrow neck by the stem, which should give slightly.",
       "sources": [
         {
           "name": "F138 — extension.purdue.edu",
@@ -31,15 +30,14 @@
       "title": "Pears",
       "category": "produce",
       "aliases": [
-        "whole pear",
-        "whole pears"
+        "pear tray",
+        "pear trays"
       ]
     },
     {
       "id": "pick_f_peaches",
       "kind": "pick",
       "decision": "Organic peaches and nectarines are the pick.",
-      "avoid": "Look for fuzzy peach skin in red or yellow.",
       "sources": [
         {
           "name": "F140 — extension.usu.edu",
@@ -57,15 +55,14 @@
       "title": "Peaches and nectarines",
       "category": "produce",
       "aliases": [
-        "whole peach",
-        "whole peaches"
+        "peach punnet",
+        "peach punnets"
       ]
     },
     {
       "id": "pick_f_plums",
       "kind": "pick",
       "decision": "Organic plums are the pick.",
-      "avoid": "Leave the natural white or gray sheen on plum skin.",
       "sources": [
         {
           "name": "F141 — ndsu.edu",
@@ -79,15 +76,14 @@
       "title": "Plums",
       "category": "produce",
       "aliases": [
-        "whole plum",
-        "whole plums"
+        "plum punnet",
+        "plum punnets"
       ]
     },
     {
       "id": "pick_f_cherries",
       "kind": "pick",
       "decision": "Organic cherries are the pick.",
-      "avoid": "Pick shiny, dark cherries with green stems still attached.",
       "sources": [
         {
           "name": "F197 — extension.purdue.edu",
@@ -105,15 +101,14 @@
       "title": "Cherries",
       "category": "produce",
       "aliases": [
-        "whole cherry",
-        "whole cherries"
+        "cherry punnet",
+        "cherry punnets"
       ]
     },
     {
       "id": "pick_f_strawberries",
       "kind": "pick",
       "decision": "Organic strawberries are the pick.",
-      "avoid": "Skip berries with white or green shoulders around the caps.",
       "sources": [
         {
           "name": "F143 — extension.illinois.edu",
@@ -131,15 +126,14 @@
       "title": "Strawberries",
       "category": "produce",
       "aliases": [
-        "whole strawberry",
-        "whole strawberries"
+        "strawberry punnet",
+        "strawberry punnets"
       ]
     },
     {
       "id": "pick_f_blueberries",
       "kind": "pick",
       "decision": "Organic blueberries are the pick.",
-      "avoid": "Look for silver-white frost on blueberry skins; reject boxes containing leaves.",
       "sources": [
         {
           "name": "F144 — extension.illinois.edu",
@@ -153,15 +147,14 @@
       "title": "Blueberries",
       "category": "produce",
       "aliases": [
-        "whole blueberry",
-        "whole blueberries"
+        "blueberry punnet",
+        "blueberry punnets"
       ]
     },
     {
       "id": "pick_f_caneberries",
       "kind": "pick",
       "decision": "Organic raspberries and blackberries are the pick.",
-      "avoid": "Check the clamshell bottom for juice stains.",
       "sources": [
         {
           "name": "F145 — extension.usu.edu",
@@ -175,15 +168,14 @@
       "title": "Raspberries and blackberries",
       "category": "produce",
       "aliases": [
-        "caneberry clamshell",
-        "caneberry clamshells"
+        "caneberry punnet",
+        "caneberry punnets"
       ]
     },
     {
       "id": "pick_snap_peas",
       "kind": "pick",
       "decision": "Organic snap and snow peas are the pick.",
-      "avoid": "Choose snap pods that look plump and snug around the peas.",
       "sources": [
         {
           "name": "F150 — extension.illinois.edu",
@@ -199,7 +191,6 @@
       "id": "pick_okra",
       "kind": "pick",
       "decision": "Organic okra are the pick.",
-      "avoid": "Pick pods two to four inches long, neither dull nor shriveled.",
       "sources": [
         {
           "name": "F151 — ndsu.edu",
@@ -215,7 +206,6 @@
       "id": "pick_f_sweet_potatoes",
       "kind": "pick",
       "decision": "Organic sweet potatoes are the pick.",
-      "avoid": "Pick small or medium sweet potatoes; even, deep-colored skin, no holes.",
       "sources": [
         {
           "name": "F191 — extension.purdue.edu",
@@ -233,15 +223,14 @@
       "title": "Sweet potatoes",
       "category": "produce",
       "aliases": [
-        "whole sweet potato",
-        "whole sweet potatoes"
+        "sweet potato tray",
+        "sweet potato trays"
       ]
     },
     {
       "id": "pick_f_carrots",
       "kind": "pick",
       "decision": "Organic carrots are the pick.",
-      "avoid": "Skip carrots with large green areas at the top.",
       "sources": [
         {
           "name": "F155 — extension.illinois.edu",
@@ -255,15 +244,14 @@
       "title": "Carrots",
       "category": "produce",
       "aliases": [
-        "whole carrot",
-        "whole carrots"
+        "carrot bundle",
+        "carrot bundles"
       ]
     },
     {
       "id": "pick_f_beets",
       "kind": "pick",
       "decision": "Organic beets are the pick.",
-      "avoid": "Pick small beets with slender tap roots and leaf stems attached.",
       "sources": [
         {
           "name": "F194 — extension.purdue.edu",
@@ -285,15 +273,14 @@
       "title": "Beets",
       "category": "produce",
       "aliases": [
-        "whole beet",
-        "whole beets"
+        "beet bundle",
+        "beet bundles"
       ]
     },
     {
       "id": "pick_f_radishes",
       "kind": "pick",
       "decision": "Organic radishes are the pick.",
-      "avoid": "Pick brightly colored radishes still topped with fresh green leaves.",
       "sources": [
         {
           "name": "F193 — extension.purdue.edu",
@@ -319,7 +306,6 @@
       "id": "pick_f_turnips",
       "kind": "pick",
       "decision": "Organic turnips are the pick.",
-      "avoid": "Skip turnips with many leaf scars ringing the top.",
       "sources": [
         {
           "name": "F158 — extension.illinois.edu",
@@ -341,7 +327,6 @@
       "id": "pick_celery",
       "kind": "pick",
       "decision": "Organic celery is the pick.",
-      "avoid": "Split celery; the inside should look pale to bright green, crisp.",
       "sources": [
         {
           "name": "F159 — extension.purdue.edu",
@@ -357,7 +342,6 @@
       "id": "pick_kohlrabi",
       "kind": "pick",
       "decision": "Organic kohlrabi is the pick.",
-      "avoid": "Skip cracked or brown-spotted kohlrabi; attached leaves should be firm.",
       "sources": [
         {
           "name": "F192 — extension.purdue.edu",
@@ -373,7 +357,6 @@
       "id": "pick_f_spinach",
       "kind": "pick",
       "decision": "Organic spinach is the pick.",
-      "avoid": "Pick spinach with broad, crisp, dark green leaves.",
       "sources": [
         {
           "name": "F161 — extension.illinois.edu",
@@ -387,15 +370,14 @@
       "title": "Spinach",
       "category": "produce",
       "aliases": [
-        "spinach bunch",
-        "spinach bunches"
+        "spinach bundle",
+        "spinach bundles"
       ]
     },
     {
       "id": "pick_f_romaine_leaf",
       "kind": "pick",
       "decision": "Organic romaine and leaf lettuce are the pick.",
-      "avoid": "Skip extremely solid, pale heads, which are mostly core.",
       "sources": [
         {
           "name": "F162 — extension.illinois.edu",
@@ -409,15 +391,14 @@
       "title": "Romaine and leaf lettuce",
       "category": "produce",
       "aliases": [
-        "romaine lettuce head",
-        "romaine lettuce heads"
+        "romaine lettuce bundle",
+        "romaine lettuce bundles"
       ]
     },
     {
       "id": "pick_f_iceberg",
       "kind": "pick",
       "decision": "Organic iceberg lettuce is the pick.",
-      "avoid": "Press the top of the head and avoid hard bumps.",
       "sources": [
         {
           "name": "F163 — ndsu.edu",
@@ -431,15 +412,14 @@
       "title": "Iceberg lettuce",
       "category": "produce",
       "aliases": [
-        "iceberg lettuce head",
-        "iceberg lettuce heads"
+        "iceberg lettuce bundle",
+        "iceberg lettuce bundles"
       ]
     },
     {
       "id": "pick_f_broccoli",
       "kind": "pick",
       "decision": "Organic broccoli is the pick.",
-      "avoid": "Skip heads whose flower ends part easily or show yellow blooms.",
       "sources": [
         {
           "name": "F165 — extension.illinois.edu",
@@ -453,15 +433,14 @@
       "title": "Broccoli",
       "category": "produce",
       "aliases": [
-        "whole broccoli crown",
-        "whole broccoli crowns"
+        "broccoli crown tray",
+        "broccoli crown trays"
       ]
     },
     {
       "id": "pick_f_cauliflower",
       "kind": "pick",
       "decision": "Organic cauliflower is the pick.",
-      "avoid": "Skip heads with gaps between the curds.",
       "sources": [
         {
           "name": "F166 — extension.illinois.edu",
@@ -475,15 +454,14 @@
       "title": "Cauliflower",
       "category": "produce",
       "aliases": [
-        "whole cauliflower head",
-        "whole cauliflower heads"
+        "cauliflower head tray",
+        "cauliflower head trays"
       ]
     },
     {
       "id": "pick_f_brussels",
       "kind": "pick",
       "decision": "Organic brussels sprouts are the pick.",
-      "avoid": "Look for bright green heads with white stem ends.",
       "sources": [
         {
           "name": "F167 — extension.illinois.edu",
@@ -497,15 +475,14 @@
       "title": "Brussels sprouts",
       "category": "produce",
       "aliases": [
-        "fresh brussels sprout",
-        "fresh brussels sprouts"
+        "brussels sprout tray",
+        "brussels sprout trays"
       ]
     },
     {
       "id": "pick_f_cabbage",
       "kind": "pick",
       "decision": "Organic cabbage is the pick.",
-      "avoid": "Skip heads that are oblong or cracked.",
       "sources": [
         {
           "name": "F168 — extension.illinois.edu",
@@ -519,15 +496,14 @@
       "title": "Cabbage",
       "category": "produce",
       "aliases": [
-        "whole cabbage head",
-        "whole cabbage heads"
+        "cabbage head tray",
+        "cabbage head trays"
       ]
     },
     {
       "id": "pick_asparagus",
       "kind": "pick",
       "decision": "Organic asparagus is the pick.",
-      "avoid": "Choose spears with tips firmly closed.",
       "sources": [
         {
           "name": "F169 — extension.illinois.edu",
@@ -543,7 +519,6 @@
       "id": "pick_f_leeks",
       "kind": "pick",
       "decision": "Organic leeks are the pick.",
-      "avoid": "Leek tops fresh green; necks at most one and a half inches.",
       "sources": [
         {
           "name": "F171 — ndsu.edu",
@@ -565,7 +540,6 @@
       "id": "pick_f_cantaloupe",
       "kind": "pick",
       "decision": "Organic cantaloupe is the pick.",
-      "avoid": "Look for a smooth, rounded scar where the stem was.",
       "sources": [
         {
           "name": "F178 — extension.illinois.edu",
@@ -579,15 +553,14 @@
       "title": "Cantaloupe",
       "category": "produce",
       "aliases": [
-        "whole cantaloupe",
-        "whole cantaloupes"
+        "cantaloupe melon tray",
+        "cantaloupe melon trays"
       ]
     },
     {
       "id": "pick_f_honeydew",
       "kind": "pick",
       "decision": "Organic honeydew is the pick.",
-      "avoid": "Choose pale yellow to light lemon skin with little green.",
       "sources": [
         {
           "name": "F179 — ndsu.edu",
@@ -601,15 +574,14 @@
       "title": "Honeydew",
       "category": "produce",
       "aliases": [
-        "whole honeydew",
-        "whole honeydews"
+        "honeydew melon tray",
+        "honeydew melon trays"
       ]
     },
     {
       "id": "pick_f_watermelon",
       "kind": "pick",
       "decision": "Organic watermelon is the pick.",
-      "avoid": "Turn it over and look for a yellow, not white, underside.",
       "sources": [
         {
           "name": "F180 — extension.usu.edu",
@@ -623,15 +595,14 @@
       "title": "Watermelon",
       "category": "produce",
       "aliases": [
-        "whole watermelon",
-        "whole watermelons"
+        "whole watermelon tray",
+        "whole watermelon trays"
       ]
     },
     {
       "id": "pick_mangoes",
       "kind": "pick",
       "decision": "Organic mangoes are the pick.",
-      "avoid": "Skip mangoes with sap on the skin.",
       "sources": [
         {
           "name": "F182 — ndsu.edu",
@@ -647,7 +618,6 @@
       "id": "pick_f_kiwi",
       "kind": "pick",
       "decision": "Organic kiwi is the pick.",
-      "avoid": "Press lightly: ripe kiwi releases to gentle pressure.",
       "sources": [
         {
           "name": "F183 — ndsu.edu",
@@ -661,15 +631,14 @@
       "title": "Kiwi",
       "category": "produce",
       "aliases": [
-        "whole kiwi",
-        "whole kiwis"
+        "kiwi punnet",
+        "kiwi punnets"
       ]
     },
     {
       "id": "pick_f_citrus",
       "kind": "pick",
       "decision": "Organic oranges and grapefruit are the pick.",
-      "avoid": "Pick oranges and grapefruit heavy for their size, with smooth skin.",
       "sources": [
         {
           "name": "F190 — ndsu.edu",
@@ -683,15 +652,14 @@
       "title": "Oranges and grapefruit",
       "category": "produce",
       "aliases": [
-        "whole citrus fruit",
-        "whole citrus fruits"
+        "citrus tray",
+        "citrus trays"
       ]
     },
     {
       "id": "pick_f_lemons_limes",
       "kind": "pick",
       "decision": "Organic lemons and limes are the pick.",
-      "avoid": "For limes, look for smooth, glossy dark green skin.",
       "sources": [
         {
           "name": "F185 — nutritioncenter.ctahr.hawaii.edu",
@@ -705,15 +673,14 @@
       "title": "Lemons and limes",
       "category": "produce",
       "aliases": [
-        "whole lime",
-        "whole limes"
+        "lime punnet",
+        "lime punnets"
       ]
     },
     {
       "id": "pick_f_pomegranate",
       "kind": "pick",
       "decision": "Organic pomegranate is the pick.",
-      "avoid": "Look for a slightly square shape, not perfectly round.",
       "sources": [
         {
           "name": "F186 — extension.usu.edu",
@@ -735,7 +702,6 @@
       "id": "pick_f_onions",
       "kind": "pick",
       "decision": "Organic dry onions are the pick.",
-      "avoid": "Check the neck: small and dry, with no moisture.",
       "sources": [
         {
           "name": "F187 — ndsu.edu",
@@ -757,7 +723,6 @@
       "id": "pick_f_garlic",
       "kind": "pick",
       "decision": "Organic garlic is the pick.",
-      "avoid": "Choose heavy bulbs that stay closed, with dry outer skins.",
       "sources": [
         {
           "name": "F188 — extension.purdue.edu",
@@ -771,15 +736,14 @@
       "title": "Garlic",
       "category": "produce",
       "aliases": [
-        "whole garlic bulb",
-        "whole garlic bulbs"
+        "garlic bulb net",
+        "garlic bulb nets"
       ]
     },
     {
       "id": "pick_winter_squash",
       "kind": "pick",
       "decision": "Organic winter squash and pumpkin are the pick.",
-      "avoid": "Check the stem: it should be dry and firm.",
       "sources": [
         {
           "name": "F189 — extension.usu.edu",
@@ -795,7 +759,6 @@
       "id": "pick_frozen_wild_blueberry",
       "kind": "pick",
       "decision": "Organic frozen wild blueberries are the pick over fresh.",
-      "avoid": "Bag says “wild”; ingredients list blueberries alone.",
       "sources": [
         {
           "name": "S01 — extension.umaine.edu",
@@ -829,7 +792,6 @@
       "id": "pick_frozen_cultivated_blueberry",
       "kind": "pick",
       "decision": "Organic frozen cultivated blueberries are the pick.",
-      "avoid": "No “wild” on the bag means planted highbush; ingredients blueberries alone.",
       "sources": [
         {
           "name": "S05 — europepmc.org",
@@ -855,7 +817,6 @@
       "id": "pick_frozen_strawberry",
       "kind": "pick",
       "decision": "Organic frozen strawberries are the pick.",
-      "avoid": "Berries loose, not one clump; ingredients strawberries alone.",
       "sources": [
         {
           "name": "S54 — blogs.extension.iastate.edu",
@@ -877,7 +838,6 @@
       "id": "pick_frozen_raspberry",
       "kind": "pick",
       "decision": "Organic frozen raspberries are the pick.",
-      "avoid": "Whole berries, loose in the bag; ingredients raspberries alone.",
       "sources": [
         {
           "name": "S42 — nchfp.uga.edu",
@@ -903,7 +863,6 @@
       "id": "pick_frozen_blackberry",
       "kind": "pick",
       "decision": "Organic frozen blackberries are the pick.",
-      "avoid": "Plump glossy berries loose in the bag; ingredients blackberries alone.",
       "sources": [
         {
           "name": "S45 — nchfp.uga.edu",
@@ -925,7 +884,6 @@
       "id": "pick_frozen_cherry",
       "kind": "pick",
       "decision": "Organic frozen pitted cherries are the pick.",
-      "avoid": "Cherries loose, deep dark color; ingredients cherries alone, no sweeteners.",
       "sources": [
         {
           "name": "S48 — extension.oregonstate.edu",
@@ -947,7 +905,6 @@
       "id": "pick_frozen_berry_blend",
       "kind": "pick",
       "decision": "Organic frozen berry blends are the pick.",
-      "avoid": "Ingredients name berries like strawberry and blueberry; no sweeteners or juice.",
       "sources": [
         {
           "name": "S17 — law.cornell.edu",
@@ -965,7 +922,6 @@
       "id": "pick_frozen_mango",
       "kind": "pick",
       "decision": "Organic frozen mango chunks are the pick.",
-      "avoid": "Chunks loose, not fused; ingredients mango alone, no sweetener line.",
       "sources": [
         {
           "name": "S51 — extension.oregonstate.edu",
@@ -991,7 +947,6 @@
       "id": "pick_frozen_tropical_blend",
       "kind": "pick",
       "decision": "Organic frozen tropical fruit is the pick.",
-      "avoid": "Ingredients name mango, pineapple or papaya; no sweeteners, syrup or juice.",
       "sources": [
         {
           "name": "S17 — law.cornell.edu",
@@ -1009,7 +964,6 @@
       "id": "pick_frozen_papaya",
       "kind": "pick",
       "decision": "Organic frozen papaya chunks are the pick.",
-      "avoid": "Organic seal on the bag; ingredients papaya alone.",
       "sources": [
         {
           "name": "S14 — nongmoproject.org",
@@ -1031,7 +985,6 @@
       "id": "pick_frozen_acai",
       "kind": "pick",
       "decision": "Organic frozen acai packs are the pick.",
-      "avoid": "Ingredients name acai alone; skip packs listing sweeteners before the fruit.",
       "sources": [
         {
           "name": "S52 — doi.org",
@@ -1053,7 +1006,6 @@
       "id": "pick_frozen_peas",
       "kind": "pick",
       "decision": "Organic frozen peas are the pick over fresh.",
-      "avoid": "Bright round peas, loose in the bag; ingredients peas alone.",
       "sources": [
         {
           "name": "S11 — ricardocuisine.com",
@@ -1073,7 +1025,6 @@
       "id": "pick_frozen_sweet_corn",
       "kind": "pick",
       "decision": "Organic frozen corn kernels are the pick over fresh.",
-      "avoid": "Kernels loose, not one block; ingredients corn alone, organic seal.",
       "sources": [
         {
           "name": "S13 — ipm.org",
@@ -1103,7 +1054,6 @@
       "id": "pick_frozen_spinach",
       "kind": "pick",
       "decision": "Organic frozen spinach is the pick.",
-      "avoid": "Ingredients spinach alone; skip creamed bags listing cream or starch.",
       "sources": [
         {
           "name": "S08 — europepmc.org",
@@ -1125,7 +1075,6 @@
       "id": "pick_frozen_greens",
       "kind": "pick",
       "decision": "Organic frozen greens are the pick.",
-      "avoid": "Chopped leaves loose, not one solid block; ingredients name greens only.",
       "sources": [
         {
           "name": "S39 — extension.psu.edu",
@@ -1147,7 +1096,6 @@
       "id": "pick_frozen_broccoli",
       "kind": "pick",
       "decision": "Organic frozen broccoli florets are the pick.",
-      "avoid": "Dark green compact florets, no yellow buds; ingredients broccoli alone.",
       "sources": [
         {
           "name": "S27 — extension.wsu.edu",
@@ -1171,7 +1119,6 @@
       "id": "pick_frozen_cauliflower",
       "kind": "pick",
       "decision": "Organic frozen cauliflower florets are the pick.",
-      "avoid": "Creamy white florets, no gray or brown; ingredients cauliflower alone.",
       "sources": [
         {
           "name": "S34 — extension.wsu.edu",
@@ -1197,7 +1144,6 @@
       "id": "pick_frozen_riced_veg",
       "kind": "pick",
       "decision": "Organic frozen riced vegetables are the pick.",
-      "avoid": "Riced cauliflower bag: ingredients say cauliflower alone, no starch or seasoning.",
       "sources": [
         {
           "name": "S17 — law.cornell.edu",
@@ -1215,7 +1161,6 @@
       "id": "pick_frozen_carrots",
       "kind": "pick",
       "decision": "Organic fresh carrots are the pick over frozen carrots.",
-      "avoid": "Pieces separate, not a frozen clump; ingredients carrots alone, organic seal.",
       "sources": [
         {
           "name": "S08 — europepmc.org",
@@ -1237,7 +1182,6 @@
       "id": "pick_frozen_green_beans",
       "kind": "pick",
       "decision": "Organic frozen green beans are the pick.",
-      "avoid": "Slim crisp-looking pods, ingredients green beans alone, no white frost.",
       "sources": [
         {
           "name": "S22 — europepmc.org",
@@ -1267,7 +1211,6 @@
       "id": "pick_frozen_brussels",
       "kind": "pick",
       "decision": "Organic frozen brussels sprouts are the pick.",
-      "avoid": "Small tight sprouts; ingredients Brussels sprouts alone, no loose leaves.",
       "sources": [
         {
           "name": "S36 — nchfp.uga.edu",
@@ -1285,7 +1228,6 @@
       "id": "pick_frozen_edamame",
       "kind": "pick",
       "decision": "Organic frozen edamame is the pick over fresh.",
-      "avoid": "Beans or pods loose; ingredients edamame alone, organic seal on bag.",
       "sources": [
         {
           "name": "S21 — europepmc.org",
@@ -1315,7 +1257,6 @@
       "id": "pick_frozen_stir_fry",
       "kind": "pick",
       "decision": "Organic frozen stir-fry blends are the pick.",
-      "avoid": "Skip bags with a sauce packet; ingredients name vegetables only.",
       "sources": [
         {
           "name": "S19 — foodrepublic.com",
@@ -1333,7 +1274,6 @@
       "id": "pick_frozen_mixed_veg",
       "kind": "pick",
       "decision": "Organic frozen mixed vegetables are the pick.",
-      "avoid": "Ingredients: peas, carrots, corn, green beans; bag loose, not a block.",
       "sources": [
         {
           "name": "S19 — foodrepublic.com",
@@ -1351,7 +1291,6 @@
       "id": "pick_frozen_zucchini",
       "kind": "pick",
       "decision": "Organic frozen summer squash is the pick.",
-      "avoid": "Slices separate; ingredients squash or zucchini alone, organic seal.",
       "sources": [
         {
           "name": "S14 — nongmoproject.org",
@@ -1373,7 +1312,6 @@
       "id": "pick_frozen_butternut",
       "kind": "pick",
       "decision": "Organic frozen winter squash cubes are the pick.",
-      "avoid": "Orange cubes loose; ingredients squash alone, no butter or sweeteners.",
       "sources": [
         {
           "name": "S41 — nchfp.uga.edu",
@@ -1391,7 +1329,6 @@
       "id": "pick_frozen_sauced_bags",
       "kind": "pick",
       "decision": "Skip sauced frozen vegetables; choose plain organic frozen vegetables instead.",
-      "avoid": "Skip butter, cream, cheese, sauce or seasoning in frozen vegetable ingredients.",
       "sources": [
         {
           "name": "S17 — law.cornell.edu",
@@ -1401,15 +1338,14 @@
       "title": "Sauced frozen vegetables",
       "category": "produce",
       "aliases": [
-        "sauced frozen vegetable",
-        "sauced frozen vegetables"
+        "frozen vegetable medley",
+        "frozen vegetable medleys"
       ]
     },
     {
       "id": "pick_frozen_sweetened_fruit",
       "kind": "pick",
       "decision": "Skip sweetened frozen fruit; choose plain organic frozen fruit instead.",
-      "avoid": "Skip sweeteners, syrup or juice concentrate; fruit should be the whole list.",
       "sources": [
         {
           "name": "S17 — law.cornell.edu",
@@ -1419,8 +1355,8 @@
       "title": "Sweetened frozen fruit",
       "category": "produce",
       "aliases": [
-        "sweetened frozen fruit",
-        "sweetened frozen fruits"
+        "frozen sweetened berries",
+        "frozen sweetened berry"
       ]
     }
   ],
@@ -1541,7 +1477,7 @@
     },
     "produce_bananas": {
       "decision": "Organic bananas.",
-      "why": "The peel is discarded, but organic is still the default. Organic rules (7 CFR 205.105) bar synthetic substances, GMOs, irradiation and sewage sludge in growing.",
+      "why": "Organic remains the default despite the discarded peel; the rules bar GMOs, irradiation and sewage sludge.",
       "sources": [
         {
           "name": "F176 — nutritioncenter.ctahr.hawaii.edu",
@@ -1558,7 +1494,7 @@
     },
     "produce_avocados": {
       "decision": "Organic avocados.",
-      "why": "The skin is discarded, but organic is still the default. Organic rules (7 CFR 205.105) bar synthetic substances, GMOs, irradiation and sewage sludge in growing.",
+      "why": "Organic remains the default despite the discarded skin; the rules bar GMOs, irradiation and sewage sludge.",
       "sources": [
         {
           "name": "F177 — ndsu.edu",
@@ -1575,13 +1511,13 @@
     }
   },
   "do_lines": {
-    "produce_grapes": "Grapes should hang firmly on green stems, not brown ones.",
-    "produce_peppers": "Pick firm, thick-walled, brightly colored peppers with a fresh green stem.",
-    "produce_tomatoes": "Skip tomatoes with blotchy green or brown patches on the skin.",
-    "produce_green_beans": "Run a finger along the pod and skip lumpy sections.",
-    "sprouts_raw": "Reject any tub holding dry or slimy sprouts.",
-    "produce_mushrooms": "Peek under the cap for pink or light tan gills.",
-    "produce_bananas": "Check for slight green at the stem and tip.",
-    "produce_avocados": "Skip avocados with large indentations in the skin."
+    "produce_grapes": "Pick grapes held firmly on green stems; skip brown stems.",
+    "produce_peppers": "Choose thick-walled, firm peppers with bright color and a fresh green stem.",
+    "produce_tomatoes": "Check the skin for blotchy green or brown patches; skip those tomatoes.",
+    "produce_green_beans": "Rub a finger along the pod; skip lumpy sections.",
+    "sprouts_raw": "Skip tubs with dry or slimy sprouts.",
+    "produce_mushrooms": "Look under the cap for pink or light tan gills.",
+    "produce_bananas": "Look for a little green at both the stem and tip.",
+    "produce_avocados": "Check the skin for large indentations before choosing an avocado."
   }
 }

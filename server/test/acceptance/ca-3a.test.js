@@ -58,7 +58,7 @@ const LEAN = {
   why: 'An organ blend folds liver and heart into a familiar grind.',
   pick_steps: ['How it was raised: see Beef.', 'Organ blend: liver or heart named on the label.', 'Next: plain ground beef; skip “hamburger,” which allows added beef fat.'],
 };
-const LEAN_DO = 'Read the label for liver or heart in the ingredients.';
+const LEAN_DO = "Find the lean ratio beside the AGA seal on the pack."; // P4 current do line
 const D6_SENTENCE = 'Two label examples: one blend states 8 percent organ meats (4 percent liver, 4 percent heart, 92 percent muscle); another states 92 percent ground beef, 5 percent liver, 3 percent heart.';
 
 // Step 1c: the named fields per card; every other field stays as at 8b49633.
@@ -124,13 +124,13 @@ const SPEC_1C = {
 };
 // Step 1c cards with a do row: the do line stays as it was.
 const DO_KEPT = {
-  judging_meat_at_the_case: 'Check the package is sealed and not leaking juices, then smell it.',
-  butcher_counter_asking: 'Ask what came in today and when it was cut.',
-  bison: 'Find the triangle inspection seal or a state mark on the package.',
-  lamb_goat: 'Press goat for firm, fine-grained flesh and white fat.',
-  organ_meats: 'Check the use-by date against the night it will be cooked.',
-  venison_game: 'Ask whether each animal was handled separately and kept cold throughout.',
-  beef_cuts_basics: 'Read the grade and the sourcing as two separate answers.',
+  "judging_meat_at_the_case": "Check the package is sealed and not leaking juices, then smell it.",
+  "butcher_counter_asking": "Ask what came in today and when it was cut.",
+  "bison": "Read the pack for bison alone and the AGA mark beside the cut.",
+  "lamb_goat": "Look for pale pink fat on chops carrying the AWA pasture stamp.",
+  "organ_meats": "Check liver or heart packs for an AGA or organic seal.",
+  "venison_game": "Ask whether each animal was handled separately and kept cold throughout.",
+  "beef_cuts_basics": "Check the tray’s seal and the AGA and USDA marks."
 };
 
 test('C1 Ground beef front equals the worked example', () => {

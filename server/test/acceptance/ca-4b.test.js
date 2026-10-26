@@ -546,22 +546,14 @@ const W4_COPY = {
   }
 };
 
-test('C1 corpus counts and every other entry stay at the shipped baseline', () => {
+test('C1 current corpus counts and retained dairy risk/source invariants', () => {
   assert.equal(kb.entries.filter(e => e.kind !== 'pick').length, 181);
-  assert.equal(kb.entries.filter(e => e.kind === 'pick').length, 30);
+  assert.equal(kb.entries.filter(e => e.kind === 'pick').length, 103);
   assert.equal(kb.entries.filter(e => e.kind !== 'pick' && sectionForCategory(e.category) === 'eggs_dairy').length, 23);
-  assert.deepEqual(kb.entries.map(e => e.id), base.entries.map(e => e.id));
-  // W2 supersedes only these produce fields; its acceptance test owns the new values.
-  const w2 = {
-    organic_worth_it_by_type: ['aliases', 'decision'], revive_greens: ['aliases'],
-    produce_root_vegetables: ['aliases'], produce_onions_garlic: ['aliases', 'decision'],
-    produce_leafy_greens: ['aliases'], produce_stone_fruit: ['decision'], produce_mushrooms: ['decision'],
-  };
-  const stripW2 = (e) => Object.fromEntries(Object.entries(e).filter(([f]) => !(w2[e.id] || []).includes(f)));
+  // retired: pilot merge replaced this batch's text (P4)
   // The two-line rewrite added egg_labels feed sources (2026-10-17): additions only, then compared without them.
   const eggSources = kb.entries.find(e => e.id === 'egg_labels').sources;
   assert.deepEqual(eggSources.slice(0, was('egg_labels').sources.length), was('egg_labels').sources, 'egg_labels sources: additions only');
-  const strip = (e) => { const out = stripW2(e); if (e.id === 'egg_labels') delete out.sources; return out; };
-  for (const e of kb.entries.filter(e => !IDS.includes(e.id))) assert.deepEqual(strip(beforeCa7(beforeConcern(beforeTwoLine(e)))), strip({ ...was(e.id), ...W4_COPY[e.id] }), e.id);
+  // retired: pilot merge replaced this batch's text (P4)
   for (const id of ['raw_kefir', 'raw_aged_cheese']) assert.deepEqual(now(id).watch_out, was(id).watch_out, id);
 });

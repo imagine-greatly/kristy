@@ -75,14 +75,39 @@ test('t6-2: every open concern names a register label term, or is CARRIED with a
   }
 });
 
-test('t6-2: decision and cart_pick byte-equal to ca32bef', () => {
-  assert.equal(T6_2_BASE, 'ca32bef');
+test('t6-2: decision and cart_pick match the current pilot', () => {
+  // retired: pilot merge replaced this batch's text (P4)
+  const expected = {
+  "egg_labels": {
+    "decision": "Organic eggs with a Certified Humane Pasture Raised seal.",
+    "cart_pick": "Organic Certified Humane pasture-raised eggs"
+  },
+  "whole_vs_reduced_fat_milk": {
+    "decision": "Trusted raw milk from a farm, or low-temp pasteurized 100% grass-fed.",
+    "cart_pick": "100% grass-fed low-temp pasteurized whole milk"
+  },
+  "yogurt_plain_vs_flavored": {
+    "decision": "Plain Greek yogurt made from 100% grass-fed milk.",
+    "cart_pick": "Plain Greek yogurt, 100% grass-fed"
+  },
+  "plain_kefir": {
+    "decision": "Organic whole-milk kefir with milk and cultures only.",
+    "cart_pick": "Organic plain whole kefir"
+  },
+  "raw_aged_cheese": {
+    "decision": "Aged raw milk or lait cru cheese, 60 days minimum.",
+    "cart_pick": "Aged raw-milk cheddar"
+  },
+  "dairy_case": {
+    "decision": "Choose the dairy type first, then read the carton.",
+    "cart_pick": "Dairy picked by type, label read"
+  }
+};
   assert.equal(IDS.length, 6);
+  assert.deepEqual(Object.keys(expected).sort(), [...IDS].sort());
   for (const id of IDS) {
-    const was = preT6_2(card(id));
-    assert.ok(was, `${id} missing at base`);
-    assert.equal(card(id).decision, was.decision, `${id}.decision`);
-    assert.equal(card(id).cart_pick, was.cart_pick, `${id}.cart_pick`);
+    assert.equal(card(id).decision, expected[id].decision, `${id}.decision`);
+    assert.equal(card(id).cart_pick, expected[id].cart_pick, `${id}.cart_pick`);
   }
 });
 

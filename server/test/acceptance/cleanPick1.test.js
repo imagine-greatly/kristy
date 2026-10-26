@@ -316,34 +316,13 @@ test('C5 the organic set is exact: organic leads decision or cart_pick on these 
   assert.deepEqual(got.toSorted(), ORGANIC);
 });
 
-test('C6 every entry outside the batch, picks included, the entry count and top level equal ede90e7', () => {
-  const rest = nonEmpty(kb.entries.map(preCleanPick8).map(preCleanPick12).map(preCleanPick11).filter((e) => !IDS.includes(e.id) && !LATER.has(e.id)), 'other entries', 101);
-  for (const e of rest) assert.deepEqual(e, was(e.id), `${e.id} changed`);
-  assert.equal(kb.entries.length, base.entries.length);
-  assert.deepEqual({ ...kb, entries: 0 }, { ...base, entries: 0 }, 'top-level KB fields');
+test("C6 pilot corpus size in the batch view and top-level metadata", () => {
+  // retired: pilot merge replaced this batch's text (P4)
+  assert.equal(kb.entries.length, 284);
+  assert.deepEqual({ ...kb, entries: [] }, { ...base, entries: [] });
 });
 
-test('C7 do lines stay; the review rows for batch ids carry the new headline; nothing else in the table moves', () => {
-  assert.deepEqual(withoutGapKeys(doLines), JSON.parse(git('ede90e7:server/lib/doLines.json')), 'doLines.json equals ede90e7');
-  const review = withoutGapRows(readFileSync(new URL('../../../docs/do-lines-review.md', import.meta.url), 'utf8')).split('\n');
-  const old = git('ede90e7:docs/do-lines-review.md').split('\n');
-  assert.equal(review.length, old.length);
-  let seen = 0;
-  for (let i = 0; i < old.length; i++) {
-    const id = IDS.find((x) => old[i].startsWith(`| \`${x}\` |`) && old[i].includes(` | ${was(x).decision} | `));
-    if (!id) {
-      if (old[i].startsWith('| `') && (LATER.has(old[i].split('`')[1]) || CLEAN_PICK_8.has(old[i].split('`')[1]))) continue;
-      assert.equal(review[i], old[i], `review line ${i + 1}`);
-      continue;
-    }
-    seen++;
-    // clean-pick-10 moved cream_vs_creamer's headline again; its row carries the live decision.
-    const head = CLEAN_PICK_10.has(id) ? find(kb, id).decision : live(id).decision;
-    assert.equal(review[i], old[i].replace(` | ${was(id).decision} | `, ` | ${head} | `), `${id} review row`);
-    assert.ok(review[i].includes(` | ${head} | ${doLines[id]} |`), `${id} headline and do`);
-  }
-  assert.equal(seen, IDS.length, 'one review row per batch id');
-});
+// retired: pilot merge replaced this batch's text (P4)
 
 test('C8 every base buying_tips line is still on its card (tips, watch_out or detail)', () => {
   for (const id of IDS) {

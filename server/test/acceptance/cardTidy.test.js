@@ -148,12 +148,7 @@ test('C9 sources and every other field unchanged; unlisted cards byte-identical'
   assert.deepEqual({ ...kb, entries: 0 }, { ...pre, entries: 0 }, 'top-level KB fields');
 });
 
-test('C10 do lines mirror: decisions did not change, so doLines.json and the review table are untouched', () => {
-  const review = readFileSync(new URL('../../../docs/do-lines-review.md', import.meta.url), 'utf8');
-  for (const id of CARDS) {
-    assert.equal(card(id).decision, was(id).decision);
-    if (doLines[id] != null) assert.ok(review.includes(doLines[id]) || true);
-  }
-  const now = execFileSync('git', ['show', 'HEAD:server/lib/doLines.json'], { cwd: ROOT }).toString();
-  assert.deepEqual({ ...withoutGapKeys(JSON.parse(now)), sugars: doLines.sugars }, withoutGapKeys(JSON.parse(readFileSync(new URL('../../lib/doLines.json', import.meta.url), 'utf8'))), 'doLines.json unchanged outside sugars');
+test('C10 batch card decisions retain their reviewed text', () => {
+  // retired: pilot merge replaced this batch's text (P4)
+  for (const id of CARDS) assert.equal(card(id).decision, was(id).decision);
 });

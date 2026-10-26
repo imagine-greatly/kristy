@@ -42,7 +42,7 @@ const BARE = nonEmpty(Object.entries({
 const KEEPS = nonEmpty([
   ['beans', 'beans_dried_vs_canned'], ['black beans', 'beans_dried_vs_canned'],
   ['canned green beans', ['beans_dried_vs_canned', null]], ['coffee beans', 'coffee_beans'],
-  ['green bean casserole', null], ['frozen green beans', null], ['Frozen broccoli or green beans', null],
+  ['green bean casserole', null], ['frozen green beans', 'pick_frozen_green_beans'], ['Frozen broccoli or green beans', null],
   ['zucchini', 'pick_zucchini'], ['summer squash', 'pick_zucchini'], ['yellow squash', 'pick_zucchini'],
   ['squash', null], ['butternut squash soup', null],
   ['ginger ale', null], ['ginger snaps', null], ['ginger beer', null], ['gingerbread', null],

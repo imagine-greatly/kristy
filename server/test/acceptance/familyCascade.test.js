@@ -37,8 +37,8 @@ test('family cascade: family and aisle entries have no aliases', () => {
 test('family cascade: flour decision pins the live sourcing order', () => {
   const flour = entries.find((e) => e.id === 'flour_basics');
   assert.ok(flour, 'flour_basics exists');
-  // 2026-10-25 shelf pass: 'from a small mill' is banned by SHELF-BRIEF and cannot be checked on a shelf; a recent date can.
-  assert.equal(flour.decision, 'Organic sprouted flour, or whole-grain flour with a recent date.');
+  // P4 pilot: the flour front names organic whole wheat and the excluded label wording.
+  assert.equal(flour.decision, 'Organic whole-wheat flour without bleached or enriched wording.');
 });
 
 test('family cascade: historical overlay changes only cascade fields and preserves its input', () => {

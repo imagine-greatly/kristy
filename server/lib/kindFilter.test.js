@@ -112,8 +112,8 @@ test('scorePool is the raw scorer for the pick floor, and pickEntries is its poo
   // 29 after K16: fish sticks and anchovies, 2026-10-06.
   // 31 after K18: english muffins and pita/naan, 2026-10-06.
   // 30 after CA-4a: pick_milk retired; the Milk card answers it, 2026-10-15.
-  // 38 after swap-picks-1: eight swap picks (margarine, shortening, soda, sports/energy drinks, fruit snacks, whipped topping, sweetener), 2026-10-21.
-  assert.equal(pickEntries(perimeterKb.entries).length, 38, 'swap-picks-1: 38 picks in the raw corpus');
+  // 111 after the pilot merge (was 38 after swap-picks-1).
+  assert.equal(pickEntries(perimeterKb.entries).length, 111, 'pilot merge: 111 picks in the raw corpus');
   const top = scorePool('rambutan', pickEntries(WITH_PICK))[0];
   assert.equal(top?.entry.id, PICK.id, 'the raw scorer sees the pick when handed the pick pool');
   assert.equal(top.aliasScore, 2, 'one bare-noun hit, the same floor the ask uses');

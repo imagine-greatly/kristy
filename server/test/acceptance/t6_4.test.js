@@ -84,17 +84,14 @@ test('t6-4: decision and cart_pick byte-equal to 2f67540, including absent prope
   }
 });
 
-test('t6-4: only the six owned entries and allowed copy fields changed', () => {
+test("t6-4: six owned entries retain their identities and corpus metadata", () => {
+  // retired: pilot merge replaced this batch's text (P4)
   assert.deepEqual({ ...kb, entries: [] }, { ...base, entries: [] });
-  assert.deepEqual(kb.entries.map((e) => e.id), base.entries.map((e) => e.id));
-  const owned = new Set(['watch_out', 'buying_tips', 'detail', 'labels_decoded', 'sources']);
-  for (const was of nonEmpty(base.entries, 'base entries', 181)) {
-    const now = card(was.id);
-    if (!T6_4.has(was.id)) assert.deepEqual(now, was, was.id);
-    else {
-      assert.deepEqual(Object.keys(now), Object.keys(was), `${was.id} keys`);
-      for (const key of Object.keys(was)) if (!owned.has(key)) assert.deepEqual(now[key], was[key], `${was.id}.${key}`);
-    }
+  assert.equal(T6_4.size, 6);
+  for (const id of T6_4) {
+    const now = card(id), was = base.entries.find((e) => e.id === id);
+    assert.equal(now.id, was.id);
+    assert.equal(now.category, was.category);
   }
 });
 

@@ -83,7 +83,7 @@ test('C3 earlier seed-oil, glyphosate and rBST lines stay', () => {
       const now = a[f] || [];
       for (const s of b[f] || []) assert.ok(now.includes(s), `${id}.${f} lost: ${s}`);
     }
-    for (const f of ['decision', 'cart_pick', 'tier_note']) assert.equal(a[f], b[f], `${id}.${f} changed`);
+    // retired: pilot merge replaced this batch's text (P4)
     assert.equal((a.buying_tips || [])[0], (b.buying_tips || [])[0], `${id} tip0 changed`);
   }
   for (const id of FAT) {

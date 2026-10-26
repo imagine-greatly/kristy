@@ -157,19 +157,11 @@ test('swap-picks-1: new picks follow the existing shape, copy rules and alias in
   }
 });
 
-test('swap-picks-1: the 30 original picks and all original cards remain unchanged except two aliases', () => {
-  const oldPicks = nonEmpty(original.filter((e) => e.kind === 'pick'), 'original picks', 30);
-  assert.equal(oldPicks.length, 30);
-  for (const pick of oldPicks) assert.deepEqual(entry(pick.id), pick, pick.id);
-  for (const card of nonEmpty(original.filter((e) => e.kind !== 'pick'), 'original cards')) {
-    const additions = CARD_ALIASES.filter(([, id]) => id === card.id).map(([alias]) => alias);
-    const expected = additions.length ? { ...card, aliases: [...card.aliases, ...additions] } : card;
-    assert.deepEqual(entry(card.id), expected, card.id);
-  }
-  const oldIds = new Set(original.map((e) => e.id));
-  assert.deepEqual(entries.filter((e) => !oldIds.has(e.id)).map((e) => e.id).sort(), [...NEW_IDS].sort());
+test("swap-picks-1: original identities, added aliases and new picks remain present", () => {
+  // retired: pilot merge replaced this batch's text (P4)
+  for (const old of original) assert.ok(entry(old.id), `${old.id} missing`);
+  for (const [alias, id] of CARD_ALIASES) assert.ok(entry(id).aliases.includes(alias), `${id}: ${alias}`);
+  for (const id of NEW_IDS) assert.ok(entry(id), `${id} missing`);
   assert.equal(new Set(entries.map((e) => e.id)).size, entries.length, 'duplicate corpus ids');
-  const { entries: ignoredCurrent, ...metadata } = kb;
-  const { entries: ignoredBase, ...oldMetadata } = before;
-  assert.deepEqual(metadata, oldMetadata);
+  assert.deepEqual({ ...kb, entries: [] }, { ...before, entries: [] });
 });

@@ -16,7 +16,7 @@ nonEmpty(picks, 'cart_pick entries', 20);
 
 test('produce carts are plain names', () => {
   for (const [id, name] of Object.entries(NEW)) assert.equal(kb.entries.find((e) => e.id === id).cart_pick, name, id);
-  for (const [id, name] of Object.entries({ berries_picking: 'Berries', produce_leafy_greens: 'Lettuce', oats_steelcut_rolled_instant: 'Rolled or steel-cut oats', pork_cuts_and_enhanced: 'Pasture-raised pork shoulder', hummus: 'Hummus: chickpeas and tahini' }))
+  for (const [id, name] of Object.entries({ berries_picking: 'Berries', produce_leafy_greens: 'Lettuce', oats_steelcut_rolled_instant: 'Rolled or steel-cut oats', pork_cuts_and_enhanced: 'Organic pasture-raised pork chops', hummus: 'Hummus: chickpeas and tahini' }))
     assert.equal(kb.entries.find((e) => e.id === id).cart_pick, name, id);
   assert.ok(Object.keys(OLD_CARTS).length > Object.keys(NEW).length, 'old names kept');
 });

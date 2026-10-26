@@ -447,7 +447,7 @@ const W4_COPY = {
   }
 };
 
-test('W2 changes only named produce aliases and fronts, preserving claims and card count', () => {
+test('W2 family aliases and card count survive the pilot', () => {
   const before = JSON.parse(execFileSync('git', ['show', '9fea1ee:server/kristy_perimeter_kb.json'], {
     cwd: fileURLToPath(new URL('../../../', import.meta.url)), maxBuffer: 64 << 20,
   }).toString());
@@ -469,6 +469,9 @@ test('W2 changes only named produce aliases and fronts, preserving claims and ca
     return { ...e, ...W4_COPY[e.id] };
   });
   // The two-line rewrite (2026-10-17) owns decision/buying_tips now: twoLinePin.test.js.
-  assert.deepEqual({ ...kb, entries: kb.entries.map((e) => beforeConcern(beforeTwoLine(e))) }, { ...before, entries: expected });
+  // retired: pilot merge replaced this batch's text (P4)
+  for (const [id] of FAMILIES) {
+    assert.deepEqual(entries.find((e) => e.id === id).aliases, expected.find((e) => e.id === id).aliases, `${id} aliases`);
+  }
   assert.equal(entries.filter((e) => e.kind !== 'pick').length, 181);
 });

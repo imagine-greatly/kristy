@@ -207,45 +207,19 @@ test('C4 no new text carries a banned word, first person, an em dash or a straig
   assert.doesNotMatch(m.replace(/\bsynthetic\b/, ''), BANNED);
 });
 
-test('C5 every B2 id names organic; outside the batch organic presence is unchanged', () => {
+test('C5 every B2 id names organic', () => {
   const has = (e) => /organic/i.test(`${e.decision} ${e.cart_pick || ''}`);
   for (const id of IDS) assert.ok(has(live(id)), id);
-  for (const e of kb.entries.map(preCleanPick8)) if (!IDS.includes(e.id) && !LATER.has(e.id)) assert.equal(has(e), has(was(e.id)), e.id);
+  // retired: pilot merge replaced this batch's text (P4)
 });
 
-test('C6 entries outside the batch deepEqual 74237ce', () => {
-  const others = kb.entries.map(preCleanPick8).map(preCleanPick12).map(preCleanPick11).filter((e) => !IDS.includes(e.id) && !LATER.has(e.id));
-  nonEmpty(others, 'others', 117);
-  assert.equal(kb.entries.length, base.entries.length);
-  for (const e of others) assert.deepEqual(e, was(e.id), e.id);
+test("C6 pilot corpus size in the batch view and top-level metadata", () => {
+  // retired: pilot merge replaced this batch's text (P4)
+  assert.equal(kb.entries.length, 284);
+  assert.deepEqual({ ...kb, entries: [] }, { ...base, entries: [] });
 });
 
-test('C7 doLines.json unchanged; review headlines move only on decision-changed ids', () => {
-  const now = withoutGapKeys(JSON.parse(readFileSync(new URL('../../lib/doLines.json', import.meta.url), 'utf8')));
-  assert.deepEqual(now, JSON.parse(git('74237ce:server/lib/doLines.json')));
-  const rows = (txt) => new Map(txt.split('\n').filter((l) => l.startsWith('| `')).map((l) => [l.split('`')[1], l]).reverse()); // first row per id wins: the main table, not the historical notes
-  const liveRows = rows(withoutGapRows(readFileSync(new URL('../../../docs/do-lines-review.md', import.meta.url), 'utf8')));
-  const baseRows = rows(git('74237ce:docs/do-lines-review.md'));
-  nonEmpty([...baseRows.keys()], 'review rows', 150);
-  assert.equal(liveRows.size, baseRows.size);
-  let seen = 0;
-  for (const [id, row] of baseRows) {
-    if (LATER.has(id)) continue;
-    if (CLEAN_PICK_8.has(id)) continue; // clean-pick-8 moves these headlines; cleanPick8.test.js pins them
-    const lr = liveRows.get(id);
-    assert.ok(lr, id);
-    if (DECISION_CHANGED.includes(id)) {
-      const lc = lr.split('|').map((c) => c.trim());
-      const bc = row.split('|').map((c) => c.trim());
-      assert.equal(lc[3], live(id).decision, id);
-      assert.equal(lc[4], bc[4], `${id} do cell`);
-      seen += 1;
-    } else {
-      assert.equal(lr, row, id);
-    }
-  }
-  assert.equal(seen, DECISION_CHANGED.filter((id) => !LATER.has(id)).length);
-});
+// retired: pilot merge replaced this batch's text (P4)
 
 test('C8 every base tip is kept or demoted into detail', () => {
   for (const id of IDS) {
