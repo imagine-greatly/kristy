@@ -17634,15 +17634,11 @@
       "kind": "aisle",
       "title": "Produce",
       "category": "aisle_produce",
-      "decision": "Organic produce by default; check the USDA Organic seal or organic bin sign.",
+      "decision": "Organic on anything eaten with the skin or juiced; conventional is fine on anything peeled.",
       "buying_tips": [
-        "Read the PLU sticker: a 5-digit code starting with 9 is organic, 4 digits is conventional; the USDA Organic seal or sign confirms it.",
-        "Pick organic first for EWG’s Dirty Dozen: spinach, kale and greens, strawberries, grapes, stone fruit, apples, pears, potatoes.",
-        "Check the bottom of clamshells and bags for mold, leaks and crushed or bruised pieces.",
-        "Read the sign or sticker for “Product of” and for “coated with” wax before choosing skin-on fruit."
-      ],
-      "watch_out": [
-        "The PLU sticker is voluntary; the USDA Organic seal or an organic sign is the firmer check."
+        "Skin-on or juiced (berries, greens, apples, grapes, potatoes): organic, with Real Organic or Certified Naturally Grown above plain organic.",
+        "Peeled (avocado, banana, citrus, mango, onion): conventional is fine.",
+        "Read the PLU sticker: 5 digits starting with 9 is organic, 4 digits is conventional."
       ]
     },
     {
