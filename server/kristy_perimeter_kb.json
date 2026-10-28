@@ -6278,7 +6278,7 @@
         "persian cucumbers",
         "mini cucumbers"
       ],
-      "decision": "Firm, dark green cucumbers with no wax on the skin; next, the USDA Organic seal.",
+      "decision": "Organic cucumbers, firm and dark green, with no wax on the skin.",
       "avoid": "Skip cucumbers coated with wax, shellac or carnauba wax.",
       "sources": [
         {
@@ -6493,7 +6493,7 @@
         "kohlrabi bulb",
         "kohlrabi bulbs"
       ],
-      "decision": "Organic kohlrabi, with ‘organic’ on the sign or sticker.",
+      "decision": "Kohlrabi; organic is optional here, since the peel comes off.",
       "sources": [
         {
           "name": "F192 — extension.purdue.edu",
@@ -7358,7 +7358,7 @@
       ],
       "category": "deli",
       "question": "What should you check when choosing bacon?",
-      "decision": "Pasture-raised bacon of pork, salt and celery powder.",
+      "decision": "Pasture-raised bacon of pork and salt, wood-smoked.",
       "why": "The USDA rule lets “Uncured” appear in the name only for products cured without synthetic nitrite.",
       "short_answer": "Bacon labeled uncured can use celery powder as a natural curing source. Read the qualifier on a no-nitrates-added claim and the ingredient list.",
       "detail": "The archived NPR report describes natural curing sources used in bacon and hot dogs and the qualifying fine print. US curing-label policy requires curing-mixture ingredients to be listed individually. That distinguishes a source of curing ingredients, not a demonstrated health advantage.",
@@ -7871,7 +7871,7 @@
         "acorn squash",
         "spaghetti squash"
       ],
-      "decision": "Organic winter squash and pumpkin, with ‘organic’ on the sign or sticker.",
+      "decision": "Winter squash and pumpkin; organic is optional here, since the rind comes off.",
       "sources": [
         {
           "name": "F127 — law.cornell.edu",
@@ -17583,10 +17583,10 @@
       "kind": "family",
       "title": "Crisp heads and pods",
       "category": "aisle_produce",
-      "decision": "Firm, heavy, bright heads, pods and peppers; organic peppers and green beans.",
+      "decision": "Firm, heavy, bright heads, pods and peppers, all organic.",
       "why": "Broccoli, cauliflower, cabbage, peppers and snap beans need different variety and maturity checks.",
       "buying_tips": [
-        "Pick organic peppers and green beans first; cabbage and cauliflower rank cleaner.",
+        "Pick organic heads, pods and peppers, eaten whole; peppers and green beans matter most.",
         "Pick heads that are tight and heavy for their size.",
         "Check that leaves on heads are bright green and firmly attached.",
         "Skip heads or pods with soft spots, bruises or mold."
@@ -18152,7 +18152,7 @@
         "dry pasta package",
         "dry pasta packages"
       ],
-      "decision": "Organic whole-wheat pasta with semolina named on the list and no enriched flour.",
+      "decision": "Organic whole-durum wheat pasta, with ‘whole’ before the flour and no enriched flour.",
       "sources": [
         {
           "name": "Weston A. Price Foundation",
@@ -18898,7 +18898,7 @@
     {
       "id": "pick_f_onions",
       "kind": "pick",
-      "decision": "Organic dry onions, ideally Real Organic or Certified Naturally Grown.",
+      "decision": "Dry onions; organic is optional here, since the skin comes off.",
       "sources": [
         {
           "name": "F187 — ndsu.edu",
