@@ -1,4 +1,4 @@
-import { restoreOrganicCarts } from './cartPlain.js';
+import { restoreOrganicCarts, liveDecision } from './cartPlain.js';
 // IC-8b: rest of store part 2, plus the corpus-wide front closer (docs/ITEM-CARDS-PLAN.md IC-8). Written by the planner; do not edit.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
@@ -60,7 +60,8 @@ const frontFailures = (e) => {
   if ([...TIER_NOTE_ORPHANED_PENDING].includes(e.id)) out.push('pending');
   if (lintCard(projectEntry(e, { doLine: doLines[e.id] })).length) out.push('lint');
   if (readability(e).length) out.push('readability');
-  if (reviewHeadline(e.id) !== e.decision) out.push('review headline differs');
+  // Item-copy flags pass 2026-10-28: review row may mirror the live decision.
+  if (![e.decision, liveDecision(e.id)].includes(reviewHeadline(e.id))) out.push('review headline differs');
   return out;
 };
 

@@ -237,7 +237,8 @@ const BECAME = {
     ]
   },
   "pick_anchovies": {
-    "decision": "Anchovy fillets packed in olive oil or salt, plump, in a tin or jar."
+    // Item-copy flags pass 2026-10-28: plain order, same facts; "plump" still never leads (JC3).
+    "decision": "Anchovy fillets in olive oil or salt, in a tin or jar; pick plump ones."
   }
 };
 

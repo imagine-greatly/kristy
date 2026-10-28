@@ -42,7 +42,8 @@ const BECAME = {
   pick_fish_sticks: { decision: 'Wild-caught fish sticks from whole fillet, not ones labeled “made from minced fish” in bold.', carry: /^Wild-caught fish sticks\b/, keep: [/“made from minced fish”/, /\bbold\b/] },
   pick_juice: { decision: 'Juice not from concentrate: pasteurized, or untreated with warning labels; no added color over dyes.', carry: /^Juice not from concentrate\b/, keep: [/pasteurized/, /untreated/, /warning labels/, /no added color over dyes/] },
   pick_english_muffins: { decision: 'English muffins with whole wheat flour as the first ingredient, no preservatives or seed oil.', carry: /^English muffins with whole wheat flour\b/, keep: [/English muffins with whole wheat flour as the first ingredient/] },
-  pick_pita_naan: { decision: 'Unenriched pita with whole wheat flour first; naan is the richer one, made with yogurt.', carry: /^Unenriched pita\b/, keep: [/whole wheat flour first/, /naan is the richer one, made with yogurt/] },
+  // Item-copy flags pass 2026-10-28: plain words for "unenriched"; the facts it keeps are the same.
+  pick_pita_naan: { decision: 'Pita listing whole wheat flour first, not enriched; naan is the richer one, made with yogurt.', carry: /^Pita listing whole wheat flour first, not enriched\b/, keep: [/whole wheat flour first/, /naan is the richer one, made with yogurt/] },
 };
 const IDS = Object.keys(BECAME);
 const ORGANIC_IDS = ['pick_frozen_peas', 'pick_frozen_broccoli', 'pick_canned_tomatoes', 'pick_tofu'];

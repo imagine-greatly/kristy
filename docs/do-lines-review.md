@@ -36,8 +36,8 @@ Also: imperative, starts with a verb, ≤14 words.
 
 | slug | section | current headline | proposed do | flag |
 | --- | --- | --- | --- | --- |
-| `salmon_wild_vs_farmed` | seafood | Wild salmon, frozen wild Alaskan before fresh farmed. | Read for wild Alaskan, then check the flesh for a deep red color. | — |
-| `shrimp_imported_vs_domestic` | seafood | Wild American or Gulf shrimp; read the country of origin. | Read the bag for Gulf or US wild origin; check for shells. | — |
+| `salmon_wild_vs_farmed` | seafood | Wild Alaskan salmon, fresh or frozen, like sockeye or coho. | Read for wild Alaskan, then check the flesh for a deep red color. | — |
+| `shrimp_imported_vs_domestic` | seafood | Wild US or Gulf shrimp, frozen raw; read the country. | Read the bag for Gulf or US wild origin; check for shells. | — |
 | `rotisserie_chicken` | meat | Pasture-raised or organic rotisserie chicken, salt and spices only. | Read the ingredient list for added starches or sweeteners. | — |
 | `beef_grassfed_vs_grainfed` | meat | 100% grass-fed or grass-finished beef. | Find the AGA seal and 100% grass-fed wording. | — |
 | `beef_cuts_basics` | meat | 100% grass-fed or grass-finished steak, not mechanically tenderized. | Check the tray’s seal and the AGA and USDA marks. | — |
@@ -76,10 +76,10 @@ Also: imperative, starts with a verb, ≤14 words.
 | `chicken_cuts_basics` | meat | Air-chilled pasture-raised whole chicken, then bone-in, skin-on thighs. | Check for cream-yellow skin and an AWA seal on the bird. | — |
 | `pork_cuts_and_enhanced` | meat | Organic or pasture-raised pork with no added solution. | Find an AWA or Certified Humane pasture seal on the chop pack. | — |
 | `deli_meat_uncured` | meat | Organic or pasture-raised whole roasted meat, sliced thin. | Ask for fresh slices from a whole roast bearing an Uncured label. | — |
-| `mercury_by_fish` | seafood | Sardines, anchovies, salmon and canned light tuna, small and short-lived. | Check the species name on the can for sardines. | — |
-| `canned_fish_choosing` | seafood | Fish in olive oil or water, bone-in and skin-on. | Read the species name and check for fish, water or olive oil. | — |
-| `farmed_fish_by_species` | seafood | Trout, arctic char, barramundi and shellfish needing no feed. | Find the ASC logo on the fish pack. | — |
-| `seafood_certifications` | seafood | Blue MSC on wild fish; ASC or BAP on farmed. | Check the MSC program name, blue fish symbol and tracking code. | — |
+| `mercury_by_fish` | seafood | Sardines, anchovies, salmon or canned light tuna, lowest in mercury. | Check the species name on the can for sardines. | — |
+| `canned_fish_choosing` | seafood | Bone-in sardines or salmon, packed in olive oil or water. | Read the species name and check for fish, water or olive oil. | — |
+| `farmed_fish_by_species` | seafood | Farmed mussels, oysters or clams; then trout, char or barramundi. | Find the ASC logo on the fish pack. | — |
+| `seafood_certifications` | seafood | Blue MSC logo on wild fish; ASC logo on farmed. | Check the MSC program name, blue fish symbol and tracking code. | — |
 | `produce_ripeness_by_item` | produce | The heavier of two same-size pieces, for more juice. | Smell the stem end on anything that ripens after picking. | — |
 | `berries_picking` | produce | Berries from a local farm, grown without sprays, then organic. | Flip the container and check for juice stains or fuzz. | — |
 | `produce_storage` | produce · home | Unwashed produce for storing; wash it when you use it. | Keep apples and bananas out of the drawer with your greens and berries. | — |
@@ -129,7 +129,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `coffee_beans` | bulk_pantry | Beans in a sealed bag that limits air. | Check the bag’s seal and keep the coffee closed between uses. | — |
 | `bacon` | meat | Organic or pasture-raised bacon with a short curing list. | Find the pasture seal on the bacon pack. | — |
 | `hot_dogs` | meat | Organic beef hot dogs with no phosphates or binders. | Find the AGA seal, then count the ingredients. | — |
-| `canned_tuna` | seafood | Canned light tuna, or a can naming skipjack. | Read the catch wording for pole, troll, FAD-free or school methods. | — |
+| `canned_tuna` | seafood | Pole- or troll-caught light tuna in olive oil or water. | Read the catch wording for pole, troll, FAD-free or school methods. | — |
 | `chicken_breast` | meat | Pasture-raised or organic bone-in, skin-on breast; no solution added. | Find the Certified Humane Pasture Raised seal alongside USDA certification. | — |
 | `ham` | meat | Organic or pasture-raised ham named just “Ham”. | Read the product name’s opening word for Uncured, then check for pork and salt. | — |
 | `turkey_bacon` | meat | Organic or pasture-raised turkey bacon with no added sugar. | Read the name for Uncured, then check which meat leads the ingredient list. | — |
@@ -138,13 +138,13 @@ Also: imperative, starts with a verb, ≤14 words.
 | `organ_meats` | meat | 100% grass-fed or pasture-raised organ meats, cooked within two days. | Check liver or heart packs for an AGA or organic seal. | — |
 | `bison` | meat | Bison labeled 100% grass-fed or grass-finished, with an inspection mark. | Read the pack for bison alone and the AGA mark beside the cut. | — |
 | `venison_game` | meat | Fat-trimmed venison from a fully refrigerated processor. | Ask whether each animal was handled separately and kept cold throughout. | — |
-| `white_fish` | seafood | Wild-caught white fish by its named species, firm, mild-smelling. | Turn the fillet to check its gray-brown skin, then read the cod tag. | — |
-| `crab` | seafood | Live crab that moves, or cooked with bright orange-red shells. | Watch for leg movement before picking a live crab. | — |
-| `lobster` | seafood | A live lobster that moves, or hard-frozen tails. | Check claw movement; choose frozen tails that feel hard without ice glaze. | — |
-| `scallops` | seafood | Dry or dry-packed scallops, with no phosphate or water listed. | Check the tray for milky pooling; look for dry-packed on the label. | — |
-| `clams_mussels_oysters` | seafood | Live shellfish with a tag, closed shells and none cracked. | Tap to check that each shell shuts, then find the bag’s harvest tag. | — |
-| `smoked_salmon` | seafood | Wild-caught smoked salmon, nova or lox, kept cold. | Check the cold case, then read the label for origin and wild wording. | — |
-| `seafood_counter` | seafood | Named species on ice, clean briny smell, springy flesh. | Check the counter for clear eyes, ice and a species sign. | — |
+| `white_fish` | seafood | Wild-caught white fish named by kind, like cod or halibut. | Turn the fillet to check its gray-brown skin, then read the cod tag. | — |
+| `crab` | seafood | Live crab moving its legs, kind and catch area tagged. | Watch for leg movement before picking a live crab. | — |
+| `lobster` | seafood | A live lobster that curls its tail, or hard-frozen tails. | Check claw movement; choose frozen tails that feel hard without ice glaze. | — |
+| `scallops` | seafood | Dry-packed scallops, no phosphate or added water on the label. | Check the tray for milky pooling; look for dry-packed on the label. | — |
+| `clams_mussels_oysters` | seafood | Tagged live shellfish: clams, mussels or oysters with closed shells. | Tap to check that each shell shuts, then find the bag’s harvest tag. | — |
+| `smoked_salmon` | seafood | Wild-caught smoked salmon, nova or lox, with no color added. | Check the cold case, then read the label for origin and wild wording. | — |
+| `seafood_counter` | seafood | Fish named by kind, on ice, clear-eyed with red gills. | Check the counter for clear eyes, ice and a species sign. | — |
 | `sprouted_grain_bread` | bulk_pantry | Bread with sprouted whole grains first and no added flour. | Read for sprouted before each grain; skip loaves listing flour first. | — |
 | `sprouted_grains` | bulk_pantry | Grain labeled sprouted whole grain. | Check the label names the grain as whole, not only its process. | — |
 | `specialty_flours` | bulk_pantry | Specialty flour with “whole” in its name or first ingredient. | Count the types of flour listed; choose one with organic on the bag. | — |
