@@ -15930,7 +15930,7 @@
         "Look for '100% grass-fed' on beef and lamb. Plain 'grass-fed' can still mean grain at the end.",
         "A logo from a group that checks, like AGA Grassfed, is the sure sign.",
         "Eggs: the carton front should say 'pasture-raised'. 'Cage-free' does not mean they went outside.",
-        "Skip packs that say 'added solution' or 'tenderized'. That is salt water added to the meat.",
+        "Skip packs that say 'tenderized' or 'added solution'. 'Added solution' means water and salt were added.",
         "Can't find it? Beef and lamb: a pack with a Global Animal Partnership (GAP) welfare rating. Chicken, pork and eggs: organic."
       ]
     },
@@ -16271,7 +16271,8 @@
         "Look for 'unpasteurized' or 'raw' on the label; a cold shelf alone does not prove it.",
         "Check for 'keep refrigerated' and follow the jar's storage directions.",
         "Pick organic with a short list of real foods, salt and cultures.",
-        "Read kombucha and kefir labels for sugar and alcohol; each recipe differs."
+        "Read kombucha and kefir labels for sugar and alcohol; each recipe differs.",
+        "Can't find organic? Pick a raw or unpasteurized jar from the cold case with the shortest list."
       ],
       "watch_out": [
         "Cold sale alone does not establish fermentation or the absence of heat after fermentation."
@@ -16285,10 +16286,10 @@
       "decision": "Organic frozen fruit and vegetables with nothing else in the bag.",
       "buying_tips": [
         "Read the list: just the fruit or vegetable, no sauce, syrup or sugar.",
-        "Check the bag feels loose; a solid block has thawed and refrozen.",
-        "Pick bags from the back of the case, where they thaw least.",
+        "Check the bag feels loose, not one solid block, and pick from the back of the case.",
         "Look for the USDA Organic seal on the front.",
-        "Read the list on fries, waffles, pizza and meals before trusting the front."
+        "Read the list on fries, waffles, pizza and meals before trusting the front.",
+        "Can't find organic? Pick the bag with the fruit or vegetable alone on the list."
       ]
     },
     {
@@ -16940,7 +16941,8 @@
         "Pick whole nuts, fruit or popcorn kernels before a packaged snack.",
         "Read the frying oil by name; skip partially hydrogenated oil.",
         "Check that crackers list a whole grain first.",
-        "Skip packs with flavor packets, natural flavors, added syrups, artificial colors or unnamed oils."
+        "Skip packs with flavor packets, natural flavors, added syrups, artificial colors or unnamed oils.",
+        "Can't find whole nuts, fruit or kernels? Pick the packaged snack with the shortest list of real food."
       ]
     },
     {
@@ -17352,7 +17354,8 @@
         "Read the first ingredient: tomatoes, mustard seed or the named vegetable.",
         "Skip high fructose corn syrup, distilled vinegar and MSG.",
         "Look for glass jars, or cans marked 'BPA-free', for tomatoes.",
-        "Check cold-case sauces for 'fermented' or 'raw'."
+        "Check cold-case sauces for 'fermented' or 'raw'.",
+        "Can't find organic? Pick the jar with the shortest list and the named vegetable first."
       ]
     },
     {
@@ -17365,7 +17368,8 @@
         "Read the name: 'spring' and 'mineral' water come from underground; 'distilled' water is treated.",
         "Pick glass bottles or cans over plastic.",
         "Check that raw kombucha sits in the cold case, marked 'keep refrigerated'.",
-        "Read Added Sugars on the panel of any sweet drink."
+        "Read Added Sugars on the panel of any sweet drink.",
+        "Can't find glass? Pick spring or mineral water in a can, with nothing added."
       ]
     },
     {
@@ -17377,7 +17381,7 @@
       "why": "Bananas, avocados and tomatoes can finish at room temperature, but readiness checks differ.",
       "buying_tips": [
         "Pick organic peaches, nectarines and cherries; the skin gets eaten.",
-        "Pick any avocados and bananas; the peel comes off, so conventional is fine.",
+        "Pick any avocados and bananas; the peel comes off, so organic is optional.",
         "Read the sticker: a 5-digit code starting with 9 means organic.",
         "Pick fruit that gives a little for today; skip bruised, split or leaking fruit."
       ],
@@ -17548,7 +17552,7 @@
       "decision": "Firm, heavy, bright heads, pods and peppers; organic peppers and green beans.",
       "why": "Broccoli, cauliflower, cabbage, peppers and snap beans need different variety and maturity checks.",
       "buying_tips": [
-        "Pick organic peppers and green beans first; cabbage and cauliflower test cleaner.",
+        "Pick organic peppers and green beans first; cabbage and cauliflower rank cleaner.",
         "Pick heads that are tight and heavy for their size.",
         "Check that leaves on heads are bright green and firmly attached.",
         "Skip heads or pods with soft spots, bruises or mold."
@@ -17637,12 +17641,13 @@
       "kind": "aisle",
       "title": "Produce",
       "category": "aisle_produce",
-      "decision": "Organic when you eat the skin or juice it; conventional is fine when you peel it.",
+      "decision": "Organic when you eat the skin or juice it; organic is optional when you peel it.",
       "buying_tips": [
         "Pick organic berries, greens, apples, grapes and potatoes: the skin gets eaten.",
-        "Pick any avocado, banana, mango or onion: the peel comes off, so conventional is fine.",
+        "Pick any avocado, banana, mango or onion: the peel comes off, so organic is optional.",
         "Read the sticker: 5 digits starting with 9 is organic, 4 digits is conventional.",
-        "Look for a Real Organic, Certified Naturally Grown, Demeter or Regenerative Organic Certified logo: each goes further than plain organic."
+        "Look for a Real Organic, Certified Naturally Grown, Demeter or Regenerative Organic Certified logo: each goes further than plain organic.",
+        "Can't find one of those logos? Pick plain USDA Organic for anything with the skin eaten."
       ]
     },
     {
@@ -17868,13 +17873,13 @@
       "kind": "family",
       "title": "Frozen fruit and vegetables",
       "category": "aisle_frozen",
-      "decision": "Organic frozen fruit and vegetables with nothing else on the list, frozen loose.",
+      "decision": "Organic frozen fruit and vegetables, frozen loose, from the back of the case.",
       "why": "Plain frozen fruit and vegetables are frozen piece by piece soon after harvest. A bag that has frozen into one block has likely thawed and refrozen on the way, and packs at the back of the case see the least temperature swing.",
       "buying_tips": [
-        "Read the list: the food alone; skip citric acid, ascorbic acid and sugar.",
         "Look for the USDA Organic seal on the bag.",
-        "Check the bag feels loose; a solid block thawed and refroze.",
-        "Pick bags from the back of the freezer case."
+        "Read the list: the food alone; skip citric acid, ascorbic acid and sugar.",
+        "Check the bag feels loose; a solid block has likely thawed and refrozen.",
+        "Pick bags from the back of the freezer case; they see the least temperature swing."
       ],
       "sources": [
         {
@@ -17928,12 +17933,12 @@
     {
       "id": "fam_frozen_plain_produce",
       "kind": "family",
-      "decision": "Organic frozen fruit or vegetables, the food alone on the list.",
+      "decision": "Organic frozen fruit or vegetables when fresh is out of season, with no syrup or sauce.",
       "buying_tips": [
-        "Read the list: the fruit or vegetable alone, no sauce or sugar.",
+        "Pick frozen when the fresh fruit or vegetable is out of season or tired.",
+        "Read the list for syrup on fruit and sauce on vegetables; skip both.",
         "Look for USDA Organic on the front of the bag.",
-        "Check that pieces move when you shake the bag; skip a solid clump.",
-        "Skip bags with thick frost inside; they thawed and refroze."
+        "Skip bags with thick frost inside; they have likely thawed and refrozen."
       ],
       "title": "Frozen plain fruit and vegetables",
       "category": "aisle_frozen",
