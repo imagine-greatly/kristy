@@ -8,15 +8,15 @@ import { sanitizeList } from './cartEdit.js';
 import { lintPick } from './counterCardLint.js';
 
 const AVOIDS = {
-  pick_corn: ['corn', 'Skip corn labeled bioengineered.'],
-  pick_tofu: ['tofu', 'Skip tofu labeled bioengineered.'],
+  pick_corn: ['corn', 'Skip corn labeled bioengineered, the US label word for genetically engineered.'],
+  pick_tofu: ['tofu', 'Skip tofu labeled bioengineered, the US label word for genetically engineered.'],
   pick_juice: ['orange juice', 'Skip juice drinks listing benzoates, benzoic acid, BVO or artificial color.'],
-  pick_cucumbers: ['cucumbers', 'Pass on cucumbers coated with wax, shellac or carnauba.'],
+  pick_cucumbers: ['cucumbers', 'Skip cucumbers coated with wax, shellac or carnauba wax.'],
   // clean-sweep-J1 (2026-10-22): register BPA line; juice and cucumber lines widened.
-  pick_canned_tomatoes: ['canned tomatoes', 'Skip cans without a BPA-free lining stated on the label.'],
+  pick_canned_tomatoes: ['canned tomatoes', 'Skip cans with no BPA-free lining stated on the label.'],
   // clean-sweep-J3 (2026-10-22): register mechanically-separated and liquid-smoke lines.
-  pick_sausage: ['sausage', 'Skip sausage listing mechanically separated chicken, turkey or pork.'],
-  pick_jerky: ['jerky', 'Skip jerky listing liquid smoke or smoke flavoring.'],
+  pick_sausage: ['sausage', 'Skip sausage that lists mechanically separated (machine-stripped) chicken, turkey or pork.'],
+  pick_jerky: ['jerky', 'Skip jerky that lists liquid smoke or smoke flavoring.'],
   // clean-sweep-J4 (2026-10-22): register pangasius and MSC low-bar lines.
   pick_fish_sticks: ['fish sticks', 'Skip Vietnam swai or basa; critics call ‘MSC certified’ a low bar.'],
 };
