@@ -76,9 +76,34 @@ test('C2 antioxidant cards name the preservative and say to read the list', () =
   }
 });
 
+// Item-copy pass 2026-10-28 rewrote the yogurt tips in plain shopper words: each bd8a1cc tip maps to the facts it carried,
+// every one still required on the live card. Other full cards keep exact tips.
+const YOGURT_FACTS = {
+  '100% grass-fed means grass and hay, never grain; flavored tubs carry added sugar.': [/“100% grass-fed”, which means grass and hay, never grain/, /flavored tubs carry added sugar\./],
+  'Plain over flavored. Sweeten it yourself with fruit.': [/Pick plain and sweeten it at home with fruit\./],
+  'Compare the added-sugars line on the plain tub against the fruit cup. That gap is the decision.': [/added-sugars line on the plain tub against the fruit cup/],
+  'Greek or strained yogurt is thicker; whole-milk versions are more filling.': [/Greek and skyr are strained: thicker/, /Whole-milk versions are more filling/],
+  'A short list is the sign: milk and cultures. Thickeners do the job straining does, for less.': [/A short list is the sign: milk and cultures\./, /Thickeners do the job straining does, for less\./],
+  'Greek and skyr are strained: thicker, with less whey.': [/Greek and skyr are strained: thicker, with less whey\./],
+  'Whole-milk versions are more filling and less tinkered with than fat-free.': [/Whole-milk versions are more filling and less tinkered with than fat-free\./],
+  'rBST names a synthetic growth hormone used in dairy cows. Certified organic yogurt rules bar it in the herd.': [/rBST is a synthetic growth hormone used in dairy cows\./, /Certified organic yogurt rules bar it in the herd\./],
+  'For this herd treatment, take certified organic yogurt first. Next is a tub stating its milk comes from cows not given rBST. Tubs bearing neither claim rank last. US labels need not disclose whether cows received rBST.': [/No organic tub: one stating its milk comes from cows not given rBST/, /Neither ranks last\./, /US labels need not say\./],
+};
+
 test('C3 earlier seed-oil, glyphosate and rBST lines stay', () => {
   for (const id of nonEmpty(FULL, 'full cards', 10)) {
     const a = preCleanPick8(card(id)), b = was(id);
+    if (id === 'yogurt_plain_vs_flavored') {
+      const t = (a.buying_tips || []).join(' \n ');
+      for (const s of nonEmpty(b.buying_tips || [], `${id} base tips`, 9)) {
+        if (!YOGURT_FACTS[s]) { assert.ok((a.buying_tips || []).includes(s), `${id}.buying_tips lost: ${s}`); continue; }
+        for (const re of YOGURT_FACTS[s]) assert.match(t, re, `${id} lost: ${s}`);
+      }
+      for (const s of Object.keys(YOGURT_FACTS)) assert.ok((b.buying_tips || []).includes(s), `stale yogurt fact key: ${s}`);
+      assert.deepEqual(a.watch_out || [], b.watch_out || [], `${id} watch_out changed`);
+      assert.match((a.buying_tips || [])[0], /^(Look for|Read|Pick|Check|Skip)\b/, `${id} tip0 is not a buying instruction`);
+      continue;
+    }
     for (const f of ['buying_tips', 'watch_out']) {
       const now = a[f] || [];
       for (const s of b[f] || []) assert.ok(now.includes(s), `${id}.${f} lost: ${s}`);

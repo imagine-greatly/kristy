@@ -124,11 +124,11 @@ const BECAME = {
     ]
   },
   "pick_canned_tomatoes": {
-    "avoid": "Skip cans without a BPA-free lining stated on the label."
+    "avoid": "Skip cans with no BPA-free lining stated on the label."
   },
   "pick_cucumbers": {
     "decision": "Local or greenhouse cucumbers labeled grown without sprays, firm to the touch, else organic.",
-    "avoid": "Pass on cucumbers coated with wax, shellac or carnauba.",
+    "avoid": "Skip cucumbers coated with wax, shellac or carnauba wax.",
     "sources": [
       {
         "name": "Nebraska Extension: Cucumbers",
@@ -165,7 +165,7 @@ const BECAME = {
     "decision": "Local, in-season beans labeled grown without sprays."
   },
   "pick_egg_whites": {
-    "decision": "Whites from soy-free, corn-free pastured hens, then certified organic feed and outdoor access; pasteurized by law.",
+    "decision": "Soy-free pastured-hen whites, then certified organic feed and outdoor access; pasteurized.",
     "sources": [
       {
         "name": "USDA FSIS: Egg Products and Food Safety",

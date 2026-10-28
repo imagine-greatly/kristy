@@ -221,7 +221,7 @@ const SET = {
     ]
   },
   "pick_soup_bones": {
-    "decision": "Ask your meat counter for grass-fed, grass-finished marrow or knuckle soup bones.",
+    "decision": "Ask your meat counter for lifelong grass-fed marrow or knuckle soup bones.",
     "sources": [
       {
         "name": "MSU Extension: Are you throwing away valuable food? Part three: Meat",
@@ -367,7 +367,8 @@ const PICKS = ['pick_sausage', 'pick_egg_whites', 'pick_soup_bones', 'pick_jerky
 const RUNG = ['popcorn', 'oats_steelcut_rolled_instant', 'beans_dried_vs_canned', 'pasta_dry', 'grains_beyond_rice', 'raw_cider_vinegar', 'potato_chips'];
 const AVOID_ONLY = ['coffee_beans', 'tea'];
 const G4 = 'certified organic feed and outdoor access';
-const GRASS = /grass-fed, grass-finished/i;
+// Item-copy pass 2026-10-28: "finished" is banned shopper wording; "lifelong grass-fed" carries the same whole-life term.
+const GRASS = /grass-fed, grass-finished|lifelong grass-fed/i;
 const OWNED_CARD = ['decision', 'cart_pick', 'buying_tips', 'watch_out', 'detail', 'science', 'sources'];
 const urls = (e) => (e.sources || []).map((s) => (typeof s === 'string' ? s : s.url)).filter(Boolean);
 const strings = (e) => Object.entries(e).filter(([k]) => !['sources', 'id', 'labels_decoded'].includes(k)).flatMap(([, v]) => [v].flat()).filter((v) => typeof v === 'string');

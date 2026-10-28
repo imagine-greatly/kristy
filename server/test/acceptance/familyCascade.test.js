@@ -38,7 +38,7 @@ test('family cascade: flour decision pins the live sourcing order', () => {
   const flour = entries.find((e) => e.id === 'flour_basics');
   assert.ok(flour, 'flour_basics exists');
   // P4 pilot: the flour front names organic whole wheat and the excluded label wording.
-  assert.equal(flour.decision, 'Organic whole-wheat flour without bleached or enriched wording.');
+  assert.equal(flour.decision, 'Organic sprouted whole-wheat flour, unbleached, not enriched.');
 });
 
 test('family cascade: historical overlay changes only cascade fields and preserves its input', () => {

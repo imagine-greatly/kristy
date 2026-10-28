@@ -175,7 +175,7 @@ const BECAME = {
         'url': 'https://reverencefarms.com/blogs/news/why-is-it-so-important-to-feed-organic-feed-isn-t-non-gmo-almost-as-good'
       }
     ],
-    'avoid': 'Skip sausage listing mechanically separated chicken, turkey or pork.'
+    'avoid': 'Skip sausage that lists mechanically separated (machine-stripped) chicken, turkey or pork.'
   },
   'pick_jerky': {
     'decision': 'Whole-muscle grass-fed, grass-finished beef jerky with a short list; celery powder in “uncured” jerky supplies nitrite.',
@@ -205,7 +205,7 @@ const BECAME = {
         'url': 'https://blogs.extension.iastate.edu/answerline/2019/04/18/liquid-smoke-that-controversial-condiment/'
       }
     ],
-    'avoid': 'Skip jerky listing liquid smoke or smoke flavoring.'
+    'avoid': 'Skip jerky that lists liquid smoke or smoke flavoring.'
   },
   'rotisserie_chicken': {
     'sources': [
@@ -384,7 +384,7 @@ const PILOT_FIELDS = {
     ]
   },
   "pick_jerky": {
-    "decision": "Grass-fed, grass-finished beef jerky with simple ingredients.",
+    "decision": "Lifelong grass-fed beef jerky with a short list of simple ingredients.",
     "sources": [
       {
         "name": "Weston A. Price Foundation",
