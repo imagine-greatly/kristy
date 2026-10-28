@@ -165,7 +165,8 @@ const BECAME = {
     "decision": "Local, in-season beans labeled grown without sprays."
   },
   "pick_egg_whites": {
-    "decision": "Soy-free pastured-hen whites, then certified organic feed and outdoor access; pasteurized.",
+    // Item-copy flags pass 2026-10-28: corn-free and "by law" restored from fdd5301~1.
+    "decision": "Soy-free, corn-free pastured-hen whites, then certified organic feed and outdoor access; pasteurized by law.",
     "sources": [
       {
         "name": "USDA FSIS: Egg Products and Food Safety",
