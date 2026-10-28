@@ -11412,6 +11412,7 @@
       "buying_tips": [
         "Read the list for one fat: pork for lard, beef for tallow (beef fat).",
         "Look for pigs raised outdoors, or cattle grass-fed their whole life, on the label.",
+        "Can’t find it: render leaf lard or suet at home from a small pasture farm’s fat.",
         "Pick leaf lard, made from the fat around the belly, for lard.",
         "Check that a tub called shortening is not taken for plain lard.",
         "Render leaf lard or suet at home from a small pasture farm’s fat.",
@@ -11738,6 +11739,7 @@
       "buying_tips": [
         "Read the list: coconut and water only, with no guar gum or other gum.",
         "Look for ‘BPA-free lining’ or ‘non-BPA’ on the can; many cans have an epoxy lining made with BPA.",
+        "No gum-free can: the can whose list holds the least beyond coconut and water.",
         "Pick glass where the same coconut milk is sold in a jar; a jar has no can lining.",
         "Skip coconut milk in shelf-stable boxes and ‘lite’ cans; whole canned milk is the pick.",
         "Compare two cans by how much the list holds beyond coconut.",
@@ -12012,6 +12014,7 @@
       "buying_tips": [
         "Read the first ingredient: tomatoes lead, olive oil is the oil, no added sweetener.",
         "Count what follows the tomatoes; a short list is the craft standard.",
+        "Can’t find it: the jar with the shortest list after the tomatoes, still no added sweetener.",
         "Pick glass over cans or boxes; a jar has no can lining.",
         "Skip citric acid on the list.",
         "On canned tomatoes, read the ‘with’ words for added spices, seasonings or vegetables.",
@@ -12080,6 +12083,7 @@
       "buying_tips": [
         "Read the list: fruit first, honey or another natural sweetener, no citric acid.",
         "Read the name for ‘Jam’ or ‘Preserves’ with the fruit named.",
+        "No honey or maple jam: fruit first with another natural sweetener, never white sugar or corn syrup.",
         "Skip jam sweetened with white sugar or corn syrup.",
         "Preserves hold small whole fruits or even pieces in a thick syrup.",
         "In a mixed-fruit jam, the fruits are listed most first.",
@@ -12239,6 +12243,7 @@
       "buying_tips": [
         "Read the oil list: olive oil as the only oil, whatever the front says.",
         "Check that the name on the jar is ‘Mayonnaise’, with egg yolk and vinegar or citrus juice.",
+        "No olive-oil-only jar: make it at home from egg yolk and cold-pressed olive oil.",
         "Skip seed oils: sunflower, safflower, canola, soybean, corn and cottonseed.",
         "Compare jars by what they add beyond oil, egg yolk, acid and salt.",
         "Homemade mayo of egg yolk and cold-pressed olive oil comes first.",
