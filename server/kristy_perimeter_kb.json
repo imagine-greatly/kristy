@@ -4749,7 +4749,7 @@
         "“Refined”, “pure”, or no process word at all usually means solvent-extracted and refined.",
         "Pick a dark bottle, a cool shelf and a size you will finish; pressed oils are the least stable.",
         "Unrefined oils taste like their source; refined ones taste like nothing.",
-        "Avocado oil works when the maker shows it is pure and cold-pressed. Otherwise reach for olive or coconut.",
+        "Skip avocado oil regardless of the pressing words; its label cannot prove purity.",
         "Most supermarket oil is solvent-extracted, then refined, bleached and deodorized."
       ],
       "labels_decoded": [
@@ -11332,7 +11332,7 @@
       "category": "bulk_pantry",
       "question": "How do you pick a cooking oil?",
       "decision": "Organic extra virgin olive or virgin coconut oil, alone.",
-      "why": "The list names the fat. Avocado oil fits only when the maker states it is pure and pressed without heat.",
+      "why": "The list names the fat. Skip avocado oil: the label cannot prove the oil is pure.",
       "short_answer": "The standard is olive oil, virgin coconut oil, butter, ghee, or pastured animal fat. Read every oil on the list. “Vegetable oil” names no single oil. Store oils are usually refined, bleached and deodorized; the bottle says refined or unrefined.",
       "detail": "Most edible oils in stores are RBD oils: refined, bleached and deodorized. These steps make an oil consistent in taste, color and stability, and generally tasteless, odorless and colorless. Small-scale pressed oils that are minimally processed keep the flavors and smells of the original oilseed. The name “vegetable oil” names no single oil; the ingredient list names the oils. The smoke point is the temperature at which an oil begins to smoke and burn. An oil past its smoke point is no longer fit to use.",
       "evidence_tier": "established",
@@ -11349,7 +11349,7 @@
         "Skip ‘vegetable oil’ on a label; it names a category, not one seed or fruit.",
         "Can’t find either: rendered pork or beef fat from pastured animals.",
         "Skip sunflower, safflower, canola, soybean, corn and cottonseed oils; the last four come from mostly bioengineered crops.",
-        "Avocado oil fits only when the maker states it is pure and pressed without heat.",
+        "Skip avocado oil too, blends and “made with avocado oil” included; the label cannot prove the oil is pure.",
         "Read the list for BHA, BHT, TBHQ or propyl gallate, preservatives added to oils, and pick one without them.",
         "Read the oil’s name first, then ‘refined’ or ‘unrefined’."
       ],
@@ -12797,7 +12797,7 @@
       "decision": "Organic sprouted or sourdough whole-grain crackers, butter or olive oil.",
       "why": "WAPF lists white-flour crackers with partially hydrogenated oils, soy flour or additives under avoid.",
       "short_answer": "Crackers are mostly wheat flour and water, baked dry and seasoned. Ingredients run in order of amount. A whole grain listed first leads the cracker, and plain “wheat flour” is not a whole grain flour.",
-      "detail": "Under 21 CFR 101.4, ingredients are listed in descending order of predominance. FDA draft guidance says the ingredient list should show whether the first ingredient is a whole grain. “Wheat flour” is a synonym of flour, so it is not a whole grain flour. Soda crackers are fermented and leavened with yeast. The finest soda crackers take a long sponge fermentation, where most of the flour ferments first as a pre-ferment. Sourdough crackers are made from sourdough starter. Docking holes are poked in the dough to stop large air pockets while baking. Animal crackers are crackers in name only, and modern graham crackers are sweet. Olive oil, coconut oil or butter is Kristy’s standard for crackers. Skip seed oils; avocado oil fits only when the maker states it is pure and cold-pressed. Skip “partially hydrogenated” or “interesterified” oil on the list; look for olive oil, coconut oil or butter. Skip refined palm oil or fractionated palm kernel oil in crackers; look for butter or olive oil. Brown rice generally carries more arsenic than white rice; rotate rice-flour crackers with whole wheat or oat crackers.",
+      "detail": "Under 21 CFR 101.4, ingredients are listed in descending order of predominance. FDA draft guidance says the ingredient list should show whether the first ingredient is a whole grain. “Wheat flour” is a synonym of flour, so it is not a whole grain flour. Soda crackers are fermented and leavened with yeast. The finest soda crackers take a long sponge fermentation, where most of the flour ferments first as a pre-ferment. Sourdough crackers are made from sourdough starter. Docking holes are poked in the dough to stop large air pockets while baking. Animal crackers are crackers in name only, and modern graham crackers are sweet. Olive oil, coconut oil or butter is Kristy’s standard for crackers. Skip seed oils and avocado oil. Skip “partially hydrogenated” or “interesterified” oil on the list; look for olive oil, coconut oil or butter. Skip refined palm oil or fractionated palm kernel oil in crackers; look for butter or olive oil. Brown rice generally carries more arsenic than white rice; rotate rice-flour crackers with whole wheat or oat crackers.",
       "evidence_tier": "established",
       "sources": [
         {
@@ -12819,7 +12819,7 @@
       ],
       "watch_out": [
         "A front that leads with whole-grain words can still list refined flour first.",
-        "Avocado oil fits only when the maker states it is pure and cold-pressed."
+        "Skip avocado oil too: the label cannot prove the oil is pure."
       ],
       "pick_steps": [
         "Check that the list starts with a whole grain, whatever the front says.",
@@ -12872,7 +12872,7 @@
       "decision": "Organic masa chips fried in coconut oil, lard or ghee.",
       "why": "Corn cooked in limewater grinds into masa, a dough. Untreated cornmeal will not form one.",
       "short_answer": "Corn for tortillas is cooked in an alkaline solution, usually limewater, then ground into masa. Some corn chips use corn that never went through that step. Masa and a trace of lime often show on the ingredients.",
-      "detail": "The step is nixtamalization: dry corn is soaked and cooked in a solution of slaked lime and water. Slaked lime is calcium hydroxide, called “cal.” The cooked corn, called nixtamal, is washed, then ground into a dough, masa. The word comes from Nahuatl, the Aztec language. Cornmeal from untreated corn cannot form a dough with water alone. Masa harina means “dough flour,” the powder ground from nixtamal. Masa flour made at scale is based on the traditional method. Restaurant-style chips are tortillas cut into wedges and fried. Most bagged chips are shaped straight from coarse masa dough and fried. For chips, Kristy’s standard is lard, tallow, coconut oil or olive oil. Skip seed oils; avocado oil fits only when the maker states it is pure and cold-pressed.",
+      "detail": "The step is nixtamalization: dry corn is soaked and cooked in a solution of slaked lime and water. Slaked lime is calcium hydroxide, called “cal.” The cooked corn, called nixtamal, is washed, then ground into a dough, masa. The word comes from Nahuatl, the Aztec language. Cornmeal from untreated corn cannot form a dough with water alone. Masa harina means “dough flour,” the powder ground from nixtamal. Masa flour made at scale is based on the traditional method. Restaurant-style chips are tortillas cut into wedges and fried. Most bagged chips are shaped straight from coarse masa dough and fried. For chips, Kristy’s standard is lard, tallow, coconut oil or olive oil. Skip seed oils and avocado oil.",
       "evidence_tier": "established",
       "sources": [
         {
@@ -12911,7 +12911,7 @@
       ],
       "watch_out": [
         "Some corn chips are made from corn that was never cooked in lime.",
-        "Avocado oil fits only when the maker states it is pure and cold-pressed.",
+        "Skip avocado oil too: the label cannot prove the oil is pure.",
         "Canola, soy or corn frying oil in tortilla chips is typically derived from bioengineering."
       ],
       "pick_steps": [
@@ -12955,7 +12955,7 @@
       "decision": "Organic sliced chips fried in lard, coconut or olive oil.",
       "why": "A potato chip is a thin slice of potato, fried. Stacked crisps are pressed from dried potato flakes.",
       "short_answer": "A potato chip is a thin slice of potato, fried. Some stacked crisps are shaped from dried potato flakes and cornstarch. Their labels can say “made from dried potatoes.” A sliced chip lists potatoes.",
-      "detail": "The FDA classifies potato chips as thin slices of potatoes fried in deep fat. A stacked crisp starts from dehydrated potato flakes mixed with cornstarch and water. That mix gives every piece the same shape for stacking. The FDA let one such product use the name potato chips only with a prominent disclaimer: “potato chips made from dried potatoes.” Its maker chose “potato crisps,” the British term, instead. For chips, Kristy’s standard is lard, tallow, coconut oil or olive oil. Skip seed oils; avocado oil fits only when the maker states it is pure and cold-pressed. High-heat frying browns starchy slices, and darker browning forms more of a heat-made compound. Look for lighter browning: golden chips over dark ones. Monosodium glutamate is a flavor enhancer used in chips; skip it on the ingredient list and look for potatoes, oil and salt.",
+      "detail": "The FDA classifies potato chips as thin slices of potatoes fried in deep fat. A stacked crisp starts from dehydrated potato flakes mixed with cornstarch and water. That mix gives every piece the same shape for stacking. The FDA let one such product use the name potato chips only with a prominent disclaimer: “potato chips made from dried potatoes.” Its maker chose “potato crisps,” the British term, instead. For chips, Kristy’s standard is lard, tallow, coconut oil or olive oil. Skip seed oils and avocado oil. High-heat frying browns starchy slices, and darker browning forms more of a heat-made compound. Look for lighter browning: golden chips over dark ones. Monosodium glutamate is a flavor enhancer used in chips; skip it on the ingredient list and look for potatoes, oil and salt.",
       "evidence_tier": "established",
       "sources": [
         {
@@ -12987,7 +12987,7 @@
       ],
       "watch_out": [
         "“Potato crisps” can name a product pressed from dried potato flakes, not slices.",
-        "Avocado oil fits only when the maker states it is pure and cold-pressed."
+        "Skip chips labeled “made with avocado oil” too; the label cannot prove the oil is pure."
       ],
       "pick_steps": [
         "Read the ingredients: a sliced chip starts with potatoes, not dried flakes.",
@@ -13027,7 +13027,7 @@
       "decision": "Organic kernels popped at home in butter or coconut oil.",
       "why": "Plain kernels pop with no oil at all, so the cook decides on any butter, oil or salt.",
       "short_answer": "Popcorn is its own variety of corn. Water inside the hard hull turns to steam, the hull bursts and the kernel turns inside out. Plain kernels pop in a paper bag in the microwave, no oil needed.",
-      "detail": "Popcorn is a variety of corn, Zea mays everta. Its hard outer hull is the pericarp. Inside, moisture runs about 13 to 14.5 percent of the kernel. As the water heats, the kernel acts as a pressure cooker until the hull ruptures. Kernels with cuts or weak spots in the hull let the moisture escape and stay unpopped. In one study, 4 to 47 percent of kernels failed to pop, depending on variety. Two popped shapes are grown, butterfly and mushroom. Mushroom popcorn is often sold prepopped and coated with flavorings. For popping at home, Kristy’s standard is coconut oil, butter or tallow. Skip seed oils; avocado oil fits only when the maker states it is pure and cold-pressed.",
+      "detail": "Popcorn is a variety of corn, Zea mays everta. Its hard outer hull is the pericarp. Inside, moisture runs about 13 to 14.5 percent of the kernel. As the water heats, the kernel acts as a pressure cooker until the hull ruptures. Kernels with cuts or weak spots in the hull let the moisture escape and stay unpopped. In one study, 4 to 47 percent of kernels failed to pop, depending on variety. Two popped shapes are grown, butterfly and mushroom. Mushroom popcorn is often sold prepopped and coated with flavorings. For popping at home, Kristy’s standard is coconut oil, butter or tallow. Skip seed oils and avocado oil.",
       "evidence_tier": "established",
       "sources": [
         {
@@ -13056,7 +13056,7 @@
       ],
       "watch_out": [
         "Prepopped popcorn is often coated with flavorings before it reaches the shelf.",
-        "Avocado oil fits only when the maker states it is pure and cold-pressed.",
+        "Skip avocado oil too: the label cannot prove the oil is pure.",
         "Skip canola, soy or corn oil in ready-popped bags; these oils are typically derived from bioengineering.",
         "Microwave popcorn bags are grease-lined, and grease-resistant packaging can carry PFAS. Pop plain kernels on the stove instead."
       ],
@@ -13160,7 +13160,7 @@
       "decision": "Organic nuts or fruit, or a nut and date bar.",
       "why": "WAPF lists brown rice syrup and agave under avoid; whole nuts or fruit keep the snack ingredients recognizable.",
       "short_answer": "Whole nuts, fruit, jerky or cheese do the job of a bar with nothing added. If a bar is the choice, its list reads nuts, seeds and dates, nothing else. Granola and energy bars sit on the low rung.",
-      "detail": "Under 21 CFR 101.4, ingredients are listed in descending order of predominance. Granola is rolled oats, nuts, seeds and honey or another sweetener, usually baked. A granola bar mixes granola with honey or syrup, pressed and baked into a bar. For added fat in bars, Kristy’s standard is olive oil, coconut oil or butter. Skip seed oils; avocado oil fits only when the maker states it is pure and cold-pressed. Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed. Choose certified organic oat bars over conventional. Conventional oats may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic oats. Many bars carry sugar and high fructose corn syrup, and the list shows which. Skip refined palm oil or fractionated palm kernel oil in bars; look for coconut oil, olive oil or butter.",
+      "detail": "Under 21 CFR 101.4, ingredients are listed in descending order of predominance. Granola is rolled oats, nuts, seeds and honey or another sweetener, usually baked. A granola bar mixes granola with honey or syrup, pressed and baked into a bar. For added fat in bars, Kristy’s standard is olive oil, coconut oil or butter. Skip seed oils and avocado oil. Seed oils to skip: sunflower, safflower, canola, soybean, corn, and cottonseed. Choose certified organic oat bars over conventional. Conventional oats may be sprayed with glyphosate shortly before harvest to dry the crop. Organic farming does not allow glyphosate. Drift can still leave residues on organic oats. Many bars carry sugar and high fructose corn syrup, and the list shows which. Skip refined palm oil or fractionated palm kernel oil in bars; look for coconut oil, olive oil or butter.",
       "evidence_tier": "kristys_standard",
       "sources": [
         {
@@ -13185,7 +13185,7 @@
       ],
       "watch_out": [
         "Enriched refined grains listed first mean refined grain leads the bar.",
-        "Avocado oil fits only when the maker states it is pure and cold-pressed."
+        "Skip avocado oil too: the label cannot prove the oil is pure."
       ],
       "pick_steps": [
         "Check that oats or another whole grain lead the list, not enriched refined grain.",
@@ -13813,7 +13813,7 @@
       "decision": "Organic frozen fries cooked in tallow, lard or coconut oil.",
       "why": "At home, a hash brown takes potatoes, oil, salt and pepper. The bag’s list shows what else is in it.",
       "short_answer": "Read the ingredient list on the bag. At home, a hash brown takes potatoes, oil, salt and pepper. Home fries take starchy potatoes and salt. Compare bags by what they list beyond those.",
-      "detail": "The federal grade standard describes frozen french fries as mature white potatoes, washed, sorted and trimmed. They may be cut or left whole. They are deep-fried or blanched in fat or oil, then frozen. Blanching is a short cook in hot water or steam. In a plant, the strips are peeled, cut and blanched, then par-fried, meaning partly fried, and frozen. Blanching also leaches sugars from the strips. The fries are finish-fried from frozen to develop color and crispness. Why it works: frying is first a dehydration process, meaning it drives water out of the food. The drier the food going in, the better the crust. So cooks fry once, freeze, and fry again. As food cools, moisture moves from the center to the surface. The second fry boils it off. The first fry also leaves simpler pathways inside, so water escapes more easily the second time. An air fryer is a convection appliance, meaning it circulates hot air. It cooks faster than an oven and gives a crisp outside. French fries cook well in one. For added fat, Kristy’s standard is tallow, olive oil, or coconut oil. Skip seed oils; avocado oil fits only when the maker states it is pure and cold-pressed. Look for thick-cut fries on the bag. Acrylamide forms during high-heat browning; it is a cooking byproduct, not an added ingredient.",
+      "detail": "The federal grade standard describes frozen french fries as mature white potatoes, washed, sorted and trimmed. They may be cut or left whole. They are deep-fried or blanched in fat or oil, then frozen. Blanching is a short cook in hot water or steam. In a plant, the strips are peeled, cut and blanched, then par-fried, meaning partly fried, and frozen. Blanching also leaches sugars from the strips. The fries are finish-fried from frozen to develop color and crispness. Why it works: frying is first a dehydration process, meaning it drives water out of the food. The drier the food going in, the better the crust. So cooks fry once, freeze, and fry again. As food cools, moisture moves from the center to the surface. The second fry boils it off. The first fry also leaves simpler pathways inside, so water escapes more easily the second time. An air fryer is a convection appliance, meaning it circulates hot air. It cooks faster than an oven and gives a crisp outside. French fries cook well in one. For added fat, Kristy’s standard is tallow, olive oil, or coconut oil. Skip seed oils and avocado oil. Look for thick-cut fries on the bag. Acrylamide forms during high-heat browning; it is a cooking byproduct, not an added ingredient.",
       "evidence_tier": "kristys_standard",
       "sources": [
         {
@@ -13848,7 +13848,7 @@
       ],
       "watch_out": [
         "Fried foods frozen at home may lose their crispness.",
-        "Avocado oil fits only when the maker states it is pure and cold-pressed."
+        "Skip avocado oil too: the label cannot prove the oil is pure."
       ],
       "pick_steps": [
         "Read the bag for potatoes, salt, and tallow, olive oil, or coconut oil.",
@@ -13958,7 +13958,7 @@
       "decision": "Organic pasture-raised chicken nuggets, one solid piece of white meat.",
       "why": "“White meat” means 100 percent light meat, and “mostly white meat” means 66 percent or more.",
       "short_answer": "The label words set the light meat. “White meat” means 100 percent light meat, and “mostly white meat” 66 percent or more. A plain “Chicken Nugget” is a solid piece of meat or poultry.",
-      "detail": "On poultry labels, “white meat” or “light meat” means 100 percent light meat. “Mostly white meat” means 66 percent or more light meat. “Natural proportions” means 50 to 65 percent light meat. A nugget is an irregular, usually bite-sized piece, usually breaded and fried, meant as finger food. “Chicken Nugget” with no qualifier means a solid piece of meat or poultry. “Chopped and Formed” beside the name means chopped and formed meat or poultry. With binders, extenders or water, “nugget” is only a fanciful name. A descriptive name then follows, such as “Breaded Nugget-Shaped Chicken Patties”. A product labeled “breaded” carries batter and breading of no more than 30 percent of the finished product. “Ice glazed” beside the name means an ice glaze set the breading. “Mechanically Separated Chicken” is poultry with most of the bone removed by machine, in a paste-like form. Its bone solids are at most 1 percent. For added fat, Kristy’s standard is tallow, olive oil, or coconut oil. Skip seed oils; avocado oil fits only when the maker states it is pure and cold-pressed.",
+      "detail": "On poultry labels, “white meat” or “light meat” means 100 percent light meat. “Mostly white meat” means 66 percent or more light meat. “Natural proportions” means 50 to 65 percent light meat. A nugget is an irregular, usually bite-sized piece, usually breaded and fried, meant as finger food. “Chicken Nugget” with no qualifier means a solid piece of meat or poultry. “Chopped and Formed” beside the name means chopped and formed meat or poultry. With binders, extenders or water, “nugget” is only a fanciful name. A descriptive name then follows, such as “Breaded Nugget-Shaped Chicken Patties”. A product labeled “breaded” carries batter and breading of no more than 30 percent of the finished product. “Ice glazed” beside the name means an ice glaze set the breading. “Mechanically Separated Chicken” is poultry with most of the bone removed by machine, in a paste-like form. Its bone solids are at most 1 percent. For added fat, Kristy’s standard is tallow, olive oil, or coconut oil. Skip seed oils and avocado oil.",
       "evidence_tier": "established",
       "sources": [
         {
@@ -13995,7 +13995,7 @@
       ],
       "watch_out": [
         "“Nugget-Shaped” in the name marks chopped meat that may hold binders, extenders or water.",
-        "Avocado oil fits only when the maker states it is pure and cold-pressed.",
+        "Skip avocado oil too: the label cannot prove the oil is pure.",
         "Pass on nuggets listing sodium phosphate; added phosphates help the chicken soak up and hold water."
       ],
       "pick_steps": [
@@ -16762,10 +16762,6 @@
         {
           "name": "Tortilla-chip preparation and fats",
           "url": "https://wellnessmama.com/recipes/homemade-tortilla-chips/"
-        },
-        {
-          "name": "Organic cold-pressed unrefined avocado oil disclosure",
-          "url": "https://bellavado.com/products/usda-organic-culinary-oil"
         }
       ]
     },
@@ -16775,7 +16771,7 @@
       "title": "Sliced-potato chips",
       "category": "aisle_snacks",
       "decision": "Organic potato chips fried in coconut oil, lard or ghee.",
-      "why": "Sliced potatoes differ from crisps formed from flakes and starch. Accepted fats include sourced lard or tallow, coconut or olive oil, with pure cold-pressed avocado oil a conditional option. These are formula preferences, without a universal ranking of animal fat over coconut oil.",
+      "why": "Sliced potatoes differ from crisps formed from flakes and starch. Accepted fats include sourced lard or tallow, coconut or olive oil. These are formula preferences, without a universal ranking of animal fat over coconut oil.",
       "buying_tips": [
         "Read the oil: coconut oil, lard from pastured pigs, or ghee.",
         "Look for the USDA Organic seal on the front of the bag.",
@@ -16794,10 +16790,6 @@
         {
           "name": "Traditional cooking and finishing fat preferences",
           "url": "https://nourishedkitchen.com/my-favorite-minimally-processed-unrefined-fats-oils/"
-        },
-        {
-          "name": "Organic cold-pressed unrefined avocado oil disclosure",
-          "url": "https://bellavado.com/products/usda-organic-culinary-oil"
         }
       ]
     },
@@ -16835,7 +16827,7 @@
       "title": "Cooking fats and simple spreads",
       "category": "aisle_pantry_bulk",
       "decision": "One organic fat on its own: extra virgin olive oil, virgin coconut oil, butter or lard.",
-      "why": "Olive, coconut, dairy and rendered animal fats need different source and use checks. Pure cold-pressed or unrefined avocado oil is another disclosed option. A plant spread qualifies only if its entire formula passes; no qualifying retail spread is assumed available.",
+      "why": "Olive, coconut, dairy and rendered animal fats need different source and use checks. A plant spread qualifies only if its entire formula passes; no qualifying retail spread is assumed available.",
       "buying_tips": [
         "Look for one named fat on the label, not a blend, plus USDA Organic.",
         "Skip bottles that say only ‘vegetable oil’.",
@@ -16854,10 +16846,6 @@
         {
           "name": "Rendered-fat sourcing and storage",
           "url": "https://fatworks.com/pages/fat-faqs"
-        },
-        {
-          "name": "Organic cold-pressed unrefined avocado oil disclosure",
-          "url": "https://bellavado.com/products/usda-organic-culinary-oil"
         }
       ]
     },
@@ -17123,7 +17111,7 @@
       "title": "Mayonnaise: disclosed oils",
       "category": "aisle_condiments",
       "decision": "Organic mayonnaise made with olive oil only and pasture-raised eggs.",
-      "why": "The full oil blend matters more than the front label. Olive oil leads this preference, with explicitly documented pure cold-pressed avocado oil as an alternative. Prefer a small maker disclosing ingredients and egg sourcing.",
+      "why": "The full oil blend matters more than the front label. Olive oil leads this preference; skip avocado oil. Prefer a small maker disclosing ingredients and egg sourcing.",
       "buying_tips": [
         "Read the whole oil list: olive oil and nothing else.",
         "Skip jars that add soybean, canola or ‘vegetable oil’ next to olive oil.",

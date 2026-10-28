@@ -117,8 +117,8 @@ test('t6-3: avocado oil is never the lead pick, and only pure and cold-pressed',
       assert.doesNotMatch(line, /\b(?:choose|pick|prefer|recommend|best)\b[^.!?;]*\bavocado oil\b/i, `${id}: ${line}`);
     }
   }
-  // The oil shelf card states the condition outright.
-  assert.ok(card('cooking_oils').buying_tips.some((s) => /avocado oil/i.test(s) && AVO_COND.test(s)), 'cooking_oils: pure and cold-pressed condition');
+  // Item-copy flags pass 2026-10-28: DECISIONS.md stance (never avocado oil) restored; the oil shelf card states the skip outright.
+  assert.ok(card('cooking_oils').buying_tips.some((s) => /^skip avocado oil\b/i.test(s)), 'cooking_oils: avocado oil skip');
 });
 
 const walk = (d) => readdirSync(d).flatMap((f) => { const p = join(d, f); return statSync(p).isDirectory() ? walk(p) : [p]; });
