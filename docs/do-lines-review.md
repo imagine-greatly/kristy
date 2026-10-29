@@ -36,10 +36,10 @@ Also: imperative, starts with a verb, ≤14 words.
 
 | slug | section | current headline | proposed do | flag |
 | --- | --- | --- | --- | --- |
-| `salmon_wild_vs_farmed` | seafood | Wild Alaskan salmon, fresh or frozen, like sockeye or coho. | Read for wild Alaskan, then check the flesh for a deep red color. | — |
+| `salmon_wild_vs_farmed` | seafood | Wild Alaskan salmon, blue MSC label, fresh or frozen, like sockeye or coho. | Find the MSC label and wild Alaskan, then check for deep red flesh. | — |
 | `shrimp_imported_vs_domestic` | seafood | Wild US or Gulf shrimp, frozen raw; read the country. | Read the bag for Gulf or US wild origin; check for shells. | — |
 | `rotisserie_chicken` | meat | Pasture-raised or organic rotisserie chicken, salt and spices only. | Read the ingredient list for added starches or sweeteners. | — |
-| `beef_grassfed_vs_grainfed` | meat | 100% grass-fed or grass-finished beef. | Find the AGA seal and 100% grass-fed wording. | — |
+| `beef_grassfed_vs_grainfed` | meat | 100% grass-fed or grass-finished beef. | Find the ranch named on the beef pack. | — |
 | `beef_cuts_basics` | meat | 100% grass-fed or grass-finished steak, not mechanically tenderized. | Check the tray’s seal and the AGA and USDA marks. | — |
 | `ground_beef_lean_ratio` | meat | An organ blend, or 100% grass-fed ground beef. | Find the lean ratio beside the AGA seal on the pack. | — |
 | `egg_labels` | eggs_dairy | Soy-free, corn-free eggs from hens on pasture. | Find USDA Organic on the carton beside the other seal. | — |
@@ -58,7 +58,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `rice_arsenic` | bulk_pantry | White basmati or sushi rice. | Check the origin on the bag; skip brown rice syrup. | — |
 | `oats_steelcut_rolled_instant` | bulk_pantry | Plain organic oats, steel-cut or rolled. | Skip instant packets listing flavor or sugar; read for whole grain oats. | — |
 | `nuts_raw_vs_roasted` | bulk_pantry | Raw or dry-roasted nuts, with no added oil. | Find raw on the sealed pack; skip sugared or coated nuts. | — |
-| `honey_adulteration` | bulk_pantry | Raw honey from a named, local or single-source producer. | Look through the jar for cloudiness from pollen, rather than clear honey. | — |
+| `honey_adulteration` | bulk_pantry | Raw honey from a named, local or single-source producer. | Look through the jar for cloudy honey, then a named origin and lot code. | — |
 | `beans_dried_vs_canned` | bulk_pantry | Organic dried beans, whole with unbroken skins. | Read dry bags for beans alone; check tins for a BPA-free claim. | — |
 | `label_natural` | label_terms | A defined label claim and the ingredient list over ‘natural’. | Look for a defined word instead: organic, grass-finished, or pasture-raised. | — |
 | `label_made_with_real` | label_terms | The ‘real’ ingredient listed before added sugar and refined flour. | Count how far down it sits. Past third is a trace. | — |
@@ -74,10 +74,10 @@ Also: imperative, starts with a verb, ≤14 words.
 | `judging_meat_at_the_case` | meat | Sealed, leak-free meat with the newest ‘packaged on’ date. | Check the package is sealed and not leaking juices, then smell it. | — |
 | `butcher_counter_asking` | meat | 100% grass-fed soup bones and a whole chuck, freshly ground. | Ask what came in today and when it was cut. | — |
 | `chicken_cuts_basics` | meat | Air-chilled pasture-raised whole chicken, then bone-in, skin-on thighs. | Check for cream-yellow skin and an AWA seal on the bird. | — |
-| `pork_cuts_and_enhanced` | meat | Organic or pasture-raised pork with no added solution. | Find an AWA or Certified Humane pasture seal on the chop pack. | — |
+| `pork_cuts_and_enhanced` | meat | Organic or pasture-raised pork with no added solution. | Find an AWA or Certified Humane seal and USDA Organic on the chop pack. | — |
 | `deli_meat_uncured` | meat | Organic or pasture-raised whole roasted meat, sliced thin. | Ask for fresh slices from a whole roast bearing an Uncured label. | — |
 | `mercury_by_fish` | seafood | Sardines, anchovies, salmon or canned light tuna, lowest in mercury. | Check the species name on the can for sardines. | — |
-| `canned_fish_choosing` | seafood | Bone-in sardines or salmon, packed in olive oil or water. | Read the species name and check for fish, water or olive oil. | — |
+| `canned_fish_choosing` | seafood | Bone-in sardines or MSC wild salmon, packed in olive oil or water. | Read the species name and check for fish, water or olive oil. | — |
 | `farmed_fish_by_species` | seafood | Farmed mussels, oysters or clams; then trout, char or barramundi. | Find the ASC logo on the fish pack. | — |
 | `seafood_certifications` | seafood | Blue MSC logo on wild fish; ASC logo on farmed. | Check the MSC program name, blue fish symbol and tracking code. | — |
 | `produce_ripeness_by_item` | produce | The heavier of two same-size pieces, for more juice. | Smell the stem end on anything that ripens after picking. | — |
@@ -98,7 +98,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `label_third_party_seals` | label_terms | A seal naming a program with an outside auditor. | Trace the seal to an organization, not the brand’s own logo. | — |
 | `label_cold_pressed_expeller` | label_terms | Cold-pressed or expeller-pressed olive or coconut oil. | Read the bottle’s pressing method: cold or expeller. | — |
 | `label_sugar_free_substitutes` | label_terms | ‘Unsweetened’; on ‘sugar-free’, read which substitute is listed. | Read the list for erythritol, maltitol, stevia, sucralose — one is there. | — |
-| `label_wild_vs_farm_raised` | label_terms | Whole or skin-on fish labeled with species, method and country. | Read the tag for wild or farm-raised, plus origin and catch details. | — |
+| `label_wild_vs_farm_raised` | label_terms | Whole or skin-on fish labeled with species, method and country. | Look for MSC, or ASC or BAP on farmed fish, plus catch details. | — |
 | `label_serving_size` | label_terms | Packs compared at matching serving sizes, times servings per container. | Check both packages list the same serving size before comparing anything. | — |
 | `label_artificial_color` | label_terms | Colors named on the list, like Red 40. | Check candy, frosting and white dressings for “color added” near the list’s end. | — |
 | `raw_kefir` | eggs_dairy | Plain raw kefir from a named farm, sold cold. | Buy it from the refrigerated case, never the shelf-stable carton. | — |
@@ -127,10 +127,10 @@ Also: imperative, starts with a verb, ≤14 words.
 | `pasta_dry` | bulk_pantry | Organic dry pasta of durum semolina and water. | Turn the box over and read the flour and any added ingredients. | — |
 | `oat_milk` | eggs_dairy | Unsweetened, unfortified oat milk with nothing added, never seed oil. | Read the ingredients for added vitamins and minerals, then the stabilizers. | — |
 | `coffee_beans` | bulk_pantry | Beans in a sealed bag that limits air. | Check the bag’s seal and keep the coffee closed between uses. | — |
-| `bacon` | meat | Organic or pasture-raised bacon with a short curing list. | Find the pasture seal on the bacon pack. | — |
+| `bacon` | meat | Organic or pasture-raised bacon with a short curing list. | Find the AWA pasture seal on the bacon pack. | — |
 | `hot_dogs` | meat | Organic beef hot dogs with no phosphates or binders. | Find the AGA seal, then count the ingredients. | — |
 | `canned_tuna` | seafood | Pole- or troll-caught light tuna in olive oil or water. | Read the catch wording for pole, troll, FAD-free or school methods. | — |
-| `chicken_breast` | meat | Pasture-raised or organic bone-in, skin-on breast; no solution added. | Find the Certified Humane Pasture Raised seal alongside USDA certification. | — |
+| `chicken_breast` | meat | Pasture-raised or organic bone-in, skin-on breast; no solution added. | Find the AWA seal and USDA Organic on the pack. | — |
 | `ham` | meat | Organic or pasture-raised ham named just “Ham”. | Read the product name’s opening word for Uncured, then check for pork and salt. | — |
 | `turkey_bacon` | meat | Organic or pasture-raised turkey bacon with no added sugar. | Read the name for Uncured, then check which meat leads the ingredient list. | — |
 | `cured_pork` | meat | Organic or pasture-raised pork, with cut and curing ingredients named. | Read the ingredients for pork and salt alone. | — |

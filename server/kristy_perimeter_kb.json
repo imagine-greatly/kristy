@@ -30,7 +30,7 @@
       ],
       "category": "seafood",
       "question": "Is wild or farmed salmon better?",
-      "decision": "Wild Alaskan salmon, fresh or frozen, like sockeye or coho.",
+      "decision": "Wild Alaskan salmon, blue MSC label, fresh or frozen, like sockeye or coho.",
       "why": "Wild is a whole-food preference; read the species name, with deep-red flesh identifying sockeye.",
       "short_answer": "Two different animals sold under one name. Wild salmon eats krill and small fish across open ocean. Farmed salmon eats a ration of plant protein and vegetable oil, not krill.",
       "detail": "That ration leaves farmed salmon with far more omega-6 and a much worse omega-3 to omega-6 ratio. Astaxanthin goes into the ration because the flesh comes out gray without it. Sea lice and the treatments used against them are the cost of penning fish that close together, and antibiotic use varies enormously by country of origin. The ratio is the claim, not the amount. Farmed salmon is fatter, so a serving can carry as much total omega-3 as wild or more; what the feed changes is the balance against omega-6, and that is the difference worth naming. Country of origin does most of the work on the rest: Norwegian farming runs close to zero antibiotic use on the back of vaccination, and other producing countries run far higher. The fish never swam anywhere, and it was colored to look like one that did.",
@@ -45,11 +45,12 @@
       "instead": "Canned wild salmon, or sardines. Actually wild, and canned is the cheapest way to buy wild.",
       "cart_pick": "Wild-caught salmon",
       "buying_tips": [
-        "Look for “wild-caught” and “Alaska” on the label, with the kind of salmon named.",
+        "Look for “wild-caught”, “Alaska” and the blue MSC label, with the kind of salmon named.",
         "Pick sockeye or coho; they are almost always wild, and their deep color comes from diet, not dye.",
         "Pick frozen wild Alaskan as gladly as fresh: same fish, frozen at its best. “Fresh” at the counter is often thawed, so ask.",
         "Can’t find it: canned wild salmon. For farmed salmon, read the country of origin.",
-        "Farmed salmon eats plant protein and vegetable oil, not the krill and small fish wild salmon eat."
+        "Farmed salmon eats plant protein and vegetable oil, not the krill and small fish wild salmon eat.",
+        "MSC fisheries are assessed by accredited independent certifiers, and the blue label goes on the catch."
       ],
       "watch_out": [
         "Atlantic salmon is farmed, effectively without exception. Wild Atlantic is off the market.",
@@ -95,7 +96,9 @@
         "prawns",
         "imported shrimp",
         "domestic shrimp",
-        "farmed shrimp"
+        "farmed shrimp",
+        "asc shrimp",
+        "bap shrimp"
       ],
       "category": "seafood",
       "question": "Is imported or domestic shrimp better?",
@@ -117,7 +120,7 @@
         "Check the sizes: wild shrimp run from small to large. Even, flawless shrimp point to pond-raised.",
         "Pick frozen raw over “fresh” at the case, which is nearly always thawed shrimp.",
         "At the counter, ask if the shrimp is dry. Wet shrimp holds extra water.",
-        "Can’t find it: pond-raised shrimp with a named country and farm. Imported shrimp comes last.",
+        "Can’t find it: pond-raised shrimp with an ASC or BAP seal, a named country and farm. Unlabeled imports come last.",
         "Skip shrimp from China, and any bag listing soy oil, citric acid or hydrolyzed protein.",
         "Country of origin is printed on the bag by law."
       ],
@@ -162,11 +165,15 @@
         "grass finished",
         "grass-finished",
         "100% grass fed",
-        "grass fed grass finished"
+        "grass fed grass finished",
+        "american grassfed association",
+        "aga grassfed",
+        "certified grassfed beef",
+        "grass fed and finished"
       ],
       "category": "beef",
       "question": "Is grass-fed beef worth it?",
-      "decision": "100% grass-fed beef, never fed grain; organic is a bonus.",
+      "decision": "100% grass-fed beef, never fed grain, AGA or Certified Grassfed seal; organic a bonus.",
       "why": "Grass after weaning, no grain and no feedlot. A grass finish gives you leaner beef with a different fat balance.",
       "short_answer": "Look for the AGA or PCO Certified 100% Grassfed seal: grass and forage from weaning to harvest. Organic is a bonus, not the bar; organic beef can be grain-finished up to 120 days.",
       "detail": "The federal grass-fed marketing standard was withdrawn in 2016, so a bare ‘grass-fed’ claim rests on the producer. The fat profile follows the finish, not the start, so grass to the end is the bar. Traditional food guides put meat from animals allowed to graze at the top, fat and organs included. A grazing farm sold direct, or a butcher who names the farm, is how to know the finish.",
@@ -180,14 +187,16 @@
       "instead": "Grass-finished ground beef or chuck: grass after weaning, no grain or feedlot, in the everyday cuts.",
       "cart_pick": "Grass-finished ground beef",
       "buying_tips": [
+        "Look for “100% grass-fed” beside an AGA or A Greener World Certified Grassfed seal.",
         "Look for “100% grass-fed” on the front; plain “grass-fed” can still mean grain at the end.",
-        "Look for a logo from a group that checks, like AGA Grassfed or PCO 100% Grassfed.",
         "Can’t find it: 100% grass-fed ground beef or chuck, the same whole-life grass animal in everyday cuts.",
         "At the counter, ask what the animal ate at the end, and for how long.",
         "Check for “no added hormones” and a farm that says what the herd ate at the end.",
         "Look for “no antibiotics ever” from a farm that grazes its cattle; grain-fed cattle are often given antibiotics.",
         "Look for “raised without ractopamine”, a feed drug for leanness. “No added hormones” does not rule it out.",
-        "Grass all the way to the end makes leaner beef."
+        "Grass all the way to the end makes leaner beef.",
+        "The AGA seal means grass and forage only from weaning to harvest, on pasture, with on-farm inspections.",
+        "Look for Regenerative Organic Certified, Certified Regenerative by A Greener World or Land to Market Verified."
       ],
       "watch_out": [
         "Where grass-finished is not on the shelf, organic grain-finished is the floor.",
@@ -430,11 +439,13 @@
         "organ meat blend",
         "liver blend beef",
         "beef with liver",
-        "ancestral blend"
+        "ancestral blend",
+        "grass fed ground beef",
+        "100% grass fed ground beef"
       ],
       "category": "beef",
       "question": "What ground beef lean ratio should I get?",
-      "decision": "100% grass-fed ground beef with beef the only ingredient.",
+      "decision": "100% grass-fed ground beef, AGA or Certified Grassfed, beef the only ingredient.",
       "why": "Ground beef and grass-fed sourcing: see Beef.",
       "short_answer": "Pick ground beef with beef as the only ingredient. The lean/fat ratio on the front is a separate number.",
       "detail": "Both ‘ground beef’ and ‘hamburger’ cap at 30% fat, so the name is where the difference lives. ‘Ground chuck’, ‘round’ or ‘sirloin’ names the cut it came from. The ingredient list should be beef, with seasoning at most. ‘Ground beef’ may not contain added water, phosphates, binders or extenders, and may not have beef fat added as such. ‘Hamburger’ may. The ratio on the pack is lean to fat by weight. 80/20 is 20% fat; 90/10 is leaner. The name ‘ground beef’ allows no added water, phosphates, binders or extenders. 9 CFR 319.15(a) defines ‘Ground Beef’ as chopped fresh or frozen beef, fat capped at 30 percent, no added water, binders or extenders, with trimmed cheek meat the one allowed addition and capped at 25 percent. A product with liver or heart in it falls outside that definition, and 9 CFR 317.2 then requires a common or usual name or a truthful descriptive designation plus a full ingredient statement in descending order. ‘Ancestral blend’ and ‘primal blend’ are producer names for exactly this product, not standardized terms. Two label examples: one blend states 8 percent organ meats (4 percent liver, 4 percent heart, 92 percent muscle); another states 92 percent ground beef, 5 percent liver, 3 percent heart. Liver is the retinol-dense ingredient: the NIH fact sheet lists pan-fried beef liver at 6,582 mcg RAE per 3 ounces, against a tolerable upper intake of 3,000 mcg a day for adults. A blend that states its shares is plain ground beef with a measured amount of organ folded in. A blend carries its own descriptive name and a full ingredient list. By NIH figures, 3 ounces of pan-fried beef liver holds more than twice the adult daily vitamin A upper intake. Producers print shares such as 8 percent organ, or 5 percent liver plus 3 percent heart. Organs are part of eating the whole animal, and a blend puts them in a familiar grind.",
@@ -457,7 +468,8 @@
         "Read the name: “ground beef” cannot have beef fat added on its own; “hamburger” can.",
         "Read “ground chuck”, “round” or “sirloin” for the cut it came from. A blend must carry its own descriptive name.",
         "On regular ground beef, look for “raised without ractopamine”, a feed drug the EU and China ban.",
-        "A few percent liver and heart mixed in still tastes like regular ground beef."
+        "A few percent liver and heart mixed in still tastes like regular ground beef.",
+        "Look for the ranch named on the pack."
       ],
       "labels_decoded": [
         {
@@ -590,7 +602,10 @@
         "eggs in the fridge",
         "eggs need to be refrigerated",
         "Pasture-raised organic corn- and soy-free eggs",
-        "organic corn- and soy-free eggs"
+        "organic corn- and soy-free eggs",
+        "certified humane pasture raised",
+        "certified humane eggs",
+        "animal welfare approved eggs"
       ],
       "category": "poultry_eggs",
       "question": "What do cage-free, free-range, and pasture-raised eggs actually mean?",
@@ -621,9 +636,10 @@
       "kristy_take": "Pasture alone leaves the feed question open. Find all three claims together, then check the pack date: a fresh egg fries with a tall yolk and tight white.",
       "cart_pick": "Organic Certified Humane pasture-raised eggs",
       "buying_tips": [
+        "Look for “corn-free” and “soy-free” feed beside the Certified Humane Pasture Raised seal.",
         "Look for an organic carton printed with “pasture-raised”, “corn-free” and “soy-free”.",
         "Read for “corn-free” and “soy-free” in print; they are the only carton words about what the hens ate.",
-        "Look for a Certified Humane or Animal Welfare Approved logo beside “pasture-raised”, the strongest outdoor claim.",
+        "Look for a Certified Humane Pasture Raised or Animal Welfare Approved logo beside “pasture-raised”, the strongest outdoor claim.",
         "No corn-free carton: soy-free, organic, pasture-raised. Next, organic pasture-raised.",
         "No carton names the feed: pick certified organic, since organic rules cover what the hens eat.",
         "Pick farm stands and farmers markets for soy-free eggs, and ask the grower who keeps the hens.",
@@ -636,7 +652,9 @@
         "Float test at home: flat on the bottom is fresh, standing on end is old, floating goes out.",
         "A fresh egg fries with a tall yolk and a tight white. A flat, spreading one is old, not unsafe.",
         "Keep them in the carton. It slows moisture loss and keeps odors out.",
-        "Unwashed farm eggs can stay on the counter. Once washed, they need the fridge for good, not back and forth."
+        "Unwashed farm eggs can stay on the counter. Once washed, they need the fridge for good, not back and forth.",
+        "Certified Humane Pasture Raised sets hens on pasture all year, mostly living plants, at 2.5 acres per 1,000 hens.",
+        "Look for the farm named on the carton."
       ],
       "watch_out": [
         "Most supermarket cartons never mention feed at all, the big pasture-raised brands included. Organic is the rung you can reliably buy there.",
@@ -1200,11 +1218,12 @@
         "grass-fed butter",
         "butter",
         "european butter",
-        "kerrygold"
+        "kerrygold",
+        "certified grassfed butter"
       ],
       "category": "dairy",
       "question": "Is grass-fed butter worth it?",
-      "decision": "Organic 100% grass-fed butter: cream and salt, nothing else.",
+      "decision": "Organic 100% grass-fed butter, Certified Grassfed, creamery named: cream and salt only.",
       "why": "WAPF rates pasteurized butter without natural flavors, preferably grass-fed, as good.",
       "short_answer": "Cows on grass eat carotene, and it goes straight into the fat. So grass-fed butter runs deep yellow toward orange. Winter butter from the same dairy runs pale. The fat itself shifts modestly too.",
       "detail": "Butter is cream, and salt if it is salted. A tub spread is a formulation, not butter: vegetable or seed oils, water, emulsifiers and flavoring, built to behave like butter. Within real butter, the grass difference is a feed difference showing up three ways at once: in the color, in the fat, and on the tongue. European-style butters are churned to a higher fat content, which is a separate axis from what the cows ate and the reason they bake and finish differently. The taste and the way it behaves in a hot pan are differences people can actually pick out, which is more than most sourcing claims manage. The fatty-acid profile shifts modestly too.",
@@ -1218,14 +1237,15 @@
       "kristy_take": "The deep yellow is the grass. Winter butter from the same dairy goes pale.",
       "cart_pick": "100% grass-fed organic butter, cream and salt",
       "buying_tips": [
-        "Read the wrapper for “100% grass-fed”, with cream and salt as the whole list.",
+        "Read the wrapper for “100% grass-fed”, the Certified Grassfed seal, and cream and salt.",
         "Look for deep yellow toward orange; that color is carotene from grass. Pale is a hay-fed winter batch.",
         "Pick raw butter from grass-fed cows, sold by the farm, over any store butter.",
         "Can’t find 100% grass-fed: organic butter with cream and salt only.",
         "Skip whipped butter and any butter listing natural flavors.",
         "Check pale butter for an added color on the list; it can be colored to look like grass butter.",
         "European-style butters are higher in fat, a separate axis from what the cows ate.",
-        "Salted or unsalted is a cooking choice. Unsalted gives control."
+        "Salted or unsalted is a cooking choice. Unsalted gives control.",
+        "A grassfed seal names an audited program; “made with milk from grass-fed cows” names no certifier."
       ],
       "labels_decoded": [
         {
@@ -1294,11 +1314,14 @@
         "gallon of milk",
         "carton of milk",
         "Low-temp pasteurized grass-fed whole milk",
-        "100% grass-fed low-temp pasteurized whole milk"
+        "100% grass-fed low-temp pasteurized whole milk",
+        "grass fed milk",
+        "100% grass fed milk",
+        "certified grassfed milk"
       ],
       "category": "dairy",
       "question": "Should you buy whole or low-fat milk?",
-      "decision": "Organic 100% grass-fed whole milk, cream-top, not ultra-pasteurized.",
+      "decision": "Organic 100% grass-fed whole milk, Certified Grassfed, cream-top, not ultra-pasteurized.",
       "why": "Whole milk keeps its milkfat; WAPF favors grass-fed dairy and lists ultra-pasteurized milk under avoid.",
       "short_answer": "Pick plain organic or grass-fed whole milk without “ultra-pasteurized” on the carton. Cream-top or non-homogenized milk is the next step up when the case has it.",
       "detail": "Whole milk is the one that had the least done to it. For years the guidance was ‘always low-fat dairy’, and the evidence behind that for otherwise-healthy people has weakened. Whole milk is a whole-food-standard pick rather than a finding. The handling is plain: skimming, standardizing and often ultra-pasteurizing are steps, and whole minimally-processed milk has fewer of them. A doctor’s advice for a specific person outranks a shelf standard.",
@@ -1318,7 +1341,7 @@
       "kristy_take": "Whole milk, every time. Fewer steps between the cow and the carton.",
       "cart_pick": "100% grass-fed organic whole milk",
       "buying_tips": [
-        "Look for “100% grass-fed” and “cream-top” on an organic whole-milk carton.",
+        "Look for “100% grass-fed” and the Certified Grassfed seal on an organic cream-top carton.",
         "Read near the date. ‘Ultra-pasteurized’ or ‘UHT’ on the carton explains a date months out. Skip that carton.",
         "The ladder runs four steps. Raw from a farm you can name. Then low-temp pasteurized and cream-top. Then A2, then the carton in front of you.",
         "Can’t find it: A2 milk, then the organic whole-milk carton in front of you.",
@@ -1331,7 +1354,10 @@
         "Ultra-pasteurized milk resists culturing. Skip it for homemade yogurt.",
         "Every bit of heat changes milk. The shortest date on the shelf usually means the least processing, not worse milk.",
         "rBST is a synthetic growth hormone given to dairy cows. Certified organic milk comes from cows that cannot receive it.",
-        "No organic carton: find “from cows not treated with rBST”. US labels need not say whether cows received it."
+        "No organic carton: find “from cows not treated with rBST”. US labels need not say whether cows received it.",
+        "Organic sets a 30 percent grazing minimum in season; Certified Grassfed sets a 100 percent grass and forage diet.",
+        "Look for the farm named on the carton.",
+        "Look for Regenerative Organic Certified, Certified Regenerative by A Greener World or Land to Market Verified."
       ],
       "watch_out": [
         "Chocolate and strawberry jugs carry dessert-level added sugar. Check that line before the fat one.",
@@ -1423,11 +1449,12 @@
         "grated cheese",
         "natamycin",
         "cheddar",
-        "mozzarella"
+        "mozzarella",
+        "grass fed cheese"
       ],
       "category": "dairy",
       "question": "Should you buy block cheese, slices, or pre-shredded?",
-      "decision": "Organic grass-fed block cheese: milk, salt, cultures and rennet.",
+      "decision": "Organic grass-fed block cheese, Certified Grassfed: milk, salt, cultures and rennet.",
       "why": "Process cheese is ground and heated with other ingredients; grass-fed describes the milk source, not the cheese type.",
       "short_answer": "Real cheese is basically milk, salt, cultures and enzymes. ‘Pasteurized process cheese’, ‘cheese product’ or ‘cheese food’ means emulsifiers and added ingredients blended in. Bagged shreds are real cheese with an anti-caking coating. Buy the block.",
       "detail": "Read the name and the list. Two different additions sit behind the same aisle. ‘Process cheese’ is an emulsified blend and is a different product from cheese. Pre-shredded is genuine cheese with a coating applied so the strands do not knit back together in the bag, and that coating is exactly why bagged shreds never melt as smoothly as cheese grated at home. Neither is a safety question. Both are a reason to buy the block and spend thirty seconds with a grater. ‘Parmesan’ is a generic word in the US; ‘Parmigiano-Reggiano’ is a protected one with a stamped rind. The shred coating is usually potato starch or powdered cellulose, plus natamycin as a mold inhibitor. Both are edible. The block is cheaper per pound, melts properly, and is the one to buy.",
@@ -1442,7 +1469,7 @@
       "cart_pick": "Organic cheese",
       "buying_tips": [
         "Read the block’s list: milk, salt, cultures, and enzymes or rennet.",
-        "Look for 100% grass-fed milk named on the block.",
+        "Look for 100% grass-fed milk named on the block, with the Certified Grassfed seal and the creamery.",
         "Pick raw-milk cheese from grass-fed herds first; imported and deli-counter wheels are the easiest raw finds.",
         "Can’t find a block: bagged shreds named cheese. Starch coats them to keep them apart, so they melt poorly.",
         "Skip “cheese food” and “cheese product” wording, and cheese made from homogenized milk.",
@@ -1511,11 +1538,12 @@
         "yogurt alive",
         "is my yogurt alive",
         "whole milk yogurt",
-        "Plain Greek yogurt, 100% grass-fed"
+        "Plain Greek yogurt, 100% grass-fed",
+        "grass fed yogurt"
       ],
       "category": "dairy",
       "question": "What should you look for in yogurt?",
-      "decision": "Organic plain whole-milk yogurt, 100% grass-fed, cultures named.",
+      "decision": "Organic plain whole-milk yogurt, 100% grass-fed, Certified Grassfed seal, cultures named.",
       "why": "Organic yogurt can still contain added sugar; plain whole tubs are the pick, with grass-fed naming the milk source.",
       "short_answer": "Plain Greek yogurt from 100% grass-fed milk. Plain organic whole-milk yogurt is next. Flavored tubs are where the added sugar is.",
       "detail": "Plain yogurt, especially Greek or strained, is a whole food: milk and cultures. The added sugar in fruit-on-the-bottom and flavored cups is where it goes sideways, and the gap between the plain tub and the fruit cup on the added-sugars line is the entire decision. Whether the cultures in that tub are still alive is a separate question, read from the ingredient list and the seal. Milk protein concentrate on the yogurt list is a concentrated milk powder made by filtering milk and drying it. Look for milk and cultures alone.",
@@ -1538,7 +1566,7 @@
       "cart_pick": "100% grass-fed organic plain whole yogurt",
       "buying_tips": [
         "Read the tub for plain whole milk and named cultures, and nothing else.",
-        "Look for “100% grass-fed”, which means grass and hay, never grain, plus “cream-top” or “non-homogenized”.",
+        "Look for “100% grass-fed”, which means grass and hay, never grain, with the Certified Grassfed seal and “cream-top” or “non-homogenized”.",
         "Pick raw plain whole-milk yogurt from a farm over any store tub, where it is sold.",
         "Can’t find 100% grass-fed: plain organic whole-milk yogurt.",
         "Check the added-sugars line on the plain tub against the fruit cup; flavored tubs carry added sugar.",
@@ -1886,11 +1914,12 @@
         "raw honey",
         "fake honey",
         "honey adulteration",
-        "pure honey"
+        "pure honey",
+        "organic raw honey"
       ],
       "category": "bulk_pantry",
       "question": "How do I know honey is real?",
-      "decision": "Organic raw unfiltered honey, producer named on the jar.",
+      "decision": "Organic raw unfiltered honey, one named origin, honey the only ingredient.",
       "why": "WAPF lists raw honey, preferably unfiltered, among its best sweeteners; ultra-filtration removes pollen.",
       "short_answer": "Pick a raw, unfiltered jar with honey as the only ingredient, USDA Organic where shelved. Skip heated honey and syrup blends. It is still a sugar, to use with intention.",
       "detail": "Raw honey has not been heated, so it keeps its enzymes, and unfiltered honey keeps more of what came from the hive. Heating does not spoil honey as a food, but the enzymes may be compromised. Commercial honey is often blended, and some has corn syrup added. A jar that names its producer and says “raw” or “unfiltered” is the reliable route. Crystallizing is what raw honey does over time. Being an old, traditional food is a fair reason to prefer real honey. Tradition speaks to it being a real food, and it is still sugar.",
@@ -1909,12 +1938,13 @@
       "instead": "Maple syrup with one producer named on the jug. The same sourcing question, and far easier to answer.",
       "cart_pick": "Raw, unfiltered honey",
       "buying_tips": [
-        "Read the list: honey and nothing else.",
+        "Read the list: honey and nothing else, plus a named origin and a lot code.",
         "Some commercial honey is blended, with corn syrup added.",
         "Look for “raw” and “unfiltered”, with the pollen left in; it looks cloudy, not clear.",
         "Ask the seller whether it was heated or filtered. Crystallized honey is normal.",
         "Can’t find it: maple syrup with one producer named on the jug, an easier sourcing question.",
-        "It’s still a sweetener. Use it with intention."
+        "It’s still a sweetener. Use it with intention.",
+        "A single named origin and a lot code let a jar be traced back toward the harvest."
       ],
       "pick_steps": [
         "Read the list for one ingredient: honey.",
@@ -2909,11 +2939,13 @@
         "no antibiotics",
         "raised without antibiotics",
         "antibiotic free chicken",
-        "abf"
+        "abf",
+        "pasture raised chicken",
+        "animal welfare approved chicken"
       ],
       "category": "poultry",
       "question": "Which cut of chicken should I buy?",
-      "decision": "Organic pasture-raised whole chicken, air-chilled, with no solution added.",
+      "decision": "Organic pasture-raised whole chicken, Animal Welfare Approved, air-chilled, nothing added.",
       "why": "AWA guarantees outdoor pasture life for the whole animal.",
       "short_answer": "Whole bird: lowest cost per pound, and the carcass makes stock. Thighs carry more fat and flavor, and are hard to overcook. Breast is lean and dries fast. Bone-in, skin-on cuts cost less and cook better than boneless skinless.",
       "detail": "Dark meat comes from muscles the bird actually used, so it carries more fat and stays juicy across a wide window of doneness. Breast is a low-use muscle: lean, quick, unforgiving. Bones conduct heat slowly and skin renders and bastes, which is why bone-in skin-on thighs are the most forgiving thing in the case. Boneless skinless breast is convenience paid for twice, once at the register and again in how fast it dries. A whole bird broken down at home gives you both kinds of meat plus a frame for broth, at the lowest cost per pound in the store. Thighs are dark meat: more fat, more flavor, and very hard to overcook. Breast is lean and fast and goes dry the moment you look away. Bone-in and skin-on cost less and cook better than boneless skinless, which is the most expensive way to buy the same bird. A whole bird yields both meats and a stock frame; water-chilled packs can hold retained water.",
@@ -2927,8 +2959,8 @@
       "kristy_take": "A whole bird gives you breast, dark meat and a frame for stock. For thighs, keep the bone and skin: they give you more room at the stove than boneless skinless.",
       "cart_pick": "Organic pasture-raised whole chicken or thighs",
       "buying_tips": [
+        "Look for “air-chilled” on an organic bird that carries the Animal Welfare Approved seal.",
         "Look for “air-chilled” on the whole bird or thigh pack; skin that starts dry crisps.",
-        "Look for a welfare logo, like Animal Welfare Approved, on an organic bird.",
         "Pick a pasture bird on soy-free feed when there is one; ask the farm or counter.",
         "Can’t find it: a regular whole bird or bone-in thighs, patted dry before the pan.",
         "Pick a whole bird: the thriftiest buy, and the carcass makes stock.",
@@ -2936,7 +2968,8 @@
         "Breast: fast and lean. Pull it the moment it is done.",
         "Boneless skinless costs the most for the same bird.",
         "Heritage breeds such as Freedom Ranger carry darker, earthier meat than Cornish Cross.",
-        "Water-chilled birds hold water from the chilling tank."
+        "Water-chilled birds hold water from the chilling tank.",
+        "Animal Welfare Approved sets pasture or range for life, and an auditor visits every farm yearly."
       ],
       "labels_decoded": [
         {
@@ -3008,11 +3041,14 @@
         "solution added",
         "brined pork",
         "which pork cut",
-        "contains added solution"
+        "contains added solution",
+        "pasture raised pork",
+        "animal welfare approved pork",
+        "organic pork"
       ],
       "category": "pork",
       "question": "Which pork cut should you buy, and what does ‘solution added’ mean?",
-      "decision": "Organic pasture-raised pork with no added solution.",
+      "decision": "Organic pasture-raised pork, Animal Welfare Approved, breed named, with no added solution.",
       "why": "AWA guarantees pigs live outdoors on pasture or range.",
       "short_answer": "A raw meat product with added solution must say so in its name, with the percentage. One example is ‘contains 15% added solution of water and salt’. The solution’s ingredients are listed in descending order by weight.",
       "detail": "A large share of retail pork is pumped with a solution of water, salt and phosphates to hold moisture. The law requires the share as a number with a percent sign, like ‘contains 15% added solution’. It is the solution weighed against the raw meat, so 15% means 15 parts to 100. The ingredients in the solution are listed in descending order by weight. The rule is written for raw meat products, not pork alone.",
@@ -3026,6 +3062,7 @@
       "kristy_take": "An ‘up to 12% solution’ line means some of that pack is added water. Raw meat with added solution must give its name, percentage and contents beside the product name.",
       "cart_pick": "Organic pasture-raised pork chops",
       "buying_tips": [
+        "Look for a named breed, an organic seal and the Animal Welfare Approved logo.",
         "Read for “contains X% added solution”; that is injected water and salt.",
         "Look for a farm that says pasture or woodland, and soy-free feed.",
         "Look for “no antibiotics ever” and “raised without ractopamine”; “no added hormones” rules out neither.",
@@ -3033,7 +3070,8 @@
         "Check the solution’s ingredients, heaviest first, and skip sodium phosphate or sodium tripolyphosphate.",
         "Organic means organic feed; still check the list for added solution.",
         "Much store pork is pumped with water, salt and phosphates, then sold by weight.",
-        "Most US pork is raised indoors, and its fat reflects what the pig ate."
+        "Most US pork is raised indoors, and its fat reflects what the pig ate.",
+        "Organic pork rules ban gestation and farrowing crates and require outdoor access all year."
       ],
       "labels_decoded": [
         {
@@ -3244,7 +3282,7 @@
       ],
       "category": "seafood",
       "question": "What should I look for in canned fish?",
-      "decision": "Bone-in sardines or salmon, packed in olive oil or water.",
+      "decision": "Bone-in sardines or MSC wild salmon, packed in olive oil or water.",
       "why": "Weston A. Price recommends sardines with skin and bones as high in vitamin D and a good source of calcium.",
       "short_answer": "Read what it is packed in. Olive oil or water are the clean options. Skip tins in soybean, cottonseed or unnamed ‘vegetable oil’. Buy sardines and salmon with the bones and skin left in.",
       "detail": "Canned fish is one of the best value whole foods in the store, and the differences between tins are almost entirely the pack medium and what else went in. Oil-packed carries more flavor and, in good olive oil, is worth using in the dish rather than pouring away. Water-packed is leaner and neutral. ‘Vegetable oil’ on a tin is nearly always a seed oil blend and the label will not name which. Skin-on, bone-in sardines and salmon keep the whole small fish intact, which is much of why the tin is worth buying. Flavored tins in sauces bring added sugar and a long list, so read those like any packaged food. Skip soybean, cottonseed or unnamed ‘vegetable oil’ if seed oils are a line you hold. The ingredient list should read fish, oil or water, and salt; anything longer is a sauce.",
@@ -3264,7 +3302,8 @@
         "Can’t find sardines: bone-in, skin-on canned salmon.",
         "Pick skipjack, labeled “light”, over albacore, labeled “white”; it is lower in mercury.",
         "Skip “vegetable oil” on a tin; it is nearly always a seed oil blend it will not name.",
-        "Fresh or frozen fish has no can lining."
+        "Fresh or frozen fish has no can lining.",
+        "On canned salmon, look for the blue MSC label and the ocean of catch named."
       ],
       "labels_decoded": [
         {
@@ -3930,7 +3969,8 @@
         "pastry flour",
         "which flour",
         "bromated flour",
-        "unbromated flour"
+        "unbromated flour",
+        "sprouted whole wheat flour"
       ],
       "category": "bulk_pantry",
       "question": "Which flour should you buy, and what does ‘enriched’ mean?",
@@ -3968,7 +4008,8 @@
         "On white flour, read for “unbleached”, and pass on “bromated”.",
         "Pick organic flour: conventional wheat may be sprayed with glyphosate shortly before harvest to dry the crop.",
         "Organic farming does not allow glyphosate. Drift can still leave residues on organic wheat.",
-        "Whole-grain flour keeps the bran and germ."
+        "Whole-grain flour keeps the bran and germ.",
+        "Look for the mill named and a milling date on the bag."
       ],
       "labels_decoded": [
         {
@@ -4288,11 +4329,12 @@
         "natural peanut butter",
         "palm oil peanut butter",
         "oil separation",
-        "no stir peanut butter"
+        "no stir peanut butter",
+        "organic peanut butter"
       ],
       "category": "bulk_pantry",
       "question": "What should be in a jar of peanut butter?",
-      "decision": "Organic nut butter: nuts and salt, nothing else.",
+      "decision": "Organic nut butter, Non-GMO Project Verified: nuts and salt, nothing else.",
       "why": "WAPF avoid list covers nut butters with hydrogenated oils, sugar, agave or flavorings.",
       "short_answer": "Peanuts, and salt if you want it. That is the whole list on the good jars. No-stir versions get their texture from added palm or hydrogenated oil. Most also add sugar. Oil on top is the good sign.",
       "detail": "The separation people complain about is what natural peanut butter does, because ground peanuts are peanuts and oil. Stabilizers fix the texture and turn it into a product with a longer ingredient list. Sugar shows up in most conventional jars, and reduced-fat versions typically replace the removed fat with sugar and starch, which is the opposite of the trade most people think they are making. The same reading applies to almond, cashew and sunflower butters. One or two ingredients on the back is the standard, and it is easy to find. Oil sitting on top is not a fault, it is the sign that nothing was added to stop it. Stir it in once, then keep the jar upside down in the fridge.",
@@ -4315,7 +4357,8 @@
         "Skip added oils: palm, hydrogenated, sunflower, safflower, canola, soybean, corn, cottonseed or avocado.",
         "Skip no-stir and reduced-fat jars; they usually add oil, sugar or starch.",
         "Store natural jars upside down in the fridge; the oil mixes back in on its own.",
-        "Same reading for almond, cashew and sunflower butters."
+        "Same reading for almond, cashew and sunflower butters.",
+        "Look for the USDA Organic and Non-GMO Project Verified seals on the jar."
       ],
       "pick_steps": [
         "Read the list for nuts, and salt if wanted, nothing else.",
@@ -4751,7 +4794,8 @@
         "Pick a dark bottle, a cool shelf and a size you will finish; pressed oils are the least stable.",
         "Unrefined oils taste like their source; refined ones taste like nothing.",
         "Skip avocado oil regardless of the pressing words; its label cannot prove purity.",
-        "Most supermarket oil is solvent-extracted, then refined, bleached and deodorized."
+        "Most supermarket oil is solvent-extracted, then refined, bleached and deodorized.",
+        "On California olive oil, look for the COOC seal and the latest harvest year."
       ],
       "labels_decoded": [
         {
@@ -4884,7 +4928,7 @@
       ],
       "category": "label_terms",
       "question": "What has to be on a seafood label?",
-      "decision": "Wild fish, country and catch method on the tag.",
+      "decision": "Wild fish with an MSC label, country and catch method on the tag.",
       "why": "Wild is the seafood premise; the production-method label distinguishes wild from farm-raised fish.",
       "short_answer": "Most unprocessed fish and shellfish at retail must show the species, wild-caught or farm-raised, and the country of origin. Federal country-of-origin labeling requires it. The catch: origin can mean where it was processed, not where it was caught.",
       "detail": "Country-of-origin labeling covers unprocessed fish and shellfish and is genuinely useful, since it turns ‘farm-raised, product of ___‘ into a readable pair rather than a guess. Two limits are worth knowing. Cooked, breaded or otherwise processed seafood falls outside the rule. And species naming has a long history of substitution, where one fish is sold under another species name, which is a far bigger problem on a bare fillet than on a whole fish or a piece with the skin left on. Buying whole, buying skin-on, and buying from a counter that can answer the origin question are the practical defenses. Country-of-origin labeling is one of the few places a store must tell you where food came from.",
@@ -4904,7 +4948,8 @@
         "Ask a staffed counter where it was caught; origin can mean where it was processed.",
         "“Color added” on farm-raised salmon means astaxanthin in the feed sets the pink, not a dye after harvest.",
         "Wild salmon get their color from krill and shrimp.",
-        "Cooked and breaded seafood falls outside the labeling rule."
+        "Cooked and breaded seafood falls outside the labeling rule.",
+        "MSC covers wild fisheries; ASC and BAP cover farmed fish, each audited by an independent certifier."
       ],
       "labels_decoded": [
         {
@@ -5091,7 +5136,7 @@
         "cultured raw milk"
       ],
       "question": "Is raw kefir worth buying?",
-      "decision": "Plain raw or organic whole-milk kefir, farm named on bottle.",
+      "decision": "Plain raw or organic whole-milk kefir, Certified Grassfed seal, farm named on bottle.",
       "why": "A live ferment from a named herd. The refrigerated case is the only place it exists.",
       "card_why": "Kefir is what a dairy does with milk it wants to keep, and it has been doing it for centuries. The grains turn it tangy and thick and it holds for weeks where the milk holds for days. The rule is the milk’s rule: the farm is the product. Buy it from the herd you would drink from raw, as close to the culture date as the case allows.",
       "short_answer": "Raw kefir is a live ferment and it has to be sold cold. Anything shelf-stable was heat-treated after culturing, which ends the thing you were buying it for.",
@@ -5100,7 +5145,7 @@
       "buying_tips": [
         "Look for ‘raw’ and a farm name on the bottle, the same farm as the milk.",
         "Check for a culture or bottling date on the bottle, not only a best-by date.",
-        "No raw kefir: pick plain kefir made from 100% grass-fed whole milk.",
+        "No raw kefir: pick plain kefir made from 100% grass-fed whole milk, with the Certified Grassfed seal.",
         "Pick plain. Sweetened kefir is a dessert wearing a ferment’s name.",
         "Pick glass, and a pour thick enough to cling to the side.",
         "Kefir is only as good as its milk, and the ferment stays live only when cold."
@@ -5171,7 +5216,8 @@
         "Pick the cut-to-order counter over the pre-wrapped wall.",
         "Pick hard, aged styles first: alpine, aged cheddar, manchego, pecorino.",
         "Keep the rinds. They belong in a pot of beans or soup.",
-        "Aged raw-milk cheese tastes of one herd and season; a commodity block tastes of very little."
+        "Aged raw-milk cheese tastes of one herd and season; a commodity block tastes of very little.",
+        "Look for the creamery named on the wheel or wedge."
       ],
       "watch_out": [
         "“Pasteurized process cheese”, “cheese product” and “cheese food” are progressively less cheese.",
@@ -6699,7 +6745,7 @@
       ],
       "category": "bulk_pantry",
       "question": "Which sandwich bread is whole wheat?",
-      "decision": "Organic whole-grain sandwich bread that is sourdough or sprouted.",
+      "decision": "Organic whole-grain sandwich bread, “whole” first on the list, sourdough or sprouted.",
       "why": "WAPF lists white-flour breads with hydrogenated oils, added gluten, soy or additives under avoid.",
       "short_answer": "The top loaf is sourdough, soaked or sprouted, from organic whole grain flour, with no added gluten, soy or bran. A loaf called “wheat” needs an ingredient check; enriched grain and whole grain are different descriptions.",
       "detail": "The top rung is sourdough, soaked or sprouted bread made from freshly ground organic whole grain flour, without additives such as added gluten, soy, bran or partially hydrogenated oils. Organic whole grain bread without those additives is the next rung. Most commercial bread is built on white flour with added gluten, soy and dough conditioners, and some adds ascorbic acid. The US whole wheat bread standard excludes ordinary flour, bromated flour and phosphated flour from the dough. A Basic Whole Grain Stamp may appear on a product containing more refined grain than whole grain. Potassium bromate and azodicarbonamide (ADA) are dough conditioners, so read the list for them.",
@@ -7291,11 +7337,13 @@
       "aliases": [
         "coffee beans",
         "packaged roasted coffee beans",
-        "which coffee"
+        "which coffee",
+        "bird friendly coffee",
+        "organic coffee beans"
       ],
       "category": "bulk_pantry",
       "question": "What should you check when buying coffee beans?",
-      "decision": "Organic whole beans, roasted-on date, from a mold-testing roaster.",
+      "decision": "Organic whole beans, Bird Friendly, single origin, roasted-on date, mold-testing roaster.",
       "why": "Coffee beans can carry mold from hot, humid growing and storage. A roaster that tests for it says so.",
       "short_answer": "Coffee is an occasional item. Pick organic whole beans in a sealed bag, and read the roast date first. Ground coffee loses flavor faster than whole beans, and open bins expose beans to air and light.",
       "detail": "Traditional food guides keep coffee off the staple list. When it is bought, coffee beans have been found to carry mycotoxins, likely from the hot, humid conditions they are grown, stored and processed in, and some roasters verify their beans by testing. Whole bean keeps longer than ground. Coffee studies document changes in aroma and chemical composition during storage, including oxidation tied to oxygen exposure, so a sealed bag kept closed and away from heat holds it best.",
@@ -7310,12 +7358,15 @@
       "kristy_take": "An occasional cup. When you buy it, organic whole beans from a roaster that names its mold testing.",
       "cart_pick": "Whole bean coffee, mold-tested",
       "buying_tips": [
-        "Look for ‘organic’ and ‘whole bean’ on a sealed bag with a roasted-on date.",
+        "Look for ‘organic’, ‘whole bean’ and Bird Friendly on a sealed bag with a roasted-on date.",
         "Pick a roaster that states it tests for mold.",
         "Can’t find a mold-tested roaster: pick organic whole beans in a sealed bag.",
         "Decaf: pick Swiss Water or another water-only process.",
         "Keep the sealed bag away from heat; heat changes the beans.",
-        "Coffee beans can carry mold from hot, humid growing and storage."
+        "Coffee beans can carry mold from hot, humid growing and storage.",
+        "Bird Friendly farms are 100% organic certified and meet habitat standards for tree cover.",
+        "Look for one origin, with the farm or cooperative named.",
+        "Look for Regenerative Organic Certified or Certified Regenerative by A Greener World."
       ],
       "watch_out": [
         "Coffee sits off the staple list in traditional food guides. Keep it occasional.",
@@ -7355,11 +7406,13 @@
         "bacon",
         "sliced bacon",
         "packaged sliced bacon",
-        "uncured bacon nitrate free"
+        "uncured bacon nitrate free",
+        "pasture raised bacon",
+        "organic bacon"
       ],
       "category": "deli",
       "question": "What should you check when choosing bacon?",
-      "decision": "Pasture-raised bacon of pork and salt, wood-smoked.",
+      "decision": "Pasture-raised bacon with the Animal Welfare Approved seal: pork and salt, wood-smoked.",
       "why": "The USDA rule lets “Uncured” appear in the name only for products cured without synthetic nitrite.",
       "short_answer": "Bacon labeled uncured can use celery powder as a natural curing source. Read the qualifier on a no-nitrates-added claim and the ingredient list.",
       "detail": "The archived NPR report describes natural curing sources used in bacon and hot dogs and the qualifying fine print. US curing-label policy requires curing-mixture ingredients to be listed individually. That distinguishes a source of curing ingredients, not a demonstrated health advantage.",
@@ -7545,11 +7598,13 @@
       "aliases": [
         "chicken breast",
         "chicken breasts",
-        "plain chicken breast"
+        "plain chicken breast",
+        "pasture raised chicken breast",
+        "organic chicken breast"
       ],
       "category": "poultry",
       "question": "What should you check when buying chicken breast?",
-      "decision": "Organic, pasture-raised breast, bone-in, skin-on; soy-free feed beats it.",
+      "decision": "Organic, pasture-raised, Animal Welfare Approved breast, bone-in, skin-on; soy-free best.",
       "why": "Certified Humane pasture raised requires 108 square feet per bird outdoors, matching AWA.",
       "short_answer": "Flavoring solutions added to poultry must be disclosed as part of the product name, including their amount. Water retained during chilling is a separate disclosure.",
       "detail": "FSIS describes solution added through injection, marinating, tumbling, or soaking. A product labeled natural can still contain a minimally processed flavoring solution. The archived woody-breast study also describes unusually hard breast tissue, but manual sorting was inconsistent; it does not support reliable visual identification at the case. Any added flavoring solution has to appear in the product name, with its amount.",
@@ -7563,6 +7618,7 @@
       "kristy_take": "A plain breast gives you only chicken. Added flavoring solution must appear in the product name with its amount, even on a pack labeled ‘natural’.",
       "cart_pick": "Organic pasture-raised chicken breast",
       "buying_tips": [
+        "Look for the Animal Welfare Approved seal on an organic, bone-in, skin-on pack.",
         "Look for ‘pasture-raised’ or ‘organic’ on a plain pack, bone-in and skin-on.",
         "Read the full name for an added-solution percent and its ingredients.",
         "No pasture-raised breast: pick chicken thighs, with more fat and flavor and hard to overcook.",
@@ -8202,7 +8258,9 @@
         "goat chops",
         "mutton",
         "chevon",
-        "cabrito"
+        "cabrito",
+        "grass fed lamb",
+        "pasture raised lamb"
       ],
       "category": "meat_counter",
       "question": "How do you judge lamb and goat meat quality?",
@@ -8226,7 +8284,8 @@
         "Pick goat with firm, fine-grained flesh and white fat spread through it.",
         "Read the cut on the label, such as shoulder or leg.",
         "Goat has no quality grade, so firm, fine-grained flesh with white fat is the check.",
-        "Grass-fed labels and logos: see “Grass-fed” (the label)."
+        "Grass-fed labels and logos: see “Grass-fed” (the label).",
+        "Check the pack for an Animal Welfare Approved seal and the farm named."
       ],
       "watch_out": [
         "Ungraded lamb is inspected, but its quality may be higher or lower than graded lamb.",
@@ -8344,11 +8403,12 @@
         "ground bison",
         "bison burgers",
         "bison steak",
-        "buffalo meat"
+        "buffalo meat",
+        "grass fed bison"
       ],
       "category": "meat_counter",
       "question": "How do you buy bison?",
-      "decision": "100% grass-fed bison, with bison the only ingredient.",
+      "decision": "100% grass-fed and grass-finished bison, ranch named, bison the only ingredient.",
       "why": "AGA requires a 100% grass diet from weaning until harvest.",
       "short_answer": "Bison is a bovine, not a true buffalo. Look for a federal or state inspection mark. The meat is deeper red because it has no marbling. Cook or freeze ground bison within 2 days.",
       "detail": "The American buffalo is bison, a member of the bovine family with domestic cattle. Bison may carry voluntary federal inspection or an equivalent state inspection. The triangle “U.S. Inspected and Passed” seal marks federal inspection. Bison raised on grass get grain for the last 90 to 120 days, because many shoppers prefer white fat. Cook ground bison to 160°F. Cook steaks and roasts to 145°F, then rest three minutes.",
@@ -8362,7 +8422,7 @@
       "kristy_take": "Find a federal or state inspection mark, then follow beef’s keeping and cooking rules. Ground bison should be cooked or frozen within 2 days.",
       "cart_pick": "AGA-certified grass-finished bison",
       "buying_tips": [
-        "Read for a label stating the bison ate only grass.",
+        "Read for a label stating the bison ate only grass, with the ranch named.",
         "Grass-fed labels and logos: see “Grass-fed” (the label).",
         "No logo: a plain grass label is next; ‘grass-raised’ bison often eats grain its last 90 to 120 days.",
         "Check for a deeper red than beef; bison has no marbling.",
@@ -9688,7 +9748,8 @@
         "plain kefir",
         "pasteurized kefir",
         "flavored kefir",
-        "kefir drink"
+        "kefir drink",
+        "grass fed kefir"
       ],
       "category": "dairy",
       "question": "How do you pick a bottle of kefir?",
@@ -9707,7 +9768,7 @@
       "cart_pick": "100% grass-fed organic plain whole kefir",
       "buying_tips": [
         "Read the list: milk and cultures only, with no flavor named on the label.",
-        "Look for ‘100% grass-fed’: the cows ate grass and hay, never grain.",
+        "Look for ‘100% grass-fed’ and the Certified Grassfed seal: the cows ate grass and hay, never grain.",
         "Can’t find 100% grass-fed: plain organic whole-milk kefir.",
         "Look for cream-top whole milk with no added vitamins on the list.",
         "Skip lowfat and sweetened kefir.",
@@ -10018,11 +10079,12 @@
       "aliases": [
         "ghee",
         "clarified butter",
-        "ghee butter"
+        "ghee butter",
+        "grass fed ghee"
       ],
       "category": "dairy",
       "question": "How do you pick ghee?",
-      "decision": "Organic ghee from 100% grass-fed butter, butter the only ingredient.",
+      "decision": "Organic ghee from 100% grass-fed butter, Certified Grassfed, butter the only ingredient.",
       "why": "WAPF rates pasteurized ghee without natural flavors, preferably grass-fed, as good.",
       "short_answer": "Clarified butter is butter simmered until the water is gone and the fat separates from the milk solids. The solids are removed. Ghee simmers longer, which gives it a nutty taste.",
       "detail": "Ghee is typically made by simmering butter, skimming the surface, and keeping the clear liquid fat. The solid residue that settles is discarded. Clarified butter is done once the water evaporates and the fat separates from the milk solids. Ghee is simmered further, which makes it nutty and aromatic. Spices can be added for flavor. Its smoke point, the heat where the fat starts to break down, is 250 °C (482 °F).",
@@ -10037,7 +10099,7 @@
       "cart_pick": "100% grass-fed organic ghee",
       "buying_tips": [
         "Read the jar: butter, or clarified butter, as the only ingredient.",
-        "Look for butter from 100% grass-fed cows and an organic seal; skip natural flavors.",
+        "Look for butter from 100% grass-fed cows, a Certified Grassfed or organic seal, and the source named; skip natural flavors.",
         "Can’t find ghee or clarified butter: plain butter.",
         "Ghee from raw grass-fed butter, sold by a farm, comes first.",
         "Expect spices on the list if the jar is flavored.",
@@ -11260,11 +11322,12 @@
         "real maple syrup",
         "grade a maple syrup",
         "dark maple syrup",
-        "pancake syrup"
+        "pancake syrup",
+        "organic maple syrup"
       ],
       "category": "bulk_pantry",
       "question": "How do you pick maple syrup?",
-      "decision": "Organic pure maple syrup, Dark or Very Dark, sugarhouse named.",
+      "decision": "Organic pure maple syrup, Dark or Very Dark, state and sugarhouse named.",
       "why": "WAPF lists maple syrup as a best sweetener and imitation syrups under avoid.",
       "short_answer": "Look for “100% pure maple syrup” on the label. Table or pancake syrup is a different product, mostly corn syrup. Darker grades carry the stronger maple flavor; the taste for light syrup came from early candy makers.",
       "detail": "Maple syrup is sap boiled down at a sugarhouse, about forty to one, until it reaches the legal density of roughly 67 percent sugar. Many syrups made to look like maple are fakes, and the main ingredient of most table syrups is high fructose corn syrup. Early American candy makers preferred lighter syrup because it crystallized better, and that demand is why light grades gained status. Darker syrup comes later in the season and carries the stronger flavor. Today all consumer maple syrup is Grade A, classed by color and taste: Golden, Amber, Dark and Very Dark. Maple syrup and maple sugar are both top-rung sweeteners on the traditional tiers.",
@@ -11282,7 +11345,8 @@
         "Pick Dark or Very Dark from a sugarhouse you can name.",
         "Can’t find organic: any ‘100% pure maple syrup’, Dark grade.",
         "Check that the name says maple syrup; table and pancake syrup are other products.",
-        "Most table and pancake syrups are mainly high fructose corn syrup."
+        "Most table and pancake syrups are mainly high fructose corn syrup.",
+        "Look for a named state, a producer that makes its own syrup, and a date on the glass or tin."
       ],
       "watch_out": [
         "Table or pancake syrup is a different product from maple syrup, often with little or no maple in it."

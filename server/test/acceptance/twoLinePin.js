@@ -3681,3 +3681,163 @@ test('copy pass 2026-10-29: olive oil and produce live copy', () => {
     assert.ok(!/optional/i.test([e.decision, ...e.buying_tips].join(' ')), `${id} drops "optional"`);
   }
 });
+
+// Second-pass shelf markers 2026-10-29 (Devon: research adds markers, never strips one). Pins the LIVE
+// KB headline, first tip and do line on the cards docs/research/brand-labels/second-pass-proposals.md drafted.
+const SECOND_PASS = {
+  "chicken_breast": {
+    "decision": "Organic, pasture-raised, Animal Welfare Approved breast, bone-in, skin-on; soy-free best.",
+    "tip0": "Look for the Animal Welfare Approved seal on an organic, bone-in, skin-on pack.",
+    "do": "Find the AWA seal and USDA Organic on the pack."
+  },
+  "chicken_cuts_basics": {
+    "decision": "Organic pasture-raised whole chicken, Animal Welfare Approved, air-chilled, nothing added.",
+    "tip0": "Look for “air-chilled” on an organic bird that carries the Animal Welfare Approved seal.",
+    "do": "Check for cream-yellow skin and an AWA seal on the bird."
+  },
+  "egg_labels": {
+    "decision": "Organic, pasture-raised eggs from hens on soy-free, corn-free feed.",
+    "tip0": "Look for “corn-free” and “soy-free” feed beside the Certified Humane Pasture Raised seal.",
+    "do": "Find USDA Organic on the carton beside the other seal."
+  },
+  "pork_cuts_and_enhanced": {
+    "decision": "Organic pasture-raised pork, Animal Welfare Approved, breed named, with no added solution.",
+    "tip0": "Look for a named breed, an organic seal and the Animal Welfare Approved logo.",
+    "do": "Find an AWA or Certified Humane seal and USDA Organic on the chop pack."
+  },
+  "bacon": {
+    "decision": "Pasture-raised bacon with the Animal Welfare Approved seal: pork and salt, wood-smoked.",
+    "tip0": "Read the list: pork, salt and each curing ingredient by name.",
+    "do": "Find the AWA pasture seal on the bacon pack."
+  },
+  "beef_grassfed_vs_grainfed": {
+    "decision": "100% grass-fed beef, never fed grain, AGA or Certified Grassfed seal; organic a bonus.",
+    "tip0": "Look for “100% grass-fed” beside an AGA or A Greener World Certified Grassfed seal.",
+    "do": "Find the ranch named on the beef pack."
+  },
+  "ground_beef_lean_ratio": {
+    "decision": "100% grass-fed ground beef, AGA or Certified Grassfed, beef the only ingredient.",
+    "tip0": "Read the list: beef, with seasoning at most, and no water or phosphates.",
+    "do": "Find the lean ratio beside the AGA seal on the pack."
+  },
+  "lamb_goat": {
+    "decision": "Lamb or goat, 100% grass-fed or pasture-raised, firm and fine-grained.",
+    "tip0": "Check that the label says the animal ate only grass, or shows Animal Welfare Approved.",
+    "do": "Look for pale pink fat on chops carrying the AWA pasture stamp."
+  },
+  "bison": {
+    "decision": "100% grass-fed and grass-finished bison, ranch named, bison the only ingredient.",
+    "tip0": "Read for a label stating the bison ate only grass, with the ranch named.",
+    "do": "Read the pack for bison alone and the AGA mark beside the cut."
+  },
+  "whole_vs_reduced_fat_milk": {
+    "decision": "Organic 100% grass-fed whole milk, Certified Grassfed, cream-top, not ultra-pasteurized.",
+    "tip0": "Look for “100% grass-fed” and the Certified Grassfed seal on an organic cream-top carton.",
+    "do": "Read beside the date; skip ultra-pasteurized and check the fat wording."
+  },
+  "raw_kefir": {
+    "decision": "Plain raw or organic whole-milk kefir, Certified Grassfed seal, farm named on bottle.",
+    "tip0": "Look for ‘raw’ and a farm name on the bottle, the same farm as the milk.",
+    "do": "Buy it from the refrigerated case, never the shelf-stable carton."
+  },
+  "plain_kefir": {
+    "decision": "Plain organic whole-milk kefir, 100% grass-fed: milk and cultures only.",
+    "tip0": "Read the list: milk and cultures only, with no flavor named on the label.",
+    "do": "Read the kefir ingredients for milk and cultures alone."
+  },
+  "yogurt_plain_vs_flavored": {
+    "decision": "Organic plain whole-milk yogurt, 100% grass-fed, Certified Grassfed seal, cultures named.",
+    "tip0": "Read the tub for plain whole milk and named cultures, and nothing else.",
+    "do": "Read for milk and culture names; skip sugar, pectin or flavors."
+  },
+  "cheese_real_vs_processed": {
+    "decision": "Organic grass-fed block cheese, Certified Grassfed: milk, salt, cultures and rennet.",
+    "tip0": "Read the block’s list: milk, salt, cultures, and enzymes or rennet.",
+    "do": "Read the printed name; skip cheese followed by food or product."
+  },
+  "raw_aged_cheese": {
+    "decision": "Grass-fed organic raw-milk cheese, aged 60 days or more.",
+    "tip0": "Look for ‘raw milk’ or ‘lait cru’ (French for raw milk) with an age on the label.",
+    "do": "Read the rind label for an age in months."
+  },
+  "grassfed_butter": {
+    "decision": "Organic 100% grass-fed butter, Certified Grassfed, creamery named: cream and salt only.",
+    "tip0": "Read the wrapper for “100% grass-fed”, the Certified Grassfed seal, and cream and salt.",
+    "do": "Read for cream and salt; skip any natural flavor entry."
+  },
+  "ghee": {
+    "decision": "Organic ghee from 100% grass-fed butter, Certified Grassfed, butter the only ingredient.",
+    "tip0": "Read the jar: butter, or clarified butter, as the only ingredient.",
+    "do": "Check the jar lists one dairy fat, without oil blended in."
+  },
+  "salmon_wild_vs_farmed": {
+    "decision": "Wild Alaskan salmon, blue MSC label, fresh or frozen, like sockeye or coho.",
+    "tip0": "Look for “wild-caught”, “Alaska” and the blue MSC label, with the kind of salmon named.",
+    "do": "Find the MSC label and wild Alaskan, then check for deep red flesh."
+  },
+  "canned_fish_choosing": {
+    "decision": "Bone-in sardines or MSC wild salmon, packed in olive oil or water.",
+    "tip0": "Read the list: fish, olive oil or water, and salt. Anything longer is a sauce.",
+    "do": "Read the species name and check for fish, water or olive oil."
+  },
+  "shrimp_imported_vs_domestic": {
+    "decision": "Wild US or Gulf shrimp, frozen raw; read the country.",
+    "tip0": "Read the bag for “wild” and the country; wild US shrimp is a managed fishery.",
+    "do": "Read the bag for Gulf or US wild origin; check for shells."
+  },
+  "label_wild_vs_farm_raised": {
+    "decision": "Wild fish with an MSC label, country and catch method on the tag.",
+    "tip0": "Read the tag for “wild-caught” or “farm-raised”, the country, and the catch method.",
+    "do": "Look for MSC, or ASC or BAP on farmed fish, plus catch details."
+  },
+  "honey_adulteration": {
+    "decision": "Organic raw unfiltered honey, one named origin, honey the only ingredient.",
+    "tip0": "Read the list: honey and nothing else, plus a named origin and a lot code.",
+    "do": "Look through the jar for cloudy honey, then a named origin and lot code."
+  },
+  "maple_syrup": {
+    "decision": "Organic pure maple syrup, Dark or Very Dark, state and sugarhouse named.",
+    "tip0": "Look for ‘100% pure maple syrup’ on the label, and maple syrup alone on the list.",
+    "do": "Read for pure maple syrup alone; skip corn syrup in the ingredients."
+  },
+  "nut_butter_ingredients": {
+    "decision": "Organic nut butter, Non-GMO Project Verified: nuts and salt, nothing else.",
+    "tip0": "Read the list: peanuts, and salt if you want it. Nothing else is needed.",
+    "do": "Read the list for nuts and salt; skip sugar, palm or hydrogenated oils."
+  },
+  "coffee_beans": {
+    "decision": "Organic whole beans, Bird Friendly, single origin, roasted-on date, mold-testing roaster.",
+    "tip0": "Look for ‘organic’, ‘whole bean’ and Bird Friendly on a sealed bag with a roasted-on date.",
+    "do": "Check the bag’s seal and keep the coffee closed between uses."
+  },
+  "flour_basics": {
+    "decision": "Organic sprouted whole-wheat flour, unbleached, not enriched.",
+    "tip0": "Look for “sprouted” and “whole wheat” in the flour name, on an organic bag.",
+    "do": "Read the bag for whole wheat before choosing flour."
+  },
+  "sandwich_bread": {
+    "decision": "Organic whole-grain sandwich bread, “whole” first on the list, sourdough or sprouted.",
+    "tip0": "Read the first ingredient for ‘whole’; a loaf called just ‘wheat’ may be white flour.",
+    "do": "Read the list’s top; skip enriched wheat flour, sugar or soybean oil."
+  },
+  "label_cold_pressed_expeller": {
+    "decision": "Organic olive or coconut oil, cold-pressed or expeller-pressed, unrefined.",
+    "tip0": "Read the oil’s name and list first: olive or coconut, cold-pressed or expeller-pressed.",
+    "do": "Read the bottle’s pressing method: cold or expeller."
+  }
+};
+test('second-pass shelf markers 2026-10-29: live copy', () => {
+  const live = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8')).entries;
+  const doLines = JSON.parse(readFileSync(new URL('../../lib/doLines.json', import.meta.url), 'utf8'));
+  for (const [id, p] of nonEmpty(Object.entries(SECOND_PASS), 'second-pass cards', 20)) {
+    const e = live.find((x) => x.id === id);
+    assert.ok(e, `${id} missing`);
+    assert.equal(e.decision, p.decision, `${id}.decision`);
+    assert.equal(e.buying_tips[0], p.tip0, `${id}.buying_tips[0]`);
+    assert.equal(doLines[id], p.do, `${id} do line`);
+  }
+  // The ruling: kept markers stay on the card.
+  const text = (id) => { const e = live.find((x) => x.id === id); return [e.decision, ...e.buying_tips, doLines[id]].join(' '); };
+  for (const [id, re] of [['egg_labels', /soy-free/], ['egg_labels', /corn-free/], ['coffee_beans', /mold-testing/], ['honey_adulteration', /\braw\b/], ['maple_syrup', /Dark or Very Dark/], ['whole_vs_reduced_fat_milk', /100% grass-fed/], ['grassfed_butter', /100% grass-fed/], ['beef_grassfed_vs_grainfed', /100% grass-fed/], ['lamb_goat', /100% grass-fed/]]) assert.match(text(id), re, `${id} keeps ${re}`);
+  for (const id of Object.keys(SECOND_PASS)) assert.doesNotMatch(text(id).replace(/Regenerative Organic Certified|Certified Regenerative/g, ''), /\bregenerative\b/i, `${id}: bare “regenerative”`);
+});
