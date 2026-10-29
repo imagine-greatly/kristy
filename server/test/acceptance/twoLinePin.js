@@ -3661,3 +3661,22 @@ export const SWAP_PICKS_1_CARDS = new Set(['sandwich_bread', 'maple_syrup']);
 export const SWAP_PICKS_1_BASE = '58d6160';
 const PRE_SWAP_PICKS_1 = JSON.parse(execFileSync('git', ['show', `${SWAP_PICKS_1_BASE}:server/kristy_perimeter_kb.json`], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 export const preSwapPicks1 = (entries) => entries.filter((e) => !SWAP_PICKS_1_NEW.has(e.id)).map((e) => (SWAP_PICKS_1_CARDS.has(e.id) ? PRE_SWAP_PICKS_1.entries.find((x) => x.id === e.id) : e));
+
+// Copy pass 2026-10-29 (Devon: olive oil option A; produce peeled clause). TWO_LINE above reads these
+// cards through the restored history, so this pins the LIVE KB and do line directly.
+test('copy pass 2026-10-29: olive oil and produce live copy', () => {
+  const live = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8')).entries;
+  const doLines = JSON.parse(readFileSync(new URL('../../lib/doLines.json', import.meta.url), 'utf8'));
+  const get = (id) => live.find((e) => e.id === id);
+  const oil = get('olive_oil_grades');
+  assert.equal(oil.decision, 'Extra virgin olive oil with a recent harvest date, one country, dark bottle.');
+  assert.equal(oil.buying_tips[0], 'Olive oil starts aging the day it is pressed, and dark glass keeps light off it.');
+  assert.ok(oil.buying_tips.some((t) => /organic/i.test(t) && /single estate/i.test(t)), 'organic and single-estate stay in later tips');
+  assert.equal(doLines.olive_oil_grades, 'Read for “product of”, where the olives grew; “packed in” only means bottled there.');
+  assert.equal(get('aisle_produce').decision, 'Organic when you eat the skin or juice it; peeled, either is fine.');
+  assert.equal(get('organic_worth_it_by_type').decision, 'Grown organic when you eat the skin or juice it.');
+  for (const id of ['aisle_produce', 'organic_worth_it_by_type']) {
+    const e = get(id);
+    assert.ok(!/optional/i.test([e.decision, ...e.buying_tips].join(' ')), `${id} drops "optional"`);
+  }
+});

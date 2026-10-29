@@ -89,7 +89,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `bulk_bins_buying` | bulk_pantry | Rice, oats, beans, lentils and spices from a busy bin. | Choose the full, busy bins over a dusty half-empty one. | — |
 | `whole_spices` | bulk_pantry | Whole spices, bought small and ground as you go. | Pick intact seeds or sticks, rather than a ground blend. | — |
 | `rancidity_check` | bulk_pantry | Oil in a dark bottle, finished within two months. | Skip clear bottles; check for a paint-and-crayon smell when opening oil. | — |
-| `olive_oil_grades` | bulk_pantry | Extra virgin olive oil with a recent harvest date. | Choose a dark bottle or metal tin; skip clear plastic. | — |
+| `olive_oil_grades` | bulk_pantry | Extra virgin olive oil with a recent harvest date, one country, dark bottle. | Read for “product of”, where the olives grew; “packed in” only means bottled there. | — |
 | `nut_butter_ingredients` | bulk_pantry | Nut butter with just nuts and salt, oil on top. | Read the list for nuts and salt; skip sugar, palm or hydrogenated oils. | — |
 | `grains_beyond_rice` | bulk_pantry | Organic grains with the bran still on, not polished off. | Check the grain bag for a single ingredient and an organic seal. | — |
 | `bottled_water_buying` | bulk_pantry | Spring water from a named spring, in glass. | Read the water source on the label; look for spring. | — |

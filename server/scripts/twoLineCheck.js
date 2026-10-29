@@ -12,7 +12,8 @@ const doFor = (id) => (Array.isArray(doLines) ? doLines.find((d) => d.slug === i
 const proposals = Object.assign({}, ...process.argv.slice(2).map((f) => JSON.parse(readFileSync(f, 'utf8'))));
 const byId = new Map(kb.entries.map((e) => [e.id, e]));
 const FIRST_PERSON = /\b(I|me|my|mine|we|our|us)\b/;
-const APPROVED_LONG = new Set(['ground_beef_lean_ratio', 'whole_vs_reduced_fat_milk']);
+// olive_oil_grades: Devon's option A headline (2026-10-29) carries four shelf markers in 13 words.
+const APPROVED_LONG = new Map([['ground_beef_lean_ratio', 12], ['whole_vs_reduced_fat_milk', 12], ['olive_oil_grades', 13]]);
 let bad = 0;
 const ids = Object.keys(proposals).length ? Object.keys(proposals) : kb.entries.filter((e) => !['pick', 'family', 'aisle'].includes(e.kind)).map((e) => e.id);
 for (const id of ids) {
@@ -22,7 +23,7 @@ for (const id of ids) {
   const out = [];
   const tip0 = (e.buying_tips || [])[0] || '';
   // Devon approved the CARD-STYLE-SAMPLES line 1s verbatim (2026-10-17); "10 words plus the food" lets ground beef run 12.
-  if (words(e.decision) > (APPROVED_LONG.has(id) ? 12 : 10)) out.push(`LINE1_LONG ${words(e.decision)}w`);
+  if (words(e.decision) > (APPROVED_LONG.get(id) ?? 10)) out.push(`LINE1_LONG ${words(e.decision)}w`);
   const card = projectEntry(e, { doLine: doFor(id) });
   if (card.look_for?.[0] !== tip0) out.push(`LINE2_NOT_FIRST_LOOK_FOR (cautionary wording or authored watch_out?)`);
   if (tip0.length > 90) out.push(`LINE2_LONG ${tip0.length}c`);

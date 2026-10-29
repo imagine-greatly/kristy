@@ -820,7 +820,7 @@
         "Check one thing: is the skin eaten? Berries, greens, apples, grapes, potatoes: yes.",
         "Look for Real Organic or Certified Naturally Grown on the sign or sticker, a step past USDA Organic.",
         "Can’t find either: the USDA Organic seal on the sign or sticker.",
-        "Peeled produce: organic is optional, since the peel goes in the trash.",
+        "Peeled produce: organic or not, either is fine, since the peel goes in the trash.",
         "The Environmental Working Group’s Dirty Dozen list is another guide to what to buy organic first.",
         "Residue sits on the skin, so a peel you throw away takes it with it."
       ],
@@ -4201,7 +4201,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do I buy real extra-virgin olive oil, and what do the grades mean?",
-      "decision": "Organic extra virgin olive oil with a recent harvest date.",
+      "decision": "Extra virgin olive oil with a recent harvest date, one country, dark bottle.",
       "why": "Dark glass or tins protect oil from light; UC Davis names harvest dates as a freshness cue.",
       "short_answer": "Extra virgin uses no heat or solvent, and has to pass lab and taste tests. ‘Pure’, ‘classic’ and ‘light’ are refined oil with some virgin added. Look for a recent harvest date, a dark bottle and one country of origin.",
       "detail": "Grade and provenance are two separate checks and a bottle has to pass both. On grade: pomace oil is solvent-extracted from the paste left after pressing and is a different product; ‘first cold pressed’ is a legacy phrase with no added legal force. On provenance: ‘packed in [country]’ names where it was bottled, not where the olives grew, and ‘product of’ is the phrase that names the origin. A harvest date beats a best-by date every time, because the oil degrades from the day it is pressed. Dark glass or tin protects it from light, and a price that is unusually low for extra-virgin is a flag rather than a find. Extra virgin is mechanically extracted with no heat or solvent and has to pass both a chemical limit and a taste panel. Virgin is the same process with a looser limit. ‘Light’ refers to color and taste rather than calories. Past the grade, olive oil is one of the more adulterated products in the store.",
@@ -4223,6 +4223,7 @@
       "kristy_take": "Harvest date, dark bottle, one country. Everything else on the front is decoration.",
       "instead": "Butter or ghee for anything cooked. Whole-food fats, with no harvest date to check.",
       "buying_tips": [
+        "Olive oil starts aging the day it is pressed, and dark glass keeps light off it.",
         "Look for a harvest date, not just “best by”, and buy recent.",
         "Pick dark glass or tin, and store it away from the stove.",
         "Read for one country of origin, named with “product of”.",
@@ -17675,10 +17676,10 @@
       "kind": "aisle",
       "title": "Produce",
       "category": "aisle_produce",
-      "decision": "Organic when you eat the skin or juice it; organic is optional when you peel it.",
+      "decision": "Organic when you eat the skin or juice it; peeled, either is fine.",
       "buying_tips": [
         "Pick organic berries, greens, apples, grapes and potatoes: the skin gets eaten.",
-        "Pick any avocado, banana, mango or onion: the peel comes off, so organic is optional.",
+        "Pick any avocado, banana, mango or onion: the peel comes off, so either is fine.",
         "Read the sticker: 5 digits starting with 9 is organic, 4 digits is conventional.",
         "Look for a Real Organic, Certified Naturally Grown, Demeter or Regenerative Organic Certified logo: each goes further than plain organic.",
         "Can’t find one of those logos? Pick plain USDA Organic for anything with the skin eaten."
