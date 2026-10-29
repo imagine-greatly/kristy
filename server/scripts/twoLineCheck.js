@@ -15,7 +15,7 @@ const FIRST_PERSON = /\b(I|me|my|mine|we|our|us)\b/;
 // olive_oil_grades: Devon's option A headline (2026-10-29) carries four shelf markers in 13 words.
 // Second-pass shelf markers (Devon 2026-10-29, keep-and-add): headlines carry audited seals, up to 14 words.
 const APPROVED_LONG = new Map([['olive_oil_grades', 13],
-  ['pork_cuts_and_enhanced', 12], ['bacon', 12], ['beef_grassfed_vs_grainfed', 14], ['ground_beef_lean_ratio', 12], ['bison', 11], ['raw_kefir', 13], ['yogurt_plain_vs_flavored', 11], ['cheese_real_vs_processed', 11], ['grassfed_butter', 12], ['ghee', 12], ['salmon_wild_vs_farmed', 13], ['canned_fish_choosing', 12], ['label_wild_vs_farm_raised', 13], ['honey_adulteration', 11], ['maple_syrup', 12], ['nut_butter_ingredients', 11], ['coffee_beans', 11], ['sandwich_bread', 12]]);
+  ['pork_cuts_and_enhanced', 12], ['bacon', 12], ['beef_grassfed_vs_grainfed', 14], ['ground_beef_lean_ratio', 12], ['bison', 11], ['raw_kefir', 13], ['yogurt_plain_vs_flavored', 11], ['cheese_real_vs_processed', 11], ['grassfed_butter', 12], ['ghee', 12], ['salmon_wild_vs_farmed', 13], ['canned_fish_choosing', 12], ['label_wild_vs_farm_raised', 13], ['honey_adulteration', 12], ['maple_syrup', 12], ['nut_butter_ingredients', 11], ['coffee_beans', 11], ['sandwich_bread', 12]]);
 let bad = 0;
 const ids = Object.keys(proposals).length ? Object.keys(proposals) : kb.entries.filter((e) => !['pick', 'family', 'aisle'].includes(e.kind)).map((e) => e.id);
 for (const id of ids) {

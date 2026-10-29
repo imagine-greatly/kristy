@@ -3791,8 +3791,8 @@ const SECOND_PASS = {
     "do": "Look for MSC, or ASC or BAP on farmed fish, plus catch details."
   },
   "honey_adulteration": {
-    "decision": "Organic raw unfiltered honey, one named origin, honey the only ingredient.",
-    "tip0": "Read the list: honey and nothing else, plus a named origin and a lot code.",
+    "decision": "Organic raw unfiltered honey, producer and origin named, honey the only ingredient.",
+    "tip0": "Read the list: honey and nothing else, plus the producer, origin and lot code.",
     "do": "Look through the jar for cloudy honey, then a named origin and lot code."
   },
   "maple_syrup": {
@@ -3838,6 +3838,6 @@ test('second-pass shelf markers 2026-10-29: live copy', () => {
   }
   // The ruling: kept markers stay on the card.
   const text = (id) => { const e = live.find((x) => x.id === id); return [e.decision, ...e.buying_tips, doLines[id]].join(' '); };
-  for (const [id, re] of [['egg_labels', /soy-free/], ['egg_labels', /corn-free/], ['coffee_beans', /mold-testing/], ['honey_adulteration', /\braw\b/], ['maple_syrup', /Dark or Very Dark/], ['whole_vs_reduced_fat_milk', /100% grass-fed/], ['grassfed_butter', /100% grass-fed/], ['beef_grassfed_vs_grainfed', /100% grass-fed/], ['lamb_goat', /100% grass-fed/]]) assert.match(text(id), re, `${id} keeps ${re}`);
+  for (const [id, re] of [['egg_labels', /soy-free/], ['egg_labels', /corn-free/], ['coffee_beans', /mold-testing/], ['honey_adulteration', /\braw\b/], ['honey_adulteration', /\bproducer\b/], ['maple_syrup', /Dark or Very Dark/], ['whole_vs_reduced_fat_milk', /100% grass-fed/], ['grassfed_butter', /100% grass-fed/], ['beef_grassfed_vs_grainfed', /100% grass-fed/], ['lamb_goat', /100% grass-fed/]]) assert.match(text(id), re, `${id} keeps ${re}`);
   for (const id of Object.keys(SECOND_PASS)) assert.doesNotMatch(text(id).replace(/Regenerative Organic Certified|Certified Regenerative/g, ''), /\bregenerative\b/i, `${id}: bare “regenerative”`);
 });

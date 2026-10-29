@@ -1919,7 +1919,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do I know honey is real?",
-      "decision": "Organic raw unfiltered honey, one named origin, honey the only ingredient.",
+      "decision": "Organic raw unfiltered honey, producer and origin named, honey the only ingredient.",
       "why": "WAPF lists raw honey, preferably unfiltered, among its best sweeteners; ultra-filtration removes pollen.",
       "short_answer": "Pick a raw, unfiltered jar with honey as the only ingredient, USDA Organic where shelved. Skip heated honey and syrup blends. It is still a sugar, to use with intention.",
       "detail": "Raw honey has not been heated, so it keeps its enzymes, and unfiltered honey keeps more of what came from the hive. Heating does not spoil honey as a food, but the enzymes may be compromised. Commercial honey is often blended, and some has corn syrup added. A jar that names its producer and says “raw” or “unfiltered” is the reliable route. Crystallizing is what raw honey does over time. Being an old, traditional food is a fair reason to prefer real honey. Tradition speaks to it being a real food, and it is still sugar.",
@@ -1938,7 +1938,7 @@
       "instead": "Maple syrup with one producer named on the jug. The same sourcing question, and far easier to answer.",
       "cart_pick": "Raw, unfiltered honey",
       "buying_tips": [
-        "Read the list: honey and nothing else, plus a named origin and a lot code.",
+        "Read the list: honey and nothing else, plus the producer, origin and lot code.",
         "Some commercial honey is blended, with corn syrup added.",
         "Look for “raw” and “unfiltered”, with the pollen left in; it looks cloudy, not clear.",
         "Ask the seller whether it was heated or filtered. Crystallized honey is normal.",
@@ -3070,8 +3070,7 @@
         "Check the solution’s ingredients, heaviest first, and skip sodium phosphate or sodium tripolyphosphate.",
         "Organic means organic feed; still check the list for added solution.",
         "Much store pork is pumped with water, salt and phosphates, then sold by weight.",
-        "Most US pork is raised indoors, and its fat reflects what the pig ate.",
-        "Organic pork rules ban gestation and farrowing crates and require outdoor access all year."
+        "Most US pork is raised indoors, and its fat reflects what the pig ate."
       ],
       "labels_decoded": [
         {
