@@ -5573,7 +5573,7 @@
       ],
       "category": "produce",
       "question": "How do I pick onions and garlic that will keep?",
-      "decision": "Firm onions and garlic, dry papery skins; organic optional here.",
+      "decision": "Firm onions and garlic, papery skins; peeled, either is fine.",
       "why": "A well-cured bulb feels dry at the neck and papery outside. A soft, scented or sprouting bulb is already on its way out.",
       "short_answer": "Onions: firm for their size, little to no scent, a dry neck, no cuts, bruises or mold, no sprouting. Some loose skins are normal. Garlic: clean, white or true to the variety, well cured, cloves firm.",
       "detail": "Top tier is in season with a Real Organic, Certified Naturally Grown, Demeter or Regenerative Organic Certified seal, then USDA Organic as the floor; read the sign or sticker at the bin for the growing method. Whole dry onions live in a cool, dry, dark place with plenty of air movement: no plastic bags, no wrap, and not beside potatoes or anything else that releases moisture. Storage between 41 and 75°F favors sprouting, so the cooler the spot the better. Refrigeration is only for sweet or mild high-water varieties, on a low-humidity setting, and a cut onion goes in a sealed container for up to seven days. Garlic keeps one to two months at room temperature in low humidity before it softens, goes spongy, and shrivels from water loss; it sprouts fastest between 41 and 65°F, and its odor moves into other foods, so it gets stored on its own.",
@@ -6494,7 +6494,7 @@
         "kohlrabi bulb",
         "kohlrabi bulbs"
       ],
-      "decision": "Kohlrabi; organic is optional here, since the peel comes off.",
+      "decision": "Kohlrabi; the peel comes off, so either is fine.",
       "sources": [
         {
           "name": "F192 — extension.purdue.edu",
@@ -6566,7 +6566,7 @@
         "mango",
         "mangos"
       ],
-      "decision": "Mangoes; organic is optional here, since the peel comes off.",
+      "decision": "Mangoes; the peel comes off, so either is fine.",
       "sources": [
         {
           "name": "F182 — ndsu.edu",
@@ -7684,7 +7684,7 @@
       ],
       "category": "produce",
       "question": "How do you buy and ripen bananas?",
-      "decision": "Part-green bananas, no splits; organic optional since you peel them.",
+      "decision": "Part-green bananas, no splits; peeled, either is fine.",
       "why": "Organic remains the default despite the discarded peel; the rules bar GMOs, irradiation and sewage sludge.",
       "short_answer": "Buy organic bananas green or just turning and let them ripen on the counter. They get sweeter as the green fades. Organic is the floor.",
       "detail": "Bananas are harvested mature-green and ripened at the market end, since fruit ripened on the plant often splits. Nearly every supermarket banana, green or yellow, goes through a ripening room. The ripening runs on the fruit’s own ethylene. They ripen at 59 to 68°F, and cold below 56°F can stop a green banana ripening at all. Organic is the floor for how they are grown.",
@@ -7872,7 +7872,7 @@
         "acorn squash",
         "spaghetti squash"
       ],
-      "decision": "Winter squash and pumpkin; organic is optional here, since the rind comes off.",
+      "decision": "Winter squash and pumpkin; the rind comes off, so either is fine.",
       "sources": [
         {
           "name": "F127 — law.cornell.edu",
@@ -15045,7 +15045,7 @@
       ],
       "category": "produce",
       "question": "How do you pick and ripen avocados?",
-      "decision": "Hass avocados, firm but not rock hard; organic is optional.",
+      "decision": "Hass avocados, firm, not rock hard; peeled, either is fine.",
       "why": "Organic remains the default despite the discarded skin; the rules bar GMOs, irradiation and sewage sludge.",
       "short_answer": "Avocados rank third cleanest of 47 on the residue list. Buy firm green Hass avocados and ripen them on the counter, then move ripe ones to the fridge.",
       "detail": "Avocados rank 3 of 47 on the 2026 residue list, ordered from least residue to most. Ripen them on the counter before refrigerating; a paper bag speeds it up. Underripe green Hass avocados ripen in about four days in the refrigerator, and once ripe, with deep blue-green skin, they last up to five days there. Store a cut half on a plate, cut side down.",
@@ -15063,7 +15063,7 @@
       "kristy_take": "Buy avocados a few days ahead of the meal and let the counter do the work.",
       "cart_pick": "Hass avocados",
       "buying_tips": [
-        "Pick avocados with no bruises or torn skin. The peel comes off, so organic is optional.",
+        "Pick avocados with no bruises or torn skin. The peel comes off, so either is fine.",
         "Check with your palm, not fingertips. Ripe Hass skin turns deep blue-green.",
         "Can’t find ripe ones: buy firm and ripen on the counter, in a paper bag to speed it up.",
         "Once ripe, an avocado keeps up to five days in the fridge.",
@@ -15177,7 +15177,7 @@
       ],
       "category": "produce",
       "question": "How do you buy melons?",
-      "decision": "Whole watermelon, dull skin, cream spot underneath; organic is optional.",
+      "decision": "Whole watermelon, dull skin, cream spot underneath; organic or not.",
       "why": "Watermelon ranks low on the residue list and cantaloupe sits mid-list. Whole melons keep the rind until cutting.",
       "short_answer": "Buy whole melons and cut them at home. Watermelon ranks 10 and cantaloupe 17 of 47 on the residue list, so organic matters more for cantaloupe.",
       "detail": "On the 2026 residue list, ordered from least residue to most, watermelon ranks 10 and cantaloupe 17 of 47. Whole watermelon can sit on the counter or in the fridge. Rinse the rind under running water and rub briskly before cutting. Cut fruit goes into the refrigerator within two hours.",
@@ -15241,7 +15241,7 @@
       ],
       "category": "produce",
       "question": "How do you buy pineapple, mango, kiwi and papaya?",
-      "decision": "Uncut tropical fruit, origin on the sticker; organic is optional.",
+      "decision": "Uncut tropical fruit, origin on the sticker; organic or not.",
       "why": "Pineapple, papaya, mango and kiwi rank among the lowest residue produce. Most arrive underripe.",
       "short_answer": "Pineapple, papaya, mango and kiwi rank among EWG’s cleanest produce. Buy whole fruit over precut. A ripe mango gives slightly, and pineapple must ripen before harvest.",
       "detail": "On the 2026 residue list, ordered from least residue to most, pineapple ranks 1, papaya 4, mangoes 11 and kiwi 15 of 47. Pineapple, mangoes and kiwi ripen on the counter before refrigerating; refrigerating them unripe gives a mealy texture and lost flavor. A paper bag speeds ripening. Rinse under running water before cutting.",
@@ -17416,7 +17416,7 @@
       "why": "Bananas, avocados and tomatoes can finish at room temperature, but readiness checks differ.",
       "buying_tips": [
         "Pick organic peaches, nectarines and cherries; the skin gets eaten.",
-        "Pick any avocados and bananas; the peel comes off, so organic is optional.",
+        "Pick any avocados and bananas; the peel comes off, so either is fine.",
         "Read the sticker: a 5-digit code starting with 9 means organic.",
         "Pick fruit that gives a little for today; skip bruised, split or leaking fruit."
       ],
@@ -18899,7 +18899,7 @@
     {
       "id": "pick_f_onions",
       "kind": "pick",
-      "decision": "Dry onions; organic is optional here, since the skin comes off.",
+      "decision": "Dry onions; the skin comes off, so either is fine.",
       "sources": [
         {
           "name": "F187 — ndsu.edu",
