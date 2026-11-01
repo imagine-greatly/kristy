@@ -2957,7 +2957,7 @@
       "decision": "Chicken that lived outside.",
       "why": "A seal means someone checked how the bird lived. ‘Natural’ and ‘hormone-free’ mean nobody had to.",
       "short_answer": "Look for a pasture-raised seal: Certified Humane Pasture-Raised or Animal Welfare Approved. USDA Organic covers the feed and outdoor space. Both together is the best the case offers.",
-      "detail": "Certified Humane Pasture-Raised birds go outdoors every day for at least 6 hours, 12 months a year (6 on seasonal farms), and spend more than half their lives on pasture with living plants. Animal Welfare Approved requires continuous daytime ranging from four weeks old. USDA Organic sets an organic feed ration that includes pasture and forage, outdoor space for the birds, and no antibiotics in the feed. Whatever the cut, the same marks apply.",
+      "detail": "Certified Humane Pasture-Raised birds go outdoors every day for at least 6 hours, 12 months a year (6 on seasonal farms), and spend more than half their lives on pasture with living plants. Animal Welfare Approved requires continuous daytime ranging from four weeks old. USDA Organic sets an organic feed ration that includes pasture and forage, outdoor space for the birds, and no antibiotics in the feed.",
       "evidence_tier": "kristys_standard",
       "sources": [
         {
@@ -2995,13 +2995,12 @@
         "USDA FSIS, Labeling Guideline on Documentation Needed to Substantiate Animal Raising Claims"
       ],
       "kristy_take": "The seal on the pack is the check. Pasture-raised with a seal tells how the bird lived; organic tells what it ate.",
-      "cart_pick": "Chicken",
+      "cart_pick": "Chicken with a welfare seal",
       "buying_tips": [
         "Look for Certified Humane Pasture-Raised or Animal Welfare Approved on the pack.",
         "Look for USDA Organic too: organic feed with pasture and forage, no antibiotics in feed.",
         "Both seals on one pack is the best the case offers.",
-        "Read the ingredients for chicken alone; some packs can carry added broth, up to 15% of the weight.",
-        "Whatever the cut, the same marks apply."
+        "Read the ingredients for chicken alone; some packs can carry added broth, up to 15% of the weight."
       ],
       "labels_decoded": [
         {
