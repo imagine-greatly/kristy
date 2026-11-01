@@ -755,8 +755,8 @@ export const TWO_LINE = {
     "buying_tips": [
       "Look for Certified Humane Pasture-Raised or Animal Welfare Approved on the pack.",
       "Look for USDA Organic too: organic feed with pasture and forage, no antibiotics in feed.",
-      "Both seals on one pack is the best the case offers.",
-      "Read the ingredients for chicken alone; some packs can carry added broth, up to 15% of the weight."
+      "Both on one pack is best.",
+      "Packs can carry added water or broth, up to 15% of the weight. Choose the least; air-chilled chicken holds the least."
     ]
   },
   "pork_cuts_and_enhanced": {
