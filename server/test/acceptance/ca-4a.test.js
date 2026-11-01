@@ -199,7 +199,7 @@ test('C4 raw milk, duck and quail eggs, ghee and butter carry the spec text', ()
 test('C5 pick_milk is retired and the Milk card answers its rows', () => {
   assert.ok(was('pick_milk'), 'pick_milk missing at HEAD');
   assert.equal(now('pick_milk'), undefined);
-  assert.equal(kb.entries.filter((e) => e.kind !== 'pick').length, 181);
+  assert.equal(kb.entries.filter((e) => e.kind !== 'pick').length, 180); // 2026-11-01 chicken unification
   assert.equal(kb.entries.filter((e) => e.kind === 'pick').length, 103);
   for (const row of MILK_ROWS) {
     assert.equal(idOf(matchItemToCard(row)), MILK_ID, row);

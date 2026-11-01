@@ -14,8 +14,9 @@ import { beforeConcern, preCleanPick10, preCleanPick8 } from './twoLinePin.js';
 
 const SERVER = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const ROOT = join(SERVER, '..');
-const kb = restoreOrganicCarts(JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8')));
-const doLines = JSON.parse(readFileSync(join(SERVER, 'lib', 'doLines.json'), 'utf8'));
+import { unfoldChicken, unfoldDoLines } from './twoLinePin.js'; // chicken fold 2026-11-01: this batch reads the folded cards as of 117f3ee
+const kb = restoreOrganicCarts(unfoldChicken(JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8'))));
+const doLines = unfoldDoLines(JSON.parse(readFileSync(join(SERVER, 'lib', 'doLines.json'), 'utf8')));
 const BASE = 'aa12a3d';
 const PRE = JSON.parse(execFileSync('git', ['show', `${BASE}:server/kristy_perimeter_kb.json`], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 // clean-pick-10 moved chicken_cuts_basics and ground_turkey; this batch reads them as of 117ab78.
@@ -63,7 +64,8 @@ test('C2 no CA-3b decision or cart_pick prints a grass term', () => {
 test('C3 chicken_breast survives as a rewrite', () => {
   const e = now('chicken_breast');
   assert.ok(e, 'chicken_breast was removed');
-  assert.ok(!RETIRED_IDS.has('chicken_breast'), 'chicken_breast is RETIRED');
+  // D8 superseded 2026-11-01: chicken_breast folded into the cut-neutral `chicken` card (read here as of 117f3ee).
+  assert.ok(RETIRED_IDS.has('chicken_breast'), 'chicken_breast fold missing from RETIRED');
   assert.match(String(e.cart_pick || ''), /breast/i);
   assert.notEqual(JSON.stringify(e), JSON.stringify(pre('chicken_breast')), 'chicken_breast unchanged');
 });

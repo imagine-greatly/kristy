@@ -8,6 +8,7 @@ import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { matchItemToCard, matchItemToPick, attachCards } from '../../lib/listMatch.js';
 import { lintPick } from '../../lib/counterCardLint.js';
+import { RETIRED } from '../../lib/counterCards.js';
 import { nonEmpty } from '../../lib/testGuards.js';
 
 const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
@@ -159,7 +160,7 @@ test('swap-picks-1: new picks follow the existing shape, copy rules and alias in
 
 test("swap-picks-1: original identities, added aliases and new picks remain present", () => {
   // retired: pilot merge replaced this batch's text (P4)
-  for (const old of original) assert.ok(entry(old.id), `${old.id} missing`);
+  for (const old of original) if (!RETIRED.includes(old.id)) assert.ok(entry(old.id), `${old.id} missing`); // folds leave via RETIRED
   for (const [alias, id] of CARD_ALIASES) assert.ok(entry(id).aliases.includes(alias), `${id}: ${alias}`);
   for (const id of NEW_IDS) assert.ok(entry(id), `${id} missing`);
   assert.equal(new Set(entries.map((e) => e.id)).size, entries.length, 'duplicate corpus ids');

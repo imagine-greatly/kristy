@@ -73,7 +73,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `label_no_artificial_flavors` | label_terms | Short ingredient lists of recognisable foods over flavor claims. | Look for “natural flavors” further down the list — the claim leaves it in. | — |
 | `judging_meat_at_the_case` | meat | Sealed, leak-free meat with the newest ‘packaged on’ date. | Check the package is sealed and not leaking juices, then smell it. | — |
 | `butcher_counter_asking` | meat | 100% grass-fed soup bones and a whole chuck, freshly ground. | Ask what came in today and when it was cut. | — |
-| `chicken_cuts_basics` | meat | Air-chilled pasture-raised whole chicken, then bone-in, skin-on thighs. | Check for cream-yellow skin and an AWA seal on the bird. | — |
+| `chicken` | meat | Chicken that lived outside. | Look for pasture-raised with a seal, organic if it is there, nothing added. | — |
 | `pork_cuts_and_enhanced` | meat | Organic or pasture-raised pork with no added solution. | Find an AWA or Certified Humane seal and USDA Organic on the chop pack. | — |
 | `deli_meat_uncured` | meat | Organic or pasture-raised whole roasted meat, sliced thin. | Ask for fresh slices from a whole roast bearing an Uncured label. | — |
 | `mercury_by_fish` | seafood | Sardines, anchovies, salmon or canned light tuna, lowest in mercury. | Check the species name on the can for sardines. | — |
@@ -130,7 +130,6 @@ Also: imperative, starts with a verb, ≤14 words.
 | `bacon` | meat | Organic or pasture-raised bacon with a short curing list. | Find the AWA pasture seal on the bacon pack. | — |
 | `hot_dogs` | meat | Organic beef hot dogs with no phosphates or binders. | Find the AGA seal, then count the ingredients. | — |
 | `canned_tuna` | seafood | Pole- or troll-caught light tuna in olive oil or water. | Read the catch wording for pole, troll, FAD-free or school methods. | — |
-| `chicken_breast` | meat | Pasture-raised or organic bone-in, skin-on breast; no solution added. | Find the AWA seal and USDA Organic on the pack. | — |
 | `ham` | meat | Organic or pasture-raised ham named just “Ham”. | Read the product name’s opening word for Uncured, then check for pork and salt. | — |
 | `turkey_bacon` | meat | Organic or pasture-raised turkey bacon with no added sugar. | Read the name for Uncured, then check which meat leads the ingredient list. | — |
 | `cured_pork` | meat | Organic or pasture-raised pork, with cut and curing ingredients named. | Read the ingredients for pork and salt alone. | — |
@@ -242,7 +241,6 @@ Also: imperative, starts with a verb, ≤14 words.
 | `seafood_fresh_sardines_mackerel` | seafood | Fresh sardines or Atlantic mackerel; skip king mackerel. | Check these fish for bright stripes or shiny skin. | — |
 | `seafood_trout` | seafood | Wild trout first; US farmed rainbow trout next. | Ask the counter whether the trout is wild, or farmed in the US. | — |
 | `beef_veal` | meat | Pasture veal raised with its mother; skip white crate veal. | Read the label for pasture rearing and a humane seal. | — |
-| `poultry_chicken_wings` | meat | Pasture-raised chicken wings, soy-free feed when the farm offers it. | Check that the skin has no tears, then read the raising claims. | — |
 
 **80 cards · 0 flagged · 33 redrafted in the 2026-07-31 sweep.**
 

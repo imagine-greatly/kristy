@@ -13,10 +13,11 @@ import { preFamilyCascade, CLEAN_J3, preCompleteness, notGap, CLEAN_J3_BASE, pre
 
 const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
 // Later batches restore their own ids to the J3 commit (J4: preCleanJ4, J5: preCleanJ5, J6: preCleanJ6, J7: preCleanJ7, J8: preCleanJ8, J9: preCleanJ9).
-const raw = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
+import { unfoldChicken, unfoldDoLines } from './twoLinePin.js'; // chicken fold 2026-11-01: this batch reads the folded cards as of 117f3ee
+const raw = unfoldChicken(JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8')));
 const kb = { ...raw, entries: preFamilyCascade(raw.entries).filter(notGap).map(preCompleteness).map(preDialed).map(preCleanJ4).map(preCleanJ5).map(preCleanJ6).map(preCleanJ7).map(preCleanJ8).map(preCleanJ9) };
 const base = JSON.parse(execFileSync('git', ['show', `${CLEAN_J3_BASE}:server/kristy_perimeter_kb.json`], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
-const doLines = JSON.parse(readFileSync(new URL('../../lib/doLines.json', import.meta.url), 'utf8'));
+const doLines = unfoldDoLines(JSON.parse(readFileSync(new URL('../../lib/doLines.json', import.meta.url), 'utf8')));
 const live = (id) => kb.entries.find((e) => e.id === id);
 const was = (id) => base.entries.find((e) => e.id === id);
 // Batches after J3 that edit these entries add their ids here.

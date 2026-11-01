@@ -6,7 +6,7 @@ export const TRY_POOL = Object.freeze([
   'butcher_counter_asking',
   'beef_cuts_basics',
   'pork_cuts_and_enhanced',
-  'chicken_cuts_basics',
+  'chicken',
   'salmon_wild_vs_farmed',
   'shrimp_imported_vs_domestic',
   'seafood_counter',

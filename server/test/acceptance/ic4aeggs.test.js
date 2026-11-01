@@ -108,6 +108,6 @@ test('C7 egg_labels lint clean', () => {
   assert.deepEqual(readability(e), []);
   assert.deepEqual(lintRepeatedClaim(e), []);
   assert.doesNotMatch(spoken(e), RULE4, 'egg_labels trips claim-lock rule 4');
-  assert.equal(OWNED_FACTS.length, 14);
+  assert.equal(OWNED_FACTS.length, 13); // 2026-11-01: chill_water retired with chicken_cuts_basics
   assert.ok(!OWNED_FACTS.some((r) => r.fact === 'hen_raising'), 'hen_raising row still present');
 });

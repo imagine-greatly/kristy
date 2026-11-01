@@ -87,9 +87,9 @@ test('a browsed topic carries its cart pick, so the counter fills the cart', () 
 test('chicken lives at the meat case, not under Dairy & Eggs', () => {
   // It was filed under `poultry_eggs`, so a thigh question surfaced beside yogurt.
   const meat = sectionById('meat').topics.map((t) => t.id);
-  assert.ok(meat.includes('chicken_cuts_basics'));
+  assert.ok(meat.includes('chicken'));
   const eggs = sectionById('eggs_dairy').topics.map((t) => t.id);
-  assert.ok(!eggs.includes('chicken_cuts_basics'), 'chicken must not surface under Dairy & Eggs');
+  assert.ok(!eggs.includes('chicken'), 'chicken must not surface under Dairy & Eggs');
   assert.ok(eggs.includes('egg_labels'), 'eggs still do');
 });
 

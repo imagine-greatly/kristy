@@ -145,5 +145,5 @@ test('C7 survivors lint clean', () => {
     const was = new Set(strings(pre(to)).flatMap(sentences));
     for (const s of strings(e).flatMap(sentences)) if (!was.has(s)) assert.doesNotMatch(s, RULE4, `${to}: ${s}`);
   }
-  assert.equal(OWNED_FACTS.length, 14);
+  assert.equal(OWNED_FACTS.length, 13); // 2026-11-01: chill_water retired with chicken_cuts_basics
 });

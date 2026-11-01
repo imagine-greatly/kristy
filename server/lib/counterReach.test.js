@@ -182,7 +182,7 @@ test('chf-5 folds: every retired asked_as lands where measured (null = gate admi
     ['how do i pick a baking powder', 'baking_powder'],
     ['how do you choose duck breast', null],
     ['how long does a whole duck keep', 'poultry_duck'], // gap pass: poultry_duck owns whole duck
-    ['how do you buy duck legs', 'chicken_cuts_basics'],
+    ['how do you buy duck legs', 'poultry_duck'], // 2026-11-01: duck aliases moved off the chicken card
   ];
   for (const [q, want] of nonEmpty(asks, 'chf-5 retired asks', 15)) {
     assert.equal(inScope(q).ok, true, `"${q}" refused by the scope gate`);
@@ -193,4 +193,14 @@ test('chf-5 folds: every retired asked_as lands where measured (null = gate admi
   const can = scoreEntries('canned coconut milk', 3)[0];
   assert.ok(admits(can), '"canned coconut milk" not admitted');
   assert.equal(can.entry.id, 'canned_coconut_milk');
+});
+
+test('chicken fold 2026-11-01: every chicken ask, cut or not, lands on the one chicken card', () => {
+  const asks = ['chicken', 'chicken breast', 'chicken thighs', 'chicken wings', 'whole chicken', 'pasture raised chicken'];
+  for (const q of nonEmpty(asks, 'chicken asks', 6)) {
+    const top = scoreEntries(q, 3)[0];
+    assert.ok(admits(top), `"${q}" not admitted`);
+    assert.equal(top.entry.id, 'chicken', `"${q}" -> ${top.entry.id}`);
+  }
+  assert.equal(scoreEntries('rotisserie chicken', 3)[0]?.entry.id, 'rotisserie_chicken', 'rotisserie keeps its own card');
 });

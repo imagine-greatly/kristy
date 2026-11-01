@@ -15,7 +15,7 @@ import before from './w4.before.json' with { type: 'json' };
 import doLines from '../../lib/doLines.json' with { type: 'json' };
 import tips from '../../lib/sectionRules.json' with { type: 'json' };
 import * as lint from '../../lib/counterCardLint.js';
-import { projectEntry } from '../../lib/counterCards.js';
+import { projectEntry, RETIRED } from '../../lib/counterCards.js';
 import { nonEmpty } from '../../lib/testGuards.js';
 import { beforeTwoLine, beforeConcern, preCleanPick, preCleanPick2, preCleanPick3, preCleanPick4, preCleanPick5, preCleanPick6, preCleanPick7, preCleanPick9, preCleanPick8 } from './twoLinePin.js';
 kb.entries = kb.entries.map((e) => preCleanPick(preCleanPick2(preCleanPick3(preCleanPick4(preCleanPick5(preCleanPick6(preCleanPick7(preCleanPick9(e)))))))));
@@ -72,8 +72,9 @@ test('W4 (b) live PILOT passes opener repetition and all existing card lints', (
 
 test('W4 (c/e) PILOT identities, numbers and voice survive', () => {
   // retired: pilot merge replaced this batch's text (P4)
-  for (const old of before) assert.ok(pilot.some((e) => e.id === old.id), `${old.id} missing`);
-  for (const old of before) {
+  const kept = before.filter((old) => !RETIRED.includes(old.id)); // folds leave via RETIRED
+  for (const old of kept) assert.ok(pilot.some((e) => e.id === old.id), `${old.id} missing`);
+  for (const old of kept) {
     const live = pilot.find((e) => e.id === old.id);
     // The two-line rewrite (2026-10-17) owns buying_tips (and egg sources) now: twoLinePin.test.js.
     const pre = beforeTwoLine(beforeConcern(preCleanPick8(live), { copy: true }));

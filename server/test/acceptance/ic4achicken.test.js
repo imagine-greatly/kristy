@@ -13,18 +13,24 @@ import { RETIRED, projectEntry, parseReviewTable } from '../../lib/counterCards.
 import { lintCard, readability, lintRepeatedClaim, OWNED_FACTS } from '../../lib/counterCardLint.js';
 import { TRY_POOL } from '../../lib/tryPool.js';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
-import doLines from '../../lib/doLines.json' with { type: 'json' };
+import doLines0 from '../../lib/doLines.json' with { type: 'json' };
+import { unfoldChicken, unfoldDoLines } from './twoLinePin.js';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../../..');
 const PRE = JSON.parse(execFileSync('git', ['show', '8a30d3d:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 const pre = (id) => PRE.entries.find((e) => e.id === id);
-const now = (id) => kb.entries.find((e) => e.id === id);
+// Chicken fold 2026-11-01: chicken_cuts_basics folded into `chicken`; card reads use the KB as of 117f3ee,
+// live routing lands on LIVE.
+const VIEW = unfoldChicken(structuredClone(kb));
+const doLines = unfoldDoLines(doLines0);
+const LIVE = 'chicken';
+const now = (id) => VIEW.entries.find((e) => e.id === id);
 const admits = (top) => !!(top && top.score >= 2 && top.aliasScore > 0);
 const listRow = (name) => attachCards({ items: [{ name, source: 'user' }] }, { log: false }).items[0];
 const TO = 'chicken_cuts_basics';
 // clean-pick-1 (2026-10-20) moved this card on; the fold's checks read it as of ede90e7.
 const CP1 = JSON.parse(execFileSync('git', ['show', 'ede90e7:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
-kb.entries = kb.entries.map((e) => (e.id === TO ? CP1.entries.find((x) => x.id === TO) : e));
+VIEW.entries = VIEW.entries.map((e) => (e.id === TO ? CP1.entries.find((x) => x.id === TO) : e));
 const FOLDED = ['air_chilled_chicken', 'no_antibiotics_poultry'];
 const SPOKEN = ['decision', 'why', 'short_answer', 'detail', 'kristy_take', 'tier_note', 'buying_tips', 'watch_out', 'look_for', 'pick_steps', 'science', 'labels_decoded'];
 const spoken = (e) => JSON.stringify(SPOKEN.map((f) => e[f] ?? ''));
@@ -36,14 +42,14 @@ test('C1 folded chicken ids retired', () => {
     assert.ok(pre(id), `${id} missing from the pre-fold KB`);
     assert.ok(!now(id), `${id} still in the KB`);
     assert.ok(RETIRED.includes(id), `${id} not in RETIRED`);
-    assert.equal(doLines[id], undefined, `${id} still in doLines.json`);
+    assert.equal(doLines0[id], undefined, `${id} still in doLines.json`);
     assert.ok(!review.has(id), `${id} still a do-lines-review row`);
     assert.ok(!TRY_POOL.includes(id), `${id} still in TRY_POOL`);
     for (const r of OWNED_FACTS) assert.ok(r.owner !== id && !r.family.includes(id), `${r.fact} still names ${id}`);
     for (const s of nonEmpty(PERIMETER_SECTIONS, 'sections', 6)) for (const sc of s.shortcuts || []) assert.notEqual(sc.id, id, `${s.id} shortcut points at ${id}`);
   }
-  assert.ok(now('chicken_breast'), 'chicken_breast must stay its own card (type veto)');
-  assert.ok(!RETIRED.includes('chicken_breast'), 'chicken_breast must not be retired');
+  // Superseded 2026-11-01: chicken_breast folded into `chicken` with chicken_cuts_basics.
+  for (const id of ['chicken_cuts_basics', 'chicken_breast']) assert.ok(RETIRED.includes(id) && !kb.entries.some((e) => e.id === id), `${id} not folded`);
 });
 
 test('C2 chicken aliases and asks moved', () => {
@@ -60,17 +66,17 @@ test('C3 chicken rows land where they did', () => {
       assert.equal(inScope(q).ok, true, `"${q}" refused by the scope gate`);
       const top = scoreEntries(q, 3)[0];
       assert.ok(admits(top), `"${q}" not admitted`);
-      assert.equal(top.entry.id, TO, `"${q}" -> ${top.entry.id}`);
+      assert.equal(top.entry.id, LIVE, `"${q}" -> ${top.entry.id}`);
     }
   }
   for (const q of ['whole chicken', 'chicken thighs', 'air chilled chicken']) {
-    assert.equal(scoreEntries(q, 3)[0]?.entry.id, TO, `counter "${q}"`);
+    assert.equal(scoreEntries(q, 3)[0]?.entry.id, LIVE, `counter "${q}"`);
   }
   for (const name of ['whole chicken', 'chicken thighs', 'chicken']) {
-    assert.equal(listRow(name).cardSlug, TO, `list "${name}"`);
+    assert.equal(listRow(name).cardSlug, LIVE, `list "${name}"`);
   }
-  assert.equal(scoreEntries('chicken breast', 3)[0]?.entry.id, 'chicken_breast', 'counter "chicken breast"');
-  assert.equal(listRow('chicken breast').cardSlug, 'chicken_breast', 'list "chicken breast"');
+  assert.equal(scoreEntries('chicken breast', 3)[0]?.entry.id, LIVE, 'counter "chicken breast"');
+  assert.equal(listRow('chicken breast').cardSlug, LIVE, 'list "chicken breast"');
   assert.equal(typeContradicts('chicken breast', now(TO)), true, 'breast must stay vetoed off the thighs card');
   assert.equal(typeContradicts('whole chicken', now(TO)), false, 'whole chicken must be covered by the cart_pick');
 });
@@ -106,22 +112,18 @@ test('C5 chicken facts on chicken_cuts_basics', () => {
 });
 
 test('C6 owned facts and try pool', () => {
-  assert.equal(OWNED_FACTS.length, 14);
-  const chill = OWNED_FACTS.find((r) => r.fact === 'chill_water');
-  assert.equal(chill.owner, TO);
-  assert.equal(chill.ownerTitle, now(TO).title);
-  assert.ok(!chill.family.includes(TO), 'owner listed in its own family');
-  for (const id of nonEmpty(chill.family, 'chill_water family', 1)) assert.ok(now(id), `family id missing: ${id}`);
-  assert.deepEqual(OWNED_FACTS.find((r) => r.fact === 'bird_pig_raising').family, ['chicken_cuts_basics', 'pork_cuts_and_enhanced']);
+  // 2026-11-01: chill_water retired with chicken_cuts_basics; the try-pool slot passes to `chicken`.
+  assert.equal(OWNED_FACTS.length, 13);
+  assert.equal(OWNED_FACTS.find((r) => r.fact === 'chill_water'), undefined);
+  assert.deepEqual(OWNED_FACTS.find((r) => r.fact === 'bird_pig_raising').family, ['pork_cuts_and_enhanced']);
   assert.equal(TRY_POOL.length, 19);
-  assert.equal(TRY_POOL[4], TO);
-  assert.ok(doLines[TO], `${TO} has no do line`);
+  assert.equal(TRY_POOL[4], LIVE);
+  assert.ok(doLines0[LIVE], `${LIVE} has no do line`);
 });
 
 test('C7 chicken_cuts_basics lint clean', () => {
-  const chill = OWNED_FACTS.find((r) => r.fact === 'chill_water');
-  for (const id of [TO, ...chill.family]) {
-    const e = now(id);
+  // As of 117f3ee (chill_water family no longer exists); the live `chicken` card is linted alongside.
+  for (const [id, e] of [[TO, now(TO)], [LIVE, kb.entries.find((x) => x.id === LIVE)]]) {
     assert.deepEqual(lintCard(projectEntry(e, { doLine: doLines[id] })), [], `${id} lintCard`);
     assert.deepEqual(readability(e), [], `${id} readability`);
     assert.deepEqual(lintRepeatedClaim(e), [], `${id} repeated claim`);

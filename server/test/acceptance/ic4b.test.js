@@ -9,12 +9,14 @@ import { dirname, join } from 'node:path';
 import { RETIRED, ESSENTIALS, projectEntry } from '../../lib/counterCards.js';
 import { lintCard, readability, headlineHedge, TIER_NOTE_ORPHANED_PENDING } from '../../lib/counterCardLint.js';
 import kb0 from '../../kristy_perimeter_kb.json' with { type: 'json' }
-const kb = restoreOrganicCarts(structuredClone(kb0));
+import { unfoldChicken, unfoldDoLines } from './twoLinePin.js'; // chicken fold 2026-11-01: this batch reads the folded cards as of 117f3ee
+const kb = restoreOrganicCarts(unfoldChicken(structuredClone(kb0)));
 import { preT6_2 } from './twoLinePin.js';
 kb.entries = kb.entries.map(preT6_2); // t6-2: dairy/egg pins read ca32bef; t6_2.test.js owns live copy.
 import { beforeConcern, preCleanPick10 } from './twoLinePin.js';
-import doLines from '../../lib/doLines.json' with { type: 'json' };
+import doLines0 from '../../lib/doLines.json' with { type: 'json' };
 
+const doLines = unfoldDoLines(doLines0);
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../../..');
 const PRE = JSON.parse(execFileSync('git', ['show', '663ca3d:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 // clean-pick-10 moved chicken_cuts_basics and ground_turkey; this batch reads them as of 117ab78.
@@ -28,7 +30,8 @@ const RULE4 = /healthier|healthiest|better for you|chemically ripened|lowers|exp
 const BATCH = ['egg_labels', 'chicken_cuts_basics', 'rotisserie_chicken', 'ground_turkey', 'turkey_whole', 'turkey_bacon', 'frozen_nuggets', 'egg_duck_quail'];
 const nonPicksTitled = (t) => kb.entries.filter((e) => e.kind !== 'pick' && e.title === t);
 const PENDING = [...TIER_NOTE_ORPHANED_PENDING];
-const review = readFileSync(join(ROOT, 'docs/do-lines-review.md'), 'utf8');
+// Chicken fold 2026-11-01: the review table as of 117f3ee still carries the folded rows (only chicken rows changed since).
+const review = execFileSync('git', ['show', '117f3ee:docs/do-lines-review.md'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
 const reviewHeadline = (id) => {
   const line = review.split('\n').find((l) => l.startsWith(`| \`${id}\` |`));
   return line ? line.split('|')[3].trim() : null;

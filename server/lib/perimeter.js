@@ -378,7 +378,7 @@ export const PERIMETER_SECTIONS = [
     shortcuts: [
       { q: 'Which cut for stew?', id: 'beef_cuts_basics' },
       { q: 'Grass-fed or grass-finished?', id: 'beef_grassfed_vs_grainfed' },
-      { q: 'Which chicken cut?', id: 'chicken_cuts_basics' },
+      { q: 'Which chicken?', id: 'chicken' },
       { q: 'Is this one any good?', id: 'judging_meat_at_the_case' },
     ],
     thinNote: 'Beef, chicken, pork, lamb, goat, game, cured meats and the deli case. Rabbit and veal are not covered yet.',

@@ -2913,7 +2913,7 @@
       "family": "fam_ruminant_meat"
     },
     {
-      "id": "chicken_cuts_basics",
+      "id": "chicken",
       "title": "Chicken",
       "aliases": [
         "chicken cuts",
@@ -2929,9 +2929,6 @@
         "breasts",
         "thighs or breasts",
         "boneless skinless",
-        "duck legs",
-        "duck leg",
-        "duck meat",
         "air chilled chicken",
         "air-chilled",
         "chicken",
@@ -2941,92 +2938,131 @@
         "antibiotic free chicken",
         "abf",
         "pasture raised chicken",
-        "animal welfare approved chicken"
+        "raised chicken",
+        "animal welfare approved chicken",
+        "chicken breasts",
+        "plain chicken breast",
+        "pasture raised chicken breast",
+        "organic chicken breast",
+        "chicken wings",
+        "wings",
+        "wingettes",
+        "drumettes",
+        "party wings",
+        "whole chicken wings",
+        "chicken wing"
       ],
       "category": "poultry",
-      "question": "Which cut of chicken should I buy?",
-      "decision": "Organic pasture-raised whole chicken, Animal Welfare Approved, air-chilled, nothing added.",
-      "why": "AWA guarantees outdoor pasture life for the whole animal.",
-      "short_answer": "Whole bird: lowest cost per pound, and the carcass makes stock. Thighs carry more fat and flavor, and are hard to overcook. Breast is lean and dries fast. Bone-in, skin-on cuts cost less and cook better than boneless skinless.",
-      "detail": "Dark meat comes from muscles the bird actually used, so it carries more fat and stays juicy across a wide window of doneness. Breast is a low-use muscle: lean, quick, unforgiving. Bones conduct heat slowly and skin renders and bastes, which is why bone-in skin-on thighs are the most forgiving thing in the case. Boneless skinless breast is convenience paid for twice, once at the register and again in how fast it dries. A whole bird broken down at home gives you both kinds of meat plus a frame for broth, at the lowest cost per pound in the store. Thighs are dark meat: more fat, more flavor, and very hard to overcook. Breast is lean and fast and goes dry the moment you look away. Bone-in and skin-on cost less and cook better than boneless skinless, which is the most expensive way to buy the same bird. A whole bird yields both meats and a stock frame; water-chilled packs can hold retained water.",
+      "question": "Which chicken should I buy?",
+      "decision": "Chicken that lived outside.",
+      "why": "A seal means someone checked how the bird lived. ‘Natural’ and ‘hormone-free’ mean nobody had to.",
+      "short_answer": "Look for a pasture-raised seal: Certified Humane Pasture-Raised or Animal Welfare Approved. USDA Organic covers the feed and outdoor space. Both together is the best the case offers.",
+      "detail": "Certified Humane Pasture-Raised birds go outdoors every day for at least 6 hours, 12 months a year (6 on seasonal farms), and spend more than half their lives on pasture with living plants. Animal Welfare Approved requires continuous daytime ranging from four weeks old. USDA Organic sets an organic feed ration that includes pasture and forage, outdoor space for the birds, and no antibiotics in the feed. Whatever the cut, the same marks apply.",
       "evidence_tier": "kristys_standard",
       "sources": [
         {
-          "name": "A Greener World",
-          "url": "https://agreenerworld.org/certifications/animal-welfare-approved/"
-        }
+          "name": "Certified Humane, Standards for Broiler Chickens (Pasture-Raised)",
+          "url": "https://certifiedhumane.org/wp-content/uploads/HFAC-Std14.Chickens.5M_PR_R.pdf"
+        },
+        {
+          "name": "A Greener World, Animal Welfare Approved Meat Chicken Standards",
+          "url": "https://agreenerworld.org/certifications/animal-welfare-approved/standards/meat-chicken-standards/"
+        },
+        {
+          "name": "7 CFR 205.237, organic livestock feed",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.237"
+        },
+        {
+          "name": "7 CFR 205.238, organic livestock health care",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.238"
+        },
+        {
+          "name": "7 CFR 205.241, organic outdoor access",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.241"
+        },
+        {
+          "name": "Certified Humane, Decoding the Carton",
+          "url": "https://certifiedhumane.org/decoding-the-carton-how-to-buy-clean-humane-eggs/"
+        },
+        {
+          "name": "Chris Kresser, Misleading Food Labels",
+          "url": "https://chriskresser.com/misleading-food-labels/"
+        },
+        {
+          "name": "Non-GMO Project Standard, Version 17",
+          "url": "https://www.nongmoproject.org/wp-content/uploads/Non-GMO-Project-Standard-Version-17.pdf"
+        },
+        "USDA FSIS, Labeling Guideline on Documentation Needed to Substantiate Animal Raising Claims"
       ],
-      "kristy_take": "A whole bird gives you breast, dark meat and a frame for stock. For thighs, keep the bone and skin: they give you more room at the stove than boneless skinless.",
-      "cart_pick": "Organic pasture-raised whole chicken or thighs",
+      "kristy_take": "The seal on the pack is the check. Pasture-raised with a seal tells how the bird lived; organic tells what it ate.",
+      "cart_pick": "Chicken",
       "buying_tips": [
-        "Look for “air-chilled” on an organic bird that carries the Animal Welfare Approved seal.",
-        "Look for “air-chilled” on the whole bird or thigh pack; skin that starts dry crisps.",
-        "Pick a pasture bird on soy-free feed when there is one; ask the farm or counter.",
-        "Can’t find it: a regular whole bird or bone-in thighs, patted dry before the pan.",
-        "Pick a whole bird: the thriftiest buy, and the carcass makes stock.",
-        "Thighs, bone-in and skin-on: forgiving, low-cost, hard to overcook.",
-        "Breast: fast and lean. Pull it the moment it is done.",
-        "Boneless skinless costs the most for the same bird.",
-        "Heritage breeds such as Freedom Ranger carry darker, earthier meat than Cornish Cross.",
-        "Water-chilled birds hold water from the chilling tank.",
-        "Animal Welfare Approved sets pasture or range for life, and an auditor visits every farm yearly."
+        "Look for Certified Humane Pasture-Raised or Animal Welfare Approved on the pack.",
+        "Look for USDA Organic too: organic feed with pasture and forage, no antibiotics in feed.",
+        "Both seals on one pack is the best the case offers.",
+        "Read the ingredients for chicken alone; some packs can carry added broth, up to 15% of the weight.",
+        "Whatever the cut, the same marks apply."
       ],
       "labels_decoded": [
         {
-          "term": "Dark meat (thigh, drumstick)",
-          "meaning": "Working muscle. More fat, more flavor, a wide margin for error."
+          "term": "Certified Humane Pasture-Raised",
+          "meaning": "Outdoors every day, at least 6 hours, 12 months a year (6 on seasonal farms), more than half of life on living pasture."
         },
         {
-          "term": "White meat (breast, tenderloin)",
-          "meaning": "Low-use muscle. Lean and fast, dries out quickly."
+          "term": "Animal Welfare Approved",
+          "meaning": "Continuous daytime ranging from four weeks old, on an audited farm."
         },
         {
-          "term": "Contains up to X% retained water",
-          "meaning": "Water absorbed during water-chilling; you’re paying for it by weight."
+          "term": "USDA Organic",
+          "meaning": "Organic feed ration including pasture and forage, outdoor space, no antibiotics in feed."
         },
         {
-          "term": "Raised without antibiotics",
-          "meaning": "No antibiotics used in raising: meaningful, best when third-party verified."
+          "term": "Non-GMO Project Verified",
+          "meaning": "Covers the feed from the second day after hatching. Says nothing about how the bird lived."
         },
         {
-          "term": "No antibiotic residues",
-          "meaning": "True of all chicken by law; not a differentiator."
+          "term": "Natural",
+          "meaning": "Covers processing only. No standard for how the bird lived."
+        },
+        {
+          "term": "Free-range",
+          "meaning": "Access to the outdoors, not how much room or what grows there."
         }
       ],
-      "tier_note": "Pasture on a chicken label: time outdoors on pasture, audited only with a certifier’s seal.",
+      "tier_note": "Pasture-raised on a chicken label: time outdoors on pasture, audited only with a certifier’s seal.",
       "asked_as": [
         "which chicken cut should i buy",
         "thighs or breasts",
         "is boneless skinless worth it",
-        "how do you buy duck legs",
         "what is air chilled chicken",
         "is air chilled chicken better",
         "which chicken should i buy",
         "does no antibiotics mean anything",
         "is antibiotic free chicken better",
-        "should i pay for no antibiotics"
+        "should i pay for no antibiotics",
+        "how do you choose chicken breast",
+        "does natural chicken breast have added water",
+        "what does solution added mean on chicken breast",
+        "which chicken wings should i buy",
+        "are pasture raised wings worth it",
+        "are chicken wings healthy"
       ],
       "watch_out": [
-        "Boneless skinless costs the most for the same bird.",
-        "Water-chilled packages disclose ‘retained water up to’ a percentage. That percentage is the tank.",
-        "No ‘retained water’ line on the label means none is allowed inside. The disclosure is required, not optional.",
-        "Where air-chilled is not stocked, a regular bird still does the job. Pat it dry before it goes in the pan.",
-        "‘Raised without antibiotics’ rests on the producer’s own affidavit, and the farm is not inspected for it. A farm that shows how its birds live is the check.",
-        "‘Natural’ says nothing about antibiotics. It means no artificial ingredients were added after processing and the meat is minimally processed. A natural bird can be raised with antibiotics.",
-        "‘No hormones’ on chicken is an empty claim. Hormones and steroids are not allowed in poultry, so every bird already qualifies.",
-        "Organic is the seal that carries the antibiotic rule: organic feed only, no antibiotics.",
-        "Skip chicken labeled “enhanced” or “contains up to X% of a solution”: water, salt and phosphates injected into the meat.",
-        "A Certified Humane seal means the farm was audited; Animal Welfare Approved also requires pasture."
+        "‘Natural’ promises nothing about how the bird lived. It covers processing only.",
+        "‘Free-range’ says the birds had outdoor access, not how much room or what grows there.",
+        "‘No hormones’ is on every chicken: federal rules allow no hormones in poultry.",
+        "‘Vegetarian-fed’ describes the feed, not the life.",
+        "‘Raised without antibiotics’ rests on the producer’s own word unless a seal stands behind it."
       ],
       "pick_steps": [
-        "Bone-in, skin-on thighs are the forgiving pick; boneless skinless costs the most.",
+        "Look for Certified Humane Pasture-Raised or Animal Welfare Approved on the pack.",
         "Look for USDA Organic: certified organic feed and outdoor access.",
-        "Read for a retained-water percentage; ‘no retained water’ is the pick."
+        "Read the ingredients for chicken alone, nothing added."
       ],
-      "science": "Dark meat comes from muscles the bird actually used, so it carries more fat and stays juicy. Breast is a low-use muscle: lean, quick and unforgiving, so pull it the moment it is done. Bones conduct heat slowly, and skin renders and bastes.",
-      "instead": "A regular whole bird or bone-in thighs, patted dry before the pan.",
+      "science": "Farms that carry a welfare seal are inspected against a written standard for how the birds live. The organic seal adds a feed rule: an organic ration that includes pasture and forage.",
+      "instead": "USDA Organic alone, or a pasture-raised seal alone, with nothing added.",
       "family": "fam_poultry_pork",
-      "delta": "Whole bird first, then bone-in thighs; ‘no retained water’ on the pack."
+      "delta": "A pasture-raised seal plus USDA Organic; chicken alone in the ingredients."
     },
     {
       "id": "pork_cuts_and_enhanced",
@@ -7590,73 +7626,6 @@
       ],
       "family": "fam_tinned_fish",
       "delta": "Skipjack named on the can; light names a color category, not a species."
-    },
-    {
-      "id": "chicken_breast",
-      "title": "Chicken breast",
-      "aliases": [
-        "chicken breast",
-        "chicken breasts",
-        "plain chicken breast",
-        "pasture raised chicken breast",
-        "organic chicken breast"
-      ],
-      "category": "poultry",
-      "question": "What should you check when buying chicken breast?",
-      "decision": "Organic, pasture-raised, Animal Welfare Approved breast, bone-in, skin-on; soy-free best.",
-      "why": "Certified Humane pasture raised requires 108 square feet per bird outdoors, matching AWA.",
-      "short_answer": "Flavoring solutions added to poultry must be disclosed as part of the product name, including their amount. Water retained during chilling is a separate disclosure.",
-      "detail": "FSIS describes solution added through injection, marinating, tumbling, or soaking. A product labeled natural can still contain a minimally processed flavoring solution. The archived woody-breast study also describes unusually hard breast tissue, but manual sorting was inconsistent; it does not support reliable visual identification at the case. Any added flavoring solution has to appear in the product name, with its amount.",
-      "evidence_tier": "kristys_standard",
-      "sources": [
-        {
-          "name": "Certified Humane",
-          "url": "https://certifiedhumane.org/decoding-the-carton-how-to-buy-clean-humane-eggs/"
-        }
-      ],
-      "kristy_take": "A plain breast gives you only chicken. Added flavoring solution must appear in the product name with its amount, even on a pack labeled ‘natural’.",
-      "cart_pick": "Organic pasture-raised chicken breast",
-      "buying_tips": [
-        "Look for the Animal Welfare Approved seal on an organic, bone-in, skin-on pack.",
-        "Look for ‘pasture-raised’ or ‘organic’ on a plain pack, bone-in and skin-on.",
-        "Read the full name for an added-solution percent and its ingredients.",
-        "No pasture-raised breast: pick chicken thighs, with more fat and flavor and hard to overcook.",
-        "Ask the farm or counter for pasture-raised on soy-free feed; that is the step up.",
-        "Check fresh or frozen packs for the same added-solution note.",
-        "Read any chilling-water note apart from the added flavorings.",
-        "Air-chilled or water-chilled: see the Chicken card.",
-        "Boneless skinless breast dries fast in the pan; bone and skin cook better."
-      ],
-      "watch_out": [
-        "“Natural” does not exclude a flavoring solution.",
-        "Retained chilling water is different from an added flavoring solution.",
-        "“Enhanced” on a breast pack means an injected solution; the label states the percent."
-      ],
-      "pick_steps": [
-        "Read the full product name for a solution percentage and its ingredients.",
-        "Read past ‘natural’; it does not exclude a flavoring solution, fresh or frozen.",
-        "Take bone-in, skin-on breast; boneless skinless dries fast in the pan."
-      ],
-      "science": "FSIS describes solution added through injection, marinating, tumbling or soaking. It must be disclosed as part of the product name, including its amount. A product labeled natural can still contain a minimally processed flavoring solution. An archived study of unusually hard, woody breast tissue found manual sorting inconsistent. It does not establish a dependable visual test at the case.",
-      "labels_decoded": [
-        {
-          "term": "Added solution",
-          "meaning": "A disclosed flavoring formulation incorporated into the poultry."
-        },
-        {
-          "term": "Retained water",
-          "meaning": "Water absorbed during post-slaughter processing, separately disclosed on the label."
-        }
-      ],
-      "tier_note": "Organic chicken breast: certified organic feed and outdoor access; pasture: time outdoors on pasture, audited only with a certifier’s seal.",
-      "asked_as": [
-        "how do you choose chicken breast",
-        "does natural chicken breast have added water",
-        "what does solution added mean on chicken breast"
-      ],
-      "instead": "Chicken thighs: more fat, more flavor, and hard to overcook.",
-      "family": "fam_poultry_pork",
-      "delta": "Bone-in, skin-on breast rather than boneless, skinless fillets."
     },
     {
       "id": "produce_mushrooms",
@@ -15511,7 +15480,10 @@
         "whole duck",
         "duck fat",
         "roast duck",
-        "rendered duck fat"
+        "rendered duck fat",
+        "duck legs",
+        "duck leg",
+        "duck meat"
       ],
       "category": "poultry",
       "question": "How do you buy duck?",
@@ -15554,7 +15526,8 @@
       "asked_as": [
         "should i buy whole duck",
         "is duck fat healthy",
-        "which whole duck should i buy"
+        "which whole duck should i buy",
+        "how do you buy duck legs"
       ],
       "family": "fam_poultry_pork",
       "delta": "Whole duck with skin intact; plain raw duck rather than confit."
@@ -15826,69 +15799,6 @@
       "delta": "Milk from its mother plus grass or hay; skip milk-replacer-fed veal.",
       "family": "fam_ruminant_meat",
       "instead": "Pasture-raised veal with a humane seal."
-    },
-    {
-      "id": "poultry_chicken_wings",
-      "title": "Chicken wings",
-      "aliases": [
-        "chicken wings",
-        "wings",
-        "wingettes",
-        "drumettes",
-        "party wings",
-        "whole chicken wings",
-        "chicken wing"
-      ],
-      "category": "poultry",
-      "question": "Which chicken wings should you buy?",
-      "decision": "Organic pasture-raised chicken wings, soy-free feed, skin on, no coating.",
-      "why": "Plain skin-on wings keep the cut intact; organic livestock rules require certified organic feed.",
-      "short_answer": "Choose organic wings with a Certified Humane, AWA or GAP pasture label. Read the name for retained water or added solution, and skip breading or sauce.",
-      "detail": "Chickens are meant to range free, foraging bugs and greens; industrial birds are crowded, with little fresh air, on corn and soy feed. Fattier parts such as legs and wings carry more omega-6 than breast, and the skin is a concentrated fat source. Among pastured chickens, those fed soy had an omega-6 to omega-3 ratio of 8 to 1, against 3 to 1 for soy-free birds.",
-      "evidence_tier": "kristys_standard",
-      "sources": [
-        {
-          "name": "Electronic Code of Federal Regulations",
-          "url": "https://www.ecfr.gov/current/title-7/section-205.237"
-        }
-      ],
-      "kristy_take": "Wings are mostly skin and fat, so how the bird ate matters more here than for breast.",
-      "cart_pick": "Organic pasture-raised chicken wings",
-      "buying_tips": [
-        "Look for “pasture-raised” and the USDA Organic seal on plain wings with the skin intact.",
-        "Ask the counter whether the feed is soy-free.",
-        "Can’t find it: plain organic wings are next.",
-        "Skip breaded or sauced wings, and labels with “added solution”.",
-        "Wings carry the most skin and fat, where the feed shows most.",
-        "How it was raised: see Chicken."
-      ],
-      "watch_out": [
-        "Wings and skin are the fattiest part of the bird, where corn and soy feed shows most."
-      ],
-      "pick_steps": [
-        "Look for USDA Organic: certified organic feed and outdoor access.",
-        "Read the name for a retained-water or added-solution figure.",
-        "Pick plain wings without breading or sauce."
-      ],
-      "science": "Legs and wings carry more omega-6 than breast. The skin is a concentrated fat source. Pastured chickens fed soy had an omega-6 to omega-3 ratio of 8 to 1. Soy-free pastured birds had 3 to 1.",
-      "labels_decoded": [
-        {
-          "term": "Drumette and flat",
-          "meaning": "The two meaty sections of a split wing."
-        },
-        {
-          "term": "Party wings",
-          "meaning": "Wings already split into drumettes and flats."
-        }
-      ],
-      "tier_note": "Pasture-raised chicken: time outdoors on pasture, audited only with a certifier’s seal.",
-      "asked_as": [
-        "which chicken wings should i buy",
-        "are pasture raised wings worth it",
-        "are chicken wings healthy"
-      ],
-      "family": "fam_poultry_pork",
-      "delta": "Whole wings or split flats and drumettes; no breading or sauce."
     },
     {
       "id": "fam_ruminant_meat",

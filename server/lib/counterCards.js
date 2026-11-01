@@ -176,6 +176,11 @@ export const RETIRED = [
   'yogurt_live_cultures',
   // CA-3a (2026-10-15): → ground_beef_lean_ratio ("Ground beef"). Fold placement per docs/CARD-ALIGNMENT-PLAN.md; aliases, asked_as, sources, tips and labels moved.
   'ground_beef_organ_blend',
+  // Chicken unification (2026-11-01): → `chicken`, one sourcing card that never names a cut.
+  // Aliases and asked_as moved; duck legs/duck leg/duck meat and the duck-legs ask moved to poultry_duck.
+  'chicken_cuts_basics',
+  'chicken_breast',
+  'poultry_chicken_wings',
 ];
 
 /* ═══════════════════════════ Retired GENERATED cards ═══════════════════════════ */

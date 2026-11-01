@@ -282,7 +282,7 @@ test("JC1 every batch entry equals base with only the pinned BECAME fields set",
 
 test("JC2 pilot corpus size in the batch view and top-level metadata", () => {
   // retired: pilot merge replaced this batch's text (P4)
-  assert.equal(kb.entries.length, 292);
+  assert.equal(kb.entries.length, 291); // 2026-11-01 chicken unification: three cards → one
   assert.deepEqual({ ...kb, entries: [] }, { ...base, entries: [] });
 });
 

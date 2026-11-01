@@ -14,7 +14,8 @@ import { matchItemToCard } from '../../lib/listMatch.js';
 
 const ROOT = new URL('../../../', import.meta.url).pathname;
 const git = (spec) => execFileSync('git', ['show', spec], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
-const kb = restoreOrganicCarts(JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8')));
+import { unfoldChicken, CHICKEN_FOLDED } from './twoLinePin.js'; // chicken fold 2026-11-01: this batch reads the folded cards as of 117f3ee
+const kb = restoreOrganicCarts(unfoldChicken(JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'))));
 import { preSwapPicks1 } from './twoLinePin.js';
 kb.entries = preSwapPicks1(kb.entries); // swap-picks-1: 8 swap picks + 2 aliases after 58d6160; swap_picks_1.test.js owns them.
 import { preT6_4 } from './twoLinePin.js';
@@ -334,10 +335,12 @@ test('C8 every base buying_tips line is still on its card (tips, watch_out or de
   }
 });
 
-test('C9 each new cart_pick lands on its own card; chicken asks and rows still land on chicken_cuts_basics', () => {
-  for (const id of IDS) assert.equal(matchItemToCard(live(id).cart_pick)?.slug, id, `${id} cart_pick`);
-  for (const row of ['whole chicken', 'chicken thighs']) assert.equal(matchItemToCard(row)?.slug, 'chicken_cuts_basics', row);
-  for (const q of ['whole chicken', 'chicken thighs']) assert.equal(scoreEntries(q, 3)[0]?.entry.id, 'chicken_cuts_basics', q);
+// Chicken fold 2026-11-01: live routing for the folded ids and chicken rows lands on the unified `chicken` card.
+const OWNER = (id) => (CHICKEN_FOLDED.includes(id) ? 'chicken' : id);
+test('C9 each new cart_pick lands on its own card; chicken asks and rows land on chicken', () => {
+  for (const id of IDS) assert.equal(matchItemToCard(live(id).cart_pick)?.slug, OWNER(id), `${id} cart_pick`);
+  for (const row of ['whole chicken', 'chicken thighs']) assert.equal(matchItemToCard(row)?.slug, 'chicken', row);
+  for (const q of ['whole chicken', 'chicken thighs']) assert.equal(scoreEntries(q, 3)[0]?.entry.id, 'chicken', q);
 });
 
 test('C10 no new or changed decision, cart_pick or tip appears on more than 2 entries', () => {

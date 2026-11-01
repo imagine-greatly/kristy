@@ -249,7 +249,11 @@ test('C12 passRule.js and k5–k11 stay at 719f9fe except the exact W2 and conce
     const j9 = (t) => t.replace(
       "import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };",
       "import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };\nimport { preCleanJ9 } from './cartPlain.js';\nkb.entries = kb.entries.map(preCleanJ9); // J9 label pins read 53c6f90 before the older T6 overlay.");
-    assert.equal(readFileSync(join(ROOT, `server/test/acceptance/${file}.test.js`), 'utf8'), cpStep(file, file === 'k11' ? j9(t64(expected)) : expected));
+    // Chicken fold 2026-11-01: k8's slice drops chicken_cuts_basics, exactly.
+    const chickenFold = (t) => (file !== 'k8' ? t : t.replace(
+      "  'rotisserie_chicken', 'chicken_cuts_basics', 'egg_labels',\n], 'the K8 slice', 3);",
+      "  'rotisserie_chicken', 'egg_labels',\n], 'the K8 slice', 2); // chicken_cuts_basics folded into chicken 2026-11-01; chickenUnify.test.js owns it"));
+    assert.equal(readFileSync(join(ROOT, `server/test/acceptance/${file}.test.js`), 'utf8'), cpStep(file, chickenFold(file === 'k11' ? j9(t64(expected)) : expected)));
   }
   const oldK5 = execSync('git show 719f9fe:server/test/acceptance/k5.test.js', { cwd: ROOT }).toString();
   const w2 = [

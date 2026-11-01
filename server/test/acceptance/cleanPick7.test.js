@@ -108,7 +108,7 @@ test('C5 organic is new on exactly the four organic-standard picks', () => {
 
 test("C6 pilot corpus size in the batch view and top-level metadata", () => {
   // retired: pilot merge replaced this batch's text (P4)
-  assert.equal(kb.entries.length, 284);
+  assert.equal(kb.entries.length, 283); // 2026-11-01 chicken unification: three cards → one
   assert.deepEqual({ ...kb, entries: [] }, { ...base, entries: [] });
 });
 

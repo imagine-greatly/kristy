@@ -15,7 +15,8 @@ import { preCleanPick11, preCleanPick12, preCleanPick8, prePickAvoid } from './t
 const BASE = '117ab78';
 const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
 const git = (ref) => execFileSync('git', ['show', ref], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
-const kb = restoreOrganicCarts(JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8')));
+import { unfoldChicken, unfoldDoLines } from './twoLinePin.js'; // chicken fold 2026-11-01: this batch reads the folded cards as of 117f3ee
+const kb = restoreOrganicCarts(unfoldChicken(JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'))));
 import { preSwapPicks1 } from './twoLinePin.js';
 kb.entries = preSwapPicks1(kb.entries); // swap-picks-1: 8 swap picks + 2 aliases after 58d6160; swap_picks_1.test.js owns them.
 import { preT6_4 } from './twoLinePin.js';
@@ -26,7 +27,7 @@ import { preT6_1, preT6_2 } from "./twoLinePin.js";
 kb.entries = kb.entries.map(preT6_2); // t6-2: dairy/egg pins read ca32bef; t6_2.test.js owns live copy.
 kb.entries = kb.entries.map(preT6_1); // t6-1: the 15 meat/seafood cards read as of 85c399e; t6_1.test.js owns them now
 const base = JSON.parse(git(`${BASE}:server/kristy_perimeter_kb.json`));
-const doLines = JSON.parse(readFileSync(new URL('../../lib/doLines.json', import.meta.url), 'utf8'));
+const doLines = unfoldDoLines(JSON.parse(readFileSync(new URL('../../lib/doLines.json', import.meta.url), 'utf8')));
 const find = (k, id) => k.entries.find((e) => e.id === id);
 const live = (id) => find(kb, id);
 const was = (id) => find(base, id);

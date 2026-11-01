@@ -473,5 +473,5 @@ test('W2 family aliases and card count survive the pilot', () => {
   for (const [id] of FAMILIES) {
     assert.deepEqual(entries.find((e) => e.id === id).aliases, expected.find((e) => e.id === id).aliases, `${id} aliases`);
   }
-  assert.equal(entries.filter((e) => e.kind !== 'pick').length, 181);
+  assert.equal(entries.filter((e) => e.kind !== 'pick').length, 180); // 2026-11-01 chicken unification
 });

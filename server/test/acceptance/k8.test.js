@@ -17,8 +17,8 @@ const HERE = dirname(fileURLToPath(import.meta.url));
 const reviewed = parseReviewTable(readFileSync(join(HERE, '../../../docs/do-lines-review.md'), 'utf8'));
 
 const SLICE = nonEmpty([
-  'rotisserie_chicken', 'chicken_cuts_basics', 'egg_labels',
-], 'the K8 slice', 3);
+  'rotisserie_chicken', 'egg_labels',
+], 'the K8 slice', 2); // chicken_cuts_basics folded into chicken 2026-11-01; chickenUnify.test.js owns it
 
 const oldEntries = pre.entries ?? pre;
 

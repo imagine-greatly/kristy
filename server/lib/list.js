@@ -108,7 +108,7 @@ const PICKS = {
   },
   // ── Meat, fish, eggs ──
   chicken: {
-    name: 'Chicken thighs, bone-in', category: 'Protein', perimeterId: 'chicken_cuts_basics',
+    name: 'Chicken thighs, bone-in', category: 'Protein', perimeterId: 'chicken',
     why: 'More forgiving than breasts and cheaper per pound — hard to dry out.',
     alt: 'Or breasts if that’s what the house eats.',
     variants: {
@@ -119,7 +119,7 @@ const PICKS = {
   },
   chicken_breast: {
     // The authored id points to guidance for this cut, validated by cardForItem.
-    name: 'Chicken breast', category: 'Protein', perimeterId: 'chicken_breast',
+    name: 'Chicken breast', category: 'Protein', perimeterId: 'chicken',
     why: 'The lean anchor — portions clean and cooks fast.',
     variants: {
       short_on_time: { name: 'Rotisserie chicken', why: 'Already cooked — pull it apart and it feeds three meals.' },

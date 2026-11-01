@@ -17,7 +17,7 @@ const QUERIES = nonEmpty([
   ['turkey', 'turkey_whole'],
   ['ground turkey', 'ground_turkey'],
   ['deli turkey', 'deli_meat_uncured'],
-  ['chicken breast', 'chicken_breast'],
+  ['chicken breast', 'chicken'], // 2026-11-01: one cut-neutral chicken card owns every cut
   ['bacon', 'bacon'],
   ['bread', 'sandwich_bread'],
   ['sourdough', 'sourdough'],
@@ -131,11 +131,10 @@ for (const [query, counterExpected, listExpected = counterExpected] of QUERIES) 
 
 test('named types cannot return a different cut, form or state, including cart picks', () => {
   const breast = scoreEntries('chicken breast', 100).map(({ entry }) => publicEntry(entry));
-  assert.ok(!breast.some((e) => e.id === 'chicken_cuts_basics'));
+  nonEmpty(breast, 'chicken breast hits');
   assert.ok(!breast.some((e) => /thigh|whole chicken/i.test(e.cart_pick ?? '')));
-  assert.notEqual(matchItemToCard('chicken breast')?.slug, 'chicken_cuts_basics');
-  assert.equal(cardForItem({ name: 'chicken breast', perimeterId: 'chicken_breast' })?.slug, 'chicken_breast');
-  assert.equal(cardForItem({ name: 'chicken breast', perimeterId: 'chicken_cuts_basics' })?.slug, 'chicken_breast', 'veto the thighs id, then retrieve the breast owner');
+  assert.equal(matchItemToCard('chicken breast')?.slug, 'chicken');
+  assert.equal(cardForItem({ name: 'chicken breast', perimeterId: 'chicken' })?.slug, 'chicken');
   assert.equal(matchItemToPick('chicken breast'), null);
   assert.equal(cardForItem({ name: 'Plain whole-milk yogurt' })?.slug, 'yogurt_plain_vs_flavored', 'yogurt row never carries the milk front');
   assert.equal(cardForItem({ name: 'whole milk' })?.slug, 'whole_vs_reduced_fat_milk');
@@ -148,8 +147,9 @@ test('named types cannot return a different cut, form or state, including cart p
     ['ground turkey', { id: 'whole_turkey', title: 'Whole turkey', aliases: ['turkey'], category: 'poultry', decision: 'Choose a whole turkey.', cart_pick: 'Whole turkey' }],
     ['tinned salmon', entryById('seafood_counter')],
     ['canned salmon', entryById('salmon_wild_vs_farmed')],
-    ['tinned chicken', entryById('chicken_cuts_basics')],
-    ['chicken breast', { ...entryById('chicken_cuts_basics'), id: 'pick_thighs', kind: 'pick' }],
+    ['tinned chicken', entryById('chicken')],
+    // A synthetic thighs pick: the live chicken card names no cut, so the cut veto needs its own fixture.
+    ['chicken breast', { id: 'pick_thighs', kind: 'pick', title: 'Chicken thighs', aliases: ['chicken thighs', 'chicken'], category: 'poultry', decision: 'Choose chicken thighs.', cart_pick: 'Chicken thighs, bone-in' }],
   ], 'type veto fixtures');
   for (const [query, entry] of fixtures) {
     assert.deepEqual(scorePool(query, [entry]), [], query);
@@ -160,9 +160,9 @@ test('named types cannot return a different cut, form or state, including cart p
 
 test('type veto preserves an exact type and an explicit comparison', () => {
   const fixtures = nonEmpty([
-    ['chicken thighs', entryById('chicken_cuts_basics')],
-    ['thighs or breasts', entryById('chicken_cuts_basics')],
-    ['whole chicken', entryById('chicken_cuts_basics')],
+    ['chicken thighs', entryById('chicken')],
+    ['thighs or breasts', entryById('chicken')],
+    ['whole chicken', entryById('chicken')],
     ['canned light tuna', entryById('mercury_by_fish')],
     ['dried beans', entryById('beans_dried_vs_canned')],
     ['pretzel bread', { id: 'pretzel', title: 'Pretzel bread', aliases: ['pretzel bread'], category: 'bulk_pantry', decision: 'Choose pretzel bread.', cart_pick: 'Pretzel bread' }],

@@ -355,7 +355,7 @@ test('every counter answers the questions a shopper actually has standing at it'
   const wants = [
     ['which cut of beef for stew', 'beef_cuts_basics'],
     ['what does usda prime mean', 'beef_cuts_basics'],
-    ['which chicken cut should i buy', 'chicken_cuts_basics'],
+    ['which chicken cut should i buy', 'chicken'],
     ['which fish are low in mercury', 'mercury_by_fish'],
     ['how do i tell if fish is fresh', 'seafood_counter'],
     ['are brown eggs better than white', 'egg_labels'],

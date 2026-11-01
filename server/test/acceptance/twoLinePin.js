@@ -750,20 +750,14 @@ export const TWO_LINE = {
       "Ask them to portion it. Cutting, tying and boning are usually included."
     ]
   },
-  "chicken_cuts_basics": {
-    "decision": "Air-chilled pasture-raised whole chicken, then bone-in, skin-on thighs.",
+  "chicken": {
+    "decision": "Chicken that lived outside.",
     "buying_tips": [
-      "Water-chilled birds hold water from the chilling tank; skin that starts dry crisps.",
-      "Look for air-chilled printed on the whole bird or the thigh pack.",
-      "Whole bird: lowest cost per pound, and the carcass makes stock.",
-      "Thighs, bone-in and skin-on: forgiving, low-cost, hard to overcook.",
-      "Breast: fast and lean. Pull it the moment it is done.",
-      "Boneless skinless costs the most for the same bird.",
-      "‘Air-chilled’ is printed on the package when it applies.",
-      "Skin that starts dry is the skin that crisps.",
-      "‘USDA Process Verified’ or a third-party seal backs a ‘raised without antibiotics’ claim.",
-      "All chicken is required to be residue-free at sale, labeled or not.",
-      "‘Raised without antibiotics’ is a management and resistance choice, not a cleaner-meat guarantee."
+      "Look for Certified Humane Pasture-Raised or Animal Welfare Approved on the pack.",
+      "Look for USDA Organic too: organic feed with pasture and forage, no antibiotics in feed.",
+      "Both seals on one pack is the best the case offers.",
+      "Read the ingredients for chicken alone; some packs can carry added broth, up to 15% of the weight.",
+      "Whatever the cut, the same marks apply."
     ]
   },
   "pork_cuts_and_enhanced": {
@@ -1677,16 +1671,6 @@ export const TWO_LINE = {
         "url": "https://www.ewg.org/research/bpa-canned-food"
       },
       "SeafoodSource “Multiple groups call newest Marine Stewardship Council standards too lax” https://www.seafoodsource.com/news/environment-sustainability/multiple-groups-call-newest-marine-stewardship-council-standards-too-lax"
-    ]
-  },
-  "chicken_breast": {
-    "decision": "Pasture-raised or organic bone-in, skin-on breast; no solution added.",
-    "buying_tips": [
-      "Boneless skinless breast dries fast in the pan; bone and skin cook better.",
-      "Look for pasture-raised or certified organic breast, sold plain.",
-      "Read the full product name for the solution percentage and ingredients.",
-      "Fresh or frozen breast can be checked for the same solution disclosure.",
-      "Read retained-water wording separately from the added flavoring ingredients."
     ]
   },
   "produce_mushrooms": {
@@ -3479,7 +3463,7 @@ test('every full-card and concern pick pin matches the live KB', () => {
   kb.entries = kb.entries.map(preT6_2); // t6-2 owns the six dairy/egg cards after ca32bef.
   const cards = nonEmpty(kb.entries.filter((e) => e.kind !== 'pick'), 'full cards', 180);
   const picks = ['pick_sausage', 'pick_jerky', 'pick_juice', 'pick_canned_tomatoes'];
-  const pinnedIds = nonEmpty(Object.getOwnPropertyNames(TWO_LINE), 'all two-line pins', 185);
+  const pinnedIds = nonEmpty(Object.getOwnPropertyNames(TWO_LINE), 'all two-line pins', 184); // 185 → 184: chicken unification 2026-11-01 folded two pinned cards into one.
   assert.deepEqual(pinnedIds.toSorted(), [...cards.map((e) => e.id), ...picks].toSorted(), 'missing or stale pin');
   for (const id of pinnedIds) {
     const entry = kb.entries.find((e) => e.id === id);
@@ -3685,15 +3669,10 @@ test('copy pass 2026-10-29: olive oil and produce live copy', () => {
 // Second-pass shelf markers 2026-10-29 (Devon: research adds markers, never strips one). Pins the LIVE
 // KB headline, first tip and do line on the cards docs/research/brand-labels/second-pass-proposals.md drafted.
 const SECOND_PASS = {
-  "chicken_breast": {
-    "decision": "Organic, pasture-raised, Animal Welfare Approved breast, bone-in, skin-on; soy-free best.",
-    "tip0": "Look for the Animal Welfare Approved seal on an organic, bone-in, skin-on pack.",
-    "do": "Find the AWA seal and USDA Organic on the pack."
-  },
-  "chicken_cuts_basics": {
-    "decision": "Organic pasture-raised whole chicken, Animal Welfare Approved, air-chilled, nothing added.",
-    "tip0": "Look for “air-chilled” on an organic bird that carries the Animal Welfare Approved seal.",
-    "do": "Check for cream-yellow skin and an AWA seal on the bird."
+  "chicken": {
+    "decision": "Chicken that lived outside.",
+    "tip0": "Look for Certified Humane Pasture-Raised or Animal Welfare Approved on the pack.",
+    "do": "Look for pasture-raised with a seal, organic if it is there, nothing added."
   },
   "egg_labels": {
     "decision": "Organic, pasture-raised eggs from hens on soy-free, corn-free feed.",
@@ -3841,3 +3820,23 @@ test('second-pass shelf markers 2026-10-29: live copy', () => {
   for (const [id, re] of [['egg_labels', /soy-free/], ['egg_labels', /corn-free/], ['coffee_beans', /mold-testing/], ['honey_adulteration', /\braw\b/], ['honey_adulteration', /\bproducer\b/], ['maple_syrup', /Dark or Very Dark/], ['whole_vs_reduced_fat_milk', /100% grass-fed/], ['grassfed_butter', /100% grass-fed/], ['beef_grassfed_vs_grainfed', /100% grass-fed/], ['lamb_goat', /100% grass-fed/]]) assert.match(text(id), re, `${id} keeps ${re}`);
   for (const id of Object.keys(SECOND_PASS)) assert.doesNotMatch(text(id).replace(/Regenerative Organic Certified|Certified Regenerative/g, ''), /\bregenerative\b/i, `${id}: bare “regenerative”`);
 });
+
+// Chicken unification (2026-11-01): chicken_cuts_basics, chicken_breast and poultry_chicken_wings folded
+// into `chicken` (RETIRED), and duck aliases moved to poultry_duck. Historical batch tests read those
+// cards as they last stood, at 117f3ee: unfoldChicken swaps them back in at their old positions before
+// the test's own restore chain runs. chickenUnify.test.js owns the live card.
+export const CHICKEN_FOLDED = ['chicken_cuts_basics', 'chicken_breast', 'poultry_chicken_wings'];
+let PRE_CHICKEN_FOLD;
+export const unfoldChicken = (kb) => {
+  PRE_CHICKEN_FOLD ??= JSON.parse(execFileSync('git', ['show', '117f3ee:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString()).entries;
+  const old = (id) => structuredClone(PRE_CHICKEN_FOLD.find((e) => e.id === id));
+  const out = kb.entries.filter((e) => e.id !== 'chicken').map((e) => (e.id === 'poultry_duck' ? old('poultry_duck') : e));
+  for (const [i, e] of PRE_CHICKEN_FOLD.entries()) if (CHICKEN_FOLDED.includes(e.id)) out.splice(i, 0, old(e.id));
+  kb.entries = out;
+  return kb;
+};
+// The folded cards' do lines as of 117f3ee, for the same historical reads.
+export const unfoldDoLines = (map) => {
+  const old = JSON.parse(execFileSync('git', ['show', '117f3ee:server/lib/doLines.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+  return { ...map, ...Object.fromEntries(CHICKEN_FOLDED.map((id) => [id, old[id]])) };
+};
