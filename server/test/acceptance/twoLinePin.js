@@ -3671,7 +3671,7 @@ const SECOND_PASS = {
   "chicken": {
     "decision": "Chicken that lived outside.",
     "tip0": "Look for Certified Humane Pasture-Raised or Animal Welfare Approved on the pack.",
-    "do": "Look for pasture-raised with a seal, organic if it is there, nothing added."
+    "do": "Look for “Pasture-Raised” with a Certified Humane logo, and the least added water."
   },
   "egg_labels": {
     "decision": "Organic, pasture-raised eggs from hens on soy-free, corn-free feed.",
