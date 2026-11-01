@@ -73,7 +73,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `label_no_artificial_flavors` | label_terms | Short ingredient lists of recognisable foods over flavor claims. | Look for “natural flavors” further down the list — the claim leaves it in. | — |
 | `judging_meat_at_the_case` | meat | Sealed, leak-free meat with the newest ‘packaged on’ date. | Check the package is sealed and not leaking juices, then smell it. | — |
 | `butcher_counter_asking` | meat | 100% grass-fed soup bones and a whole chuck, freshly ground. | Ask what came in today and when it was cut. | — |
-| `chicken` | meat | Chicken that lived outside. | Look for “Pasture-Raised” on organic or non-GMO feed, with the least added water. | — |
+| `chicken` | meat | Chicken that lived outside. | Look for “Pasture-Raised,” Certified Humane, organic or non-GMO feed, least added water. | — |
 | `pork_cuts_and_enhanced` | meat | Organic or pasture-raised pork with no added solution. | Find an AWA or Certified Humane seal and USDA Organic on the chop pack. | — |
 | `deli_meat_uncured` | meat | Organic or pasture-raised whole roasted meat, sliced thin. | Ask for fresh slices from a whole roast bearing an Uncured label. | — |
 | `mercury_by_fish` | seafood | Sardines, anchovies, salmon or canned light tuna, lowest in mercury. | Check the species name on the can for sardines. | — |
