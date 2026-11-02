@@ -3644,8 +3644,8 @@ test('copy pass 2026-10-29: olive oil and produce live copy', () => {
   assert.equal(oil.buying_tips[0], 'Olive oil starts aging the day it is pressed, and dark glass keeps light off it.');
   assert.ok(oil.buying_tips.some((t) => /organic/i.test(t) && /single estate/i.test(t)), 'organic and single-estate stay in later tips');
   assert.equal(doLines.olive_oil_grades, 'Read for “product of”, where the olives grew; “packed in” only means bottled there.');
-  assert.equal(get('aisle_produce').decision, 'Organic when you eat the skin or juice it; peeled, either is fine.');
-  assert.equal(get('produce_onions_garlic').decision, 'Firm onions and garlic, dry skins; peeled, either is fine.');
+  assert.equal(get('aisle_produce').decision, 'Organic when you eat the skin or juice it; peeled, pick by ripeness.');
+  assert.equal(get('produce_onions_garlic').decision, 'Firm onions and garlic with dry, papery skins.');
   assert.equal(get('organic_worth_it_by_type').decision, 'Grown organic when you eat the skin or juice it.');
   for (const id of ['aisle_produce', 'organic_worth_it_by_type']) {
     const e = get(id);

@@ -860,7 +860,7 @@
         "Check one thing: is the skin eaten? Berries, greens, apples, grapes, potatoes: yes.",
         "Look for Real Organic or Certified Naturally Grown on the sign or sticker, a step past USDA Organic.",
         "Can’t find either: the USDA Organic seal on the sign or sticker.",
-        "Peeled produce: organic or not, either is fine, since the peel goes in the trash.",
+        "Peeled produce: the peel goes in the trash, so pick for firmness and ripeness.",
         "The Environmental Working Group’s Dirty Dozen list is another guide to what to buy organic first.",
         "Residue sits on the skin, so a peel you throw away takes it with it."
       ],
@@ -5726,7 +5726,7 @@
       ],
       "category": "produce",
       "question": "How do I pick onions and garlic that will keep?",
-      "decision": "Firm onions and garlic, dry skins; peeled, either is fine.",
+      "decision": "Firm onions and garlic with dry, papery skins.",
       "why": "A well-cured bulb feels dry at the neck and papery outside. A soft, scented or sprouting bulb is already on its way out.",
       "short_answer": "Onions: firm for their size, little to no scent, a dry neck, no cuts, bruises or mold, no sprouting. Some loose skins are normal. Garlic: clean, white or true to the variety, well cured, cloves firm.",
       "detail": "Top tier is in season with a Real Organic, Certified Naturally Grown, Demeter or Regenerative Organic Certified seal, then USDA Organic as the floor; read the sign or sticker at the bin for the growing method. Whole dry onions live in a cool, dry, dark place with plenty of air movement: no plastic bags, no wrap, and not beside potatoes or anything else that releases moisture. Storage between 41 and 75°F favors sprouting, so the cooler the spot the better. Refrigeration is only for sweet or mild high-water varieties, on a low-humidity setting, and a cut onion goes in a sealed container for up to seven days. Garlic keeps one to two months at room temperature in low humidity before it softens, goes spongy, and shrivels from water loss; it sprouts fastest between 41 and 65°F, and its odor moves into other foods, so it gets stored on its own.",
@@ -6540,7 +6540,7 @@
         "cilantro bunches",
         "coriander leaves"
       ],
-      "decision": "Organic cilantro in bright, upright bunches; look for the USDA Organic seal.",
+      "decision": "Organic cilantro in bright, upright bunches.",
       "sources": [
         {
           "name": "Nebraska Extension: Fresh Herbs",
@@ -6568,7 +6568,7 @@
         "italian parsley",
         "flat leaf parsley"
       ],
-      "decision": "Organic parsley, bright green and upright; look for the USDA Organic seal.",
+      "decision": "Organic parsley, bright green and upright.",
       "sources": [
         {
           "name": "Nebraska Extension: Fresh Herbs",
@@ -6595,7 +6595,7 @@
         "basil bunches",
         "sweet basil"
       ],
-      "decision": "Organic basil, bright and upright; look for the USDA Organic seal.",
+      "decision": "Organic basil, bright and upright.",
       "sources": [
         {
           "name": "Nebraska Extension: Fresh Herbs",
@@ -6647,7 +6647,7 @@
         "kohlrabi bulb",
         "kohlrabi bulbs"
       ],
-      "decision": "Kohlrabi; the peel comes off, so either is fine.",
+      "decision": "Firm kohlrabi, heavy for its size.",
       "sources": [
         {
           "name": "F192 — extension.purdue.edu",
@@ -6693,7 +6693,7 @@
         "chards",
         "rainbow chard"
       ],
-      "decision": "Organic chard, dark green, with stalks that are not split; look for the USDA Organic seal.",
+      "decision": "Organic chard, dark green, with stalks that are not split.",
       "sources": [
         {
           "name": "Nebraska Extension: Swiss Chard",
@@ -6719,7 +6719,7 @@
         "mango",
         "mangos"
       ],
-      "decision": "Mangoes; the peel comes off, so either is fine.",
+      "decision": "Mangoes that give slightly when pressed.",
       "sources": [
         {
           "name": "F182 — ndsu.edu",
@@ -8032,7 +8032,7 @@
         "acorn squash",
         "spaghetti squash"
       ],
-      "decision": "Winter squash and pumpkin; the rind comes off, so either is fine.",
+      "decision": "Winter squash and pumpkin, heavy for their size.",
       "sources": [
         {
           "name": "F127 — law.cornell.edu",
@@ -8079,7 +8079,7 @@
         "microgreen",
         "micro greens"
       ],
-      "decision": "Organic microgreens with the USDA Organic seal; rinse them before eating.",
+      "decision": "Organic microgreens, crisp and dry; rinse them before eating.",
       "sources": [
         {
           "name": "Science Meets Food: Microgreens",
@@ -15269,7 +15269,7 @@
       ],
       "category": "produce",
       "question": "How do you pick and ripen avocados?",
-      "decision": "Hass avocados, firm, not rock hard; peeled, either is fine.",
+      "decision": "Hass avocados, firm, not rock hard.",
       "why": "Organic remains the default despite the discarded skin; the rules bar GMOs, irradiation and sewage sludge.",
       "short_answer": "Avocados rank third cleanest of 47 on the residue list. Buy firm green Hass avocados and ripen them on the counter, then move ripe ones to the fridge.",
       "detail": "Avocados rank 3 of 47 on the 2026 residue list, ordered from least residue to most. Ripen them on the counter before refrigerating; a paper bag speeds it up. Underripe green Hass avocados ripen in about four days in the refrigerator, and once ripe, with deep blue-green skin, they last up to five days there. Store a cut half on a plate, cut side down.",
@@ -15287,7 +15287,7 @@
       "kristy_take": "Buy avocados a few days ahead of the meal and let the counter do the work.",
       "cart_pick": "Hass avocados",
       "buying_tips": [
-        "Pick avocados with no bruises or torn skin. The peel comes off, so either is fine.",
+        "Pick avocados with no bruises or torn skin.",
         "Check with your palm, not fingertips. Ripe Hass skin turns deep blue-green.",
         "Can’t find ripe ones: buy firm and ripen on the counter, in a paper bag to speed it up.",
         "Once ripe, an avocado keeps up to five days in the fridge.",
@@ -16578,7 +16578,7 @@
       "decision": "Plain organic whole grain, one grain on the list, sprouted when sold.",
       "why": "Whole-grain identity, sprouting and cooking format are separate checks. Sprouting includes germination; soaking alone does not establish it. Prefer disclosed local or regional crops where available, with preparation suited to the grain.",
       "buying_tips": [
-        "Read the list: the grain alone. ‘Sprouted’ on the bag is a step up.",
+        "Read the list: the grain alone, with ‘sprouted’ on the bag when sold.",
         "Look for USDA Organic; a Real Organic Project logo is a step above.",
         "Pick sealed bags over open bins for brown rice and hot cereal.",
         "Skip quick-cooking grain packs and bulgur."
@@ -16663,7 +16663,7 @@
       "why": "Raw and oil-free dry-roasted forms can both qualify. Soaking followed by complete drying is a traditional option for suitable nuts and seeds, not a universal requirement. Read dried-fruit subingredients and the full formula of mixtures and butters.",
       "buying_tips": [
         "Read the list: the nut or seed, with salt at most.",
-        "Look for USDA Organic; ‘sprouted’ or ‘soaked’ on the pack is a step up.",
+        "Look for ‘sprouted’ or ‘soaked’ on the pack.",
         "Pick sealed packs over open bins; skip nuts marked ‘Product of China’.",
         "Skip added oils, sugar, agave and partially hydrogenated oil."
       ],
@@ -17647,7 +17647,7 @@
       "why": "Bananas, avocados and tomatoes can finish at room temperature, but readiness checks differ.",
       "buying_tips": [
         "Pick organic peaches, nectarines and cherries; the skin gets eaten.",
-        "Pick any avocados and bananas; the peel comes off, so either is fine.",
+        "Pick avocados and bananas by ripeness; the peel comes off.",
         "Read the sticker: a 5-digit code starting with 9 means organic.",
         "Pick fruit that gives a little for today; skip bruised, split or leaking fruit."
       ],
@@ -17907,10 +17907,10 @@
       "kind": "aisle",
       "title": "Produce",
       "category": "aisle_produce",
-      "decision": "Organic when you eat the skin or juice it; peeled, either is fine.",
+      "decision": "Organic when you eat the skin or juice it; peeled, pick by ripeness.",
       "buying_tips": [
         "Pick organic berries, greens, apples, grapes and potatoes: the skin gets eaten.",
-        "Pick any avocado, banana, mango or onion: the peel comes off, so either is fine.",
+        "Pick avocados, bananas, mangoes and onions by ripeness; the peel comes off.",
         "Read the sticker: 5 digits starting with 9 is organic, 4 digits is conventional.",
         "Look for a Real Organic, Certified Naturally Grown, Demeter or Regenerative Organic Certified logo: each goes further than plain organic.",
         "Can’t find one of those logos? Pick plain USDA Organic for anything with the skin eaten."
@@ -18350,7 +18350,7 @@
         "whole grain bag",
         "whole grain bags"
       ],
-      "decision": "Look for organic whole grains with one grain on the list; “sprouted” is a step up.",
+      "decision": "Look for whole grains with one grain on the list, “sprouted” when sold.",
       "sources": [
         {
           "name": "Weston A. Price Foundation",
@@ -18983,7 +18983,7 @@
     {
       "id": "pick_f_cantaloupe",
       "kind": "pick",
-      "decision": "Organic cantaloupe, ideally Real Organic or Certified Naturally Grown.",
+      "decision": "Cantaloupe, heavy for its size, with a sweet smell.",
       "sources": [
         {
           "name": "F178 — extension.illinois.edu",
@@ -19004,7 +19004,7 @@
     {
       "id": "pick_f_honeydew",
       "kind": "pick",
-      "decision": "Organic honeydew, ideally Real Organic or Certified Naturally Grown.",
+      "decision": "Honeydew, the heavier of two the same size.",
       "sources": [
         {
           "name": "F179 — ndsu.edu",
@@ -19025,7 +19025,7 @@
     {
       "id": "pick_f_watermelon",
       "kind": "pick",
-      "decision": "Organic watermelon, ideally Real Organic or Certified Naturally Grown.",
+      "decision": "Watermelon, heavy for its size, with a dull rind, not shiny.",
       "sources": [
         {
           "name": "F180 — extension.usu.edu",
@@ -19067,7 +19067,7 @@
     {
       "id": "pick_f_citrus",
       "kind": "pick",
-      "decision": "Organic oranges and grapefruit, ideally Real Organic or Certified Naturally Grown.",
+      "decision": "Oranges and grapefruit, firm and heavy; untreated and unwaxed for zest.",
       "sources": [
         {
           "name": "F190 — ndsu.edu",
@@ -19088,7 +19088,7 @@
     {
       "id": "pick_f_lemons_limes",
       "kind": "pick",
-      "decision": "Organic lemons and limes, ideally Real Organic or Certified Naturally Grown.",
+      "decision": "Lemons and limes, firm and heavy; untreated and unwaxed for zest.",
       "sources": [
         {
           "name": "F185 — nutritioncenter.ctahr.hawaii.edu",
@@ -19109,7 +19109,7 @@
     {
       "id": "pick_f_pomegranate",
       "kind": "pick",
-      "decision": "Organic pomegranate, ideally Real Organic or Certified Naturally Grown.",
+      "decision": "Pomegranate, the heavier of two the same size.",
       "sources": [
         {
           "name": "F186 — extension.usu.edu",
@@ -19130,7 +19130,7 @@
     {
       "id": "pick_f_onions",
       "kind": "pick",
-      "decision": "Dry onions; the skin comes off, so either is fine.",
+      "decision": "Dry onions with tight, papery skins.",
       "sources": [
         {
           "name": "F187 — ndsu.edu",
