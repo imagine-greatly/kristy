@@ -65,7 +65,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `label_nonGMO_vs_organic` | label_terms | USDA Organic, which already includes non-GMO. | Buy the USDA Organic seal alone — paying for both is paying twice. | — |
 | `label_cage_free` | label_terms | Pasture-raised eggs with printed soy-free or corn-free feed. | Skip cartons claiming cage-free without a seal for outdoor access. | — |
 | `label_grass_fed_term` | label_terms | ‘100% grass-fed’ beef, ideally third-party certified. | Look for “100%” or “grass-finished” printed on the package. | — |
-| `label_pasture_raised_feed` | label_terms | Pasture-raised eggs with soy-free or corn-free feed printed outright. | Check both claims for seals: AWA Pasture Raised plus USDA Organic. | — |
+| `label_pasture_raised_feed` | label_terms | Pasture-raised eggs with soy-free or corn-free feed printed outright. | Check the carton for Animal Welfare Approved beside the feed claim. | — |
 | `label_organic_scope` | label_terms | Organic as the floor; the seal still allows approved sprays. | Flip the organic box over. The seal says nothing about the ingredients. | — |
 | `label_multigrain_vs_whole_grain` | label_terms | ‘100% whole grain’, a whole grain listed first. | Read for 100% whole grain, or whole before the grain name. | — |
 | `label_lightly_sweetened` | label_terms | ‘Unsweetened’, or read the ‘Added Sugars’ line on the panel. | Scan the ingredient list for syrup, cane juice, and concentrate. | — |
@@ -90,7 +90,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `rancidity_check` | bulk_pantry | Oil in a dark bottle, finished within two months. | Skip clear bottles; check for a paint-and-crayon smell when opening oil. | — |
 | `olive_oil_grades` | bulk_pantry | Extra virgin olive oil with a recent harvest date, one country, dark bottle. | Read for “product of”, where the olives grew; “packed in” only means bottled there. | — |
 | `nut_butter_ingredients` | bulk_pantry | Nut butter with just nuts and salt, oil on top. | Read the list for nuts and salt; skip sugar, palm or hydrogenated oils. | — |
-| `grains_beyond_rice` | bulk_pantry | Organic grains with the bran still on, not polished off. | Check the grain bag for a single ingredient and an organic seal. | — |
+| `grains_beyond_rice` | bulk_pantry | Organic grains with the bran still on, not polished off. | Read the grain bag for a single ingredient, with nothing added. | — |
 | `bottled_water_buying` | bulk_pantry | Spring water from a named spring, in glass. | Read the water source on the label; look for spring. | — |
 | `label_front_vs_back` | label_terms | A short list of recognizable foods, read on the back. | Read three things: ingredient list, added sugars, serving size. | — |
 | `label_ingredient_order` | label_terms | Ingredients led by foods, ahead of split sugars or flour. | Stop reading at “contains 2% or less” — the rest is a trace. | — |
@@ -127,13 +127,13 @@ Also: imperative, starts with a verb, ≤14 words.
 | `oat_milk` | eggs_dairy | Unsweetened, unfortified oat milk with nothing added, never seed oil. | Read the ingredients for added vitamins and minerals, then the stabilizers. | — |
 | `coffee_beans` | bulk_pantry | Beans in a sealed bag that limits air. | Check the bag’s seal and keep the coffee closed between uses. | — |
 | `bacon` | meat | Bacon from pigs kept on pasture, smoked over real wood. | Check for “Pastured” and Animal Welfare Approved, with no liquid smoke on the list. | — |
-| `hot_dogs` | meat | Organic beef hot dogs with no phosphates or binders. | Find the AGA seal, then count the ingredients. | — |
+| `hot_dogs` | meat | Organic beef hot dogs with no phosphates or binders. | Find the American Grassfed logo, then count the ingredients. | — |
 | `canned_tuna` | seafood | Pole- or troll-caught light tuna in olive oil or water. | Read the catch wording for pole, troll, FAD-free or school methods. | — |
 | `ham` | meat | Organic or pasture-raised ham named just “Ham”. | Read the product name’s opening word for Uncured, then check for pork and salt. | — |
 | `turkey_bacon` | meat | Turkey bacon from birds raised outside, cured with salt. | Read for “Pasture-Raised,” turkey listed first, and no “natural flavors.” | — |
 | `cured_pork` | meat | Salt-cured pork from pigs that lived on pasture. | Read for “Pastured” or Animal Welfare Approved, and no smoke flavoring or MSG. | — |
 | `lamb_goat` | meat | Lamb or goat that ate grass to the end. | Check for “100% grass-fed,” “grass-finished,” and American Grassfed or Animal Welfare Approved. | — |
-| `organ_meats` | meat | 100% grass-fed or pasture-raised organ meats, cooked within two days. | Check liver or heart packs for an AGA or organic seal. | — |
+| `organ_meats` | meat | 100% grass-fed or pasture-raised organ meats, cooked within two days. | Check liver or heart packs for Animal Welfare Approved or Land to Market. | — |
 | `bison` | meat | Bison labeled 100% grass-fed or grass-finished, with an inspection mark. | Read the pack for bison alone and the AGA mark beside the cut. | — |
 | `venison_game` | meat | Fat-trimmed venison from a fully refrigerated processor. | Ask whether each animal was handled separately and kept cold throughout. | — |
 | `white_fish` | seafood | Wild-caught white fish named by kind, like cod or halibut. | Turn the fillet to check its gray-brown skin, then read the cod tag. | — |
@@ -145,7 +145,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `seafood_counter` | seafood | Fish named by kind, on ice, clear-eyed with red gills. | Check the counter for clear eyes, ice and a species sign. | — |
 | `sprouted_grain_bread` | bulk_pantry | Bread with sprouted whole grains first and no added flour. | Read for sprouted before each grain; skip loaves listing flour first. | — |
 | `sprouted_grains` | bulk_pantry | Grain labeled sprouted whole grain. | Check the label names the grain as whole, not only its process. | — |
-| `specialty_flours` | bulk_pantry | Specialty flour with “whole” in its name or first ingredient. | Count the types of flour listed; choose one with organic on the bag. | — |
+| `specialty_flours` | bulk_pantry | Specialty flour with “whole” in its name or first ingredient. | Count the flours on the list, and read for ‘whole’ before each. | — |
 | `gluten_free_bread` | bulk_pantry | Gluten-free bread with its flours named and the fewest gums. | Read the flours in ingredient order; skip unless the first is marked whole. | — |
 | `buns_rolls` | bulk_pantry | Whole wheat buns and rolls with no added sugar. | Read the name on the bag for “whole wheat”, not “wheat” or “enriched”. | — |
 | `pastries_muffins` | bulk_pantry | All-butter bakery pastries, no shortening or hydrogenated oil. | Read the fat in the ingredients, or ask the baker if it is butter. | — |

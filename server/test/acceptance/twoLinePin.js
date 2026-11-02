@@ -3732,7 +3732,7 @@ const SECOND_PASS = {
     "do": "Read for cream and salt; skip any natural flavor entry."
   },
   "ghee": {
-    "decision": "Organic ghee from 100% grass-fed butter, Certified Grassfed, butter the only ingredient.",
+    "decision": "Ghee from 100% grass-fed butter, Certified Grassfed, butter the only ingredient.",
     "tip0": "Read the jar: butter, or clarified butter, as the only ingredient.",
     "do": "Check the jar lists one dairy fat, without oil blended in."
   },
@@ -3757,7 +3757,7 @@ const SECOND_PASS = {
     "do": "Look for MSC, or ASC or BAP on farmed fish, plus catch details."
   },
   "honey_adulteration": {
-    "decision": "Organic raw unfiltered honey, producer and origin named, honey the only ingredient.",
+    "decision": "Raw unfiltered honey, producer and origin named, honey the only ingredient.",
     "tip0": "Read the list: honey and nothing else, plus the producer, origin and lot code.",
     "do": "Look through the jar for cloudy honey, then a named origin and lot code."
   },
@@ -3767,27 +3767,27 @@ const SECOND_PASS = {
     "do": "Read for pure maple syrup alone; skip corn syrup in the ingredients."
   },
   "nut_butter_ingredients": {
-    "decision": "Organic nut butter, Non-GMO Project Verified: nuts and salt, nothing else.",
+    "decision": "Nut butter, Non-GMO Project Verified: nuts and salt, nothing else.",
     "tip0": "Read the list: peanuts, and salt if you want it. Nothing else is needed.",
     "do": "Read the list for nuts and salt; skip sugar, palm or hydrogenated oils."
   },
   "coffee_beans": {
-    "decision": "Organic whole beans, Bird Friendly, single origin, roasted-on date, mold-testing roaster.",
-    "tip0": "Look for ‘organic’, ‘whole bean’ and Bird Friendly on a sealed bag with a roasted-on date.",
+    "decision": "Whole beans, Bird Friendly, single origin, roasted-on date, mold-testing roaster.",
+    "tip0": "Look for ‘whole bean’ and Bird Friendly on a sealed bag with a roasted-on date.",
     "do": "Check the bag’s seal and keep the coffee closed between uses."
   },
   "flour_basics": {
-    "decision": "Organic sprouted whole-wheat flour, unbleached, not enriched.",
-    "tip0": "Look for “sprouted” and “whole wheat” in the flour name, on an organic bag.",
+    "decision": "Sprouted whole-wheat flour, unbleached, not enriched.",
+    "tip0": "Look for “sprouted” and “whole wheat” in the flour name.",
     "do": "Read the bag for whole wheat before choosing flour."
   },
   "sandwich_bread": {
-    "decision": "Organic whole-grain sandwich bread, “whole” first on the list, sourdough or sprouted.",
+    "decision": "Whole-grain sandwich bread, “whole” first on the list, sourdough or sprouted.",
     "tip0": "Read the first ingredient for ‘whole’; a loaf called just ‘wheat’ may be white flour.",
     "do": "Read the list’s top; skip enriched wheat flour, sugar or soybean oil."
   },
   "label_cold_pressed_expeller": {
-    "decision": "Organic olive or coconut oil, cold-pressed or expeller-pressed, unrefined.",
+    "decision": "Cold-pressed or expeller-pressed olive or coconut oil, unrefined.",
     "tip0": "Read the oil’s name and list first: olive or coconut, cold-pressed or expeller-pressed.",
     "do": "Read the bottle’s pressing method: cold or expeller."
   }

@@ -130,7 +130,7 @@ const DO_KEPT = {
   "butcher_counter_asking": "Ask what came in today and when it was cut.",
   "bison": "Read the pack for bison alone and the AGA mark beside the cut.",
   "lamb_goat": "Look for pale pink fat on chops carrying the AWA pasture stamp.",
-  "organ_meats": "Check liver or heart packs for an AGA or organic seal.",
+  "organ_meats": "Check liver or heart packs for Animal Welfare Approved or Land to Market.",
   "venison_game": "Ask whether each animal was handled separately and kept cold throughout.",
   "beef_cuts_basics": "Check the tray’s seal and the AGA and USDA marks."
 };
