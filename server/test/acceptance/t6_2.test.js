@@ -79,8 +79,8 @@ test('t6-2: decision and cart_pick match the current pilot', () => {
   // retired: pilot merge replaced this batch's text (P4)
   const expected = {
   "egg_labels": {
-    "decision": "Organic, pasture-raised eggs from hens on soy-free, corn-free feed.",
-    "cart_pick": "Organic Certified Humane pasture-raised eggs"
+    "decision": "Pasture-raised eggs from hens on soy-free, corn-free feed.",
+    "cart_pick": "Pasture-raised soy-free, corn-free eggs"
   },
   "whole_vs_reduced_fat_milk": {
     "decision": "Trusted raw milk from a farm, or low-temp pasteurized 100% grass-fed.",
@@ -91,12 +91,12 @@ test('t6-2: decision and cart_pick match the current pilot', () => {
     "cart_pick": "Plain Greek yogurt, 100% grass-fed"
   },
   "plain_kefir": {
-    "decision": "Plain organic whole-milk kefir, 100% grass-fed: milk and cultures only.",
-    "cart_pick": "100% grass-fed organic plain whole kefir"
+    "decision": "Plain whole-milk kefir, 100% grass-fed: milk and cultures only.",
+    "cart_pick": "100% grass-fed plain whole kefir"
   },
   "raw_aged_cheese": {
-    "decision": "Grass-fed organic raw-milk cheese, aged 60 days or more.",
-    "cart_pick": "Aged organic raw-milk cheddar"
+    "decision": "Grass-fed raw-milk cheese, aged 60 days or more.",
+    "cart_pick": "Aged grass-fed raw-milk cheese"
   },
   "dairy_case": {
     "decision": "Choose the dairy type first, then read the carton.",

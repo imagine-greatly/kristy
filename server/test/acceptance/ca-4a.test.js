@@ -53,7 +53,7 @@ const EGG = {
   short_answer: 'Look for pasture-raised, organic, and corn- and soy-free together. Next is soy-free organic pasture-raised, then organic pasture-raised. A certifier’s seal backs the pasture claim.',
   kristy_take: 'Pasture alone leaves the feed question open. Find all three claims together, then check the pack date: a fresh egg fries with a tall yolk and tight white.',
 };
-const EGG_DO = "Find USDA Organic on the carton beside the other seal."; // P4 current do line
+const EGG_DO = "Find Certified Humane Pasture Raised or Animal Welfare Approved on the carton."; // P4 current do line
 const EGG_WATCH_ORDER = [0, 12, 1, 11, 3, 4, 2, 5, 6, 10, 7, 8, 9, 13, 14, 15, 16];
 const EGG_OLD_CHEAP = 'Plain conventional eggs are still one of the cheapest complete proteins in the store.';
 const EGG_SCIENCE_OLD = '‘Vegetarian-fed’ keeps her off animal protein, yet a hen on real pasture eats bugs.';

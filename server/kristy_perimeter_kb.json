@@ -615,9 +615,9 @@
       ],
       "category": "poultry_eggs",
       "question": "What do cage-free, free-range, and pasture-raised eggs actually mean?",
-      "decision": "Organic, pasture-raised eggs from hens on soy-free, corn-free feed.",
-      "why": "A hen eats what she is given. Organic, pasture and feed words tell you about both her food and her life.",
-      "short_answer": "Pick USDA Organic pasture-raised eggs with a Certified Humane or AWA seal. Certified Humane pasture-raised means 108 square feet per hen, outdoors daily. Cage-free and vegetarian-fed say nothing about time outdoors.",
+      "decision": "Pasture-raised eggs from hens on soy-free, corn-free feed.",
+      "why": "A hen eats what she is given. Pasture, certifier and feed words tell you about both her food and her life.",
+      "short_answer": "Pick pasture-raised eggs with Certified Humane Pasture Raised or Animal Welfare Approved, from hens on soy-free, corn-free feed. Both mean 108 square feet per hen. USDA Organic sets feed, not outdoor space. Cage-free and vegetarian-fed say nothing about time outdoors.",
       "detail": "Both ‘soy-free’ and ‘corn-free’ have to be printed outright, because nothing else on the carton implies them, and most cartons never do. The claim clusters on small regional brands, farm stands and farmers markets rather than on the national pasture-raised labels, so the supermarket case is often the wrong place to look for it. Organic reaches the ration from a different direction: organic feed, no GMOs, no routine antibiotics, no added hormones. Pasture-raised paired with a third-party certification (Certified Humane, Animal Welfare Approved) is a real and audited claim about space, the strongest of the space words, and it still sits below feed here. Cage-free and free-range are weaker again, and the words on their own are not worth paying up for. Cage-free, free-range and pasture-raised describe how much room the hen had and whether she got outside, and not one of them says a word about what went in the trough. The standard is all three on one carton: what she ate, how it was grown, and how much room she had.",
       "evidence_tier": "kristys_standard",
       "sources": [
@@ -637,15 +637,19 @@
         },
         "Weston A. Price Foundation: Shopping Guide (Best, Good and Avoid tiers)",
         "Weston A. Price Foundation: Eat Your Eggs",
-        "Miller's Bio Farm: Soy-free eggs"
+        "Miller's Bio Farm: Soy-free eggs",
+        {
+          "name": "Certified Humane: Decoding the carton, how to buy clean and humane eggs",
+          "url": "https://certifiedhumane.org/decoding-the-carton-how-to-buy-clean-humane-eggs/"
+        }
       ],
-      "kristy_take": "Pasture alone leaves the feed question open. Find all three claims together, then check the pack date: a fresh egg fries with a tall yolk and tight white.",
-      "cart_pick": "Organic Certified Humane pasture-raised eggs",
+      "kristy_take": "Pasture alone leaves the feed question open. Find pasture, a welfare certifier and the feed words together, then check the pack date: a fresh egg fries with a tall yolk and tight white.",
+      "cart_pick": "Pasture-raised soy-free, corn-free eggs",
       "buying_tips": [
-        "Look for “corn-free” and “soy-free” feed beside the Certified Humane Pasture Raised seal.",
-        "Look for an organic carton printed with “pasture-raised”, “corn-free” and “soy-free”.",
-        "Read for “corn-free” and “soy-free” in print; they are the only carton words about what the hens ate.",
+        "Look for “corn-free” and “soy-free” feed printed beside “pasture-raised”.",
         "Look for a Certified Humane Pasture Raised or Animal Welfare Approved logo beside “pasture-raised”, the strongest outdoor claim.",
+        "Read for “corn-free” and “soy-free” in print; they are the only carton words about what the hens ate.",
+        "Look for an organic carton printed with “pasture-raised”, “corn-free” and “soy-free”.",
         "No corn-free carton: soy-free, organic, pasture-raised. Next, organic pasture-raised.",
         "No carton names the feed: pick certified organic, since organic rules cover what the hens eat.",
         "Pick farm stands and farmers markets for soy-free eggs, and ask the grower who keeps the hens.",
@@ -684,7 +688,7 @@
       ],
       "pick_steps": [
         "“Pasture-raised” means time outdoors on pasture, audited only with a certifier’s seal.",
-        "“Organic” means certified organic feed and outdoor access.",
+        "“Organic” means certified organic feed; it sets no outdoor space.",
         "Skip “cage-free” and “vegetarian-fed” cartons; neither promises time outdoors."
       ],
       "science": "Cage-free, free-range and pasture-raised are space claims; none says what the hen ate. Organic reaches the feed another way: organic feed, no GMOs, no routine antibiotics. ‘Vegetarian-fed’ keeps her off animal foods, yet a hen on real pasture eats bugs. Yolk color is not a feed tell; marigold in the ration deepens it too. With no feed named, certified organic is the floor; its rules reach the ration.",
@@ -696,6 +700,18 @@
         {
           "term": "Free-range",
           "meaning": "Some outdoor access; the amount isn’t strictly defined."
+        },
+        {
+          "term": "Certified Humane Pasture Raised",
+          "meaning": "At least 108 square feet of pasture per hen, audited by Humane Farm Animal Care."
+        },
+        {
+          "term": "Animal Welfare Approved",
+          "meaning": "The same 108 square feet per hen for pasture."
+        },
+        {
+          "term": "USDA Organic",
+          "meaning": "Organic feed, no GMOs, no routine antibiotics. No set outdoor space."
         },
         {
           "term": "Pasture-raised",
@@ -1229,7 +1245,7 @@
       ],
       "category": "dairy",
       "question": "Is grass-fed butter worth it?",
-      "decision": "Organic 100% grass-fed butter, Certified Grassfed, creamery named: cream and salt only.",
+      "decision": "100% grass-fed butter, Certified Grassfed, creamery named: cream and salt only.",
       "why": "WAPF rates pasteurized butter without natural flavors, preferably grass-fed, as good.",
       "short_answer": "Cows on grass eat carotene, and it goes straight into the fat. So grass-fed butter runs deep yellow toward orange. Winter butter from the same dairy runs pale. The fat itself shifts modestly too.",
       "detail": "Butter is cream, and salt if it is salted. A tub spread is a formulation, not butter: vegetable or seed oils, water, emulsifiers and flavoring, built to behave like butter. Within real butter, the grass difference is a feed difference showing up three ways at once: in the color, in the fat, and on the tongue. European-style butters are churned to a higher fat content, which is a separate axis from what the cows ate and the reason they bake and finish differently. The taste and the way it behaves in a hot pan are differences people can actually pick out, which is more than most sourcing claims manage. The fatty-acid profile shifts modestly too.",
@@ -1238,10 +1254,14 @@
         {
           "name": "Weston A. Price Foundation",
           "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        },
+        {
+          "name": "American Grassfed Association: Our Standards",
+          "url": "https://www.americangrassfed.org/about-us/our-standards/"
         }
       ],
       "kristy_take": "The deep yellow is the grass. Winter butter from the same dairy goes pale.",
-      "cart_pick": "100% grass-fed organic butter, cream and salt",
+      "cart_pick": "100% grass-fed butter, cream and salt",
       "buying_tips": [
         "Read the wrapper for “100% grass-fed”, the Certified Grassfed seal, and cream and salt.",
         "Look for deep yellow toward orange; that color is carotene from grass. Pale is a hay-fed winter batch.",
@@ -1327,9 +1347,9 @@
       ],
       "category": "dairy",
       "question": "Should you buy whole or low-fat milk?",
-      "decision": "Organic 100% grass-fed whole milk, Certified Grassfed, cream-top, not ultra-pasteurized.",
+      "decision": "100% grass-fed whole milk, Certified Grassfed, cream-top, not ultra-pasteurized.",
       "why": "Whole milk keeps its milkfat; WAPF favors grass-fed dairy and lists ultra-pasteurized milk under avoid.",
-      "short_answer": "Pick plain organic or grass-fed whole milk without “ultra-pasteurized” on the carton. Cream-top or non-homogenized milk is the next step up when the case has it.",
+      "short_answer": "Pick 100% grass-fed whole milk without “ultra-pasteurized” on the carton. Cream-top or non-homogenized milk comes next when the case has it. Plain organic whole milk comes after grass-fed.",
       "detail": "Whole milk is the one that had the least done to it. For years the guidance was ‘always low-fat dairy’, and the evidence behind that for otherwise-healthy people has weakened. Whole milk is a whole-food-standard pick rather than a finding. The handling is plain: skimming, standardizing and often ultra-pasteurizing are steps, and whole minimally-processed milk has fewer of them. A doctor’s advice for a specific person outranks a shelf standard.",
       "evidence_tier": "kristys_standard",
       "sources": [
@@ -1342,12 +1362,16 @@
           "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/principles-of-healthy-diets-2/"
         },
         "University of Minnesota Extension “A2 milk and A2 genetics” https://extension.umn.edu/agriculture/animals-and-livestock/dairy/a2-milk-and-a2-genetics",
-        "Michigan State University Extension, dairy processing article https://www.canr.msu.edu/news/they_did_what_to_your_milk (homogenization forces milk at high pressure through small holes so fat does not rise; no health benefits or risks associated with it; non-homogenized milk available from some bottlers)"
+        "Michigan State University Extension, dairy processing article https://www.canr.msu.edu/news/they_did_what_to_your_milk (homogenization forces milk at high pressure through small holes so fat does not rise; no health benefits or risks associated with it; non-homogenized milk available from some bottlers)",
+        {
+          "name": "American Grassfed Association: Our Standards",
+          "url": "https://www.americangrassfed.org/about-us/our-standards/"
+        }
       ],
       "kristy_take": "Whole milk, every time. Fewer steps between the cow and the carton.",
-      "cart_pick": "100% grass-fed organic whole milk",
+      "cart_pick": "100% grass-fed whole milk",
       "buying_tips": [
-        "Look for “100% grass-fed” and the Certified Grassfed seal on an organic cream-top carton.",
+        "Look for “100% grass-fed” and Certified Grassfed on a cream-top carton.",
         "Read near the date. ‘Ultra-pasteurized’ or ‘UHT’ on the carton explains a date months out. Skip that carton.",
         "The ladder runs four steps. Raw from a farm you can name. Then low-temp pasteurized and cream-top. Then A2, then the carton in front of you.",
         "Can’t find it: A2 milk, then the organic whole-milk carton in front of you.",
@@ -1460,7 +1484,7 @@
       ],
       "category": "dairy",
       "question": "Should you buy block cheese, slices, or pre-shredded?",
-      "decision": "Organic grass-fed block cheese, Certified Grassfed: milk, salt, cultures and rennet.",
+      "decision": "Grass-fed block cheese, Certified Grassfed: milk, salt, cultures and rennet.",
       "why": "Process cheese is ground and heated with other ingredients; grass-fed describes the milk source, not the cheese type.",
       "short_answer": "Real cheese is basically milk, salt, cultures and enzymes. ‘Pasteurized process cheese’, ‘cheese product’ or ‘cheese food’ means emulsifiers and added ingredients blended in. Bagged shreds are real cheese with an anti-caking coating. Buy the block.",
       "detail": "Read the name and the list. Two different additions sit behind the same aisle. ‘Process cheese’ is an emulsified blend and is a different product from cheese. Pre-shredded is genuine cheese with a coating applied so the strands do not knit back together in the bag, and that coating is exactly why bagged shreds never melt as smoothly as cheese grated at home. Neither is a safety question. Both are a reason to buy the block and spend thirty seconds with a grater. ‘Parmesan’ is a generic word in the US; ‘Parmigiano-Reggiano’ is a protected one with a stamped rind. The shred coating is usually potato starch or powdered cellulose, plus natamycin as a mold inhibitor. Both are edible. The block is cheaper per pound, melts properly, and is the one to buy.",
@@ -1469,10 +1493,14 @@
         {
           "name": "Cornell Legal Information Institute",
           "url": "https://www.law.cornell.edu/cfr/text/21/133.169"
+        },
+        {
+          "name": "American Grassfed Association: Our Standards",
+          "url": "https://www.americangrassfed.org/about-us/our-standards/"
         }
       ],
       "kristy_take": "Buy the block. A grater costs nothing and the cheese melts the way it is supposed to.",
-      "cart_pick": "Organic cheese",
+      "cart_pick": "Grass-fed block cheese",
       "buying_tips": [
         "Read the block’s list: milk, salt, cultures, and enzymes or rennet.",
         "Look for 100% grass-fed milk named on the block, with the Certified Grassfed seal and the creamery.",
@@ -1549,7 +1577,7 @@
       ],
       "category": "dairy",
       "question": "What should you look for in yogurt?",
-      "decision": "Organic plain whole-milk yogurt, 100% grass-fed, Certified Grassfed seal, cultures named.",
+      "decision": "Plain whole-milk yogurt, 100% grass-fed, Certified Grassfed, cultures named.",
       "why": "Organic yogurt can still contain added sugar; plain whole tubs are the pick, with grass-fed naming the milk source.",
       "short_answer": "Plain Greek yogurt from 100% grass-fed milk. Plain organic whole-milk yogurt is next. Flavored tubs are where the added sugar is.",
       "detail": "Plain yogurt, especially Greek or strained, is a whole food: milk and cultures. The added sugar in fruit-on-the-bottom and flavored cups is where it goes sideways, and the gap between the plain tub and the fruit cup on the added-sugars line is the entire decision. Whether the cultures in that tub are still alive is a separate question, read from the ingredient list and the seal. Milk protein concentrate on the yogurt list is a concentrated milk powder made by filtering milk and drying it. Look for milk and cultures alone.",
@@ -1566,10 +1594,14 @@
         {
           "name": "CSPI: Artificial colorings (synthetic food dyes)",
           "url": "https://www.cspi.org/node/7436"
+        },
+        {
+          "name": "American Grassfed Association: Our Standards",
+          "url": "https://www.americangrassfed.org/about-us/our-standards/"
         }
       ],
       "kristy_take": "Big tub of plain, add your own berries. Plain has no added sugar.",
-      "cart_pick": "100% grass-fed organic plain whole yogurt",
+      "cart_pick": "100% grass-fed plain whole yogurt",
       "buying_tips": [
         "Read the tub for plain whole milk and named cultures, and nothing else.",
         "Look for “100% grass-fed”, which means grass and hay, never grain, with the Certified Grassfed seal and “cream-top” or “non-homogenized”.",
@@ -1662,7 +1694,7 @@
       "question": "Is raw milk better?",
       "decision": "Cream-top grass-fed whole milk; raw only where stores sell it.",
       "why": "Pasteurization is a shelf-life technology. The farm is the product here.",
-      "short_answer": "Most stores sell no raw milk. The closest shelf option is organic or grass-fed whole milk, low-temperature pasteurized and non-homogenized. Where a store does sell raw milk, the bottle says raw.",
+      "short_answer": "Most stores sell no raw milk. The closest shelf option is grass-fed whole milk, low-temperature pasteurized and non-homogenized, with organic next. Where a store does sell raw milk, the bottle says raw.",
       "detail": "Where raw milk can be sold at all varies by state, so the first practical question is usually where rather than whether. Herdshares fill the gap in a lot of places. The word “raw” is unregulated on most products, but on milk it is literal: not heat-treated. On cheese it means the same thing, and at US retail it also means aged sixty days or more, which is why aged raw cheese sits in plain sight on a counter where the milk cannot.",
       "evidence_tier": "time_tested",
       "sources": [
@@ -5207,7 +5239,7 @@
         "cultured raw milk"
       ],
       "question": "Is raw kefir worth buying?",
-      "decision": "Plain raw or organic whole-milk kefir, Certified Grassfed seal, farm named on bottle.",
+      "decision": "Plain raw or grass-fed kefir from whole milk, Certified Grassfed, farm named.",
       "why": "A live ferment from a named herd. The refrigerated case is the only place it exists.",
       "card_why": "Kefir is what a dairy does with milk it wants to keep, and it has been doing it for centuries. The grains turn it tangy and thick and it holds for weeks where the milk holds for days. The rule is the milk’s rule: the farm is the product. Buy it from the herd you would drink from raw, as close to the culture date as the case allows.",
       "short_answer": "Raw kefir is a live ferment and it has to be sold cold. Anything shelf-stable was heat-treated after culturing, which ends the thing you were buying it for.",
@@ -5246,9 +5278,13 @@
       "sources": [
         "Weston A. Price Foundation: FAQ, dairy (raw kefir)",
         "Real Milk (Campaign for Real Milk): Real Milk brochure",
-        "Weston A. Price Foundation: Shopping Guide categories (yogurt and kefir)"
+        "Weston A. Price Foundation: Shopping Guide categories (yogurt and kefir)",
+        {
+          "name": "American Grassfed Association: Our Standards",
+          "url": "https://www.americangrassfed.org/about-us/our-standards/"
+        }
       ],
-      "cart_pick": "Plain raw or organic whole-milk kefir",
+      "cart_pick": "Plain raw or grass-fed kefir",
       "tier_note": "Culturing milk is among the oldest preservation methods, barely studied; the case is the ferment, not a health outcome.",
       "evidence_tier": "time_tested",
       "asked_as": [
@@ -5272,7 +5308,7 @@
         "lait cru"
       ],
       "question": "Is raw milk cheese worth buying?",
-      "decision": "Grass-fed organic raw-milk cheese, aged 60 days or more.",
+      "decision": "Grass-fed raw-milk cheese, aged 60 days or more.",
       "why": "Aged raw-milk cheese tastes of one herd and season, and its maker has to know the milk.",
       "card_why": "Aged raw-milk cheese is the raw dairy nobody has to hunt for. US rules allow it at sixty days and up, so a decent cheese counter already keeps a case of it. Sixty days of aging is a technology of its own. It is the reason an aged raw cheddar tastes of the place it came from. A young commodity block tastes of very little. The organizing principle is the milk’s: ask who made it, from which herd, and how long it sat.",
       "short_answer": "It is the raw dairy nobody has to go looking for. US law lets raw-milk cheese aged sixty days or more sell across state lines. It sits in ordinary cheese cases. Most traditional European cheeses are made this way.",
@@ -5318,7 +5354,7 @@
         "21 CFR 133 cheese standards of identity, 60-day aging (label meaning)",
         "Edible Seattle “In the Raw” (Cascadia Creamery, raw-milk cheese) https://edibleseattle.com/explore/artisans/in-the-raw/"
       ],
-      "cart_pick": "Aged organic raw-milk cheddar",
+      "cart_pick": "Aged grass-fed raw-milk cheese",
       "tier_note": "Aging raw milk into cheese predates refrigeration; the months on the rind are history, not health evidence; organic means certified organic feed and outdoor access.",
       "evidence_tier": "time_tested",
       "asked_as": [
@@ -7932,9 +7968,9 @@
       ],
       "category": "poultry_eggs",
       "question": "What should a shopper know about duck and quail eggs?",
-      "decision": "Organic pasture-raised duck eggs, no soy or corn feed.",
+      "decision": "Pasture-raised duck eggs, no soy or corn feed.",
       "why": "The Weston A. Price shopping guide lists pastured duck eggs among its best eggs.",
-      "short_answer": "Pick duck or quail eggs labeled pasture-raised, organic where the case has them. Duck eggs are larger with bigger yolks. Quail eggs are tiny, about 10 to 12 grams each.",
+      "short_answer": "Pick duck or quail eggs labeled pasture-raised, with soy-free or corn-free feed where the case has them, organic feed next. Duck eggs are larger with bigger yolks. Quail eggs are tiny, about 10 to 12 grams each.",
       "detail": "A duck egg is larger and heavier than a hen’s egg, so it needs more cooking time. In one test kitchen weighing, duck yolks made up 42 percent of the egg’s weight, against 32 percent for chicken. Quail eggs weigh about 10 to 12 grams. In a storage study, quail eggs held at room temperature lost internal quality sharply, so keep them cold.",
       "evidence_tier": "established",
       "sources": [
@@ -7944,7 +7980,7 @@
         }
       ],
       "kristy_take": "Open the carton for clean, uncracked shells and keep the eggs cold at home. Duck or quail, cook until both yolk and white are firm.",
-      "cart_pick": "Organic pasture-raised duck eggs",
+      "cart_pick": "Pasture-raised duck eggs",
       "buying_tips": [
         "Look for ‘pasture-raised’ and ‘duck’ on the carton, plus ‘soy-free’ or ‘corn-free’ feed.",
         "Open the carton and check that every shell is clean and uncracked.",
@@ -9877,7 +9913,7 @@
       ],
       "category": "dairy",
       "question": "How do you pick a bottle of kefir?",
-      "decision": "Plain organic whole-milk kefir, 100% grass-fed: milk and cultures only.",
+      "decision": "Plain whole-milk kefir, 100% grass-fed: milk and cultures only.",
       "why": "WAPF rates plain, whole yogurt and kefir without added vitamins, preferably grass-fed, as good.",
       "short_answer": "Kefir is a sour, slightly fizzy milk drink fermented by yeasts and bacteria. Bottles are sold plain and flavored. Plain kefir works in smoothies or in place of buttermilk or yogurt. Keep it refrigerated.",
       "detail": "Kefir is milk fermented by a starter culture of yeasts and bacteria. Yogurt is made with bacteria alone. The ferment leaves kefir sour, carbonated and slightly alcoholic, close to a thin, drinkable yogurt. Store bottles come plain and flavored. Kefir is stored at refrigerator temperatures and has a relatively short shelf life.",
@@ -9889,7 +9925,7 @@
         }
       ],
       "kristy_take": "Plain kefir is the base drink, ready for a smoothie or a recipe.",
-      "cart_pick": "100% grass-fed organic plain whole kefir",
+      "cart_pick": "100% grass-fed plain whole kefir",
       "buying_tips": [
         "Read the list: milk and cultures only, with no flavor named on the label.",
         "Look for ‘100% grass-fed’ and the Certified Grassfed seal: the cows ate grass and hay, never grain.",
@@ -9940,7 +9976,7 @@
       ],
       "category": "dairy",
       "question": "How do you pick sour cream?",
-      "decision": "Organic grass-fed sour cream, only cream and cultures.",
+      "decision": "Grass-fed sour cream, only cream and cultures.",
       "why": "Grass-fed names the feeding standard; wAPF lists sour cream with additives, and homogenized cream, under avoid.",
       "short_answer": "The tub names the method. Sour cream, or cultured sour cream, is cream soured by bacteria. Acidified sour cream is soured with added acids. Both hold at least 18 percent milkfat.",
       "detail": "Under 21 CFR 131.160, sour cream is pasteurized cream soured by lactic acid bacteria. It may be named “Cultured sour cream”. Under 21 CFR 131.162, acidified sour cream is soured with acidifiers, with or without lactic acid bacteria. An acidifier is an added food-grade acid. Both hold at least 18 percent milkfat. Optional ingredients may improve texture, extend shelf life, or stop syneresis, which is liquid separating out. A flavoring that characterizes the product is declared with the name.",
@@ -9952,7 +9988,7 @@
         }
       ],
       "kristy_take": "Culturing is the traditional way to sour cream. The tub says which way was used.",
-      "cart_pick": "Organic cultured sour cream",
+      "cart_pick": "Grass-fed cultured sour cream",
       "buying_tips": [
         "Read the list: cream and cultures only, named ‘sour cream’ or ‘cultured sour cream’.",
         "Skip carrageenan, a seaweed thickener that some organic foods use too.",
@@ -10003,7 +10039,7 @@
       ],
       "category": "dairy",
       "question": "How do you pick cream cheese?",
-      "decision": "Organic 100% grass-fed cream cheese, no gums or stabilizers.",
+      "decision": "100% grass-fed cream cheese, no gums or stabilizers.",
       "why": "Grass-fed names the milk source; WAPF favors whole cream cheese without additives.",
       "short_answer": "Cream cheese is a soft, fresh cheese that does not mature. Its standard requires at least 33 percent milkfat and a bacterial culture. Stabilizers are capped at 0.5 percent. American Neufchâtel closely resembles it.",
       "detail": "Under 21 CFR 133.133, cream cheese is a soft, uncured cheese. It holds at least 33 percent milkfat and at most 55 percent moisture. Its dairy ingredients are pasteurized and set with a lactic acid bacterial culture. Stabilizers may total no more than 0.5 percent of the finished food. American Neufchâtel, sold in the United States, closely resembles cream cheese. French Neufchâtel ripens and grows a soft rind.",
@@ -10015,7 +10051,7 @@
         }
       ],
       "kristy_take": "Cream cheese is a fresh cheese, so the name on the box carries the standard.",
-      "cart_pick": "100% grass-fed organic plain cream cheese",
+      "cart_pick": "100% grass-fed plain cream cheese",
       "buying_tips": [
         "Read the list: cream, milk, salt and a culture, with no stabilizers or gums.",
         "Look for ‘cream cheese’ as the name, and ‘100% grass-fed’ on the pack.",
@@ -10068,7 +10104,7 @@
       ],
       "category": "dairy",
       "question": "How do you pick cottage cheese?",
-      "decision": "Organic whole-milk cottage cheese set with cultures, with no gums.",
+      "decision": "Cottage cheese from grass-fed milk, set with cultures, no gums.",
       "why": "Grass-fed names the milk source; WAPF favors whole cottage cheese without additives.",
       "short_answer": "Cottage cheese is curd mixed with a creaming mixture. The label states its milkfat, at least 4 percent. Acid-set curd must say “directly set” near the name. Dry curd cottage cheese has under 0.5 percent milkfat.",
       "detail": "Under 21 CFR 133.128, cottage cheese is dry curd mixed with a creaming mixture. It holds at least 4 percent milkfat and at most 80 percent moisture. The label states “not less than __ percent milkfat” with the name. Under 21 CFR 133.129, the curd is set by lactic acid bacteria or by food-grade acids. Direct acidification means an acid, not bacteria, sets the curd. That method is labeled “Directly set” or “Curd set by direct acidification”. Dry curd cottage cheese has less than 0.5 percent milkfat.",
@@ -10080,7 +10116,7 @@
         }
       ],
       "kristy_take": "The setting method is printed by the name, so the tub answers the question.",
-      "cart_pick": "Organic culture-set cottage cheese",
+      "cart_pick": "Grass-fed culture-set cottage cheese",
       "buying_tips": [
         "Read the list: milk, cream, salt and cultures, with no carrageenan or gum.",
         "Check beside the name: ‘directly set’ or ‘curd set by direct acidification’ means acid, not a culture, set the curd.",
@@ -10137,7 +10173,7 @@
       ],
       "category": "dairy",
       "question": "How do you tell real ice cream from a lookalike?",
-      "decision": "Organic ice cream: cream, milk, yolks, real vanilla, no gums.",
+      "decision": "Ice cream of cream, milk, yolks, real vanilla, no gums.",
       "why": "WAPF favors milk, cream, yolks and real vanilla; grass-fed names the dairy source, not the additives.",
       "short_answer": "The name “ice cream” requires at least 10 percent milkfat and 4.5 pounds to the gallon. A product short of that is sold as “frozen dairy dessert”. It has more air and less milk fat.",
       "detail": "Under 21 CFR 135.110, ice cream holds at least 10 percent milkfat and at least 4.5 pounds to the gallon. The pounds-per-gallon floor limits how much air is whipped in. Ice cream excludes other food fats, except incidental amounts. Frozen custard is ice cream with 1.4 percent egg yolk solids. A frozen dairy dessert may list oils such as coconut, palm or soybean oil, so skip it for real ice cream. Ice cream starts with dairy from cows that may receive rBST, a synthetic growth hormone. Certified organic production prohibits it. Certified organic ice cream leads this label ladder. Next is a carton stating its milk came from cows that were not treated with rBST. A carton with neither claim ranks last: US rules let rBST use go unlabeled.",
@@ -10149,7 +10185,7 @@
         }
       ],
       "kristy_take": "The words on the carton settle it. “Frozen dairy dessert” is the name for what falls short.",
-      "cart_pick": "Organic vanilla ice cream",
+      "cart_pick": "Ice cream made with cream and yolks",
       "buying_tips": [
         "Read the name on the carton, not the picture: it should say ‘ice cream’.",
         "Read the list: cream, milk and sugar first, then egg yolks and real vanilla, no carrageenan or guar gum.",
@@ -10277,7 +10313,7 @@
       ],
       "category": "dairy",
       "question": "How do you pick goat or sheep dairy?",
-      "decision": "Plain whole goat or sheep milk first, then organic.",
+      "decision": "Plain whole goat or sheep milk, nothing else added.",
       "why": "Goat milk has less lactose than cow’s milk.",
       "short_answer": "Goat milk averages about 3.5 percent butterfat. It contains lactose, less than cow’s milk. Goat butter is white. Popular sheep cheeses include feta, pecorino romano, Roquefort and Manchego.",
       "detail": "Goat milk generally averages 3.5 percent butterfat. Its fat globules are small and well emulsified, so the cream stays suspended longer than in cow’s milk. Its cream rises over a few days. Compared with cow’s milk, goat milk has less lactose and different forms of proteins. Goat milk is made into cheese, butter, ice cream and yogurt. In France, goat cheese is called fromage de chèvre. Goat butter is white because goats convert yellow beta-carotene to a colorless form of vitamin A. Popular sheep cheeses include feta, pecorino romano, Roquefort and Manchego.",
@@ -10592,7 +10628,7 @@
       ],
       "category": "dairy",
       "question": "How do you choose dairy at the store?",
-      "decision": "By type: organic or grass-fed, whole, no added vitamins.",
+      "decision": "By type: grass-fed, whole, no added vitamins.",
       "why": "Each dairy type has its own card. The carton then shows added vitamins, pasture and filtering.",
       "short_answer": "Start with the type: milk, yogurt, cheese, butter, cream or a plant drink. Then read the carton. Vitamins A and D are optional in milk, so the label tells. Organic dairy animals must graze pasture.",
       "detail": "Under 21 CFR 131.110, adding vitamins A and D to milk is optional. If vitamin D is added, each quart holds 400 International Units (IU), a measure of vitamin amount. Under 7 CFR 205.240, organic dairy animals must graze pasture throughout the grazing season. That season must be at least 120 days per year. Ultrafiltered milk is pushed through a porous membrane under pressure, a process called ultrafiltration. It changes the water, lactose and some minerals, and concentrates the protein already in the milk. The label then shows more protein, less sugar and a longer shelf life.",
@@ -10617,7 +10653,7 @@
         }
       ],
       "kristy_take": "The type settles most of the choice, and the carton fills in the rest.",
-      "cart_pick": "Organic whole dairy, picked by type",
+      "cart_pick": "Grass-fed whole dairy, picked by type",
       "buying_tips": [
         "Pick the type first: milk, yogurt, cheese, butter, cream or plant drink; each has a card.",
         "Read the milk label for added vitamins A and D. Plain milk without them ranks higher.",
@@ -15987,12 +16023,12 @@
       "kind": "family",
       "title": "Ruminant meat: grass-finished first",
       "category": "aisle_meat_eggs",
-      "decision": "Beef, lamb and bison grass-fed their whole life; organic is a bonus.",
+      "decision": "Beef, lamb and bison that ate only grass, from an audited ranch.",
       "why": "Organic production and forage finishing are separate checks; grass-finished ranks first, and organic on top is a bonus. Grass, hay and browse fit the preferred forage system, including winter feeding. The same source preference applies to cuts, grinds, organ blends and beef franks, while each form needs its own recipe check. This is a sourcing preference, not a demonstrated health ranking.",
       "buying_tips": [
-        "Look for ‘100% grass-fed’ on the front. Plain ‘grass-fed’ can still mean grain at the end.",
-        "Look for a logo from a group that checks, like AGA Grassfed or PCO 100% Grassfed.",
-        "Pick a pack with a Global Animal Partnership (GAP) rating next; it rules out feedlots.",
+        "Look for ‘100% grass-fed’ and ‘grass-finished’; ‘grass-fed’ alone can still mean grain.",
+        "Look for Regenerative Organic Certified, Certified Regenerative, or Land to Market.",
+        "Look for American Grassfed or Animal Welfare Approved: audited pasture, no feedlot.",
         "Skip organic beef without ‘100% grass-fed’; it can still eat grain at the end."
       ],
       "sources": [
@@ -16015,6 +16051,18 @@
         {
           "name": "Animal Welfare Approved",
           "url": "https://agreenerworld.org/certifications/animal-welfare-approved/"
+        },
+        {
+          "name": "Regenerative Organic Certified Framework",
+          "url": "https://regenorganic.org/wp-content/uploads/2023/03/Regenerative-Organic-Certified-Framework.pdf"
+        },
+        {
+          "name": "Certified Regenerative by AGW 2025 Standard",
+          "url": "https://agreenerworld.org/wp-content/uploads/2025/12/ST146v1-Certified-Regenerative-by-AGW-2025-Standard.pdf"
+        },
+        {
+          "name": "Savory Institute: Ecological Outcome Verification, Land to Market",
+          "url": "https://savory.global/ecological-outcome-verification-the-science-inside-savory-institutes-land-to-market/"
         }
       ]
     },
@@ -16023,10 +16071,10 @@
       "kind": "family",
       "title": "Pastured poultry and pork",
       "category": "aisle_meat_eggs",
-      "decision": "Organic, pasture-raised chicken, turkey and pork with nothing added to the meat.",
+      "decision": "Pasture-raised chicken, turkey and pork with nothing added to the meat.",
       "why": "Pasture access and supplemental ration need separate evidence tied to the selected meat. Poultry and pigs can receive grain within this preference; forage-only feeding is not required. Raw cuts, rotisserie birds and breaded nuggets need different ingredient and cooking-status checks. Organic-feed wording alone does not establish finished-product organic status.",
       "buying_tips": [
-        "Look for ‘pasture-raised’ on the front and the USDA Organic seal.",
+        "Look for ‘pasture-raised’ or ‘pastured’ on the front.",
         "Look for a welfare logo that checks, like Certified Humane or Animal Welfare Approved.",
         "Pick plain organic next; it still means organic feed and time outdoors.",
         "Skip labels with ‘added solution’ or a percent of water; that is water added to the meat."
@@ -16055,6 +16103,10 @@
         {
           "name": "FSIS retained-water guideline",
           "url": "https://www.fsis.usda.gov/sites/default/files/media_file/documents/FSIS-GD-2025-0001.pdf"
+        },
+        {
+          "name": "Animal Welfare Approved: Pig Standards",
+          "url": "https://agreenerworld.org/certifications/animal-welfare-approved/standards/pig-standards/"
         }
       ]
     },
@@ -16063,12 +16115,12 @@
       "kind": "family",
       "title": "Eggs: pasture plus feed",
       "category": "aisle_meat_eggs",
-      "decision": "Organic, pasture-raised eggs; soy-free and corn-free feed is the bonus step.",
+      "decision": "Pasture-raised eggs; soy-free and corn-free feed is the bonus step.",
       "why": "Organic status, outdoor conditions and feed exclusions answer different questions. Apply each claim to the selected species and carton, not another flock on the farm. For quail, the cited outdoor-housing example does not establish pasture access; the top rung remains a specification to look for. Feed exclusions express a sourcing preference, not a guaranteed nutrient profile.",
       "buying_tips": [
-        "Look for ‘pasture-raised’ on the carton front and the USDA Organic seal.",
+        "Look for ‘pasture-raised’ on the carton front.",
         "Pick a carton that also says ‘soy-free’ or ‘corn-free’ when the shelf has one.",
-        "Look for a Certified Humane or Animal Welfare Approved logo beside pasture-raised.",
+        "Look for Certified Humane Pasture Raised or Animal Welfare Approved beside it.",
         "Pick organic if no pasture-raised carton is there. ‘Cage-free’ does not mean outside."
       ],
       "sources": [
@@ -16087,6 +16139,10 @@
         {
           "name": "FSIS animal-raising claims guideline",
           "url": "https://www.fsis.usda.gov/sites/default/files/media_file/documents/FSIS-GD-2024-0006.pdf"
+        },
+        {
+          "name": "Certified Humane: Decoding the carton, how to buy clean and humane eggs",
+          "url": "https://certifiedhumane.org/decoding-the-carton-how-to-buy-clean-humane-eggs/"
         }
       ]
     },
@@ -16095,10 +16151,10 @@
       "kind": "family",
       "title": "Prepared pastured meats",
       "category": "aisle_deli_prepared",
-      "decision": "Organic or 100% grass-fed meat with a short list of real ingredients.",
+      "decision": "100% grass-fed or pasture-raised meat with a short list of real ingredients.",
       "why": "Preparation does not establish how an animal was raised. Ruminant ingredients need their forage-finish check, while poultry and pork need pasture and feed details. Roasts, bacon, fermented salami and liver preparations cannot share a whole-muscle, zero-water or zero-sugar rule. These are sourcing and recipe preferences, not demonstrated health rankings.",
       "buying_tips": [
-        "Look for USDA Organic, or an AGA Grassfed logo on beef hot dogs and sausages.",
+        "Look for ‘100% grass-fed’ and an AGA Grassfed logo on beef, ‘pastured’ on pork.",
         "Read the whole list, sauce included: meat, fat, salt and named spices.",
         "Skip celery powder, nitrite, nitrate, smoke flavor, MSG and unnamed oils.",
         "Skip any list with ‘mechanically separated’ meat."
@@ -16154,10 +16210,10 @@
       "kind": "family",
       "title": "Fluid animal milk",
       "category": "aisle_dairy_alt",
-      "decision": "Organic or grass-fed whole milk that is not ultra-pasteurized.",
+      "decision": "Grass-fed whole milk that is not ultra-pasteurized.",
       "why": "Whole milk, feeding and heat process are separate checks. The traditional raw-first preference is conditional on the raw-milk household-suitability review; farm testing does not guarantee every bottle. Low-temperature pasteurized whole milk is the practical fallback, preferably non-homogenized. These are sourcing and process preferences, not demonstrated health rankings.",
       "buying_tips": [
-        "Look for USDA Organic or an AGA 100% Grassfed logo on the carton.",
+        "Look for an AGA 100% Grassfed logo on the carton, then USDA Organic.",
         "Read the carton and skip ‘ultra-pasteurized’; that milk is heated hotter.",
         "Pick ‘non-homogenized’ or ‘cream-top’ when the case has it.",
         "Pick plain whole milk; skip lowfat, skim and flavored."
@@ -16178,6 +16234,10 @@
         {
           "name": "Farm milk handling, reporting and access FAQ",
           "url": "https://www.creambrookfarm.com/faq"
+        },
+        {
+          "name": "American Grassfed Association: Our Standards",
+          "url": "https://www.americangrassfed.org/about-us/our-standards/"
         }
       ]
     },
@@ -16186,13 +16246,13 @@
       "kind": "family",
       "title": "Plain cultured dairy",
       "category": "aisle_dairy_alt",
-      "decision": "Plain, whole-milk, organic yogurt, kefir and sour cream with live cultures.",
+      "decision": "Plain, whole-milk, grass-fed yogurt, kefir and sour cream with live cultures.",
       "why": "Read the finished product and its dairy base rather than judging the tub or thickness. Milk, cream, cultures and product-specific salt or enzymes can fit a simple recipe. Cultured does not establish raw starting milk or live cultures in every finished product.",
       "buying_tips": [
         "Read the tub for ‘live and active cultures’ or named cultures.",
         "Skip tubs that list pectin, gums, starch or carrageenan; those thicken it.",
         "Pick plain; Added Sugars on the panel should read 0g.",
-        "Look for USDA Organic or an AGA 100% Grassfed logo on the tub."
+        "Look for an AGA 100% Grassfed logo on the tub, then USDA Organic."
       ],
       "sources": [
         {
@@ -16226,6 +16286,10 @@
         {
           "name": "Milk kefir grains, separation and continuing fermentation FAQ",
           "url": "https://www.yemoos.com/pages/milk-kefir-faq-straining-finishing"
+        },
+        {
+          "name": "American Grassfed Association: Our Standards",
+          "url": "https://www.americangrassfed.org/about-us/our-standards/"
         }
       ]
     },
@@ -16234,13 +16298,13 @@
       "kind": "family",
       "title": "Real cheese, raw milk preferred",
       "category": "aisle_dairy_alt",
-      "decision": "Organic or grass-fed block cheese made of milk, cultures, salt and rennet.",
+      "decision": "Grass-fed block cheese made of milk, cultures, salt and rennet.",
       "why": "Milk, cultures, salt and rennet or enzymes form the recipe check. Raw milk is the traditional preference; explicitly heated or pasteurized real cheese is a fallback. Pasteurized milk in cheese is distinct from a process-cheese formulation. Generic enzymes or non-GMO rennet wording leaves the coagulant method unresolved.",
       "buying_tips": [
         "Read the list: milk, cultures, salt and rennet or enzymes, nothing else.",
         "Skip ‘cheese food’, ‘cheese product’, spreads and any list with sodium citrate.",
         "Pick a block or wedge over individually wrapped slices.",
-        "Look for USDA Organic or an AGA 100% Grassfed logo on the label."
+        "Look for an AGA 100% Grassfed logo on the label, then USDA Organic."
       ],
       "sources": [
         {
@@ -16262,6 +16326,10 @@
         {
           "name": "Traditional shopping preferences by food category",
           "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        },
+        {
+          "name": "American Grassfed Association: Our Standards",
+          "url": "https://www.americangrassfed.org/about-us/our-standards/"
         }
       ]
     },
@@ -16270,13 +16338,13 @@
       "kind": "family",
       "title": "Concentrated dairy fats",
       "category": "aisle_dairy_alt",
-      "decision": "Organic or grass-fed butter, cream and ghee with nothing added but salt.",
+      "decision": "Grass-fed butter, cream and ghee with nothing added but salt.",
       "why": "Cream, butter and ghee share a dairy-fat source check, not one heat process or storage temperature. Choose the whipping, spreading or cooking form first. Salt and cultures can fit the relevant recipe; ghee is heated during clarification.",
       "buying_tips": [
         "Read the butter list: cream, plus salt if salted, nothing else.",
         "Skip whipped butter and spreads mixed with vegetable oils.",
         "Check cream cartons and skip ‘ultra-pasteurized’ and added gums.",
-        "Look for an AGA 100% Grassfed logo or the USDA Organic seal."
+        "Look for an AGA 100% Grassfed logo, then USDA Organic."
       ],
       "sources": [
         {
@@ -16302,6 +16370,10 @@
         {
           "name": "Traditional shopping preferences by food category",
           "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        },
+        {
+          "name": "American Grassfed Association: Our Standards",
+          "url": "https://www.americangrassfed.org/about-us/our-standards/"
         }
       ]
     },
@@ -16366,13 +16438,13 @@
       "kind": "family",
       "title": "Actual ice cream",
       "category": "aisle_frozen",
-      "decision": "Organic ice cream made of cream, milk, sugar and egg yolks, no gums.",
+      "decision": "Ice cream made of cream, milk, sugar and egg yolks, no gums.",
       "why": "Ice cream is a sweetened dessert, so a zero-added-sugar rule does not fit this family. Cream plus nonfat milk can form a simple dairy base, with optional yolks and real vanilla or fruit. Homemade ice cream may use a heated base. A complete organic, 100% grass-fed retail recipe is a sourcing target, not established local availability.",
       "buying_tips": [
         "Read the front: it should say ‘ice cream’ or ‘frozen custard’.",
         "Skip tubs that list guar gum, carrageenan or other thickeners.",
         "Pick a pint that feels heavy for its size; a light one is mostly whipped-in air.",
-        "Look for USDA Organic or an AGA 100% Grassfed logo."
+        "Look for an AGA 100% Grassfed logo, then USDA Organic."
       ],
       "sources": [
         {
@@ -16390,6 +16462,10 @@
         {
           "name": "Traditional shopping preferences by food category",
           "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        },
+        {
+          "name": "American Grassfed Association: Our Standards",
+          "url": "https://www.americangrassfed.org/about-us/our-standards/"
         }
       ]
     },

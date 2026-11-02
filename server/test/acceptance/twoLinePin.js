@@ -3662,9 +3662,9 @@ const SECOND_PASS = {
     "do": "Look for “Pasture-Raised,” Certified Humane, organic or non-GMO feed, least added water."
   },
   "egg_labels": {
-    "decision": "Organic, pasture-raised eggs from hens on soy-free, corn-free feed.",
-    "tip0": "Look for “corn-free” and “soy-free” feed beside the Certified Humane Pasture Raised seal.",
-    "do": "Find USDA Organic on the carton beside the other seal."
+    "decision": "Pasture-raised eggs from hens on soy-free, corn-free feed.",
+    "tip0": "Look for “corn-free” and “soy-free” feed printed beside “pasture-raised”.",
+    "do": "Find Certified Humane Pasture Raised or Animal Welfare Approved on the carton."
   },
   "pork_cuts_and_enhanced": {
     "decision": "Pork from pigs on pasture, never crated.",
@@ -3697,37 +3697,37 @@ const SECOND_PASS = {
     "do": "Read the pack for bison alone and the AGA mark beside the cut."
   },
   "whole_vs_reduced_fat_milk": {
-    "decision": "Organic 100% grass-fed whole milk, Certified Grassfed, cream-top, not ultra-pasteurized.",
-    "tip0": "Look for “100% grass-fed” and the Certified Grassfed seal on an organic cream-top carton.",
+    "decision": "100% grass-fed whole milk, Certified Grassfed, cream-top, not ultra-pasteurized.",
+    "tip0": "Look for “100% grass-fed” and Certified Grassfed on a cream-top carton.",
     "do": "Read beside the date; skip ultra-pasteurized and check the fat wording."
   },
   "raw_kefir": {
-    "decision": "Plain raw or organic whole-milk kefir, Certified Grassfed seal, farm named on bottle.",
+    "decision": "Plain raw or grass-fed kefir from whole milk, Certified Grassfed, farm named.",
     "tip0": "Look for ‘raw’ and a farm name on the bottle, the same farm as the milk.",
     "do": "Buy it from the refrigerated case, never the shelf-stable carton."
   },
   "plain_kefir": {
-    "decision": "Plain organic whole-milk kefir, 100% grass-fed: milk and cultures only.",
+    "decision": "Plain whole-milk kefir, 100% grass-fed: milk and cultures only.",
     "tip0": "Read the list: milk and cultures only, with no flavor named on the label.",
     "do": "Read the kefir ingredients for milk and cultures alone."
   },
   "yogurt_plain_vs_flavored": {
-    "decision": "Organic plain whole-milk yogurt, 100% grass-fed, Certified Grassfed seal, cultures named.",
+    "decision": "Plain whole-milk yogurt, 100% grass-fed, Certified Grassfed, cultures named.",
     "tip0": "Read the tub for plain whole milk and named cultures, and nothing else.",
     "do": "Read for milk and culture names; skip sugar, pectin or flavors."
   },
   "cheese_real_vs_processed": {
-    "decision": "Organic grass-fed block cheese, Certified Grassfed: milk, salt, cultures and rennet.",
+    "decision": "Grass-fed block cheese, Certified Grassfed: milk, salt, cultures and rennet.",
     "tip0": "Read the block’s list: milk, salt, cultures, and enzymes or rennet.",
     "do": "Read the printed name; skip cheese followed by food or product."
   },
   "raw_aged_cheese": {
-    "decision": "Grass-fed organic raw-milk cheese, aged 60 days or more.",
+    "decision": "Grass-fed raw-milk cheese, aged 60 days or more.",
     "tip0": "Look for ‘raw milk’ or ‘lait cru’ (French for raw milk) with an age on the label.",
     "do": "Read the rind label for an age in months."
   },
   "grassfed_butter": {
-    "decision": "Organic 100% grass-fed butter, Certified Grassfed, creamery named: cream and salt only.",
+    "decision": "100% grass-fed butter, Certified Grassfed, creamery named: cream and salt only.",
     "tip0": "Read the wrapper for “100% grass-fed”, the Certified Grassfed seal, and cream and salt.",
     "do": "Read for cream and salt; skip any natural flavor entry."
   },

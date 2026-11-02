@@ -41,7 +41,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `rotisserie_chicken` | meat | Pasture-raised or organic rotisserie chicken, salt and spices only. | Read the ingredient list for added starches or sweeteners. | — |
 | `beef_grassfed_vs_grainfed` | meat | Beef that ate only grass, from an audited ranch. | Look for “100% grass-fed,” “grass-finished,” and Regenerative Organic Certified or Certified Regenerative. | — |
 | `ground_beef_lean_ratio` | meat | Ground beef from cattle that ate only grass. | Find “100% grass-fed” and “grass-finished” on the pack, beef the only ingredient. | — |
-| `egg_labels` | eggs_dairy | Soy-free, corn-free eggs from hens on pasture. | Find USDA Organic on the carton beside the other seal. | — |
+| `egg_labels` | eggs_dairy | Soy-free, corn-free eggs from hens on pasture. | Find Certified Humane Pasture Raised or Animal Welfare Approved on the carton. | — |
 | `organic_worth_it_by_type` | produce | Grown without sprays first on skin-on produce, then organic. | Spend the organic money on berries, greens, and apples. | — |
 | `frozen_vs_fresh_produce` | produce | Plain organic frozen produce, picked ripe and frozen within hours. | Read the bag’s ingredient list for one word: the vegetable. | — |
 | `freezing_produce` | produce · home | Briefly scalded vegetables for the freezer; fruit goes in raw. | Blanch vegetables sixty seconds, chill them, then freeze flat. | — |
