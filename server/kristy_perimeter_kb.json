@@ -2267,8 +2267,8 @@
       ],
       "kristy_take": "Organic covers growing practices as well as GMOs. Read the ingredient list alongside the seal.",
       "buying_tips": [
-        "Look for USDA Organic first; a Real Organic logo goes further.",
-        "Can’t find organic: Non-GMO Project Verified. Next, an unlabeled package, with any bioengineered notice read.",
+        "Read USDA Organic as non-GMO too; a Real Organic logo goes further.",
+        "Non-GMO Project Verified covers GMOs alone. On an unlabeled package, read any bioengineered notice.",
         "Read near the ingredients for “bioengineered” or “Contains Bioengineered Food Ingredients”, not “GMO”.",
         "A phone number or QR code may lead to the disclosure, which does not name the ingredient.",
         "Organic also limits pesticides and fertilizers. Non-GMO, meaning not genetically modified, covers one issue.",
@@ -2451,7 +2451,7 @@
       "decision": "Pasture-raised eggs with soy-free and corn-free feed printed.",
       "why": "Certified Humane Pasture Raised specifies 108 square feet per bird.",
       "short_answer": "Most pasture-raised hens still eat soy and corn. “Vegetarian fed” means no animal byproducts in the feed. It says nothing about pasture or time outdoors. Hens on pasture eat insects and forage.",
-      "detail": "USDA has no regulatory definition of “pasture-raised” at all; where it means something, it is because a third-party certifier defined it. Certified Humane, for instance, requires 108 square feet of outdoor space per hen. Those standards govern housing and outdoor access. They do not specify a ration. “Certified organic” reaches feed, and it requires the feed be organic, which in practice is usually organic soy and organic corn. Organic answers how the feed was grown; it does not answer what the feed is. This is the single widest gap between what a carton implies and what it guarantees, and it is why two cartons with identical front-of-pack language can come from birds raised on completely different diets. These labels tell you how much room the animal had and whether it got outside. Look for pasture-raised with “soy-free” or “corn-free” feed printed outright. Next choose pasture-raised organic, then organic, then cage-free. “Vegetarian fed” means no animal byproducts in the supplied feed. It says nothing about pasture or time outdoors and does not tell whether a hen foraged. Hens on pasture eat insects and forage. “Vegetarian fed” says nothing about pasture or time outdoors.",
+      "detail": "USDA has no regulatory definition of “pasture-raised” at all; where it means something, it is because a third-party certifier defined it. Certified Humane, for instance, requires 108 square feet of outdoor space per hen. Those standards govern housing and outdoor access. They do not specify a ration. “Certified organic” reaches feed, and it requires the feed be organic, which in practice is usually organic soy and organic corn. Organic answers how the feed was grown; it does not answer what the feed is. This is the single widest gap between what a carton implies and what it guarantees, and it is why two cartons with identical front-of-pack language can come from birds raised on completely different diets. These labels tell you how much room the animal had and whether it got outside. Look for pasture-raised with “soy-free” or “corn-free” feed printed outright. Organic is a bonus on pasture-raised, never in its place; cage-free alone comes last. “Vegetarian fed” means no animal byproducts in the supplied feed. It says nothing about pasture or time outdoors and does not tell whether a hen foraged. Hens on pasture eat insects and forage. “Vegetarian fed” says nothing about pasture or time outdoors.",
       "evidence_tier": "established",
       "sources": [
         {
@@ -2463,12 +2463,12 @@
           "url": "https://www.cornucopia.org/egg-scorecard-criteria/"
         }
       ],
-      "kristy_take": "Pasture-raised with a printed soy-free or corn-free feed claim. Next, pasture-raised organic, then organic, then cage-free. “Vegetarian fed” describes the supplied feed. It does not say whether the hen went outdoors.",
+      "kristy_take": "Pasture-raised with a printed soy-free or corn-free feed claim. Organic is a bonus on pasture-raised, never in its place; cage-free alone comes last. “Vegetarian fed” describes the supplied feed. It does not say whether the hen went outdoors.",
       "buying_tips": [
         "Look for “pasture-raised” plus “soy-free” or “corn-free” feed printed outright.",
         "Look for a Certified Humane or Animal Welfare Approved logo beside “pasture-raised”.",
         "Read the space claim and the feed claim separately; one never implies the other.",
-        "Can’t find it: pasture-raised organic, then organic, then cage-free.",
+        "Read organic as a bonus on pasture-raised, never in its place; cage-free comes last.",
         "Most pasture-raised hens still eat soy and corn; organic feed is usually organic soy and corn.",
         "Organic answers how the feed was grown, not what it is.",
         "Hens on pasture eat insects and forage.",
@@ -5728,7 +5728,7 @@
       "decision": "Firm onions and garlic with dry, papery skins.",
       "why": "A well-cured bulb feels dry at the neck and papery outside. A soft, scented or sprouting bulb is already on its way out.",
       "short_answer": "Onions: firm for their size, little to no scent, a dry neck, no cuts, bruises or mold, no sprouting. Some loose skins are normal. Garlic: clean, white or true to the variety, well cured, cloves firm.",
-      "detail": "Top tier is in season with a Real Organic, Certified Naturally Grown, Demeter or Regenerative Organic Certified seal, then USDA Organic as the floor; read the sign or sticker at the bin for the growing method. Whole dry onions live in a cool, dry, dark place with plenty of air movement: no plastic bags, no wrap, and not beside potatoes or anything else that releases moisture. Storage between 41 and 75°F favors sprouting, so the cooler the spot the better. Refrigeration is only for sweet or mild high-water varieties, on a low-humidity setting, and a cut onion goes in a sealed container for up to seven days. Garlic keeps one to two months at room temperature in low humidity before it softens, goes spongy, and shrivels from water loss; it sprouts fastest between 41 and 65°F, and its odor moves into other foods, so it gets stored on its own.",
+      "detail": "Onions and garlic are peeled, so a firm, dry, well-cured bulb is the standard and organic is a bonus. Whole dry onions live in a cool, dry, dark place with plenty of air movement: no plastic bags, no wrap, and not beside potatoes or anything else that releases moisture. Storage between 41 and 75°F favors sprouting, so the cooler the spot the better. Refrigeration is only for sweet or mild high-water varieties, on a low-humidity setting, and a cut onion goes in a sealed container for up to seven days. Garlic keeps one to two months at room temperature in low humidity before it softens, goes spongy, and shrivels from water loss; it sprouts fastest between 41 and 65°F, and its odor moves into other foods, so it gets stored on its own.",
       "evidence_tier": "established",
       "sources": [
         "Weston A. Price Foundation: Shopping Guide Categories",
