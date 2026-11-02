@@ -14,8 +14,8 @@ import { matchItemToCard } from '../../lib/listMatch.js';
 
 const ROOT = new URL('../../../', import.meta.url).pathname;
 const git = (spec) => execFileSync('git', ['show', spec], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
-import { unfoldChicken, CHICKEN_FOLDED } from './twoLinePin.js'; // chicken fold 2026-11-01: this batch reads the folded cards as of 117f3ee
-const kb = restoreOrganicCarts(unfoldChicken(JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'))));
+import { unfoldChicken, CHICKEN_FOLDED, unfoldMeat } from './twoLinePin.js'; // chicken fold 2026-11-01: this batch reads the folded cards as of 117f3ee; meat stance 2026-11-02: and the meat cards as of cd4c011
+const kb = restoreOrganicCarts(unfoldMeat(unfoldChicken(JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8')))));
 import { preSwapPicks1 } from './twoLinePin.js';
 kb.entries = preSwapPicks1(kb.entries); // swap-picks-1: 8 swap picks + 2 aliases after 58d6160; swap_picks_1.test.js owns them.
 import { preT6_4 } from './twoLinePin.js';

@@ -547,7 +547,7 @@ const W4_COPY = {
 };
 
 test('C1 current corpus counts and retained dairy risk/source invariants', () => {
-  assert.equal(kb.entries.filter(e => e.kind !== 'pick').length, 180); // 2026-11-01 chicken unification
+  assert.equal(kb.entries.filter(e => e.kind !== 'pick').length, 179); // 2026-11-01 chicken unification; 2026-11-02 meat stance: beef_cuts_basics folded into Beef
   assert.equal(kb.entries.filter(e => e.kind === 'pick').length, 103);
   assert.equal(kb.entries.filter(e => e.kind !== 'pick' && sectionForCategory(e.category) === 'eggs_dairy').length, 23);
   // retired: pilot merge replaced this batch's text (P4)

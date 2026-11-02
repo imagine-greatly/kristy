@@ -86,9 +86,10 @@ test('contested calls keep their tier and the limits of their sourcing claims', 
     const e = entries.find((x) => x.id === id);
     assert.equal(e.evidence_tier, 'kristys_standard', `${id} should be a standard, not settled`);
     if (id === 'beef_grassfed_vs_grainfed') {
-      // W4 puts the actual food reason in why; the unchanged tier note limits the label claim.
-      assert.equal(e.why, 'Grass after weaning, no grain and no feedlot. A grass finish gives you leaner beef with a different fat balance.');
-      assert.equal(e.tier_note, 'On a beef label, “grass-fed” is the producer’s own word unless a certifier’s seal audits it.');
+      // W4 puts the actual food reason in why; the tier note limits the label claim.
+      // 2026-11-02 meat stance: why names the pack word; the tier note keeps the limit, minus "seal".
+      assert.equal(e.why, 'Most cattle finish on grain. “Grass-finished” on the pack says this animal ate grass to the end.');
+      assert.equal(e.tier_note, 'On a beef label, “grass-finished” is the producer’s own word unless a certifier audits it.');
       continue;
     }
     const text = `${e.decision} ${e.why}`.toLowerCase();
@@ -139,7 +140,7 @@ test('the model still sees exactly the seven allowed fields', () => {
 test('a decision can never be minted by the model', () => {
   // Same guarantee cart_pick has: authored in the KB, never in the payload, so there
   // is no path by which a generated answer invents the call a shopper acts on.
-  const e = entries.find((x) => x.id === 'beef_cuts_basics');
+  const e = entries.find((x) => x.id === 'beef_grassfed_vs_grainfed'); // 2026-11-02: beef_cuts_basics folded into Beef
   const blob = JSON.stringify(
     buildAnswerInput({ question: 'which cut for stew', focuses: [], hardLines: [], constraints: [], entries: [e] })
   );
@@ -177,7 +178,9 @@ test('the three worked examples read as calls, not background', () => {
   };
   // "Which cut for stew" → how it was raised, leading: the approved two-line steak card
   // (docs/CARD-STYLE-SAMPLES.md, 2026-10-17) moved the call from the cut to grass-fed.
-  leads('beef_cuts_basics', 'grass-fed');
+  // 2026-11-02 meat stance: beef_cuts_basics folded into Beef, whose headline leads with
+  // the food and says how it was raised.
+  assert.match(leads('beef_grassfed_vs_grainfed', 'Beef'), /\bgrass\b/);
   // "Wild vs farmed salmon" → ONE verdict. This used to read "Wild if it is in reach.
   // Farmed or nothing, buy the farmed", which is two verdicts where the second cancels
   // the first. Under the one-verdict rule the fallback lives in watch_out, and it may

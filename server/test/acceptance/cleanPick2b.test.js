@@ -64,7 +64,7 @@ test('C2 no owned field sends a shopper to conventional by default', () => {
 
 test("C3 pilot corpus size in the batch view and top-level metadata", () => {
   // retired: pilot merge replaced this batch's text (P4)
-  assert.equal(kb.entries.length, 283); // 2026-11-01 chicken unification: three cards → one
+  assert.equal(kb.entries.length, 282); // 2026-11-01 chicken unification: three cards → one; 2026-11-02 meat stance: beef_cuts_basics folded into Beef
   assert.deepEqual({ ...kb, entries: [] }, { ...base, entries: [] });
 });
 

@@ -7,10 +7,10 @@ import assert from 'node:assert/strict';
 import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { nonEmpty } from '../../lib/testGuards.js';
-import { T6_1, T6_1_BASE, preT6_1 } from './twoLinePin.js';
+import { T6_1, T6_1_BASE, preT6_1, unfoldMeat } from './twoLinePin.js'; // meat stance 2026-11-02: reads the meat cards as of cd4c011; meatStance.test.js owns them now
 
 const ROOT = new URL('../../../', import.meta.url).pathname;
-const kb = restoreOrganicCarts(JSON.parse(readFileSync(join(ROOT, 'server/kristy_perimeter_kb.json'), 'utf8')));
+const kb = restoreOrganicCarts(unfoldMeat(JSON.parse(readFileSync(join(ROOT, 'server/kristy_perimeter_kb.json'), 'utf8'))));
 const IDS = nonEmpty([...T6_1], 'T6_1 ids', 15);
 const card = (id) => { const e = kb.entries.find((x) => x.id === id); assert.ok(e, `${id} missing`); return e; };
 

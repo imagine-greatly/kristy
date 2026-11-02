@@ -443,7 +443,8 @@ test('all curated cards clear the per-card bar', () => {
   // CA-3a folds 1: ground_beef_organ_blend (2026-10-15).
   // Gap pass adds 24 (patches/gaps.json): 11 pantry, 13 produce/meat/seafood (2026-10-23).
   // Chicken unification folds 3 into 1: chicken_cuts_basics, chicken_breast, poultry_chicken_wings → chicken (2026-11-01).
-  assert.equal(CARDS.length, 203);
+  // Meat stance folds 1: beef_cuts_basics → beef_grassfed_vs_grainfed (2026-11-02).
+  assert.equal(CARDS.length, 202);
   const failures = [];
   for (const card of CARDS) {
     for (const v of lintCard(card)) failures.push(`${card.slug} — ${v.code}: ${v.detail}`);

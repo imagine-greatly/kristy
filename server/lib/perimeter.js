@@ -376,7 +376,7 @@ export const PERIMETER_SECTIONS = [
     categories: ['beef', 'poultry', 'pork', 'deli', 'meat_counter'],
     labels: ['label_grass_fed_term', 'label_no_added_hormones', 'label_natural', 'label_third_party_seals'],
     shortcuts: [
-      { q: 'Which cut for stew?', id: 'beef_cuts_basics' },
+      { q: 'Which pork?', id: 'pork_cuts_and_enhanced' },
       { q: 'Grass-fed or grass-finished?', id: 'beef_grassfed_vs_grainfed' },
       { q: 'Which chicken?', id: 'chicken' },
       { q: 'Is this one any good?', id: 'judging_meat_at_the_case' },

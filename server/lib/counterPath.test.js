@@ -52,7 +52,7 @@ test('a shortcut is a question in the shopper\'s words, and carries the call wit
 test('the shortcuts cover the questions the spec named, at the counter they belong to', () => {
   const has = (sectionId, entryId) =>
     sectionById(sectionId).shortcuts.some((sc) => sc.id === entryId);
-  assert.ok(has('meat', 'beef_cuts_basics'), 'meat: which cut for X');
+  assert.ok(has('meat', 'pork_cuts_and_enhanced'), 'meat: which pork'); // 2026-11-02 meat stance: the "Which cut?" shortcut became "Which pork?" when beef_cuts_basics folded into Beef
   // The grass-fed/grass-finished question now resolves to the beef card, which states
   // both words as one standard. Its own card was folded on 2026-08-01.
   assert.ok(has('meat', 'beef_grassfed_vs_grainfed'), 'meat: grass-fed vs finished');

@@ -74,7 +74,7 @@ test('fixture: "Firm, no slime." is not CULINARY_AIM', () => {
   assert.deepEqual(lintCulinaryAim({ id: 'x', pick_steps: ['Firm, no slime.'] }), []);
 });
 test('fixture: grass-finished step on a beef sibling is REPEATED_CLAIM', () => {
-  const r = lintRepeatedClaim({ id: 'ground_beef_lean_ratio', pick_steps: ['Grass-finished when the case has it.'] });
+  const r = lintRepeatedClaim({ id: 'organ_meats', pick_steps: ['Grass-finished when the case has it.'] }); // 2026-11-02 meat stance: ground beef now names its own grass words, so a still-governed sibling stands in
   assert.deepEqual(r.map((x) => [x.code, x.fact]), [['REPEATED_CLAIM', 'beef_raising']]);
 });
 test('fixture: the same step on the owner is clean', () => {

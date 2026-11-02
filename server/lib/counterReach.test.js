@@ -167,7 +167,7 @@ test('chf-5 folds: every retired asked_as lands where measured (null = gate admi
   // for the same food subject; the subject card answering a cooking ask is corpus-wide
   // behaviour (no cooking veto on the ask door), not a chf-5 steal.
   const asks = [
-    ['when should i salt a steak', 'beef_cuts_basics'],
+    ['when should i salt a steak', 'beef_grassfed_vs_grainfed'], // 2026-11-02 meat stance: beef_cuts_basics folded into Beef
     ['is a brine worth it', null],
     ['should i salt meat ahead', null],
     ['do salted beans go tough', 'beans_dried_vs_canned'],

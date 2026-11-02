@@ -7,7 +7,10 @@ import { dirname, join } from 'node:path';
 import { nonEmpty } from '../../lib/testGuards.js';
 import { readability, lintCard } from '../../lib/counterCardLint.js';
 import { projectEntry, parseReviewTable, RETIRED } from '../../lib/counterCards.js';
-import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
+import kb0 from '../../kristy_perimeter_kb.json' with { type: 'json' };
+import { unfoldMeat, unfoldMeatDoLines, MEAT_REWRITTEN } from './twoLinePin.js'; // meat stance 2026-11-02: K9 reads the meat cards as of cd4c011; meatStance.test.js owns them now
+const kb = unfoldMeat(structuredClone(kb0));
+const OLD_MEAT_DO = unfoldMeatDoLines({});
 import pre from './fixtures/kb-pre-readability.json' with { type: 'json' };
 import { assertPassRule } from './passRule.js';
 import { execFileSync } from 'node:child_process';
@@ -33,7 +36,7 @@ for (const id of SLICE) {
     const old = oldEntries.find((e) => e.id === id);
     assert.ok(now && old, `${id} missing from the KB or the fixture`);
     assert.deepEqual(readability(now), []);
-    assert.deepEqual(lintCard(projectEntry(now, { doLine: reviewed.get(id)?.do || '' })), []);
+    assert.deepEqual(lintCard(projectEntry(now, { doLine: (MEAT_REWRITTEN.includes(id) ? OLD_MEAT_DO[id] : reviewed.get(id)?.do) || '' })), []);
     const before = new Set((cp.entries.find((e) => e.id === id)?.sources || []).map(srcKey));
     for (const s of nonEmpty(now.sources || [], `${id} sources`, 1).map(srcKey)) if (!before.has(s)) assert.doesNotMatch(s, GOV, `${id} new source is government: ${s}`);
     assertPassRule(t, { ...old, sources: now.sources }, now);

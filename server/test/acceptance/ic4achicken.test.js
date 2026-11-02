@@ -14,15 +14,15 @@ import { lintCard, readability, lintRepeatedClaim, OWNED_FACTS } from '../../lib
 import { TRY_POOL } from '../../lib/tryPool.js';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
 import doLines0 from '../../lib/doLines.json' with { type: 'json' };
-import { unfoldChicken, unfoldDoLines } from './twoLinePin.js';
+import { unfoldChicken, unfoldDoLines, unfoldMeat, unfoldMeatDoLines } from './twoLinePin.js'; // + meat stance 2026-11-02: reads the meat cards as of cd4c011
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../../..');
 const PRE = JSON.parse(execFileSync('git', ['show', '8a30d3d:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 const pre = (id) => PRE.entries.find((e) => e.id === id);
 // Chicken fold 2026-11-01: chicken_cuts_basics folded into `chicken`; card reads use the KB as of 117f3ee,
 // live routing lands on LIVE.
-const VIEW = unfoldChicken(structuredClone(kb));
-const doLines = unfoldDoLines(doLines0);
+const VIEW = unfoldMeat(unfoldChicken(structuredClone(kb)));
+const doLines = unfoldMeatDoLines(unfoldDoLines(doLines0));
 const LIVE = 'chicken';
 const now = (id) => VIEW.entries.find((e) => e.id === id);
 const admits = (top) => !!(top && top.score >= 2 && top.aliasScore > 0);

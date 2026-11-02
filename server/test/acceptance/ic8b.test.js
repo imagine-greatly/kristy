@@ -19,7 +19,7 @@ kb.entries = kb.entries.map(preT6_2); // t6-2: dairy/egg pins read ca32bef; t6_2
 kb.entries = kb.entries.map(preT6_1); // t6-1: the 15 meat/seafood cards read as of 85c399e; t6_1.test.js owns them now
 import { beforeConcern, preCleanPick9, preCleanPick10, preCleanPick11, preCleanPick12, preCleanPick8 } from './twoLinePin.js';
 import doLines from '../../lib/doLines.json' with { type: 'json' };
-import { unfoldChicken } from './twoLinePin.js';
+import { unfoldChicken, unfoldMeat, unfoldMeatDoLines, MEAT_REWRITTEN } from './twoLinePin.js'; // + meat stance 2026-11-02: reads the meat cards as of cd4c011
 
 const { lintCard, readability, headlineHedge, TIER_NOTE_ORPHANED_PENDING } = lint;
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../../..');
@@ -31,6 +31,7 @@ const PENDING_OUT = ['label_made_with_real', 'label_organic_scope', 'label_light
 const ids = kb.entries.map((e) => e.id);
 const start = ids.indexOf('sandwich_bread');
 const end = ids.findIndex((id, i) => i > start && /^frozen/.test(id));
+const OLD_MEAT_DO = unfoldMeatDoLines({});
 const CARDS = kb.entries.filter((e) => e.kind !== 'pick');
 // Curated home cards carry no kind field (kind 'home' exists only on generated cards), so they are named.
 const HOME = ['washing_produce', 'baking_soda_soak', 'revive_greens', 'freezing_produce', 'produce_storage'];
@@ -59,7 +60,9 @@ const frontFailures = (e) => {
   if (n.toLowerCase().replace(/[^a-z]/g, '') === String(e.evidence_tier).toLowerCase().replace(/[^a-z]/g, '')) out.push('tier_note is the tier name');
   if (notes.filter((x) => x === n).length !== 1) out.push('tier_note not unique');
   if ([...TIER_NOTE_ORPHANED_PENDING].includes(e.id)) out.push('pending');
-  if (lintCard(projectEntry(e, { doLine: doLines[e.id] })).length) out.push('lint');
+  // meat stance 2026-11-02: a meat card restoreOrganicCarts rolled back pairs with its cd4c011 do line.
+  const doLine = (MEAT_REWRITTEN.includes(e.id) && e.decision !== liveDecision(e.id) ? OLD_MEAT_DO : doLines)[e.id];
+  if (lintCard(projectEntry(e, { doLine })).length) out.push('lint');
   if (readability(e).length) out.push('readability');
   // Item-copy flags pass 2026-10-28: review row may mirror the live decision.
   if (![e.decision, liveDecision(e.id)].includes(reviewHeadline(e.id))) out.push('review headline differs');
@@ -100,11 +103,11 @@ test('C6 sources never shrink and new URLs are archived', () => {
   }
   // clean-pick-9 archived its new URLs under docs/sources/concerns; this batch reads sources as of 96d61e2.
   // Chicken fold 2026-11-01: sources read the folded cards as of 117f3ee; chickenUnify.test.js checks the live card's URLs against archive/.
-  const unfolded = restoreOrganicCarts(unfoldChicken(structuredClone(kb0))).entries.map(preT6_4).map(preT6_3).map(preT6_2).map(preT6_1).filter((e) => e.kind !== 'pick');
+  const unfolded = restoreOrganicCarts(unfoldMeat(unfoldChicken(structuredClone(kb0)))).entries.map(preT6_4).map(preT6_3).map(preT6_2).map(preT6_1).filter((e) => e.kind !== 'pick');
   for (const e of unfolded.map((x) => beforeConcern(preCleanPick9(preCleanPick10(preCleanPick11(preCleanPick12(preCleanPick8(x)))))))) for (const u of urls(e)) if (!PRE_URLS.has(u)) assert.ok(archive.includes(u), `${e.id}: ${u} not in docs/sources/item-cards`);
   assert.ok(!JSON.stringify(kb).includes(UMD), 'umd raw-milk-law URL is in the KB');
 });
 
 test('C7 card count stays 181 (ca-3a folds ground_beef_organ_blend)', () => {
-  assert.equal(CARDS.length, 180); // 181 → 180: chicken fold 2026-11-01 (three cards → one)
+  assert.equal(CARDS.length, 179); // 181 → 180: chicken fold 2026-11-01 (three cards → one); 180 → 179: meat stance 2026-11-02 folded beef_cuts_basics into Beef
 });

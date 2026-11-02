@@ -17,7 +17,7 @@ import { preT6_2 } from './twoLinePin.js';
 kb.entries = kb.entries.map(preT6_2); // t6-2: dairy/egg pins read ca32bef; t6_2.test.js owns live copy.
 
 test('every card carries the pinned two-line decision and buying_tips', () => {
-  const cards = nonEmpty(kb.entries.filter((e) => e.kind !== 'pick'), 'cards', 180);
+  const cards = nonEmpty(kb.entries.filter((e) => e.kind !== 'pick'), 'cards', 179); // 2026-11-02 meat stance: beef_cuts_basics folded into Beef
   for (const e of cards) {
     assert.ok(TWO_LINE[e.id], `${e.id} has no two-line pin`);
     // Every pinned field, so a field the older tests restore (cart_pick, pick_steps) is still checked live.

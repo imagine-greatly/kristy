@@ -27,9 +27,10 @@ test('C1 headline cap is 14', () => {
 
 test('C2 REPEATED_CLAIM exempts decision', () => {
   const s = '100% grass-fed and grass-finished.';
+  // meat stance 2026-11-02: ground beef left the beef_raising family (it now carries its own grass-finished ladder); organ_meats is still a member
   assert.ok(!REPEATED_CLAIM_FIELDS.includes('decision'));
-  assert.equal(lintRepeatedClaim({ id: 'ground_beef_lean_ratio', decision: s }).filter((h) => h.code === 'REPEATED_CLAIM').length, 0);
-  const hits = lintRepeatedClaim({ id: 'ground_beef_lean_ratio', decision: s, tier_note: s }).filter((h) => h.code === 'REPEATED_CLAIM');
+  assert.equal(lintRepeatedClaim({ id: 'organ_meats', decision: s }).filter((h) => h.code === 'REPEATED_CLAIM').length, 0);
+  const hits = lintRepeatedClaim({ id: 'organ_meats', decision: s, tier_note: s }).filter((h) => h.code === 'REPEATED_CLAIM');
   assert.ok(hits.some((h) => h.field === 'tier_note'));
 });
 

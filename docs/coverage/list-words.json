@@ -26,7 +26,7 @@
 {"section":"Dairy","item":"goat and sheep dairy","expect":"goat_sheep_dairy","list_words":["goat milk","goat cheese","sheep cheese"]},
 {"section":"Meat","item":"beef","expect":"beef_grassfed_vs_grainfed","list_words":["beef"]},
 {"section":"Meat","item":"pork","expect":"pork_cuts_and_enhanced","list_words":["pork"]},
-{"section":"Meat","item":"steak","expect":"beef_cuts_basics","list_words":["steak"]},
+{"section":"Meat","item":"steak","expect":"beef_grassfed_vs_grainfed","list_words":["steak"]},
 {"section":"Meat","item":"lunch meat","expect":"deli_meat_uncured","list_words":["lunch meat"]},
 {"section":"Meat","item":"turkey","expect":"turkey_whole","list_words":["turkey"]},
 {"section":"Meat","item":"lamb","expect":"lamb_goat","list_words":["lamb"]},

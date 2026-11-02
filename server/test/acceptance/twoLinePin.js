@@ -112,26 +112,6 @@ export const TWO_LINE = {
       }
     ]
   },
-  "beef_cuts_basics": {
-    "decision": "100% grass-fed or grass-finished steak, not mechanically tenderized.",
-    "buying_tips": [
-      "How it was raised matters more than the cut; Prime and Choice only grade marbling.",
-      "Chuck is shoulder and round is rear leg: the working muscles.",
-      "Loin and rib sit along the back and do little work.",
-      "Read the name for ‘mechanically’, ‘needle’ or ‘blade’ tenderized.",
-      "Ground chuck runs around 80/20 lean to fat.",
-      "Prime, Choice, Select is a marbling scale, top to bottom.",
-      "Grading is voluntary. Ungraded is not a downgrade.",
-      "Grade and sourcing are separate questions. Neither answers the other.",
-      "Look for ‘100% grass fed’: see Beef."
-    ],
-    "cart_pick": "100% grass-fed or grass-finished whole chuck",
-    "pick_steps": [
-      "Read the name for ‘mechanically tenderized’, ‘needle tenderized’ or ‘blade tenderized’.",
-      "Raised: “grass-fed” is the producer’s own word unless a certifier’s seal audits it.",
-      "Added solution: see Pork cuts and ‘solution added’ pork."
-    ]
-  },
   "ground_beef_lean_ratio": {
     "why": "An organ blend folds liver and heart into a familiar grind.",
     "short_answer": "Pick an organ blend, or ground beef with nothing added. How the cattle were raised is on the Beef card.",
@@ -3460,9 +3440,9 @@ test('every full-card and concern pick pin matches the live KB', () => {
   kb.entries = kb.entries.map(preT6_4); // t6-4 owns the six produce/label cards after 2f67540.
   kb.entries = kb.entries.map(preT6_3); // t6-3 owns the 14 pantry cards after 6d6ca49.
   kb.entries = kb.entries.map(preT6_2); // t6-2 owns the six dairy/egg cards after ca32bef.
-  const cards = nonEmpty(kb.entries.filter((e) => e.kind !== 'pick'), 'full cards', 180);
+  const cards = nonEmpty(kb.entries.filter((e) => e.kind !== 'pick'), 'full cards', 179); // 180 → 179: meat stance 2026-11-02 folded beef_cuts_basics into Beef.
   const picks = ['pick_sausage', 'pick_jerky', 'pick_juice', 'pick_canned_tomatoes'];
-  const pinnedIds = nonEmpty(Object.getOwnPropertyNames(TWO_LINE), 'all two-line pins', 184); // 185 → 184: chicken unification 2026-11-01 folded two pinned cards into one.
+  const pinnedIds = nonEmpty(Object.getOwnPropertyNames(TWO_LINE), 'all two-line pins', 183); // 185 → 184: chicken unification 2026-11-01 folded two pinned cards into one; 184 → 183: meat stance 2026-11-02 folded beef_cuts_basics into Beef.
   assert.deepEqual(pinnedIds.toSorted(), [...cards.map((e) => e.id), ...picks].toSorted(), 'missing or stale pin');
   for (const id of pinnedIds) {
     const entry = kb.entries.find((e) => e.id === id);
@@ -3474,7 +3454,15 @@ test('every full-card and concern pick pin matches the live KB', () => {
   }
 });
 
-export const withTwoLine = (entry) => (entry && TWO_LINE[entry.id] ? { ...entry, ...TWO_LINE[entry.id] } : entry);
+export const withTwoLine = (entry) => {
+  if (entry && TWO_LINE[entry.id]) return { ...entry, ...TWO_LINE[entry.id] };
+  // meat stance 2026-11-02: beef_cuts_basics left TWO_LINE with the fold; its pin was its cd4c011 two-line fields.
+  if (entry?.id === 'beef_cuts_basics') {
+    const old = preMeat().find((e) => e.id === 'beef_cuts_basics');
+    return { ...entry, decision: old.decision, buying_tips: old.buying_tips, cart_pick: old.cart_pick, pick_steps: old.pick_steps };
+  }
+  return entry;
+};
 
 // The same fields as they stood the commit before the rewrite (a6979b0), for older tests that pin
 // the copy they shipped (the ca7Superseded.js pattern); twoLinePin.test.js owns the new text.
@@ -3679,29 +3667,29 @@ const SECOND_PASS = {
     "do": "Find USDA Organic on the carton beside the other seal."
   },
   "pork_cuts_and_enhanced": {
-    "decision": "Organic pasture-raised pork, Animal Welfare Approved, breed named, with no added solution.",
-    "tip0": "Look for a named breed, an organic seal and the Animal Welfare Approved logo.",
-    "do": "Find an AWA or Certified Humane seal and USDA Organic on the chop pack."
+    "decision": "Pork from pigs that lived outside.",
+    "tip0": "Look for “Pastured” on the pack.",
+    "do": "Find “Pastured” and USDA Organic on the pack, pork the only ingredient."
   },
   "bacon": {
-    "decision": "Pasture-raised bacon with the Animal Welfare Approved seal: pork and salt, wood-smoked.",
-    "tip0": "Read the list: pork, salt and each curing ingredient by name.",
-    "do": "Find the AWA pasture seal on the bacon pack."
+    "decision": "Bacon from pigs raised outside, smoked over real wood.",
+    "tip0": "Look for “Pastured” or USDA Organic on the pack.",
+    "do": "Check for “Pastured” and USDA Organic, with no liquid smoke on the list."
   },
   "beef_grassfed_vs_grainfed": {
-    "decision": "100% grass-fed beef, never fed grain, AGA or Certified Grassfed seal; organic a bonus.",
-    "tip0": "Look for “100% grass-fed” beside an AGA or A Greener World Certified Grassfed seal.",
-    "do": "Find the ranch named on the beef pack."
+    "decision": "Beef from cattle that ate grass to the end.",
+    "tip0": "Look for “100% grass-fed” and “grass-finished” on the pack.",
+    "do": "Look for “100% grass-fed” and “grass-finished,” with USDA Organic on top."
   },
   "ground_beef_lean_ratio": {
-    "decision": "100% grass-fed ground beef, AGA or Certified Grassfed, beef the only ingredient.",
-    "tip0": "Read the list: beef, with seasoning at most, and no water or phosphates.",
-    "do": "Find the lean ratio beside the AGA seal on the pack."
+    "decision": "Ground beef from cattle that ate only grass.",
+    "tip0": "Look for “grass-finished” beside “100% grass-fed” on the label.",
+    "do": "Find “100% grass-fed” and “grass-finished” on the pack, beef the only ingredient."
   },
   "lamb_goat": {
-    "decision": "Lamb or goat, 100% grass-fed or pasture-raised, firm and fine-grained.",
-    "tip0": "Check that the label says the animal ate only grass, or shows Animal Welfare Approved.",
-    "do": "Look for pale pink fat on chops carrying the AWA pasture stamp."
+    "decision": "Lamb or goat that ate grass to the end.",
+    "tip0": "Look for “100% grass-fed” and “grass-finished” on lamb or goat.",
+    "do": "Check for “100% grass-fed” and “grass-finished,” plus USDA Organic."
   },
   "bison": {
     "decision": "100% grass-fed and grass-finished bison, ranch named, bison the only ingredient.",
@@ -3838,4 +3826,27 @@ export const unfoldChicken = (kb) => {
 export const unfoldDoLines = (map) => {
   const old = JSON.parse(execFileSync('git', ['show', '117f3ee:server/lib/doLines.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
   return { ...map, ...Object.fromEntries(CHICKEN_FOLDED.map((id) => [id, old[id]])) };
+};
+
+// Meat stance (2026-11-02): beef_cuts_basics folded into beef_grassfed_vs_grainfed (RETIRED) and the
+// ten cut-led meat cards rewritten to the chicken stance. Historical batch tests read those cards as they
+// last stood, at cd4c011: unfoldMeat swaps them back in (beef_cuts_basics at its old position).
+// meatStance.test.js owns the live cards.
+export const MEAT_BASE = 'cd4c011';
+export const MEAT_REWRITTEN = ['beef_grassfed_vs_grainfed', 'beef_cuts_basics', 'ground_beef_lean_ratio', 'beef_veal', 'pork_cuts_and_enhanced', 'cured_pork', 'bacon', 'turkey_whole', 'ground_turkey', 'turkey_bacon', 'lamb_goat'];
+let PRE_MEAT;
+const preMeat = () => (PRE_MEAT ??= JSON.parse(execFileSync('git', ['show', `${MEAT_BASE}:server/kristy_perimeter_kb.json`], { cwd: ROOT, maxBuffer: 64 << 20 }).toString()).entries);
+export const unfoldMeat = (kb) => {
+  const old = (id) => structuredClone(preMeat().find((e) => e.id === id));
+  const out = kb.entries.map((e) => (MEAT_REWRITTEN.includes(e.id) ? old(e.id) : e));
+  const i = preMeat().findIndex((e) => e.id === 'beef_cuts_basics');
+  if (!out.some((e) => e.id === 'beef_cuts_basics')) out.splice(i, 0, old('beef_cuts_basics'));
+  kb.entries = out;
+  return kb;
+};
+// The do-lines review table as of cd4c011, so historical reads match each meat card's old headline.
+export const meatReview = () => execFileSync('git', ['show', `${MEAT_BASE}:docs/do-lines-review.md`], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
+export const unfoldMeatDoLines = (map) => {
+  const old = JSON.parse(execFileSync('git', ['show', `${MEAT_BASE}:server/lib/doLines.json`], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
+  return { ...map, ...Object.fromEntries(MEAT_REWRITTEN.map((id) => [id, old[id]])) };
 };

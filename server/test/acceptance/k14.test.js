@@ -191,7 +191,16 @@ test('C12 passRule.js and k5–k11 stay at 719f9fe except the exact W2 and conce
       "    const before = new Set((cp.entries.find((e) => e.id === id)?.sources || []).map(srcKey));",
       "    for (const s of nonEmpty(now.sources || [], `${id} sources`, 1).map(srcKey)) if (!before.has(s)) assert.doesNotMatch(s, GOV, `${id} new source is government: ${s}`);",
       '    assertPassRule(t, { ...old, sources: now.sources }, now);',
-    ].join('\n')));
+    ].join('\n'))
+    // Meat stance 2026-11-02: k9 reads the meat cards and their do lines as of cd4c011, exactly.
+    .replace("import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };\n", [
+      "import kb0 from '../../kristy_perimeter_kb.json' with { type: 'json' };",
+      "import { unfoldMeat, unfoldMeatDoLines, MEAT_REWRITTEN } from './twoLinePin.js'; // meat stance 2026-11-02: K9 reads the meat cards as of cd4c011; meatStance.test.js owns them now",
+      'const kb = unfoldMeat(structuredClone(kb0));',
+      'const OLD_MEAT_DO = unfoldMeatDoLines({});',
+      '',
+    ].join('\n'))
+    .replace("doLine: reviewed.get(id)?.do || ''", "doLine: (MEAT_REWRITTEN.includes(id) ? OLD_MEAT_DO[id] : reviewed.get(id)?.do) || ''"));
   // Completeness pass (9845b9e): frozen-field pins read the pre-completeness copy via preCompleteness; rule checks stay live.
   const PA = "import { assertPassRule } from './passRule.js';\n";
   const COMPLETENESS_STEP = {

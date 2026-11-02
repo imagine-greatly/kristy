@@ -169,66 +169,126 @@
         "american grassfed association",
         "aga grassfed",
         "certified grassfed beef",
-        "grass fed and finished"
+        "grass fed and finished",
+        "beef cuts",
+        "beef cut",
+        "which cut",
+        "stew meat",
+        "chuck",
+        "chuck roast",
+        "sirloin",
+        "ribeye",
+        "brisket",
+        "short rib",
+        "shank",
+        "round",
+        "steak",
+        "steak cuts",
+        "cut of beef",
+        "mechanically tenderized",
+        "usda prime",
+        "prime beef",
+        "choice beef",
+        "select beef",
+        "beef grade",
+        "usda grade",
+        "what does prime mean",
+        "marbling",
+        "prime choice select",
+        "beef cut for",
+        "prime beef worth",
+        "beef grades matter",
+        "beef grades",
+        "usda grades",
+        "usda choice"
       ],
       "category": "beef",
-      "question": "Is grass-fed beef worth it?",
-      "decision": "100% grass-fed beef, never fed grain, AGA or Certified Grassfed seal; organic a bonus.",
-      "why": "Grass after weaning, no grain and no feedlot. A grass finish gives you leaner beef with a different fat balance.",
-      "short_answer": "Look for the AGA or PCO Certified 100% Grassfed seal: grass and forage from weaning to harvest. Organic is a bonus, not the bar; organic beef can be grain-finished up to 120 days.",
-      "detail": "The federal grass-fed marketing standard was withdrawn in 2016, so a bare ‘grass-fed’ claim rests on the producer. The fat profile follows the finish, not the start, so grass to the end is the bar. Traditional food guides put meat from animals allowed to graze at the top, fat and organs included. A grazing farm sold direct, or a butcher who names the farm, is how to know the finish.",
+      "question": "Which beef should I buy?",
+      "decision": "Beef from cattle that ate grass to the end.",
+      "why": "Most cattle finish on grain. “Grass-finished” on the pack says this animal ate grass to the end.",
+      "short_answer": "Look for “100% grass-fed” and “grass-finished.” USDA Organic adds organic feed and grazing through the season; all three together lead.",
+      "detail": "Cattle raised and finished on pasture are a small share of US beef, and most come from family farms that sell direct. Finishing on grass takes 18 to 30 months, against 12 to 18 months in a feedlot. Organic rules require cattle to graze through the grazing season, at least 30 percent of their feed from grazing, and allow no hormones for growth. Organic slaughter cattle may still be finished on grain in yards or feedlots for up to a fifth of their life or 120 days.",
       "evidence_tier": "kristys_standard",
       "sources": [
-        "Weston A. Price Foundation: Shopping Guide (Best, Good and Avoid tiers)",
-        "Weston A. Price Foundation: Splendor from Grass",
-        "Weston A. Price Foundation: Grass-fed culinary guide"
+        {
+          "name": "Weston A. Price Foundation, Shopping Guide categories",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        },
+        {
+          "name": "Weston A. Price Foundation, Achieving Culinary Success with Grass-Fed Beef",
+          "url": "https://www.westonaprice.org/health-topics/food-features/achieving-culinary-success-with-grass-fed-beef/"
+        },
+        {
+          "name": "Chris Kresser, Is Organic Meat Better?",
+          "url": "https://chriskresser.com/is-organic-meat-better/"
+        },
+        {
+          "name": "7 CFR 205.237, organic livestock feed",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.237"
+        },
+        {
+          "name": "7 CFR 205.238, organic livestock health care",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.238"
+        },
+        {
+          "name": "7 CFR 205.239, organic livestock living conditions",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.239"
+        }
       ],
-      "kristy_take": "Go gently with the heat: this leaner beef dries out at feedlot-beef heat. Look for 100% grass-fed from a farm that names its finish.",
-      "instead": "Grass-finished ground beef or chuck: grass after weaning, no grain or feedlot, in the everyday cuts.",
-      "cart_pick": "Grass-finished ground beef",
+      "kristy_take": "Grass-finished tells how the animal ended; organic tells what it ate.",
+      "instead": "USDA Organic beef, or 100% grass-fed beef alone.",
+      "cart_pick": "Beef that ate only grass",
       "buying_tips": [
-        "Look for “100% grass-fed” beside an AGA or A Greener World Certified Grassfed seal.",
-        "Look for “100% grass-fed” on the front; plain “grass-fed” can still mean grain at the end.",
-        "Can’t find it: 100% grass-fed ground beef or chuck, the same whole-life grass animal in everyday cuts.",
-        "At the counter, ask what the animal ate at the end, and for how long.",
-        "Check for “no added hormones” and a farm that says what the herd ate at the end.",
-        "Look for “no antibiotics ever” from a farm that grazes its cattle; grain-fed cattle are often given antibiotics.",
-        "Look for “raised without ractopamine”, a feed drug for leanness. “No added hormones” does not rule it out.",
-        "Grass all the way to the end makes leaner beef.",
-        "The AGA seal means grass and forage only from weaning to harvest, on pasture, with on-farm inspections.",
-        "Look for Regenerative Organic Certified, Certified Regenerative by A Greener World or Land to Market Verified."
+        "Look for “100% grass-fed” and “grass-finished” on the pack.",
+        "Look for USDA Organic too: organic feed, grazing through the season, no growth hormones.",
+        "Pick the pack that carries all three marks.",
+        "Ask at the counter which farm raised it; most grass-finished beef comes from family farms."
       ],
       "watch_out": [
-        "Where grass-finished is not on the shelf, organic grain-finished is the floor.",
-        "Pasture artwork on the package is not a claim. The words are the claim.",
-        "A grass finish leaves a leaner animal, so it cooks faster and dries out at feedlot-beef heat.",
-        "The federal grass-fed claim standard was withdrawn in 2016. A bare ‘grass-fed’ label rests on the company, so ask the farm about the finish."
+        "USDA Organic alone still allows a grain finish in a feedlot, up to 120 days.",
+        "“Grain-finished” means grain in the last months, usually in a feedlot."
       ],
       "pick_steps": [
-        "Read for an AGA or PCO seal or ‘grass-finished’; artwork is not a claim.",
-        "Without grass-finished, USDA Organic: certified organic feed and outdoor access, possibly grain-finished.",
-        "At the counter, ask what it was finished on and whose definition."
+        "Look for “100% grass-fed” and “grass-finished” on the pack.",
+        "Look for USDA Organic: organic feed and grazing through the season.",
+        "Read the ingredients for beef alone, nothing added."
       ],
-      "science": "FSIS reads a ‘grass-fed’ claim as grass after weaning, no grain, and pasture access. The grass-fed claim standard was withdrawn in 2016, so the bare claim rests on the producer. The fat profile follows the finish, not the start. A grass finish leaves a leaner animal that dries out at feedlot-beef heat.",
+      "science": "Organic cattle graze for at least 30 percent of their feed in season. Organic slaughter cattle may still finish on grain in a feedlot. Grass-finished cattle reach market weight in 18 to 30 months, against 12 to 18 in a feedlot.",
       "labels_decoded": [
+        {
+          "term": "100% grass-fed, grass-finished",
+          "meaning": "Grass to the end, no grain finish."
+        },
         {
           "term": "Grass-fed",
           "meaning": "The producer’s own word. FSIS reads it as grass after weaning, no grain; ask the farm about the finish."
+        },
+        {
+          "term": "USDA Organic",
+          "meaning": "Organic feed, grazing through the season, no growth hormones; a feedlot grain finish is still allowed."
         },
         {
           "term": "Grain-fed / grain-finished",
           "meaning": "Finished on grain in a feedlot. The US default."
         }
       ],
-      "tier_note": "On a beef label, “grass-fed” is the producer’s own word unless a certifier’s seal audits it.",
-      "eyebrow_short": "Grass-fed beef",
+      "tier_note": "On a beef label, “grass-finished” is the producer’s own word unless a certifier audits it.",
+      "eyebrow_short": "Beef",
       "asked_as": [
         "is grass fed beef worth it",
         "grass fed or regular beef",
-        "is grass fed actually better"
+        "is grass fed actually better",
+        "which beef cut for stew",
+        "what cut of beef should i buy",
+        "cheap beef cut for slow cooking",
+        "what does mechanically tenderized mean",
+        "what does prime choice select mean",
+        "is prime beef worth it",
+        "do beef grades matter",
+        "what does usda choice mean"
       ],
       "family": "fam_ruminant_meat",
-      "delta": "Grass-finished is a separate claim from grass-fed; read which one is printed."
+      "delta": "“100% grass-fed” and “grass-finished” with USDA Organic; beef alone in the ingredients."
     },
     {
       "id": "rotisserie_chicken",
@@ -313,115 +373,6 @@
       "delta": "Roasted whole bird; skip phosphate or starch in the seasoning."
     },
     {
-      "id": "beef_cuts_basics",
-      "title": "Steak",
-      "aliases": [
-        "beef cuts",
-        "beef cut",
-        "which cut",
-        "stew meat",
-        "chuck",
-        "chuck roast",
-        "sirloin",
-        "ribeye",
-        "brisket",
-        "short rib",
-        "shank",
-        "round",
-        "steak",
-        "steak cuts",
-        "cut of beef",
-        "mechanically tenderized",
-        "usda prime",
-        "prime beef",
-        "choice beef",
-        "select beef",
-        "beef grade",
-        "usda grade",
-        "what does prime mean",
-        "marbling",
-        "prime choice select",
-        "beef cut for",
-        "prime beef worth",
-        "beef grades matter",
-        "beef grades",
-        "usda grades",
-        "usda choice"
-      ],
-      "category": "beef",
-      "question": "Which beef cut should I buy?",
-      "decision": "100% grass-fed steak in a whole cut, not mechanically tenderized.",
-      "why": "Grass-fed sourcing: see Beef.",
-      "short_answer": "Chuck and round are working muscles; loin and rib sit along the back and do little work. Any raw cut pushed through needles or blades must carry ‘mechanically tenderized’, ‘needle tenderized’ or ‘blade tenderized’ in its name.",
-      "detail": "Chuck is shoulder and round is rear leg; both are working muscles. Loin and rib sit along the back and do little work. The product name for raw beef that has been mechanically tenderized, by needle or by blade, must say so.",
-      "evidence_tier": "kristys_standard",
-      "sources": [
-        "Flannery Beef “The Complete Guide to Beef Cuts” https://flannerybeef.com/blogs/news/the-complete-guide-to-beef-cuts",
-        "9 CFR 317.2 (label rule, raw meaning of the term)",
-        "Weston A. Price Foundation: Shopping Guide (Best, Good and Avoid tiers)",
-        "Weston A. Price Foundation: Grass-fed culinary guide"
-      ],
-      "kristy_take": "The cut name tells you where on the animal the meat came from. Raw beef pushed through needles or blades must also say ‘mechanically tenderized’ in its name.",
-      "cart_pick": "100% grass-fed or grass-finished whole chuck",
-      "buying_tips": [
-        "Pick a label stating the cattle ate only grass; that matters more than the cut.",
-        "Read the name for “mechanically”, “needle” or “blade” tenderized, and pick a steak without it.",
-        "Can’t find it: a whole chuck from cattle that ate only grass.",
-        "Check the grade only for marbling: Prime, Choice and Select run top to bottom.",
-        "Grade and how it was raised are separate questions. Neither answers the other.",
-        "Chuck is shoulder and round is rear leg, the working muscles. Loin and rib sit along the back and do little work.",
-        "Ground chuck runs around 80/20 lean to fat.",
-        "Grass-fed labels and logos: see Beef."
-      ],
-      "labels_decoded": [
-        {
-          "term": "USDA Prime",
-          "meaning": "The most marbling, and the smallest share of graded beef."
-        },
-        {
-          "term": "USDA Choice",
-          "meaning": "Moderate marbling. The common retail grade."
-        },
-        {
-          "term": "USDA Select",
-          "meaning": "Leanest of the three."
-        },
-        {
-          "term": "Ungraded",
-          "meaning": "Never submitted for grading. Says nothing about quality either way."
-        }
-      ],
-      "tier_note": "The ‘mechanically tenderized’ name is federal label text; an untouched whole cut is held as a standard.",
-      "watch_out": [
-        "The cut name says where on the animal it came from.",
-        "Chuck is shoulder and round is rear leg. Both are working muscles.",
-        "Loin and rib sit along the back and do little work.",
-        "‘Mechanically tenderized’, ‘needle tenderized’ or ‘blade tenderized’ in the name means needles or blades went through the cut.",
-        "‘Angus’ on a package is not a grade. Certified Angus Beef is a brand with its own checklist. A cut can pass USDA grading without earning that name. Read the grade separately.",
-        "Grading looks at marbling and the maturity of the animal. It does not look at breed. It does not check how the cut looks or the texture of the marbling.",
-        "A grade is a score, not a certification. The same one measurement is applied to every type of cattle in the country."
-      ],
-      "pick_steps": [
-        "Read the name for ‘mechanically tenderized’, ‘needle tenderized’ or ‘blade tenderized’.",
-        "Read the cut name: chuck and round work hardest; loin and rib work least.",
-        "Check the grade on the label: Prime, Choice and Select rate marbling only."
-      ],
-      "science": "Chuck is shoulder and round is rear leg, both working muscles. Loin and rib sit along the back and do little work. The product name for raw beef that has been mechanically tenderized, by needle or by blade, must say so.",
-      "asked_as": [
-        "which beef cut for stew",
-        "what cut of beef should i buy",
-        "cheap beef cut for slow cooking",
-        "what does mechanically tenderized mean",
-        "what does prime choice select mean",
-        "is prime beef worth it",
-        "do beef grades matter",
-        "what does usda choice mean"
-      ],
-      "instead": "Loin or rib cuts, whole, with no ‘mechanically tenderized’ in the name.",
-      "family": "fam_ruminant_meat",
-      "delta": "Whole cuts; skip 'mechanically tenderized', 'needle tenderized' or 'blade tenderized'."
-    },
-    {
       "id": "ground_beef_lean_ratio",
       "title": "Ground beef",
       "aliases": [
@@ -444,11 +395,11 @@
         "100% grass fed ground beef"
       ],
       "category": "beef",
-      "question": "What ground beef lean ratio should I get?",
-      "decision": "100% grass-fed ground beef, AGA or Certified Grassfed, beef the only ingredient.",
-      "why": "Ground beef and grass-fed sourcing: see Beef.",
-      "short_answer": "Pick ground beef with beef as the only ingredient. The lean/fat ratio on the front is a separate number.",
-      "detail": "Both ‘ground beef’ and ‘hamburger’ cap at 30% fat, so the name is where the difference lives. ‘Ground chuck’, ‘round’ or ‘sirloin’ names the cut it came from. The ingredient list should be beef, with seasoning at most. ‘Ground beef’ may not contain added water, phosphates, binders or extenders, and may not have beef fat added as such. ‘Hamburger’ may. The ratio on the pack is lean to fat by weight. 80/20 is 20% fat; 90/10 is leaner. The name ‘ground beef’ allows no added water, phosphates, binders or extenders. 9 CFR 319.15(a) defines ‘Ground Beef’ as chopped fresh or frozen beef, fat capped at 30 percent, no added water, binders or extenders, with trimmed cheek meat the one allowed addition and capped at 25 percent. A product with liver or heart in it falls outside that definition, and 9 CFR 317.2 then requires a common or usual name or a truthful descriptive designation plus a full ingredient statement in descending order. ‘Ancestral blend’ and ‘primal blend’ are producer names for exactly this product, not standardized terms. Two label examples: one blend states 8 percent organ meats (4 percent liver, 4 percent heart, 92 percent muscle); another states 92 percent ground beef, 5 percent liver, 3 percent heart. Liver is the retinol-dense ingredient: the NIH fact sheet lists pan-fried beef liver at 6,582 mcg RAE per 3 ounces, against a tolerable upper intake of 3,000 mcg a day for adults. A blend that states its shares is plain ground beef with a measured amount of organ folded in. A blend carries its own descriptive name and a full ingredient list. By NIH figures, 3 ounces of pan-fried beef liver holds more than twice the adult daily vitamin A upper intake. Producers print shares such as 8 percent organ, or 5 percent liver plus 3 percent heart. Organs are part of eating the whole animal, and a blend puts them in a familiar grind.",
+      "question": "Which ground beef should I buy?",
+      "decision": "Ground beef from cattle that ate only grass.",
+      "why": "Most cattle finish on grain. “100% grass-fed” and “grass-finished” say this beef ate grass to the end.",
+      "short_answer": "Look for “100% grass-fed” and “grass-finished,” with USDA Organic on top. Beef should be the only ingredient.",
+      "detail": "Both ‘ground beef’ and ‘hamburger’ cap at 30% fat, so the name is where the difference lives. The ingredient list should be beef, with seasoning at most. ‘Ground beef’ may not contain added water, phosphates, binders or extenders, and may not have beef fat added as such. ‘Hamburger’ may. The ratio on the pack is lean to fat by weight. 80/20 is 20% fat; 90/10 is leaner. The name ‘ground beef’ allows no added water, phosphates, binders or extenders. 9 CFR 319.15(a) defines ‘Ground Beef’ as chopped fresh or frozen beef, fat capped at 30 percent, no added water, binders or extenders, with trimmed cheek meat the one allowed addition and capped at 25 percent. A product with liver or heart in it falls outside that definition, and 9 CFR 317.2 then requires a common or usual name or a truthful descriptive designation plus a full ingredient statement in descending order. ‘Ancestral blend’ and ‘primal blend’ are producer names for exactly this product, not standardized terms. Two label examples: one blend states 8 percent organ meats (4 percent liver, 4 percent heart, 92 percent muscle); another states 92 percent ground beef, 5 percent liver, 3 percent heart. Liver is the retinol-dense ingredient: the NIH fact sheet lists pan-fried beef liver at 6,582 mcg RAE per 3 ounces, against a tolerable upper intake of 3,000 mcg a day for adults. A blend that states its shares is plain ground beef with a measured amount of organ folded in. A blend carries its own descriptive name and a full ingredient list. By NIH figures, 3 ounces of pan-fried beef liver holds more than twice the adult daily vitamin A upper intake. Producers print shares such as 8 percent organ, or 5 percent liver plus 3 percent heart. Organs are part of eating the whole animal, and a blend puts them in a familiar grind.",
       "evidence_tier": "established",
       "sources": [
         "9 CFR 319.15 (label rule, raw meaning of the term)",
@@ -456,20 +407,25 @@
         "Force of Nature, Grass Fed Beef Ancestral Blend, product page (8% organ meats; 4% heart, 4% liver, 92% muscle meat) https://forceofnature.com/products/regenerative-beef-ancestral-blend",
         "Seven Sons Farms, Ground Beef Primal Blend, product page (92% ground beef, 5% liver, 3% heart) https://sevensons.net/store/product/ground-beef-ancestral-blend",
         "Weston A. Price Foundation: Shopping Guide (Best, Good and Avoid tiers)",
-        "Weston A. Price Foundation: The Liver Files"
+        "Weston A. Price Foundation: The Liver Files",
+        {
+          "name": "Weston A. Price Foundation, Achieving Culinary Success with Grass-Fed Beef",
+          "url": "https://www.westonaprice.org/health-topics/food-features/achieving-culinary-success-with-grass-fed-beef/"
+        },
+        {
+          "name": "7 CFR 205.239, organic livestock living conditions",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.239"
+        }
       ],
-      "kristy_take": "Federal rules keep added water, binders and organs out of ‘ground beef’, so a blend needs its own name. Plain ‘ground beef’ allows no added fat either; ‘hamburger’ may add fat.",
-      "cart_pick": "100% grass-fed ground beef, beef only",
+      "kristy_take": "Ground beef earns the cart with grass-finished, organic, and beef alone in the ingredients.",
+      "cart_pick": "Ground beef, grass only, nothing added",
       "buying_tips": [
+        "Look for “grass-finished” beside “100% grass-fed” on the label.",
+        "Look for USDA Organic too: organic feed, cattle on grass in season.",
         "Read the list: beef, with seasoning at most, and no water or phosphates.",
-        "Grass-fed labels and logos: see Beef.",
-        "Pick 80/20 ground chuck over the leanest packs.",
-        "Can’t find it: plain ground beef, plus a small piece of liver from the counter mixed in at home.",
         "Read the name: “ground beef” cannot have beef fat added on its own; “hamburger” can.",
-        "Read “ground chuck”, “round” or “sirloin” for the cut it came from. A blend must carry its own descriptive name.",
-        "On regular ground beef, look for “raised without ractopamine”, a feed drug the EU and China ban.",
         "A few percent liver and heart mixed in still tastes like regular ground beef.",
-        "Look for the ranch named on the pack."
+        "Can’t find it: plain ground beef, plus a small piece of liver from the counter mixed in at home."
       ],
       "labels_decoded": [
         {
@@ -506,20 +462,19 @@
         "should i buy ground beef with liver in it"
       ],
       "watch_out": [
+        "USDA Organic alone still allows a grain finish in a feedlot, up to 120 days.",
         "‘Ground beef’ may not have beef fat added as such; ‘hamburger’ may. Both cap at 30% fat, so the name is where the difference lives.",
-        "‘Ground beef’ may not contain added water, phosphates, binders or extenders. Its ingredient list should be beef, with seasoning at most.",
-        "Preformed vitamin A is most concentrated in liver, so keep servings ordinary.",
-        "Producers print shares such as 8 percent organ, or 5 percent liver plus 3 percent heart. At those shares the blend tastes like regular ground beef."
+        "Preformed vitamin A is most concentrated in liver, so keep servings ordinary."
       ],
-      "science": "The numbers are lean to fat by weight, so a higher first number is leaner. ‘Ground beef’ may not have beef fat added as such, but ‘hamburger’ may. Both cap at 30% fat, so the name is where the difference lives. ‘Ground chuck’, ‘round’ or ‘sirloin’ names the cut it came from.",
+      "science": "The numbers are lean to fat by weight, so a higher first number is leaner. ‘Ground beef’ may not have beef fat added as such, but ‘hamburger’ may. Both cap at 30% fat, so the name is where the difference lives.",
       "pick_steps": [
-        "Look for an AGA or PCO seal; organic is a bonus.",
+        "Find “grass-finished” next to “100% grass-fed” on the label.",
         "Read the ingredients: beef only, nothing added.",
         "Pick ‘ground beef’ over ‘hamburger’, which can include added beef fat."
       ],
-      "instead": "Plain ground beef and a small piece of liver from the counter. The share is whatever goes in the pan.",
+      "instead": "Organic ground beef with beef the only ingredient.",
       "family": "fam_ruminant_meat",
-      "delta": "Lean/fat ratio is a separate printed number; ‘hamburger’ may include added beef fat."
+      "delta": "Grass-finished ground beef, organic on top; nothing but beef on the list."
     },
     {
       "id": "egg_labels",
@@ -2805,7 +2760,7 @@
         "Purple beef is vacuum-packed; color tracks oxygen and packaging, not freshness.",
         "Read the cut on the label, such as chuck or round.",
         "Check the use-by date, and freeze what will not be used in time.",
-        "Blade or mechanically tenderized: see Steak."
+        "Blade or mechanically tenderized: see Beef."
       ],
       "labels_decoded": [
         {
@@ -2894,7 +2849,7 @@
         "Silverskin is connective tissue. Ask the butcher to remove it from a tenderloin or ribs.",
         "Thickness is not fixed. Say how thick the steak should be, what size piece is needed and what lean-to-fat ratio the grind should have.",
         "Unsure of the cut, name the section first: a piece from the chuck, a cut from the loin. That opens a real conversation about what is fresh.",
-        "Blade or mechanically tenderized: see Steak."
+        "Blade or mechanically tenderized: see Beef."
       ],
       "pick_steps": [
         "Soup bones: ask the butcher for marrow or knuckle bones.",
@@ -3065,7 +3020,7 @@
     },
     {
       "id": "pork_cuts_and_enhanced",
-      "title": "Pork cuts and ‘solution added’ pork",
+      "title": "Pork",
       "aliases": [
         "pork",
         "pork chops",
@@ -3082,32 +3037,51 @@
         "organic pork"
       ],
       "category": "pork",
-      "question": "Which pork cut should you buy, and what does ‘solution added’ mean?",
-      "decision": "Organic pasture-raised pork, Animal Welfare Approved, breed named, with no added solution.",
-      "why": "AWA guarantees pigs live outdoors on pasture or range.",
-      "short_answer": "A raw meat product with added solution must say so in its name, with the percentage. One example is ‘contains 15% added solution of water and salt’. The solution’s ingredients are listed in descending order by weight.",
-      "detail": "A large share of retail pork is pumped with a solution of water, salt and phosphates to hold moisture. The law requires the share as a number with a percent sign, like ‘contains 15% added solution’. It is the solution weighed against the raw meat, so 15% means 15 parts to 100. The ingredients in the solution are listed in descending order by weight. The rule is written for raw meat products, not pork alone.",
+      "question": "Which pork should I buy?",
+      "decision": "Pork from pigs that lived outside.",
+      "why": "Most pork comes from pigs kept in confinement. Pastured pigs live outdoors on pasture and in woods.",
+      "short_answer": "Look for “Pastured” and USDA Organic. A pack with both ranks first, with pork the only ingredient.",
+      "detail": "Pastured hogs are raised and finished on pasture with access to woodland, not penned in buildings or feedlots. Organic rules add organic feed, year-round time outdoors, group housing with rooting material, and no growth hormones.",
       "evidence_tier": "established",
       "sources": [
         {
-          "name": "A Greener World",
-          "url": "https://agreenerworld.org/certifications/animal-welfare-approved/"
+          "name": "Healthy Traditions, Pastured Pork",
+          "url": "https://healthytraditions.com/collections/pastured-raised-pork"
+        },
+        {
+          "name": "Weston A. Price Foundation, Shopping Guide categories",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        },
+        {
+          "name": "7 CFR 205.237, organic livestock feed",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.237"
+        },
+        {
+          "name": "7 CFR 205.238, organic livestock health care",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.238"
+        },
+        {
+          "name": "7 CFR 205.239, organic livestock living conditions",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.239"
         }
       ],
-      "kristy_take": "An ‘up to 12% solution’ line means some of that pack is added water. Raw meat with added solution must give its name, percentage and contents beside the product name.",
-      "cart_pick": "Organic pasture-raised pork chops",
+      "kristy_take": "Pastured describes how the pig lived, and organic describes its feed.",
+      "cart_pick": "Pork from pigs raised outside",
       "buying_tips": [
-        "Look for a named breed, an organic seal and the Animal Welfare Approved logo.",
-        "Read for “contains X% added solution”; that is injected water and salt.",
-        "Look for a farm that says pasture or woodland, and soy-free feed.",
-        "Look for “no antibiotics ever” and “raised without ractopamine”; “no added hormones” rules out neither.",
-        "Can’t find it: an organic shoulder or roast, or one from a pasture farm, with pork alone on the list.",
-        "Check the solution’s ingredients, heaviest first, and skip sodium phosphate or sodium tripolyphosphate.",
-        "Organic means organic feed; still check the list for added solution.",
-        "Much store pork is pumped with water, salt and phosphates, then sold by weight.",
-        "Most US pork is raised indoors, and its fat reflects what the pig ate."
+        "Look for “Pastured” on the pack.",
+        "Look for USDA Organic too: organic feed, outdoor access, rooting material.",
+        "Pick pork with both marks first.",
+        "Read the ingredients: pork alone, no water or phosphates."
       ],
       "labels_decoded": [
+        {
+          "term": "Pastured",
+          "meaning": "Hogs on pasture with woodland, not penned in buildings or feedlots."
+        },
+        {
+          "term": "USDA Organic",
+          "meaning": "Organic feed and pigs outdoors year-round, no growth hormones."
+        },
         {
           "term": "Enhanced / contains up to X% solution",
           "meaning": "Injected with saltwater and phosphates. Declared by law, and sold by weight."
@@ -3117,7 +3091,7 @@
           "meaning": "On meat, minimally processed with no artificial ingredients. Says nothing about raising."
         }
       ],
-      "tier_note": "Organic pork cuts: certified organic feed and outdoor access; pasture: time outdoors on pasture, audited only with a certifier’s seal.",
+      "tier_note": "Pastured on a pork label: pigs raised outdoors on pasture and in woods.",
       "asked_as": [
         "which pork cut should i buy",
         "what does solution added mean",
@@ -3125,17 +3099,17 @@
         "what does contains added solution mean"
       ],
       "watch_out": [
-        "The word ‘enhanced’ cannot be used in the product name. The law requires a number with a percent sign, like ‘contains 15% added solution’. That figure is what to find.",
-        "The percentage is the solution weighed against the raw meat without it. So 15% means 15 parts solution to 100 parts meat."
+        "Most commercial pork comes from pigs kept in confinement. Without raising words, the pack says nothing about the pig’s life."
       ],
-      "science": "A large share of retail pork is pumped with water, salt and phosphates to hold moisture. The law requires the share as a number with a percent sign. It is the solution weighed against the raw meat, so 15% means 15 parts to 100. ‘Natural’ on meat says nothing about raising.",
+      "science": "Organic pigs get organic feed, rooting material, and time outdoors through the year.",
       "pick_steps": [
-        "Find the ‘% added solution’ figure and the solution’s listed ingredients.",
-        "Pick pork with Certified Humane, AWA or a GAP step on the pack."
+        "Look for “Pastured” on the pack.",
+        "Look for USDA Organic.",
+        "Read the ingredients for pork alone, nothing added."
       ],
-      "instead": "An organic or pasture-raised shoulder or roast with pork alone in the ingredient list.",
+      "instead": "USDA Organic pork with pork the only ingredient.",
       "family": "fam_poultry_pork",
-      "delta": "Skip 'contains added solution' and water or phosphates listed with the pork."
+      "delta": "“Pastured” pork with USDA Organic; pork alone in the ingredients."
     },
     {
       "id": "deli_meat_uncured",
@@ -7045,61 +7019,71 @@
         "which turkey"
       ],
       "category": "poultry",
-      "question": "What should you check on a whole turkey label?",
-      "decision": "Organic, pasture-raised whole turkey, unbasted; soy-free feed is better still.",
-      "why": "An unbasted whole bird avoids added basting solution; organic rules require certified organic feed.",
-      "short_answer": "A basted or self-basted turkey has been injected or marinated with a solution. The solution and its ingredients must be identified on the label.",
-      "detail": "The FSIS turkey guide describes solutions containing fat, broth, stock, water, spices, or other approved ingredients. Water retained during chilling is a different process from adding a flavoring solution. Fresh and frozen describe temperature history, so read the formulation on either bird. A basted or self-basted bird was injected or marinated with a solution the label must name.",
+      "question": "Which whole turkey should I buy?",
+      "decision": "Turkey that lived outside.",
+      "why": "Most commercial turkey is raised in confinement. Turkeys allowed outdoors to graze rank first.",
+      "short_answer": "Look for “Pasture-Raised” and USDA Organic. Pick the bird that carries both, with turkey the only ingredient.",
+      "detail": "Turkey allowed to graze is the best tier; organic turkey is next. Organic rules add organic feed, outdoor access all year and no hormones.",
       "evidence_tier": "kristys_standard",
       "sources": [
         {
-          "name": "Electronic Code of Federal Regulations",
-          "url": "https://www.ecfr.gov/current/title-7/section-205.237"
+          "name": "Weston A. Price Foundation, Shopping Guide categories",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        },
+        {
+          "name": "7 CFR 205.237, organic livestock feed",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.237"
+        },
+        {
+          "name": "7 CFR 205.238, organic livestock health care",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.238"
+        },
+        {
+          "name": "7 CFR 205.241, organic outdoor access",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.241"
         }
       ],
-      "kristy_take": "Fresh or frozen, read beside the name for a basting solution and its ingredients. Water left from chilling is a separate disclosure, so read the two lines separately.",
-      "cart_pick": "Organic pasture-raised whole turkey",
+      "kristy_take": "For turkey, pasture-raised covers the bird’s life and organic covers its feed.",
+      "cart_pick": "Turkey that lived outside",
       "buying_tips": [
-        "Look for ‘pasture-raised’ and ‘organic’ on the wrapper, and no ‘basted’ or ‘self-basting’.",
-        "Read the words beside the name for added broth, stock, fat, water or a solution.",
-        "No pasture-raised bird: pick a frozen whole turkey with no added solution listed.",
-        "Ask the farm whether the turkey eats soy-free feed; that is the step up.",
-        "Look for an Animal Welfare Approved logo, organic feed and ‘raised without antibiotics’.",
-        "Pick ‘air-chilled’; ‘water-chilled’ birds soak up some water in the chilling tank.",
-        "Read any chilling-water note apart from the flavoring-solution note; they are different things.",
-        "Check frozen turkeys for the same added-solution note."
+        "Look for “Pasture-Raised” on the pack.",
+        "Look for USDA Organic too: organic feed and outdoor access all year.",
+        "Pick the turkey carrying both marks first.",
+        "Read the ingredients for turkey alone, nothing added."
       ],
       "watch_out": [
-        "“Natural” can appear on products containing a flavoring solution.",
-        "Retained water from chilling and an injected flavoring solution are different label disclosures.",
-        "“Self-basting” or “enhanced” on the wrapper means an injected solution."
+        "Most commercial turkey is raised in confinement. A pack with no raising words says nothing about the bird’s life."
       ],
       "pick_steps": [
-        "Beside the name, read the solution ingredients on a basted or self-basted bird.",
-        "‘Natural’ can still carry a flavoring solution, so read past it.",
-        "Choose fresh or frozen turkey without an injected basting solution."
+        "Look for “Pasture-Raised” on the pack.",
+        "Look for USDA Organic.",
+        "Read the ingredients for turkey alone."
       ],
-      "science": "A basted or self-basted turkey has been injected or marinated with a solution. The FSIS turkey guide lists fat, broth, stock, water, spices or other approved ingredients. Water retained during chilling is a different process from adding a flavoring solution. Fresh and frozen describe temperature history, so read the formulation on either bird.",
+      "science": "Organic turkeys eat organic feed and get outdoor access through the year.",
       "labels_decoded": [
+        {
+          "term": "Pasture-Raised",
+          "meaning": "Birds allowed outdoors to graze on pasture."
+        },
+        {
+          "term": "USDA Organic",
+          "meaning": "Organic feed, outdoors all year, no growth hormones."
+        },
         {
           "term": "Basted or self-basted",
           "meaning": "Injected or marinated with a basting solution."
-        },
-        {
-          "term": "Fresh",
-          "meaning": "A regulated temperature-history description, separate from formulation."
         }
       ],
-      "tier_note": "Pasture-raised turkey: time outdoors on pasture, audited only with a certifier’s seal; certified organic feed and outdoor access.",
+      "tier_note": "Pasture-raised turkey: birds out on grass to graze.",
       "asked_as": [
         "how do you choose a whole turkey",
         "what does self basted mean on whole turkey",
         "does this whole turkey have added brine",
         "which turkey should i buy"
       ],
-      "instead": "A frozen whole turkey with no added-solution statement; frozen describes temperature history, not formulation.",
+      "instead": "USDA Organic turkey with turkey the only ingredient.",
       "family": "fam_poultry_pork",
-      "delta": "Whole, unbasted turkey; skip any added-solution percentage beside the name."
+      "delta": "“Pasture-Raised” turkey with USDA Organic; turkey alone in the ingredients."
     },
     {
       "id": "ground_turkey",
@@ -7110,52 +7094,65 @@
         "plain ground turkey"
       ],
       "category": "poultry",
-      "question": "What should you check before buying ground turkey?",
-      "decision": "Organic, pasture-raised dark-meat ground turkey; soy-free feed a step up.",
-      "why": "Breast and thigh alone identify the meat in the pack; antibiotic-treated birds cannot be sold as organic.",
-      "short_answer": "Ground turkey needs its own label check. US nutrition-labeling rules cover ground poultry, and a percent-lean claim must be accompanied by a percent-fat statement.",
-      "detail": "FSIS’s archived rule covers ground turkey and requires the fat statement beside a percent-lean claim. The turkey guide says additives in processed turkey, including ground products, must be listed. The words ground turkey alone do not identify one fat level. Ground turkey alone names no fat level, and a percent-lean claim must carry its percent fat.",
+      "question": "Which ground turkey should I buy?",
+      "decision": "Ground turkey from birds that lived outside.",
+      "why": "Most commercial turkey is raised in confinement, ground turkey included. Birds that grazed outdoors rank first.",
+      "short_answer": "Look for “Pasture-Raised” and USDA Organic on the pack, with turkey alone in the ingredients.",
+      "detail": "Ground turkey from birds allowed to graze is the best tier; organic is next. Organic rules set organic feed and outdoor access through the year, and bar hormones.",
       "evidence_tier": "kristys_standard",
       "sources": [
         {
-          "name": "Electronic Code of Federal Regulations",
-          "url": "https://www.ecfr.gov/current/title-7/section-205.238"
+          "name": "Weston A. Price Foundation, Shopping Guide categories",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        },
+        {
+          "name": "7 CFR 205.237, organic livestock feed",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.237"
+        },
+        {
+          "name": "7 CFR 205.238, organic livestock health care",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.238"
+        },
+        {
+          "name": "7 CFR 205.241, organic outdoor access",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.241"
         }
       ],
-      "kristy_take": "Look for turkey on the ingredient list, with no added seasoning or flavoring solution. A percent-lean claim must have its percent-fat statement alongside.",
-      "cart_pick": "Organic pasture-raised ground turkey",
+      "kristy_take": "The pack and the list tell it: how the bird lived, what it ate, and turkey alone.",
+      "cart_pick": "Ground turkey from outdoor birds",
       "buying_tips": [
-        "Look for ‘pasture-raised’ or ‘organic’ on a plain pack: turkey and nothing else.",
-        "Pick ground thigh, or a pack with dark meat, over all-breast.",
-        "No pasture-raised or organic pack: pick plain ground turkey and compare the fat line on the label.",
-        "Ask the farm about soy-free feed for a pasture-raised bird; that is the step up.",
-        "Look for ‘air-chilled’ on the pack.",
-        "Skip packs with added seasonings or a flavoring solution.",
-        "Read the Nutrition Facts fat line on each pack; the name sets no single fat level."
+        "Look for “Pasture-Raised” on the pack.",
+        "Look for USDA Organic too: organic feed, outdoors through the year.",
+        "Read the ingredients: turkey alone, no seasoning or flavoring."
       ],
       "watch_out": [
-        "Do not infer a fat level from the animal name. Read each pack.",
-        "Ground turkey labeled “water chilled” or “contains up to X% retained water” holds water from the chilling tank."
+        "Most ground turkey comes from birds raised in confinement. Packs silent on raising say nothing about the bird’s life."
       ],
       "pick_steps": [
-        "Choose a pack listing turkey, without added seasonings or a flavoring solution."
+        "Look for “Pasture-Raised” on the pack.",
+        "Look for USDA Organic.",
+        "Read the ingredients for turkey alone."
       ],
-      "science": "Grinding does not specify the fat content. FSIS’s archived rule covers ground turkey and requires a fat statement beside a percent-lean claim. The words ground turkey alone do not identify one fat level. Additives in processed turkey, including ground products, must be listed.",
+      "science": "Organic turkeys eat organic feed, go outdoors through the year, and get no hormones.",
       "labels_decoded": [
         {
-          "term": "Percent lean",
-          "meaning": "A composition claim that must appear with a percent-fat statement."
+          "term": "Pasture-Raised",
+          "meaning": "Turkeys let out onto pasture to graze."
+        },
+        {
+          "term": "USDA Organic",
+          "meaning": "Organic feed and year-round outdoor access, hormones barred."
         }
       ],
-      "tier_note": "Organic ground turkey: certified organic feed and outdoor access; pasture: time outdoors on pasture, audited only with a certifier’s seal.",
+      "tier_note": "Pasture-raised ground turkey: from birds that grazed outdoors.",
       "asked_as": [
         "how do you choose ground turkey",
         "what does percent lean mean on ground turkey",
         "does ground turkey have added ingredients"
       ],
-      "instead": "Plain ground turkey with no lean claim; compare packs by the Nutrition Facts fat line.",
+      "instead": "USDA Organic ground turkey with turkey the only ingredient.",
       "family": "fam_poultry_pork",
-      "delta": "Breast-and-thigh mince, with the cuts named on the pack."
+      "delta": "Ground turkey from pasture-raised, organic birds; nothing but turkey on the list."
     },
     {
       "id": "breakfast_cereal",
@@ -7446,56 +7443,82 @@
       ],
       "category": "deli",
       "question": "What should you check when choosing bacon?",
-      "decision": "Pasture-raised bacon with the Animal Welfare Approved seal: pork and salt, wood-smoked.",
-      "why": "The USDA rule lets “Uncured” appear in the name only for products cured without synthetic nitrite.",
-      "short_answer": "Bacon labeled uncured can use celery powder as a natural curing source. Read the qualifier on a no-nitrates-added claim and the ingredient list.",
-      "detail": "The archived NPR report describes natural curing sources used in bacon and hot dogs and the qualifying fine print. US curing-label policy requires curing-mixture ingredients to be listed individually. That distinguishes a source of curing ingredients, not a demonstrated health advantage.",
+      "decision": "Bacon from pigs raised outside, smoked over real wood.",
+      "why": "Traditional bacon is dry-cured, then smoked over wood. Most supermarket bacon is injected with brine and liquid smoke.",
+      "short_answer": "Look for “Pastured,” USDA Organic, and “wood-smoked.” Read the list for pork, salt, a little sugar, and no liquid smoke.",
+      "detail": "Traditional bacon is dry-cured with salt, herbs and a little sugar for a day to a month, then smoked over applewood or hickory for one to three days. Supermarket bacon is pumped with a curing brine, given liquid smoke and heated. Bacon labeled “uncured” or “nitrite free” is usually cured with celery salt, about half nitrate, which turns into nitrite; it can hold twice the nitrite of bacon cured with nitrite salt.",
       "evidence_tier": "kristys_standard",
       "sources": [
         {
-          "name": "Electronic Code of Federal Regulations",
-          "url": "https://www.ecfr.gov/current/title-9/section-317.17"
+          "name": "Weston A. Price Foundation, Save Your Bacon",
+          "url": "https://www.westonaprice.org/health-topics/food-features/save-your-bacon-sizzling-bits-about-nitrites-dirty-little-secrets-about-celery-salt-and-other-aporkalyptic-news/"
+        },
+        {
+          "name": "Chris Kresser, The Nitrate and Nitrite Myth",
+          "url": "https://chriskresser.com/the-nitrate-and-nitrite-myth-another-reason-not-to-fear-bacon/"
+        },
+        {
+          "name": "Weston A. Price Foundation, Shopping Guide categories",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        },
+        {
+          "name": "Weston A. Price Foundation, Shopping Guide 2020, processed meats",
+          "url": "http://westonaprice.org/wp-content/flip-books/SG2020/files/basic-html/page36.html"
+        },
+        {
+          "name": "Healthy Traditions, Pastured Pork",
+          "url": "https://healthytraditions.com/collections/pastured-raised-pork"
+        },
+        {
+          "name": "7 CFR 205.237, organic livestock feed",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.237"
         }
       ],
-      "kristy_take": "The curing ingredients describe the process. An uncured claim alone does not establish nitrate-free bacon.",
-      "cart_pick": "Pasture-raised sliced bacon",
+      "kristy_take": "The pack and the list tell it: pastured pigs, salt, real wood smoke.",
+      "cart_pick": "Wood-smoked bacon from outdoor pigs",
       "buying_tips": [
-        "Read the list: pork, salt and each curing ingredient by name.",
-        "Read the small print by any “uncured” claim; it can name nitrates that occur naturally in celery powder.",
-        "No pasture-raised bacon: pick organic bacon with no dextrose, sugar or liquid smoke.",
-        "Pick wood-smoked; skip ‘liquid smoke’ or ‘smoke flavoring’, condensed smoke added for flavor."
+        "Look for “Pastured” or USDA Organic on the pack.",
+        "Look for “wood-smoked” and a list of pork, salt and a little sugar.",
+        "Both pastured and organic on one pack is best."
       ],
       "watch_out": [
-        "On bacon labeled “uncured” or “no nitrates added”, celery powder or juice may supply the nitrite for curing. Find the asterisk and read its exception.",
-        "An uncured label does not by itself establish the absence of nitrates or nitrites.",
-        "Celery-cured bacon still carries nitrite, from the celery; the label wording alone is no step up.",
-        "Dextrose in a curing list is added sugar under another name."
+        "“Uncured” or “nitrite free” bacon made with celery salt can hold more nitrite, not less.",
+        "Skip bacon with smoke flavoring, liquid smoke or MSG on the list.",
+        "On bacon, “natural flavors” or “spices” usually mean MSG."
       ],
       "pick_steps": [
-        "Read any exception naming nitrates naturally occurring in celery powder.",
-        "Read each curing ingredient, including salt, sugar and curing agents.",
-        "Compare the disclosed curing ingredients across the bacon packs on the shelf."
+        "Look for “Pastured” or USDA Organic on the pack.",
+        "Look for “wood-smoked”.",
+        "Skip liquid smoke and MSG on the list."
       ],
-      "science": "Bacon labeled uncured can use celery powder as a natural curing source. An uncured label does not by itself establish the absence of nitrates or nitrites. US curing-label policy requires curing-mixture ingredients to be listed individually. The curing ingredients describe the process. The source set does not establish a health advantage from choosing celery-based curing.",
+      "science": "Celery salt is about half nitrate, which a starter culture turns into nitrite in the meat.",
       "labels_decoded": [
         {
-          "term": "Uncured",
-          "meaning": "A label that can appear on bacon using a natural curing source; read the qualifier."
+          "term": "Pastured",
+          "meaning": "Hogs kept outdoors on grass and woodland."
+        },
+        {
+          "term": "USDA Organic",
+          "meaning": "Organic feed for the pig, outdoors year-round, hormones barred."
+        },
+        {
+          "term": "Uncured / no nitrites added",
+          "meaning": "Usually cured with celery salt, which still makes nitrite."
         },
         {
           "term": "No nitrates added*",
           "meaning": "The fine print may except nitrates naturally occurring in celery powder."
         }
       ],
-      "tier_note": "Organic bacon: certified organic feed and outdoor access; pasture: time outdoors on pasture, audited only with a certifier’s seal.",
+      "tier_note": "Bacon cured with celery still carries nitrite from the celery.",
       "asked_as": [
         "how do you choose bacon",
         "is uncured bacon nitrate free",
         "what does the asterisk on bacon mean"
       ],
-      "instead": "Bacon that adds sugar and wood smoke to the pork and salt.",
+      "instead": "Organic bacon cured with celery, with no MSG or liquid smoke.",
       "family": "fam_prepared_meats",
-      "delta": "Belly slices with dry-cured wording; wood-smoked without liquid smoke in the ingredients."
+      "delta": "Wood-smoked bacon from pastured, organic pigs; no liquid smoke."
     },
     {
       "id": "hot_dogs",
@@ -8081,57 +8104,70 @@
         "sliced turkey bacon"
       ],
       "category": "deli",
-      "question": "What does the turkey bacon label tell you?",
-      "decision": "Uncured turkey bacon with turkey listed first and no sugar.",
-      "why": "9 CFR 317.17 requires the term Uncured before the product name on products cured without nitrite.",
-      "short_answer": "Bacon from turkey carries a descriptive name, such as “turkey bacon, cured turkey thigh meat”. Every curing ingredient must appear in the ingredients statement.",
-      "detail": "Under US labeling, “bacon” alone means cured pork belly. Bacon made from poultry needs a descriptive name that says which meat was used. Each substance in a curing mixture, such as salt, sugar, or sodium nitrite, must be listed. “Uncured” and “No Nitrate or Nitrite Added” may accompany celery-based curing; the qualifier names that plant source of nitrite.",
+      "question": "Which turkey bacon should I buy?",
+      "decision": "Turkey bacon from birds raised outside, cured with salt.",
+      "why": "Cured meat from birds allowed to graze, cured with salt, is the best tier. Additives move it down.",
+      "short_answer": "Look for “Pasture-Raised” and USDA Organic on the pack. Read the list for turkey first, then salt, with no liquid smoke.",
+      "detail": "The best tier for cured meat is meat from animals allowed to graze, cured with salt and a small amount of sugar, naturally smoked, with no MSG. Curing with celery, spinach, carrot or beet is the next tier. Meats with MSG, smoke flavoring, liquid smoke, torula yeast, sodium lactate or dry milk powder are the ones to skip.",
       "evidence_tier": "kristys_standard",
       "sources": [
         {
-          "name": "Electronic Code of Federal Regulations",
-          "url": "https://www.ecfr.gov/current/title-9/section-317.17"
-        }
-      ],
-      "kristy_take": "Turkey bacon is turkey meat seasoned and pressed into bacon form. The label has to say which turkey meat.",
-      "cart_pick": "Turkey bacon with named curing ingredients",
-      "buying_tips": [
-        "Read the list: turkey first, then each curing ingredient, with no sugar.",
-        "Read the words beside ‘turkey bacon’ for which turkey meat is used.",
-        "No good turkey bacon: pick pork bacon, the belly cut, which ranks above it anyway.",
-        "Pick pasture-raised pork bacon with a short curing list over turkey bacon.",
-        "Read the small print by ‘Uncured’ and check for celery powder or juice in the curing list."
-      ],
-      "watch_out": [
-        "With “uncured” turkey bacon, celery powder or juice can supply nitrite. A “no nitrates added” claim needs its qualifier read too.",
-        "Turkey bacon is still a cured product, and its curing ingredients are on the label.",
-        "Skip sodium phosphate or sodium tripolyphosphate in the curing list; phosphates help the meat hold onto water."
-      ],
-      "pick_steps": [
-        "Read the descriptive name beside “turkey bacon” for the meat used.",
-        "Read each curing ingredient in the ingredients statement.",
-        "Read the “Uncured” qualifier for celery powder or juice supplying nitrite."
-      ],
-      "science": "Under US labeling, “bacon” alone means cured pork belly. Bacon made from poultry needs a descriptive name that says which meat was used. Turkey bacon is still a cured product. Each substance in a curing mixture, such as salt, sugar, or sodium nitrite, must be listed. “Uncured” may still mean celery powder or juice supplies the nitrite; read the qualifier.",
-      "labels_decoded": [
-        {
-          "term": "Cured turkey thigh meat",
-          "meaning": "The descriptive name that says which turkey meat the bacon is made from."
+          "name": "Weston A. Price Foundation, Shopping Guide categories",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
         },
         {
-          "term": "Uncured",
-          "meaning": "Celery powder or juice can supply nitrite in turkey bacon carrying this word. Read the exception beside the claim."
+          "name": "Weston A. Price Foundation, Shopping Guide 2020, processed meats",
+          "url": "http://westonaprice.org/wp-content/flip-books/SG2020/files/basic-html/page36.html"
+        },
+        {
+          "name": "7 CFR 205.237, organic livestock feed",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.237"
+        },
+        {
+          "name": "7 CFR 205.241, organic outdoor access",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.241"
         }
       ],
-      "tier_note": "Organic turkey bacon: certified organic feed and outdoor access; pasture: time outdoors on pasture, audited only with a certifier’s seal.",
+      "kristy_take": "The ingredient list is the check: turkey first, salt, and no smoke flavoring.",
+      "cart_pick": "Salt-cured turkey bacon from outdoor birds",
+      "buying_tips": [
+        "Look for “Pasture-Raised” or USDA Organic on the pack.",
+        "Read the list for turkey first, then salt.",
+        "Both pasture-raised and organic on one pack is best."
+      ],
+      "watch_out": [
+        "MSG and liquid smoke or smoke flavoring are the cured-meat additives to skip.",
+        "“Natural flavors” and “spices” on turkey bacon usually mean MSG."
+      ],
+      "pick_steps": [
+        "Look for “Pasture-Raised” or USDA Organic on the pack.",
+        "Read the list for turkey first.",
+        "Skip smoke flavoring, liquid smoke and MSG."
+      ],
+      "science": "Salt is what preserves the meat. Smoke flavoring and liquid smoke stand in for real smoke.",
+      "labels_decoded": [
+        {
+          "term": "Pasture-Raised",
+          "meaning": "Turkeys raised outside on grass."
+        },
+        {
+          "term": "USDA Organic",
+          "meaning": "Organic feed and outdoor access, every season."
+        },
+        {
+          "term": "Natural flavors",
+          "meaning": "On a cured meat list, usually MSG."
+        }
+      ],
+      "tier_note": "Turkey bacon at its simplest: turkey and salt on the list.",
       "asked_as": [
         "is turkey bacon cured",
         "what is turkey bacon made of",
         "how do you choose turkey bacon"
       ],
-      "instead": "Pork bacon, the belly cut that “bacon” alone names on a US label.",
+      "instead": "Bacon from pastured pigs.",
       "family": "fam_prepared_meats",
-      "delta": "Turkey cut named beside 'bacon'; skip sugar, dextrose and mechanically separated turkey."
+      "delta": "Turkey bacon from pasture-raised birds; turkey first, no liquid smoke."
     },
     {
       "id": "cured_pork",
@@ -8150,61 +8186,74 @@
         "pork cheek"
       ],
       "category": "deli",
-      "question": "How do you choose prosciutto, salami, pancetta, or guanciale?",
-      "decision": "Dry-cured pork made of pork and salt only.",
-      "why": "“Uncured” wording is regulated product-name text for cured meats.",
-      "short_answer": "Prosciutto is dry-cured ham, and salami is a fermented, dried, cured ground product. Pancetta is cured belly. Guanciale is worth buying on the same terms: the cut named and the curing ingredients listed.",
-      "detail": "Prosciutto is an Italian-style dry-cured raw ham, not smoked. Its low water content lets it be eaten raw. Salami is a fermented, dried, and cured ground meat product. Pancetta is Italian belly bacon, usually cured in salt and spices and air-dried. Cured pork from the cheeks must carry its true product name, such as pork jowl. “Uncured” and “No Nitrate or Nitrite Added” may accompany celery-based curing; the qualifier names that plant source of nitrite.",
+      "question": "Which cured pork should I buy?",
+      "decision": "Pork cured with salt, from pigs raised outside.",
+      "why": "Pork from pigs allowed to graze, cured with salt, is the best tier. Additives move a cured meat down.",
+      "short_answer": "Look for “Pastured” and USDA Organic. The list should read pork and salt, a little sugar at most.",
+      "detail": "The best tier for cured meat is pork from pigs allowed to graze, cured with salt and a small amount of sugar, naturally smoked, with no MSG. Curing with celery, spinach, carrot or beet is the next tier. Meats with MSG, smoke flavoring, liquid smoke, torula yeast, sodium lactate or dry milk powder are the ones to skip.",
       "evidence_tier": "kristys_standard",
       "sources": [
         {
-          "name": "Electronic Code of Federal Regulations",
-          "url": "https://www.ecfr.gov/current/title-9/section-317.17"
+          "name": "Weston A. Price Foundation, Shopping Guide categories",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        },
+        {
+          "name": "Weston A. Price Foundation, Shopping Guide 2020, processed meats",
+          "url": "http://westonaprice.org/wp-content/flip-books/SG2020/files/basic-html/page36.html"
+        },
+        {
+          "name": "Healthy Traditions, Pastured Pork",
+          "url": "https://healthytraditions.com/collections/pastured-raised-pork"
+        },
+        {
+          "name": "7 CFR 205.237, organic livestock feed",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.237"
+        },
+        {
+          "name": "7 CFR 205.239, organic livestock living conditions",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.239"
         }
       ],
-      "kristy_take": "Each of these is pork cured with salt and curing agents. The label names the cut and lists every curing ingredient.",
-      "cart_pick": "Sliced prosciutto with pork and salt",
+      "kristy_take": "The ingredient list is the check: pork and salt, and the pack says how the pig lived.",
+      "cart_pick": "Salt-cured pork from outdoor pigs",
       "buying_tips": [
-        "Read the list: pork and salt, then any spices and curing agents by name.",
-        "Read the name for the cut, such as ham, belly or jowl.",
-        "No pork-and-salt-only kind: pick one with spices and sugar, every curing ingredient listed.",
-        "Check whether the pack says ready to eat or cook before eating.",
-        "Dry-cured means salt and time, with no sodium nitrite."
+        "Look for “Pastured” or USDA Organic on the pack.",
+        "Read the list for pork and salt, with a little sugar at most.",
+        "Both pastured and organic on one pack is best."
       ],
       "watch_out": [
-        "On salami or pancetta, “uncured” and “no nitrates added” can point to nitrite from celery juice or celery powder. Check the ingredient list for that plant source.",
-        "An “Uncured” product that is not dried or heavily salted must say “Not Preserved, Keep Refrigerated”.",
-        "Skip sodium nitrite, dextrose and corn syrup solids in the curing list."
+        "Smoke flavoring, liquid smoke and MSG are the additives to skip in cured meat.",
+        "“Natural flavors” and “spices” on a cured meat list usually mean MSG."
       ],
       "pick_steps": [
-        "Read the product name for the cut: ham, belly or jowl.",
-        "Read each curing ingredient in the ingredients statement.",
-        "Check whether the package says ready to eat or cook before eating."
+        "Look for “Pastured” or USDA Organic on the pack.",
+        "Read the list for pork and salt.",
+        "Skip smoke flavoring, liquid smoke and MSG."
       ],
-      "science": "Each of these is pork cured with salt and curing agents. Prosciutto is dry-cured raw ham, not smoked; its low water content lets it be eaten raw. Salami is a fermented, dried and cured ground product. Pancetta is cured belly, and cheek meat must carry its true name, such as pork jowl. An “Uncured” product that is not dried or heavily salted must say “Not Preserved, Keep Refrigerated”.",
+      "science": "Salt is what preserves the meat. Smoke flavoring and liquid smoke stand in for real smoke.",
       "labels_decoded": [
         {
-          "term": "Prosciutto",
-          "meaning": "Italian-style dry-cured raw ham, not smoked."
+          "term": "Pastured",
+          "meaning": "Pigs living on pasture and in woods."
         },
         {
-          "term": "Pancetta",
-          "meaning": "Italian belly bacon, usually cured in salt and spices, then air-dried."
+          "term": "USDA Organic",
+          "meaning": "Pigs on organic feed with year-round outdoor access."
         },
         {
-          "term": "Uncured",
-          "meaning": "Check for a plant-derived curing ingredient such as celery powder or juice, which supplies nitrite."
+          "term": "Natural flavors",
+          "meaning": "On a cured meat list, usually MSG."
         }
       ],
-      "tier_note": "Organic pork: certified organic feed and outdoor access; pasture: time outdoors on pasture, audited only with a certifier’s seal.",
+      "tier_note": "Cured pork at its simplest: pork and salt on the list.",
       "asked_as": [
         "is guanciale worth buying",
         "how do you choose prosciutto",
         "how do you choose salami"
       ],
-      "instead": "Cured pork with spices and sugar beyond salt, every curing ingredient still listed.",
+      "instead": "Organic cured pork with celery or beet curing and no MSG.",
       "family": "fam_prepared_meats",
-      "delta": "Leg or belly named on the pack; whole-muscle slices rather than ground salami."
+      "delta": "Salt-cured pork from pastured or organic pigs; pork and salt on the list."
     },
     {
       "id": "lamb_goat",
@@ -8230,65 +8279,66 @@
         "pasture raised lamb"
       ],
       "category": "meat_counter",
-      "question": "How do you judge lamb and goat meat quality?",
-      "decision": "Lamb or goat, 100% grass-fed or pasture-raised, firm and fine-grained.",
-      "why": "Grass-fed sourcing: see “Grass-fed” (the label).",
-      "short_answer": "Graded lamb at retail is Prime, Choice, or Good. Goat is not graded, so read the flesh: light pink to bright red, firm, fine-grained, with white fat.",
-      "detail": "Sheep carcasses are classed as lamb, yearling mutton, or mutton by age. Lamb comes from animals typically under a year old. Goats under a year old are called kids. Meat from older goats is darker.",
+      "question": "Which lamb or goat should I buy?",
+      "decision": "Lamb or goat that ate grass to the end.",
+      "why": "Lamb and goat that grazed to the end rank first. A grain finish ranks lower.",
+      "short_answer": "Look for “100% grass-fed” and “grass-finished,” or “Pasture-Raised,” on the pack, with USDA Organic on top.",
+      "detail": "Lamb and goat from animals allowed to graze are the best tier. Organic rules require ruminants to graze through the grazing season, at least 30 percent of their feed from grazing, with no hormones for growth; organic slaughter stock may still be grain-finished for up to a fifth of their life or 120 days.",
       "evidence_tier": "kristys_standard",
       "sources": [
         {
-          "name": "A Greener World",
-          "url": "https://agreenerworld.org/certifications/animal-welfare-approved/"
+          "name": "Weston A. Price Foundation, Shopping Guide categories",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        },
+        {
+          "name": "7 CFR 205.237, organic livestock feed",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.237"
+        },
+        {
+          "name": "7 CFR 205.238, organic livestock health care",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.238"
+        },
+        {
+          "name": "7 CFR 205.239, organic livestock living conditions",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.239"
         }
       ],
-      "kristy_take": "Lamb grading is voluntary and takes age into account. Check for firm, fine-textured meat with white marbling, and read the cut name, such as shoulder or leg.",
-      "cart_pick": "Pasture-raised lamb or goat with an AWA seal",
+      "kristy_take": "Grass to the end is the mark for lamb and goat, with organic for the feed.",
+      "cart_pick": "Lamb or goat that ate only grass",
       "buying_tips": [
-        "Check that the label says the animal ate only grass, or shows Animal Welfare Approved.",
-        "Pick lamb that is fine-textured and firm, with white marbling.",
-        "No logo on the shelf: pick graded lamb, or goat that is firm and fine-grained.",
-        "Pick goat with firm, fine-grained flesh and white fat spread through it.",
-        "Read the cut on the label, such as shoulder or leg.",
-        "Goat has no quality grade, so firm, fine-grained flesh with white fat is the check.",
-        "Grass-fed labels and logos: see “Grass-fed” (the label).",
-        "Check the pack for an Animal Welfare Approved seal and the farm named."
+        "Look for “100% grass-fed” and “grass-finished” on lamb or goat.",
+        "Look for USDA Organic too: organic feed, animals grazing in season.",
+        "Pick lamb or goat with all three marks first."
       ],
       "watch_out": [
-        "Ungraded lamb is inspected, but its quality may be higher or lower than graded lamb.",
-        "Goat meat has no quality grade, and older goat is darker, so ask the age at the counter.",
-        "Skip pre-seasoned or marinated packs; buy the plain cut."
+        "Organic lamb or goat may still be grain-finished for up to 120 days."
       ],
       "pick_steps": [
-        "Look for an AWA or other pasture seal; organic is a bonus.",
-        "Pick lamb that is fine textured and firm, with white marbling.",
-        "Pick goat with firm, fine-grained flesh and well-distributed white fat."
+        "Look for “100% grass-fed” and “grass-finished” on lamb or goat.",
+        "Look for USDA Organic.",
+        "Read the ingredients for the meat alone."
       ],
-      "science": "Lamb quality grading is voluntary, and the grade takes age into account. Ungraded lamb is still inspected, but its quality may be higher or lower. Goat meat has no quality grades at all, so the flesh is the check. Goats under a year old are called kids. Older goat is darker.",
+      "science": "Organic sheep and goats graze for at least 30 percent of their feed in season. They may still be grain-finished for up to 120 days.",
       "labels_decoded": [
         {
-          "term": "USDA Choice",
-          "meaning": "A voluntary lamb quality grade, the one most graded supermarket lamb carries."
+          "term": "100% grass-fed, grass-finished",
+          "meaning": "Grass to the end, no grain finish."
         },
         {
-          "term": "Mutton",
-          "meaning": "Meat from older sheep."
-        },
-        {
-          "term": "Kid",
-          "meaning": "Goat under a year of age."
+          "term": "USDA Organic",
+          "meaning": "Organic feed and seasonal grazing, no growth hormones; a grain finish is still allowed."
         }
       ],
-      "tier_note": "Grass seals cover sheep and goats, and “grass-fed” is the producer’s own word unless a certifier’s seal audits it; pasture-raised means time outdoors on pasture, audited only with a certifier’s seal.",
+      "tier_note": "Grass-finished lamb or goat: grass to the end, with no grain finish.",
       "asked_as": [
         "how do i judge goat meat quality",
         "how do you choose lamb chops",
         "what is the difference between lamb and mutton",
         "what is chevon"
       ],
-      "instead": "Graded lamb, or goat that is firm and fine-grained, when no grass seal is on the shelf.",
+      "instead": "USDA Organic lamb or goat.",
       "family": "fam_ruminant_meat",
-      "delta": "Lamb or goat named on the label; goat forage may include browse."
+      "delta": "Grass to the finish, organic on top, for lamb or goat."
     },
     {
       "id": "organ_meats",
@@ -15750,36 +15800,54 @@
       ],
       "category": "beef",
       "question": "How do you choose veal?",
-      "decision": "Pasture-raised pink veal from calves kept with their mothers.",
-      "why": "Pasture-raised veal means calves raised on open pasture beside the mother, never in feedlots.",
-      "short_answer": "Choose veal from calves raised on pasture with their mothers, which is light red. Rose veal is pink. Pale white veal points to a crate system.",
-      "detail": "Veal comes in three broad kinds. Vealers are calves raised on pasture with their mothers, and the meat is light red. Rose veal comes from calves reared in groups, some with pasture access, on milk or replacer and then grain, and the meat is pink. Crate veal is white because the calves are denied iron, a system illegal in the UK and Europe since 2007. Color is the counter clue.",
+      "decision": "Veal from calves that grazed outside.",
+      "why": "Veal from calves allowed to graze sits in the best tier; organic veal is next.",
+      "short_answer": "Look for “Pasture-Raised” and USDA Organic. Veal carrying both marks comes first.",
+      "detail": "The best tier for veal is meat from calves allowed to graze. Organic veal is the next tier. Organic rules add organic feed, outdoor time through the year and no hormones for growth.",
       "evidence_tier": "kristys_standard",
       "sources": [
         {
-          "name": "Pasture-raised veal production",
-          "url": "https://www.wholefoodsmarket.com/tips-and-ideas/archive/strauss-free-raised-e2-84-a2-veal"
+          "name": "Weston A. Price Foundation, Shopping Guide categories",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        },
+        {
+          "name": "7 CFR 205.237, organic livestock feed",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.237"
+        },
+        {
+          "name": "7 CFR 205.238, organic livestock health care",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.238"
+        },
+        {
+          "name": "7 CFR 205.239, organic livestock living conditions",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.239"
         }
       ],
-      "kristy_take": "Veal color tells the story of the calf. Light red means pasture and its mother.",
-      "cart_pick": "Pasture-raised veal",
+      "kristy_take": "Veal comes down to two marks: pasture-raised for the calf’s life, organic for its feed.",
+      "cart_pick": "Veal from calves that grazed",
       "buying_tips": [
-        "Look for light red or pink veal, not pale white, and a humane logo on the pack.",
-        "Ask the counter whether the calves were raised on pasture with their mothers, on milk and grass.",
-        "Can’t find it: rose veal, pink meat from calves raised in groups.",
-        "Skip veal from calves fed milk replacer.",
-        "How it was raised: see Beef."
+        "Look for “Pasture-Raised” on the pack.",
+        "Look for USDA Organic too: organic feed, calves outside through the year.",
+        "Pick veal carrying both marks first."
       ],
       "watch_out": [
-        "Pale white veal comes from crate systems that deny calves iron."
+        "Veal with no raising claim on the pack says nothing about how the calf lived."
       ],
       "pick_steps": [
-        "Ask whether the calves were raised on pasture with their mothers.",
-        "Check the color: light red or pink, not white.",
-        "Look for USDA Organic or a welfare seal on the veal."
+        "Look for “Pasture-Raised” on the pack.",
+        "Look for USDA Organic.",
+        "Read the ingredients for veal alone, nothing added."
       ],
-      "science": "Veal from calves raised on pasture with their mothers is light red. Rose veal from group-reared calves fed milk, then grain, is pink. White veal results from denying calves iron in crate systems, banned in the UK and Europe since 2007.",
+      "science": "Organic veal calves eat organic feed and get outdoor access all year.",
       "labels_decoded": [
+        {
+          "term": "Pasture-Raised",
+          "meaning": "Calves out on grass, grazing."
+        },
+        {
+          "term": "USDA Organic",
+          "meaning": "Organic feed, outdoors year-round, no growth hormones."
+        },
         {
           "term": "Rose veal",
           "meaning": "Pink veal from group-raised calves fed milk, then grain."
@@ -15789,15 +15857,15 @@
           "meaning": "Pale meat from calves kept low in iron, usually crate-raised."
         }
       ],
-      "tier_note": "The veal systems are documented welfare categories; pasture with the mother is the whole-food standard; time outdoors on pasture, audited only with a certifier’s seal.",
+      "tier_note": "Pasture-raised veal: calves that grazed outside on grass.",
       "asked_as": [
         "is veal ethical",
         "what is rose veal",
         "which veal should i buy"
       ],
-      "delta": "Milk from its mother plus grass or hay; skip milk-replacer-fed veal.",
+      "delta": "“Pasture-Raised” veal with USDA Organic; veal alone in the ingredients.",
       "family": "fam_ruminant_meat",
-      "instead": "Pasture-raised veal with a humane seal."
+      "instead": "USDA Organic veal."
     },
     {
       "id": "fam_ruminant_meat",

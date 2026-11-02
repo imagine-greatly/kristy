@@ -9,14 +9,14 @@ import { dirname, join } from 'node:path';
 import { RETIRED, ESSENTIALS, projectEntry } from '../../lib/counterCards.js';
 import { lintCard, readability, headlineHedge, TIER_NOTE_ORPHANED_PENDING } from '../../lib/counterCardLint.js';
 import kb0 from '../../kristy_perimeter_kb.json' with { type: 'json' }
-import { unfoldChicken, unfoldDoLines } from './twoLinePin.js'; // chicken fold 2026-11-01: this batch reads the folded cards as of 117f3ee
-const kb = restoreOrganicCarts(unfoldChicken(structuredClone(kb0)));
+import { unfoldChicken, unfoldDoLines, unfoldMeat, unfoldMeatDoLines } from './twoLinePin.js'; // chicken fold 2026-11-01: this batch reads the folded cards as of 117f3ee; meat stance 2026-11-02: and the meat cards as of cd4c011
+const kb = restoreOrganicCarts(unfoldMeat(unfoldChicken(structuredClone(kb0))));
 import { preT6_2 } from './twoLinePin.js';
 kb.entries = kb.entries.map(preT6_2); // t6-2: dairy/egg pins read ca32bef; t6_2.test.js owns live copy.
 import { beforeConcern, preCleanPick10 } from './twoLinePin.js';
 import doLines0 from '../../lib/doLines.json' with { type: 'json' };
 
-const doLines = unfoldDoLines(doLines0);
+const doLines = unfoldMeatDoLines(unfoldDoLines(doLines0));
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../../..');
 const PRE = JSON.parse(execFileSync('git', ['show', '663ca3d:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 // clean-pick-10 moved chicken_cuts_basics and ground_turkey; this batch reads them as of 117ab78.

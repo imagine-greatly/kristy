@@ -13,7 +13,8 @@ import { scoreEntries } from '../../lib/perimeter.js';
 import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
 import { preT6_1 } from "./twoLinePin.js";
 kb.entries = kb.entries.map(preT6_1); // t6-1: the 15 meat/seafood cards read as of 85c399e; t6_1.test.js owns them now
-import { beforeConcern, preCleanPick8 } from './twoLinePin.js';
+import { beforeConcern, preCleanPick8, MEAT_REWRITTEN, unfoldMeatDoLines } from './twoLinePin.js';
+const OLD_MEAT_DO = unfoldMeatDoLines({});
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../../..');
 const reviewed = parseReviewTable(readFileSync(join(ROOT, 'docs/do-lines-review.md'), 'utf8'));
@@ -42,7 +43,7 @@ const KEEPS = nonEmpty([
   ['bacon', 'bacon'], ['sliced bacon', 'bacon'],
   ['pork', 'pork_cuts_and_enhanced'], ['pork chops', 'pork_cuts_and_enhanced'], ['pork shoulder', 'pork_cuts_and_enhanced'],
   ['deli meat', 'deli_meat_uncured'], ['lunch meat', 'deli_meat_uncured'], ['deli turkey', 'deli_meat_uncured'], ['sliced turkey', 'deli_meat_uncured'],
-  ['stew meat', 'beef_cuts_basics'], ['steak', 'beef_cuts_basics'],
+  ['stew meat', 'beef_grassfed_vs_grainfed'], ['steak', 'beef_grassfed_vs_grainfed'], // 2026-11-02 meat stance: beef_cuts_basics folded into Beef
   ['organ blend ground beef', 'ground_beef_lean_ratio'], ['beef with liver', 'ground_beef_lean_ratio'], ['organ meat blend', 'ground_beef_lean_ratio'],
   ['whole turkey', 'turkey_whole'], ['ground turkey', 'ground_turkey'],
   ['duck eggs', 'egg_duck_quail'], ['eggs', 'egg_labels'], ['meat counter', 'butcher_counter_asking'],
@@ -58,7 +59,7 @@ const NOT_NEW = nonEmpty([
   'soup', 'chicken soup', 'fish sauce', 'chocolate chips', "lamb's lettuce",
 ], 'K15 not-new rows', 40);
 const FORBIDDEN = ['meat', 'duck', 'goat', 'liver', 'livers', 'heart', 'hearts', 'kidney', 'tongue', 'buffalo', 'game', 'bone', 'bones', 'beef', 'pork', 'chicken', 'turkey', 'bacon', 'sausage', 'deli'];
-const OWNERS = nonEmpty(['judging_meat_at_the_case', 'butcher_counter_asking', 'pork_cuts_and_enhanced', 'beef_cuts_basics', 'deli_meat_uncured', 'bacon'], 'meat ask owners', 6);
+const OWNERS = nonEmpty(['judging_meat_at_the_case', 'butcher_counter_asking', 'pork_cuts_and_enhanced', 'beef_grassfed_vs_grainfed', 'deli_meat_uncured', 'bacon'], 'meat ask owners', 6); // 2026-11-02 meat stance: beef_cuts_basics folded into Beef
 
 for (const [row, id] of BARE) test(`C1 "${row}" matches ${id}`, () => assert.equal(rowMatch(row), id));
 
@@ -105,7 +106,7 @@ test('C5 every cited URL hits line 1 of a docs/sources/k15 file', () => {
 for (const id of CARDS) test(`C6 ${id}: readable and lint-clean`, () => {
   const card = byId(id);
   assert.ok(card, `${id} missing`);
-  const doLine = reviewed.get(id)?.do || '';
+  const doLine = (MEAT_REWRITTEN.includes(id) ? OLD_MEAT_DO[id] : reviewed.get(id)?.do) || ''; // meat stance 2026-11-02: older meat copy reads its cd4c011 do line
   assert.ok(doLine, `${id} has no reviewed do line`);
   assert.deepEqual(readability(card), []);
   assert.deepEqual(lintCard(projectEntry(card, { doLine })), []);

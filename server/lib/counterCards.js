@@ -181,6 +181,9 @@ export const RETIRED = [
   'chicken_cuts_basics',
   'chicken_breast',
   'poultry_chicken_wings',
+  // Meat stance (2026-11-02): → beef_grassfed_vs_grainfed ("Beef"), one sourcing card that never names a cut.
+  // Aliases and asked_as moved; mech_tenderized ownership moved with them.
+  'beef_cuts_basics',
 ];
 
 /* ═══════════════════════════ Retired GENERATED cards ═══════════════════════════ */

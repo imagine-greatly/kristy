@@ -4,7 +4,7 @@ import { projectAll } from './counterCards.js';
 export const TRY_POOL = Object.freeze([
   'ground_beef_lean_ratio',
   'butcher_counter_asking',
-  'beef_cuts_basics',
+  'beef_grassfed_vs_grainfed',
   'pork_cuts_and_enhanced',
   'chicken',
   'salmon_wild_vs_farmed',

@@ -353,8 +353,8 @@ test('every counter answers the questions a shopper actually has standing at it'
   // One real question per counter, routed through the live matcher. If a counter
   // stops covering its own basics, this fails rather than quietly thinning out.
   const wants = [
-    ['which cut of beef for stew', 'beef_cuts_basics'],
-    ['what does usda prime mean', 'beef_cuts_basics'],
+    ['which cut of beef for stew', 'beef_grassfed_vs_grainfed'], // 2026-11-02 meat stance: beef_cuts_basics folded into Beef
+    ['what does usda prime mean', 'beef_grassfed_vs_grainfed'], // 2026-11-02 meat stance: beef_cuts_basics folded into Beef
     ['which chicken cut should i buy', 'chicken'],
     ['which fish are low in mercury', 'mercury_by_fish'],
     ['how do i tell if fish is fresh', 'seafood_counter'],

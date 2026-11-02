@@ -10,10 +10,13 @@ import { scoreEntries, PERIMETER_SECTIONS } from '../../lib/perimeter.js';
 import { inScope } from '../../lib/counterScope.js';
 import { RETIRED, ESSENTIALS, projectEntry, parseReviewTable } from '../../lib/counterCards.js';
 import { lintCard, readability, lintRepeatedClaim, OWNED_FACTS } from '../../lib/counterCardLint.js';
-import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
+import kb1 from '../../kristy_perimeter_kb.json' with { type: 'json' };
 import { preT6_1 } from "./twoLinePin.js";
+const kb = unfoldMeatKb(structuredClone(kb1));
 kb.entries = kb.entries.map(preT6_1); // t6-1: the 15 meat/seafood cards read as of 85c399e; t6_1.test.js owns them now
-import doLines from '../../lib/doLines.json' with { type: 'json' };
+import doLines0 from '../../lib/doLines.json' with { type: 'json' };
+import { unfoldMeat as unfoldMeatKb, unfoldMeatDoLines, MEAT_REWRITTEN } from './twoLinePin.js'; // meat stance 2026-11-02: reads the meat cards as of cd4c011; meatStance.test.js owns them now
+const doLines = unfoldMeatDoLines(doLines0);
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../../..');
 const PRE = JSON.parse(execFileSync('git', ['show', '663ca3d:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
@@ -59,7 +62,7 @@ test('C3 folded questions reach the survivor', () => {
     assert.ok(inScope(q).ok, `"${q}" out of scope`);
     const top = scoreEntries(q, 3)[0];
     assert.ok(admits(top), `"${q}" not admitted`);
-    assert.equal(top.entry.id, want, `"${q}" → ${top.entry.id}`);
+    assert.equal(top.entry.id, want === 'beef_cuts_basics' ? 'beef_grassfed_vs_grainfed' : want, `"${q}" → ${top.entry.id}`); // meat stance 2026-11-02: beef_cuts_basics folded into Beef; live routing lands there
   }
 });
 
@@ -113,7 +116,7 @@ test('C7 survivors lint clean', () => {
     const e = now(to);
     assert.deepEqual(lintCard(projectEntry(e, { doLine: doLines[to] })), [], `${to} lint`);
     assert.deepEqual(readability(e), [], `${to} readability`);
-    assert.deepEqual(lintRepeatedClaim(e), [], `${to} repeated claim`);
+    if (!MEAT_REWRITTEN.includes(to)) assert.deepEqual(lintRepeatedClaim(e), [], `${to} repeated claim`); // meat stance 2026-11-02: older meat copy points at old owner titles; meatStance.test.js lints the live cards
     const was = new Set(strings(pre(to)).flatMap(sentences));
     for (const s of strings(e).flatMap(sentences)) if (!was.has(s)) assert.doesNotMatch(s, RULE4, `${to}: ${s}`);
   }

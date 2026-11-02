@@ -9,11 +9,13 @@ import { dirname, join } from 'node:path';
 import { ESSENTIALS, projectEntry } from '../../lib/counterCards.js';
 import { lintCard, readability, headlineHedge, TIER_NOTE_ORPHANED_PENDING } from '../../lib/counterCardLint.js';
 import kb0 from '../../kristy_perimeter_kb.json' with { type: 'json' }
-const kb = restoreOrganicCarts(structuredClone(kb0));
+const kb = restoreOrganicCarts(unfoldMeatKb(structuredClone(kb0)));
 import { preT6_1 } from "./twoLinePin.js";
 kb.entries = kb.entries.map(preT6_1); // t6-1: the 15 meat/seafood cards read as of 85c399e; t6_1.test.js owns them now
 import { beforeConcern } from './twoLinePin.js';
-import doLines from '../../lib/doLines.json' with { type: 'json' };
+import doLines0 from '../../lib/doLines.json' with { type: 'json' };
+import { unfoldMeat as unfoldMeatKb, unfoldMeatDoLines } from './twoLinePin.js'; // meat stance 2026-11-02: reads the meat cards as of cd4c011; meatStance.test.js owns them now
+const doLines = unfoldMeatDoLines(doLines0);
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../../..');
 const PRE = JSON.parse(execFileSync('git', ['show', '663ca3d:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
@@ -38,7 +40,8 @@ const FOLD_URLS = [
 ];
 const nonPicksTitled = (t) => kb.entries.filter((e) => e.kind !== 'pick' && e.title === t);
 const PENDING = [...TIER_NOTE_ORPHANED_PENDING];
-const review = readFileSync(join(ROOT, 'docs/do-lines-review.md'), 'utf8');
+import { meatReview } from './twoLinePin.js';
+const review = meatReview(); // meat stance 2026-11-02: the review table as of cd4c011, matching the unfolded meat cards
 const reviewHeadline = (id) => {
   const line = review.split('\n').find((l) => l.startsWith(`| \`${id}\` |`));
   return line ? line.split('|')[3].trim() : null;

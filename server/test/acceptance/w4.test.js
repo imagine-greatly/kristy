@@ -12,7 +12,9 @@ import { preT6_1, preT6_2 } from "./twoLinePin.js";
 kb.entries = kb.entries.map(preT6_2); // t6-2: dairy/egg pins read ca32bef; t6_2.test.js owns live copy.
 kb.entries = kb.entries.map(preT6_1); // t6-1: the 15 meat/seafood cards read as of 85c399e; t6_1.test.js owns them now
 import before from './w4.before.json' with { type: 'json' };
-import doLines from '../../lib/doLines.json' with { type: 'json' };
+import doLines0 from '../../lib/doLines.json' with { type: 'json' };
+import { unfoldMeatDoLines, MEAT_REWRITTEN } from './twoLinePin.js'; // meat stance 2026-11-02: the meat do lines as of cd4c011
+const doLines = unfoldMeatDoLines(doLines0);
 import tips from '../../lib/sectionRules.json' with { type: 'json' };
 import * as lint from '../../lib/counterCardLint.js';
 import { projectEntry, RETIRED } from '../../lib/counterCards.js';
@@ -57,6 +59,7 @@ test('W4 (b) live PILOT passes opener repetition and all existing card lints', (
   const cards = pilot.map((e) => e.kind === 'pick' ? e : projectEntry(e, { doLine: doLines[e.id] }));
   assert.deepEqual(codes(cards), []);
   for (const [i, e] of pilot.entries()) {
+    if (MEAT_REWRITTEN.includes(e.id)) continue; // meat stance 2026-11-02: older meat copy points at old owner titles; meatStance.test.js lints the live cards
     assert.deepEqual(lint.lintCard(cards[i]), [], e.id);
     assert.deepEqual(lint.readability(e), [], e.id);
     // Audit the authored W4 prose; projection also appends unchanged short_answer sentences.

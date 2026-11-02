@@ -14,9 +14,9 @@ import { beforeConcern, preCleanPick10, preCleanPick8 } from './twoLinePin.js';
 
 const SERVER = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const ROOT = join(SERVER, '..');
-import { unfoldChicken, unfoldDoLines } from './twoLinePin.js'; // chicken fold 2026-11-01: this batch reads the folded cards as of 117f3ee
-const kb = restoreOrganicCarts(unfoldChicken(JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8'))));
-const doLines = unfoldDoLines(JSON.parse(readFileSync(join(SERVER, 'lib', 'doLines.json'), 'utf8')));
+import { unfoldChicken, unfoldDoLines, unfoldMeat, unfoldMeatDoLines, MEAT_REWRITTEN } from './twoLinePin.js'; // chicken fold 2026-11-01: this batch reads the folded cards as of 117f3ee; meat stance 2026-11-02: and the meat cards as of cd4c011
+const kb = restoreOrganicCarts(unfoldMeat(unfoldChicken(JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8')))));
+const doLines = unfoldMeatDoLines(unfoldDoLines(JSON.parse(readFileSync(join(SERVER, 'lib', 'doLines.json'), 'utf8'))));
 const BASE = 'aa12a3d';
 const PRE = JSON.parse(execFileSync('git', ['show', `${BASE}:server/kristy_perimeter_kb.json`], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 // clean-pick-10 moved chicken_cuts_basics and ground_turkey; this batch reads them as of 117ab78.
@@ -118,6 +118,7 @@ test('C8 per-card lints are clean and headlines match', () => {
   for (const id of BATCH) {
     const e = now(id);
     if (e.kind === 'pick' || JSON.stringify(e) === JSON.stringify(pre(id))) continue;
+    if (MEAT_REWRITTEN.includes(id)) continue; // meat stance 2026-11-02: cure allowlist trimmed to live sentences; meatStance.test.js lints the live cards
     assert.deepEqual(lint.lintCard(projectEntry(e, { doLine: doLines[id] })), [], `${id} lintCard`);
     assert.deepEqual(flat(lint.readability(e)), [], `${id} readability`);
     assert.deepEqual(flat(lint.lintPickSteps(e)), [], `${id} lintPickSteps`);

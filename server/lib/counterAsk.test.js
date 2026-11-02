@@ -19,7 +19,7 @@ test('a plain-words counter question reaches its sourced entry', () => {
   // The four the surface itself seeds with, typed as a person would type them.
   const wants = [
     ['wild or farmed salmon', 'salmon_wild_vs_farmed'],
-    ['which cut for stew', 'beef_cuts_basics'],
+    ['which cut for stew', 'beef_grassfed_vs_grainfed'], // 2026-11-02 meat stance: beef_cuts_basics folded into Beef
     ['what does pasture-raised leave out', 'label_pasture_raised_feed'],
     // Was label_organic_scope, which answers what the SEAL covers. This asks whether to
     // pay, on a specific item, and organic_worth_it_by_type is the card that decides it

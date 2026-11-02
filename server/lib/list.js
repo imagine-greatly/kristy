@@ -167,7 +167,7 @@ const PICKS = {
     },
   },
   grassfed_beef: {
-    name: 'Grass-fed ground beef', category: 'Protein', perimeterId: 'beef_grassfed_vs_grainfed',
+    name: 'Grass-fed ground beef', category: 'Protein', perimeterId: 'ground_beef_lean_ratio',
     why: 'Chuck and ground get you the sourcing without reaching for the ribeye.',
     alt: 'Or regular ground beef — a cheaper real cut still beats processed protein.',
   },

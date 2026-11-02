@@ -25,7 +25,8 @@ import { preT6_1, preT6_2 } from "./twoLinePin.js";
 kb.entries = kb.entries.map(preT6_2); // t6-2: dairy/egg pins read ca32bef; t6_2.test.js owns live copy.
 kb.entries = kb.entries.map(preT6_1); // t6-1: the 15 meat/seafood cards read as of 85c399e; t6_1.test.js owns them now
 const base = JSON.parse(git(`${BASE}:server/kristy_perimeter_kb.json`));
-const doLines = JSON.parse(readFileSync(new URL('../../lib/doLines.json', import.meta.url), 'utf8'));
+import { unfoldMeatDoLines } from './twoLinePin.js'; // meat stance 2026-11-02: the meat do lines as of cd4c011
+const doLines = unfoldMeatDoLines(JSON.parse(readFileSync(new URL('../../lib/doLines.json', import.meta.url), 'utf8')));
 const find = (k, id) => k.entries.find((e) => e.id === id);
 const live = (id) => find(kb, id);
 const was = (id) => find(base, id);
@@ -323,7 +324,7 @@ test('C1b decision and cart_pick byte-equal to c2785ed on all 15 batch ids; the 
 
 test("C2 pilot corpus size in the batch view and top-level metadata", () => {
   // retired: pilot merge replaced this batch's text (P4)
-  assert.equal(kb.entries.length, 283); // 2026-11-01 chicken unification: three cards → one
+  assert.equal(kb.entries.length, 282); // 2026-11-01 chicken unification: three cards → one; 2026-11-02 meat stance: beef_cuts_basics folded into Beef
   assert.deepEqual({ ...kb, entries: [] }, { ...base, entries: [] });
 });
 

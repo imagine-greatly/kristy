@@ -1634,22 +1634,8 @@ export const PRESERVATION_CURE_SENTENCES = Object.freeze(new Set([
   "Read the ingredients list; every curing substance has to be named there.",
   "‘Uncured’ meat is cured, using celery powder instead of added nitrite.",
   "Celery powder is a concentrated natural nitrate source, so it is a curing agent, not the absence of one.",
-  "Read each curing ingredient, including salt, sugar and curing agents.",
-  "Compare the disclosed curing ingredients across the bacon packs on the shelf.",
-  "Bacon labeled uncured can use celery powder as a natural curing source.",
-  "US curing-label policy requires curing-mixture ingredients to be listed individually.",
-  "The curing ingredients describe the process.",
-  "The source set does not establish a health advantage from choosing celery-based curing.",
   "“Uncured” can still mean celery-based curing; read the qualifier.",
   "Ham is the cured leg of pork, and its product name tells how much water the curing added.",
-  "Read each curing ingredient in the ingredients statement.",
-  "Under US labeling, “bacon” alone means cured pork belly.",
-  "Turkey bacon is still a cured product.",
-  "Each substance in a curing mixture, such as salt, sugar, or sodium nitrite, must be listed.",
-  "Each of these is pork cured with salt and curing agents.",
-  "Prosciutto is dry-cured raw ham, not smoked; its low water content lets it be eaten raw.",
-  "Salami is a fermented, dried and cured ground product.",
-  "Pancetta is cured belly, and cheek meat must carry its true name, such as pork jowl.",
 ]));
 
 /* ═══════════════════════════ Health first (chf-1) ═══════════════════════════ */
@@ -1695,15 +1681,15 @@ const ownedFact = (fact, owner, family, pattern) => ({
 
 export const OWNED_FACTS = [
   ownedFact('beef_raising', 'beef_grassfed_vs_grainfed',
-    ['ground_beef_lean_ratio', 'beef_cuts_basics',
+    [
       'butcher_counter_asking', 'judging_meat_at_the_case', 'organ_meats', 'pick_soup_bones'],
     /grass[- ]?(fed|finished)|grain[- ]?(fed|finished)/i),
   ownedFact('ruminant_grass_term', 'label_grass_fed_term',
-    ['lamb_goat', 'bison', 'venison_game', 'goat_sheep_dairy'], /grass[- ]?(fed|finished)/i),
+    ['bison', 'venison_game', 'goat_sheep_dairy'], /grass[- ]?(fed|finished)/i),
   ownedFact('solution_added', 'pork_cuts_and_enhanced',
-    ['ground_beef_lean_ratio', 'beef_cuts_basics', 'butcher_counter_asking',
+    ['ground_beef_lean_ratio', 'butcher_counter_asking',
       'judging_meat_at_the_case', 'lamb_goat', 'bison', 'venison_game'], /solution|enhanced/i),
-  ownedFact('mech_tenderized', 'beef_cuts_basics',
+  ownedFact('mech_tenderized', 'beef_grassfed_vs_grainfed',
     ['ground_beef_lean_ratio', 'butcher_counter_asking', 'judging_meat_at_the_case'],
     /mechanically tenderi[sz]ed|blade[- ]tenderi[sz]ed/i),
   ownedFact('bird_pig_raising', 'label_pasture_raised_feed',

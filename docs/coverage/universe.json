@@ -649,7 +649,7 @@
     "item": "beef cuts",
     "section": "Meat",
     "mechanism": "card",
-    "expect": "beef_cuts_basics"
+    "expect": "beef_grassfed_vs_grainfed"
   },
   {
     "item": "ground beef",
