@@ -16579,7 +16579,7 @@
       "why": "Whole-grain identity, sprouting and cooking format are separate checks. Sprouting includes germination; soaking alone does not establish it. Prefer disclosed local or regional crops where available, with preparation suited to the grain.",
       "buying_tips": [
         "Read the list: the grain alone, with ‘sprouted’ on the bag when sold.",
-        "Look for USDA Organic; a Real Organic Project logo is a step above.",
+        "Look for USDA Organic; the Real Organic Project logo also requires soil-grown crops.",
         "Pick sealed bags over open bins for brown rice and hot cereal.",
         "Skip quick-cooking grain packs and bulgur."
       ],
@@ -16631,7 +16631,7 @@
       "why": "Whole beans and deliberately split peas or lentils need different appearance checks. Crop, form and preparation information make a dried pack easier to choose. Plain cooked pulses are a convenience option, without an implied nutritional ranking.",
       "buying_tips": [
         "Read the list: the bean alone, no seasoning packet.",
-        "Look for USDA Organic; a Real Organic Project logo is a step above.",
+        "Look for USDA Organic; the Real Organic Project logo also requires soil-grown crops.",
         "Pick a sealed bag of dried beans; plain canned beans are next.",
         "Check the best-by date and pick the newest bag."
       ],
@@ -18199,16 +18199,15 @@
     {
       "id": "fam_frozen_plain_produce",
       "kind": "family",
-      "decision": "Organic frozen fruit or vegetables when fresh is out of season, with no syrup or sauce.",
+      "decision": "Plain frozen fruit or vegetables, with no syrup or sauce.",
       "buying_tips": [
-        "Pick frozen when the fresh fruit or vegetable is out of season or tired.",
         "Read the list for syrup on fruit and sauce on vegetables; skip both.",
         "Look for USDA Organic on the front of the bag.",
         "Skip bags with thick frost inside; they have likely thawed and refrozen."
       ],
       "title": "Frozen plain fruit and vegetables",
       "category": "aisle_frozen",
-      "why": "Plain frozen produce is the store fallback when fresh is out of season or tired. Freezing slows ripening enzymes rather than stopping them, so blanched, quick-frozen pieces hold best. A bag frozen into one block or thick with frost has likely thawed and refrozen. Some frozen fruit comes in syrup and some vegetables come sauced, so the ingredient list is the check."
+      "why": "Plain frozen produce is a good pick in any season. Freezing slows ripening enzymes rather than stopping them, so blanched, quick-frozen pieces hold best. A bag frozen into one block or thick with frost has likely thawed and refrozen. Some frozen fruit comes in syrup and some vegetables come sauced, so the ingredient list is the check."
     },
     {
       "id": "pick_venison",
