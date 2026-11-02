@@ -909,8 +909,8 @@
       "question": "Is frozen produce as good as fresh?",
       "decision": "Organic frozen produce with one ingredient, loose in the bag.",
       "why": "A nearby grower picks closer to ripe. Supermarket produce is often harvested early to survive transit and storage.",
-      "short_answer": "Fresh and in season comes first. Out of season, organic frozen with one ingredient on the bag is the store fallback. A real-food kitchen keeps some frozen vegetables on hand for soups and sides.",
-      "detail": "A garden or farm stand is the top rung, then organic in season. Supermarket produce is often harvested long before peak so it survives shipping and storage, which is why local and seasonal leads. Frozen earns its place as the fallback: a Weston A. Price Foundation writer keeps broccoli, spinach or kale and green beans in the freezer for soups and sides. Check that the bag lists only the vegetable or fruit. Freezing your own: freeze soon after harvest or purchase, steam-blanch rather than boil, and thaw in the fridge.",
+      "short_answer": "Organic frozen with one ingredient on the bag is a good pick in any season. Fresh from a farm stand in season is good too. A real-food kitchen keeps some frozen vegetables on hand for soups and sides.",
+      "detail": "A garden or farm stand in season is a good source, and plain organic frozen is a good pick all year. Supermarket fresh produce is often harvested long before peak so it survives shipping and storage, which is why local and seasonal leads among fresh. A Weston A. Price Foundation writer keeps broccoli, spinach or kale and green beans in the freezer for soups and sides. Check that the bag lists only the vegetable or fruit. Freezing your own: freeze soon after harvest or purchase, steam-blanch rather than boil, and thaw in the fridge.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "Weston A. Price Foundation: Extend to the End, Prolonging Your Local Growing Season",
@@ -924,22 +924,22 @@
         "Read the bag: just the fruit or vegetable, with no sauce, syrup or added sugar.",
         "Check that the pieces move loose in the bag, not frozen into one block.",
         "Pick fresh in season; it reaches the shelf riper than produce shipped across the country.",
-        "Pick organic frozen out of season, with one ingredient on the bag.",
+        "Pick organic frozen in any season, with one ingredient on the bag.",
         "Pick broccoli, spinach or kale and green beans; they are the frozen staples worth keeping.",
         "Freezing your own: steam-blanch, freeze soon, thaw in the fridge."
       ],
       "watch_out": [
         "Supermarket ‘fresh’ is often harvested well before peak so it survives transit and storage.",
-        "Frozen is the fallback, not the top rung. A farm stand in season comes first."
+        "A bag with sauce, syrup or seasoning is no longer plain produce; read for one ingredient."
       ],
       "pick_steps": [
-        "Buy fresh, in-season organic produce first.",
-        "Out of season, take organic frozen listing only the vegetable or fruit.",
+        "Buy fresh in season from a farm stand or garden when it is there.",
+        "Any time of year, take organic frozen listing only the vegetable or fruit.",
         "Keep broccoli, spinach or kale and green beans in the freezer."
       ],
       "science": "Supermarket produce is often harvested before peak so it survives transit and storage, so local and in season leads. Blanching stops the enzymes that keep vegetables maturing in the freezer, and steaming is preferred to boiling. Freezing needs no additives, so a bag should list only the food.",
       "labels_decoded": [],
-      "tier_note": "Fresh in-season produce first is the whole-food standard, with organic frozen as the fallback.",
+      "tier_note": "Fresh in-season produce and plain organic frozen are both whole-food picks.",
       "asked_as": [
         "are frozen vegetables any good",
         "should i buy frozen vegetables",
@@ -1025,8 +1025,8 @@
       "question": "Does buying produce in season matter?",
       "decision": "In-season produce, with the country of origin on the sticker.",
       "why": "A January orange tastes better than a July one. Produce in season usually travels less and reaches you closer to ripe.",
-      "short_answer": "Yes. In season with a Real Organic, Certified Naturally Grown or Demeter seal is the top tier, organic the floor. Out of season, organic frozen is the store fallback.",
-      "detail": "Supermarket produce is often harvested long before its peak nutritional value so it can survive transit and storage. Fresh from a garden or a local farm stand is best, organic or biodynamic and in season. Ask the grower how the crop was grown; a farm directory or farmers market lists local farms. Off-season, produce is shipped long distances or grown under conditions that trade flavor for availability, and organic frozen is the fallback. Broadly: tender greens and berries in spring, tomatoes and stone fruit in summer, squash and apples in autumn, citrus and hardy brassicas in winter. Season shows up in the size of the pile before it shows up anywhere else. Some produce ignores the calendar because it stores well (apples, onions, potatoes, winter squash, carrots) or because it was shipped from the other hemisphere, which is why ‘available’ and ‘in season’ are different words. Citrus peaks in the dead of winter, which is why a January orange tastes better than a July one.",
+      "short_answer": "Yes. In season with a Real Organic, Certified Naturally Grown or Demeter seal is the top tier, organic the floor. Plain organic frozen with one ingredient is a good pick in any season.",
+      "detail": "Supermarket produce is often harvested long before its peak nutritional value so it can survive transit and storage. Fresh from a garden or a local farm stand is best, organic or biodynamic and in season. Ask the grower how the crop was grown; a farm directory or farmers market lists local farms. Off-season, produce is shipped long distances or grown under conditions that trade flavor for availability, and plain organic frozen is a good pick. Broadly: tender greens and berries in spring, tomatoes and stone fruit in summer, squash and apples in autumn, citrus and hardy brassicas in winter. Season shows up in the size of the pile before it shows up anywhere else. Some produce ignores the calendar because it stores well (apples, onions, potatoes, winter squash, carrots) or because it was shipped from the other hemisphere, which is why ‘available’ and ‘in season’ are different words. Citrus peaks in the dead of winter, which is why a January orange tastes better than a July one.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "Weston A. Price Foundation: Extend to the End, Prolonging Your Local Growing Season",
@@ -3799,7 +3799,7 @@
       "buying_tips": [
         "Check the box bottom: dry, unstained, no fuzzy white or gray spot on any berry.",
         "Look for Real Organic or Certified Naturally Grown on the sign.",
-        "Can’t find either: the USDA Organic seal on the clamshell; out of season, organic frozen.",
+        "Can’t find either: the USDA Organic seal on the clamshell, or organic frozen berries any time of year.",
         "Read the seal, not the photo; no USDA Organic seal means conventional, whatever the box says.",
         "Pick strawberries with green caps still fresh, not browned and dry.",
         "Look for deep, even color for the kind of berry, and even size in the box.",
