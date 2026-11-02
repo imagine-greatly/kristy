@@ -39,7 +39,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `salmon_wild_vs_farmed` | seafood | Wild Alaskan salmon, blue MSC label, fresh or frozen, like sockeye or coho. | Find the MSC label and wild Alaskan, then check for deep red flesh. | — |
 | `shrimp_imported_vs_domestic` | seafood | Wild US or Gulf shrimp, frozen raw; read the country. | Read the bag for Gulf or US wild origin; check for shells. | — |
 | `rotisserie_chicken` | meat | Pasture-raised or organic rotisserie chicken, salt and spices only. | Read the ingredient list for added starches or sweeteners. | — |
-| `beef_grassfed_vs_grainfed` | meat | Beef from cattle that ate grass to the end. | Look for “100% grass-fed” and “grass-finished,” with USDA Organic on top. | — |
+| `beef_grassfed_vs_grainfed` | meat | Beef that ate only grass, from an audited ranch. | Look for “100% grass-fed,” “grass-finished,” and Regenerative Organic Certified or Certified Regenerative. | — |
 | `ground_beef_lean_ratio` | meat | Ground beef from cattle that ate only grass. | Find “100% grass-fed” and “grass-finished” on the pack, beef the only ingredient. | — |
 | `egg_labels` | eggs_dairy | Soy-free, corn-free eggs from hens on pasture. | Find USDA Organic on the carton beside the other seal. | — |
 | `organic_worth_it_by_type` | produce | Grown without sprays first on skin-on produce, then organic. | Spend the organic money on berries, greens, and apples. | — |
@@ -73,7 +73,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `judging_meat_at_the_case` | meat | Sealed, leak-free meat with the newest ‘packaged on’ date. | Check the package is sealed and not leaking juices, then smell it. | — |
 | `butcher_counter_asking` | meat | 100% grass-fed soup bones and a whole chuck, freshly ground. | Ask what came in today and when it was cut. | — |
 | `chicken` | meat | Chicken that lived outside. | Look for “Pasture-Raised,” Certified Humane, organic or non-GMO feed, least added water. | — |
-| `pork_cuts_and_enhanced` | meat | Pork from pigs that lived outside. | Find “Pastured” and USDA Organic on the pack, pork the only ingredient. | — |
+| `pork_cuts_and_enhanced` | meat | Pork from pigs on pasture, never crated. | Find “Pastured” and Animal Welfare Approved on the pack, pork the only ingredient. | — |
 | `deli_meat_uncured` | meat | Organic or pasture-raised whole roasted meat, sliced thin. | Ask for fresh slices from a whole roast bearing an Uncured label. | — |
 | `mercury_by_fish` | seafood | Sardines, anchovies, salmon or canned light tuna, lowest in mercury. | Check the species name on the can for sardines. | — |
 | `canned_fish_choosing` | seafood | Bone-in sardines or MSC wild salmon, packed in olive oil or water. | Read the species name and check for fish, water or olive oil. | — |
@@ -120,19 +120,19 @@ Also: imperative, starts with a verb, ≤14 words.
 | `sourdough` | bulk_pantry | Whole wheat sourdough: flour, water, salt and a starter. | Find a starter or culture in the bread’s ingredient list. | — |
 | `bagels` | bulk_pantry | Whole wheat bagels, boiled before the oven, ingredients named. | Check the ingredients for ascorbic acid; ask about the water bath. | — |
 | `tortillas` | bulk_pantry | Organic corn tortillas of masa, water and salt. | Check for masa or masa harina, then read for added wheat and fat. | — |
-| `turkey_whole` | meat | Turkey that lived outside. | Look for “Pasture-Raised” and USDA Organic, turkey the only ingredient. | — |
-| `ground_turkey` | meat | Ground turkey from birds that lived outside. | Find “Pasture-Raised” and USDA Organic, and turkey alone on the list. | — |
+| `turkey_whole` | meat | Turkey that lived outside. | Look for “Pasture-Raised” and Animal Welfare Approved, turkey the only ingredient. | — |
+| `ground_turkey` | meat | Ground turkey from birds raised on pasture. | Find “Pasture-Raised” and Animal Welfare Approved, and turkey alone on the list. | — |
 | `breakfast_cereal` | bulk_pantry | Unfortified whole-grain cereal or granola, less added sugar, no dyes. | Compare the added-sugars line and check which Whole Grain Stamp is shown. | — |
 | `pasta_dry` | bulk_pantry | Organic dry pasta of durum semolina and water. | Turn the box over and read the flour and any added ingredients. | — |
 | `oat_milk` | eggs_dairy | Unsweetened, unfortified oat milk with nothing added, never seed oil. | Read the ingredients for added vitamins and minerals, then the stabilizers. | — |
 | `coffee_beans` | bulk_pantry | Beans in a sealed bag that limits air. | Check the bag’s seal and keep the coffee closed between uses. | — |
-| `bacon` | meat | Bacon from pigs raised outside, smoked over real wood. | Check for “Pastured” and USDA Organic, with no liquid smoke on the list. | — |
+| `bacon` | meat | Bacon from pigs kept on pasture, smoked over real wood. | Check for “Pastured” and Animal Welfare Approved, with no liquid smoke on the list. | — |
 | `hot_dogs` | meat | Organic beef hot dogs with no phosphates or binders. | Find the AGA seal, then count the ingredients. | — |
 | `canned_tuna` | seafood | Pole- or troll-caught light tuna in olive oil or water. | Read the catch wording for pole, troll, FAD-free or school methods. | — |
 | `ham` | meat | Organic or pasture-raised ham named just “Ham”. | Read the product name’s opening word for Uncured, then check for pork and salt. | — |
 | `turkey_bacon` | meat | Turkey bacon from birds raised outside, cured with salt. | Read for “Pasture-Raised,” turkey listed first, and no “natural flavors.” | — |
-| `cured_pork` | meat | Pork cured with salt, from pigs raised outside. | Read for “Pastured” or USDA Organic, and no smoke flavoring or MSG. | — |
-| `lamb_goat` | meat | Lamb or goat that ate grass to the end. | Check for “100% grass-fed” and “grass-finished,” plus USDA Organic. | — |
+| `cured_pork` | meat | Salt-cured pork from pigs that lived on pasture. | Read for “Pastured” or Animal Welfare Approved, and no smoke flavoring or MSG. | — |
+| `lamb_goat` | meat | Lamb or goat that ate grass to the end. | Check for “100% grass-fed,” “grass-finished,” and American Grassfed or Animal Welfare Approved. | — |
 | `organ_meats` | meat | 100% grass-fed or pasture-raised organ meats, cooked within two days. | Check liver or heart packs for an AGA or organic seal. | — |
 | `bison` | meat | Bison labeled 100% grass-fed or grass-finished, with an inspection mark. | Read the pack for bison alone and the AGA mark beside the cut. | — |
 | `venison_game` | meat | Fat-trimmed venison from a fully refrigerated processor. | Ask whether each animal was handled separately and kept cold throughout. | — |
@@ -239,7 +239,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `seafood_fish_roe` | seafood | Salt-only roe, fresh or frozen; skip dyed lumpfish. | Read the jar for salmon roe and salt alone. | — |
 | `seafood_fresh_sardines_mackerel` | seafood | Fresh sardines or Atlantic mackerel; skip king mackerel. | Check these fish for bright stripes or shiny skin. | — |
 | `seafood_trout` | seafood | Wild trout first; US farmed rainbow trout next. | Ask the counter whether the trout is wild, or farmed in the US. | — |
-| `beef_veal` | meat | Veal from calves that grazed outside. | Look for “Pasture-Raised” and USDA Organic, from calves allowed to graze. | — |
+| `beef_veal` | meat | Veal from calves that grazed outside. | Look for “Pasture-Raised” and Animal Welfare Approved, from calves allowed to graze. | — |
 
 **80 cards · 0 flagged · 33 redrafted in the 2026-07-31 sweep.**
 

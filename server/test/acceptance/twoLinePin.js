@@ -3667,19 +3667,19 @@ const SECOND_PASS = {
     "do": "Find USDA Organic on the carton beside the other seal."
   },
   "pork_cuts_and_enhanced": {
-    "decision": "Pork from pigs that lived outside.",
+    "decision": "Pork from pigs on pasture, never crated.",
     "tip0": "Look for “Pastured” on the pack.",
-    "do": "Find “Pastured” and USDA Organic on the pack, pork the only ingredient."
+    "do": "Find “Pastured” and Animal Welfare Approved on the pack, pork the only ingredient."
   },
   "bacon": {
-    "decision": "Bacon from pigs raised outside, smoked over real wood.",
-    "tip0": "Look for “Pastured” or USDA Organic on the pack.",
-    "do": "Check for “Pastured” and USDA Organic, with no liquid smoke on the list."
+    "decision": "Bacon from pigs kept on pasture, smoked over real wood.",
+    "tip0": "Find “Pastured” or the Animal Welfare Approved mark.",
+    "do": "Check for “Pastured” and Animal Welfare Approved, with no liquid smoke on the list."
   },
   "beef_grassfed_vs_grainfed": {
-    "decision": "Beef from cattle that ate grass to the end.",
+    "decision": "Beef that ate only grass, from an audited ranch.",
     "tip0": "Look for “100% grass-fed” and “grass-finished” on the pack.",
-    "do": "Look for “100% grass-fed” and “grass-finished,” with USDA Organic on top."
+    "do": "Look for “100% grass-fed,” “grass-finished,” and Regenerative Organic Certified or Certified Regenerative."
   },
   "ground_beef_lean_ratio": {
     "decision": "Ground beef from cattle that ate only grass.",
@@ -3689,7 +3689,7 @@ const SECOND_PASS = {
   "lamb_goat": {
     "decision": "Lamb or goat that ate grass to the end.",
     "tip0": "Look for “100% grass-fed” and “grass-finished” on lamb or goat.",
-    "do": "Check for “100% grass-fed” and “grass-finished,” plus USDA Organic."
+    "do": "Check for “100% grass-fed,” “grass-finished,” and American Grassfed or Animal Welfare Approved."
   },
   "bison": {
     "decision": "100% grass-fed and grass-finished bison, ranch named, bison the only ingredient.",
