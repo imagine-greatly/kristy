@@ -734,8 +734,7 @@ export const TWO_LINE = {
     "decision": "Chicken that lived outside.",
     "buying_tips": [
       "Look for Certified Humane Pasture-Raised or Animal Welfare Approved on the pack.",
-      "Look for USDA Organic too: organic feed with pasture and forage, no antibiotics in feed.",
-      "Both on one pack is best.",
+      "Read USDA Organic as a bonus on top: organic feed with pasture and forage, no antibiotics in feed.",
       "Packs can carry added water or broth, up to 15% of the weight. Choose the least; air-chilled chicken holds the least."
     ]
   },

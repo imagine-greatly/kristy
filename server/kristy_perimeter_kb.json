@@ -1025,7 +1025,7 @@
       "question": "Does buying produce in season matter?",
       "decision": "In-season produce, with the country of origin on the sticker.",
       "why": "A January orange tastes better than a July one. Produce in season usually travels less and reaches you closer to ripe.",
-      "short_answer": "Yes. In season with a Real Organic, Certified Naturally Grown or Demeter seal is the top tier, organic the floor. Plain organic frozen with one ingredient is a good pick in any season.",
+      "short_answer": "Yes. In season is the top pick, and plain frozen with one ingredient is a good pick in any season. Where the skin is eaten, a Real Organic, Certified Naturally Grown or Demeter seal leads.",
       "detail": "Supermarket produce is often harvested long before its peak nutritional value so it can survive transit and storage. Fresh from a garden or a local farm stand is best, organic or biodynamic and in season. Ask the grower how the crop was grown; a farm directory or farmers market lists local farms. Off-season, produce is shipped long distances or grown under conditions that trade flavor for availability, and plain organic frozen is a good pick. Broadly: tender greens and berries in spring, tomatoes and stone fruit in summer, squash and apples in autumn, citrus and hardy brassicas in winter. Season shows up in the size of the pile before it shows up anywhere else. Some produce ignores the calendar because it stores well (apples, onions, potatoes, winter squash, carrots) or because it was shipped from the other hemisphere, which is why ‘available’ and ‘in season’ are different words. Citrus peaks in the dead of winter, which is why a January orange tastes better than a July one.",
       "evidence_tier": "kristys_standard",
       "sources": [
@@ -1034,12 +1034,12 @@
         "Weston A. Price Foundation: Feeding Your Family Well From the Big Box Stores",
         "Weston A. Price Foundation: Eating Locally & Seasonally (book review)"
       ],
-      "kristy_take": "Let the piles in the produce section guide the week: spring greens, summer tomatoes, autumn squash, winter citrus. Off-season, reach for frozen over pale fresh produce.",
+      "kristy_take": "Let the piles in the produce section guide the week: spring greens, summer tomatoes, autumn squash, winter citrus. Plain frozen is a good pick in any season.",
       "cart_pick": "Whatever fruit is in season",
       "buying_tips": [
         "Pick what is piled highest and cheapest this week; it is usually what’s in season.",
         "Read the sticker or sign for the country; in season, it travels less and reaches you closer to ripe.",
-        "Can’t find it in season: organic, fresh or frozen. Off-season, frozen beats tired “fresh”.",
+        "Pick plain frozen with one ingredient in any season; organic where the skin is eaten.",
         "At a farmers’ market, see what is in season fast, and ask how the crop was grown.",
         "Spring: asparagus, peas, radishes, artichokes, strawberries, tender greens.",
         "Summer: tomatoes, corn, zucchini, peppers, cucumbers, stone fruit, melon, berries.",
@@ -1054,7 +1054,7 @@
       ],
       "pick_steps": [
         "Take what is piled high and cheapest this week; that is the season.",
-        "Off-season, reach for frozen over a pale, sad fresh version.",
+        "Pick plain frozen, one ingredient, in any season; it is a first-class pick.",
         "Pick seasonal produce: spring asparagus, summer tomatoes, autumn squash, winter citrus."
       ],
       "science": "Season shows up in the pile and the price before anywhere else. Spring brings tender greens and berries, summer tomatoes and stone fruit. Autumn brings squash and apples, winter citrus and hardy brassicas. Summer runs strawberries first, then cherries and other berries, then peaches, melons, plums and pears. Storage crops like apples, onions, potatoes and carrots stay good long past their season.",
@@ -1135,27 +1135,27 @@
       ],
       "category": "produce",
       "question": "Does washing actually get the pesticide residue off?",
-      "decision": "Produce grown organic at the farm, over any home soak.",
-      "why": "Residue is settled at the farm, not the sink, so the seal counts for more than the soak.",
-      "short_answer": "The surest answer comes before the sink: Real Organic or Certified Naturally Grown on the sign, then USDA Organic. What a soak does to residue is not settled. Rinse under cold running water right before eating.",
+      "decision": "Skin-on produce grown organic, rinsed under cold running water.",
+      "why": "Residue is settled at the farm, not the sink, and a soak’s effect on it is unverified.",
+      "short_answer": "What a soak does to residue is not settled. Rinse under cold running water right before eating. Residue is settled at the farm: on produce eaten skin-on, Real Organic or Certified Naturally Grown, then USDA Organic.",
       "detail": "Baking soda soaks circulate widely as a residue fix, and no holistic source backs that claim, so it is left unmade here. The dependable step is choosing organic produce, starting with what gets eaten skin-on: apples, grapes, berries. Read the seal or sign at the bin for how the crop was grown. At home, rinse under cold running water right before eating.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "Weston A. Price Foundation: Shopping Guide Categories"
       ],
-      "kristy_take": "Spend the effort at the shelf, not the sink: look for the USDA Organic seal. Rinse in plain water before eating.",
+      "kristy_take": "Rinse in plain water before eating. On produce eaten skin-on, the effort goes in at the shelf, not the sink.",
       "buying_tips": [
+        "Pick organic for produce eaten skin-on: apples, grapes, berries.",
         "Read the sign or sticker for Real Organic or Certified Naturally Grown.",
         "Can’t find either: USDA Organic produce.",
-        "Pick organic first for produce eaten skin-on: apples, grapes, berries.",
         "Ask the grower how it was grown; a plain rinse at home is the habit."
       ],
       "watch_out": [
         "A home soak is not a substitute for choosing organic produce."
       ],
       "pick_steps": [
-        "Look for Real Organic or Certified Naturally Grown on the sign, then USDA Organic.",
         "Start with produce eaten skin-on: apples, grapes, berries.",
+        "On those, look for Real Organic or Certified Naturally Grown, then USDA Organic.",
         "Rinse under cold running water right before eating."
       ],
       "science": "No holistic source backs a home soak for residue, so no removal claim is made. How the crop was grown settles residue from the start, and organic is the floor.",
@@ -1288,8 +1288,8 @@
       ],
       "pick_steps": [
         "Skip tubs and spreads; butter comes as a block or a stick.",
-        "Look for USDA Organic: certified organic feed and outdoor access.",
-        "Look for the AGA Grassfed logo: the cows ate grass and hay, never grain."
+        "Look for the AGA Grassfed logo: the cows ate grass and hay, never grain.",
+        "Read USDA Organic as a bonus: certified organic feed and outdoor access."
       ],
       "science": "Cows on grass eat carotene, and it goes straight into the fat, so grass-fed butter runs deep yellow toward orange. The same dairy churns paler in winter. Grass-fed cream carries a softer fat, which melts lower, so the bar gives at room temperature. European-style butter is higher in fat, a separate axis from the feed. ‘Spreadable butter’ is butter cut with canola or olive oil.",
       "asked_as": [
@@ -1533,7 +1533,7 @@
       ],
       "pick_steps": [
         "Read the front name: ‘cheese product’, ‘cheese food’ or ‘process’ means emulsifiers.",
-        "Look for USDA Organic: certified organic feed and outdoor access.",
+        "Check for 100% grass-fed with AGA: the cows ate grass and hay, never grain.",
         "Buy the block; bagged shreds carry starch, cellulose and natamycin."
       ],
       "science": "Real cheese is milk, salt, cultures and enzymes. ‘Pasteurized process cheese product’ needs only 51% cheese, and the name on the front is the only warning. Shreds carry a coating so the strands do not knit back together, which is why they resist melting. ‘Parmesan’ is a generic word in the US; ‘Parmigiano-Reggiano’ is protected, with a stamped rind.",
@@ -2065,7 +2065,7 @@
         "Second best: organic, no-salt-added beans in glass jars or BPA-free cans."
       ],
       "pick_steps": [
-        "Pick a sealed bag of organic dried beans first.",
+        "Pick a sealed bag of dried beans first; organic is a bonus.",
         "Read canned labels for beans, water and salt only.",
         "Look for “BPA-free” printed on the can."
       ],
@@ -2249,7 +2249,7 @@
       ],
       "category": "label_terms",
       "question": "What’s the difference between Non-GMO and Organic?",
-      "decision": "Organic food first; Non-GMO Project Verified is the close second.",
+      "decision": "Organic includes the non-GMO rule; Non-GMO Verified is GMOs only.",
       "why": "Organic already implies non-GMO, plus pesticide and practice rules. Non-GMO covers neither.",
       "short_answer": "Organic is the broader standard. Certified-organic food is also non-GMO. It also restricts synthetic pesticides and fertilizers and requires certain practices. A ‘Non-GMO’ seal only addresses genetic engineering. It says nothing about pesticides or how the food was grown.",
       "detail": "The ‘Non-GMO Project Verified’ butterfly is a single-issue claim: no genetically-engineered ingredients. USDA Organic covers that and much more. Also worth knowing: ‘non-GMO’ on a food with no GMO version (like non-GMO salt or oats) is marketing noise. Organic includes non-GMO; non-GMO doesn’t include organic.",
@@ -2291,7 +2291,7 @@
         "No Real Organic seal on the shelf? USDA Organic alone already covers the non-GMO rule."
       ],
       "pick_steps": [
-        "Pick the organic seal without requiring a second non-GMO seal.",
+        "Read the organic seal as non-GMO too; no second seal is needed.",
         "If GMOs matter to you, a lone “non-GMO” seal covers that one issue."
       ],
       "science": "Certified-organic food is also non-GMO. Organic also restricts synthetic pesticides and fertilizers and requires certain practices. A non-GMO seal addresses genetic engineering only. It says nothing about pesticides, feed or practices.",
@@ -2320,7 +2320,7 @@
       "question": "What do ‘cage-free’ and ‘free-range’ actually require?",
       "decision": "Pasture-raised eggs, soy-free and corn-free, with a welfare logo.",
       "why": "Certified Humane free range needs 2 square feet outdoors; cage-free carries no outdoor figure.",
-      "short_answer": "Cage-free means hens are not in cages; they can be kept indoors. Pick pasture-raised with a Certified Humane or AWA seal, then organic, then cage-free.",
+      "short_answer": "Cage-free means hens are not in cages; they can be kept indoors. Pick pasture-raised with a Certified Humane or AWA seal. Organic is a bonus on top; cage-free alone comes last.",
       "detail": "The two terms mark rungs on the same ladder and people routinely read both as a meadow. Cage-free is a defined term for eggs and a genuine welfare improvement on conventional cages; on products other than eggs it carries much less. Free-range signals outdoor access but sets a low, loosely-enforced bar with no certification required. Above both sits pasture-raised, which only means anything with a certifier attached: Certified Humane, Animal Welfare Approved, or Global Animal Partnership. Match the word to what you actually want rather than to the picture on the carton. ‘Cage-free’ is a real step up from battery cages, and not outdoors. For ‘free-range’, the amount, duration and quality of outdoor access are not tightly defined, and a small door onto a small yard qualifies.",
       "evidence_tier": "established",
       "sources": [
@@ -2333,7 +2333,7 @@
       "buying_tips": [
         "Look for “pasture-raised” plus a logo from a group that checks, for real outdoor time.",
         "Look for soy-free or corn-free feed printed outright beside “pasture-raised”.",
-        "Can’t find it: pasture-raised organic, then organic, then cage-free. Organic feed can still contain soy and corn.",
+        "Organic is a bonus on pasture-raised, not a step in its place. Organic feed can still contain soy and corn.",
         "Cage-free means no cages, usually still indoors. It does not mean outdoor access.",
         "Free-range means some outdoor access, with the amount, size and hours undefined.",
         "These are space words; what the hens ate is a separate claim.",
@@ -2360,7 +2360,7 @@
       ],
       "pick_steps": [
         "Read past ‘cage-free’; look for ‘pasture-raised’ with a certifier seal.",
-        "Next: pasture-raised organic, then organic, then cage-free."
+        "Read organic as a bonus on pasture-raised; cage-free alone comes last."
       ],
       "science": "Cage-free is a real step up from battery cages, and not outdoors. Free-range signals outdoor access, but its amount, duration and quality are not tightly defined. A small door onto a small yard qualifies. For eggs, both are defined terms; on other products they carry much less. Without a certifier’s seal, nothing is auditing free-range.",
       "tier_note": "Pasture-raised means time outdoors on pasture, audited only with a certifier’s seal.",
@@ -2504,7 +2504,7 @@
       ],
       "pick_steps": [
         "Pick pasture-raised eggs with a Certified Humane, AWA or Real Organic seal.",
-        "Next choose pasture-raised organic, then organic, then cage-free.",
+        "Read organic as a bonus on pasture-raised; cage-free alone comes last.",
         "Read ‘vegetarian fed’ as feed only; it says nothing about pasture."
       ],
       "science": "Cage-free, free-range and pasture-raised describe space. Most pasture-raised hens still eat soy and corn. USDA has no regulatory definition of pasture-raised; certifiers set outdoor requirements. Organic requires organic feed, usually soy and corn. It describes how feed was grown. “Vegetarian fed” means no animal byproducts in the feed, with no promise about outdoor time. Hens on pasture eat insects and forage.",
@@ -2530,7 +2530,7 @@
       ],
       "category": "label_terms",
       "question": "What does the organic seal actually guarantee?",
-      "decision": "Organic food with a short list; Real Organic goes further.",
+      "decision": "Short ingredient list first; organic the floor, Real Organic further.",
       "why": "It covers inputs and practices, not nutrition or processing. Approved sprays are still allowed.",
       "short_answer": "Organic is a production standard. It excludes prohibited pesticides and GMOs. Animals get organic feed, with no routine antibiotics or added hormones. Approved sprays are allowed. An organic cookie is a cookie.",
       "detail": "The National Organic Program defines organic as a set of permitted and prohibited INPUTS and practices, verified by certification. That is a real, enforced standard and worth something. What it is not is a nutrition claim: the seal is silent on whether the food is nutrient-dense or minimally processed, and ultra-processed foods can carry it in full compliance. Reading it as a shorthand for “good food” is the most common way it gets misused. Organic tells you how something was grown or raised, and you still have to look at what the thing actually is. Certified organic bars every pesticide on the prohibited list. A short list of approved sprays is permitted, and it makes no claim at all about nutrient density, how well an animal was raised beyond the baseline, or how processed the food is. Organic is a floor, not the finish line, and hydroponic crops can carry the seal too. Organic rules prohibit ionizing radiation. On non-organic foods, the Radura symbol and “treated with irradiation” identify this process.",
@@ -2994,7 +2994,7 @@
       "question": "Which chicken should I buy?",
       "decision": "Chicken that lived outside.",
       "why": "A logo means someone checked how the bird lived. ‘Natural’ and ‘hormone-free’ mean nobody had to.",
-      "short_answer": "Look for “Pasture-Raised” with a Certified Humane or Animal Welfare Approved logo. USDA Organic covers the feed and outdoor space. Both together is best. Pick the pack with the least added water.",
+      "short_answer": "Look for “Pasture-Raised” with a Certified Humane or Animal Welfare Approved logo. USDA Organic covers the feed and outdoor space, a bonus on top. Pick the pack with the least added water.",
       "detail": "Certified Humane Pasture-Raised birds go outdoors every day for at least 6 hours, 12 months a year (6 on seasonal farms), and spend more than half their lives on pasture with living plants. Animal Welfare Approved requires continuous daytime ranging from four weeks old. USDA Organic sets an organic feed ration that includes pasture and forage, outdoor space for the birds, and no antibiotics in the feed.",
       "evidence_tier": "kristys_standard",
       "sources": [
@@ -3036,8 +3036,7 @@
       "cart_pick": "Chicken with a Certified Humane logo",
       "buying_tips": [
         "Look for Certified Humane Pasture-Raised or Animal Welfare Approved on the pack.",
-        "Look for USDA Organic too: organic feed with pasture and forage, no antibiotics in feed.",
-        "Both on one pack is best.",
+        "Read USDA Organic as a bonus on top: organic feed with pasture and forage, no antibiotics in feed.",
         "Packs can carry added water or broth, up to 15% of the weight. Choose the least; air-chilled chicken holds the least."
       ],
       "labels_decoded": [
@@ -3093,7 +3092,7 @@
       ],
       "pick_steps": [
         "Look for Certified Humane Pasture-Raised or Animal Welfare Approved on the pack.",
-        "Look for USDA Organic: certified organic feed and outdoor access.",
+        "Read USDA Organic as a bonus: certified organic feed and outdoor access.",
         "Read the ingredients for chicken alone, nothing added."
       ],
       "science": "Farms that carry a welfare seal are inspected against a written standard for how the birds live. The organic seal adds a feed rule: an organic ration that includes pasture and forage.",
@@ -5262,7 +5261,7 @@
       "pick_steps": [
         "Take it from the refrigerated case; shelf-stable kefir’s cultures are no longer live.",
         "Read the label for live and active cultures named on the bottle.",
-        "Look for USDA Organic: certified organic feed and outdoor access."
+        "Read for an AGA Grassfed seal: the cows ate grass and hay, never grain."
       ],
       "science": "Raw kefir is a live ferment, so it has to be sold cold. Made from raw milk, it is the same sourcing question: a named farm, a small herd, a cold chain. Flavoring and sugar change commercial bottles; in plain, the ferment is what you taste. The yeast may make a trace of alcohol, and a live bottle keeps it. Raw dairy is not for every household.",
       "labels_decoded": [
@@ -5611,7 +5610,7 @@
       ],
       "category": "produce",
       "question": "How do I pick fresh broccoli, cauliflower, or cabbage?",
-      "decision": "Tight organic broccoli, cabbage and cauliflower, heavy for their size.",
+      "decision": "Tight broccoli, cabbage and cauliflower, heavy for their size.",
       "why": "Tight, dark green broccoli florets are fresh. Enlarged, open or yellowish-green ones are past fresh.",
       "short_answer": "Broccoli: dark green florets, closed, not yellowish or wilted, on stems that are not thick and tough. Cauliflower: no bruises or damage. Cabbage: strip wilted or insect-damaged outer leaves. A soft or slippery head stays on the shelf.",
       "detail": "Top tier is in season with a Real Organic, Certified Naturally Grown, Demeter or Regenerative Organic Certified seal, then USDA Organic as the floor; read the sign or sticker at the bin for the growing method. Broccoli is the short keeper of the three: refrigerate it in a plastic bag with holes and use it within three days. Cabbage goes the other way, staying fresh for several weeks in a plastic bag or wrap in the refrigerator at 41°F or below; before using, cut out the core and rinse the leaves under cool running water. Cauliflower gets kept away from raw meat and meat juices.",
@@ -5637,7 +5636,7 @@
       "buying_tips": [
         "Look for Real Organic Project on the sign: grown in soil, never hydroponic.",
         "Pick broccoli with dark green florets closed tight, on stems that are not thick and tough.",
-        "No Real Organic or Certified Naturally Grown logo: plain organic broccoli, cauliflower and cabbage.",
+        "No Real Organic or Certified Naturally Grown logo: plain organic broccoli and cauliflower.",
         "Cauliflower: a head with no bruises or damage.",
         "Cabbage: outer leaves fresh, not wilted or chewed by insects. Pull off any that are.",
         "Broccoli keeps in the fridge in a bag with holes. Use it within three days.",
@@ -5651,13 +5650,13 @@
         "Keep cauliflower away from raw meat and meat juices."
       ],
       "pick_steps": [
-        "Look for Real Organic or Certified Naturally Grown, then USDA Organic.",
+        "On broccoli and cauliflower: Real Organic or Certified Naturally Grown, then organic.",
         "Press each head; leave any soft, slippery, bruised or damaged one.",
         "Pick broccoli with dark green, tight florets on stems not thick or tough."
       ],
       "science": "Opened or yellowish-green florets mean broccoli past fresh; a soft, slippery head is already spoiling. Broccoli keeps three days, refrigerated in a bag with holes. Cabbage keeps several weeks wrapped in the refrigerator at 41°F or below. Remove its core and rinse the leaves before using. Keep cauliflower away from raw meat and meat juices.",
       "labels_decoded": [],
-      "tier_note": "Florets and leaves are eaten whole with no peel, so the grower comes first.",
+      "tier_note": "Florets are eaten whole with no peel, so the grower comes first; cabbage sheds its outer leaves.",
       "eyebrow_short": "Broccoli and cabbage",
       "asked_as": [
         "is this broccoli still good",
@@ -5752,8 +5751,7 @@
       "buying_tips": [
         "Pick onions firm for their size, with a neck completely dry to the touch, not slippery.",
         "Check garlic for a dried neck, dry outer skins and cloves firm to the touch.",
-        "No organic bulbs: pick the firmest, driest ones; the papery skin comes off.",
-        "Look for Real Organic or Certified Naturally Grown on the sign or sticker, then USDA Organic.",
+        "Organic is a bonus here: the papery skin comes off, so firm and dry comes first.",
         "Pick onions with little to no scent. Some loose skins are normal.",
         "Store whole onions cool, dry and dark, with air moving. Never in plastic.",
         "Keep cut onions in a sealed container for up to seven days.",
@@ -5771,7 +5769,7 @@
       ],
       "science": "A sound bulb has a dry neck and dry outer skins, and some loose onion skin is normal. Whole onions keep cool, dry and dark with air moving, never in plastic. Keep them apart from potatoes and anything else that releases moisture. A cut onion goes in a sealed container for up to seven days.",
       "labels_decoded": [],
-      "tier_note": "In-season onions and garlic with a Real Organic, Certified Naturally Grown or Demeter seal come first, then organic.",
+      "tier_note": "Onions and garlic are peeled, so a firm, dry bulb counts for more than a seal.",
       "eyebrow_short": "Onions and garlic",
       "asked_as": [
         "how do i store garlic",
@@ -7277,7 +7275,7 @@
       "question": "How do you choose breakfast cereal or granola?",
       "decision": "Plain oats soaked and cooked, or soaked or sprouted granola.",
       "why": "Cold cereal is made by extrusion, high heat and pressure. Soaked, cooked porridge is the traditional breakfast grain.",
-      "short_answer": "Boxed cold cereal is extruded: a grain slurry forced through a small hole at high heat and pressure. Organic boxes are made the same way. Soaked, cooked porridge is the top rung; organic soaked granola is the boxed fallback.",
+      "short_answer": "Boxed cold cereal is extruded: a grain slurry forced through a small hole at high heat and pressure. Organic boxes are made the same way. Soaked, cooked porridge is the top rung; soaked or sprouted granola is the boxed pick.",
       "detail": "Modern cold breakfast cereals are made by extrusion. Grains are mixed with water into a slurry and forced out of a small hole under very high temperature and pressure; the shape of the die makes the flake, the O or the puff. Health food store cereals are usually made the same way, often with organic grains. The traditional breakfast grain is a porridge: whole grains soaked overnight and cooked, served with butter and cream. Unsoaked granola sits with extruded cereal on the low rung, and organic soaked granola is the boxed option. For oat cereal, certified organic skips glyphosate sprayed before harvest.",
       "evidence_tier": "kristys_standard",
       "sources": [
@@ -7294,7 +7292,7 @@
           "url": "https://foodprint.org/blog/glyphosate-residue-in-food/"
         }
       ],
-      "kristy_take": "A pot of soaked oats with butter and cream does the job the box claims to. If it has to be boxed, organic soaked granola.",
+      "kristy_take": "A pot of soaked oats with butter and cream does the job the box claims to. If it has to be boxed, soaked or sprouted granola.",
       "cart_pick": "Rolled oats to soak",
       "buying_tips": [
         "Look for plain rolled oats to soak overnight and cook in the morning.",
@@ -7313,7 +7311,7 @@
       ],
       "pick_steps": [
         "Pick oats to soak and cook over a boxed cereal.",
-        "Boxed, look for organic soaked or sprouted granola.",
+        "Boxed, look for soaked or sprouted granola.",
         "Read for sugar under other names, honey and syrups included."
       ],
       "science": "Cold breakfast cereals are made by extrusion: a grain slurry forced through a small die at high temperature and pressure. Health food store cereals usually use the same process with organic grains. Soaking whole grains overnight and cooking them is the traditional preparation. Honey and syrups in granola are still added sugar.",
@@ -7486,7 +7484,7 @@
       "question": "What should you check when buying coffee beans?",
       "decision": "Whole beans, Bird Friendly, single origin, roasted-on date, mold-testing roaster.",
       "why": "Coffee beans can carry mold from hot, humid growing and storage. A roaster that tests for it says so.",
-      "short_answer": "Coffee is an occasional item. Pick organic whole beans in a sealed bag, and read the roast date first. Ground coffee loses flavor faster than whole beans, and open bins expose beans to air and light.",
+      "short_answer": "Coffee is an occasional item. Pick Bird Friendly whole beans in a sealed bag, and read the roast date first. Ground coffee loses flavor faster than whole beans, and open bins expose beans to air and light.",
       "detail": "Traditional food guides keep coffee off the staple list. When it is bought, coffee beans have been found to carry mycotoxins, likely from the hot, humid conditions they are grown, stored and processed in, and some roasters verify their beans by testing. Whole bean keeps longer than ground. Coffee studies document changes in aroma and chemical composition during storage, including oxidation tied to oxygen exposure, so a sealed bag kept closed and away from heat holds it best.",
       "evidence_tier": "kristys_standard",
       "sources": [
@@ -7496,7 +7494,7 @@
         "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12607991/fullTextXML",
         "Mamavation, Decaffeinated Coffee & Methyl Chloride https://mamavation.com/food/decaffeinated-coffee-methyl-chloride.html"
       ],
-      "kristy_take": "An occasional cup. When you buy it, organic whole beans from a roaster that names its mold testing.",
+      "kristy_take": "An occasional cup. When you buy it, Bird Friendly whole beans from a roaster that names its mold testing.",
       "cart_pick": "Whole bean coffee, mold-tested",
       "buying_tips": [
         "Look for ‘whole bean’ and Bird Friendly on a sealed bag with a roasted-on date.",
@@ -10273,7 +10271,7 @@
       "pick_steps": [
         "For plain ghee, pick a jar listing butter alone.",
         "Skip jars listing natural flavors.",
-        "Look for the AGA 100% Grassfed logo or USDA Organic seal."
+        "Look for the AGA 100% Grassfed logo; USDA Organic is a bonus."
       ],
       "science": "Clarified butter is butter simmered until the water is gone and the fat separates from the milk solids. The solids are removed. Ghee simmers longer, which gives it a nutty, aromatic taste. Spices can be added for flavor. Its smoke point, the heat where the fat starts to break down, is 250 °C (482 °F).",
       "labels_decoded": [
@@ -10286,7 +10284,7 @@
           "meaning": "Clarified butter simmered longer, for a nutty taste."
         }
       ],
-      "tier_note": "Butter as the one ingredient is the whole-food reading of a ghee jar; certified organic feed and outdoor access; 100% grass-fed means the cows ate grass and hay, never grain.",
+      "tier_note": "Butter as the one ingredient is the whole-food reading of a ghee jar; 100% grass-fed means the cows ate grass and hay, never grain.",
       "asked_as": [
         "is ghee worth buying",
         "how do i pick a good ghee",
@@ -10338,8 +10336,7 @@
       ],
       "pick_steps": [
         "Read the ingredients for goat milk or sheep milk.",
-        "For sheep milk cheese, look for feta, pecorino romano, Roquefort or Manchego.",
-        "Look for USDA Organic: certified organic feed and outdoor access."
+        "For sheep milk cheese, look for feta, pecorino romano, Roquefort or Manchego."
       ],
       "science": "Goat milk averages about 3.5 percent butterfat, in small, well-emulsified globules. The cream stays suspended longer than in cow’s milk. Goat butter is white because goats convert yellow beta-carotene to a colorless form of vitamin A. Goat milk contains lactose, less than cow’s milk, with different forms of proteins. With lactose intolerance or a milk allergy, ask a doctor which milks fit.",
       "labels_decoded": [
@@ -11413,7 +11410,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick sugar?",
-      "decision": "Organic coconut or pure maple sugar, alone on the list.",
+      "decision": "Coconut sugar or pure maple sugar, alone on the list.",
       "why": "WAPF lists dehydrated sugar cane juice among best sweeteners and white sugar under avoid.",
       "short_answer": "Coconut sugar and maple sugar each come from one sap. Cane sugar and beet sugar are the same sugar. Brown sugar is sugar with molasses added. Turbinado is a raw cane sugar, paler than brown sugar.",
       "detail": "Sucrose is the name 21 CFR 184.1854 gives to sugar, cane sugar or beet sugar. It is crystallized from sugar cane or sugar beet juice, so cane and beet sugar are the same substance. Brown sugar is sugar with molasses added. Light brown carries approximately 3.5 percent molasses and dark brown approximately 6.5 percent. Raw sugar, also called turbinado, is a cane sugar with minimal refining, paler than brown sugar. Coconut sugar comes from the sap of coconut palm flowers and is made mostly of sucrose. A single-ingredient sugar must show a percent Daily Value for added sugars, without the words “Includes Xg Added Sugars.” A “†” symbol after that percent may lead to a footnote. Under Vermont’s maple rule, maple sugar takes all its sugar from pure maple sap, with nothing added.",
@@ -11758,7 +11755,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you pick chia, flax and hemp seeds?",
-      "decision": "Whole, raw organic chia or flax, one seed, sealed pack.",
+      "decision": "Whole, raw chia or flax, one seed, sealed pack.",
       "why": "WAPF rates fresh organic raw seeds in sealed packages as best.",
       "short_answer": "Flax is ground in a coffee grinder or bought already ground. Chia is used whole or ground, and it turns to gel when soaked. Traditional guides favor raw organic seeds from sealed packages, soaked and dried, and pass on hemp.",
       "detail": "Flaxseed contains fat, so it can turn rancid over time, and opened flax belongs in the refrigerator. Seeds stored at room temperature for long periods turn rancid, so long keeping means the refrigerator or freezer. Shelled hemp seeds, also called hulled, do not need grinding before eating, unlike flax. A salty sunflower seed gets its salt from a soak in salt water before drying.",
@@ -15679,9 +15676,9 @@
       ],
       "category": "poultry",
       "question": "How do you buy duck?",
-      "decision": "Organic pasture-raised whole duck, skin on, fed without soy.",
+      "decision": "Pasture-raised whole duck, skin on, fed without soy.",
       "why": "AWA covers duck standards and requires pasture or range living.",
-      "short_answer": "Choose a whole duck labeled pasture-raised or USDA Organic. Roasting a whole duck leaves extra fat to render and keep for cooking.",
+      "short_answer": "Choose a whole duck labeled pasture-raised, with an AWA logo; USDA Organic is a bonus. Roasting a whole duck leaves extra fat to render and keep for cooking.",
       "detail": "Traditional food guides list duck fat as a good cooking fat, ideally from ducks not fed soy, and name duck and goose fat as sources of vitamin K2. A roasted duck leaves extra fat in the pan that can be strained and kept for cooking. The same guides place pasture-fed poultry at the top.",
       "evidence_tier": "kristys_standard",
       "sources": [
@@ -15691,19 +15688,19 @@
         }
       ],
       "kristy_take": "A whole duck is two meals: the meat, and a jar of cooking fat.",
-      "cart_pick": "Organic pasture-raised whole duck",
+      "cart_pick": "Pasture-raised whole duck",
       "buying_tips": [
-        "Look for a plain raw whole duck with the skin intact and ‘USDA Organic’.",
+        "Look for a plain raw whole duck with the skin intact, labeled pasture-raised.",
         "Look for an Animal Welfare Approved (AWA) logo, from a group that checks the farm.",
         "Ask the counter whether the duck was pasture-raised and fed without soy.",
-        "Can’t find it: an organic whole duck without the AWA logo is next.",
+        "USDA Organic on the duck is a bonus, never in place of pasture.",
         "Roast it whole, then strain the fat into a jar and keep it in the fridge for cooking."
       ],
       "watch_out": [
         "Duck fat quality follows the feed; soy-fed ducks are the ones traditional guides pass over."
       ],
       "pick_steps": [
-        "Look for pasture-raised or USDA Organic on the duck.",
+        "Look for pasture-raised on the duck; USDA Organic is a bonus.",
         "Pick a whole duck with the skin intact.",
         "Save the rendered fat in a jar."
       ],
@@ -15714,7 +15711,7 @@
           "meaning": "Fat melted out of the duck during roasting, strained and kept for cooking."
         }
       ],
-      "tier_note": "Pasture-raised duck: time outdoors on pasture, audited only with a certifier’s seal; certified organic feed and outdoor access.",
+      "tier_note": "Pasture-raised duck: time outdoors on pasture, audited only with a certifier’s seal.",
       "asked_as": [
         "should i buy whole duck",
         "is duck fat healthy",
@@ -17559,8 +17556,8 @@
       "kind": "family",
       "title": "Kernels to pop at home",
       "category": "aisle_snacks",
-      "decision": "Plain organic popcorn kernels in a sealed bag, popped at home.",
-      "why": "Single-ingredient kernels leave the fat and seasoning choice to home preparation. Prefer a disclosed grower or origin, with sealed organic kernels as the fallback. Suitable oil-free methods and popping with coconut oil or ghee are options.",
+      "decision": "Popcorn kernels alone on the list, sealed bag, popped at home.",
+      "why": "Single-ingredient kernels leave the fat and seasoning choice to home preparation. Prefer a disclosed grower or origin; organic kernels are a bonus. Suitable oil-free methods and popping with coconut oil or ghee are options.",
       "buying_tips": [
         "Read the list: popcorn, nothing else.",
         "Look for ‘organic’ on a sealed bag of kernels.",
