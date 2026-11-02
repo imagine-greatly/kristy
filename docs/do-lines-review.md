@@ -62,7 +62,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `label_natural` | label_terms | A defined label claim and the ingredient list over ‘natural’. | Look for a defined word instead: organic, grass-finished, or pasture-raised. | — |
 | `label_made_with_real` | label_terms | The ‘real’ ingredient listed before added sugar and refined flour. | Count how far down it sits. Past third is a trace. | — |
 | `label_no_added_hormones` | label_terms | On beef and dairy, a third-party verified ‘no added hormones’. | Look for a third-party verifier on the beef and dairy claim. | — |
-| `label_nonGMO_vs_organic` | label_terms | USDA Organic, which already includes non-GMO. | Buy the USDA Organic seal alone — paying for both is paying twice. | — |
+| `label_nonGMO_vs_organic` | label_terms | USDA Organic, which already includes non-GMO. | Buy one label per pack; the first already covers the second. | — |
 | `label_cage_free` | label_terms | Pasture-raised eggs with printed soy-free or corn-free feed. | Skip cartons claiming cage-free without a seal for outdoor access. | — |
 | `label_grass_fed_term` | label_terms | ‘100% grass-fed’ beef, ideally third-party certified. | Look for “100%” or “grass-finished” printed on the package. | — |
 | `label_pasture_raised_feed` | label_terms | Pasture-raised eggs with soy-free or corn-free feed printed outright. | Check the carton for Animal Welfare Approved beside the feed claim. | — |
@@ -220,7 +220,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `dark_chocolate` | bulk_pantry | An occasional bar, short list, lower cocoa percentage. | Read the cocoa percentage, then count the ingredients on the back. | — |
 | `molasses_whole_cane_sweeteners` | bulk_pantry | Organic molasses or dried whole cane juice over white sugar. | Read the list for one ingredient: molasses or dehydrated cane juice. | — |
 | `baking_powder` | bulk_pantry | Aluminum-free baking powder. | Read the tin for an explicit no-aluminum claim. | — |
-| `cornmeal_polenta_grits` | bulk_pantry | Organic whole grain corn, lime-treated when offered, soaked first. | Find the USDA seal; skip degerminated on the grain bag. | — |
+| `cornmeal_polenta_grits` | bulk_pantry | Organic whole grain corn, lime-treated when offered, soaked first. | Read the grain bag; skip anything marked degerminated. | — |
 | `rice_cakes_puffed_grains` | bulk_pantry | Skip puffed grains; whole grain crackers or soaked grains instead. | Skip flavor-coated grains or packs listing natural flavor or syrup. | — |
 | `wild_rice` | bulk_pantry | Wildcrafted wild rice, soaked seven hours before cooking. | Read for wild rice alone, without white rice blended in. | — |
 | `split_peas` | bulk_pantry | Organic dried split peas or lentils, soaked before cooking. | Grab a sealed bag of dried peas or lentils and soak them overnight. | — |
@@ -235,7 +235,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `produce_tropical_fruit` | produce | Whole tropical fruit, ripened on the counter at home. | Pick whole fruit with no bruises, then ripen on the counter. | — |
 | `produce_potatoes` | produce | Organic potatoes first; sweet potatoes carry far less residue. | Read the bag or sign for the growing method before bagging. | — |
 | `deli_liverwurst_pate` | meat | Pasture-raised liver, made with its own animal fat. | Read the ingredients: liver first, animal fat, no binders or extenders. | — |
-| `poultry_duck` | meat | Pasture-raised duck, ideally not fed soy; keep the fat. | Pick a whole bird with skin on and an AWA seal. | — |
+| `poultry_duck` | meat | Pasture-raised duck, ideally not fed soy; keep the fat. | Pick a whole bird with skin on and an AWA logo. | — |
 | `seafood_fish_roe` | seafood | Salt-only roe, fresh or frozen; skip dyed lumpfish. | Read the jar for salmon roe and salt alone. | — |
 | `seafood_fresh_sardines_mackerel` | seafood | Fresh sardines or Atlantic mackerel; skip king mackerel. | Check these fish for bright stripes or shiny skin. | — |
 | `seafood_trout` | seafood | Wild trout first; US farmed rainbow trout next. | Ask the counter whether the trout is wild, or farmed in the US. | — |

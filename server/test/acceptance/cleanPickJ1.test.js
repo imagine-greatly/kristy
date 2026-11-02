@@ -166,7 +166,7 @@ const BECAME = {
   },
   "pick_egg_whites": {
     // Item-copy flags pass 2026-10-28: corn-free and "by law" restored from fdd5301~1.
-    "decision": "Soy-free, corn-free pastured-hen whites, then certified organic feed and outdoor access; pasteurized by law.",
+    "decision": "Pastured-hen whites with soy-free, corn-free feed; pasteurized by law.",
     "sources": [
       {
         "name": "USDA FSIS: Egg Products and Food Safety",

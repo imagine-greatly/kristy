@@ -2267,7 +2267,7 @@
       ],
       "kristy_take": "Organic covers growing practices as well as GMOs. Read the ingredient list alongside the seal.",
       "buying_tips": [
-        "Look for the USDA Organic seal first; a Real Organic logo goes further.",
+        "Look for USDA Organic first; a Real Organic logo goes further.",
         "Can’t find organic: Non-GMO Project Verified. Next, an unlabeled package, with any bioengineered notice read.",
         "Read near the ingredients for “bioengineered” or “Contains Bioengineered Food Ingredients”, not “GMO”.",
         "A phone number or QR code may lead to the disclosure, which does not name the ingredient.",
@@ -6774,7 +6774,7 @@
         "bratwurst",
         "bratwursts"
       ],
-      "decision": "Organic sausage: certified organic feed and outdoor access, plus a welfare logo.",
+      "decision": "Sausage from pastured pigs, with a welfare logo like Animal Welfare Approved.",
       "sources": [
         {
           "name": "A Greener World",
@@ -7298,7 +7298,7 @@
       "cart_pick": "Rolled oats to soak",
       "buying_tips": [
         "Look for plain rolled oats to soak overnight and cook in the morning.",
-        "Read the box for ‘soaked’ or ‘sprouted’ grain and the USDA Organic seal.",
+        "Read the box for ‘soaked’ or ‘sprouted’ grain and ‘USDA Organic’.",
         "No time for oats: pick organic granola that says the grain was soaked or sprouted.",
         "Read for sugar under other names: dextrose, corn syrup, evaporated cane juice.",
         "Skip ‘made with whole grains’ or ‘multigrain’; it can still be mostly refined grain.",
@@ -8110,7 +8110,7 @@
         "carton egg whites",
         "liquid egg whites"
       ],
-      "decision": "Soy-free, corn-free pastured-hen whites, then certified organic feed and outdoor access; pasteurized by law.",
+      "decision": "Pastured-hen whites with soy-free, corn-free feed; pasteurized by law.",
       "sources": [
         {
           "name": "USDA FSIS: Egg Products and Food Safety",
@@ -11427,7 +11427,7 @@
       "kristy_take": "Coconut or maple sugar comes from one sap. For plain sugar, cane or beet makes the same sugar, and organic leads.",
       "cart_pick": "Coconut sugar or pure maple sugar",
       "buying_tips": [
-        "Read the list: coconut sugar or maple sugar alone, nothing added, with an organic seal.",
+        "Read the list: coconut sugar or maple sugar alone, nothing added, with ‘organic’.",
         "Look for ‘pure maple sugar’; a maple-flavored product is not maple sugar.",
         "Can’t find either: organic cane sugar, listed as dehydrated cane juice.",
         "Plain ‘sugar’ names no crop. Pick organic, which must come from non-GMO plants; Non-GMO Project Verified is next.",
@@ -12095,7 +12095,7 @@
       "kristy_take": "The list should read tea. Decaffeinated is the word that changes the caffeine.",
       "cart_pick": "Tea with only tea leaf on the list",
       "buying_tips": [
-        "Look for loose leaf with no ‘natural flavors’ on the list, and an organic seal.",
+        "Look for loose leaf with no ‘natural flavors’ on the list, and ‘organic’.",
         "Read herbal blends for each plant by name.",
         "Can’t find loose leaf: organic whole-leaf bags with no natural flavors.",
         "Read the box for ‘decaffeinated’ when caffeine matters.",
@@ -13132,7 +13132,7 @@
       "cart_pick": "Masa tortilla chips: olive oil",
       "buying_tips": [
         "Read the list for masa or “corn treated with lime”, then one named fat and salt.",
-        "Look for the USDA Organic seal on the bag.",
+        "Look for ‘USDA Organic’ on the bag.",
         "No organic: a Non-GMO Project Verified logo is the close second. Most US corn is bioengineered.",
         "Pick chips fried in lard, tallow (beef fat), coconut oil or olive oil.",
         "Skip seed oils: sunflower, safflower, canola, soybean, corn and cottonseed.",
@@ -13208,7 +13208,7 @@
       "cart_pick": "Sliced potato chips: olive oil",
       "buying_tips": [
         "Read the list: potatoes first, then one fat and salt.",
-        "Look for the USDA Organic seal and chips in uneven sizes with folds: real slices.",
+        "Look for ‘USDA Organic’ and chips in uneven sizes with folds: real slices.",
         "Can’t find it: plain salted organic chips with the shortest list.",
         "Pick chips fried in lard, tallow (beef fat), coconut oil or olive oil.",
         "Skip seed oils: sunflower, safflower, canola, soybean, corn and cottonseed.",
@@ -13279,7 +13279,7 @@
       "cart_pick": "Plain popcorn kernels",
       "buying_tips": [
         "Look for a sealed bag of kernels with popcorn as the only ingredient.",
-        "Look for the USDA Organic seal on the bag.",
+        "Look for ‘USDA Organic’ on the bag.",
         "Can’t find it: a ready-popped bag that names its oil and lists no seed oil.",
         "Pop in coconut oil, butter, ghee or lard, then salt. Plain kernels need no oil at all.",
         "Skip seed oils on any popped bag: sunflower, safflower, canola, soybean, corn and cottonseed."
@@ -13589,7 +13589,7 @@
       "cart_pick": "Hummus: chickpeas and tahini",
       "buying_tips": [
         "Read the list: chickpeas and tahini (sesame paste) first, then lemon and garlic.",
-        "Look for the USDA Organic seal and extra virgin olive oil as the only oil, or no oil.",
+        "Look for ‘USDA Organic’ and extra virgin olive oil as the only oil, or no oil.",
         "No organic: the tub with chickpeas and tahini first, olive oil only and no gums.",
         "Skip gums like guar gum; without them, water and grind set the texture.",
         "Skip sunflower, safflower, canola, soybean, corn, cottonseed and avocado oil.",
@@ -13986,7 +13986,7 @@
       "cart_pick": "Plain frozen meat, fish or vegetables",
       "buying_tips": [
         "Read the list: meat and vegetables first, bone broth in the sauce, no MSG.",
-        "Look for “pasture-raised” and the USDA Organic seal on the box.",
+        "Look for “pasture-raised” and ‘USDA Organic’ on the box.",
         "Can’t find it: plain frozen meat, fish or vegetables with no sauce.",
         "Read the name: a stew holds at least 25 percent meat, a poultry dinner at least 18.",
         "Pick frozen fruit and vegetables without ascorbic or citric acid on the list.",
@@ -14303,7 +14303,7 @@
       "cart_pick": "Packages frozen solid, picked up last",
       "buying_tips": [
         "Read the list: the fruit or vegetable alone, no sauce, ascorbic acid or citric acid.",
-        "Look for the USDA Organic seal and a bag that feels loose, not one solid block.",
+        "Look for ‘USDA Organic’ and a bag that feels loose, not one solid block.",
         "No organic: a plain bag listing only the food.",
         "Pick frozen food up just before checkout, frozen solid, and get it home to the freezer fast.",
         "Check the case: food at 0°F or below keeps color, flavor and texture. Soft ice cream means it runs warm.",
@@ -14349,7 +14349,7 @@
         "sweetener packet",
         "sweetener packets"
       ],
-      "decision": "Look for organic pure maple syrup, any Grade A color, in place of artificial sweetener.",
+      "decision": "Look for pure maple syrup, any Grade A color, in place of artificial sweetener.",
       "sources": [
         "https://www.law.cornell.edu/cfr/text/21/168.140",
         "https://extension.unh.edu/blog/2022/03/making-grade-color-flavor-maple-syrup",
@@ -14468,7 +14468,7 @@
         "fruit snack",
         "fruit snacks"
       ],
-      "decision": "Look for organic dried fruit with only the fruit on the list.",
+      "decision": "Look for dried fruit with only the fruit on the list.",
       "sources": [
         "https://www.law.cornell.edu/cfr/text/21/101.100",
         "https://farrp.unl.edu/farrp-resources/regulatory/sulfites-usa/",
@@ -14915,7 +14915,7 @@
       "cart_pick": "Dried split peas or lentils",
       "buying_tips": [
         "Read the list: the peas or lentils alone, no seasoning packet.",
-        "Look for the USDA Organic seal on a sealed bag.",
+        "Look for ‘USDA Organic’ on a sealed bag.",
         "Can’t find it: plain canned beans or lentils are next.",
         "Skip legumes from China and non-organic bulk bins.",
         "Soak about seven hours in warm water with a splash of something sour, then cook long.",
@@ -14971,7 +14971,7 @@
       "cart_pick": "Unsweetened applesauce, apples only",
       "buying_tips": [
         "Read the list: apples, and nothing else.",
-        "Look for the USDA Organic seal. Apples rank on the yearly pesticide residue list.",
+        "Look for ‘USDA Organic’. Apples rank on the yearly pesticide residue list.",
         "Can’t find it: organic applesauce with cinnamon as the only extra.",
         "Skip corn syrup, sugar and juice concentrate.",
         "Fresh organic apples cooked at home come closest to the fruit."
@@ -15693,7 +15693,7 @@
       "kristy_take": "A whole duck is two meals: the meat, and a jar of cooking fat.",
       "cart_pick": "Organic pasture-raised whole duck",
       "buying_tips": [
-        "Look for a plain raw whole duck with the skin intact and the USDA Organic seal.",
+        "Look for a plain raw whole duck with the skin intact and ‘USDA Organic’.",
         "Look for an Animal Welfare Approved (AWA) logo, from a group that checks the farm.",
         "Ask the counter whether the duck was pasture-raised and fed without soy.",
         "Can’t find it: an organic whole duck without the AWA logo is next.",
@@ -16183,7 +16183,7 @@
       "kind": "aisle",
       "title": "Meat & eggs",
       "category": "aisle_meat_eggs",
-      "decision": "Beef and lamb: grass-fed its whole life. Chicken, pork and eggs: organic and pasture-raised.",
+      "decision": "Beef and lamb: grass-fed its whole life. Chicken, pork and eggs: pasture-raised.",
       "buying_tips": [
         "Look for ‘100% grass-fed’ on beef and lamb. Plain ‘grass-fed’ can still mean grain at the end.",
         "A logo from a group that checks, like AGA Grassfed, is the sure sign.",
@@ -16197,9 +16197,9 @@
       "kind": "aisle",
       "title": "Deli & prepared foods",
       "category": "aisle_deli_prepared",
-      "decision": "Organic, with a short list led by the real food.",
+      "decision": "Deli meat and meals with a short list led by the real food.",
       "buying_tips": [
-        "Look for USDA Organic on packaged deli meat and meals.",
+        "Read the list: the real food first, few ingredients after.",
         "Read the first ingredient: the meat or main food should come first.",
         "Read the whole list, sauces included: salt, a little sugar and natural smoke, nothing more.",
         "Can’t find organic? Pick the shortest list in the case."
@@ -16213,7 +16213,7 @@
       "decision": "Grass-fed whole milk that is not ultra-pasteurized.",
       "why": "Whole milk, feeding and heat process are separate checks. The traditional raw-first preference is conditional on the raw-milk household-suitability review; farm testing does not guarantee every bottle. Low-temperature pasteurized whole milk is the practical fallback, preferably non-homogenized. These are sourcing and process preferences, not demonstrated health rankings.",
       "buying_tips": [
-        "Look for an AGA 100% Grassfed logo on the carton, then USDA Organic.",
+        "Look for an AGA 100% Grassfed logo on the carton.",
         "Read the carton and skip ‘ultra-pasteurized’; that milk is heated hotter.",
         "Pick ‘non-homogenized’ or ‘cream-top’ when the case has it.",
         "Pick plain whole milk; skip lowfat, skim and flavored."
@@ -16382,7 +16382,7 @@
       "kind": "family",
       "title": "Plain plant drinks",
       "category": "aisle_dairy_alt",
-      "decision": "Organic, unsweetened plant milk made of the nut, oat or bean and water.",
+      "decision": "Unsweetened plant milk made of the nut, oat or bean and water.",
       "why": "This is a shared formula screen for the chosen oat, almond or soy drink. It does not rank the plants equally or establish nutritional equivalence to dairy. Cooking, pasteurization, sugar formation and storage remain product-specific; an uncooked ladder would not fit soy drinks.",
       "buying_tips": [
         "Read the list: the nut, oat or bean and water, little else.",
@@ -16410,13 +16410,13 @@
       "kind": "family",
       "title": "Whole coconut cooking milk",
       "category": "aisle_pantry_bulk",
-      "decision": "Organic full-fat coconut milk with only coconut and water.",
+      "decision": "Full-fat coconut milk with only coconut and water.",
       "why": "Fresh coconut extraction is the preferred home-preparation route, not an assumed local retail option. Whole canned coconut milk is the practical fallback for both member cards. Water belongs in extraction, and coconut concentration affects recipe substitution. Packaging alone does not establish ingredients or a health ranking.",
       "buying_tips": [
         "Read the list: coconut and water only, no guar gum or thickeners.",
         "Skip cans marked ‘light’ or ‘low-fat’; they are watered down.",
         "Look for ‘BPA-free lining’ on the can, or pick a carton instead.",
-        "Look for the USDA Organic seal on the can or carton."
+        "Look for ‘USDA Organic’ on the can or carton."
       ],
       "sources": [
         {
@@ -16477,7 +16477,7 @@
       "decision": "Organic fermented foods labeled ‘raw’ or ‘unpasteurized’, from the cold case.",
       "why": "Cold sale alone does not establish fermentation or the absence of later heating. Raw finished-product wording does not mean every starting ingredient was uncooked. Vegetable, tea and milk ferments need different ingredient, alcohol and raw-milk checks; no shared vinegar, sugar or raw-milk rule fits them all.",
       "buying_tips": [
-        "Look for an organic seal plus ‘raw’ or ‘unpasteurized’ on the jar or bottle.",
+        "Look for ‘raw’ or ‘unpasteurized’, plus ‘organic’, on the jar or bottle.",
         "Check for ‘keep refrigerated’; a cold shelf alone does not mean it is live.",
         "Pick a short list: the vegetables or tea, salt and cultures.",
         "Check the date and that the seal is unbroken."
@@ -16530,9 +16530,9 @@
       "kind": "aisle",
       "title": "Dairy & alternatives",
       "category": "aisle_dairy_alt",
-      "decision": "Organic or grass-fed, plain and whole, with the shortest list.",
+      "decision": "Grass-fed, plain and whole, with the shortest list.",
       "buying_tips": [
-        "Look for USDA Organic or an AGA 100% Grassfed logo on milk, yogurt, cheese and butter.",
+        "Look for an AGA 100% Grassfed logo on milk, yogurt, cheese and butter.",
         "Read the list and pick the shortest one, with nothing added.",
         "Check milk and cream and skip ‘ultra-pasteurized’.",
         "Ask staff whether the store sells raw milk, where state law allows it.",
@@ -16561,11 +16561,11 @@
       "kind": "aisle",
       "title": "Frozen",
       "category": "aisle_frozen",
-      "decision": "Organic frozen fruit and vegetables with nothing else in the bag.",
+      "decision": "Frozen fruit and vegetables with nothing else in the bag.",
       "buying_tips": [
         "Read the list: just the fruit or vegetable, no sauce, syrup or sugar.",
         "Check the bag feels loose, not one solid block, and pick from the back of the case.",
-        "Look for the USDA Organic seal on the front.",
+        "Look for ‘USDA Organic’ on the front.",
         "Read the list on fries, waffles, pizza and meals before trusting the front.",
         "Can’t find organic? Pick the bag with the fruit or vegetable alone on the list."
       ]
@@ -16575,7 +16575,7 @@
       "kind": "family",
       "title": "Grains for soaking, sprouting or cooking",
       "category": "aisle_pantry_bulk",
-      "decision": "Plain organic whole grain, one grain on the list, sprouted when sold.",
+      "decision": "Plain whole grain, one grain on the list, sprouted when sold.",
       "why": "Whole-grain identity, sprouting and cooking format are separate checks. Sprouting includes germination; soaking alone does not establish it. Prefer disclosed local or regional crops where available, with preparation suited to the grain.",
       "buying_tips": [
         "Read the list: the grain alone, with ‘sprouted’ on the bag when sold.",
@@ -16627,7 +16627,7 @@
       "kind": "family",
       "title": "Dried pulses and plain cooked alternatives",
       "category": "aisle_pantry_bulk",
-      "decision": "Organic dried beans, peas and lentils, plain, in a sealed bag.",
+      "decision": "Dried beans, peas and lentils, plain, in a sealed bag.",
       "why": "Whole beans and deliberately split peas or lentils need different appearance checks. Crop, form and preparation information make a dried pack easier to choose. Plain cooked pulses are a convenience option, without an implied nutritional ranking.",
       "buying_tips": [
         "Read the list: the bean alone, no seasoning packet.",
@@ -16659,7 +16659,7 @@
       "kind": "family",
       "title": "Nuts, seeds and simple mixtures",
       "category": "aisle_pantry_bulk",
-      "decision": "Organic raw or dry-roasted nuts and seeds, nothing added but salt.",
+      "decision": "Raw or dry-roasted nuts and seeds, nothing added but salt.",
       "why": "Raw and oil-free dry-roasted forms can both qualify. Soaking followed by complete drying is a traditional option for suitable nuts and seeds, not a universal requirement. Read dried-fruit subingredients and the full formula of mixtures and butters.",
       "buying_tips": [
         "Read the list: the nut or seed, with salt at most.",
@@ -16703,10 +16703,10 @@
       "kind": "family",
       "title": "Flour identity and preparation",
       "category": "aisle_pantry_bulk",
-      "decision": "Organic sprouted or whole-grain flour, the freshest bag on the shelf.",
+      "decision": "Sprouted or whole-grain flour, the freshest bag on the shelf.",
       "why": "Whole-grain wording applies to grain flour, while nut and root flours need their own ingredient checks. Fresh milling and sprouting describe different processes. A disclosed mill and process help distinguish a single flour from a formulated baking blend.",
       "buying_tips": [
-        "Look for ‘whole’ or ‘sprouted’ in the flour name and the USDA Organic seal.",
+        "Look for ‘whole’ or ‘sprouted’ in the flour name.",
         "Pick sprouted first, then whole-grain, in the smallest bag you will use.",
         "Check the milled or best-by date and pick the newest.",
         "Skip flour labeled ‘bleached’ or ‘enriched’, and soy flour."
@@ -16743,7 +16743,7 @@
       "kind": "family",
       "title": "Whole-grain loaves, rolls and baked snacks",
       "category": "aisle_bread_bakery",
-      "decision": "Organic whole-grain bread that is sourdough or sprouted, no added gluten or soy.",
+      "decision": "Whole-grain bread that is sourdough or sprouted, no added gluten or soy.",
       "why": "Whole-grain ingredients and dough preparation need separate checks. Genuine fermentation or sprouting is the preferred route; ordinary whole-grain baking remains a fallback for these members. Fat, sweetener and enrichment requirements depend on the item.",
       "buying_tips": [
         "Read every flour for ‘whole’; ‘wheat flour’ and ‘enriched flour’ are white flour.",
@@ -16799,12 +16799,12 @@
       "kind": "family",
       "title": "Starter-fermented whole-grain sourdough",
       "category": "aisle_bread_bakery",
-      "decision": "Organic whole-grain sourdough of flour, water, salt and starter, no added yeast.",
+      "decision": "Whole-grain sourdough of flour, water, salt and starter, no added yeast.",
       "why": "The adopted craft standard uses a live starter to ferment the dough. Added acid or sour flavor alone does not establish that process. This is a craft preference, not a universal legal definition of sourdough.",
       "buying_tips": [
         "Read the list: flour, water, salt and a starter or culture, little else.",
         "Skip sourdough that lists yeast or other rising agents.",
-        "Look for whole-grain flour first on the list and the USDA Organic seal.",
+        "Look for whole-grain flour first on the list.",
         "Ask the store bakery whether the loaf rises on starter alone."
       ],
       "sources": [
@@ -16855,11 +16855,11 @@
       "kind": "family",
       "title": "Sprouted whole-grain bread",
       "category": "aisle_bread_bakery",
-      "decision": "Organic sprouted whole-grain bread with sprouted grains listed first.",
+      "decision": "Sprouted whole-grain bread with sprouted grains listed first.",
       "why": "Whole sprouted flour can qualify alongside sprouted kernels. A whole-grain starter may include unsprouted flour without erasing the sprouted ingredients. Chilled and frozen formats can both qualify when the ingredients and process are disclosed.",
       "buying_tips": [
         "Read the first ingredients: sprouted whole grains, not wheat flour.",
-        "Look for ‘sprouted whole’ on the bag and the USDA Organic seal.",
+        "Look for ‘sprouted whole’ on the bag.",
         "Pick a loaf that also lists a sourdough starter when the shelf has one.",
         "Skip loaves that list added gluten, soy or bran."
       ],
@@ -16911,11 +16911,11 @@
       "kind": "family",
       "title": "Dry pasta and flour identity",
       "category": "aisle_pantry_bulk",
-      "decision": "Organic pasta made from whole grain, buckwheat, brown rice or beans, short list.",
+      "decision": "Pasta made from whole grain, buckwheat, brown rice or beans, short list.",
       "why": "Flour identity matters separately from shaping and drying. Bronze-cut and slow-dried wording does not establish the whole-grain proportion. Soaking or sprouting must be disclosed rather than inferred from organic status.",
       "buying_tips": [
         "Read the first ingredient: a whole grain, or a named bean or lentil flour.",
-        "Look for the USDA Organic seal on the box or bag.",
+        "Look for ‘USDA Organic’ on the box or bag.",
         "Pick the shortest list on the shelf.",
         "Skip white-flour pasta and quinoa pasta."
       ],
@@ -16943,10 +16943,10 @@
       "kind": "family",
       "title": "Plain fresh egg pasta",
       "category": "aisle_deli_prepared",
-      "decision": "Organic fresh egg pasta made with whole-grain flour and pasture-raised eggs.",
+      "decision": "Fresh egg pasta made with whole-grain flour and pasture-raised eggs.",
       "why": "Plain fresh egg pasta has a different formula from dry pasta. Refined flour is a disclosed fallback here; it does not establish whole grain or fermentation. Whole-grain fermentation or sprouting must be verified on an actual product rather than assumed available.",
       "buying_tips": [
-        "Look for an organic seal on the chilled pack.",
+        "Look for whole-grain flour and pasture-raised eggs on the chilled pack.",
         "Read the flour line for whole grain or sprouted whole grain.",
         "Read for ‘pasture-raised’ eggs on the list or the pack.",
         "Pick organic egg pasta with plain flour if no whole-grain pack is there."
@@ -16979,7 +16979,7 @@
       "why": "Nixtamalization treats corn with alkaline limewater before grinding. Wet masa and dried masa harina share that process; ordinary untreated cornmeal does not. Organic corn and the choice of frying fat are separate checks.",
       "buying_tips": [
         "Read for ‘nixtamalized’ or ‘corn treated with lime’: corn soaked in limewater.",
-        "Look for an organic seal on the bag.",
+        "Look for ‘organic’ on the bag.",
         "Check the frying fat: coconut oil, lard from pastured pigs, or ghee.",
         "Skip oil blends, flavor powders, artificial colors and preservatives."
       ],
@@ -17007,11 +17007,11 @@
       "kind": "family",
       "title": "Sliced-potato chips",
       "category": "aisle_snacks",
-      "decision": "Organic potato chips fried in coconut oil, lard or ghee.",
+      "decision": "Potato chips fried in coconut oil, lard or ghee.",
       "why": "Sliced potatoes differ from crisps formed from flakes and starch. Accepted fats include sourced lard or tallow, coconut or olive oil. These are formula preferences, without a universal ranking of animal fat over coconut oil.",
       "buying_tips": [
         "Read the oil: coconut oil, lard from pastured pigs, or ghee.",
-        "Look for the USDA Organic seal on the front of the bag.",
+        "Look for ‘USDA Organic’ on the front of the bag.",
         "Pick plain salted with the shortest list.",
         "Skip partially hydrogenated oil, unnamed oil blends and flavorings."
       ],
@@ -17035,12 +17035,12 @@
       "kind": "family",
       "title": "Frozen potato fries",
       "category": "aisle_frozen",
-      "decision": "Organic fries of potatoes alone, or potatoes cooked in tallow or lard.",
+      "decision": "Fries of potatoes alone, or potatoes cooked in tallow or lard.",
       "why": "Tallow, sourced lard and coconut oil fit the lead preference, with olive oil or no added oil also accepted. A potato-only retail option must be confirmed on an actual pack. Oven or air-fryer directions do not change the oil already in the product.",
       "buying_tips": [
         "Read the list: potatoes, plus tallow (beef fat) or lard and salt at most.",
         "Read every oil, including the coating and seasoning.",
-        "Look for the USDA Organic seal with potatoes listed first.",
+        "Look for ‘USDA Organic’ with potatoes listed first.",
         "Skip vegetable-oil blends, sugar and starch coatings."
       ],
       "sources": [
@@ -17063,10 +17063,10 @@
       "kind": "family",
       "title": "Cooking fats and simple spreads",
       "category": "aisle_pantry_bulk",
-      "decision": "One organic fat on its own: extra virgin olive oil, virgin coconut oil, butter or lard.",
+      "decision": "One fat on its own: extra virgin olive oil, virgin coconut oil, butter or lard.",
       "why": "Olive, coconut, dairy and rendered animal fats need different source and use checks. A plant spread qualifies only if its entire formula passes; no qualifying retail spread is assumed available.",
       "buying_tips": [
-        "Look for one named fat on the label, not a blend, plus USDA Organic.",
+        "Look for one named fat on the label, not a blend.",
         "Skip bottles that say only ‘vegetable oil’.",
         "Pick dark glass or tin with a harvest date over clear bottles.",
         "Skip margarine, shortening and partially hydrogenated oils."
@@ -17091,7 +17091,7 @@
       "kind": "family",
       "title": "Named-source sweeteners",
       "category": "aisle_pantry_bulk",
-      "decision": "One organic sweetener on its own: raw honey, pure maple syrup, molasses or coconut sugar.",
+      "decision": "One sweetener on its own: raw honey, pure maple syrup, molasses or coconut sugar.",
       "why": "Honey, maple syrup, coconut sugar, whole-cane juice and molasses have distinct production methods. Raw is a honey-specific preference; heating is part of making other sweeteners. Local or regional traceability is preferred where the crop exists, without implying a health advantage.",
       "buying_tips": [
         "Read the list: one sweetener alone, nothing mixed in.",
@@ -17135,7 +17135,7 @@
       "kind": "family",
       "title": "Plain fruit preparations",
       "category": "aisle_pantry_bulk",
-      "decision": "Organic fruit with nothing added: dried fruit, applesauce, coconut water.",
+      "decision": "Fruit with nothing added: dried fruit, applesauce, coconut water.",
       "why": "Dried fruit, cooked applesauce and coconut water do not share one processing standard. Read the complete formula for sweeteners, coatings and preservation additions. Prefer disclosed fruit and maker sources where available; plain water is a narrow applesauce fallback.",
       "buying_tips": [
         "Read the list: the fruit alone, or fruit and water.",
@@ -17174,10 +17174,10 @@
       "kind": "aisle",
       "title": "Pantry and bulk",
       "category": "aisle_pantry_bulk",
-      "decision": "Organic, one named food on the list, sealed, freshest date.",
+      "decision": "One named food on the list, sealed, freshest date.",
       "buying_tips": [
         "Read the list for one named grain, bean, nut or sweetener.",
-        "Look for the USDA Organic seal on the pack or the bin label.",
+        "Look for ‘USDA Organic’ on the pack or the bin label.",
         "Pick sealed packs for nuts, flour and brown rice; bins suit beans and lentils.",
         "Check the harvest, milled or roast date and pick the newest.",
         "Look for ‘BPA-free lining’ on cans."
@@ -17188,7 +17188,7 @@
       "kind": "aisle",
       "title": "Bread and bakery",
       "category": "aisle_bread_bakery",
-      "decision": "Organic sourdough or sprouted bread with whole grain listed first.",
+      "decision": "Sourdough or sprouted bread with whole grain listed first.",
       "buying_tips": [
         "Read the first ingredient for ‘whole’; ‘enriched’ means white flour.",
         "Look for the 100% Whole Grain Stamp, not the 50%+ or Basic one.",
@@ -17216,10 +17216,10 @@
       "kind": "family",
       "title": "Fermented soy foods",
       "category": "aisle_ferments",
-      "decision": "Organic miso, tempeh and other soy foods that are naturally fermented, short list.",
+      "decision": "Miso, tempeh and other soy foods that are naturally fermented, short list.",
       "why": "Miso, tempeh and natto use different cultures and recipes. Fermentation does not establish ready-to-eat status, and pasteurization does not erase fermentation. Prefer a label with useful origin and batch details.",
       "buying_tips": [
-        "Look for ‘naturally fermented’ or ‘traditionally brewed’ and an organic seal.",
+        "Look for ‘naturally fermented’ or ‘traditionally brewed’ on the pack.",
         "Read the list: whole soybeans, named grains, salt and cultures.",
         "Pick packs that say where the beans were grown.",
         "Skip hydrolyzed soy protein, caramel color and flavorings, sauce packets included."
@@ -17248,7 +17248,7 @@
       "kind": "family",
       "title": "Vinegar: source, process and acidity",
       "category": "aisle_condiments",
-      "decision": "Organic raw, unfiltered vinegar ‘with the mother’, from a named fruit or wine.",
+      "decision": "Raw, unfiltered vinegar ‘with the mother’, from a named fruit or wine.",
       "why": "Raw table vinegar and traditionally aged balsamic are separate culinary choices. Balsamic begins with cooked grape must, so a never-heated rule cannot cover both. Prefer a maker that discloses orchard or barrel details.",
       "buying_tips": [
         "Look for ‘raw’, ‘unfiltered’ and ‘with the mother’ on the bottle.",
@@ -17275,11 +17275,11 @@
       "kind": "family",
       "title": "Bone-broth bases and soups",
       "category": "aisle_pantry_bulk",
-      "decision": "Organic bone broth with bones on the list, no yeast extract or flavor powder.",
+      "decision": "Bone broth with bones on the list, no yeast extract or flavor powder.",
       "why": "Prefer home stock or a small maker disclosing pasture-raised poultry or pork and 100% grass-fed beef. Water can lead the ingredient list, and frozen cubes can be actual concentrated stock. A cold gel or container format does not establish the animal source or recipe.",
       "buying_tips": [
         "Read the list for bones and which animal they came from.",
-        "Look for USDA Organic; ‘pasture-raised’ or ‘100% grass-fed’ bones are a step up.",
+        "Look for USDA Organic; ‘pasture-raised’ or ‘100% grass-fed’ bones are better.",
         "Pick short lists: broth, meat, vegetables, herbs and salt.",
         "Skip yeast extract, MSG, hydrolyzed protein and flavor powders."
       ],
@@ -17299,11 +17299,11 @@
       "kind": "family",
       "title": "Vegetable and seed condiments",
       "category": "aisle_condiments",
-      "decision": "Organic sauce with vegetables first, a short list and no added sugar.",
+      "decision": "Sauce with vegetables first, a short list and no added sugar.",
       "why": "Tomato sauce and salsa share a vegetable base, with different cooked, fresh or fermented formats. Prefer seasonal local vegetables or a small maker with harvest and recipe details. Preserved ripe-season tomatoes are a practical alternative outside the harvest.",
       "buying_tips": [
         "Read the first ingredient: tomatoes or the named vegetable.",
-        "Look for the USDA Organic seal on the jar.",
+        "Look for ‘USDA Organic’ on the jar.",
         "Pick glass jars, or cans marked ‘BPA-free’, for tomatoes.",
         "Skip sugar, corn syrup, citric acid and ‘natural flavors’ on the list."
       ],
@@ -17323,13 +17323,13 @@
       "kind": "family",
       "title": "Olive-oil pesto",
       "category": "aisle_condiments",
-      "decision": "Organic pesto made with extra virgin olive oil as the only oil.",
+      "decision": "Pesto made with extra virgin olive oil as the only oil.",
       "why": "Traditional pesto combines basil, pine nuts, aged cheese, garlic and salt with olive oil. Named nut, seed or cheese-free variations can qualify without matching that exact recipe. Prefer a small maker with clear process and source details.",
       "buying_tips": [
         "Read the oil: extra virgin olive oil and no other.",
         "Skip sunflower, canola or soybean oil, starch and added flavors.",
         "Check that every herb, nut, seed and cheese is named.",
-        "Look for an organic seal on the jar."
+        "Look for ‘organic’ on the jar."
       ],
       "sources": [
         {
@@ -17347,12 +17347,12 @@
       "kind": "family",
       "title": "Mayonnaise: disclosed oils",
       "category": "aisle_condiments",
-      "decision": "Organic mayonnaise made with olive oil only and pasture-raised eggs.",
+      "decision": "Mayonnaise made with olive oil only and pasture-raised eggs.",
       "why": "The full oil blend matters more than the front label. Olive oil leads this preference; skip avocado oil. Prefer a small maker disclosing ingredients and egg sourcing.",
       "buying_tips": [
         "Read the whole oil list: olive oil and nothing else.",
         "Skip jars that add soybean, canola or ‘vegetable oil’ next to olive oil.",
-        "Look for an organic seal and ‘pasture-raised’ eggs.",
+        "Look for ‘pasture-raised’ eggs on the jar.",
         "Pick jars that say where the eggs come from."
       ],
       "sources": [
@@ -17367,13 +17367,13 @@
       "kind": "family",
       "title": "Olive-oil or cultured-dairy dressings and salads",
       "category": "aisle_condiments",
-      "decision": "Organic dressings and deli salads made with extra virgin olive oil or plain yogurt.",
+      "decision": "Dressings and deli salads made with extra virgin olive oil or plain yogurt.",
       "why": "Creamy dressing can use cultured dairy without added oil. Any mayonnaise or premixed dressing brings its own ingredient list and oil check. Prefer a small maker’s disclosed recipe or home assembly with seasonal vegetables and herbs.",
       "buying_tips": [
         "Read every oil, including the mayo or dressing inside a salad.",
         "Pick extra virgin olive oil, or plain yogurt or sour cream, as the base.",
         "Skip soybean, canola, corn or unnamed oils, EDTA and added flavors.",
-        "Look for an organic seal on the tub or bottle."
+        "Look for ‘organic’ on the tub or bottle."
       ],
       "sources": [
         {
@@ -17427,12 +17427,12 @@
       "kind": "family",
       "title": "Occasional cocoa foods",
       "category": "aisle_pantry_bulk",
-      "decision": "Organic cocoa or chocolate with a short list and where the cacao grew printed.",
+      "decision": "Cocoa or chocolate with a short list and where the cacao grew printed.",
       "why": "Plain powder and eating chocolate have different sweetener rules. Prefer a small producer with origin and process disclosure. Cocoa percentage, organic status and source stories do not establish a batch’s metal levels.",
       "buying_tips": [
         "Read the list: cocoa or cacao first, little else.",
         "Skip lecithin, flavorings, other fats, and bars with sugar listed first.",
-        "Look for an organic seal; Regenerative Organic Certified is the best sign.",
+        "Look for Regenerative Organic Certified; ‘organic’ is next.",
         "Look for lead and cadmium test results dated for the same batch."
       ],
       "sources": [
@@ -17459,10 +17459,10 @@
       "kind": "family",
       "title": "Sweet bakery: flour, fat and sweetener",
       "category": "aisle_bread_bakery",
-      "decision": "Organic whole-grain baked goods, sourdough or sprouted, made with butter.",
+      "decision": "Whole-grain baked goods, sourdough or sprouted, made with butter.",
       "why": "Prefer soaked or sprouted whole-grain baking made at home or by a small maker. Whole-grain muffins with those fats and sweeteners are the fallback. Laminated pastry has a separate occasional unbleached-flour, all-butter route; it does not meet the prepared-whole-grain preference.",
       "buying_tips": [
-        "Look for organic whole-grain flour and ‘sprouted’ or ‘sourdough’ on the pack.",
+        "Look for whole-grain flour and ‘sprouted’ or ‘sourdough’ on the pack.",
         "Read the fat: butter or coconut oil.",
         "Pick goods sweetened with honey, maple syrup or fruit.",
         "Skip margarine, shortening and artificial flavors."
@@ -17483,7 +17483,7 @@
       "kind": "family",
       "title": "Fruit preserves",
       "category": "aisle_condiments",
-      "decision": "Organic jam with fruit listed first, sweetened with honey or maple syrup.",
+      "decision": "Jam with fruit listed first, sweetened with honey or maple syrup.",
       "why": "Prefer seasonal fruit from a small grower, prepared with a suitable recipe and storage method. Honey or maple can be ingredients in cooked preserves; they do not make the finished jar raw. Unsweetened refrigerator or freezer spreads are a separate form.",
       "buying_tips": [
         "Read the list: fruit, honey or maple syrup, plus pectin or lemon at most.",
@@ -17511,12 +17511,12 @@
       "kind": "family",
       "title": "Barbecue sauces and marinades",
       "category": "aisle_condiments",
-      "decision": "Organic sauces and marinades, fermented and kept cold, with a short list.",
+      "decision": "Sauces and marinades, fermented and kept cold, with a short list.",
       "why": "Vegetable, vinegar or mustard bases suit different sauces and marinades. Named honey, maple or molasses can qualify, while an unsweetened marinade needs no added sweetener. Prefer a small maker’s full recipe or a home preparation with named herbs and spices.",
       "buying_tips": [
         "Look for ‘fermented’, ‘live’ or ‘unpasteurized’ on the bottle.",
         "Check it says ‘keep refrigerated’ and sits in the cold case.",
-        "Look for the USDA Organic seal.",
+        "Look for ‘USDA Organic’.",
         "Skip corn syrup, smoke flavoring and unnamed vegetable oils."
       ],
       "sources": [
@@ -17535,12 +17535,12 @@
       "kind": "family",
       "title": "Plain muesli",
       "category": "aisle_pantry_bulk",
-      "decision": "Organic unsweetened muesli of whole grains, nuts and seeds, sprouted when sold.",
+      "decision": "Unsweetened muesli of whole grains, nuts and seeds, sprouted when sold.",
       "why": "Sweetness comes from fruit, including any ingredients listed inside dried fruit. Prefer a disclosed grain grower or maker, or assemble an equivalent mix at home. Untoasted describes the mixture and does not establish that rolled oats were never heated.",
       "buying_tips": [
         "Read the list: whole grains, nuts, seeds and dried fruit at most.",
         "Skip syrup, added sugar, flavorings and puffed cereal.",
-        "Look for an organic seal and ‘sprouted’ on the bag.",
+        "Look for ‘sprouted’ on the bag.",
         "Pick packs that name the farm or maker."
       ],
       "sources": [
@@ -17563,7 +17563,7 @@
       "why": "Single-ingredient kernels leave the fat and seasoning choice to home preparation. Prefer a disclosed grower or origin, with sealed organic kernels as the fallback. Suitable oil-free methods and popping with coconut oil or ghee are options.",
       "buying_tips": [
         "Read the list: popcorn, nothing else.",
-        "Look for an organic seal on a sealed bag of kernels.",
+        "Look for ‘organic’ on a sealed bag of kernels.",
         "Skip microwave bags and kits with oil or flavor packets.",
         "Skip popped bags made with partially hydrogenated or unnamed oils."
       ],
@@ -17591,10 +17591,10 @@
       "kind": "family",
       "title": "Whole-grain frozen waffles",
       "category": "aisle_frozen",
-      "decision": "Organic whole-grain waffles made with butter, sourdough or sprouted when sold.",
+      "decision": "Whole-grain waffles made with butter, sourdough or sprouted when sold.",
       "why": "Prefer a home-frozen whole-grain batch with disclosed soaking or fermentation, or a maker’s documented equivalent. A plain organic whole-grain recipe with suitable fat and modest named sweetener is the fallback. A starter does not establish whole-grain flour, and fermentation is optional at that floor.",
       "buying_tips": [
-        "Look for an organic seal and whole grain as the first flour.",
+        "Look for whole grain as the first flour.",
         "Read for ‘sourdough’, ‘soaked’ or ‘sprouted’ on the box.",
         "Read the fat: butter, ghee or coconut oil.",
         "Pick plain; skip filled, iced or syrup-filled waffles."
@@ -17615,7 +17615,7 @@
       "kind": "aisle",
       "title": "Condiments",
       "category": "aisle_condiments",
-      "decision": "Organic, with vegetables, vinegar, salt and spices on a short list.",
+      "decision": "Vegetables, vinegar, salt and spices on a short list.",
       "buying_tips": [
         "Read the first ingredient: tomatoes, mustard seed or the named vegetable.",
         "Skip high fructose corn syrup, distilled vinegar and MSG.",
@@ -17629,7 +17629,7 @@
       "kind": "aisle",
       "title": "Drinks",
       "category": "aisle_drinks",
-      "decision": "Plain water or organic kombucha, in glass, with no added sugar or flavors.",
+      "decision": "Plain water or raw kombucha, in glass, with no added sugar or flavors.",
       "buying_tips": [
         "Read the name: ‘spring’ and ‘mineral’ water come from underground; ‘distilled’ water is treated.",
         "Pick glass bottles or cans over plastic.",
@@ -18142,7 +18142,7 @@
       "decision": "Organic frozen fruit and vegetables, frozen loose, from the back of the case.",
       "why": "Plain frozen fruit and vegetables are frozen piece by piece soon after harvest. A bag that has frozen into one block has likely thawed and refrozen on the way, and packs at the back of the case see the least temperature swing.",
       "buying_tips": [
-        "Look for the USDA Organic seal on the bag.",
+        "Look for ‘USDA Organic’ on the bag.",
         "Read the list: the food alone; skip citric acid, ascorbic acid and sugar.",
         "Check the bag feels loose; a solid block has likely thawed and refrozen.",
         "Pick bags from the back of the freezer case; they see the least temperature swing."
@@ -18185,7 +18185,7 @@
     {
       "id": "fam_produce_signs",
       "kind": "family",
-      "decision": "Read the sticker and the sign: organic code, seal, wax and where it grew.",
+      "decision": "Read the sticker and the sign: organic code, wax and where it grew.",
       "buying_tips": [
         "Read the sticker: 5 digits starting with 9 is organic; 4 digits is conventional.",
         "Look for USDA Organic; Real Organic or Certified Naturally Grown go further.",
@@ -18257,7 +18257,7 @@
         "heavy dairy cream",
         "heavy dairy creams"
       ],
-      "decision": "Look for organic cream, just cream, not ultra-pasteurized; organic means certified organic feed and outdoor access.",
+      "decision": "Look for grass-fed cream, just cream, not ultra-pasteurized.",
       "sources": [
         {
           "name": "Weston A. Price Foundation",
@@ -18367,7 +18367,7 @@
         "dried pulse",
         "dried pulses"
       ],
-      "decision": "Look for organic dried lentils or split peas, sealed bag, one legume listed.",
+      "decision": "Look for dried lentils or split peas, sealed bag, one legume listed.",
       "sources": [
         {
           "name": "Weston A. Price Foundation",
@@ -18384,7 +18384,7 @@
         "dry pasta package",
         "dry pasta packages"
       ],
-      "decision": "Organic whole-durum wheat pasta, with ‘whole’ before the flour and no enriched flour.",
+      "decision": "Whole-durum wheat pasta, with ‘whole’ before the flour and no enriched flour.",
       "sources": [
         {
           "name": "Weston A. Price Foundation",
@@ -18401,7 +18401,7 @@
         "cane molasses bottle",
         "cane molasses bottles"
       ],
-      "decision": "Organic molasses, with molasses listed first, before any other sweetener.",
+      "decision": "Pure molasses, listed first, before any other sweetener.",
       "sources": [
         {
           "name": "Weston A. Price Foundation",
@@ -18418,7 +18418,7 @@
         "plant sugar",
         "plant sugars"
       ],
-      "decision": "Organic date or coconut sweetener, with the date or coconut named on the bag.",
+      "decision": "Date or coconut sweetener, with the date or coconut named on the bag.",
       "sources": [
         {
           "name": "Weston A. Price Foundation",
@@ -18435,7 +18435,7 @@
         "refined syrup",
         "refined syrups"
       ],
-      "decision": "Skip corn syrup, agave and brown rice syrup; pick organic pure maple syrup instead.",
+      "decision": "Skip corn syrup, agave and brown rice syrup; pick pure maple syrup instead.",
       "sources": [
         {
           "name": "Weston A. Price Foundation",
@@ -18452,7 +18452,7 @@
         "sealed nut pack",
         "sealed nut packs"
       ],
-      "decision": "Organic raw nuts and seeds in a sealed pack, only the nut or seed listed.",
+      "decision": "Raw nuts and seeds in a sealed pack, only the nut or seed listed.",
       "sources": [
         {
           "name": "Weston A. Price Foundation",
@@ -18469,7 +18469,7 @@
         "canned food",
         "canned foods"
       ],
-      "decision": "Organic cans marked ‘BPA-free lining’, holding plain foods and little else.",
+      "decision": "Cans marked ‘BPA-free lining’, holding plain foods and little else.",
       "sources": [
         {
           "name": "Weston A. Price Foundation",
@@ -18486,7 +18486,7 @@
         "jarred vegetable sauce",
         "jarred vegetable sauces"
       ],
-      "decision": "Organic jarred sauce with vegetables first and the oil, salt and spices each named.",
+      "decision": "Jarred sauce with vegetables first and the oil, salt and spices each named.",
       "sources": [
         {
           "name": "Weston A. Price Foundation",
@@ -18503,7 +18503,7 @@
         "soy sauce bottle",
         "soy sauce bottles"
       ],
-      "decision": "Organic soy sauce that says ‘naturally fermented’ or ‘brewed’ on the bottle.",
+      "decision": "Soy sauce that says ‘naturally fermented’ or ‘brewed’ on the bottle.",
       "sources": [
         {
           "name": "Weston A. Price Foundation",
@@ -18520,7 +18520,7 @@
         "breakfast cereal box",
         "breakfast cereal boxes"
       ],
-      "decision": "Skip cereal pressed into puffs, loops or shapes; pick organic whole-grain hot cereal.",
+      "decision": "Skip cereal pressed into puffs, loops or shapes; pick whole-grain hot cereal.",
       "sources": [
         {
           "name": "Weston A. Price Foundation",
