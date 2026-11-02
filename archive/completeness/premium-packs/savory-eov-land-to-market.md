@@ -1,0 +1,35 @@
+Source: https://savory.global/ecological-outcome-verification-the-science-inside-savory-institutes-land-to-market-program/
+Fetch date: 2026-11-02
+Type: article (certifier program blog post, Savory Institute)
+Tool used: mcp__scrapling__make_request (extraction_type=text)
+Trimming: site nav, related-posts list, newsletter and donation widgets removed. Article body is verbatim, line-broken as returned.
+
+---
+
+The Science Inside Savory Institute's Land to Market™ Program
+September 25, 2018
+By: Savory Institute | Blog, Land to Market
+
+2018 has provided striking glimpses into the future of food and fiber production. A groundswell of inquiry into what's "beyond sustainable" has emerged from all points in the supply chain, from farmers, to brands, to end consumers. There is a good and simple reason for this: we are all coming to realize that sustainable food production just isn't enough. Sustainability translates to stasis. Living systems don't rest in a steady state. Instead, they churn through the process of birth, growth, death, decay and back to birth again. In other words, they regenerate. This is the spirit behind the term "regenerative agriculture" — or the meeting of human needs while managing for ecosystem health, resilience, and of course, regeneration. Seemingly overnight, this unlikely buzzword has become the talk of the trade.
+
+While this is a positive change, it's up to organizations like the Savory Institute to ensure that the term "regenerative agriculture" doesn't become just another trendy claim in a sea of labels. Regeneration is not a trend, it's an imperative. No matter what hat we wear in our everyday lives, we are all land stewards. Our everyday actions can have only one of two outcomes. Either we emit excess carbon or we absorb it. Either we retain water or we evaporate it. Either we enrich soil or we erode it. Either we create natural habitat or we curtail it. Either we extract from life or we contribute to it. It's this simple arithmetic, calculated on a finite planet, that will account for the future of all species, including our own.
+
+This sober logic has informed the development of Savory's Land to Market™ program, which connects conscientious brands directly to supply from farms and ranches that are verified to be regenerating. The "science inside" this program is the protocol called Ecological Outcome Verification™ or EOV™. Savory's global network of field professionals deploy EOV in their regions, collecting data on participating farms and ranches.
+
+This data is comprised of key indicators of land regeneration, including soil health, biodiversity and ecosystem function. Those ranches with positively-trending data receive Ecological Outcome Verification, and are entered into the Land to Market supplier roster. Participating brands and retailers access this supply and share the story of regenerative agriculture with their customers, thereby raising demand and awareness about the need for regenerative sourcing.
+
+Land to Market is a full-circle solution that begins and ends with the regeneration of the land:
+
+EOV is designed to keep all of us — brands, land managers, and consumers — honest about the impact we are having on living landscapes. Based upon tangible outcomes rather than an inventory of farmer practices, EOV gives the land a voice of its own. Is there more water retained than previously or less? Is the soil more fertile than previously or less? Is the forage more abundant than previously or less? These are the outcomes that, in the aggregate, point to regeneration.
+
+These outcomes also drive the questions that passionate farmers ask, and inform their real-time, daily management decisions. EOV is built for farmers first, providing fast feedback loops around news they can use and respond to, such as plant litter incorporation, dung decomposition, soil capping, and presence of desirable plant species. These "Leading Indicators" give farmers a chance to take speedy corrective action in their land and livestock management. It's these little pieces of intelligence that ladder up to the positive change we seek at the macro level, such as food security, water retention, and carbon sequestration. Without managing for small, sequential change at the farm level, monumental progress is impossible.
+
+Listening to the land at this level also requires cultural and contextual sensitivity. There is no "one size fits all" scenario for how quickly a land base will improve, and which measures will change most quickly. Every landscape emerges from its own unique set of operating conditions, be they animal, mineral, botanical, or cultural. Given this reality, EOV is built to be contextually relevant. Each participating farm or ranch is evaluated against a "reference area" in its surrounding ecoregion, with calibration against that area's unique flora and fauna, precipitation rates, topography and soil characteristics. This approach allows land managers to embed themselves in their wider ecosystem, and ultimately contribute to the resilience of the land they call home.
+
+EOV has been years in the making, with input from scientists, agronomists and land stewards around the world. Ovis 21, a Savory Hub, has led the creation of the scientific methodology, in collaboration with scientists at Michigan State University (MSU), another Savory Hub, and with input from additional colleagues and research institutions. Pablo Borrelli of Ovis 21 and Dr. Jason Rowntree of MSU are taking the lead in aggregating and analyzing the emerging data from the participating Hubs and their producer networks. They will be joined by other research institutions and scientist groups in Savory's global Network with the goal of creating one of the largest global databases for monitoring grassland health and associated ecosystem services on all continents — from the South African veld to the Argentine pampas to the Texas prairie.
+
+In the final analysis, if EOV teaches us anything, it will likely be what Savory Institute has espoused all along: that life is complex, and that we are an inextricable part of that complexity. To be successful with regenerative agriculture, we must recognize our place in the circular dance between animal and plant, between death and life, between taking and giving back. EOV will help all of us — land managers, brands, and consumers — become better dancers. Farmers will learn from and respond to their land in real time. Brands will evolve their sourcing and storytelling to account for what truly matters. And consumers, when they reach for products carrying the EOV seal, will know that they are supporting an upward trend, and not a fleeting, superficial one. Instead, their purchase will support the enduring health of the land that feeds and clothes them.
+
+Victoria Keziah is Managing Director of Savory Institute's Land to Market program. For more information, watch this video and visit savory.global/landtomarket.
+
+Footer: Land to Market is a U.S. public-benefit corporation with majority ownership by the Savory Institute. © 2025 Savory Institute. All Rights Reserved.
