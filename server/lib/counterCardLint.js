@@ -1043,6 +1043,64 @@ export function lintFamilyReferences(entries) {
   });
 }
 
+const PRICE_TALK = /[$€£]\s?\d|\b(price[sd]?|cheap(er)?|costs?|dollars?)\b/i;
+
+/* ═══════════════════════════ The shop deck ═══════════════════════════ */
+// One full-screen shop-mode page per aisle, family or card: a one-line grab, then labelled
+// blocks of {mark, lead, sub?, src} rows. Every row traces to a source on the entry (cards,
+// families) or on the deck itself (aisles carry none of their own).
+export const DECK_LABELS = Object.freeze(['Look for', 'Watch for', 'Even better', 'Can’t find those?', 'Can’t find it?', 'Can’t find organic?']);
+export const DECK_MARKS = Object.freeze(['yes', 'no', 'note']);
+export const MAX_DECK_GRAB_WORDS = 24; // [PLACEHOLDER] until S0 reports the v29 maxima
+export const MAX_DECK_LEAD_WORDS = 14; // [PLACEHOLDER]
+export const MAX_DECK_SUB_WORDS = 30; // [PLACEHOLDER]
+const MAX_DECK_BLOCKS = 4; // [PLACEHOLDER]
+const MAX_DECK_ROWS = 6; // [PLACEHOLDER]
+
+/** Lint an entry's `deck`. Empty is the passing state; no deck lints clean. */
+export function lintDeck(entry) {
+  const deck = entry?.deck;
+  if (deck == null) return [];
+  const out = [];
+  const fail = (code, detail) => out.push({ code, detail, id: entry.id });
+  if (typeof deck !== 'object') return (fail('DECK_SHAPE', 'deck must be an object'), out);
+  const lines = []; // [text, max words, where]
+  if (textValue(deck.grab)) lines.push([deck.grab, MAX_DECK_GRAB_WORDS, 'grab']);
+  else fail('DECK_SHAPE', 'deck needs a nonempty grab');
+  const blocks = Array.isArray(deck.blocks) ? deck.blocks : [];
+  if (blocks.length < 1 || blocks.length > MAX_DECK_BLOCKS) fail('DECK_SHAPE', `deck needs 1–${MAX_DECK_BLOCKS} blocks`);
+  const urls = new Set([...(Array.isArray(entry.sources) ? entry.sources : []), ...(Array.isArray(deck.sources) ? deck.sources : [])]
+    .map((s) => s?.url).filter(Boolean));
+  blocks.forEach((block, b) => {
+    if (!block || typeof block !== 'object') return fail('DECK_SHAPE', `block ${b} must be an object`);
+    if (!textValue(block.label)) fail('DECK_SHAPE', `block ${b} needs a label`);
+    else if (!DECK_LABELS.includes(block.label)) fail('DECK_LABEL', `unknown block label "${block.label}"`);
+    const rows = Array.isArray(block.rows) ? block.rows : [];
+    if (rows.length < 1 || rows.length > MAX_DECK_ROWS) fail('DECK_SHAPE', `block ${b} needs 1–${MAX_DECK_ROWS} rows`);
+    rows.forEach((row, r) => {
+      const at = `block ${b} row ${r}`;
+      if (!row || typeof row !== 'object') return fail('DECK_SHAPE', `${at} must be an object`);
+      if (textValue(row.lead)) lines.push([row.lead, MAX_DECK_LEAD_WORDS, `${at} lead`]);
+      else fail('DECK_SHAPE', `${at} needs a lead`);
+      if (row.sub != null) {
+        if (textValue(row.sub)) lines.push([row.sub, MAX_DECK_SUB_WORDS, `${at} sub`]);
+        else fail('DECK_SHAPE', `${at} sub must be nonempty text when present`);
+      }
+      if (!DECK_MARKS.includes(row.mark)) fail('DECK_MARK', `${at} mark "${row.mark}" is not one of ${DECK_MARKS.join('/')}`);
+      if (!urls.has(row.src)) fail('DECK_SOURCE_UNRESOLVED', `${at} src "${row.src ?? ''}" matches no entry or deck source`);
+    });
+  });
+  for (const [line, max, where] of lines) {
+    if (words(line) > max) fail('DECK_TOO_LONG', `${where}: ${words(line)}w > ${max}: ${line}`);
+    if (hasFirstPerson(line)) fail('DECK_FIRST_PERSON', `${where}: no I/me/my/we/our: "${line}"`);
+    if (line.includes('—')) fail('DECK_EM_DASH', `${where}: no em-dash asides: "${line}"`);
+    if (STRAIGHT_QUOTE.test(line)) fail('DECK_STRAIGHT_QUOTE', `${where}: the corpus uses “ ” and ’: "${line}"`);
+    if (PRICE_TALK.test(line)) fail('DECK_PRICE', `${where}: no price talk: "${line}"`);
+  }
+  for (const v of claimLockViolations({ look_for: lines.map(([t]) => t), detail: '' })) out.push({ ...v, id: entry.id });
+  return out;
+}
+
 function lintNavigation(entry, kind) {
   const out = [];
   const fail = (code, detail) => out.push({ code, detail });
@@ -1079,11 +1137,12 @@ function lintNavigation(entry, kind) {
     // Food-processing senses, not condition claims: curing a ham, soaking corn, shielding from crushing.
     .map((t) => t.replace(/\b(un)?cur(ed|ing)\b|\bsalt cures?\b|\bcurers?\b|(?<=\b(?:simple|undisclosed|disclosed|salmon|same|species,|the|a|and|roe) )cures?\b/gi, 'salted').replace(/\btreats corn\b/gi, 'soaks corn').replace(/\bprotect from crushing/gi, 'keep clear of crushing'));
   for (const v of claimLockViolations({ look_for: copy, detail: '' })) out.push(v);
-  if (copy.some((t) => /[$€£]\s?\d|\b(price[sd]?|cheap(er)?|costs?|dollars?)\b/i.test(t))) fail(`${prefix}_PRICE`, 'no price talk');
+  if (copy.some((t) => PRICE_TALK.test(t))) fail(`${prefix}_PRICE`, 'no price talk');
   if (Object.hasOwn(entry, 'sources') && (!Array.isArray(entry.sources) || !entry.sources.every((s) =>
     s && typeof s === 'object' && textValue(s.name) && typeof s.url === 'string' && /^https?:\/\/\S+$/.test(s.url)))) {
     fail(`${prefix}_SOURCES_INVALID`, 'sources must be {name,url} objects with HTTP(S) URLs');
   }
+  if (entry.deck != null) out.push(...lintDeck(entry));
   return out;
 }
 
