@@ -1,0 +1,247 @@
+<title>Kristy Shop Deck</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Figtree:wght@400;500;600;700&family=DM+Mono:wght@400&display=swap">
+<style>
+/* Layout: the current shop screen, restructured into pages. Brand tokens from Brand/tokens.json. Information first, art is a small plate. */
+:root{
+  --paper:#E9E2D0; --card:#FAF7EF; --ink:#17231C; --body:#38443C; --muted:#535A50; --rule:#D3C9B2;
+  --green:#14472F; --gold:#A88A4A; --goldText:#6E5520; --orange:#7E2E0D;
+  --serif:'Fraunces',Georgia,serif; --sans:'Figtree',system-ui,sans-serif; --mono:'DM Mono',ui-monospace,monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font:15px/1.5 var(--sans);margin:0;padding-inline:max(16px,env(safe-area-inset-left,0px)) max(16px,env(safe-area-inset-right,0px));padding-block:28px 64px}
+.wrap{max-width:1000px;margin:0 auto}
+h1,h2{font-family:var(--serif);font-weight:600;margin:0;text-wrap:balance}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.12}
+h2{font-size:22px;margin-top:48px}
+p{margin:.4em 0}
+.lede{color:var(--muted);max-width:62ch}
+.eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--goldText);font-weight:600}
+.stage{display:grid;grid-template-columns:minmax(0,392px) minmax(0,1fr);gap:40px;margin-top:24px;align-items:start}
+@media(max-width:820px){.stage{grid-template-columns:minmax(0,1fr)}}
+
+/* phone: same anatomy as the live shop screen */
+.phone{width:100%;max-width:392px;height:800px;margin:0 auto;background:var(--paper);border:1px solid var(--rule);border-radius:34px;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.bar{display:flex;justify-content:space-between;align-items:center;padding:16px 20px 8px}
+.bar button{border:0;background:none;color:var(--ink);font:inherit;cursor:pointer;padding:4px}
+.mono{font-family:var(--mono);font-size:14px;color:var(--goldText)}
+.seg{display:flex;gap:6px;padding:0 20px}
+.seg i{flex:1;height:3px;background:var(--rule);border-radius:2px}
+.seg i.on{background:var(--ink)}
+.head{padding:12px 20px 12px;border-bottom:1px solid var(--gold)}
+.kick{display:flex;justify-content:space-between;gap:10px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.head h3{font-family:var(--serif);font-weight:600;font-size:26px;line-height:1.14;margin:6px 0 0;color:var(--ink);text-wrap:balance}
+.scroll{flex:1;min-height:0;overflow:hidden;padding:14px 16px 8px;display:flex;flex-direction:column;gap:12px;touch-action:pan-y}
+.tile{background:var(--card);border:1px solid var(--rule);border-top:1.5px solid var(--gold);border-radius:8px;padding:12px 14px}
+.lbl{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:6px}
+.row{display:flex;align-items:center;gap:14px;padding:6px 0;font-size:17px;font-weight:600;cursor:pointer;width:100%;border:0;background:none;text-align:left;color:var(--ink);font-family:var(--sans)}
+.cb{flex:0 0 26px;height:26px;border:1.5px solid var(--ink);border-radius:5px;display:grid;place-items:center;font-size:16px;line-height:1}
+.row.done{color:var(--muted);text-decoration:line-through}
+.row.done .cb{background:var(--green);border-color:var(--green);color:var(--card)}
+.row .arrow{margin-left:auto;color:var(--muted);font-weight:400}
+.lead{font-size:15.5px;color:var(--ink);line-height:1.4}
+.lead b{font-weight:700}
+ul.tips{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px}
+ul.tips li{font-size:15px;color:var(--body);line-height:1.38;padding-left:16px;position:relative}
+ul.tips li::before{content:"";position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--green)}
+ul.tips.skip li::before{background:var(--orange)}
+.why{font-size:14px;color:var(--body);line-height:1.45}
+.tile.big{flex:1;min-height:0;overflow:auto;padding:0;background:transparent;border:0;border-radius:0;display:flex;flex-direction:column}
+.items{padding:4px 2px 8px;border-bottom:1px solid var(--rule)}
+.grab{padding:16px 18px;border:1px solid var(--rule);border-left:5px solid var(--green);background:#FFFDF7;border-radius:4px 12px 12px 4px;margin:12px 0 4px;box-shadow:0 1px 0 var(--rule),0 6px 14px -8px rgba(23,35,28,.35)}
+.gt{font-family:var(--serif);font-weight:600;font-size:22px;line-height:1.28;color:var(--ink);text-wrap:balance}
+.sec{padding:12px 2px 2px}
+.sec p{font-size:15px;line-height:1.42;color:var(--body);margin:0 0 8px}
+.step{display:flex;gap:12px;align-items:flex-start}
+.step .n{flex:0 0 24px;height:24px;border-radius:50%;background:var(--ink);color:var(--card);font-size:13px;font-weight:600;display:grid;place-items:center;margin-top:1px}
+.lab{margin:0 0 6px}
+.lab b{font-size:14px;color:var(--ink)}
+.lab p{margin:0;font-size:14px}
+.no{display:flex;gap:12px;align-items:flex-start}
+.no span{flex:0 0 24px;height:24px;border-radius:50%;border:1.5px solid var(--orange);color:var(--orange);font-size:12px;display:grid;place-items:center;margin-top:1px}
+.sec.skip .lbl{color:var(--orange)}
+.get{margin:0 0 8px;padding:12px 13px;background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--green);border-radius:0 8px 8px 0}
+.ga{font-family:var(--serif);font-weight:600;font-size:18px;line-height:1.25;color:var(--ink)}
+.get p{margin:4px 0 0;font-size:14.5px}
+.art{flex:1;min-height:0;margin:10px 0 2px;border-radius:8px;border:1px dashed var(--gold);display:grid;place-items:center;text-align:center;font-size:12px;color:var(--muted)}
+.art small{font-size:10px}
+.plate{flex:0 0 52px;width:52px;height:52px;border-radius:8px;border:1px dashed var(--gold);display:grid;place-items:center;font-size:9px;line-height:1.1;color:var(--muted);text-align:center;letter-spacing:.04em}
+.nextrow{display:flex;justify-content:space-between;align-items:center;padding:8px 20px;color:var(--goldText);font-size:16px;font-weight:500;border:0;background:none;cursor:pointer;font-family:var(--sans);width:100%;text-align:left}
+.tabs{display:flex;gap:10px;padding:10px 16px 16px;border-top:1px solid var(--ink)}
+.tabs div{flex:1;text-align:center;padding:12px 0;border:1px solid var(--rule);border-radius:8px;background:var(--card);font-size:16px;color:var(--ink)}
+.tabs div:last-child{flex:.3}
+.sheet{position:absolute;inset:auto 10px 10px 10px;background:var(--card);border:1px solid var(--rule);border-top:1.5px solid var(--gold);border-radius:10px;padding:14px;max-height:70%;overflow:auto;box-shadow:0 -12px 30px -14px rgba(0,0,0,.3)}
+.sheet button.j{display:flex;justify-content:space-between;width:100%;border:0;border-bottom:1px solid var(--rule);background:none;font:inherit;padding:10px 2px;cursor:pointer;color:var(--ink)}
+.sheet .x{margin-top:10px;border:1px solid var(--rule);background:var(--paper);border-radius:8px;padding:8px 14px;font:inherit;cursor:pointer}
+
+/* notes */
+.notes{display:flex;flex-direction:column;gap:12px}
+.note{background:var(--card);border:1px solid var(--rule);border-top:1.5px solid var(--gold);border-radius:8px;padding:12px 14px}
+.note b{display:block;font-family:var(--serif);font-weight:600;font-size:16px;margin-bottom:2px}
+.note p{margin:0;color:var(--body);font-size:14px}
+.flow{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px}
+.fp{flex:0 0 118px;text-align:left;font:inherit;font-size:12px;line-height:1.25;border:1px solid var(--rule);border-top:1.5px solid var(--gold);border-radius:8px;background:var(--card);padding:8px;cursor:pointer;color:var(--ink)}
+.fp small{display:block;color:var(--muted);margin-top:3px}
+.fp.ai{background:var(--paper)}
+.fp.cur{outline:2px solid var(--green)}
+.tw{overflow-x:auto;background:var(--card);border:1px solid var(--rule);border-radius:8px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+code{font-size:12.5px;background:rgba(20,71,47,.08);padding:1px 5px;border-radius:4px}
+button:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.kick{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.kick>span:first-child{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--goldText);font-weight:600;white-space:nowrap}
+.nx{border:0;background:none;padding:0;font:500 12.5px var(--sans);color:var(--goldText);cursor:pointer;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.chip{border:1px solid var(--green);color:var(--green);background:var(--card);border-radius:999px;padding:6px 11px;font-size:13.5px;font-weight:600}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.cc{border:1px solid var(--rule);border-radius:8px;padding:10px 12px;display:flex;flex-direction:column;gap:2px}
+.cc b{font-family:var(--serif);font-size:18px;color:var(--ink)}
+.cc span{font-size:13px;color:var(--muted)}
+.cc.y{background:var(--card);border-color:var(--green)}
+.cc.y b{color:var(--green)}
+.keyb{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--green);border-radius:0 8px 8px 0;padding:10px 12px;margin-bottom:6px;font-family:var(--serif);font-weight:600;font-size:17px;line-height:1.28;color:var(--ink)}
+.acard .sec{border-top:1px solid var(--rule);padding:12px 2px 6px;margin-top:8px}
+.acard .keyb{background:transparent;border:0;border-left:3px solid var(--green);border-radius:0;padding:2px 0 2px 12px;font-size:18px}
+.acard .lbl{margin-bottom:8px}
+.acard .cc{padding:12px}
+.acard .cc b{font-size:17px}
+.acard .cc span{font-size:13.5px}
+.acard .sec p{font-size:14.5px}
+.tb{margin-bottom:6px}
+.tr{display:grid;grid-template-columns:38% 1fr;gap:12px;padding:7px 0;border-top:1px dotted var(--rule);font-size:14.5px;line-height:1.35}
+.tr:first-child{border-top:0;padding-top:0}
+.tr b{color:var(--ink);font-weight:600}
+.tr span{color:var(--body)}
+.no.ok span{border-color:var(--green);color:var(--green)}
+.sec{padding:9px 2px 0}
+.sec p,.no p{font-size:13.5px;line-height:1.38;margin:0 0 6px}
+.cc b{font-size:16px}
+.keyb b{color:var(--green);font-weight:700}
+.tagb{font-family:var(--serif);font-size:18px;line-height:1.5;color:var(--ink);padding-left:15px}
+.tagb .m{font:500 13px var(--mono);font-style:normal;color:var(--ink);background:var(--card);border:1px solid var(--rule);border-radius:5px;padding:2px 7px;margin-right:6px}
+.tagb .g{color:var(--green)}.tagb .c{color:var(--muted);font-weight:500}
+.nob{font-family:var(--serif);font-size:18px;line-height:1.5;color:var(--ink);padding-left:15px}
+.nob span{color:var(--orange);font:700 14px var(--sans);margin-right:8px}
+.altb{font:400 14.5px/1.45 var(--sans);color:var(--muted);padding-left:15px}
+.rd{font-family:var(--serif);font-size:17px;line-height:1.5;color:var(--ink);margin:0 0 6px}
+.rd b{font-weight:700}.rd b.g{color:var(--green)}
+.rd.sm{font:400 14px/1.45 var(--sans);color:var(--muted)}
+.altb{font:400 16px/1.45 var(--sans);color:var(--ink)}
+.acard .lbl{font-size:13px;letter-spacing:.1em}
+.acard .keyb,.tagb,.nob{font-size:21px;line-height:1.45}
+.rd{font-size:21px;line-height:1.45;margin-bottom:8px}
+.rd.sm{font-size:17px;color:var(--body)}
+.altb{font-size:19px;color:var(--ink)}
+.nob span{font-size:17px}
+.intro{font-family:var(--serif);font-size:21px;line-height:1.4;color:var(--ink);padding-left:15px;margin-bottom:8px}
+.st{display:flex;gap:10px;align-items:flex-start;padding:5px 0 5px 12px}
+.st i{font:700 16px/1.3 var(--sans);font-style:normal;width:16px;flex:none;color:var(--muted)}
+.st.y i{color:var(--green)}.st.x i{color:var(--orange)}
+.st b{display:block;font-family:var(--serif);font-size:17.5px;line-height:1.25;color:var(--ink)}
+.st.y b{color:var(--green)}
+.st span{display:block;font:500 14.5px/1.4 var(--sans);color:var(--body);margin-top:1px}
+.st.n span,.st.x span{color:var(--muted)}
+.note{font:400 17px/1.4 var(--sans);color:var(--body);padding:4px 0 0 15px}
+.acard .skp{display:flex;gap:12px;margin-top:14px;padding:12px 14px;border-radius:8px;background:var(--card);border:1px solid var(--rule)}
+.skp i{font-style:normal;font-weight:700;color:var(--orange);font-size:20px;line-height:1.3}
+.skp b{display:block;font:600 13px var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-bottom:3px}
+.skp div{font:400 18px/1.4 var(--sans);color:var(--ink)}
+.skp em{font-style:normal;color:var(--muted);margin:0 7px}
+.fbk{margin-top:12px;font:400 17px/1.4 var(--sans);color:var(--body);padding-left:2px}
+.fbk b{font-weight:600;color:var(--muted)}
+.fbk span{color:var(--muted)}
+.acard .st{padding:6px 0 6px 2px}
+</style>
+
+<div class="wrap">
+  <div class="eyebrow">Shop mode · restructure</div>
+  <h1>The current shop screen, one page per group</h1>
+  <p class="lede">Same screen, same colors, same bottom bar. What changes: the single scroll becomes pages. The aisle name drops back to a small label, and the guidance is the headline. Swipe, tap Next, or use arrow keys. Checkboxes work. Every card's text is verbatim from the corpus (aisle entries, item cards, family tips); nothing is written for the deck. Long cards scroll inside the card.</p>
+  <div class="stage">
+    <div class="phone" id="phone"></div>
+    <div class="notes">
+      <div class="note"><b>Read top to bottom, in the order a shopper acts</b><p>Name. Items to tick. Grab: the one decision. At the shelf: numbered checks. What the label means. Leave it. Cannot find it. At home. Why. Then the illustration at the bottom.</p></div>
+      <div class="note"><b>Same parts as today</b><p>Top bar with position, segments, gold hairline, cards with the gold top edge, checkbox rows, "Next: ..." row, Scan / Ask / + bar. Nothing new to learn.</p></div>
+      <div class="note"><b>Checkboxes stay where they are</b><p>They live on the page for the items it covers, as they do now. Last time I moved them to the list. That was wrong for a restructure.</p></div>
+      <div class="note"><b>Aisle card: how to shop the aisle</b><p>No list, no items. Only what to look for, what to skip and why, for the whole aisle.</p></div>
+      <div class="note"><b>Group card: the items, then how to shop them</b><p>The items it covers sit at the top as checkboxes (broccoli, peppers). Below them, Look for, Skip and why for that group.</p></div>
+      <div class="note"><b>Moving around</b><p>Segments show the aisle's pages. The chevron-down closes shop mode. The position count opens an aisle jump sheet.</p></div>
+    </div>
+  </div>
+
+  <h2>All pages on a sample list</h2>
+  <p class="lede">Broccoli, peppers, leafy greens, potatoes, onions, chicken, ground beef, eggs, frozen berries.</p>
+  <div class="flow" id="flow"></div>
+
+  <h2>Where the groups come from</h2>
+  <p class="lede">A group page is a KB family filtered to what is on the list. Families are already built by how an item is shopped. Your examples (apples, pears, oranges and so on) are not decided here. They have no family yet, so that is a sourcing question.</p>
+  <div class="tw"><table>
+    <tr><th>Group</th><th>Family</th><th>Cards</th></tr>
+    <tr><td>Crisp heads and pods</td><td><code>fam_crisp_heads_pods</code></td><td>brassicas, peppers, green beans</td></tr>
+    <tr><td>Living leaf</td><td><code>fam_living_leaf</code></td><td>leafy greens, revive greens, sprouts, precut</td></tr>
+    <tr><td>Storage crops</td><td><code>fam_storage_crops</code></td><td>potatoes, onions and garlic, roots</td></tr>
+    <tr><td>Pastured poultry and pork</td><td><code>fam_poultry_pork</code></td><td>chicken, turkey, pork, duck, rotisserie</td></tr>
+  </table></div>
+  <p class="lede">Needs a governed server change (family and aisle order per list item) and a cleanup of "organic-first" lines in a few families before they show up as headlines. Both are proposals first. Family decision lines are not used on these cards (fam_crisp_heads_pods, fam_frozen_produce still read organic-first); the frozen group page shows the family's why and tips only. Item decision lines (e.g. peppers) are shown as written in the KB.</p>
+</div>
+
+<script>
+var P=[{"t":"aisle","name":"Produce aisle","aisle":"Produce","grab":"Go organic wherever the skin gets eaten. Where the peel comes off, ripeness is your guide.","secs":[{"k":"shelf","v":["Read the sticker: 5 digits starting with 9 is organic, 4 digits is conventional.","Look for a Real Organic, Certified Naturally Grown, Demeter or Regenerative Organic Certified logo: each goes further than plain organic."]},{"k":"fallback","v":["Can’t find one of those logos? Pick plain USDA Organic for anything with the skin eaten."]}]},{"t":"group","name":"Broccoli and cauliflower","aisle":"Produce","items":["Broccoli","Cauliflower","Cabbage"],"grab":"Tight heads that feel heavy for their size, and a Real Organic logo on the sign if there is one.","secs":[{"k":"shelf","v":["Look for Real Organic Project on the sign: grown in soil, never hydroponic.","Pick broccoli with dark green florets closed tight, on stems that are not thick and tough.","Cauliflower: a head with no bruises or damage."]},{"k":"skip","v":["Florets enlarged, opened, yellowish-green, or wilted: the broccoli is not fresh.","Soft or slippery anywhere on the head is a sign of spoilage. Leave it."]},{"k":"fallback","v":["No Real Organic or Certified Naturally Grown logo: plain organic broccoli and cauliflower."]}]},{"t":"group","name":"Bell peppers","aisle":"Produce","items":["Bell peppers"],"grab":"Firm, even peppers with unwrinkled skin.","secs":[{"k":"shelf","v":["Look for Real Organic Project on the sign: grown in soil, never hydroponic.","Pick firm peppers, even in shape, size and color; colored ones at least half colored.","Greenhouse-grown on the sign is not a seal."]},{"k":"skip","v":["Skip peppers with cracks, decay, sunburn, disease, bruises or insect damage.","A dark, sunken lesion at the blossom end: blossom end rot."]},{"k":"fallback","v":["No Real Organic or Certified Naturally Grown logo: plain organic, which may still use approved sprays."]}]},{"t":"aisle","name":"Meat & eggs aisle","aisle":"Meat & eggs","grab":"Beef and lamb that ate grass its whole life. Chicken, pork and eggs that were pasture-raised.","secs":[{"k":"shelf","v":["A logo from a group that checks, like AGA Grassfed, is the sure sign.","Skip packs that say ‘tenderized’ or ‘added solution’. ‘Added solution’ means water and salt were added."]},{"k":"fallback","v":["Can’t find it? Beef and lamb: a pack with a Global Animal Partnership (GAP) welfare rating. Chicken, pork and eggs: organic."]}]},{"t":"group","name":"Chicken","aisle":"Meat & eggs","items":["Chicken"],"grab":"Chicken that lived outside.","secs":[{"k":"shelf","v":["Look for Certified Humane Pasture-Raised or Animal Welfare Approved on the pack.","Read USDA Organic as a bonus on top: organic feed with pasture and forage, no antibiotics in feed.","Packs can carry added water or broth, up to 15% of the weight. Choose the least; air-chilled chicken holds the least."]},{"k":"labels","v":[["Certified Humane Pasture-Raised","Outdoors every day, at least 6 hours, 12 months a year (6 on seasonal farms), more than half of life on living pasture."],["Animal Welfare Approved","Continuous daytime ranging from four weeks old, on an audited farm."],["USDA Organic","Organic feed ration including pasture and forage, outdoor space, no antibiotics in feed."]]},{"k":"skip","v":["‘Natural’ promises nothing about how the bird lived. It covers processing only.","‘Free-range’ says the birds had outdoor access, not how much room or what grows there."]}]},{"t":"aisle","name":"Frozen aisle","aisle":"Frozen","grab":"Frozen fruit and vegetables with nothing else in the bag.","secs":[{"k":"shelf","v":["Read the list: just the fruit or vegetable, no sauce, syrup or sugar.","Check the bag feels loose, not one solid block, and pick from the back of the case."]},{"k":"fallback","v":["Can’t find organic? Pick the bag with the fruit or vegetable alone on the list."]}]},{"t":"group","name":"Frozen fruit and vegetables","aisle":"Frozen","items":["Frozen berries"],"grab":"Frozen loose, from the back of the case, with USDA Organic on the bag.","secs":[{"k":"shelf","v":["Look for ‘USDA Organic’ on the bag.","Read the list: the food alone; skip citric acid, ascorbic acid and sugar.","Check the bag feels loose; a solid block has likely thawed and refrozen."]}]}];
+var aisles=[];P.forEach(function(p,i){p.i=i;if(aisles.indexOf(p.aisle)<0)aisles.push(p.aisle)});
+var cur=0,sheet=false,done={};
+var $=function(i){return document.getElementById(i)};
+function pg(a){return P.filter(function(p){return p.aisle===a})}
+function tips(a,c){return '<ul class="tips '+c+'">'+a.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul>'}
+var AI={"Produce aisle":[{"l":"Look for","st":[["y","Reach for Real Organic Project","It only certifies crops grown in the ground, never hydroponic and never in containers or bags, so it goes further than plain organic."],["y","Certified Naturally Grown is a great sign too","Growers review each other’s farms, with no synthetic chemicals or GMOs allowed."],["y","Demeter and Regenerative Organic Certified count as well","Both go further than plain organic."],["y","Read the sticker","Five digits starting with 9 means organic. Four digits means conventional. The sticker system is voluntary, so the USDA Organic seal or an organic sign is the firmer check."],["y","The heavier of two wins","Heavy for its size means more water, a better guide than color. Pick up two of the same thing and compare them."]]},{"l":"Watch for","st":[["x","Waxed or ‘coated with’ on the sign","Coated fruit has to say so. Read the sign for ‘coated with’ to see what wax is on the skin, and leave the waxed one behind."],["x","‘Natural’","It means nothing on produce, so it is no reason to buy."],["x","‘Pesticide-free’ on a store sign","It can mean none were used or that residue was washed off. Without an organic label there is no way to tell which."]]},{"l":"Even better","st":[["y","A farm stand, farmers market or local farm","Fresh from a local farm stand, in season, is best. Ask the grower how the crop was grown. A farm directory or farmers market will lead you to local farms."],["y","A grower who answers your questions about sprays","A farm that sells direct reaches past what any seal audits."]]},{"l":"Can’t find those?","st":[["y","Go with USDA Organic","It is the floor to shop from: no synthetic substances or GMOs in growing."]]}],"Meat & eggs aisle":[{"l":"Look for","st":[["y","‘100% grass-fed’ on beef and lamb","Plain ‘grass-fed’ can still mean grain at the end."],["y","A logo from a group that checks, like AGA Grassfed","That is the sure sign. American Grassfed means grass and forage only from weaning until harvest, on pasture without confinement, inspected by third parties."],["y","‘Pasture-raised’ on the front of the egg carton","‘Cage-free’ does not mean the hens went outside. Certified Humane Pasture Raised, with at least 108 square feet of pasture per hen, is audited."],["y","‘Corn-free’ and ‘soy-free’ printed beside ‘pasture-raised’","They are the only carton words about what the hens ate, so they must be printed outright."]]},{"l":"Watch for","st":[["x","‘Tenderized’ or ‘added solution’","Water and salt were added to the meat."],["x","‘Free-range’ eggs","Some outdoor access, and the amount is not strictly defined."],["x","Organic beef without ‘100% grass-fed’","It can still eat grain at the end, up to 120 days in a feedlot."]]},{"l":"Even better","st":[["y","A rancher or farm that sells direct","One who answers the grain question is what backs ‘grass-fed’. Ask about feed and pasture, since a direct farm reaches past what any seal audits."],["y","A staffed counter that can name the maker and the animal"]]},{"l":"Can’t find those?","st":[["y","Beef and lamb: a GAP welfare rating","That is Global Animal Partnership."],["y","Chicken, pork and eggs: organic","Organic means organic feed, no GMOs and no routine antibiotics. For how the animals lived, read the pasture words."]]}],"Frozen aisle":[{"l":"Look for","st":[["y","Just the fruit or vegetable on the list","No sauce, syrup or sugar. Read the list for one ingredient."],["y","USDA Organic on the front","A bonus on top of the plain list. Plain organic frozen is a good pick all year."],["y","A bag that feels loose","Not one solid block. Reach to the back of the case, where packs see the least temperature swing."]]},{"l":"Watch for","st":[["x","Fries, waffles, pizza and meals","Read the whole list before trusting the front of the pack."],["x","A bag frozen into one solid block","It has likely thawed and refrozen on the way."],["x","Sauce, syrup or seasoning","The bag is no longer plain produce. Read for one ingredient."],["x","Citric acid, ascorbic acid or sugar","Skip them. The food alone is what belongs on the list."]]},{"l":"Can’t find organic?","st":[["y","Take the bag with only the fruit or vegetable on the list","Plain frozen is frozen piece by piece soon after harvest."]]}],"Broccoli and cauliflower":[{"l":"Look for","st":[["y","Real Organic Project on the sign","Grown in soil, never hydroponic."],["y","Certified Naturally Grown, Demeter or Regenerative Organic Certified","Florets are eaten whole with no peel, so the grower comes first. Read the sign or sticker at the bin for the growing method."],["y","Tight heads that feel heavy for their size","Leaves bright green and firmly attached, with no yellowing between the florets."],["y","Broccoli with dark green florets, closed tight","Stems that are not thick and tough."],["y","Cauliflower with no bruises or damage",""],["y","Press each head","Leave any soft, slippery, bruised or damaged one."],["y","Once home, keep it unwashed in a bag in the fridge","Wash just before cooking."]]},{"l":"Watch for","st":[["x","Florets that are open, yellowish or wilted","That broccoli is not fresh. Tight, dark green florets are the fresh ones."],["x","Cauliflower with browned florets","Leave it. Pick the creamy, unspotted heads."],["x","Soft or slippery spots, or mold","A sign of spoilage. Leave it."],["x","Raw meat and meat juices nearby","Keep cauliflower away from them."]]},{"l":"Can’t find it?","st":[["y","Plain organic is the next best","No Real Organic or Certified Naturally Grown logo on the sign."]]}],"Bell peppers":[{"l":"Look for","st":[["y","Real Organic Project on the sign","Grown in soil, never hydroponic. The skin is eaten, and peppers rank high for pesticide residue in testing."],["y","Firm and even, with unwrinkled skin","Even in shape, size and color."],["y","Colored peppers at least half colored",""],["y","Store near 45°F where you can","Warmer storage shrivels them from water loss. At 41°F, plan on about two weeks."]]},{"l":"Watch for","st":[["x","Wrinkled skin","The pepper dried out in storage. A firm one still holds its water."],["x","Cracks, decay, sunburn, bruises or insect damage","Pass on any pepper that has shriveled or softened."],["x","A dark, sunken spot at the blossom end","That is blossom end rot."],["x","‘Greenhouse-grown’ on the sign","It is not a seal."],["x","A glossy shine","It can be an added carnauba or shellac coating. Look for uncoated peppers."],["x","Pitting, softening or a discolored seed cavity","That is chilling injury, after a long stay in the refrigerator."]]},{"l":"Can’t find it?","st":[["y","Plain organic is the next best","It may still use approved sprays."]]}],"Chicken":[{"l":"Look for","st":[["y","Certified Humane Pasture-Raised","Outdoors every day, at least 6 hours, and more than half its life on living pasture."],["y","Animal Welfare Approved","Ranging all day from four weeks old, on an audited farm."],["y","USDA Organic is a bonus on top","Organic feed with pasture and forage, and no antibiotics in feed."],["y","Chicken alone on the ingredient list","Packs can carry added water or broth, up to 15% of the weight. Pick the least; air-chilled holds the least."]]},{"l":"Watch for","st":[["x","‘Natural’","It covers processing only, nothing about how the bird lived."],["x","‘Free-range’","Outdoor access, not how much room or what grows there."],["x","‘No hormones’","Every chicken says it, because federal rules allow none."],["x","‘Vegetarian-fed’","It describes the feed, not the life."],["x","‘Raised without antibiotics’","The producer’s own word, unless a seal stands behind it."],["x","‘Non-GMO Project Verified’","It covers the feed, not how the bird lived."]]}],"Frozen fruit and vegetables":[{"l":"Look for","st":[["y","USDA Organic on the bag","A bonus on top of the plain list. Plain organic frozen is a good pick all year."],["y","Just the food on the list","No citric acid, ascorbic acid or sugar. Read for one ingredient."],["y","A bag that feels loose","A solid block has likely thawed and refrozen. Plain frozen is frozen piece by piece soon after harvest."],["y","Bags from the back of the freezer case","They see the least temperature swing."],["y","Fresh in season from a nearby grower, when it is there","A nearby grower picks closer to ripe. Supermarket fresh is often harvested well before peak so it survives shipping and storage."]]},{"l":"Watch for","st":[["x","Syrup on fruit, sauce on vegetables","A bag with sauce, syrup or seasoning is no longer plain produce."],["x","Thick frost inside the bag","It has likely thawed and refrozen."],["n","Freezing your own","Steam-blanch rather than boil, freeze soon after harvest or purchase, and thaw in the fridge."]]}]};
+function aisleBody(p){return AI[p.name].map(function(b){if(b.sk)return '<div class="skp"><i>\u2715</i><div><b>Skip</b>'+b.sk.join('<em>\u00b7</em>')+'</div></div>';if(b.fb)return '<div class="fbk"><b>Cannot find it? </b>'+b.fb[0]+(b.fb[1]?'<span> '+b.fb[1]+'</span>':'')+'</div>';var c='<div class="sec"><div class="lbl">'+b.l+'</div>';
+ if(b.key)c+='<div class="keyb">'+b.key+'</div>';
+ if(b.intro)c+='<div class="intro">'+b.intro+'</div>';
+ if(b.st)c+=b.st.map(function(s){return '<div class="st '+s[0]+'"><i>'+({y:'\u2713',n:'\u2022',x:'\u2715'})[s[0]]+'</i><div><b>'+s[1]+'</b>'+(s[2]?'<span>'+s[2]+'</span>':'')+'</div></div>'}).join('');
+ if(b.note)c+='<div class="note">'+b.note+'</div>';
+ if(b.tag)c+='<div class="tagb">'+b.tag+'</div>';
+ if(b.no)c+=b.no.map(function(t){return '<div class="nob"><span>\u2715</span>'+t+'</div>'}).join('');
+ if(b.alt)c+='<div class="altb">'+b.alt+'</div>';
+ return c+'</div>'}).join('')}
+function render(){
+  var p=P[cur],ap=pg(p.aisle),pos=ap.indexOf(p),nx=P[cur+1];
+  var T={shelf:"At the shelf",labels:"What the label means",skip:"Leave it on the shelf",fallback:"Cannot find it?",home:"At home",why:"Why"};
+  var body="";
+  if(p.t==="group")body+="<div class=\"items\">"+p.items.map(function(k){return "<button class=\"row"+(done[k]?" done":"")+"\" data-c=\""+k+"\"><span class=\"cb\">"+(done[k]?"\u2713":"")+"</span>"+k+"</button>"}).join("")+"</div>";
+  if(p.grab)body+="<div class=\"grab\"><div class=\"gt\">"+p.grab+"</div></div>";
+  if(AI[p.name])body+='<div class="acard">'+aisleBody(p)+'</div>';else p.secs.forEach(function(s){var c="<div class=\"sec "+s.k+"\"><div class=\"lbl\">"+T[s.k]+"</div>";
+    if(s.k==="shelf"&&p.t==="aisle")c=c.replace(">At the shelf<",">Look for<")+s.v.map(function(t){var i=t.indexOf(": "),a=i>0?t.slice(0,i):t,r=i>0?t.slice(i+2):"";return "<div class=\"get\"><div class=\"ga\">"+a+"</div>"+(r?"<p>"+r+"</p>":"")+"</div>"}).join("");
+    else if(s.k==="shelf")c+=s.v.map(function(t,i){return "<div class=\"step\"><span class=\"n\">"+(i+1)+"</span><p>"+t+"</p></div>"}).join("");
+    else if(s.k==="labels")c+=s.v.map(function(x){return "<div class=\"lab\"><b>"+x[0]+"</b><p>"+x[1]+"</p></div>"}).join("");
+    else if(s.k==="skip")c+=s.v.map(function(t){return "<div class=\"no\"><span>\u2715</span><p>"+t+"</p></div>"}).join("");
+    else c+=s.v.map(function(t){return "<p>"+t+"</p>"}).join("");
+    body+=c+"</div>"});
+  body+="<div class=\"art\">gpt-image illustration<br><small>full-width plate, bottom of card</small></div>";
+  body="<div class=\"tile big\">"+body+"</div>";
+  var h='<div class="bar"><button data-a="x" aria-label="Close">⌄</button><button class="mono" data-a="jump">'+(pos+1)+' of '+ap.length+'</button></div>'+
+   '<div class="seg">'+ap.map(function(x,k){return '<i class="'+(k<=pos?'on':'')+'"></i>'}).join('')+'</div>'+
+   '<div class="head">'+'<div class="kick"><span>'+(p.t==='group'?p.aisle:'Aisle')+'</span>'+(nx?'<button class="nx" data-a="next">Next: '+nx.name+' \u203a</button>':'<span class="nx">End of list</span>')+'</div>'+'<h3>'+p.name+'</h3></div>'+
+   '<div class="scroll" id="sc">'+body+'</div>'+
+   '<div class="tabs"><div>Scan</div><div>Ask</div><div>+</div></div>';
+  if(sheet)h+='<div class="sheet"><div class="lbl">Aisles</div>'+aisles.map(function(a){return '<button class="j" data-j="'+pg(a)[0].i+'"><span>'+a+'</span><span style="color:var(--muted)">'+pg(a).length+' pages</span></button>'}).join('')+'<button class="x" data-a="close">Close</button></div>';
+  $('phone').innerHTML=h;
+  [].forEach.call(document.querySelectorAll('.fp'),function(f,k){f.classList.toggle('cur',k===cur)});
+}
+function go(i){if(i<0||i>=P.length)return;cur=i;sheet=false;render()}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('[data-a],[data-j],[data-c],.fp');if(!b)return;
+  if(b.dataset.c){done[b.dataset.c]=!done[b.dataset.c];return render()}
+  if(b.dataset.j!==undefined)return go(+b.dataset.j);
+  if(b.classList.contains('fp'))return go(+b.dataset.i);
+  var a=b.dataset.a;
+  if(a==='next')go(cur+1);else if(a==='jump'){sheet=true;render()}else if(a==='close'){sheet=false;render()}
+});
+document.addEventListener('keydown',function(e){if(e.key==='ArrowRight')go(cur+1);if(e.key==='ArrowLeft')go(cur-1)});
+var sx=null;
+$('phone').addEventListener('pointerdown',function(e){if(e.target.closest('button,.sheet'))return;sx=e.clientX});
+$('phone').addEventListener('pointerup',function(e){if(sx===null)return;var d=e.clientX-sx;sx=null;if(Math.abs(d)>50)go(cur+(d<0?1:-1))});
+$('flow').innerHTML=P.map(function(p){return '<button class="fp'+(p.t==='aisle'?' ai':'')+'" data-i="'+p.i+'"><b>'+p.name+'</b><small>'+(p.t==='aisle'?'Aisle page':p.items.join(', '))+'</small></button>'}).join('');
+render();
+</script>
