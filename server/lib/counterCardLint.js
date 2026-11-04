@@ -1067,6 +1067,8 @@ export function lintDeck(entry) {
   const lines = []; // [text, max words, where]
   if (textValue(deck.grab)) lines.push([deck.grab, MAX_DECK_GRAB_WORDS, 'grab']);
   else fail('DECK_SHAPE', 'deck needs a nonempty grab');
+  // The grab is one glance line; a semicolon splits it into two thoughts.
+  if (textValue(deck.grab) && deck.grab.includes(';')) fail('DECK_GRAB_SEMICOLON', `grab: no semicolons: "${deck.grab}"`);
   const blocks = Array.isArray(deck.blocks) ? deck.blocks : [];
   if (blocks.length < 1 || blocks.length > MAX_DECK_BLOCKS) fail('DECK_SHAPE', `deck needs 1–${MAX_DECK_BLOCKS} blocks`);
   const urls = new Set([...(Array.isArray(entry.sources) ? entry.sources : []), ...(Array.isArray(deck.sources) ? deck.sources : [])]
@@ -1163,6 +1165,7 @@ export function lintCard(card) {
 
   const out = lintFamilyMetadata(card || {});
   const fail = (code, detail) => out.push({ code, detail });
+  out.push(...lintDeck(card));
 
   const headline = String(card?.headline || '').trim();
   const doLine = String(card?.do ?? card?.do_line ?? '').trim();

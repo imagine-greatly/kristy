@@ -3098,7 +3098,92 @@
       "science": "Farms that carry a welfare seal are inspected against a written standard for how the birds live. The organic seal adds a feed rule: an organic ration that includes pasture and forage.",
       "instead": "USDA Organic alone, or a pasture-raised seal alone, with nothing added.",
       "family": "fam_poultry_pork",
-      "delta": "A pasture-raised seal plus USDA Organic; chicken alone in the ingredients."
+      "delta": "A pasture-raised seal plus USDA Organic; chicken alone in the ingredients.",
+      "deck": {
+        "grab": "Chicken that lived outside.",
+        "blocks": [
+          {
+            "label": "Look for",
+            "rows": [
+              {
+                "mark": "yes",
+                "lead": "Certified Humane Pasture-Raised",
+                "sub": "Outdoors every day, at least 6 hours, and more than half of life on living pasture.",
+                "src": "https://certifiedhumane.org/wp-content/uploads/HFAC-Std14.Chickens.5M_PR_R.pdf"
+              },
+              {
+                "mark": "yes",
+                "lead": "Animal Welfare Approved",
+                "sub": "Continuous daytime ranging from four weeks old, on an audited farm.",
+                "src": "https://agreenerworld.org/certifications/animal-welfare-approved/standards/meat-chicken-standards/"
+              },
+              {
+                "mark": "yes",
+                "lead": "Read USDA Organic as a bonus on top",
+                "sub": "Organic feed with pasture and forage, no antibiotics in feed.",
+                "src": "https://www.law.cornell.edu/cfr/text/7/205.237"
+              },
+              {
+                "mark": "yes",
+                "lead": "Chicken alone on the ingredient list",
+                "sub": "Packs can carry added water or broth, up to 15% of the weight. Choose the least; air-chilled chicken holds the least.",
+                "src": "https://www.virtualweberbullet.com/enhanced-meat/"
+              }
+            ]
+          },
+          {
+            "label": "Watch for",
+            "rows": [
+              {
+                "mark": "no",
+                "lead": "‘Natural’",
+                "sub": "It covers processing only, nothing about how the bird lived.",
+                "src": "https://chriskresser.com/misleading-food-labels/"
+              },
+              {
+                "mark": "no",
+                "lead": "‘Free-range’",
+                "sub": "Outdoor access, not how much room or what grows there.",
+                "src": "https://chriskresser.com/misleading-food-labels/"
+              },
+              {
+                "mark": "no",
+                "lead": "‘No hormones’",
+                "sub": "Every chicken says it, because federal rules allow none.",
+                "src": "https://www.consumerreports.org/food/decoding-the-labels-on-meat-packages/decoding-the-labels-on-meat-packages.html"
+              },
+              {
+                "mark": "no",
+                "lead": "‘Vegetarian-fed’",
+                "sub": "It describes the feed, not the life.",
+                "src": "https://chriskresser.com/misleading-food-labels/"
+              },
+              {
+                "mark": "no",
+                "lead": "‘Raised without antibiotics’",
+                "sub": "The producer’s own word, unless a seal stands behind it.",
+                "src": "https://www.consumerreports.org/food/decoding-the-labels-on-meat-packages/decoding-the-labels-on-meat-packages.html"
+              },
+              {
+                "mark": "no",
+                "lead": "‘Non-GMO Project Verified’",
+                "sub": "It covers the feed from the second day after hatching. It says nothing about how the bird lived.",
+                "src": "https://www.nongmoproject.org/wp-content/uploads/Non-GMO-Project-Standard-Version-17.pdf"
+              }
+            ]
+          }
+        ],
+        "sources": [
+          {
+            "name": "The Virtual Weber Bullet, Enhanced Meat",
+            "url": "https://www.virtualweberbullet.com/enhanced-meat/"
+          },
+          {
+            "name": "Consumer Reports, Decoding the Labels on Meat Packages",
+            "url": "https://www.consumerreports.org/food/decoding-the-labels-on-meat-packages/decoding-the-labels-on-meat-packages.html"
+          }
+        ]
+      }
     },
     {
       "id": "pork_cuts_and_enhanced",
@@ -5667,7 +5752,107 @@
         "how long does broccoli last"
       ],
       "family": "fam_crisp_heads_pods",
-      "delta": "Cauliflower heads should be compact with no spaces between florets."
+      "delta": "Cauliflower heads should be compact with no spaces between florets.",
+      "deck": {
+        "grab": "Tight heads, heavy for their size, with Real Organic Project on the sign if there is one.",
+        "blocks": [
+          {
+            "label": "Look for",
+            "rows": [
+              {
+                "mark": "yes",
+                "lead": "Real Organic Project on the sign",
+                "sub": "Grown in soil, never hydroponic.",
+                "src": "https://realorganicproject.org/standards/"
+              },
+              {
+                "mark": "yes",
+                "lead": "Certified Naturally Grown, Demeter or Regenerative Organic Certified",
+                "sub": "Florets are eaten whole, with no peel to take surface residue away. Read the sign or sticker at the bin for the growing method.",
+                "src": "https://www.naturallygrown.org/faqs/"
+              },
+              {
+                "mark": "yes",
+                "lead": "Tight heads that feel heavy for their size",
+                "sub": "Cauliflower leaves should be bright green and firmly attached.",
+                "src": "https://www.umass.edu/agriculture-food-environment/nutrition/publications-resources/produce-spotlight/broccoli-cauliflower"
+              },
+              {
+                "mark": "yes",
+                "lead": "Broccoli with dark green florets, closed tight",
+                "sub": "Stems that are not thick and tough.",
+                "src": "https://www.canr.msu.edu/news/michigan_fresh_broccoli_and_cabbage"
+              },
+              {
+                "mark": "yes",
+                "lead": "Press each head",
+                "sub": "Leave any soft, slippery, bruised or damaged one.",
+                "src": "https://www.canr.msu.edu/news/michigan_fresh_broccoli_and_cabbage"
+              },
+              {
+                "mark": "yes",
+                "lead": "Once home, keep it unwashed in a bag in the fridge",
+                "sub": "Wash in cool water just before using.",
+                "src": "https://www.umass.edu/agriculture-food-environment/nutrition/publications-resources/produce-spotlight/broccoli-cauliflower"
+              }
+            ]
+          },
+          {
+            "label": "Watch for",
+            "rows": [
+              {
+                "mark": "no",
+                "lead": "Florets that are enlarged, opened, yellowish-green or wilted",
+                "sub": "That broccoli is not fresh.",
+                "src": "https://www.canr.msu.edu/news/michigan_fresh_broccoli_and_cabbage"
+              },
+              {
+                "mark": "no",
+                "lead": "Cauliflower with browned florets",
+                "sub": "Leave it and pick a creamy white head.",
+                "src": "https://www.umass.edu/agriculture-food-environment/nutrition/publications-resources/produce-spotlight/broccoli-cauliflower"
+              },
+              {
+                "mark": "no",
+                "lead": "Soft or slippery anywhere on the head",
+                "sub": "A sign of spoilage. Leave it.",
+                "src": "https://www.canr.msu.edu/news/michigan_fresh_broccoli_and_cabbage"
+              },
+              {
+                "mark": "no",
+                "lead": "Raw meat and meat juices nearby",
+                "sub": "Keep cauliflower away from them.",
+                "src": "https://www.canr.msu.edu/news/michigan_fresh_broccoli_and_cabbage"
+              }
+            ]
+          },
+          {
+            "label": "Can’t find it?",
+            "rows": [
+              {
+                "mark": "yes",
+                "lead": "No Real Organic or Certified Naturally Grown logo",
+                "sub": "Plain organic broccoli and cauliflower.",
+                "src": "https://www.law.cornell.edu/cfr/text/7/205.301"
+              }
+            ]
+          }
+        ],
+        "sources": [
+          {
+            "name": "UMass Extension, Produce Spotlight: Broccoli and Cauliflower",
+            "url": "https://www.umass.edu/agriculture-food-environment/nutrition/publications-resources/produce-spotlight/broccoli-cauliflower"
+          },
+          {
+            "name": "MSU Extension, Michigan Fresh: Broccoli and Cabbage",
+            "url": "https://www.canr.msu.edu/news/michigan_fresh_broccoli_and_cabbage"
+          },
+          {
+            "name": "7 CFR 205.301, product composition",
+            "url": "https://www.law.cornell.edu/cfr/text/7/205.301"
+          }
+        ]
+      }
     },
     {
       "id": "produce_onions_garlic",
@@ -5995,7 +6180,99 @@
         "why did my peppers go soft"
       ],
       "family": "fam_crisp_heads_pods",
-      "delta": "Red and yellow bells are green peppers left to ripen fully."
+      "delta": "Red and yellow bells are green peppers left to ripen fully.",
+      "deck": {
+        "grab": "Firm peppers, even in shape, size and color, with unwrinkled skin.",
+        "blocks": [
+          {
+            "label": "Look for",
+            "rows": [
+              {
+                "mark": "yes",
+                "lead": "Real Organic Project on the sign",
+                "sub": "Grown in soil, never hydroponic. The skin is eaten, and peppers rank high for pesticide residue in testing.",
+                "src": "https://realorganicproject.org/standards/"
+              },
+              {
+                "mark": "yes",
+                "lead": "Firm peppers, even in shape, size and color",
+                "src": "https://www.extension.purdue.edu/foodlink/foods.php"
+              },
+              {
+                "mark": "yes",
+                "lead": "Colored peppers at least half colored",
+                "src": "https://ucanr.edu/sites/SFA/files/294692.pdf"
+              },
+              {
+                "mark": "yes",
+                "lead": "Store around 45°F where you can",
+                "sub": "Warmer storage shrivels them from water loss. At 41°F, plan on about two weeks.",
+                "src": "https://ucanr.edu/sites/SFA/files/294692.pdf"
+              }
+            ]
+          },
+          {
+            "label": "Watch for",
+            "rows": [
+              {
+                "mark": "no",
+                "lead": "Wrinkled skin",
+                "sub": "The pepper dried out in storage. A firm one still holds its water.",
+                "src": "https://www.extension.purdue.edu/foodlink/foods.php"
+              },
+              {
+                "mark": "no",
+                "lead": "Cracks, decay, sunburn, disease, bruises or insect damage",
+                "sub": "Pass on any pepper that has shriveled or softened.",
+                "src": "https://ucanr.edu/sites/SFA/files/294692.pdf"
+              },
+              {
+                "mark": "no",
+                "lead": "A dark, sunken lesion at the blossom end",
+                "sub": "That is blossom end rot.",
+                "src": "https://ucanr.edu/sites/SFA/files/294692.pdf"
+              },
+              {
+                "mark": "no",
+                "lead": "‘Greenhouse-grown’ on the sign",
+                "sub": "It is not a seal.",
+                "src": "https://realorganicproject.org/wp-content/uploads/2024/12/ROPStandards_Final.pdf"
+              },
+              {
+                "mark": "no",
+                "lead": "Pitting, softening or a discolored seed cavity",
+                "sub": "That is chilling injury, after a long stay in the refrigerator.",
+                "src": "https://ucanr.edu/sites/SFA/files/294692.pdf"
+              }
+            ]
+          },
+          {
+            "label": "Can’t find it?",
+            "rows": [
+              {
+                "mark": "yes",
+                "lead": "No Real Organic or Certified Naturally Grown logo",
+                "sub": "Plain organic may still use approved sprays.",
+                "src": "https://www.law.cornell.edu/cfr/text/7/205.105"
+              }
+            ]
+          }
+        ],
+        "sources": [
+          {
+            "name": "Real Organic Project, Standards",
+            "url": "https://realorganicproject.org/standards/"
+          },
+          {
+            "name": "UC ANR, Bell Pepper Postharvest Facts",
+            "url": "https://ucanr.edu/sites/SFA/files/294692.pdf"
+          },
+          {
+            "name": "Real Organic Project, Standards (PDF)",
+            "url": "https://realorganicproject.org/wp-content/uploads/2024/12/ROPStandards_Final.pdf"
+          }
+        ]
+      }
     },
     {
       "id": "produce_apples_pears",
@@ -16189,7 +16466,89 @@
         "Eggs: the carton front should say ‘pasture-raised’. ‘Cage-free’ does not mean they went outside.",
         "Skip packs that say ‘tenderized’ or ‘added solution’. ‘Added solution’ means water and salt were added.",
         "Can’t find it? Beef and lamb: a pack with a Global Animal Partnership (GAP) welfare rating. Chicken, pork and eggs: organic."
-      ]
+      ],
+      "deck": {
+        "grab": "Beef and lamb: grass-fed its whole life. Chicken, pork and eggs: pasture-raised.",
+        "blocks": [
+          {
+            "label": "Look for",
+            "rows": [
+              {
+                "mark": "yes",
+                "lead": "‘100% grass-fed’ on beef and lamb",
+                "sub": "Plain ‘grass-fed’ can still mean grain at the end.",
+                "src": "https://www.americangrassfed.org/unveiling-the-truth-behind-grassfed-labeling-debunking-common-misconceptions/"
+              },
+              {
+                "mark": "yes",
+                "lead": "A logo from a group that checks, like AGA Grassfed",
+                "sub": "That is the sure sign. Animals are fed only grass and forage from weaning until harvest.",
+                "src": "https://www.americangrassfed.org/about-us/our-standards"
+              },
+              {
+                "mark": "yes",
+                "lead": "‘Pasture-raised’ on the front of the egg carton",
+                "sub": "‘Cage-free’ does not mean the hens went outside.",
+                "src": "https://certifiedhumane.org/what-makes-certified-humane-cage-free-eggs-different/"
+              }
+            ]
+          },
+          {
+            "label": "Watch for",
+            "rows": [
+              {
+                "mark": "no",
+                "lead": "‘Tenderized’ or ‘added solution’",
+                "sub": "Water and salt were added to the meat.",
+                "src": "https://www.law.cornell.edu/cfr/text/9/317.2"
+              },
+              {
+                "mark": "no",
+                "lead": "‘Free-range’ eggs",
+                "sub": "Hens get daytime access to an outdoor area, but not all marks guarantee the same amount of space.",
+                "src": "https://www.americanhumane.org/article/understanding-egg-labels-at-the-grocery-store/"
+              }
+            ]
+          },
+          {
+            "label": "Can’t find those?",
+            "rows": [
+              {
+                "mark": "yes",
+                "lead": "Beef and lamb: a GAP welfare rating",
+                "sub": "That is Global Animal Partnership.",
+                "src": "https://www.aspca.org/shopkind/guide/food-certification-label-guide"
+              }
+            ]
+          }
+        ],
+        "sources": [
+          {
+            "name": "American Grassfed Association, Grassfed Labeling Misconceptions",
+            "url": "https://www.americangrassfed.org/unveiling-the-truth-behind-grassfed-labeling-debunking-common-misconceptions/"
+          },
+          {
+            "name": "American Grassfed Association, Our Standards",
+            "url": "https://www.americangrassfed.org/about-us/our-standards"
+          },
+          {
+            "name": "Certified Humane, Cage-Free Eggs Compared",
+            "url": "https://certifiedhumane.org/what-makes-certified-humane-cage-free-eggs-different/"
+          },
+          {
+            "name": "9 CFR 317.2, labeling definitions",
+            "url": "https://www.law.cornell.edu/cfr/text/9/317.2"
+          },
+          {
+            "name": "American Humane, Understanding Egg Labels",
+            "url": "https://www.americanhumane.org/article/understanding-egg-labels-at-the-grocery-store/"
+          },
+          {
+            "name": "ASPCA, Food Certification Label Guide",
+            "url": "https://www.aspca.org/shopkind/guide/food-certification-label-guide"
+          }
+        ]
+      }
     },
     {
       "id": "aisle_deli_prepared",
@@ -16567,7 +16926,85 @@
         "Look for ‘USDA Organic’ on the front.",
         "Read the list on fries, waffles, pizza and meals before trusting the front.",
         "Can’t find organic? Pick the bag with the fruit or vegetable alone on the list."
-      ]
+      ],
+      "deck": {
+        "grab": "Frozen fruit and vegetables with nothing else in the bag.",
+        "blocks": [
+          {
+            "label": "Look for",
+            "rows": [
+              {
+                "mark": "yes",
+                "lead": "Just the fruit or vegetable on the list",
+                "sub": "No sauce, syrup or sugar.",
+                "src": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+              },
+              {
+                "mark": "yes",
+                "lead": "USDA Organic on the front",
+                "sub": "Plain organic frozen is a good pick all year.",
+                "src": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+              },
+              {
+                "mark": "yes",
+                "lead": "A bag that feels loose",
+                "sub": "Not one solid block. Pick from the back of the case.",
+                "src": "https://www.thekitchn.com/shake-bag-of-frozen-vegetables-tip-23655327"
+              }
+            ]
+          },
+          {
+            "label": "Watch for",
+            "rows": [
+              {
+                "mark": "no",
+                "lead": "Fries, waffles, pizza and meals",
+                "sub": "Read the whole list before trusting the front of the pack.",
+                "src": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+              },
+              {
+                "mark": "no",
+                "lead": "A bag frozen into one solid block",
+                "sub": "It has likely thawed and refrozen on the way.",
+                "src": "https://www.thekitchn.com/shake-bag-of-frozen-vegetables-tip-23655327"
+              },
+              {
+                "mark": "no",
+                "lead": "Sauce, syrup or seasoning",
+                "sub": "A bag with sauce, syrup or seasoning is no longer plain produce. Read for one ingredient.",
+                "src": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+              },
+              {
+                "mark": "no",
+                "lead": "Citric acid, ascorbic acid or sugar",
+                "sub": "Skip them. Read the list for the food alone.",
+                "src": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+              }
+            ]
+          },
+          {
+            "label": "Can’t find organic?",
+            "rows": [
+              {
+                "mark": "yes",
+                "lead": "Take the bag with only the fruit or vegetable on the list",
+                "sub": "Plain frozen is frozen piece by piece soon after harvest.",
+                "src": "https://www.thekitchn.com/shake-bag-of-frozen-vegetables-tip-23655327"
+              }
+            ]
+          }
+        ],
+        "sources": [
+          {
+            "name": "Weston A. Price Foundation, Shopping Guide Categories",
+            "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+          },
+          {
+            "name": "The Kitchn, Shake the Bag of Frozen Vegetables",
+            "url": "https://www.thekitchn.com/shake-bag-of-frozen-vegetables-tip-23655327"
+          }
+        ]
+      }
     },
     {
       "id": "fam_whole_grains",
@@ -17913,7 +18350,89 @@
         "Read the sticker: 5 digits starting with 9 is organic, 4 digits is conventional.",
         "Look for a Real Organic, Certified Naturally Grown, Demeter or Regenerative Organic Certified logo: each goes further than plain organic.",
         "Can’t find one of those logos? Pick plain USDA Organic for anything with the skin eaten."
-      ]
+      ],
+      "deck": {
+        "grab": "Organic when you eat the skin or juice it. Peeled, pick by ripeness.",
+        "blocks": [
+          {
+            "label": "Look for",
+            "rows": [
+              {
+                "mark": "yes",
+                "lead": "Reach for Real Organic Project",
+                "sub": "Grown in soil, never hydroponic, so it goes further than plain organic.",
+                "src": "https://realorganicproject.org/standards/"
+              },
+              {
+                "mark": "yes",
+                "lead": "Certified Naturally Grown is a great sign too",
+                "sub": "Certified by peer review, working without relying on synthetic chemicals or GMOs.",
+                "src": "https://naturallygrown.org/"
+              },
+              {
+                "mark": "yes",
+                "lead": "Demeter and Regenerative Organic Certified count as well",
+                "sub": "Both go further than plain organic.",
+                "src": "https://regenorganic.org/"
+              },
+              {
+                "mark": "yes",
+                "lead": "Read the sticker",
+                "sub": "Five digits starting with 9 means organic. Four digits means conventional. The codes are a voluntary system.",
+                "src": "https://www.ewg.org/news-insights/news/are-you-looking-9-when-you-buy-produce"
+              }
+            ]
+          },
+          {
+            "label": "Even better",
+            "rows": [
+              {
+                "mark": "yes",
+                "lead": "A farm stand, farmers market or local farm",
+                "sub": "A good source for fresh produce.",
+                "src": "https://hgic.clemson.edu/the-benefits-of-seasonal-eating-fresh-nutrient-dense-and-budget-friendly/"
+              }
+            ]
+          },
+          {
+            "label": "Can’t find those?",
+            "rows": [
+              {
+                "mark": "yes",
+                "lead": "Go with USDA Organic",
+                "sub": "Pick plain USDA Organic for anything with the skin eaten. Organic rules bar synthetic substances and GMOs in growing.",
+                "src": "https://www.law.cornell.edu/cfr/text/7/205.105"
+              }
+            ]
+          }
+        ],
+        "sources": [
+          {
+            "name": "Real Organic Project, Standards",
+            "url": "https://realorganicproject.org/standards/"
+          },
+          {
+            "name": "Certified Naturally Grown",
+            "url": "https://naturallygrown.org/"
+          },
+          {
+            "name": "Regenerative Organic Certified",
+            "url": "https://regenorganic.org/"
+          },
+          {
+            "name": "EWG, Are you looking for 9 when you buy produce?",
+            "url": "https://www.ewg.org/news-insights/news/are-you-looking-9-when-you-buy-produce"
+          },
+          {
+            "name": "Clemson HGIC, The Benefits of Seasonal Eating",
+            "url": "https://hgic.clemson.edu/the-benefits-of-seasonal-eating-fresh-nutrient-dense-and-budget-friendly/"
+          },
+          {
+            "name": "7 CFR 205.105, allowed and prohibited substances",
+            "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+          }
+        ]
+      }
     },
     {
       "id": "fam_wild_first_seafood",
@@ -18155,7 +18674,80 @@
           "name": "Shake rule for frozen vegetables",
           "url": "https://www.thekitchn.com/shake-bag-of-frozen-vegetables-tip-23655327"
         }
-      ]
+      ],
+      "deck": {
+        "grab": "Organic frozen fruit and vegetables, frozen loose, from the back of the case.",
+        "blocks": [
+          {
+            "label": "Look for",
+            "rows": [
+              {
+                "mark": "yes",
+                "lead": "USDA Organic on the bag",
+                "sub": "A good pick in any season, with one ingredient on the bag.",
+                "src": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+              },
+              {
+                "mark": "yes",
+                "lead": "Just the food on the list",
+                "sub": "No citric acid, ascorbic acid or sugar. Read for one ingredient.",
+                "src": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+              },
+              {
+                "mark": "yes",
+                "lead": "A bag that feels loose",
+                "sub": "A solid block has likely thawed and refrozen. Plain frozen is frozen piece by piece soon after harvest.",
+                "src": "https://www.thekitchn.com/shake-bag-of-frozen-vegetables-tip-23655327"
+              },
+              {
+                "mark": "yes",
+                "lead": "Bags from the back of the freezer case",
+                "sub": "They see the least temperature swing.",
+                "src": "https://www.thekitchn.com/shake-bag-of-frozen-vegetables-tip-23655327"
+              },
+              {
+                "mark": "yes",
+                "lead": "Fresh in season from a farm stand or garden, when it is there",
+                "sub": "A nearby grower picks closer to ripe. Supermarket produce is often harvested early to survive transit and storage.",
+                "src": "https://hgic.clemson.edu/the-benefits-of-seasonal-eating-fresh-nutrient-dense-and-budget-friendly/"
+              }
+            ]
+          },
+          {
+            "label": "Watch for",
+            "rows": [
+              {
+                "mark": "no",
+                "lead": "Syrup on fruit, sauce on vegetables",
+                "sub": "Read the list and skip both.",
+                "src": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+              },
+              {
+                "mark": "no",
+                "lead": "Thick frost inside the bag",
+                "sub": "Skip it. It has likely thawed and refrozen.",
+                "src": "https://www.thekitchn.com/shake-bag-of-frozen-vegetables-tip-23655327"
+              },
+              {
+                "mark": "note",
+                "lead": "Freezing your own",
+                "sub": "Steam-blanch rather than boil, freeze soon after harvest or purchase, and thaw in the fridge.",
+                "src": "https://extension.umaine.edu/publications/4384e/"
+              }
+            ]
+          }
+        ],
+        "sources": [
+          {
+            "name": "Clemson HGIC, The Benefits of Seasonal Eating",
+            "url": "https://hgic.clemson.edu/the-benefits-of-seasonal-eating-fresh-nutrient-dense-and-budget-friendly/"
+          },
+          {
+            "name": "UMaine Extension, Freezing Vegetables",
+            "url": "https://extension.umaine.edu/publications/4384e/"
+          }
+        ]
+      }
     },
     {
       "id": "fam_bottled_water",

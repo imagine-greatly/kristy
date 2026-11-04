@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { lintDeck, lintAisle, DECK_LABELS, DECK_MARKS } from '../../lib/counterCardLint.js';
+import { lintDeck, lintAisle, lintCard, DECK_LABELS, DECK_MARKS } from '../../lib/counterCardLint.js';
 
 const SRC = 'https://extension.example.edu/peppers';
 const AISLE_SRC = 'https://extension.example.edu/produce';
@@ -76,4 +76,18 @@ test('C8 lintAisle carries deck findings and an entry with no deck adds none', (
   const bad = goodDeck(); bad.blocks[0].label = 'Our picks';
   assert.ok(lintAisle(aisle(bad)).some((f) => f.code === 'DECK_LABEL'));
   assert.ok(!lintAisle(aisle(undefined)).some((f) => f.code.startsWith('DECK_')));
+});
+
+test('C9 a grab with a semicolon fails DECK_GRAB_SEMICOLON; a row sub may carry one', () => {
+  const semi = goodDeck(); semi.grab = 'Firm peppers; tight skin.';
+  assert.ok(codes(card(semi)).includes('DECK_GRAB_SEMICOLON'));
+  const subSemi = goodDeck(); subSemi.blocks[0].rows[0].sub = 'Firm walls; a green stem.';
+  assert.ok(!codes(card(subSemi)).includes('DECK_GRAB_SEMICOLON'));
+});
+
+test('C10 lintCard carries deck findings for a card entry', () => {
+  const bad = goodDeck(); bad.blocks[0].label = 'Our picks';
+  assert.ok(lintCard(card(bad)).some((f) => f.code === 'DECK_LABEL'));
+  assert.ok(!lintCard(card(goodDeck())).some((f) => f.code.startsWith('DECK_')));
+  assert.ok(!lintCard(card(undefined)).some((f) => f.code.startsWith('DECK_')));
 });
