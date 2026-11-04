@@ -903,7 +903,11 @@
         "frozen fruit",
         "fresh vs frozen",
         "frozen produce",
-        "frozen berries"
+        "frozen berries",
+        "frozen blueberries",
+        "frozen mixed berries",
+        "frozen cherries",
+        "frozen mango"
       ],
       "category": "produce",
       "question": "Is frozen produce as good as fresh?",
@@ -7959,7 +7963,8 @@
         "canned tuna",
         "tinned tuna",
         "canned light tuna",
-        "canned skipjack tuna"
+        "canned skipjack tuna",
+        "which tuna should i buy"
       ],
       "category": "seafood",
       "question": "Which canned tuna should you choose?",
@@ -9457,7 +9462,10 @@
         "is the fish fresh",
         "tell if fish is fresh",
         "fish is fresh",
-        "fish smell like"
+        "fish smell like",
+        "tuna steak",
+        "tuna steaks",
+        "ahi tuna"
       ],
       "category": "seafood",
       "question": "How do you choose seafood at the counter?",
