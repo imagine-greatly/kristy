@@ -3122,12 +3122,6 @@
                 "lead": "Read USDA Organic as a bonus on top",
                 "sub": "Organic feed with pasture and forage, no antibiotics in feed.",
                 "src": "https://www.law.cornell.edu/cfr/text/7/205.237"
-              },
-              {
-                "mark": "yes",
-                "lead": "Chicken alone on the ingredient list",
-                "sub": "Packs can carry added water or broth, up to 15% of the weight. Choose the least; air-chilled chicken holds the least.",
-                "src": "https://www.virtualweberbullet.com/enhanced-meat/"
               }
             ]
           },
@@ -3163,12 +3157,6 @@
                 "lead": "‘Raised without antibiotics’",
                 "sub": "The producer’s own word, unless a seal stands behind it.",
                 "src": "https://www.consumerreports.org/food/decoding-the-labels-on-meat-packages/decoding-the-labels-on-meat-packages.html"
-              },
-              {
-                "mark": "no",
-                "lead": "‘Non-GMO Project Verified’",
-                "sub": "It covers the feed from the second day after hatching. It says nothing about how the bird lived.",
-                "src": "https://www.nongmoproject.org/wp-content/uploads/Non-GMO-Project-Standard-Version-17.pdf"
               }
             ]
           }
@@ -5817,12 +5805,6 @@
                 "lead": "Soft or slippery anywhere on the head",
                 "sub": "A sign of spoilage. Leave it.",
                 "src": "https://www.canr.msu.edu/news/michigan_fresh_broccoli_and_cabbage"
-              },
-              {
-                "mark": "no",
-                "lead": "Raw meat and meat juices nearby",
-                "sub": "Keep cauliflower away from them.",
-                "src": "https://www.canr.msu.edu/news/michigan_fresh_broccoli_and_cabbage"
               }
             ]
           },
@@ -6231,12 +6213,6 @@
                 "lead": "A dark, sunken lesion at the blossom end",
                 "sub": "That is blossom end rot.",
                 "src": "https://ucanr.edu/sites/SFA/files/294692.pdf"
-              },
-              {
-                "mark": "no",
-                "lead": "‘Greenhouse-grown’ on the sign",
-                "sub": "It is not a seal.",
-                "src": "https://realorganicproject.org/wp-content/uploads/2024/12/ROPStandards_Final.pdf"
               },
               {
                 "mark": "no",
