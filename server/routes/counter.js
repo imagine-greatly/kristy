@@ -13,6 +13,7 @@ import { premiumForReq } from '../lib/subscription.js';
 import { buildTryPool } from '../lib/tryPool.js';
 import { loadCounterSectionRules } from '../lib/sectionRules.js';
 import { logCounterGap } from '../lib/counterGaps.js';
+import { deckFeed } from '../lib/deckFeed.js';
 
 // The Counter's card corpus, as the client reads it.
 //
@@ -35,6 +36,9 @@ export const counterRouter = Router();
 counterRouter.get('/counter/aisles', optionalAuth, (_req, res) => {
   return res.json({ aisles: aisleEntries().map((entry) => publicAisle(entry)) });
 });
+
+// Shop deck pages: free, deterministic KB read (lib/deckFeed.js), same as the aisles.
+counterRouter.get('/counter/deck', optionalAuth, (_req, res) => res.json({ decks: deckFeed() }));
 
 counterRouter.get('/counter/families/:id', optionalAuth, async (req, res) => {
   const entry = familyEntries().find((entry) => entry.id === req.params.id);
