@@ -372,7 +372,6 @@
         "Check the list: water second means a solution was added. Sodium phosphate, a starch or a sweetener after it says the same.",
         "Check the seasoning for oil; pick olive oil or a bird with no added oil.",
         "Skip seed oils: sunflower, safflower, canola, soybean, corn and cottonseed. Skip avocado oil too.",
-        "Pick a bird that is steaming, not one that has sat under the lamp.",
         "“Seasoned”, “original” and “traditional” are only names; the ingredient list is the regulated part.",
         "A solution bird was injected with water and seasoning before it went on the spit."
       ],
@@ -384,8 +383,7 @@
       ],
       "pick_steps": [
         "Read the sticker’s ingredient list, not the name: chicken, salt, spices wins.",
-        "Water second, then phosphate, starch or sweetener, means a solution bird.",
-        "Take one that is steaming under the lamp, not one that has sat."
+        "Water second, then phosphate, starch or sweetener, means a solution bird."
       ],
       "science": "‘Seasoned’, ‘original’ and ‘traditional’ are marketing; the ingredient list is regulated and runs in descending order. A solution names its contents, so the second word on the list settles it. Hot food is held at or above 140°F. FSIS puts the growth range at 40 to 140°F. Eat or refrigerate a hot rotisserie bird within 2 hours of purchase.",
       "labels_decoded": [
@@ -474,9 +472,7 @@
         "Look for “grass-finished” beside “100% grass-fed” on the label.",
         "Next, Regenerative Organic Certified or Certified Regenerative on the pack means an audited ranch.",
         "Read the list: beef, with seasoning at most, and no water or phosphates.",
-        "Read the name: “ground beef” cannot have beef fat added on its own; “hamburger” can.",
-        "A few percent liver and heart mixed in still tastes like regular ground beef.",
-        "Can’t find it: plain ground beef, plus a small piece of liver from the counter mixed in at home."
+        "Read the name: “ground beef” cannot have beef fat added on its own; “hamburger” can."
       ],
       "labels_decoded": [
         {
@@ -653,16 +649,11 @@
         "No corn-free carton: soy-free, organic, pasture-raised. Next, organic pasture-raised.",
         "No carton names the feed: pick certified organic, since organic rules cover what the hens eat.",
         "Pick farm stands and farmers markets for soy-free eggs, and ask the grower who keeps the hens.",
-        "Find the three-digit pack date beside the plant code. Closer to today is fresher.",
         "Open the carton and check for cracks and leaks before it goes in the cart.",
         "Shell color is the breed; white and brown are the same egg inside. Speckles and rough patches are normal.",
         "AA vs A is firmness of the white. Freshness matters more than either.",
         "Organic means organic feed, no GMOs and no routine antibiotics. The feed is usually still soy and corn.",
         "Most hens eat corn and soy, organic hens too, and the feed becomes the egg.",
-        "Float test at home: flat on the bottom is fresh, standing on end is old, floating goes out.",
-        "A fresh egg fries with a tall yolk and a tight white. A flat, spreading one is old, not unsafe.",
-        "Keep them in the carton. It slows moisture loss and keeps odors out.",
-        "Unwashed farm eggs can stay on the counter. Once washed, they need the fridge for good, not back and forth.",
         "Certified Humane Pasture Raised sets hens on pasture all year, mostly living plants, at 2.5 acres per 1,000 hens.",
         "Look for the farm named on the carton."
       ],
@@ -860,9 +851,7 @@
         "Check one thing: is the skin eaten? Berries, greens, apples, grapes, potatoes: yes.",
         "Look for Real Organic or Certified Naturally Grown on the sign or sticker, a step past USDA Organic.",
         "Can’t find either: the USDA Organic seal on the sign or sticker.",
-        "Peeled produce: the peel goes in the trash, so pick for firmness and ripeness.",
-        "The Environmental Working Group’s Dirty Dozen list is another guide to what to buy organic first.",
-        "Residue sits on the skin, so a peel you throw away takes it with it."
+        "The Environmental Working Group’s Dirty Dozen list is another guide to what to buy organic first."
       ],
       "watch_out": [
         "When organic runs short, go by the SKIN, not how thick it feels. Avocado and kiwi read as delicate and get peeled, so they can wait. A potato reads as sturdy and gets eaten skin-on, so it cannot.",
@@ -929,8 +918,7 @@
         "Check that the pieces move loose in the bag, not frozen into one block.",
         "Pick fresh in season; it reaches the shelf riper than produce shipped across the country.",
         "Pick organic frozen in any season, with one ingredient on the bag.",
-        "Pick broccoli, spinach or kale and green beans; they are the frozen staples worth keeping.",
-        "Freezing your own: steam-blanch, freeze soon, thaw in the fridge."
+        "Pick broccoli, spinach or kale and green beans; they are the frozen staples worth keeping."
       ],
       "watch_out": [
         "Supermarket ‘fresh’ is often harvested well before peak so it survives transit and storage.",
@@ -938,8 +926,7 @@
       ],
       "pick_steps": [
         "Buy fresh in season from a farm stand or garden when it is there.",
-        "Any time of year, take organic frozen listing only the vegetable or fruit.",
-        "Keep broccoli, spinach or kale and green beans in the freezer."
+        "Any time of year, take organic frozen listing only the vegetable or fruit."
       ],
       "science": "Supermarket produce is often harvested before peak so it survives transit and storage, so local and in season leads. Blanching stops the enzymes that keep vegetables maturing in the freezer, and steaming is preferred to boiling. Freezing needs no additives, so a bag should list only the food.",
       "labels_decoded": [],
@@ -1047,10 +1034,7 @@
         "At a farmers’ market, see what is in season fast, and ask how the crop was grown.",
         "Spring: asparagus, peas, radishes, artichokes, strawberries, tender greens.",
         "Summer: tomatoes, corn, zucchini, peppers, cucumbers, stone fruit, melon, berries.",
-        "Autumn: winter squash, sweet potatoes, apples, pears, brussels sprouts, grapes.",
-        "Winter: citrus, cabbage, kale, leeks, beets, parsnips, storage onions and potatoes.",
-        "Storage crops (apples, onions, potatoes, squash, carrots) stay good long past their season.",
-        "In-season produce reaches you closer to ripe, so it tastes better."
+        "Autumn: winter squash, sweet potatoes, apples, pears, brussels sprouts, grapes."
       ],
       "watch_out": [
         "Summer has the most variety and some of it is only there for a short time. Strawberries come first, then cherries, blueberries, blackberries and raspberries, then peaches, melons, plums and pears.",
@@ -1203,10 +1187,8 @@
       ],
       "kristy_take": "Two minutes of cutting at home buys a week longer in the fridge. For pre-cut melon or pineapple, choose it on the day you will eat it.",
       "buying_tips": [
-        "Pick whole heads and bunches; whole produce keeps weeks, but cut produce keeps only days.",
         "Can’t find it whole: organic spring mix or romaine from the cold case.",
         "Check the date, and use precut within a couple of days; it spoils fast once opened.",
-        "Rinse “pre-washed” greens at home anyway.",
         "Whole produce waits for the day you need it."
       ],
       "labels_decoded": [
@@ -1223,7 +1205,6 @@
         "‘Sell by’, ‘use by’ and ‘best by’ on a tub are not regulated. They are how the company chose to present the product, not a safety cutoff."
       ],
       "pick_steps": [
-        "Buy it whole and cut it at home; it keeps far longer.",
         "For bagged greens, organic spring mix or romaine, rinsed again at home.",
         "Buy pre-cut melon and pineapple the day they get eaten."
       ],
@@ -1274,7 +1255,6 @@
         "Skip whipped butter and any butter listing natural flavors.",
         "Check pale butter for an added color on the list; it can be colored to look like grass butter.",
         "European-style butters are higher in fat, a separate axis from what the cows ate.",
-        "Salted or unsalted is a cooking choice. Unsalted gives control.",
         "A grassfed seal names an audited program; “made with milk from grass-fed cows” names no certifier."
       ],
       "labels_decoded": [
@@ -1790,7 +1770,6 @@
         "Rice from Arkansas, Louisiana, Mississippi, Missouri or Texas runs higher.",
         "Pick basmati or sushi rice, which test lowest. Plain long-grain and parboiled test highest.",
         "Look for certified organic rice over conventional.",
-        "Rinse it, boil it in plenty of water and pour the water off.",
         "Mix in other grains, such as oats, millet and barley, so rice isn’t every meal.",
         "Arsenic collects in the bran, so brown rice carries more than white."
       ],
@@ -1851,7 +1830,6 @@
         "Read the list: oats alone, no flavoring or sugar.",
         "Look for “sprouted” oats; the soaking step is already done.",
         "Can’t find sprouted: plain organic rolled or steel-cut oats.",
-        "Soak them overnight in warm water with a spoon of yogurt, whey or cider vinegar.",
         "Pick any plain form; it is the same grain. Steel-cut if you like chew and have time.",
         "Skip flavored instant packets; that is where the sugar is.",
         "Pick organic: conventional oats may be sprayed with glyphosate before harvest."
@@ -2051,9 +2029,6 @@
         "Look for whole dried beans with unbroken skins, beans the only ingredient.",
         "Look for “sprouted” beans, or soak dried ones before cooking; both reduce phytic acid.",
         "Can’t find dried: organic canned beans in a can stating a BPA-free lining.",
-        "Pick whole beans over split ones; whole beans cook evenly, split ones turn to mush.",
-        "A slow cooker or pressure cooker removes the planning problem.",
-        "Cooking dried beans yourself is the only way to set the salt.",
         "Pick organic beans, dried or canned: conventional pulses may get glyphosate before harvest, and organic farming bans it.",
         "Drift can still leave residues on organic beans."
       ],
@@ -2843,10 +2818,7 @@
         "Check it is not slimy and has no off smell. Both, not either.",
         "Look for a label saying the animal ate only grass, and ask the counter for the farm name.",
         "Pick from the back of the case, where it is coldest, and get it home cold.",
-        "Pick a well-sealed vacuum pack; it keeps up to seven days in the fridge from purchase.",
-        "Purple beef is vacuum-packed; color tracks oxygen and packaging, not freshness.",
         "Read the cut on the label, such as chuck or round.",
-        "Check the use-by date, and freeze what will not be used in time.",
         "Blade or mechanically tenderized: see Beef."
       ],
       "labels_decoded": [
@@ -2924,9 +2896,7 @@
         "Ask which farm it came from, whether the animals grazed, and what they were fed.",
         "Ask what came in today and when it was cut.",
         "Ask for a whole chuck ground fresh, so you choose the cut.",
-        "Can’t find the cut you want: a whole chuck roast, cut, tied or boned to order.",
         "Ask the butcher to cut, tie or bone it; that is usually included.",
-        "Ask for bones and trim, and which farm the bones came from.",
         "A butcher can say how it was raised and when it was cut; a package cannot."
       ],
       "labels_decoded": [],
@@ -2940,8 +2910,7 @@
       ],
       "pick_steps": [
         "Soup bones: ask the butcher for marrow or knuckle bones.",
-        "Ask for a whole chuck ground fresh to order.",
-        "Ask the butcher to portion it; cutting, tying and boning are usually included."
+        "Ask for a whole chuck ground fresh to order."
       ],
       "science": "A staffed counter answers what a package never will, such as when the meat was cut. Cutting, tying, grinding and boning are usually included. Wet-aged beef rests in a vacuum bag and keeps its moisture. Dry-aged beef rests in open air and loses weight.",
       "asked_as": [
@@ -3349,8 +3318,7 @@
       ],
       "pick_steps": [
         "Read the “no nitrates added” qualifier for celery powder or juice.",
-        "Read the ingredients list; every curing substance has to be named there.",
-        "Pick whole roasted meat first, then counter-sliced meat before the prepacked tub."
+        "Read the ingredients list; every curing substance has to be named there."
       ],
       "science": "‘Uncured’ meat is cured, using celery powder instead of added nitrite. Celery powder is a concentrated natural nitrate source, so it is a curing agent, not the absence of one. Celery nitrate becomes nitrite during meat preservation. Read the qualifier for celery powder or juice and the ingredient list for phosphates and binders.",
       "instead": "Whole roasted meat sliced thin does the same sandwich job with nothing added.",
@@ -3754,9 +3722,7 @@
         "The thump: ripe sounds dull and hollow, unripe sounds high-pitched or metallic."
       ],
       "pick_steps": [
-        "Pick up two the same size and take the heavier one.",
-        "Press with your palm, never fingertips, and buy at staggered firmness.",
-        "Watermelon: creamy yellow ground spot, dull rind, a dull hollow thump."
+        "Pick up two the same size and take the heavier one."
       ],
       "science": "Cantaloupe and tomatoes should be fragrant at the stem; skip cold-case tomatoes. Stone fruit gives slightly at the shoulder, and pineapple smells sweet at the base. Citrus should feel heavy with thin, smooth skin; color is not the tell. Vegetables are a firmness check: tight asparagus tips, dense broccoli heads without yellowing, perky greens without slime. Pop an avocado’s stem nub: green under it means ripe, brown means overripe.",
       "labels_decoded": [
@@ -3879,7 +3845,6 @@
         "Read the seal, not the photo; no USDA Organic seal means conventional, whatever the box says.",
         "Pick strawberries with green caps still fresh, not browned and dry.",
         "Look for deep, even color for the kind of berry, and even size in the box.",
-        "Pick them from the refrigerated display, not a room-temperature stack.",
         "Organic rules still allow approved sprays.",
         "Frozen organic strawberries: same seal and same rules.",
         "The bottom berries carry the weight and mold first, while the top still looks fresh. One moldy berry takes the box."
@@ -3897,8 +3862,7 @@
       ],
       "pick_steps": [
         "Take a cold carton with no fog inside the plastic.",
-        "Flip it: dry, unstained bottom, no fuzzy spot on any berry.",
-        "Buy them ready: deep, even color and no sweet, fermented smell."
+        "Flip it: dry, unstained bottom, no fuzzy spot on any berry."
       ],
       "science": "Berries do not ripen after picking, so what is in the carton is what you are buying. The bottom layer carries the weight, condensation keeps it damp, and mold spreads berry to berry by contact. Re-stacked clamshells can hide older fruit under a fresh top layer, so the underside is the check.",
       "labels_decoded": [
@@ -4090,7 +4054,6 @@
         "Look for grass-fed cows named on the carton, from a small dairy, pasteurized but not ultra-pasteurized.",
         "Pick raw cream from a grass-fed farm first, where sold. Next, pasteurized cream-top, not homogenized.",
         "Can’t find it: grass-fed ultra-pasteurized cream, or whole milk or half-and-half.",
-        "Check the fat: heavy cream is 36% milkfat or more, half-and-half 10.5 to 18%. Both are fixed by law.",
         "Skip “non-dairy creamer”: oil, sweetener and additives that keep them mixed. It is not cream.",
         "Read the panel on flavored creamers; that is where the added sugar sits.",
         "Carrageenan is a thickener derived from seaweed.",
@@ -4105,7 +4068,6 @@
         "Skip a creamer listing sunflower oil or canola oil."
       ],
       "pick_steps": [
-        "Read the milkfat: heavy cream is 36% or more, half-and-half 10.5 to 18%.",
         "Read the list too: even real cream can carry carrageenan or gellan gum.",
         "Skip a creamer whose list opens on water, sugar and oil."
       ],
@@ -4176,7 +4138,6 @@
       ],
       "pick_steps": [
         "Pick organic sprouted flour first, then organic whole-grain flour.",
-        "Check the milling or best-by date for the freshest bag.",
         "Read white flour bags for “unbleached” and skip “bleached”."
       ],
       "science": "Refining strips the bran and germ; enriched means B vitamins and iron added back. Whole grain flour keeps the bran, with its phytic acid, and the germ, with its oil. Soaking with a little acid, or sprouting the grain first, reduces the phytic acid. Milled flour stored long, particularly in open bins, turns rancid. Bleached flour must say “Bleached” on the label.",
@@ -4261,13 +4222,12 @@
         "Pick full, busy bins; they turn over. A dusty, half-empty one does not.",
         "Check the bin is clean, covered and labeled.",
         "Pick dried beans, lentils and especially whole spices by the scoop.",
-        "Buy nuts, seeds and flour in sealed packages; their oil goes rancid in an open bin.",
-        "Smell it before it goes in the cart. Rancid reads as paint, crayon or bitter.",
-        "Buy what you will use in a month, and store it airtight and dark."
+        "Smell it before it goes in the cart. Rancid reads as paint, crayon or bitter."
       ],
       "watch_out": [
         "The scoop, the bin handle and the scale are touched by every shopper before you. The container you bring is not the exposed part.",
-        "Bring-your-own-container rules vary by store."
+        "Bring-your-own-container rules vary by store.",
+        "Buy nuts, seeds and flour in sealed packages; their oil goes rancid in an open bin."
       ],
       "pick_steps": [
         "Pick busy, covered bins with a clean scoop for beans and lentils.",
@@ -4373,8 +4333,6 @@
       "kristy_take": "Old paint and crayons is the smell. Once you know it, half the back of the pantry starts making sense.",
       "buying_tips": [
         "Pick oil in a dark bottle, in a size you will finish inside two months.",
-        "Check by smell: stale nuts, paint or crayon means it has turned.",
-        "Smell a bulk bin before you fill a bag from it.",
         "Keep whole-grain flour and shelled nuts in the freezer. The germ oil is what turns.",
         "Heat, light and air turn oil rancid, and the printed date does not predict it."
       ],
@@ -4445,16 +4403,13 @@
       "buying_tips": [
         "Olive oil starts aging the day it is pressed, and dark glass keeps light off it.",
         "Look for a harvest date, not just “best by”, and buy recent.",
-        "Pick dark glass or tin, and store it away from the stove.",
         "Read for one country of origin, named with “product of”.",
         "Pick organic oil from a single estate or a small producer first.",
-        "Can’t find it: butter or ghee for anything cooked, with no harvest date to check.",
         "Skip “pure”, “classic” and “light”; those are refined oil.",
         "Extra virgin is pressed without heat or solvent and passes a taste panel.",
         "“First cold pressed” is an old phrase and adds nothing legally."
       ],
       "pick_steps": [
-        "Look for a recent harvest date, not just a best-by date.",
         "Pick dark glass or tin, with one country named by ‘product of’.",
         "Read ‘pure’, ‘classic’ and ‘light’ as refined oil; pomace is solvent-extracted."
       ],
@@ -4535,7 +4490,6 @@
         "Look for oil separated on top; nothing was added to hold it in.",
         "Skip added oils: palm, hydrogenated, sunflower, safflower, canola, soybean, corn, cottonseed or avocado.",
         "Skip no-stir and reduced-fat jars; they usually add oil, sugar or starch.",
-        "Store natural jars upside down in the fridge; the oil mixes back in on its own.",
         "Same reading for almond, cashew and sunflower butters.",
         "Look for the USDA Organic and Non-GMO Project Verified seals on the jar."
       ],
@@ -4622,9 +4576,7 @@
       "buying_tips": [
         "Read the list for one grain alone, and look for “hulled” over “pearled”.",
         "Look for certified organic grains over conventional.",
-        "Soak whole grains overnight in warm water with a little yogurt, whey or vinegar.",
         "Pick buckwheat, millet, sorghum or quinoa for no gluten; barley, farro and bulgur have it.",
-        "Cook a big batch. They keep several days and reheat straight from cold.",
         "Rotate in farro, millet or sorghum so rice isn’t every meal.",
         "Pearled grains have some or all of the bran polished off; hulled loses only the hull."
       ],
@@ -5127,7 +5079,6 @@
         "Ask a staffed counter where it was caught; origin can mean where it was processed.",
         "“Color added” on farm-raised salmon means astaxanthin in the feed sets the pink, not a dye after harvest.",
         "Wild salmon get their color from krill and shrimp.",
-        "Cooked and breaded seafood falls outside the labeling rule.",
         "MSC covers wild fisheries; ASC and BAP cover farmed fish, each audited by an independent certifier."
       ],
       "labels_decoded": [
@@ -5323,7 +5274,6 @@
       "kristy_take": "Same farm as the milk, or it is just a drink.",
       "buying_tips": [
         "Look for ‘raw’ and a farm name on the bottle, the same farm as the milk.",
-        "Check for a culture or bottling date on the bottle, not only a best-by date.",
         "No raw kefir: pick plain kefir made from 100% grass-fed whole milk, with the Certified Grassfed seal.",
         "Pick plain. Sweetened kefir is a dessert wearing a ferment’s name.",
         "Pick glass, and a pour thick enough to cling to the side.",
@@ -5336,7 +5286,6 @@
         "Commercial bottles taste different because of what was added. Flavoring, additives and sugar make the difference, so plain is the one where the ferment is what you taste."
       ],
       "pick_steps": [
-        "Take it from the refrigerated case; shelf-stable kefir’s cultures are no longer live.",
         "Read the label for live and active cultures named on the bottle.",
         "Read for an AGA Grassfed seal: the cows ate grass and hay, never grain."
       ],
@@ -5463,12 +5412,9 @@
       "kristy_take": "A jar, a mesh lid and organic seed grow a crop at home. Bought sprouts come from the cold case; steam them lightly before eating.",
       "buying_tips": [
         "Look for ‘organic’ on the pack; sprouts are eaten whole.",
-        "Check that roots are white and threadlike and stems crisp, not limp.",
         "No organic sprouts: grow organic seed at home in a jar with a mesh lid, three days on the counter.",
         "Pick broccoli, radish or mung over alfalfa and soy, per Weston A. Price guidance.",
-        "Pick from the refrigerated case only. Room-temperature sprouts have sat in growing conditions.",
-        "Skip a pack fogged inside or with a sour smell through the vents.",
-        "Check for a pack date you can read: days old, not a week."
+        "Skip a pack fogged inside or with a sour smell through the vents."
       ],
       "watch_out": [
         "Alfalfa seeds contain canavanine; Weston A. Price guidance skips alfalfa and soy sprouts.",
@@ -5595,14 +5541,8 @@
       "cart_pick": "Carrots and potatoes",
       "buying_tips": [
         "Look for Real Organic Project on the sign: grown in soil, never hydroponic.",
-        "Pick firm roots: potatoes with no bruises, nicks or soft spots; carrots firm and well colored.",
         "No Real Organic or Certified Naturally Grown logo: plain organic, which still allows approved sprays.",
-        "Carrots with tops on: pick bright green, fresh-looking tops.",
-        "Sweet potatoes: smooth and firm, even in shape, peel color even for the kind, no damage.",
-        "Beets: firm and round with a slender tail. Wilted leaves say little if the root is firm.",
         "Store potatoes cool, dark and airy, 45 to 50°F, for up to a month.",
-        "Carrots: tops off, in a closed bag in the fridge, up to two weeks. A limp carrot revives in cold water.",
-        "Beets: trim the stem to an inch, leave the root end, refrigerate in a closed container up to two weeks.",
         "Roots grow in soil and the skin often gets eaten, so how they were grown comes first."
       ],
       "watch_out": [
@@ -5714,13 +5654,7 @@
         "Look for Real Organic Project on the sign: grown in soil, never hydroponic.",
         "Pick broccoli with dark green florets closed tight, on stems that are not thick and tough.",
         "No Real Organic or Certified Naturally Grown logo: plain organic broccoli and cauliflower.",
-        "Cauliflower: a head with no bruises or damage.",
-        "Cabbage: outer leaves fresh, not wilted or chewed by insects. Pull off any that are.",
-        "Broccoli keeps in the fridge in a bag with holes. Use it within three days.",
-        "Cabbage keeps several weeks in a bag or wrap in the fridge, at 41°F or below.",
-        "Cut out the cabbage core and rinse the leaves under cool running water before using.",
-        "Florets and leaves are eaten whole, with no peel to take surface residue away.",
-        "Keep broccoli and cauliflower unwashed in a bag in the fridge, and wash them in cool water just before using."
+        "Cabbage keeps several weeks in a bag or wrap in the fridge, at 41°F or below."
       ],
       "watch_out": [
         "Florets enlarged, opened, yellowish-green, or wilted: the broccoli is not fresh.",
@@ -5730,7 +5664,6 @@
       ],
       "pick_steps": [
         "On broccoli and cauliflower: Real Organic or Certified Naturally Grown, then organic.",
-        "Press each head; leave any soft, slippery, bruised or damaged one.",
         "Pick broccoli with dark green, tight florets on stems not thick or tough."
       ],
       "science": "Opened or yellowish-green florets mean broccoli past fresh; a soft, slippery head is already spoiling. Broccoli keeps three days, refrigerated in a bag with holes. Cabbage keeps several weeks wrapped in the refrigerator at 41°F or below. Remove its core and rinse the leaves before using. Keep cauliflower away from raw meat and meat juices.",
@@ -6040,15 +5973,10 @@
       "cart_pick": "Lettuce",
       "buying_tips": [
         "Look for Real Organic Project on the sign: grown in soil, never hydroponic.",
-        "Pick crisp leaves: lettuce bright to dark green outside, pale at the heart, no decay.",
         "No Real Organic or Certified Naturally Grown logo: organic spring mix or romaine, which still allows approved sprays.",
         "Pick living lettuce sold with the root ball on; it keeps longest. Keep the roots damp.",
         "Greenhouse or hydroponic on the sign is not a seal.",
-        "Romaine: a head neither very loose nor very hard. Loose is young; hard is past its best.",
-        "Spinach: evenly green, fully crisp, fairly clean.",
-        "Kale: firm, deep colored leaves on moist, sturdy stems. Smaller leaves are more tender and milder.",
         "Store lettuce and spinach as close to 32°F as the fridge gets.",
-        "Kale: in a bag, air pressed out, unwashed, about five days in the fridge.",
         "Lettuce is eaten as the leaf, and the leaf is what gets sprayed."
       ],
       "watch_out": [
@@ -6138,13 +6066,11 @@
       "cart_pick": "Bell peppers",
       "buying_tips": [
         "Look for Real Organic Project on the sign: grown in soil, never hydroponic.",
-        "Pick firm peppers, even in shape, size and color; colored ones at least half colored.",
         "No Real Organic or Certified Naturally Grown logo: plain organic, which may still use approved sprays.",
         "Greenhouse-grown on the sign is not a seal.",
         "Skip peppers with cracks, decay, sunburn, disease, bruises or insect damage.",
         "Store around 45°F where you can; at 41°F, plan on about two weeks.",
-        "Red, yellow and orange peppers handle the cold better than green.",
-        "A firm pepper still holds its water; wrinkled skin means it dried out in storage."
+        "Red, yellow and orange peppers handle the cold better than green."
       ],
       "watch_out": [
         "A dark, sunken lesion at the blossom end: blossom end rot.",
@@ -6324,12 +6250,8 @@
         "Pick firm, crisp apples with no bruises, decay, cracks or insect marks.",
         "No Real Organic or Certified Naturally Grown logo: plain organic, which still allows approved sprays.",
         "At an orchard or stand, ask: waxed or coated? Uncoated is the pick.",
-        "Pears: no bruises, insect damage or decay; a firm green Bartlett ripens at home.",
         "Store in the dark at 30 to 32°F, up to 40°F, in an airy box or a bag with holes.",
-        "Do not wash before storing; the water speeds decay.",
-        "McIntosh and Honeycrisp: store at 38°F; colder can damage them.",
-        "Apples keep up to a month in the fridge.",
-        "Bruised fruit makes the sound fruit beside it ripen and rot faster."
+        "McIntosh and Honeycrisp: store at 38°F; colder can damage them."
       ],
       "watch_out": [
         "Bruised or damaged fruit stored with sound fruit: it makes the sound fruit ripen and rot faster.",
@@ -6427,14 +6349,8 @@
       "cart_pick": "Oranges, lemons, or limes",
       "buying_tips": [
         "Look for a sign that says untreated: no fungicide spray after harvest, no wax coating.",
-        "Pick firm fruit with a smooth rind; a partly green orange can be fully ripe.",
         "No untreated citrus: pick organic.",
-        "Oranges: even color, firm, smooth, no decay, bruises or blemishes.",
-        "Lemons: even yellow, firm, smooth, no dry patches, rind stains or shriveling.",
-        "Limes: firm and smooth, no bruises, oil spots or dryness; yellow ones have more juice.",
-        "Oranges keep a week at room temperature, three weeks in the fridge.",
-        "Lemons and limes keep best in the 50s °F, warmer than the fridge.",
-        "Use the yellowed lemons and limes first; the green-picked ones keep longest."
+        "Lemons: even yellow, firm, smooth, no dry patches, rind stains or shriveling."
       ],
       "watch_out": [
         "Drying and shriveling on lemons, dryness on limes: the fruit is past its best.",
@@ -6560,14 +6476,11 @@
       "cart_pick": "Peaches, plums, or cherries",
       "buying_tips": [
         "Look for ‘organic’ on the sign or sticker, then where it grew.",
-        "Pick peaches and nectarines whose green background has turned yellow, with no bruises.",
         "No Real Organic or Certified Naturally Grown logo: plain organic, which still allows approved sprays.",
         "At a market, ask how the fruit was grown.",
-        "Plums: skin color turned for the kind, no bruises or damage.",
         "Cherries: full color, green fleshy stems, no cracks, pecks or shriveling.",
         "Store just above freezing, 30.5 to 32°F; cherries at or below 41°F.",
         "Plums still ripening: keep them out of the 36 to 46°F range.",
-        "Skin staining on a peach or nectarine is only cosmetic; a bruise is not.",
         "A bruise stays for good. Peaches and cherries are both on EWG’s Dirty Dozen list of the most sprayed produce."
       ],
       "watch_out": [
@@ -7257,8 +7170,7 @@
         "Read the list for whole-grain flour first; look for ‘sourdough’ or ‘sprouted’ on the bag.",
         "Ask the bakery for the ingredient list when the bag has none.",
         "Can’t find sourdough or sprouted: pick organic whole-grain bagels.",
-        "Skip added gluten, sugar, soy, ascorbic acid, or ‘bleached’ or ‘enriched’ flour.",
-        "Boiling sets the outside and gives a bagel its chew."
+        "Skip added gluten, sugar, soy, ascorbic acid, or ‘bleached’ or ‘enriched’ flour."
       ],
       "watch_out": [
         "Most commercial bagels are white flour with sugar and added gluten.",
@@ -7554,14 +7466,12 @@
       "kristy_take": "A pot of soaked oats with butter and cream does the job the box claims to. If it has to be boxed, soaked or sprouted granola.",
       "cart_pick": "Rolled oats to soak",
       "buying_tips": [
-        "Look for plain rolled oats to soak overnight and cook in the morning.",
         "Read the box for ‘soaked’ or ‘sprouted’ grain and ‘USDA Organic’.",
         "No time for oats: pick organic granola that says the grain was soaked or sprouted.",
         "Read for sugar under other names: dextrose, corn syrup, evaporated cane juice.",
         "Skip ‘made with whole grains’ or ‘multigrain’; it can still be mostly refined grain.",
         "Pick organic oats; conventional oats may be sprayed with glyphosate, a weed killer, just before harvest to dry them.",
-        "Organic farming does not allow glyphosate, though spray drift can still leave traces on organic oats.",
-        "Flakes, puffs and O’s are extruded, pushed through a machine; soaked, cooked oats are the traditional bowl."
+        "Organic farming does not allow glyphosate, though spray drift can still leave traces on organic oats."
       ],
       "watch_out": [
         "Organic extruded cereal goes through the same process as the rest of the aisle.",
@@ -7569,7 +7479,6 @@
         "Honey-sweetened granola still has added sugar."
       ],
       "pick_steps": [
-        "Pick oats to soak and cook over a boxed cereal.",
         "Boxed, look for soaked or sprouted granola.",
         "Read for sugar under other names, honey and syrups included."
       ],
@@ -7773,7 +7682,6 @@
       ],
       "pick_steps": [
         "Pick whole beans over preground coffee.",
-        "Look for a “roasted on” date, not just an expiration date.",
         "Pick a sealed bag with a one-way degassing valve."
       ],
       "science": "Coffee beans have been found to carry mycotoxins, likely from hot, humid growing, storage and processing. Coffee studies document changes in aroma and chemical composition during storage, including oxidation associated with oxygen exposure. Packaging and storage conditions affect that chemistry. No universal number of fresh days is established for all retail bags.",
@@ -8054,15 +7962,13 @@
       "cart_pick": "Mushrooms",
       "buying_tips": [
         "Look for ‘organic’ on the sign or pack, then the grower’s name.",
-        "Pick dry, firm caps and pass on any with dark spots.",
         "No Real Organic or Certified Naturally Grown logo: plain USDA Organic.",
-        "Pick closed caps for a mild flavor and open caps for a stronger one.",
-        "Buy them loose to take only what you need.",
-        "Moisture is what spoils mushrooms, so a dry, firm cap is the fresh one."
+        "Buy them loose to take only what you need."
       ],
       "watch_out": [
         "A plastic bag traps moisture and spoils mushrooms faster.",
-        "Wild-picked mushrooms need an expert. Cooking or drying does not destroy their toxins."
+        "Wild-picked mushrooms need an expert. Cooking or drying does not destroy their toxins.",
+        "Moisture is what spoils mushrooms, so a dry, firm cap is the fresh one."
       ],
       "pick_steps": [
         "Check each cap and leave any that feels damp or soft."
@@ -8120,16 +8026,14 @@
       "kristy_take": "Take the greenest organic bunch for the week and let the counter finish it. Keep green bananas out of the fridge.",
       "cart_pick": "Green bananas",
       "buying_tips": [
-        "Pick the greenest bunch for the week; it keeps ripening at home.",
         "Skip fruit with skin splits or dark streaks.",
         "No organic bunch: pick the greenest, unsplit bunch on the shelf.",
-        "Organic bananas are grown and certified to the USDA Organic standard.",
-        "Keep green bananas out of the fridge. Cold below 56°F can stop them ripening.",
-        "Bananas get sweeter as the green fades, and ripening on the plant often splits them."
+        "Organic bananas are grown and certified to the USDA Organic standard."
       ],
       "watch_out": [
         "Green and yellow bananas go through the same ripening rooms. The color only shows how far along they are.",
-        "A banana dropped hard can brown inside with no mark on the skin."
+        "A banana dropped hard can brown inside with no mark on the skin.",
+        "Keep green bananas out of the fridge. Cold below 56°F can stop them ripening."
       ],
       "pick_steps": [
         "Take a bunch that is still green and keep it out of the fridge."
@@ -8182,15 +8086,14 @@
       "cart_pick": "Green beans",
       "buying_tips": [
         "Look for Real Organic Project on the sign: grown in soil, never hydroponic.",
-        "Pick smooth, slender pods with no seeds bulging through.",
         "No Real Organic or Certified Naturally Grown logo: plain organic beans, fresh or frozen, which still allow approved sprays.",
         "Skip beans with brown or rust spots.",
-        "Store them cold and cook them within five days.",
         "Bulging seeds mean an older bean, turning tough, stringy and starchy."
       ],
       "watch_out": [
         "Skip beans that look damp or feel sticky.",
-        "Flabby pods and bulging seeds mean over-mature beans, which turn tough and stringy."
+        "Flabby pods and bulging seeds mean over-mature beans, which turn tough and stringy.",
+        "Pick smooth, slender pods with no seeds bulging through."
       ],
       "pick_steps": [
         "Check the pods and leave any that are flabby, rust-spotted or sticky."
@@ -8243,10 +8146,7 @@
         "Look for ‘pasture-raised’ and ‘duck’ on the carton, plus ‘soy-free’ or ‘corn-free’ feed.",
         "Open the carton and check that every shell is clean and uncracked.",
         "No pasture-raised duck eggs: pick organic, pasture-raised hen’s eggs from the cold case.",
-        "Pick organic feed when no carton says soy-free or corn-free.",
-        "Buy from the cold case and keep them cold; quail eggs lose quality fast when warm.",
-        "Plan a longer cook for duck eggs, which are larger than hen’s eggs.",
-        "Cook duck and quail eggs until white and yolk are solid."
+        "Pick organic feed when no carton says soy-free or corn-free."
       ],
       "watch_out": [
         "Keep raw duck eggs out of dishes served raw or lightly cooked, such as homemade mayonnaise.",
@@ -8254,8 +8154,7 @@
       ],
       "pick_steps": [
         "Pasture-raised means time outdoors on pasture, audited only with a certifier’s seal.",
-        "Open the carton and check that every shell is clean and uncracked.",
-        "Buy from a refrigerated case and keep them cold at home."
+        "Open the carton and check that every shell is clean and uncracked."
       ],
       "science": "A duck egg is larger than a hen’s egg, with a bigger share of yolk. It needs more cooking time. Quail eggs weigh about 10 to 12 grams. In a storage study, quail eggs held at room temperature lost internal quality sharply.",
       "labels_decoded": [
@@ -8780,9 +8679,7 @@
         "Pick liver or heart with the farm on the label, or ask the counter which farm.",
         "Ask the counter or a farmer which organs they offer.",
         "No organs on offer: pick a beef blend with liver and heart ground in.",
-        "Buy organs for a cook within one to two days.",
-        "Match the organ to the method: braise heart and tongue.",
-        "Organ meats keep less time than steaks and roasts, just 1 to 2 days cold."
+        "Match the organ to the method: braise heart and tongue."
       ],
       "watch_out": [
         "Preformed vitamin A is most concentrated in liver. Pregnancy questions about eating liver go to a doctor."
@@ -8844,16 +8741,15 @@
         "Grass-fed labels and logos: see “Grass-fed” (the label).",
         "No logo: a plain grass label is next; ‘grass-raised’ bison often eats grain its last 90 to 120 days.",
         "Check for a deeper red than beef; bison has no marbling.",
-        "Look for the triangle ‘U.S. Inspected and Passed’ seal or a state mark.",
-        "Cook or freeze ground bison within 2 days, steaks within 3 to 5.",
-        "Bag the package separately to contain any leaks."
+        "Look for the triangle ‘U.S. Inspected and Passed’ seal or a state mark."
       ],
       "watch_out": [
-        "Bison can turn tough when cooked beyond medium or at high heat."
+        "Bison can turn tough when cooked beyond medium or at high heat.",
+        "Bag the package separately to contain any leaks.",
+        "Expect deeper red than beef, and bag the package separately for leaks."
       ],
       "pick_steps": [
-        "Read for the “U.S. Inspected and Passed” triangle or a state mark.",
-        "Expect deeper red than beef, and bag the package separately for leaks."
+        "Read for the “U.S. Inspected and Passed” triangle or a state mark."
       ],
       "science": "Bison is a bovine, in the same family as domestic cattle, not a true buffalo. Inspection can be federal or state. The meat is deeper red because it has no marbling. It keeps and cooks on the same rules as beef, but can turn tough beyond medium or at high heat.",
       "labels_decoded": [
@@ -8902,17 +8798,16 @@
       "cart_pick": "Venison from a refrigerated processor",
       "buying_tips": [
         "Read for the deer species and ‘wild’ or grass only, over grain-fed farmed venison.",
-        "Ask whether the processor handles each animal one at a time and keeps everything cold.",
         "No fresh venison: pick wrapped frozen venison from the same cold processor; it keeps 9 to 12 months.",
         "Use unfrozen venison within two or three days.",
         "Venison is lean, so pair it with butter, lard or tallow (beef fat) from pastured animals.",
         "Game often comes through small shops, where cold handling decides its safety."
       ],
       "watch_out": [
-        "Discard meat that is bruised, discolored, or has hair, dirt or bone fragments."
+        "Discard meat that is bruised, discolored, or has hair, dirt or bone fragments.",
+        "Ask whether the processor handles each animal one at a time and keeps everything cold."
       ],
       "pick_steps": [
-        "Pass on meat that is bruised, discolored, or has hair, dirt or bone fragments.",
         "Keep the fat on, and use unfrozen venison within two or three days."
       ],
       "science": "Game is often processed by small shops, so cold handling decides its safety. Research finds abnormal Chronic Wasting Disease proteins in deer and elk brain, spinal cord and lymph tissue, not muscle. Extension guidance advises skipping the brain, spinal cord, eyes, spleen and lymph nodes. Cook whole cuts to 145°F and ground game to 160°F.",
@@ -9039,7 +8934,6 @@
         "Look for ‘wild’, the kind of fish, like cod or halibut, and how it was caught.",
         "Ask the counter which kind the fillet is. A fillet is hard to identify by eye, so the name does that work.",
         "Can’t find fresh wild fish: pick wild cod or halibut by name, frozen at sea, in a sealed pack.",
-        "Press the flesh and check that it springs back.",
         "Skip fillets with dried, dark or discolored edges.",
         "Dry-packed fillets: see Scallops."
       ],
@@ -9048,9 +8942,7 @@
         "Color alone does not show freshness, because diet, environment and color fixatives all change it."
       ],
       "pick_steps": [
-        "Ask the counter for the species; a fillet is hard to identify by eye.",
-        "Press it: firm flesh springs back, with no dried or dark edges.",
-        "Take a piece with a mild sea smell."
+        "Ask the counter for the species; a fillet is hard to identify by eye."
       ],
       "science": "Seafood must be labeled with an acceptable market name for its species. Color alone does not show freshness, because diet, environment and color fixatives all change it.",
       "labels_decoded": [
@@ -9111,15 +9003,14 @@
       "cart_pick": "Live crabs that move their legs",
       "buying_tips": [
         "Look for live crabs moving their legs, with the kind and catch area on the tag.",
-        "Ask for whole crab, or cracked and cleaned, and keep the yellow butter inside.",
-        "Can’t find live: whole cooked crab with bright orange to red shells. Picked meat in a tub comes after that.",
         "Smell cooked crab and skip any with an off odor.",
         "Buy unpackaged cooked crab only from a case kept apart from raw seafood.",
         "Crabs spoil fast after death, and moving legs show the crab is alive."
       ],
       "watch_out": [
         "A crab that does not move may have died, and dead crab spoils fast.",
-        "Skip imitation crab: it is made from pollock, not crab meat."
+        "Skip imitation crab: it is made from pollock, not crab meat.",
+        "Ask for whole crab, or cracked and cleaned, and keep the yellow butter inside."
       ],
       "pick_steps": [
         "Live crab: check that the legs move.",
@@ -9187,7 +9078,6 @@
       "kristy_take": "Movement for a live lobster. Hard-frozen with clear meat for tails.",
       "cart_pick": "A live lobster with a tail that curls under",
       "buying_tips": [
-        "Look for a live lobster whose claws and legs move.",
         "Ask the counter to lift it and watch the tail: a lively one curls it under.",
         "Can’t find live: pick hard-frozen tails with clear white meat.",
         "Read frozen tails for sodium tripolyphosphate, a phosphate additive, and for the country they came from.",
@@ -9197,7 +9087,8 @@
       ],
       "watch_out": [
         "A tail that hangs down when the lobster is lifted is a poor sign.",
-        "A dead lobster spoils fast, so only live lobsters should be cooked whole."
+        "A dead lobster spoils fast, so only live lobsters should be cooked whole.",
+        "Look for a live lobster whose claws and legs move."
       ],
       "pick_steps": [
         "Ask the counter to lift it: the tail should curl under.",
@@ -9267,8 +9158,7 @@
       ],
       "pick_steps": [
         "On a pack, read the ingredients: phosphate and water means wet.",
-        "Loose at the counter, ask whether they are dry.",
-        "Pick ones with a sweetish smell, not sitting in excess liquid."
+        "Loose at the counter, ask whether they are dry."
       ],
       "science": "Wet-packed scallops are treated with water and sodium tripolyphosphate (STPP), a sodium phosphate. The treatment makes them hold extra water. Packaged wet scallops should disclose the phosphate and water in the ingredients. Loose scallops may carry no ingredient list. Dry-packed scallops are untreated.",
       "labels_decoded": [
@@ -9336,8 +9226,7 @@
       ],
       "pick_steps": [
         "Ask to see the tag on the sack of live shellfish.",
-        "Tap any open shell: it should close; skip cracked or broken ones.",
-        "Shucked: read the date; oysters should be plump, with clear liquid."
+        "Tap any open shell: it should close; skip cracked or broken ones."
       ],
       "science": "Tags on live shellfish sacks name the certified shipper, the harvest date and the harvest area. A live shell closes when it is tapped. Gaping shells that stay open mean the shellfish are dead. Unfrozen shucked containers under a half gallon carry a “Sell By” or “Best If Used By” date. Pregnant, older or immune-weakened? Ask a doctor about raw oysters.",
       "labels_decoded": [
@@ -9396,8 +9285,6 @@
         "Look for ‘wild-caught’ on the pack and no ‘color added’ line.",
         "Read the list: fish, salt, sugar at most and wood smoke. Skip liquid smoke or smoke flavoring.",
         "Can’t find wild: farmed smoked salmon comes second; read its country of origin.",
-        "Pick it from a refrigerated case and put it in the fridge soon after buying.",
-        "For the pantry, pick canned or jarred smoked fish. Those are heat-treated and sealed; nova and lox rely on the cold.",
         "Wild salmon get their color from krill and shrimp. Farmed salmon is gray until astaxanthin in the feed turns it pink.",
         "That pink from the feed is what ‘color added’ on the pack means."
       ],
@@ -9407,7 +9294,6 @@
       ],
       "pick_steps": [
         "Read the label word: nova, lox or kippered means refrigerated cold-smoked.",
-        "Take it from a refrigerated case; refrigerate it soon after buying.",
         "For the shelf, choose canned or jarred smoked fish, heat-treated and sealed."
       ],
       "science": "Refrigerated smoked seafood, such as salmon, trout or whitefish, is usually cold-smoked. Listeria is a germ that can contaminate cold-smoked fish. Cold smoking and refrigeration do not kill Listeria. Shelf-stable smoked fish is heat-treated, then sealed in a can, tin or jar. It needs no refrigeration before opening. Pregnant, older or immune-weakened? Ask a doctor about refrigerated smoked fish.",
@@ -9483,16 +9369,12 @@
       "kristy_take": "Species first, then where it came from. The ice and the smell confirm the rest.",
       "cart_pick": "A named species from a cold, iced case",
       "buying_tips": [
-        "Look for clear, domed eyes, bright red gills, tight scales and flesh that springs back.",
         "Ask the counter the kind of fish, wild or farmed, the country, and when it came in.",
-        "Can’t find it fresh: buy frozen and thaw it at home on your own schedule.",
         "Red gills mean a recent catch; brown, gray or green gills mean past fresh.",
         "Smell it. Clean and briny is right; sharp, fishy or ammonia is not.",
         "Check that it sits on ice or in a cold case, not in a pool of its own liquid.",
         "Check that cooked seafood is kept apart from raw.",
-        "Fillets: a see-through sheen, flakes holding together, no browning at the edge.",
         "Ask ‘was this previously frozen?’ The answer is often yes, and it is a fair question.",
-        "Don’t re-freeze fish that was sold thawed.",
         "Ask for dry-packed scallops and fillets. ‘Wet’ means soaked in sodium tripolyphosphate, which adds water weight.",
         "Tuna labeled ‘tasteless smoke’ or ‘treated with carbon monoxide’ stays red as it ages; untreated tuna browns."
       ],
@@ -9504,7 +9386,6 @@
         "The date on the label is not the whole story. Breakdown starts at slaughter and runs faster or slower with handling and storage. A fish inside its date can still show gray, matte, sunken eyes."
       ],
       "pick_steps": [
-        "Pick fish displayed on ice or in a refrigerated case.",
         "Check that cooked seafood is kept apart from raw.",
         "Smell it: mild passes; fishy, sour or ammonia means it stays at the store."
       ],
@@ -9612,7 +9493,6 @@
       "cart_pick": "Sprouted whole grain bread, no added flour",
       "buying_tips": [
         "Read the first ingredients: sprouted whole grains, with no added flour or wheat gluten.",
-        "Look in the refrigerated or freezer case.",
         "Can’t find it: an organic 100% whole-grain loaf, sourdough if the shelf has one.",
         "Some sprouted loaves add flour or wheat gluten, so the name on the bag does not settle it."
       ],
@@ -9622,8 +9502,7 @@
       ],
       "pick_steps": [
         "Read the list for sprouted whole grains first.",
-        "Check the rest for added flour or wheat gluten.",
-        "Look in the refrigerated or freezer case."
+        "Check the rest for added flour or wheat gluten."
       ],
       "science": "Sprouted bread is made from whole grains allowed to germinate, or sprout, before milling. Some loaves add flour or gluten, so the name alone does not settle it. Besides wheat, a loaf may include millet, barley, lentils or soy. The loaf tends to be denser and heavier than bread made from flour. Sprouted wheat still contains gluten, so it is not gluten-free.",
       "labels_decoded": [
@@ -10015,19 +9894,16 @@
       "cart_pick": "Muesli with no added sugar",
       "buying_tips": [
         "Read the list: only grains, fruit, nuts and seeds, with no sugar, honey or syrup.",
-        "Check whether the bag says ‘toasted’.",
         "Can’t find sprouted: plain organic muesli of only grains, fruit, nuts and seeds.",
         "Pick organic. Conventional oats may be sprayed with glyphosate, a weed killer, shortly before harvest to dry the crop.",
         "Organic farming does not allow glyphosate, though drift can still leave residues on organic oats.",
-        "Soak it overnight in yogurt or water, Bircher style.",
         "Granola adds oil and sweetener before baking; plain muesli is a raw mix."
       ],
       "watch_out": [
         "Toasted or sweetened muesli sits closer to granola."
       ],
       "pick_steps": [
-        "Pick only grains, fruit, nuts and seeds; no sugar, honey or syrup listed.",
-        "Check whether the bag says toasted; toasted or sweetened sits closer to granola."
+        "Pick only grains, fruit, nuts and seeds; no sugar, honey or syrup listed."
       ],
       "science": "Plain muesli is a loose, raw mix of rolled oats or other rolled grains, dried fruit, nuts and seeds. It is not baked, and is traditionally soaked overnight in milk or juice. Granola starts from the same base, mixed with oil and a sweetener, then baked into crunchy clusters. Some muesli is sold toasted, so it is no longer raw, and some brands sweeten it.",
       "labels_decoded": [
@@ -10194,7 +10070,6 @@
         "Look for cream-top whole milk with no added vitamins on the list.",
         "Skip lowfat and sweetened kefir.",
         "Raw kefir from a farm sits above any store bottle. The raw kefir card covers it.",
-        "Take it from the refrigerated case and keep it cold.",
         "Use plain kefir in place of buttermilk or yogurt in recipes."
       ],
       "watch_out": [
@@ -10203,8 +10078,7 @@
       ],
       "pick_steps": [
         "Pick the bottle labeled plain, not flavored.",
-        "100% grass-fed on kefir means the cows ate grass and hay, never grain.",
-        "Take it from the refrigerated case and keep it cold."
+        "100% grass-fed on kefir means the cows ate grass and hay, never grain."
       ],
       "science": "Kefir is milk fermented by a starter culture of yeasts and bacteria; yogurt uses bacteria alone. The ferment leaves kefir sour, carbonated and slightly alcoholic, close to a thin, drinkable yogurt. It has a relatively short shelf life, so keep it refrigerated.",
       "labels_decoded": [
@@ -10253,7 +10127,6 @@
       "buying_tips": [
         "Read the list: cream and cultures only, named ‘sour cream’ or ‘cultured sour cream’.",
         "Skip carrageenan, a seaweed thickener that some organic foods use too.",
-        "Can’t find cream-and-cultures sour cream: plain whole-milk yogurt.",
         "Raw cultured cream from a farm comes first. Next is a non-homogenized tub with no additives.",
         "Pick organic first. Next, a tub that says the cows got no rBST, a synthetic growth hormone. Neither comes last.",
         "Organic sour cream rules out rBST. US dairy labels do not have to say whether it was used.",
@@ -10261,7 +10134,8 @@
         "Cultured means bacteria did the souring; acidified tubs use added acids."
       ],
       "watch_out": [
-        "“Acidified” on the tub means added acids did the souring."
+        "“Acidified” on the tub means added acids did the souring.",
+        "Can’t find cream-and-cultures sour cream: plain whole-milk yogurt."
       ],
       "pick_steps": [
         "Pick sour cream or cultured sour cream before acidified sour cream.",
@@ -10321,7 +10195,6 @@
         "Pick organic first. Next best is a pack stating its milk came from cows not given rBST, a synthetic growth hormone. Packs with neither rank last.",
         "Organic rules ban rBST, used to raise milk output. US labels can leave out whether cows got it.",
         "Skip carrageenan, a seaweed thickener found even in some organic foods.",
-        "Swap in Neufchâtel in most recipes; the two taste similar.",
         "The name needs at least 33 percent milkfat, a culture, and stabilizers at 0.5 percent at most.",
         "With stabilizers capped at 0.5 percent, the list shows who skipped them."
       ],
@@ -10524,7 +10397,6 @@
         "Can’t find ghee or clarified butter: plain butter.",
         "Ghee from raw grass-fed butter, sold by a farm, comes first.",
         "Expect spices on the list if the jar is flavored.",
-        "Choose ghee for its nutty taste and aroma.",
         "Plain ghee is butter simmered down to its fat; flavored jars add spices."
       ],
       "watch_out": [
@@ -10980,7 +10852,6 @@
       "cart_pick": "Plain raw kombucha in glass",
       "buying_tips": [
         "Look for plain kombucha in glass, brewed with organic black tea.",
-        "Pick bottles from the refrigerated case and keep them cold at home.",
         "Read Added Sugars on the Nutrition Facts panel.",
         "Look for an alcohol statement on the label.",
         "Bottled kombucha can keep fermenting, and its alcohol can climb."
@@ -10991,7 +10862,6 @@
         "Flavored kombucha often carries fruit juice. Plain is the traditional brew."
       ],
       "pick_steps": [
-        "Pick plain kombucha in glass from the refrigerated case.",
         "Read the Nutrition Facts for added sugars.",
         "Check for an alcohol statement; hard kombucha is over 5 percent alcohol."
       ],
@@ -11106,8 +10976,7 @@
       "buying_tips": [
         "Look for raw kimchi in the cold case.",
         "Read the list: cabbage, red pepper powder, garlic, ginger and salt. Skip vinegar, sugar or preservatives.",
-        "Read the list for fish sauce or shrimp.",
-        "Check the packed date: crisp and bright is fresh, softer is well fermented."
+        "Read the list for fish sauce or shrimp."
       ],
       "watch_out": [
         "Labels do not always say fresh or well fermented.",
@@ -11116,8 +10985,7 @@
       ],
       "pick_steps": [
         "Pick raw kimchi from the cold case, with no vinegar.",
-        "Read the list for cabbage, red pepper, garlic, ginger, salt and any fish sauce.",
-        "Check the packed date; crisp, bright cabbage is fresh, softer kimchi is riper."
+        "Read the list for cabbage, red pepper, garlic, ginger, salt and any fish sauce."
       ],
       "science": "Kimchi is cabbage, usually napa, seasoned with red pepper powder, garlic, ginger and salt. It moves from fresh to ripe to overripe as it ferments. Ripe kimchi is sour and softer, with some crunch left. Overripe kimchi is intense and juicy, and best cooked into other dishes. Labels do not always say fresh or well fermented.",
       "labels_decoded": [
@@ -11167,7 +11035,6 @@
       "cart_pick": "Refrigerated brined pickles, no vinegar",
       "buying_tips": [
         "Read the list for salt and no vinegar, and skip a jar listing calcium chloride.",
-        "Pick unheated, salt-brined pickles from the refrigerated case.",
         "Pick half-sour for a crisp, bright green pickle, full-sour for a fully fermented one.",
         "Quick pickles are soured with vinegar in a day or two; brined ones sour for weeks."
       ],
@@ -11177,7 +11044,6 @@
         "Pasteurized or heated pickles are no longer a live ferment."
       ],
       "pick_steps": [
-        "Pick from the refrigerated case, but refrigerated alone does not mean fermented.",
         "Check ingredients for salt and no vinegar or calcium chloride.",
         "Pick half-sour for crisp and bright green, full-sour for fully fermented."
       ],
@@ -11370,7 +11236,6 @@
         "Noticeable mold or odd discoloration on the pack means pass on it."
       ],
       "pick_steps": [
-        "Press the pack for a firm cake that holds as one piece.",
         "Read the ingredients for soybeans alone or added grains.",
         "Pass on a loose, crumbly cake, noticeable mold or odd discoloration."
       ],
@@ -11542,9 +11407,7 @@
       "cart_pick": "Bone broth from pastured animals",
       "buying_tips": [
         "Read the list: bones named first, from pasture-raised animals, nothing added.",
-        "Pick frozen, refrigerated or jarred over a shelf-stable boxed broth.",
         "Can’t find pasture-raised: organic bone broth with bones named first.",
-        "A good broth gels when chilled.",
         "Stock is made from bones and broth includes meat; the list shows what was simmered."
       ],
       "watch_out": [
@@ -11613,7 +11476,6 @@
         "Look for gray, pink, red or beige salt with its sea or coast named, not just ‘sea salt’.",
         "Read the list: salt and nothing else.",
         "Can’t find it: pickling or canning salt, which is pure salt with nothing added.",
-        "Look for how it was harvested and washed or filtered, on the package or the maker’s site.",
         "Salt with no iodine says ‘does not supply iodide’ beside its name."
       ],
       "watch_out": [
@@ -11623,7 +11485,6 @@
         "Salts do not swap cup for cup, since crystal size changes the measure."
       ],
       "pick_steps": [
-        "Look for gray, pink or beige crystals, not bright white.",
         "Read the list for salt alone, no anti-caking agent.",
         "Skip iodized salt and blends with additives."
       ],
@@ -12033,19 +11894,14 @@
       "cart_pick": "Whole flaxseed, ground at home",
       "buying_tips": [
         "Look for raw organic seeds in a sealed pack, one seed on the list, not from the bulk bins.",
-        "Pick flax whole and grind it at home.",
         "Can’t find whole flax: ground flax in a sealed pack.",
-        "Pick chia whole or ground; soaked chia turns to gel.",
-        "Soak seeds, then dry them at low heat, before eating them by the handful.",
-        "Pass on hemp seeds; traditional guides leave them off the list.",
-        "Flax needs grinding before use; chia goes straight from the bag or into a soak."
+        "Pass on hemp seeds; traditional guides leave them off the list."
       ],
       "watch_out": [
         "Opened flax left warm can turn rancid, so it goes in the refrigerator.",
         "Seeds kept at room temperature for long periods turn rancid."
       ],
       "pick_steps": [
-        "Pick flax whole to grind at home, or ground and sealed.",
         "Pick chia seeds whole or ground.",
         "Skip hemp seeds and hemp products."
       ],
@@ -12423,7 +12279,6 @@
         "Can’t find raw: apple cider, wine or balsamic vinegar over distilled white.",
         "Read the label for percent acidity; pick 5 percent for canning or pickling.",
         "On balsamic, read for the full protected name and its aging words.",
-        "Store vinegar cool, dark and tightly capped.",
         "Bottles at 4 percent are sold too, and tested pickling recipes rely on 5."
       ],
       "watch_out": [
@@ -12572,7 +12427,6 @@
         "Skip jam sweetened with white sugar or corn syrup.",
         "Preserves hold small whole fruits or even pieces in a thick syrup.",
         "In a mixed-fruit jam, the fruits are listed most first.",
-        "Refrigerate the jar once opened.",
         "At farmers markets, home-kitchen jam labels name the maker and address.",
         "Jam and preserves start from the fruit itself; jelly is strained juice."
       ],
@@ -12882,12 +12736,12 @@
         "Skip MSG, yeast extract, hydrolyzed protein and seed oils like soybean or canola.",
         "Homemade soup on bone broth comes first.",
         "Read sodium words: ‘low sodium’ is a fixed limit; ‘reduced sodium’ only means less than a named soup.",
-        "Leave cans with deep dents, seam dents, leaks, rust or bulging lids on the shelf.",
         "MSG, yeast extract and hydrolyzed protein add flavor in place of more real ingredients."
       ],
       "watch_out": [
         "“No salt added” is not “sodium free”; the soup can still carry sodium.",
-        "Store cans cool and dry, between 50 °F and 70 °F, with the oldest in front. Wipe the lid before opening, and move opened soup to a covered container in the refrigerator."
+        "Store cans cool and dry, between 50 °F and 70 °F, with the oldest in front. Wipe the lid before opening, and move opened soup to a covered container in the refrigerator.",
+        "Leave cans with deep dents, seam dents, leaks, rust or bulging lids on the shelf."
       ],
       "pick_steps": [
         "Read sodium words: low is a fixed ceiling, reduced compares to a named soup.",
@@ -12964,18 +12818,13 @@
         "Read the jar: olives, water and salt, with no ferrous gluconate, which sets a dark color.",
         "Read the curing method on the jar: brine, lye or dry salt.",
         "Can’t find it: organic olives cured in brine.",
-        "Greek-style olives are near-ripe purple fruit cured in brine.",
-        "Spanish-style green olives are treated with lye, rinsed, then fermented.",
-        "Finish an opened jar within about 2 weeks.",
-        "Lye works fast and leaves a mild olive; brine keeps a salty, fermented flavor."
+        "Finish an opened jar within about 2 weeks."
       ],
       "watch_out": [
         "Some Greek-style olives were briefly exposed to air to darken the fruit, with the color set by ferrous gluconate."
       ],
       "pick_steps": [
-        "Read the jar for the method: brine, lye or dry salt.",
-        "Greek-style: near-ripe fruit in brine; some are air-darkened, set by ferrous gluconate.",
-        "California black ripe olives are the mildest, least bitter style, not a flaw."
+        "Read the jar for the method: brine, lye or dry salt."
       ],
       "science": "Olives off the tree hold a very bitter compound called oleuropein, which is leached out before eating. Brine is a slow fermentation that turns the fruit’s sugars into lactic and acetic acids. Lye works quickly, and rinsing leaves a neutral olive. Spanish-style green olives get lye, a rinse, then fermentation. Salt gives olives their flavor and serves as a preservative.",
       "labels_decoded": [
@@ -13043,7 +12892,6 @@
         "Read the pack for the kind by name: nori, kombu, kelp or another.",
         "Skip sea vegetables from China, organic included.",
         "Use kelp sparingly; its iodine varies widely by kind and drying.",
-        "Laver, or nori, is soaked briefly or toasted dry.",
         "Sugar kelp is soaked briefly, then simmered into broths.",
         "Dulse is eaten as a snack straight from the bag.",
         "Kinds differ widely, and a study found the kind mislabeled on several products."
@@ -13178,7 +13026,6 @@
       "cart_pick": "Young coconut or cold pure coconut water",
       "buying_tips": [
         "Read the list: coconut water and nothing else. Some brands add sugar.",
-        "Pick a young coconut still in its husk; it keeps longer than a trimmed one.",
         "Can’t find it: canned coconut water, heat-treated to keep, before a shelf-stable carton.",
         "Skip coconut water made from concentrate; look for “not from concentrate”."
       ],
@@ -13188,8 +13035,7 @@
       ],
       "pick_steps": [
         "Read the ingredients for coconut water alone; some brands add sugar.",
-        "Canned coconut water is heated so it keeps.",
-        "Pick a whole young coconut in its husk over a trimmed one."
+        "Canned coconut water is heated so it keeps."
       ],
       "science": "Coconut water is the clear liquid inside green, unripe coconuts. Coconut milk is a different product: grated ripe coconut meat combined with water. Out of the nut, coconut water spoils quickly. Canned water gets a high-temperature, short-time heat step that keeps it long. Some is high-pressure processed instead, and in one study it kept its color and aroma better.",
       "labels_decoded": [
@@ -13396,7 +13242,6 @@
         "No organic: a Non-GMO Project Verified logo is the close second. Most US corn is bioengineered.",
         "Pick chips fried in lard, tallow (beef fat), coconut oil or olive oil.",
         "Skip seed oils: sunflower, safflower, canola, soybean, corn and cottonseed.",
-        "Masa is corn cooked in lime and ground into dough; plain cornmeal cannot form one.",
         "Corn turns up as grain, syrup, oil and starch on a list."
       ],
       "watch_out": [
@@ -13472,7 +13317,6 @@
         "Can’t find it: plain salted organic chips with the shortest list.",
         "Pick chips fried in lard, tallow (beef fat), coconut oil or olive oil.",
         "Skip seed oils: sunflower, safflower, canola, soybean, corn and cottonseed.",
-        "Skip stacked crisps in identical shapes; they are pressed from dried potato flakes and cornstarch.",
         "Skip BHA, BHT and TBHQ, preservatives added to fats."
       ],
       "watch_out": [
@@ -13481,8 +13325,7 @@
       ],
       "pick_steps": [
         "Read the ingredients: a sliced chip starts with potatoes, not dried flakes.",
-        "Irregular sizes and folds mark sliced chips; identical, stackable shapes point to flakes.",
-        "Read “potato crisps” or “made from dried potatoes” as a possible pressed product."
+        "Irregular sizes and folds mark sliced chips; identical, stackable shapes point to flakes."
       ],
       "science": "The FDA classifies potato chips as thin slices of potato fried in deep fat. A stacked crisp starts from dehydrated potato flakes mixed with cornstarch and water. That mix gives every piece the same shape for stacking. The FDA let one such product use the name potato chips only with a prominent disclaimer. Its maker chose “potato crisps,” the British term, instead.",
       "labels_decoded": [
@@ -13551,7 +13394,6 @@
         "Microwave popcorn bags are grease-lined, and grease-resistant packaging can carry PFAS. Pop plain kernels on the stove instead."
       ],
       "pick_steps": [
-        "Buy plain kernels to pop at home in coconut oil, butter or tallow.",
         "Prepopped popcorn is often coated with flavorings before it reaches the shelf."
       ],
       "science": "Popcorn is its own variety of corn with a hard hull, the pericarp. Moisture inside heats to steam, and the kernel acts as a pressure cooker until the hull ruptures. Kernels with cuts or weak spots let the moisture escape and stay unpopped. Mushroom popcorn is the shape often sold prepopped and coated.",
@@ -13602,16 +13444,13 @@
         "Read the first ingredient for organic whole wheat flour. “Enriched flour” is white flour.",
         "Look for “sourdough” on the bag.",
         "No sourdough: organic whole wheat pretzels are next.",
-        "Read the rest: flour, malt syrup, oil, salt, yeast and soda.",
-        "A lye or soda bath gives the chew and glossy brown crust; a paler one had the milder soda bath.",
-        "Hard and soft pretzels both get the bath; a hard one bakes about twice as long."
+        "Read the rest: flour, malt syrup, oil, salt, yeast and soda."
       ],
       "watch_out": [
         "Without an alkaline bath, a pretzel is just a tanned twist of dough."
       ],
       "pick_steps": [
         "Read the list for flour, malt syrup, oil, salt, yeast and soda.",
-        "Check crust color; a paler pretzel can point to a baking soda bath.",
         "Skip partially hydrogenated oils on the list."
       ],
       "science": "Traditional German pretzels are dipped in a diluted, food-grade lye bath, then baked, which neutralizes the lye. Lye is sodium hydroxide, the strongest alkali a baker uses. A baking soda bath reacts less, so its pretzels come out lighter. The alkaline surface speeds browning, which shapes the crust. Hard and soft pretzels both take the bath; a hard one bakes about twice as long.",
@@ -13733,8 +13572,7 @@
       "buying_tips": [
         "Read the first few ingredients: nuts and dried fruit lead, with no candy, sugar or oil.",
         "Look for raw or soaked organic nuts, and dried fruit marked “unsulphured” (no sulfites added).",
-        "Can’t find it: pick the mix with the shortest list beyond nuts and fruit.",
-        "Mix it at home: soaked, dried nuts with raisins or unsulphured apricots."
+        "Can’t find it: pick the mix with the shortest list beyond nuts and fruit."
       ],
       "watch_out": [
         "A long list can push the nuts and fruit behind other ingredients."
@@ -13789,7 +13627,6 @@
       "kristy_take": "The snack aisle reads best one product at a time. Chips, crackers and popcorn each have a card of their own.",
       "cart_pick": "A snack with a whole grain listed first",
       "buying_tips": [
-        "Pick nuts, fruit, cheese or soaked trail mix before a packaged snack.",
         "Read the first ingredient, not the front: an organic whole grain, vegetable or bean.",
         "Look for lard, coconut oil or olive oil as the cooking fat, plus salt.",
         "Can’t find it: organic potato or corn chips with only olive or coconut oil and salt.",
@@ -13928,15 +13765,14 @@
       "cart_pick": "Deli salad dressed in olive oil, short list",
       "buying_tips": [
         "Read the dressing: olive oil, or mayonnaise made with it. Ask the counter for the list.",
-        "Pick tubs from a refrigerated case kept at 40°F or below.",
         "Can’t find it: a salad dressed with plain yogurt or sour cream.",
         "Skip sunflower, safflower, canola, soybean, corn, cottonseed and avocado oil.",
-        "Check the sell-by date. Egg, tuna or macaroni salad keeps 3 to 5 days.",
         "Get it home cold: two hours out at most, one hour above 90°F."
       ],
       "watch_out": [
         "Egg, tuna and macaroni salads keep 3 to 5 days; chicken salad, three to four.",
-        "Salads made with mayonnaise do not freeze well."
+        "Salads made with mayonnaise do not freeze well.",
+        "Pick tubs from a refrigerated case kept at 40°F or below."
       ],
       "pick_steps": [
         "Pick refrigerated salads with a Sell-By date that has not passed."
@@ -13992,8 +13828,7 @@
         "Pick whole meat and vegetable dishes; ask for the list and skip MSG and seed oils.",
         "Check the case thermometer: hot food at 140°F or above, cold food below 40°F.",
         "Can’t find it: the dish with the shortest list of named foods.",
-        "Pick pans filled to the rim, not piled high, behind a sneeze guard with a utensil per dish.",
-        "At home, get it into the fridge within two hours."
+        "Pick pans filled to the rim, not piled high, behind a sneeze guard with a utensil per dish."
       ],
       "watch_out": [
         "Buffet food is thrown out after two hours, whatever the holding temperature.",
@@ -14114,14 +13949,13 @@
       "cart_pick": "Pasture-raised whole-muscle deli meat",
       "buying_tips": [
         "Look for meat cut from one whole piece, from pasture-raised animals, on a short list.",
-        "Ask the counter to slice from a whole roast, not meat pressed into a loaf.",
         "Can’t find it: packaged organic deli meat with meat first on a short list.",
         "Check that meats, cheeses and salads sit cold; breads and dry snacks keep fine out of it.",
-        "Check hot food sits in a case held at 140°F or above.",
         "Ask about one food by name: deli salads, prepared meals or lunch meat."
       ],
       "watch_out": [
-        "Meats, cheeses or salads left out of a refrigerated case are a red flag."
+        "Meats, cheeses or salads left out of a refrigerated case are a red flag.",
+        "Check hot food sits in a case held at 140°F or above."
       ],
       "pick_steps": [
         "Pick hot food from a case held at 140°F or above.",
@@ -14172,9 +14006,7 @@
         "Read the cheese: real mozzarella. “Imitation cheese” is a substitute.",
         "Can’t find it: organic pizza with whole wheat flour listed first in the crust.",
         "Skip soybean oil, hydrolyzed protein and MSG.",
-        "Flour, water, salt and yeast is the old Neapolitan dough, with nothing else in it.",
-        "At home, wrap it twice for the freezer, plastic then foil.",
-        "Air on the surface leaves freezer burn: grayish-brown, leathery spots."
+        "Flour, water, salt and yeast is the old Neapolitan dough, with nothing else in it."
       ],
       "watch_out": [
         "A meat named on the box sets no minimum amount of that meat.",
@@ -14249,9 +14081,7 @@
         "Look for “pasture-raised” and ‘USDA Organic’ on the box.",
         "Can’t find it: plain frozen meat, fish or vegetables with no sauce.",
         "Read the name: a stew holds at least 25 percent meat, a poultry dinner at least 18.",
-        "Pick frozen fruit and vegetables without ascorbic or citric acid on the list.",
-        "Check for the inspection mark, and whether it must be cooked from frozen.",
-        "At home, use frozen dinners within 3 to 4 months."
+        "Pick frozen fruit and vegetables without ascorbic or citric acid on the list."
       ],
       "watch_out": [
         "Cream sauce is one food that does not freeze well.",
@@ -14332,13 +14162,12 @@
         "Skip sunflower, safflower, canola, soybean, corn and cottonseed oil.",
         "Skip BHA, BHT and TBHQ, preservatives added to fats.",
         "Compare bags by what each lists beyond potatoes, salt and the fat.",
-        "Hash browns at home take potatoes, oil, salt and pepper; a bag lists anything more.",
-        "Air fryer: preheat about 3 minutes, shake halfway, and do not crowd the basket.",
-        "From an oven recipe, lower the air fryer heat 25 to 30°F and the time by 20%."
+        "Air fryer: preheat about 3 minutes, shake halfway, and do not crowd the basket."
       ],
       "watch_out": [
         "Fried foods frozen at home may lose their crispness.",
-        "Skip avocado oil too: the label cannot prove the oil is pure."
+        "Skip avocado oil too: the label cannot prove the oil is pure.",
+        "From an oven recipe, lower the air fryer heat 25 to 30°F and the time by 20%."
       ],
       "pick_steps": [
         "Read the bag for potatoes, salt, and tallow, olive oil, or coconut oil.",
@@ -14399,9 +14228,7 @@
         "Can’t find it: plain organic whole-grain waffles, with no filling or icing.",
         "Skip dyes: Red 40, Yellow 5, Yellow 6 and Blue 1. A “Lake” dye still counts.",
         "Graham flour and rolled oats count as whole grain on the list.",
-        "Grain words on the front have no set meaning, so the list decides.",
-        "Regular waffles rise with baking powder or soda; yeast waffles rise with yeast.",
-        "At home, freeze cooled waffles airtight with parchment between, then toast from frozen."
+        "Grain words on the front have no set meaning, so the list decides."
       ],
       "watch_out": [
         "“Wheat flour” listed first means plain flour leads, not a whole grain."
@@ -14475,7 +14302,6 @@
         "Read the name: plain “Chicken Nugget” is one solid piece; “White meat” is all light meat.",
         "Look for certified organic and a short coating, such as arrowroot, salt and spices.",
         "No pasture-raised: plain organic chicken nuggets of one solid piece.",
-        "Skip “Chopped and Formed” by the name: the meat was chopped and pressed into shape.",
         "“Mostly white meat” can be 66 percent white meat.",
         "Pick nuggets fried in tallow, olive oil or coconut oil, or with no added oil.",
         "Skip seed oils: sunflower, safflower, canola, soybean, corn and cottonseed.",
@@ -14490,8 +14316,7 @@
       ],
       "pick_steps": [
         "Pick nuggets labeled “white meat”, which means 100 percent light meat.",
-        "Read a plain “Chicken Nugget” name as one solid piece of meat or poultry.",
-        "“Nugget-Shaped” in the name marks chopped meat that may hold binders, extenders or water."
+        "Read a plain “Chicken Nugget” name as one solid piece of meat or poultry."
       ],
       "science": "On poultry labels, “white meat” means 100 percent light meat, and “mostly white meat” 66 percent or more. “Chopped and Formed” beside the name means chopped and formed meat or poultry. With binders, extenders or water, “nugget” is only a fanciful name, and a descriptive name follows. A product labeled “breaded” carries batter and breading of no more than 30 percent of the finished product.",
       "labels_decoded": [
@@ -14565,19 +14390,17 @@
         "Read the list: the fruit or vegetable alone, no sauce, ascorbic acid or citric acid.",
         "Look for ‘USDA Organic’ and a bag that feels loose, not one solid block.",
         "No organic: a plain bag listing only the food.",
-        "Pick frozen food up just before checkout, frozen solid, and get it home to the freezer fast.",
-        "Check the case: food at 0°F or below keeps color, flavor and texture. Soft ice cream means it runs warm.",
         "Keep the home freezer at 0°F, 5°F at most. Label, date and use the oldest first.",
         "Cook or thaw by the label instructions."
       ],
       "watch_out": [
         "Swinging freezer temperatures lose color, texture and flavor.",
-        "Refreezing loses some quality through moisture loss."
+        "Refreezing loses some quality through moisture loss.",
+        "Check the case: food at 0°F or below keeps color, flavor and texture. Soft ice cream means it runs warm."
       ],
       "pick_steps": [
         "Shake the bag: pieces should move freely, not sit in one block.",
-        "Read the list for the fruit or vegetable alone.",
-        "Pick packs from the back of the freezer shelf."
+        "Read the list for the fruit or vegetable alone."
       ],
       "science": "Food held at 0°F or below keeps its color, flavor and texture better than warmer food. A home freezer belongs at 0°F or below, and 5°F at most. Swinging freezer temperatures lose color, texture and flavor. Fast freezing makes tiny ice crystals, while slow freezing makes large ones that rupture cells. Refreezing loses some quality through moisture loss. Freezing keeps quality but cannot improve flavor or texture.",
       "labels_decoded": [
@@ -14825,7 +14648,6 @@
         "Can’t find it: the bar with the shortest list, cacao first.",
         "Skip long lists of additives and flavorings.",
         "Higher cocoa percentages tested more likely to carry lead and cadmium.",
-        "Keep it a treat, and count cocoa mixes and baking chocolate in the week too.",
         "Keep dark chocolate small for kids."
       ],
       "watch_out": [
@@ -15003,9 +14825,7 @@
         "Read the bag for “whole grain” corn. “Degerminated” means the germ was taken out.",
         "Look for corn labeled “nixtamalized”: soaked in lime water, the traditional way.",
         "No nixtamalized: organic whole-grain cornmeal or grits is next.",
-        "Skip quick-cooking and instant grits and polenta.",
-        "Pick a sealed package, not a bin.",
-        "At home, soak it in water with a splash of something sour before cooking."
+        "Pick a sealed package, not a bin."
       ],
       "pick_steps": [
         "Pick whole grain cornmeal, or corn labeled nixtamalized.",
@@ -15029,7 +14849,10 @@
         "are grits worth buying"
       ],
       "delta": "Germ and bran retained on the label; fine cornmeal or coarse polenta and grits.",
-      "family": "fam_specialty_flours"
+      "family": "fam_specialty_flours",
+      "watch_out": [
+        "At home, soak it in water with a splash of something sour before cooking."
+      ]
     },
     {
       "id": "rice_cakes_puffed_grains",
@@ -15115,8 +14938,6 @@
         "Look for “wildcrafted” or a named lake or river: rice gathered where it grows wild.",
         "Read the list: wild rice alone, no white rice blended in.",
         "Can’t find it: organic wild rice in a sealed bag is next.",
-        "Skip quick-cooking rice mixes, and pick sealed bags over bins.",
-        "Soak it at least seven hours in warm water with a splash of vinegar or lemon.",
         "Wild rice was a traditional food of the Great Lakes peoples."
       ],
       "pick_steps": [
@@ -15178,7 +14999,6 @@
         "Look for ‘USDA Organic’ on a sealed bag.",
         "Can’t find it: plain canned beans or lentils are next.",
         "Skip legumes from China and non-organic bulk bins.",
-        "Soak about seven hours in warm water with a splash of something sour, then cook long.",
         "Simmer them in broth for added minerals."
       ],
       "pick_steps": [
@@ -15198,7 +15018,10 @@
         "are red lentils worth buying"
       ],
       "family": "fam_pulses",
-      "delta": "Husked, split halves are the intended pea form."
+      "delta": "Husked, split halves are the intended pea form.",
+      "watch_out": [
+        "Soak about seven hours in warm water with a splash of something sour, then cook long."
+      ]
     },
     {
       "id": "applesauce",
@@ -15296,7 +15119,6 @@
       "cart_pick": "Olive oil vinaigrette with a short list",
       "buying_tips": [
         "Read the oil first: extra virgin olive oil, with every ingredient named.",
-        "Look in the refrigerated section; some of the shortest lists live there.",
         "Can’t find it: a creamy dressing made with plain yogurt or cultured cream.",
         "Skip soybean, canola and vegetable oil.",
         "Count the ingredients: the longer the list, the more additives it tends to carry.",
@@ -15424,8 +15246,7 @@
         "Read the oil: extra virgin olive oil and no other.",
         "Look for organic basil, pine nuts, Parmesan, garlic and salt, each one named.",
         "Can’t find it: a named walnut or pumpkin seed pesto keeps the classic shape.",
-        "Skip sunflower, canola and soybean oil.",
-        "Fresh pesto keeps about a week in the fridge and freezes well."
+        "Skip sunflower, canola and soybean oil."
       ],
       "pick_steps": [
         "Pick pesto with extra virgin olive oil as the only oil."
@@ -15484,12 +15305,11 @@
         "Pick organic tomatoes, firm but not rock hard, with no bruises. The skin gets eaten.",
         "Look for a Real Organic or Certified Naturally Grown logo; each goes past plain organic.",
         "Can’t find it: plain organic, with a 5-digit sticker starting with 9.",
-        "Farmers market tomatoes are picked ripe; grocery ones are picked early.",
-        "Ripen on the counter, in a paper bag to speed it up.",
-        "Refrigerate cut tomatoes below 40°F within two hours."
+        "Farmers market tomatoes are picked ripe; grocery ones are picked early."
       ],
       "watch_out": [
-        "Chilling an unripe tomato turns it mealy and dulls the flavor."
+        "Chilling an unripe tomato turns it mealy and dulls the flavor.",
+        "Refrigerate cut tomatoes below 40°F within two hours."
       ],
       "pick_steps": [
         "Press gently; pass on any tomato that is soft or bruised."
@@ -15618,13 +15438,11 @@
       "buying_tips": [
         "Pick organic grapes. Conventional ones rank 44 of 47 for pesticide residue.",
         "Look for a Real Organic or Certified Naturally Grown logo; each goes past plain organic.",
-        "Can’t find a logo: plain organic, with a 5-digit sticker starting with 9.",
-        "Check for plump grapes with no bruised, cut or torn skin.",
-        "Refrigerate grapes right away.",
-        "Rinse under running water and rub briskly just before eating."
+        "Can’t find a logo: plain organic, with a 5-digit sticker starting with 9."
       ],
       "watch_out": [
-        "Conventional grapes rank among the most sprayed produce."
+        "Conventional grapes rank among the most sprayed produce.",
+        "Check for plump grapes with no bruised, cut or torn skin."
       ],
       "pick_steps": [
         "Lift the bunch and check for split, bruised or leaking grapes."
@@ -15689,9 +15507,7 @@
         "Cut melon left out more than two hours belongs in the refrigerator or the bin."
       ],
       "pick_steps": [
-        "Choose a whole melon over precut; organic for cantaloupe.",
-        "Check for no bruises or cut skin.",
-        "Rinse the rind before cutting and refrigerate cut pieces."
+        "Choose a whole melon over precut; organic for cantaloupe."
       ],
       "science": "Watermelon ranks 10 and cantaloupe 17 of 47 on the 2026 residue list. Rinsing under running water while rubbing briskly is the recommended wash. Cut fruit belongs in the refrigerator within two hours.",
       "labels_decoded": [
@@ -15754,7 +15570,6 @@
       ],
       "pick_steps": [
         "Choose whole fruit over precut.",
-        "Press a mango gently; ripe fruit gives slightly.",
         "Read the sticker for the country of origin."
       ],
       "science": "Pineapple ranks 1, papaya 4, mangoes 11 and kiwi 15 of 47 on the 2026 residue list. Refrigerating fruit before it ripens causes a mealy texture and lost flavor. Cut fruit belongs in the refrigerator within two hours.",
@@ -15817,18 +15632,15 @@
       "buying_tips": [
         "Pick organic: the skin gets eaten, and conventional potatoes carry a sprout inhibitor.",
         "Look for a Real Organic or Certified Naturally Grown logo; each goes past plain organic.",
-        "No organic: sweet potatoes are not treated with chlorpropham, the sprout inhibitor.",
-        "Check for dark spots or wilted skin before bagging.",
-        "Store potatoes in a paper bag in a cool, dry, dark place.",
-        "Green or sprouting potatoes: see Root vegetables."
+        "No organic: sweet potatoes are not treated with chlorpropham, the sprout inhibitor."
       ],
       "watch_out": [
-        "Chlorpropham was found on 90 percent of potato samples even after washing and scrubbing; it is banned in the EU."
+        "Chlorpropham was found on 90 percent of potato samples even after washing and scrubbing; it is banned in the EU.",
+        "Green or sprouting potatoes: see Root vegetables."
       ],
       "pick_steps": [
         "Choose organic potatoes.",
-        "No organic, choose sweet potatoes instead.",
-        "Store in a paper bag, cool, dry and dark."
+        "No organic, choose sweet potatoes instead."
       ],
       "science": "Chlorpropham is a sprout inhibitor used to keep potatoes from sprouting in storage. It was found on 90 percent of washed, scrubbed potato samples. It is banned in the EU. Organic potatoes may not be grown with it; 12 of 28 organic samples carried residue, likely from shared storage. Sweet potatoes are not treated with it. Storage and cooking can lower chlorpropham levels.",
       "labels_decoded": [
@@ -15956,16 +15768,14 @@
         "Look for a plain raw whole duck with the skin intact, labeled pasture-raised.",
         "Look for an Animal Welfare Approved (AWA) logo, from a group that checks the farm.",
         "Ask the counter whether the duck was pasture-raised and fed without soy.",
-        "USDA Organic on the duck is a bonus, never in place of pasture.",
-        "Roast it whole, then strain the fat into a jar and keep it in the fridge for cooking."
+        "USDA Organic on the duck is a bonus, never in place of pasture."
       ],
       "watch_out": [
         "Duck fat quality follows the feed; soy-fed ducks are the ones traditional guides pass over."
       ],
       "pick_steps": [
         "Look for pasture-raised on the duck; USDA Organic is a bonus.",
-        "Pick a whole duck with the skin intact.",
-        "Save the rendered fat in a jar."
+        "Pick a whole duck with the skin intact."
       ],
       "science": "Traditional food guides rate duck fat as a good fat, ideally from ducks not fed soy. Duck and goose fat are listed as sources of vitamin K2. Roasting a duck leaves extra fat behind.",
       "labels_decoded": [
@@ -16157,8 +15967,7 @@
         "Look for “wild-caught” and where it was caught; ask the counter if it is not labeled.",
         "Can’t find it: US farm-raised rainbow trout is next. It is rated green.",
         "Ask the country of origin on any farmed trout.",
-        "Steelhead is ocean-going rainbow trout; ask whether it is wild or farmed.",
-        "Freshness checks: see The seafood counter."
+        "Steelhead is ocean-going rainbow trout; ask whether it is wild or farmed."
       ],
       "watch_out": [
         "Farmed trout sits on traditional avoid lists; wild is the first pick."
@@ -16785,7 +16594,6 @@
       "buying_tips": [
         "Read the front: it should say ‘ice cream’ or ‘frozen custard’.",
         "Skip tubs that list guar gum, carrageenan or other thickeners.",
-        "Pick a pint that feels heavy for its size; a light one is mostly whipped-in air.",
         "Look for an AGA 100% Grassfed logo, then USDA Organic."
       ],
       "sources": [
@@ -16820,7 +16628,6 @@
       "why": "Cold sale alone does not establish fermentation or the absence of later heating. Raw finished-product wording does not mean every starting ingredient was uncooked. Vegetable, tea and milk ferments need different ingredient, alcohol and raw-milk checks; no shared vinegar, sugar or raw-milk rule fits them all.",
       "buying_tips": [
         "Look for ‘raw’ or ‘unpasteurized’, plus ‘organic’, on the jar or bottle.",
-        "Check for ‘keep refrigerated’; a cold shelf alone does not mean it is live.",
         "Pick a short list: the vegetables or tea, salt and cultures.",
         "Check the date and that the seal is unbroken."
       ],
@@ -16889,7 +16696,6 @@
       "decision": "Raw and unpasteurized, kept cold, with a short list.",
       "buying_tips": [
         "Look for ‘unpasteurized’ or ‘raw’ on the label; a cold shelf alone does not prove it.",
-        "Check for ‘keep refrigerated’ and follow the jar’s storage directions.",
         "Pick organic with a short list of real foods, salt and cultures.",
         "Read kombucha and kefir labels for sugar and alcohol; each recipe differs.",
         "Can’t find organic? Pick a raw or unpasteurized jar from the cold case with the shortest list."
@@ -17052,8 +16858,7 @@
       "buying_tips": [
         "Read the list: the bean alone, no seasoning packet.",
         "Look for USDA Organic; the Real Organic Project logo also requires soil-grown crops.",
-        "Pick a sealed bag of dried beans; plain canned beans are next.",
-        "Check the best-by date and pick the newest bag."
+        "Pick a sealed bag of dried beans; plain canned beans are next."
       ],
       "sources": [
         {
@@ -17128,7 +16933,6 @@
       "buying_tips": [
         "Look for ‘whole’ or ‘sprouted’ in the flour name.",
         "Pick sprouted first, then whole-grain, in the smallest bag you will use.",
-        "Check the milled or best-by date and pick the newest.",
         "Skip flour labeled ‘bleached’ or ‘enriched’, and soy flour."
       ],
       "sources": [
@@ -17224,8 +17028,7 @@
       "buying_tips": [
         "Read the list: flour, water, salt and a starter or culture, little else.",
         "Skip sourdough that lists yeast or other rising agents.",
-        "Look for whole-grain flour first on the list.",
-        "Ask the store bakery whether the loaf rises on starter alone."
+        "Look for whole-grain flour first on the list."
       ],
       "sources": [
         {
@@ -17398,7 +17201,6 @@
       "decision": "Organic corn tortillas and chips made with lime-treated corn, short list.",
       "why": "Nixtamalization treats corn with alkaline limewater before grinding. Wet masa and dried masa harina share that process; ordinary untreated cornmeal does not. Organic corn and the choice of frying fat are separate checks.",
       "buying_tips": [
-        "Read for ‘nixtamalized’ or ‘corn treated with lime’: corn soaked in limewater.",
         "Look for ‘organic’ on the bag.",
         "Check the frying fat: coconut oil, lard from pastured pigs, or ghee.",
         "Skip oil blends, flavor powders, artificial colors and preservatives."
@@ -17599,7 +17401,6 @@
         "Read the list for one named grain, bean, nut or sweetener.",
         "Look for ‘USDA Organic’ on the pack or the bin label.",
         "Pick sealed packs for nuts, flour and brown rice; bins suit beans and lentils.",
-        "Check the harvest, milled or roast date and pick the newest.",
         "Look for ‘BPA-free lining’ on cans."
       ]
     },
@@ -17935,7 +17736,6 @@
       "why": "Vegetable, vinegar or mustard bases suit different sauces and marinades. Named honey, maple or molasses can qualify, while an unsweetened marinade needs no added sweetener. Prefer a small maker’s full recipe or a home preparation with named herbs and spices.",
       "buying_tips": [
         "Look for ‘fermented’, ‘live’ or ‘unpasteurized’ on the bottle.",
-        "Check it says ‘keep refrigerated’ and sits in the cold case.",
         "Look for ‘USDA Organic’.",
         "Skip corn syrup, smoke flavoring and unnamed vegetable oils."
       ],
@@ -18195,8 +17995,6 @@
       "why": "Cured onions and garlic and storage potatoes suit cool, ventilated storage; fresh alliums and new potatoes need a colder route.",
       "buying_tips": [
         "Pick organic potatoes first; the skin gets eaten.",
-        "Check for soft spots, cuts, wrinkles or sprouts before bagging.",
-        "Look for firm, smooth skin with good color on roots and potatoes.",
         "Read the sign for ‘Product of’ to see where it grew."
       ],
       "sources": [
@@ -18330,7 +18128,6 @@
       "decision": "Organic when you eat the skin or juice it; peeled, pick by ripeness.",
       "buying_tips": [
         "Pick organic berries, greens, apples, grapes and potatoes: the skin gets eaten.",
-        "Pick avocados, bananas, mangoes and onions by ripeness; the peel comes off.",
         "Read the sticker: 5 digits starting with 9 is organic, 4 digits is conventional.",
         "Look for a Real Organic, Certified Naturally Grown, Demeter or Regenerative Organic Certified logo: each goes further than plain organic.",
         "Can’t find one of those logos? Pick plain USDA Organic for anything with the skin eaten."
@@ -18428,8 +18225,7 @@
       "buying_tips": [
         "Read the label for ‘wild-caught’, the kind of fish and where it was caught.",
         "Look for the blue MSC logo; it means an outside group checked the fishery.",
-        "Read the list: just the fish, salt at most.",
-        "Pick sealed frozen packs, or firm fish sitting on ice."
+        "Read the list: just the fish, salt at most."
       ],
       "sources": [
         {
@@ -18584,7 +18380,6 @@
       "buying_tips": [
         "Read ‘dry’ or ‘dry-packed’ on the pack or the counter sign.",
         "Read the list: scallops only, no added water or phosphates.",
-        "Ask the fish counter whether the scallops are dry or wet-packed (soaked).",
         "Pick frozen dry scallops if the counter has only wet ones."
       ],
       "sources": [
@@ -18631,9 +18426,11 @@
       "buying_tips": [
         "Read every label for the kind of fish, wild or farm-raised, and the country.",
         "Look for the blue MSC logo on wild fish and the ASC logo on farmed: an outside group checked both.",
-        "Pick fish on a thick bed of ice that smells mild, not fishy or sour.",
         "Check frozen packs for tears, frost or ice crystals.",
         "Can’t find fresh wild fish? Pick frozen wild in a sealed pack."
+      ],
+      "watch_out": [
+        "Pick fish on a thick bed of ice that smells mild, not fishy or sour."
       ]
     },
     {
@@ -18645,9 +18442,7 @@
       "why": "Plain frozen fruit and vegetables are frozen piece by piece soon after harvest. A bag that has frozen into one block has likely thawed and refrozen on the way, and packs at the back of the case see the least temperature swing.",
       "buying_tips": [
         "Look for ‘USDA Organic’ on the bag.",
-        "Read the list: the food alone; skip citric acid, ascorbic acid and sugar.",
-        "Check the bag feels loose; a solid block has likely thawed and refrozen.",
-        "Pick bags from the back of the freezer case; they see the least temperature swing."
+        "Read the list: the food alone; skip citric acid, ascorbic acid and sugar."
       ],
       "sources": [
         {
@@ -18777,8 +18572,7 @@
       "decision": "Plain frozen fruit or vegetables, with no syrup or sauce.",
       "buying_tips": [
         "Read the list for syrup on fruit and sauce on vegetables; skip both.",
-        "Look for USDA Organic on the front of the bag.",
-        "Skip bags with thick frost inside; they have likely thawed and refrozen."
+        "Look for USDA Organic on the front of the bag."
       ],
       "title": "Frozen plain fruit and vegetables",
       "category": "aisle_frozen",
