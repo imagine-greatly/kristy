@@ -1,0 +1,538 @@
+{
+  "source": "S2b Pass B (lookfor-scope-plan.md): below-floor cards outside produce",
+  "format": "apply.mjs row, one per card+field: {id, field, remove:[exact], add:[{text, field, quote}], to_watch_out:[exact], kept_in?:[{text, field, quote}]}. Runs after out/deletions.patch.json. Each add.quote is verbatim in that card (add.field names where) before the run; kept_in shows where each removed safety fact still reads on the card (informational, apply ignores it).",
+  "patches": [
+    {
+      "id": "judging_meat_at_the_case",
+      "field": "buying_tips",
+      "remove": [
+        "Check the pack is fully sealed, with no holes, tears or leaking juices.",
+        "Check it is not slimy and has no off smell. Both, not either."
+      ],
+      "add": [],
+      "to_watch_out": [],
+      "kept_in": [
+        {
+          "text": "Check the pack is fully sealed, with no holes, tears or leaking juices.",
+          "field": "detail",
+          "quote": "fully sealed, with no holes, tears or punctures, and not leaking meat juices"
+        },
+        {
+          "text": "Check it is not slimy and has no off smell. Both, not either.",
+          "field": "watch_out",
+          "quote": "Pass on slime or any off smell"
+        }
+      ]
+    },
+    {
+      "id": "judging_meat_at_the_case",
+      "field": "pick_steps",
+      "remove": [
+        "‘Packaged on’: the packing day; the newest date wins.",
+        "Take a sealed, leak-free package from the back, where the case is coldest."
+      ],
+      "add": [
+        {
+          "text": "Look for a label saying the animal ate only grass.",
+          "field": "buying_tips",
+          "quote": "Look for a label saying the animal ate only grass"
+        },
+        {
+          "text": "Ask the counter for the farm name.",
+          "field": "buying_tips",
+          "quote": "ask the counter for the farm name"
+        }
+      ],
+      "to_watch_out": [],
+      "kept_in": [
+        {
+          "text": "Take a sealed, leak-free package from the back, where the case is coldest.",
+          "field": "buying_tips",
+          "quote": "Pick from the back of the case, where it is coldest"
+        }
+      ]
+    },
+    {
+      "id": "natto",
+      "field": "buying_tips",
+      "remove": [
+        "Look for trays kept cold or frozen, and check the date.",
+        "Freeze what will not be eaten within days.",
+        "Expect a strong smell and sticky strings.",
+        "Chilled natto keeps only days; frozen, it keeps for months."
+      ],
+      "add": [
+        {
+          "text": "Pick plain whole-bean natto with live culture.",
+          "field": "decision",
+          "quote": "plain whole-bean natto with live culture"
+        },
+        {
+          "text": "Read the sauce packet’s list too, or dress it yourself.",
+          "field": "watch_out",
+          "quote": "Read the sauce packet’s list too, or dress it yourself."
+        }
+      ],
+      "to_watch_out": [],
+      "kept_in": [
+        {
+          "text": "Look for trays kept cold or frozen, and check the date.",
+          "field": "decision",
+          "quote": "chilled or frozen"
+        },
+        {
+          "text": "Chilled natto keeps only days; frozen, it keeps for months.",
+          "field": "why",
+          "quote": "Chilled natto keeps only days. Frozen, it keeps for months."
+        },
+        {
+          "text": "Expect a strong smell and sticky strings.",
+          "field": "kristy_take",
+          "quote": "The strong smell and sticky strings are the food itself, not a fault."
+        }
+      ]
+    },
+    {
+      "id": "natto",
+      "field": "pick_steps",
+      "remove": [
+        "Pick sealed trays kept cold or frozen.",
+        "Expect a strong smell and sticky strings; strong ammonia means it fermented too long."
+      ],
+      "add": [
+        {
+          "text": "Read the list for whole soybeans first.",
+          "field": "buying_tips",
+          "quote": "Read the list for whole soybeans first"
+        },
+        {
+          "text": "Look for USDA Organic on the pack.",
+          "field": "buying_tips",
+          "quote": "look for USDA Organic on the pack"
+        },
+        {
+          "text": "Read the sauce packet’s list too, or dress it yourself.",
+          "field": "watch_out",
+          "quote": "Read the sauce packet’s list too, or dress it yourself."
+        }
+      ],
+      "to_watch_out": [],
+      "kept_in": [
+        {
+          "text": "Pick sealed trays kept cold or frozen.",
+          "field": "decision",
+          "quote": "chilled or frozen"
+        },
+        {
+          "text": "Expect a strong smell and sticky strings; strong ammonia means it fermented too long.",
+          "field": "watch_out",
+          "quote": "A strong ammonia smell means it fermented too long."
+        }
+      ]
+    },
+    {
+      "id": "deli",
+      "field": "buying_tips",
+      "remove": [
+        "Check that meats, cheeses and salads sit cold; breads and dry snacks keep fine out of it."
+      ],
+      "add": [],
+      "to_watch_out": [],
+      "kept_in": [
+        {
+          "text": "Check that meats, cheeses and salads sit cold; breads and dry snacks keep fine out of it.",
+          "field": "watch_out",
+          "quote": "Meats, cheeses or salads left out of a refrigerated case are a red flag."
+        }
+      ]
+    },
+    {
+      "id": "deli",
+      "field": "pick_steps",
+      "remove": [
+        "Pick hot food from a case held at 140°F or above.",
+        "Check that meats, cheeses and salads sit in a refrigerated case."
+      ],
+      "add": [
+        {
+          "text": "Look for meat cut from one whole piece, from pasture-raised animals.",
+          "field": "buying_tips",
+          "quote": "Look for meat cut from one whole piece, from pasture-raised animals"
+        },
+        {
+          "text": "Read for meat first on a short list.",
+          "field": "buying_tips",
+          "quote": "meat first on a short list"
+        },
+        {
+          "text": "Can’t find it: packaged organic deli meat.",
+          "field": "buying_tips",
+          "quote": "Can’t find it: packaged organic deli meat"
+        }
+      ],
+      "to_watch_out": [],
+      "kept_in": [
+        {
+          "text": "Pick hot food from a case held at 140°F or above.",
+          "field": "science",
+          "quote": "Hot buffet items are held at a minimum of 140°F"
+        },
+        {
+          "text": "Check that meats, cheeses and salads sit in a refrigerated case.",
+          "field": "watch_out",
+          "quote": "Meats, cheeses or salads left out of a refrigerated case are a red flag."
+        }
+      ]
+    },
+    {
+      "id": "deli_salads",
+      "field": "buying_tips",
+      "remove": [
+        "Get it home cold: two hours out at most, one hour above 90°F."
+      ],
+      "add": [],
+      "to_watch_out": [],
+      "kept_in": [
+        {
+          "text": "Get it home cold: two hours out at most, one hour above 90°F.",
+          "field": "detail",
+          "quote": "should not sit at room temperature longer than two hours, or one hour above 90°F"
+        }
+      ]
+    },
+    {
+      "id": "deli_salads",
+      "field": "pick_steps",
+      "remove": [
+        "Pick refrigerated salads with a Sell-By date that has not passed."
+      ],
+      "add": [
+        {
+          "text": "Read the dressing: olive oil, or mayonnaise made with it.",
+          "field": "buying_tips",
+          "quote": "Read the dressing: olive oil, or mayonnaise made with it."
+        },
+        {
+          "text": "Skip sunflower, safflower, canola, soybean, corn, cottonseed and avocado oil.",
+          "field": "buying_tips",
+          "quote": "Skip sunflower, safflower, canola, soybean, corn, cottonseed and avocado oil."
+        },
+        {
+          "text": "Can’t find it: a salad dressed with plain yogurt or sour cream.",
+          "field": "buying_tips",
+          "quote": "Can’t find it: a salad dressed with plain yogurt or sour cream."
+        }
+      ],
+      "to_watch_out": [],
+      "kept_in": [
+        {
+          "text": "Pick refrigerated salads with a Sell-By date that has not passed.",
+          "field": "labels_decoded",
+          "quote": "Tells the store how long to display the item; buy it before that date."
+        }
+      ]
+    },
+    {
+      "id": "frozen_meals",
+      "field": "pick_steps",
+      "remove": [
+        "Find the inspection mark: an inspected plant prepared the meal.",
+        "Read the label, since some meals must be cooked from frozen."
+      ],
+      "add": [
+        {
+          "text": "Read the list: meat and vegetables first, no MSG.",
+          "field": "buying_tips",
+          "quote": "Read the list: meat and vegetables first"
+        },
+        {
+          "text": "Look for “pasture-raised” and ‘USDA Organic’ on the box.",
+          "field": "buying_tips",
+          "quote": "Look for “pasture-raised” and ‘USDA Organic’ on the box."
+        }
+      ],
+      "to_watch_out": [],
+      "kept_in": [
+        {
+          "text": "Find the inspection mark: an inspected plant prepared the meal.",
+          "field": "labels_decoded",
+          "quote": "The meal was prepared in a USDA or State-inspected plant."
+        }
+      ]
+    },
+    {
+      "id": "rice_cakes_puffed_grains",
+      "field": "pick_steps",
+      "remove": [
+        "Pick whole grain rice or another whole grain to soak and cook."
+      ],
+      "add": [
+        {
+          "text": "Pick organic whole-grain crackers, whole grain first on the list.",
+          "field": "buying_tips",
+          "quote": "Pick organic whole-grain crackers, whole grain first on the list"
+        },
+        {
+          "text": "Can’t find it: organic whole-grain brown rice in a sealed bag.",
+          "field": "buying_tips",
+          "quote": "Can’t find it: organic whole-grain brown rice in a sealed bag"
+        }
+      ],
+      "to_watch_out": []
+    },
+    {
+      "id": "rice_cakes_puffed_grains",
+      "field": "buying_tips",
+      "remove": [
+        "Puffed grains are heated under pressure, not soaked or slow cooked."
+      ],
+      "add": [],
+      "to_watch_out": [
+        "Puffed grains are heated under pressure, not soaked or slow cooked."
+      ]
+    },
+    {
+      "id": "crab",
+      "field": "buying_tips",
+      "remove": [
+        "Crabs spoil fast after death, and moving legs show the crab is alive."
+      ],
+      "add": [
+        {
+          "text": "Pick real crab over imitation crab, which is surimi made from pollock.",
+          "field": "detail",
+          "quote": "Imitation crab is surimi, made from cooked Alaska pollock"
+        }
+      ],
+      "to_watch_out": [],
+      "kept_in": [
+        {
+          "text": "Smell cooked crab and skip any with an off odor.",
+          "field": "short_answer",
+          "quote": "Cooked crab should have bright orange to red shells and no off odor."
+        },
+        {
+          "text": "Crabs spoil fast after death, and moving legs show the crab is alive.",
+          "field": "watch_out",
+          "quote": "A crab that does not move may have died, and dead crab spoils fast."
+        }
+      ]
+    },
+    {
+      "id": "crab",
+      "field": "pick_steps",
+      "remove": [
+        "Live crab: check that the legs move.",
+        "Cooked crab: bright orange to red shells and no off odor.",
+        "Buy unpackaged cooked crab only from a case kept apart from raw."
+      ],
+      "add": [
+        {
+          "text": "Read the tag for the kind of crab and the catch area.",
+          "field": "buying_tips",
+          "quote": "with the kind and catch area on the tag"
+        },
+        {
+          "text": "Pick real crab over imitation crab, which is surimi made from pollock.",
+          "field": "detail",
+          "quote": "Imitation crab is surimi, made from cooked Alaska pollock"
+        }
+      ],
+      "to_watch_out": [],
+      "kept_in": [
+        {
+          "text": "Live crab: check that the legs move.",
+          "field": "watch_out",
+          "quote": "A crab that does not move may have died, and dead crab spoils fast."
+        },
+        {
+          "text": "Cooked crab: bright orange to red shells and no off odor.",
+          "field": "short_answer",
+          "quote": "Cooked crab should have bright orange to red shells and no off odor."
+        },
+        {
+          "text": "Buy unpackaged cooked crab only from a case kept apart from raw.",
+          "field": "buying_tips",
+          "quote": "Buy unpackaged cooked crab only from a case kept apart from raw seafood."
+        }
+      ]
+    },
+    {
+      "id": "lobster",
+      "field": "buying_tips",
+      "remove": [
+        "Ask the counter to lift it and watch the tail: a lively one curls it under.",
+        "A dead lobster spoils fast, which is why the claws, legs and tail get checked."
+      ],
+      "add": [],
+      "to_watch_out": [],
+      "kept_in": [
+        {
+          "text": "Ask the counter to lift it and watch the tail: a lively one curls it under.",
+          "field": "watch_out",
+          "quote": "A tail that hangs down when the lobster is lifted is a poor sign."
+        },
+        {
+          "text": "A dead lobster spoils fast, which is why the claws, legs and tail get checked.",
+          "field": "watch_out",
+          "quote": "A dead lobster spoils fast, so only live lobsters should be cooked whole."
+        }
+      ]
+    },
+    {
+      "id": "lobster",
+      "field": "pick_steps",
+      "remove": [
+        "Ask the counter to lift it: the tail should curl under.",
+        "Check that the claws and legs move.",
+        "Frozen tails: hard-frozen, clear white meat, no torn pack or ice crystals."
+      ],
+      "add": [
+        {
+          "text": "Read frozen tails for sodium tripolyphosphate, a phosphate additive.",
+          "field": "buying_tips",
+          "quote": "Read frozen tails for sodium tripolyphosphate, a phosphate additive"
+        },
+        {
+          "text": "Read frozen tails for the country they came from.",
+          "field": "buying_tips",
+          "quote": "and for the country they came from"
+        }
+      ],
+      "to_watch_out": [],
+      "kept_in": [
+        {
+          "text": "Ask the counter to lift it: the tail should curl under.",
+          "field": "watch_out",
+          "quote": "A tail that hangs down when the lobster is lifted is a poor sign."
+        },
+        {
+          "text": "Check that the claws and legs move.",
+          "field": "buying_tips",
+          "quote": "Look for a live lobster whose claws and legs move."
+        },
+        {
+          "text": "Frozen tails: hard-frozen, clear white meat, no torn pack or ice crystals.",
+          "field": "buying_tips",
+          "quote": "Skip frozen packs that are torn or show ice crystals."
+        }
+      ]
+    },
+    {
+      "id": "clams_mussels_oysters",
+      "field": "buying_tips",
+      "remove": [
+        "Tap any open shell and check that it closes.",
+        "Oysters are nature’s richest source of zinc; buy them live and eat them fresh."
+      ],
+      "add": [],
+      "to_watch_out": [],
+      "kept_in": [
+        {
+          "text": "Tap any open shell and check that it closes.",
+          "field": "science",
+          "quote": "A live shell closes when it is tapped."
+        }
+      ]
+    },
+    {
+      "id": "clams_mussels_oysters",
+      "field": "pick_steps",
+      "remove": [
+        "Tap any open shell: it should close; skip cracked or broken ones."
+      ],
+      "add": [
+        {
+          "text": "Read the tag for the harvest date and the harvest area.",
+          "field": "science",
+          "quote": "the harvest date and the harvest area"
+        },
+        {
+          "text": "Can’t find live ones: canned or smoked oysters in olive oil or water.",
+          "field": "buying_tips",
+          "quote": "Can’t find live ones: canned or smoked oysters in olive oil or water"
+        }
+      ],
+      "to_watch_out": [],
+      "kept_in": [
+        {
+          "text": "Tap any open shell: it should close; skip cracked or broken ones.",
+          "field": "short_answer",
+          "quote": "Shells should be closed, or close when tapped. Skip any that are cracked or broken."
+        }
+      ]
+    },
+    {
+      "id": "seafood_counter",
+      "field": "buying_tips",
+      "remove": [
+        "Red gills mean a recent catch; brown, gray or green gills mean past fresh.",
+        "Smell it. Clean and briny is right; sharp, fishy or ammonia is not.",
+        "Check that it sits on ice or in a cold case, not in a pool of its own liquid.",
+        "Check that cooked seafood is kept apart from raw."
+      ],
+      "add": [],
+      "to_watch_out": [],
+      "kept_in": [
+        {
+          "text": "Red gills mean a recent catch; brown, gray or green gills mean past fresh.",
+          "field": "watch_out",
+          "quote": "Red means recently slaughtered; brown, gray or green means the fish is past fresh."
+        },
+        {
+          "text": "Smell it. Clean and briny is right; sharp, fishy or ammonia is not.",
+          "field": "watch_out",
+          "quote": "Fishy, sour or ammonia odors mean the fish stays at the store."
+        },
+        {
+          "text": "Check that it sits on ice or in a cold case, not in a pool of its own liquid.",
+          "field": "detail",
+          "quote": "Buy fish refrigerated or on a thick bed of fresh ice"
+        },
+        {
+          "text": "Check that cooked seafood is kept apart from raw.",
+          "field": "science",
+          "quote": "Unpackaged cooked seafood belongs in its own case or behind dividers from raw."
+        }
+      ]
+    },
+    {
+      "id": "seafood_counter",
+      "field": "pick_steps",
+      "remove": [
+        "Check that cooked seafood is kept apart from raw.",
+        "Smell it: mild passes; fishy, sour or ammonia means it stays at the store."
+      ],
+      "add": [
+        {
+          "text": "Ask the kind of fish, wild or farmed, and the country.",
+          "field": "buying_tips",
+          "quote": "Ask the counter the kind of fish, wild or farmed, the country"
+        },
+        {
+          "text": "Ask for dry-packed scallops and fillets, not ones soaked in sodium tripolyphosphate.",
+          "field": "buying_tips",
+          "quote": "Ask for dry-packed scallops and fillets. ‘Wet’ means soaked in sodium tripolyphosphate"
+        },
+        {
+          "text": "Skip tuna labeled ‘tasteless smoke’ or ‘treated with carbon monoxide’.",
+          "field": "buying_tips",
+          "quote": "Tuna labeled ‘tasteless smoke’ or ‘treated with carbon monoxide’"
+        }
+      ],
+      "to_watch_out": [],
+      "kept_in": [
+        {
+          "text": "Check that cooked seafood is kept apart from raw.",
+          "field": "science",
+          "quote": "Unpackaged cooked seafood belongs in its own case or behind dividers from raw."
+        },
+        {
+          "text": "Smell it: mild passes; fishy, sour or ammonia means it stays at the store.",
+          "field": "watch_out",
+          "quote": "Fishy, sour or ammonia odors mean the fish stays at the store."
+        }
+      ]
+    }
+  ]
+}

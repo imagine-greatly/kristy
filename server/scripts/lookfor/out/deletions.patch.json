@@ -1,5 +1,5 @@
 {
-  "source": "scripts/lookfor/classify.mjs (S0, regex proposal, unreviewed)",
+  "source": "scripts/lookfor/classify.mjs (S0 regex proposal, S2c OVERRIDE applied)",
   "format": "{id, field, remove:[exact], add:[], to_watch_out:[exact], evidence:null}; adds none, so no evidence",
   "patches": [
     {
@@ -55,8 +55,7 @@
       "id": "organic_worth_it_by_type",
       "field": "buying_tips",
       "remove": [
-        "Peeled produce: the peel goes in the trash, so pick for firmness and ripeness.",
-        "Residue sits on the skin, so a peel you throw away takes it with it."
+        "Peeled produce: the peel goes in the trash, so pick for firmness and ripeness."
       ],
       "add": [],
       "to_watch_out": [],
@@ -89,7 +88,6 @@
       "id": "produce_seasonality",
       "field": "buying_tips",
       "remove": [
-        "Winter: citrus, cabbage, kale, leeks, beets, parsnips, storage onions and potatoes.",
         "Storage crops (apples, onions, potatoes, squash, carrots) stay good long past their season.",
         "In-season produce reaches you closer to ripe, so it tastes better."
       ],
@@ -184,8 +182,7 @@
       "id": "butcher_counter_asking",
       "field": "buying_tips",
       "remove": [
-        "Can’t find the cut you want: a whole chuck roast, cut, tied or boned to order.",
-        "Ask for bones and trim, and which farm the bones came from."
+        "Can’t find the cut you want: a whole chuck roast, cut, tied or boned to order."
       ],
       "add": [],
       "to_watch_out": [],
@@ -197,17 +194,6 @@
       "field": "pick_steps",
       "remove": [
         "Ask the butcher to portion it; cutting, tying and boning are usually included."
-      ],
-      "add": [],
-      "to_watch_out": [],
-      "evidence": null,
-      "first_line_changes": false
-    },
-    {
-      "id": "deli_meat_uncured",
-      "field": "pick_steps",
-      "remove": [
-        "Pick whole roasted meat first, then counter-sliced meat before the prepacked tub."
       ],
       "add": [],
       "to_watch_out": [],
@@ -271,28 +257,6 @@
       "first_line_changes": false
     },
     {
-      "id": "cream_vs_creamer",
-      "field": "buying_tips",
-      "remove": [
-        "Check the fat: heavy cream is 36% milkfat or more, half-and-half 10.5 to 18%. Both are fixed by law."
-      ],
-      "add": [],
-      "to_watch_out": [],
-      "evidence": null,
-      "first_line_changes": false
-    },
-    {
-      "id": "cream_vs_creamer",
-      "field": "pick_steps",
-      "remove": [
-        "Read the milkfat: heavy cream is 36% or more, half-and-half 10.5 to 18%."
-      ],
-      "add": [],
-      "to_watch_out": [],
-      "evidence": null,
-      "first_line_changes": true
-    },
-    {
       "id": "flour_basics",
       "field": "pick_steps",
       "remove": [
@@ -307,13 +271,22 @@
       "id": "bulk_bins_buying",
       "field": "buying_tips",
       "remove": [
-        "Buy nuts, seeds and flour in sealed packages; their oil goes rancid in an open bin.",
+        "Smell it before it goes in the cart. Rancid reads as paint, crayon or bitter.",
         "Buy what you will use in a month, and store it airtight and dark."
       ],
       "add": [],
-      "to_watch_out": [
-        "Buy nuts, seeds and flour in sealed packages; their oil goes rancid in an open bin."
+      "to_watch_out": [],
+      "evidence": null,
+      "first_line_changes": false
+    },
+    {
+      "id": "bulk_bins_buying",
+      "field": "pick_steps",
+      "remove": [
+        "Smell before bagging; crayons, putty or wet cardboard means rancid."
       ],
+      "add": [],
+      "to_watch_out": [],
       "evidence": null,
       "first_line_changes": false
     },
@@ -345,7 +318,6 @@
       "id": "olive_oil_grades",
       "field": "buying_tips",
       "remove": [
-        "Pick dark glass or tin, and store it away from the stove.",
         "Can’t find it: butter or ghee for anything cooked, with no harvest date to check."
       ],
       "add": [],
@@ -388,17 +360,6 @@
       "first_line_changes": false
     },
     {
-      "id": "label_wild_vs_farm_raised",
-      "field": "buying_tips",
-      "remove": [
-        "Cooked and breaded seafood falls outside the labeling rule."
-      ],
-      "add": [],
-      "to_watch_out": [],
-      "evidence": null,
-      "first_line_changes": false
-    },
-    {
       "id": "raw_kefir",
       "field": "buying_tips",
       "remove": [
@@ -408,17 +369,6 @@
       "to_watch_out": [],
       "evidence": null,
       "first_line_changes": false
-    },
-    {
-      "id": "raw_kefir",
-      "field": "pick_steps",
-      "remove": [
-        "Take it from the refrigerated case; shelf-stable kefir’s cultures are no longer live."
-      ],
-      "add": [],
-      "to_watch_out": [],
-      "evidence": null,
-      "first_line_changes": true
     },
     {
       "id": "sprouts_raw",
@@ -457,7 +407,6 @@
         "Cabbage: outer leaves fresh, not wilted or chewed by insects. Pull off any that are.",
         "Broccoli keeps in the fridge in a bag with holes. Use it within three days.",
         "Cut out the cabbage core and rinse the leaves under cool running water before using.",
-        "Florets and leaves are eaten whole, with no peel to take surface residue away.",
         "Keep broccoli and cauliflower unwashed in a bag in the fridge, and wash them in cool water just before using."
       ],
       "add": [],
@@ -574,29 +523,6 @@
       "first_line_changes": false
     },
     {
-      "id": "breakfast_cereal",
-      "field": "buying_tips",
-      "remove": [
-        "Look for plain rolled oats to soak overnight and cook in the morning.",
-        "Flakes, puffs and O’s are extruded, pushed through a machine; soaked, cooked oats are the traditional bowl."
-      ],
-      "add": [],
-      "to_watch_out": [],
-      "evidence": null,
-      "first_line_changes": true
-    },
-    {
-      "id": "breakfast_cereal",
-      "field": "pick_steps",
-      "remove": [
-        "Pick oats to soak and cook over a boxed cereal."
-      ],
-      "add": [],
-      "to_watch_out": [],
-      "evidence": null,
-      "first_line_changes": true
-    },
-    {
       "id": "coffee_beans",
       "field": "buying_tips",
       "remove": [
@@ -627,9 +553,7 @@
         "Moisture is what spoils mushrooms, so a dry, firm cap is the fresh one."
       ],
       "add": [],
-      "to_watch_out": [
-        "Moisture is what spoils mushrooms, so a dry, firm cap is the fresh one."
-      ],
+      "to_watch_out": [],
       "evidence": null,
       "first_line_changes": false
     },
@@ -642,9 +566,7 @@
         "Bananas get sweeter as the green fades, and ripening on the plant often splits them."
       ],
       "add": [],
-      "to_watch_out": [
-        "Keep green bananas out of the fridge. Cold below 56°F can stop them ripening."
-      ],
+      "to_watch_out": [],
       "evidence": null,
       "first_line_changes": true
     },
@@ -653,12 +575,11 @@
       "field": "buying_tips",
       "remove": [
         "Pick smooth, slender pods with no seeds bulging through.",
-        "Store them cold and cook them within five days."
+        "Store them cold and cook them within five days.",
+        "Bulging seeds mean an older bean, turning tough, stringy and starchy."
       ],
       "add": [],
-      "to_watch_out": [
-        "Pick smooth, slender pods with no seeds bulging through."
-      ],
+      "to_watch_out": [],
       "evidence": null,
       "first_line_changes": false
     },
@@ -719,22 +640,7 @@
         "Expect deeper red than beef, and bag the package separately for leaks."
       ],
       "add": [],
-      "to_watch_out": [
-        "Expect deeper red than beef, and bag the package separately for leaks."
-      ],
-      "evidence": null,
-      "first_line_changes": false
-    },
-    {
-      "id": "venison_game",
-      "field": "buying_tips",
-      "remove": [
-        "Ask whether the processor handles each animal one at a time and keeps everything cold."
-      ],
-      "add": [],
-      "to_watch_out": [
-        "Ask whether the processor handles each animal one at a time and keeps everything cold."
-      ],
+      "to_watch_out": [],
       "evidence": null,
       "first_line_changes": false
     },
@@ -777,11 +683,11 @@
       "field": "buying_tips",
       "remove": [
         "Ask for whole crab, or cracked and cleaned, and keep the yellow butter inside.",
-        "Can’t find live: whole cooked crab with bright orange to red shells. Picked meat in a tub comes after that."
+        "Smell cooked crab and skip any with an off odor."
       ],
       "add": [],
       "to_watch_out": [
-        "Ask for whole crab, or cracked and cleaned, and keep the yellow butter inside."
+        "Smell cooked crab and skip any with an off odor."
       ],
       "evidence": null,
       "first_line_changes": false
@@ -908,7 +814,6 @@
       "id": "muesli",
       "field": "buying_tips",
       "remove": [
-        "Check whether the bag says ‘toasted’.",
         "Soak it overnight in yogurt or water, Bircher style."
       ],
       "add": [],
@@ -917,17 +822,6 @@
       "first_line_changes": false
     },
     {
-      "id": "muesli",
-      "field": "pick_steps",
-      "remove": [
-        "Check whether the bag says toasted; toasted or sweetened sits closer to granola."
-      ],
-      "add": [],
-      "to_watch_out": [],
-      "evidence": null,
-      "first_line_changes": false
-    },
-    {
       "id": "plain_kefir",
       "field": "buying_tips",
       "remove": [
@@ -946,19 +840,6 @@
       ],
       "add": [],
       "to_watch_out": [],
-      "evidence": null,
-      "first_line_changes": false
-    },
-    {
-      "id": "sour_cream",
-      "field": "buying_tips",
-      "remove": [
-        "Can’t find cream-and-cultures sour cream: plain whole-milk yogurt."
-      ],
-      "add": [],
-      "to_watch_out": [
-        "Can’t find cream-and-cultures sour cream: plain whole-milk yogurt."
-      ],
       "evidence": null,
       "first_line_changes": false
     },
@@ -996,17 +877,6 @@
       "first_line_changes": false
     },
     {
-      "id": "kombucha",
-      "field": "pick_steps",
-      "remove": [
-        "Pick plain kombucha in glass from the refrigerated case."
-      ],
-      "add": [],
-      "to_watch_out": [],
-      "evidence": null,
-      "first_line_changes": true
-    },
-    {
       "id": "kimchi",
       "field": "buying_tips",
       "remove": [
@@ -1027,28 +897,6 @@
       "to_watch_out": [],
       "evidence": null,
       "first_line_changes": false
-    },
-    {
-      "id": "fermented_pickles",
-      "field": "buying_tips",
-      "remove": [
-        "Pick unheated, salt-brined pickles from the refrigerated case."
-      ],
-      "add": [],
-      "to_watch_out": [],
-      "evidence": null,
-      "first_line_changes": false
-    },
-    {
-      "id": "fermented_pickles",
-      "field": "pick_steps",
-      "remove": [
-        "Pick from the refrigerated case, but refrigerated alone does not mean fermented."
-      ],
-      "add": [],
-      "to_watch_out": [],
-      "evidence": null,
-      "first_line_changes": true
     },
     {
       "id": "miso",
@@ -1105,7 +953,6 @@
       "id": "broth",
       "field": "buying_tips",
       "remove": [
-        "Pick frozen, refrigerated or jarred over a shelf-stable boxed broth.",
         "A good broth gels when chilled."
       ],
       "add": [],
@@ -1114,32 +961,9 @@
       "first_line_changes": false
     },
     {
-      "id": "salt",
-      "field": "buying_tips",
-      "remove": [
-        "Look for how it was harvested and washed or filtered, on the package or the maker’s site."
-      ],
-      "add": [],
-      "to_watch_out": [],
-      "evidence": null,
-      "first_line_changes": false
-    },
-    {
-      "id": "salt",
-      "field": "pick_steps",
-      "remove": [
-        "Look for gray, pink or beige crystals, not bright white."
-      ],
-      "add": [],
-      "to_watch_out": [],
-      "evidence": null,
-      "first_line_changes": true
-    },
-    {
       "id": "seeds",
       "field": "buying_tips",
       "remove": [
-        "Pick flax whole and grind it at home.",
         "Pick chia whole or ground; soaked chia turns to gel.",
         "Soak seeds, then dry them at low heat, before eating them by the handful.",
         "Flax needs grinding before use; chia goes straight from the bag or into a soak."
@@ -1148,17 +972,6 @@
       "to_watch_out": [],
       "evidence": null,
       "first_line_changes": false
-    },
-    {
-      "id": "seeds",
-      "field": "pick_steps",
-      "remove": [
-        "Pick flax whole to grind at home, or ground and sealed."
-      ],
-      "add": [],
-      "to_watch_out": [],
-      "evidence": null,
-      "first_line_changes": true
     },
     {
       "id": "vinegar",
@@ -1278,50 +1091,6 @@
       "first_line_changes": false
     },
     {
-      "id": "tortilla_chips",
-      "field": "buying_tips",
-      "remove": [
-        "Masa is corn cooked in lime and ground into dough; plain cornmeal cannot form one."
-      ],
-      "add": [],
-      "to_watch_out": [],
-      "evidence": null,
-      "first_line_changes": false
-    },
-    {
-      "id": "potato_chips",
-      "field": "buying_tips",
-      "remove": [
-        "Skip stacked crisps in identical shapes; they are pressed from dried potato flakes and cornstarch."
-      ],
-      "add": [],
-      "to_watch_out": [],
-      "evidence": null,
-      "first_line_changes": false
-    },
-    {
-      "id": "potato_chips",
-      "field": "pick_steps",
-      "remove": [
-        "Read “potato crisps” or “made from dried potatoes” as a possible pressed product."
-      ],
-      "add": [],
-      "to_watch_out": [],
-      "evidence": null,
-      "first_line_changes": false
-    },
-    {
-      "id": "popcorn",
-      "field": "pick_steps",
-      "remove": [
-        "Buy plain kernels to pop at home in coconut oil, butter or tallow."
-      ],
-      "add": [],
-      "to_watch_out": [],
-      "evidence": null,
-      "first_line_changes": true
-    },
-    {
       "id": "pretzels",
       "field": "buying_tips",
       "remove": [
@@ -1356,17 +1125,6 @@
       "first_line_changes": false
     },
     {
-      "id": "snacks",
-      "field": "buying_tips",
-      "remove": [
-        "Pick nuts, fruit, cheese or soaked trail mix before a packaged snack."
-      ],
-      "add": [],
-      "to_watch_out": [],
-      "evidence": null,
-      "first_line_changes": true
-    },
-    {
       "id": "deli_salads",
       "field": "buying_tips",
       "remove": [
@@ -1395,7 +1153,6 @@
       "id": "deli",
       "field": "buying_tips",
       "remove": [
-        "Ask the counter to slice from a whole roast, not meat pressed into a loaf.",
         "Check hot food sits in a case held at 140°F or above."
       ],
       "add": [],
@@ -1433,13 +1190,10 @@
       "id": "frozen_fries",
       "field": "buying_tips",
       "remove": [
-        "Hash browns at home take potatoes, oil, salt and pepper; a bag lists anything more.",
         "From an oven recipe, lower the air fryer heat 25 to 30°F and the time by 20%."
       ],
       "add": [],
-      "to_watch_out": [
-        "From an oven recipe, lower the air fryer heat 25 to 30°F and the time by 20%."
-      ],
+      "to_watch_out": [],
       "evidence": null,
       "first_line_changes": false
     },
@@ -1456,28 +1210,6 @@
       "first_line_changes": false
     },
     {
-      "id": "frozen_nuggets",
-      "field": "buying_tips",
-      "remove": [
-        "Skip “Chopped and Formed” by the name: the meat was chopped and pressed into shape."
-      ],
-      "add": [],
-      "to_watch_out": [],
-      "evidence": null,
-      "first_line_changes": false
-    },
-    {
-      "id": "frozen_nuggets",
-      "field": "pick_steps",
-      "remove": [
-        "“Nugget-Shaped” in the name marks chopped meat that may hold binders, extenders or water."
-      ],
-      "add": [],
-      "to_watch_out": [],
-      "evidence": null,
-      "first_line_changes": false
-    },
-    {
       "id": "frozen",
       "field": "buying_tips",
       "remove": [
@@ -1485,9 +1217,7 @@
         "Check the case: food at 0°F or below keeps color, flavor and texture. Soft ice cream means it runs warm."
       ],
       "add": [],
-      "to_watch_out": [
-        "Check the case: food at 0°F or below keeps color, flavor and texture. Soft ice cream means it runs warm."
-      ],
+      "to_watch_out": [],
       "evidence": null,
       "first_line_changes": false
     },
@@ -1528,13 +1258,10 @@
       "id": "cornmeal_polenta_grits",
       "field": "buying_tips",
       "remove": [
-        "Skip quick-cooking and instant grits and polenta.",
         "At home, soak it in water with a splash of something sour before cooking."
       ],
       "add": [],
-      "to_watch_out": [
-        "At home, soak it in water with a splash of something sour before cooking."
-      ],
+      "to_watch_out": [],
       "evidence": null,
       "first_line_changes": false
     },
@@ -1557,7 +1284,6 @@
       "id": "wild_rice",
       "field": "buying_tips",
       "remove": [
-        "Skip quick-cooking rice mixes, and pick sealed bags over bins.",
         "Soak it at least seven hours in warm water with a splash of vinegar or lemon."
       ],
       "add": [],
@@ -1570,19 +1296,6 @@
       "field": "buying_tips",
       "remove": [
         "Soak about seven hours in warm water with a splash of something sour, then cook long."
-      ],
-      "add": [],
-      "to_watch_out": [
-        "Soak about seven hours in warm water with a splash of something sour, then cook long."
-      ],
-      "evidence": null,
-      "first_line_changes": false
-    },
-    {
-      "id": "salad_dressing",
-      "field": "buying_tips",
-      "remove": [
-        "Look in the refrigerated section; some of the shortest lists live there."
       ],
       "add": [],
       "to_watch_out": [],
@@ -1623,9 +1336,7 @@
         "Rinse under running water and rub briskly just before eating."
       ],
       "add": [],
-      "to_watch_out": [
-        "Check for plump grapes with no bruised, cut or torn skin."
-      ],
+      "to_watch_out": [],
       "evidence": null,
       "first_line_changes": false
     },
@@ -1754,39 +1465,6 @@
       "first_line_changes": false
     },
     {
-      "id": "fam_actual_ice_cream",
-      "field": "buying_tips",
-      "remove": [
-        "Pick a pint that feels heavy for its size; a light one is mostly whipped-in air."
-      ],
-      "add": [],
-      "to_watch_out": [],
-      "evidence": null,
-      "first_line_changes": false
-    },
-    {
-      "id": "fam_unheated_refrigerated_ferments",
-      "field": "buying_tips",
-      "remove": [
-        "Check for ‘keep refrigerated’; a cold shelf alone does not mean it is live."
-      ],
-      "add": [],
-      "to_watch_out": [],
-      "evidence": null,
-      "first_line_changes": false
-    },
-    {
-      "id": "aisle_ferments",
-      "field": "buying_tips",
-      "remove": [
-        "Check for ‘keep refrigerated’ and follow the jar’s storage directions."
-      ],
-      "add": [],
-      "to_watch_out": [],
-      "evidence": null,
-      "first_line_changes": false
-    },
-    {
       "id": "fam_whole_grains",
       "field": "buying_tips",
       "remove": [
@@ -1820,28 +1498,6 @@
       "to_watch_out": [],
       "evidence": null,
       "first_line_changes": false
-    },
-    {
-      "id": "fam_whole_grain_sourdough",
-      "field": "buying_tips",
-      "remove": [
-        "Ask the store bakery whether the loaf rises on starter alone."
-      ],
-      "add": [],
-      "to_watch_out": [],
-      "evidence": null,
-      "first_line_changes": false
-    },
-    {
-      "id": "fam_masa_foods",
-      "field": "buying_tips",
-      "remove": [
-        "Read for ‘nixtamalized’ or ‘corn treated with lime’: corn soaked in limewater."
-      ],
-      "add": [],
-      "to_watch_out": [],
-      "evidence": null,
-      "first_line_changes": true
     },
     {
       "id": "aisle_pantry_bulk",
@@ -1986,26 +1642,13 @@
       "first_line_changes": false
     },
     {
-      "id": "fam_dry_packed_scallops",
-      "field": "buying_tips",
-      "remove": [
-        "Ask the fish counter whether the scallops are dry or wet-packed (soaked)."
-      ],
-      "add": [],
-      "to_watch_out": [],
-      "evidence": null,
-      "first_line_changes": false
-    },
-    {
       "id": "aisle_seafood",
       "field": "buying_tips",
       "remove": [
         "Pick fish on a thick bed of ice that smells mild, not fishy or sour."
       ],
       "add": [],
-      "to_watch_out": [
-        "Pick fish on a thick bed of ice that smells mild, not fishy or sour."
-      ],
+      "to_watch_out": [],
       "evidence": null,
       "first_line_changes": false
     },

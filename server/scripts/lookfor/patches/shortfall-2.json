@@ -1,0 +1,706 @@
+{
+  "source": "S2b Pass B (lookfor-scope-plan.md): below-floor produce cards",
+  "format": "apply.mjs row, one per card+field: {id, field, remove:[exact], add:[{text, field, quote}], to_watch_out:[exact], kept_in?:[{text, field, quote}]}. Runs after out/deletions.patch.json. Each add.quote is verbatim in that card (add.field names where) before the run; kept_in shows where each removed safety fact still reads on the card (informational, apply ignores it).",
+  "patches": [
+    {
+      "id": "precut_produce_tradeoffs",
+      "field": "buying_tips",
+      "remove": [
+        "Check the date, and use precut within a couple of days; it spoils fast once opened."
+      ],
+      "add": [
+        {
+          "text": "Pick whole heads and bunches over precut.",
+          "field": "tier_note",
+          "quote": "buying whole anyway is the whole-food standard"
+        }
+      ],
+      "to_watch_out": [],
+      "kept_in": [
+        {
+          "text": "Check the date, and use precut within a couple of days; it spoils fast once opened.",
+          "field": "watch_out",
+          "quote": "Pre-cut melon and pineapple sit closest to the edge. Buy those the day you eat them."
+        }
+      ]
+    },
+    {
+      "id": "precut_produce_tradeoffs",
+      "field": "pick_steps",
+      "remove": [
+        "For bagged greens, organic spring mix or romaine, rinsed again at home.",
+        "Buy pre-cut melon and pineapple the day they get eaten."
+      ],
+      "add": [
+        {
+          "text": "Pick whole heads and bunches over precut.",
+          "field": "tier_note",
+          "quote": "buying whole anyway is the whole-food standard"
+        },
+        {
+          "text": "For bagged greens, organic spring mix or romaine.",
+          "field": "buying_tips",
+          "quote": "organic spring mix or romaine"
+        }
+      ],
+      "to_watch_out": [],
+      "kept_in": [
+        {
+          "text": "Buy pre-cut melon and pineapple the day they get eaten.",
+          "field": "watch_out",
+          "quote": "Pre-cut melon and pineapple sit closest to the edge. Buy those the day you eat them."
+        }
+      ]
+    },
+    {
+      "id": "sprouts_raw",
+      "field": "buying_tips",
+      "remove": [
+        "Skip a pack fogged inside or with a sour smell through the vents."
+      ],
+      "add": [],
+      "to_watch_out": [],
+      "kept_in": [
+        {
+          "text": "Skip a pack fogged inside or with a sour smell through the vents.",
+          "field": "watch_out",
+          "quote": "Slick, browning or sour-smelling sprouts are past it."
+        }
+      ]
+    },
+    {
+      "id": "sprouts_raw",
+      "field": "pick_steps",
+      "remove": [
+        "Check the roots are still white and the clamshell is not fogged."
+      ],
+      "add": [
+        {
+          "text": "Look for ‘organic’ on the pack; sprouts are eaten whole.",
+          "field": "buying_tips",
+          "quote": "Look for ‘organic’ on the pack; sprouts are eaten whole."
+        },
+        {
+          "text": "Pick broccoli, radish or mung over alfalfa and soy.",
+          "field": "buying_tips",
+          "quote": "Pick broccoli, radish or mung over alfalfa and soy"
+        }
+      ],
+      "to_watch_out": [],
+      "kept_in": [
+        {
+          "text": "Check the roots are still white and the clamshell is not fogged.",
+          "field": "short_answer",
+          "quote": "with white roots and no sour smell"
+        }
+      ]
+    },
+    {
+      "id": "produce_root_vegetables",
+      "field": "buying_tips",
+      "remove": [
+        "Store potatoes cool, dark and airy, 45 to 50°F, for up to a month."
+      ],
+      "add": [],
+      "to_watch_out": [],
+      "kept_in": [
+        {
+          "text": "Store potatoes cool, dark and airy, 45 to 50°F, for up to a month.",
+          "field": "science",
+          "quote": "Potatoes keep up to a month at 45 to 50°F, dark and ventilated."
+        }
+      ]
+    },
+    {
+      "id": "produce_root_vegetables",
+      "field": "pick_steps",
+      "remove": [
+        "Press every root and skip anything soft, shriveled or sprouting.",
+        "Pass on green-tinted potatoes and carrots with green shoulders, wilt, cracks or flab.",
+        "Choose carrots with bright green, fresh-looking tops when the tops are attached."
+      ],
+      "add": [
+        {
+          "text": "Look for Real Organic Project on the sign: grown in soil, never hydroponic.",
+          "field": "buying_tips",
+          "quote": "Look for Real Organic Project on the sign: grown in soil, never hydroponic."
+        },
+        {
+          "text": "No Real Organic or Certified Naturally Grown logo: plain organic.",
+          "field": "buying_tips",
+          "quote": "No Real Organic or Certified Naturally Grown logo: plain organic"
+        }
+      ],
+      "to_watch_out": [],
+      "kept_in": [
+        {
+          "text": "Press every root and skip anything soft, shriveled or sprouting.",
+          "field": "watch_out",
+          "quote": "A green tint, shriveling, or many sprouts on a potato: throw it away."
+        },
+        {
+          "text": "Pass on green-tinted potatoes and carrots with green shoulders, wilt, cracks or flab.",
+          "field": "watch_out",
+          "quote": "Green shoulders, wilt, flab, or cracks on a carrot."
+        }
+      ]
+    },
+    {
+      "id": "produce_onions_garlic",
+      "field": "buying_tips",
+      "remove": [
+        "Organic is a bonus here: the papery skin comes off, so firm and dry comes first.",
+        "Pick onions with little to no scent. Some loose skins are normal.",
+        "Store whole onions cool, dry and dark, with air moving. Never in plastic.",
+        "Keep cut onions in a sealed container for up to seven days.",
+        "A dry neck and papery skins mark a well-cured bulb; soft or scented ones are fading."
+      ],
+      "add": [
+        {
+          "text": "Organic is a bonus here: the papery skin comes off.",
+          "field": "buying_tips",
+          "quote": "Organic is a bonus here: the papery skin comes off"
+        }
+      ],
+      "to_watch_out": []
+    },
+    {
+      "id": "produce_onions_garlic",
+      "field": "pick_steps",
+      "remove": [
+        "Squeeze for firm onions with little scent and a fully dry neck.",
+        "Choose garlic with a dried neck, dry outer skins and firm cloves.",
+        "Skip cuts, bruises, gray or black mold, and any visible sprouting."
+      ],
+      "add": [
+        {
+          "text": "Organic is a bonus here: the papery skin comes off.",
+          "field": "buying_tips",
+          "quote": "Organic is a bonus here: the papery skin comes off"
+        }
+      ],
+      "to_watch_out": [],
+      "kept_in": [
+        {
+          "text": "Skip cuts, bruises, gray or black mold, and any visible sprouting.",
+          "field": "watch_out",
+          "quote": "Cuts, bruises, blemishes, or gray or black mold on an onion."
+        }
+      ]
+    },
+    {
+      "id": "produce_leafy_greens",
+      "field": "buying_tips",
+      "remove": [
+        "Pick living lettuce sold with the root ball on; it keeps longest. Keep the roots damp.",
+        "Store lettuce and spinach as close to 32°F as the fridge gets."
+      ],
+      "add": [],
+      "to_watch_out": [],
+      "kept_in": [
+        {
+          "text": "Pick living lettuce sold with the root ball on; it keeps longest. Keep the roots damp.",
+          "field": "detail",
+          "quote": "sell living lettuce with the root ball on"
+        },
+        {
+          "text": "Store lettuce and spinach as close to 32°F as the fridge gets.",
+          "field": "detail",
+          "quote": "Spinach wants 32°F too"
+        }
+      ]
+    },
+    {
+      "id": "produce_leafy_greens",
+      "field": "pick_steps",
+      "remove": [
+        "Pick crisp, evenly green leaves; skip yellowing, browning or small holes.",
+        "Choose romaine neither very loose nor very hard, and kale on moist stems."
+      ],
+      "add": [
+        {
+          "text": "Look for Real Organic Project on the sign: grown in soil, never hydroponic.",
+          "field": "buying_tips",
+          "quote": "Look for Real Organic Project on the sign: grown in soil, never hydroponic."
+        },
+        {
+          "text": "No Real Organic or Certified Naturally Grown logo: organic spring mix or romaine.",
+          "field": "buying_tips",
+          "quote": "No Real Organic or Certified Naturally Grown logo: organic spring mix or romaine"
+        },
+        {
+          "text": "Greenhouse or hydroponic on the sign is not a seal.",
+          "field": "buying_tips",
+          "quote": "Greenhouse or hydroponic on the sign is not a seal."
+        }
+      ],
+      "to_watch_out": [],
+      "kept_in": [
+        {
+          "text": "Pick crisp, evenly green leaves; skip yellowing, browning or small holes.",
+          "field": "watch_out",
+          "quote": "Browning, yellow, or small holes on kale."
+        }
+      ]
+    },
+    {
+      "id": "produce_peppers",
+      "field": "buying_tips",
+      "remove": [
+        "Skip peppers with cracks, decay, sunburn, disease, bruises or insect damage.",
+        "Store around 45°F where you can; at 41°F, plan on about two weeks.",
+        "Red, yellow and orange peppers handle the cold better than green."
+      ],
+      "add": [],
+      "to_watch_out": [],
+      "kept_in": [
+        {
+          "text": "Skip peppers with cracks, decay, sunburn, disease, bruises or insect damage.",
+          "field": "short_answer",
+          "quote": "Skip any with cracks, decay, sunburn, disease, insect damage, or bruises."
+        },
+        {
+          "text": "Store around 45°F where you can; at 41°F, plan on about two weeks.",
+          "field": "science",
+          "quote": "Peppers keep best around 45°F."
+        },
+        {
+          "text": "Red, yellow and orange peppers handle the cold better than green.",
+          "field": "science",
+          "quote": "Red, yellow and orange peppers tolerate the cold better than green."
+        }
+      ]
+    },
+    {
+      "id": "produce_peppers",
+      "field": "pick_steps",
+      "remove": [
+        "Pick a firm, unbruised pepper and pass on any that has shriveled or softened."
+      ],
+      "add": [
+        {
+          "text": "Look for Real Organic Project on the sign: grown in soil, never hydroponic.",
+          "field": "buying_tips",
+          "quote": "Look for Real Organic Project on the sign: grown in soil, never hydroponic."
+        },
+        {
+          "text": "No Real Organic or Certified Naturally Grown logo: plain organic.",
+          "field": "buying_tips",
+          "quote": "No Real Organic or Certified Naturally Grown logo: plain organic"
+        },
+        {
+          "text": "Look for uncoated peppers, with no carnauba or shellac coating.",
+          "field": "watch_out",
+          "quote": "carnauba or shellac coating; look for uncoated peppers"
+        }
+      ],
+      "to_watch_out": [],
+      "kept_in": [
+        {
+          "text": "Pick a firm, unbruised pepper and pass on any that has shriveled or softened.",
+          "field": "watch_out",
+          "quote": "Shriveling, which is water loss from warm storage."
+        }
+      ]
+    },
+    {
+      "id": "produce_apples_pears",
+      "field": "buying_tips",
+      "remove": [
+        "Pick firm, crisp apples with no bruises, decay, cracks or insect marks.",
+        "Store in the dark at 30 to 32°F, up to 40°F, in an airy box or a bag with holes.",
+        "McIntosh and Honeycrisp: store at 38°F; colder can damage them."
+      ],
+      "add": [],
+      "to_watch_out": [],
+      "kept_in": [
+        {
+          "text": "Pick firm, crisp apples with no bruises, decay, cracks or insect marks.",
+          "field": "short_answer",
+          "quote": "free of bruising, decay, cracks, and insect injury"
+        },
+        {
+          "text": "Store in the dark at 30 to 32°F, up to 40°F, in an airy box or a bag with holes.",
+          "field": "science",
+          "quote": "Store at 30 to 32°F, up to 40°F, in a ventilated box or perforated bag."
+        },
+        {
+          "text": "McIntosh and Honeycrisp: store at 38°F; colder can damage them.",
+          "field": "science",
+          "quote": "McIntosh and Honeycrisp want 38°F, being prone to chilling injury"
+        }
+      ]
+    },
+    {
+      "id": "produce_apples_pears",
+      "field": "pick_steps",
+      "remove": [
+        "Turn each apple: firm, crisp, no bruising, decay, cracks or insect injury.",
+        "Pears: no bruising or decay, and a firm green Bartlett is not a fault.",
+        "Bag only sound fruit, and store it unwashed, cold and dark."
+      ],
+      "add": [
+        {
+          "text": "Look for ‘organic’ on the sign or sticker, then where it grew.",
+          "field": "buying_tips",
+          "quote": "Look for ‘organic’ on the sign or sticker, then where it grew."
+        },
+        {
+          "text": "No Real Organic or Certified Naturally Grown logo: plain organic.",
+          "field": "buying_tips",
+          "quote": "No Real Organic or Certified Naturally Grown logo: plain organic"
+        },
+        {
+          "text": "Pick uncoated fruit; at a stand, ask whether it was waxed or coated.",
+          "field": "detail",
+          "quote": "so ask at the stand: waxed or coated"
+        }
+      ],
+      "to_watch_out": [],
+      "kept_in": [
+        {
+          "text": "Turn each apple: firm, crisp, no bruising, decay, cracks or insect injury.",
+          "field": "short_answer",
+          "quote": "free of bruising, decay, cracks, and insect injury"
+        },
+        {
+          "text": "Bag only sound fruit, and store it unwashed, cold and dark.",
+          "field": "watch_out",
+          "quote": "Bruised or damaged fruit stored with sound fruit: it makes the sound fruit ripen and rot faster."
+        }
+      ]
+    },
+    {
+      "id": "produce_citrus",
+      "field": "buying_tips",
+      "remove": [
+        "Lemons: even yellow, firm, smooth, no dry patches, rind stains or shriveling."
+      ],
+      "add": [
+        {
+          "text": "For zest, organic or untreated only.",
+          "field": "kristy_take",
+          "quote": "For zest, organic or untreated only."
+        }
+      ],
+      "to_watch_out": [],
+      "kept_in": [
+        {
+          "text": "Lemons: even yellow, firm, smooth, no dry patches, rind stains or shriveling.",
+          "field": "watch_out",
+          "quote": "Drying and shriveling on lemons, dryness on limes: the fruit is past its best."
+        }
+      ]
+    },
+    {
+      "id": "produce_citrus",
+      "field": "pick_steps",
+      "remove": [
+        "Choose firm, smooth citrus free of decay, bruising and blemishes.",
+        "Pass on dry, shriveled or rind-stained lemons and dry or oil-spotted limes.",
+        "Use yellowed lemons and limes first; green-picked ones keep longest."
+      ],
+      "add": [
+        {
+          "text": "No untreated citrus: pick organic.",
+          "field": "buying_tips",
+          "quote": "No untreated citrus: pick organic."
+        },
+        {
+          "text": "For zest, organic or untreated only.",
+          "field": "kristy_take",
+          "quote": "For zest, organic or untreated only."
+        }
+      ],
+      "to_watch_out": [],
+      "kept_in": [
+        {
+          "text": "Choose firm, smooth citrus free of decay, bruising and blemishes.",
+          "field": "watch_out",
+          "quote": "Decay on any citrus."
+        },
+        {
+          "text": "Pass on dry, shriveled or rind-stained lemons and dry or oil-spotted limes.",
+          "field": "watch_out",
+          "quote": "Drying and shriveling on lemons, dryness on limes: the fruit is past its best."
+        }
+      ]
+    },
+    {
+      "id": "produce_mushrooms",
+      "field": "buying_tips",
+      "remove": [
+        "Buy them loose to take only what you need."
+      ],
+      "add": [
+        {
+          "text": "Look for mushrooms signed Real Organic or Certified Naturally Grown first.",
+          "field": "detail",
+          "quote": "Mushrooms signed Real Organic or Certified Naturally Grown come first"
+        }
+      ],
+      "to_watch_out": []
+    },
+    {
+      "id": "produce_mushrooms",
+      "field": "pick_steps",
+      "remove": [
+        "Check each cap and leave any that feels damp or soft."
+      ],
+      "add": [
+        {
+          "text": "Look for ‘organic’ on the sign or pack, then the grower’s name.",
+          "field": "buying_tips",
+          "quote": "Look for ‘organic’ on the sign or pack, then the grower’s name."
+        },
+        {
+          "text": "No Real Organic or Certified Naturally Grown logo: plain USDA Organic.",
+          "field": "buying_tips",
+          "quote": "No Real Organic or Certified Naturally Grown logo: plain USDA Organic."
+        },
+        {
+          "text": "Look for mushrooms signed Real Organic or Certified Naturally Grown first.",
+          "field": "detail",
+          "quote": "Mushrooms signed Real Organic or Certified Naturally Grown come first"
+        }
+      ],
+      "to_watch_out": [],
+      "kept_in": [
+        {
+          "text": "Check each cap and leave any that feels damp or soft.",
+          "field": "science",
+          "quote": "Moisture is what spoils mushrooms, so a dry, firm cap is the fresh one."
+        }
+      ]
+    },
+    {
+      "id": "produce_bananas",
+      "field": "pick_steps",
+      "remove": [
+        "Take a bunch that is still green and keep it out of the fridge."
+      ],
+      "add": [
+        {
+          "text": "Pick organic bananas; organic is the floor for how they are grown.",
+          "field": "detail",
+          "quote": "Organic is the floor for how they are grown."
+        },
+        {
+          "text": "Look for bananas certified to the USDA Organic standard.",
+          "field": "buying_tips",
+          "quote": "certified to the USDA Organic standard"
+        }
+      ],
+      "to_watch_out": [],
+      "kept_in": [
+        {
+          "text": "Take a bunch that is still green and keep it out of the fridge.",
+          "field": "science",
+          "quote": "Cold below 56°F can stop a green banana ripening at all."
+        }
+      ]
+    },
+    {
+      "id": "produce_green_beans",
+      "field": "buying_tips",
+      "remove": [
+        "Bulging seeds mean an older bean, turning tough, stringy and starchy."
+      ],
+      "add": [],
+      "to_watch_out": [],
+      "kept_in": [
+        {
+          "text": "Bulging seeds mean an older bean, turning tough, stringy and starchy.",
+          "field": "watch_out",
+          "quote": "Flabby pods and bulging seeds mean over-mature beans, which turn tough and stringy."
+        }
+      ]
+    },
+    {
+      "id": "produce_green_beans",
+      "field": "pick_steps",
+      "remove": [
+        "Check the pods and leave any that are flabby, rust-spotted or sticky."
+      ],
+      "add": [
+        {
+          "text": "Look for Real Organic Project on the sign: grown in soil, never hydroponic.",
+          "field": "buying_tips",
+          "quote": "Look for Real Organic Project on the sign: grown in soil, never hydroponic."
+        },
+        {
+          "text": "No Real Organic or Certified Naturally Grown logo: plain organic beans, fresh or frozen.",
+          "field": "buying_tips",
+          "quote": "No Real Organic or Certified Naturally Grown logo: plain organic beans, fresh or frozen"
+        }
+      ],
+      "to_watch_out": [],
+      "kept_in": [
+        {
+          "text": "Check the pods and leave any that are flabby, rust-spotted or sticky.",
+          "field": "watch_out",
+          "quote": "Skip beans that look damp or feel sticky."
+        }
+      ]
+    },
+    {
+      "id": "produce_tomatoes",
+      "field": "buying_tips",
+      "remove": [
+        "Pick organic tomatoes, firm but not rock hard, with no bruises. The skin gets eaten."
+      ],
+      "add": [
+        {
+          "text": "Pick organic tomatoes; the skin gets eaten.",
+          "field": "buying_tips",
+          "quote": "Pick organic tomatoes, firm but not rock hard, with no bruises. The skin gets eaten."
+        }
+      ],
+      "to_watch_out": []
+    },
+    {
+      "id": "produce_tomatoes",
+      "field": "pick_steps",
+      "remove": [
+        "Press gently; pass on any tomato that is soft or bruised."
+      ],
+      "add": [
+        {
+          "text": "Look for a Real Organic or Certified Naturally Grown logo.",
+          "field": "buying_tips",
+          "quote": "Look for a Real Organic or Certified Naturally Grown logo"
+        },
+        {
+          "text": "Can’t find it: plain organic, with a 5-digit sticker starting with 9.",
+          "field": "buying_tips",
+          "quote": "Can’t find it: plain organic, with a 5-digit sticker starting with 9."
+        },
+        {
+          "text": "Look for farmers market tomatoes; they are picked ripe.",
+          "field": "buying_tips",
+          "quote": "Farmers market tomatoes are picked ripe"
+        }
+      ],
+      "to_watch_out": []
+    },
+    {
+      "id": "produce_avocados",
+      "field": "buying_tips",
+      "remove": [
+        "Pick avocados with no bruises or torn skin.",
+        "Check with your palm, not fingertips. Ripe Hass skin turns deep blue-green.",
+        "Can’t find ripe ones: buy firm and ripen on the counter, in a paper bag to speed it up.",
+        "Once ripe, an avocado keeps up to five days in the fridge.",
+        "Store a cut half on a plate, cut side down."
+      ],
+      "add": [
+        {
+          "text": "Pick organic Hass avocados; organic is the floor.",
+          "field": "tier_note",
+          "quote": "organic as the floor is the whole-food standard"
+        },
+        {
+          "text": "Look for USDA Organic: the rules bar GMOs, irradiation and sewage sludge.",
+          "field": "why",
+          "quote": "the rules bar GMOs, irradiation and sewage sludge"
+        },
+        {
+          "text": "Organic is still the default, though the skin comes off.",
+          "field": "why",
+          "quote": "Organic remains the default despite the discarded skin"
+        }
+      ],
+      "to_watch_out": [
+        "Pick avocados with no bruises or torn skin."
+      ]
+    },
+    {
+      "id": "produce_avocados",
+      "field": "pick_steps",
+      "remove": [
+        "Press gently near the stem; firm but not rock hard ripens in days."
+      ],
+      "add": [
+        {
+          "text": "Pick organic Hass avocados; organic is the floor.",
+          "field": "tier_note",
+          "quote": "organic as the floor is the whole-food standard"
+        }
+      ],
+      "to_watch_out": []
+    },
+    {
+      "id": "produce_grapes",
+      "field": "pick_steps",
+      "remove": [
+        "Lift the bunch and check for split, bruised or leaking grapes."
+      ],
+      "add": [
+        {
+          "text": "Pick organic grapes. Conventional ones rank 44 of 47 for pesticide residue.",
+          "field": "buying_tips",
+          "quote": "Pick organic grapes. Conventional ones rank 44 of 47 for pesticide residue."
+        },
+        {
+          "text": "Look for a Real Organic or Certified Naturally Grown logo.",
+          "field": "buying_tips",
+          "quote": "Look for a Real Organic or Certified Naturally Grown logo"
+        },
+        {
+          "text": "Can’t find a logo: plain organic, with a 5-digit sticker starting with 9.",
+          "field": "buying_tips",
+          "quote": "Can’t find a logo: plain organic, with a 5-digit sticker starting with 9."
+        }
+      ],
+      "to_watch_out": [],
+      "kept_in": [
+        {
+          "text": "Lift the bunch and check for split, bruised or leaking grapes.",
+          "field": "detail",
+          "quote": "Choose bunches with no bruised, cut or torn skin."
+        }
+      ]
+    },
+    {
+      "id": "produce_melons",
+      "field": "buying_tips",
+      "remove": [
+        "Check cantaloupe: the skin between the netting turns light tan to yellow.",
+        "Can’t find a good watermelon: a cantaloupe with tan-yellow skin between the netting.",
+        "Pick a whole melon with no bruises or cuts, firm but not rock hard, cream spot underneath.",
+        "Rinse the rind under running water and rub briskly before cutting.",
+        "Whole melon keeps on the counter or in the fridge. Cut melon goes in the fridge within two hours."
+      ],
+      "add": [
+        {
+          "text": "Buy whole melons and cut them at home.",
+          "field": "short_answer",
+          "quote": "Buy whole melons and cut them at home."
+        },
+        {
+          "text": "Pick organic cantaloupe; it sits mid-list for residue.",
+          "field": "why",
+          "quote": "cantaloupe sits mid-list"
+        },
+        {
+          "text": "Watermelon ranks low on the residue list, so organic or not.",
+          "field": "why",
+          "quote": "Watermelon ranks low on the residue list"
+        }
+      ],
+      "to_watch_out": [],
+      "kept_in": [
+        {
+          "text": "Rinse the rind under running water and rub briskly before cutting.",
+          "field": "detail",
+          "quote": "Rinse the rind under running water and rub briskly before cutting."
+        },
+        {
+          "text": "Whole melon keeps on the counter or in the fridge. Cut melon goes in the fridge within two hours.",
+          "field": "watch_out",
+          "quote": "Cut melon left out more than two hours belongs in the refrigerator or the bin."
+        }
+      ]
+    }
+  ]
+}

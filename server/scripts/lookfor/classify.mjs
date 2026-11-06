@@ -1,7 +1,7 @@
 // Look-for scope, S0 (handoff lookfor-scope-plan.md). READ-ONLY on the KB.
 //   node scripts/lookfor/classify.mjs          (from server/) table + totals + casualties
 //   node scripts/lookfor/classify.mjs --json   same data as JSON on stdout
-// Always (re)writes scripts/lookfor/out/deletions.patch.json: deletions of off-topic lines
+// --write-patch (re)writes scripts/lookfor/out/deletions.patch.json (run it on the pre-pass KB, 4facbd4^): deletions of off-topic lines
 // plus verbatim safety moves, never an add. A proposal; humans confirm tags in S2.
 // Tags: healthiest-criterion / storage / taste / freshness-handling / prep-cook / safety-reject / other.
 // ponytail: regex tags only (the plan allows it); S3 moves the vocab into counterCardLint.js.
@@ -26,6 +26,71 @@ const TAGS = {
   taste: /\b(tastes?|tasting|tasty|flavou?r\w*|tender(ness)?|juic(y|ier|iest)|texture|mild(er)?|bitter|nutty|creamy|delicious|richer)\b/i,
   'freshness-handling': /\b(firm(ness|er|est)?|squeez\w*|press it|springs? back|ripe(ness|ns?|ning|ned)?|unripe|for (its|their) size|heavy|neck|bruis\w*|blemish\w*|wilt\w*|limp|crisp\w*|glossy|shiny|plump|smell\w*|scent(ed)?|aroma|sniff|fragrant|soft spots?|pack date|sell-by|best-by|fresh(er|est|ness)|steaming|under the lamp|thump|hollow|vibrant|dull|well-cured|fading|cuts?,? (and )?bruises|soft|sheen|give|yellow(ing|ed)|flabby|rust-spotted|sticky|packaged on|newest date|past its best|turns over|stem end|bright(ly)?|deep colou?red|moist)\b/i,
 };
+
+// S2c audit (Devon's rule: Look for = labels, certs, ingredients, sourcing, grade, form). Exact lines the regex
+// mis-tags, fixed by hand: healthiest-criterion = a real criterion the regex called off-topic (stays on the card);
+// any other tag = a line the regex called safety-reject that is not a safety fact (deleted, never moved to watch_out).
+const OVERRIDE = new Map([
+  ["organic_worth_it_by_type\tResidue sits on the skin, so a peel you throw away takes it with it.", "healthiest-criterion"],
+  ["produce_seasonality\tWinter: citrus, cabbage, kale, leeks, beets, parsnips, storage onions and potatoes.", "healthiest-criterion"],
+  ["butcher_counter_asking\tAsk for bones and trim, and which farm the bones came from.", "healthiest-criterion"],
+  ["deli_meat_uncured\tPick whole roasted meat first, then counter-sliced meat before the prepacked tub.", "healthiest-criterion"],
+  ["cream_vs_creamer\tCheck the fat: heavy cream is 36% milkfat or more, half-and-half 10.5 to 18%. Both are fixed by law.", "healthiest-criterion"],
+  ["cream_vs_creamer\tRead the milkfat: heavy cream is 36% or more, half-and-half 10.5 to 18%.", "healthiest-criterion"],
+  ["bulk_bins_buying\tBuy nuts, seeds and flour in sealed packages; their oil goes rancid in an open bin.", "healthiest-criterion"],
+  ["olive_oil_grades\tPick dark glass or tin, and store it away from the stove.", "healthiest-criterion"],
+  ["label_wild_vs_farm_raised\tCooked and breaded seafood falls outside the labeling rule.", "healthiest-criterion"],
+  ["raw_kefir\tTake it from the refrigerated case; shelf-stable kefir’s cultures are no longer live.", "healthiest-criterion"],
+  ["produce_brassicas\tFlorets and leaves are eaten whole, with no peel to take surface residue away.", "healthiest-criterion"],
+  ["breakfast_cereal\tLook for plain rolled oats to soak overnight and cook in the morning.", "healthiest-criterion"],
+  ["breakfast_cereal\tFlakes, puffs and O’s are extruded, pushed through a machine; soaked, cooked oats are the traditional bowl.", "healthiest-criterion"],
+  ["breakfast_cereal\tPick oats to soak and cook over a boxed cereal.", "healthiest-criterion"],
+  ["venison_game\tAsk whether the processor handles each animal one at a time and keeps everything cold.", "healthiest-criterion"],
+  ["crab\tCan’t find live: whole cooked crab with bright orange to red shells. Picked meat in a tub comes after that.", "healthiest-criterion"],
+  ["muesli\tCheck whether the bag says ‘toasted’.", "healthiest-criterion"],
+  ["muesli\tCheck whether the bag says toasted; toasted or sweetened sits closer to granola.", "healthiest-criterion"],
+  ["sour_cream\tCan’t find cream-and-cultures sour cream: plain whole-milk yogurt.", "healthiest-criterion"],
+  ["kombucha\tPick plain kombucha in glass from the refrigerated case.", "healthiest-criterion"],
+  ["fermented_pickles\tPick unheated, salt-brined pickles from the refrigerated case.", "healthiest-criterion"],
+  ["fermented_pickles\tPick from the refrigerated case, but refrigerated alone does not mean fermented.", "healthiest-criterion"],
+  ["broth\tPick frozen, refrigerated or jarred over a shelf-stable boxed broth.", "healthiest-criterion"],
+  ["salt\tLook for how it was harvested and washed or filtered, on the package or the maker’s site.", "healthiest-criterion"],
+  ["salt\tLook for gray, pink or beige crystals, not bright white.", "healthiest-criterion"],
+  ["seeds\tPick flax whole and grind it at home.", "healthiest-criterion"],
+  ["seeds\tPick flax whole to grind at home, or ground and sealed.", "healthiest-criterion"],
+  ["tortilla_chips\tMasa is corn cooked in lime and ground into dough; plain cornmeal cannot form one.", "healthiest-criterion"],
+  ["potato_chips\tSkip stacked crisps in identical shapes; they are pressed from dried potato flakes and cornstarch.", "healthiest-criterion"],
+  ["potato_chips\tRead “potato crisps” or “made from dried potatoes” as a possible pressed product.", "healthiest-criterion"],
+  ["popcorn\tBuy plain kernels to pop at home in coconut oil, butter or tallow.", "healthiest-criterion"],
+  ["snacks\tPick nuts, fruit, cheese or soaked trail mix before a packaged snack.", "healthiest-criterion"],
+  ["deli\tAsk the counter to slice from a whole roast, not meat pressed into a loaf.", "healthiest-criterion"],
+  ["frozen_fries\tHash browns at home take potatoes, oil, salt and pepper; a bag lists anything more.", "healthiest-criterion"],
+  ["frozen_nuggets\tSkip “Chopped and Formed” by the name: the meat was chopped and pressed into shape.", "healthiest-criterion"],
+  ["frozen_nuggets\t“Nugget-Shaped” in the name marks chopped meat that may hold binders, extenders or water.", "healthiest-criterion"],
+  ["cornmeal_polenta_grits\tSkip quick-cooking and instant grits and polenta.", "healthiest-criterion"],
+  ["wild_rice\tSkip quick-cooking rice mixes, and pick sealed bags over bins.", "healthiest-criterion"],
+  ["salad_dressing\tLook in the refrigerated section; some of the shortest lists live there.", "healthiest-criterion"],
+  ["fam_actual_ice_cream\tPick a pint that feels heavy for its size; a light one is mostly whipped-in air.", "healthiest-criterion"],
+  ["fam_unheated_refrigerated_ferments\tCheck for ‘keep refrigerated’; a cold shelf alone does not mean it is live.", "healthiest-criterion"],
+  ["aisle_ferments\tCheck for ‘keep refrigerated’ and follow the jar’s storage directions.", "healthiest-criterion"],
+  ["fam_whole_grain_sourdough\tAsk the store bakery whether the loaf rises on starter alone.", "healthiest-criterion"],
+  ["fam_masa_foods\tRead for ‘nixtamalized’ or ‘corn treated with lime’: corn soaked in limewater.", "healthiest-criterion"],
+  ["fam_dry_packed_scallops\tAsk the fish counter whether the scallops are dry or wet-packed (soaked).", "healthiest-criterion"],
+  ["produce_mushrooms\tMoisture is what spoils mushrooms, so a dry, firm cap is the fresh one.", "freshness-handling"],
+  ["produce_bananas\tKeep green bananas out of the fridge. Cold below 56°F can stop them ripening.", "storage"],
+  ["produce_green_beans\tPick smooth, slender pods with no seeds bulging through.", "freshness-handling"],
+  ["bison\tExpect deeper red than beef, and bag the package separately for leaks.", "freshness-handling"],
+  ["crab\tAsk for whole crab, or cracked and cleaned, and keep the yellow butter inside.", "prep-cook"],
+  ["frozen_fries\tFrom an oven recipe, lower the air fryer heat 25 to 30°F and the time by 20%.", "prep-cook"],
+  ["frozen\tCheck the case: food at 0°F or below keeps color, flavor and texture. Soft ice cream means it runs warm.", "storage"],
+  ["cornmeal_polenta_grits\tAt home, soak it in water with a splash of something sour before cooking.", "prep-cook"],
+  ["split_peas\tSoak about seven hours in warm water with a splash of something sour, then cook long.", "prep-cook"],
+  ["produce_grapes\tCheck for plump grapes with no bruised, cut or torn skin.", "freshness-handling"],
+  ["aisle_seafood\tPick fish on a thick bed of ice that smells mild, not fishy or sour.", "freshness-handling"],
+  ["bulk_bins_buying\tSmell it before it goes in the cart. Rancid reads as paint, crayon or bitter.", "freshness-handling"],
+  ["produce_green_beans\tBulging seeds mean an older bean, turning tough, stringy and starchy.", "freshness-handling"],
+  ["bulk_bins_buying\tSmell before bagging; crayons, putty or wet cardboard means rancid.", "freshness-handling"],
+]);
 
 export function tag(text) {
   const masked = text.replace(MASK, ' ');
@@ -53,10 +118,13 @@ if (!entries.length) process.exit(1);
 const rows = [];
 for (const e of entries) {
   for (const field of ['buying_tips', 'pick_steps']) {
-    for (const text of e[field] || []) rows.push({ id: e.id, kind: e.kind || 'card', family: e.family || e.category || '', field, ...tag(text), text, pinnedBy: pins(text) });
+    for (const text of e[field] || []) rows.push({ id: e.id, kind: e.kind || 'card', family: e.family || e.category || '', field, ...(OVERRIDE.has(`${e.id}\t${text}`) ? { tag: OVERRIDE.get(`${e.id}\t${text}`), why: 'S2c override' } : tag(text)), text, pinnedBy: pins(text) });
   }
 }
 nonEmpty(rows, 'look-for rows', 1);
+// A stale override (line edited or gone) must not pass silently; on the applied KB, kept lines still match and deleted ones do not.
+const unused = [...OVERRIDE.keys()].filter((k) => !rows.some((r) => `${r.id}\t${r.text}` === k));
+if (process.argv.includes('--write-patch') && unused.length) { console.error(`OVERRIDE lines not on the KB (${unused.length}):\n  ${unused.join('\n  ')}`); process.exit(1); }
 
 const DELETE = new Set(['storage', 'taste', 'freshness-handling', 'prep-cook']);
 const count = (xs, k) => xs.reduce((m, x) => ((m[x[k]] = (m[x[k]] || 0) + 1), m), {});
@@ -100,9 +168,9 @@ const data = {
   safetyOverflow,
   rows,
 };
-mkdirSync(new URL('scripts/lookfor/out/', root), { recursive: true });
-writeFileSync(new URL('scripts/lookfor/out/deletions.patch.json', root), JSON.stringify({
-  source: 'scripts/lookfor/classify.mjs (S0, regex proposal, unreviewed)',
+// The patch is a pass-base artifact: write it only on request, so a report run on the applied KB cannot clobber it.
+if (process.argv.includes('--write-patch')) mkdirSync(new URL('scripts/lookfor/out/', root), { recursive: true }), writeFileSync(new URL('scripts/lookfor/out/deletions.patch.json', root), JSON.stringify({
+  source: 'scripts/lookfor/classify.mjs (S0 regex proposal, S2c OVERRIDE applied)',
   format: '{id, field, remove:[exact], add:[], to_watch_out:[exact], evidence:null}; adds none, so no evidence',
   patches,
 }, null, 2) + '\n');

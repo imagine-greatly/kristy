@@ -67,10 +67,11 @@ for (const url of files) {
     if (FROZEN.has(r.id)) return errors.push(`${at}: frozen card (gold or home), never patched`);
     if (!FIELDS.has(r.field) || !Array.isArray(e[r.field])) return errors.push(`${at}: field must be an existing buying_tips/pick_steps list`);
     const adds = (r.add || []).map((a) => (typeof a === 'string' ? { text: a, quote: r.evidence?.quote } : a));
+    // An add already on the card was quote-checked when it went on; its quote may be a line that row removed.
     for (const a of adds) {
       if (typeof a.text !== 'string' || !a.text.trim()) errors.push(`${at}: add without text`);
       else if (typeof a.quote !== 'string' || !a.quote.trim()) errors.push(`${at}: add "${a.text}" has no quote`);
-      else if (!before.get(r.id).some((s) => s.includes(a.quote))) errors.push(`${at}: quote "${a.quote}" not verbatim in ${r.id}`);
+      else if (!(e[r.field] || []).includes(a.text) && !before.get(r.id).some((s) => s.includes(a.quote))) errors.push(`${at}: quote "${a.quote}" not verbatim in ${r.id}`);
     }
     for (const m of r.to_watch_out || []) if (!(r.remove || []).includes(m)) errors.push(`${at}: to_watch_out "${m}" is not also a remove`);
     for (const s of (r.remove || []).filter((s) => held(r.id, s))) holds.push(`${r.id}.${r.field}: "${s}" (${HOLD.get(`${r.id}\t${s}`)})`);
@@ -80,6 +81,8 @@ for (const url of files) {
     const list = e[r.field], watch = Array.isArray(e.watch_out) ? e.watch_out : [];
     const present = remove.filter((s) => list.includes(s));
     if (present.length === 0 && adds.every((a) => list.includes(a.text)) && moves.every((m) => watch.includes(m))) return stats.already++;
+    // A regex row an authored patch already trimmed (seen on a re-run) is held, not fatal; authored rows stay strict.
+    if (present.length !== remove.length && !strict) { stats.held++; return holds.push(`${r.id}.${r.field}: whole row (partly superseded: ${remove.filter((s) => !list.includes(s)).length} of ${remove.length} lines already gone)`); }
     if (present.length !== remove.length) return errors.push(`${at}: partly applied or remove not matching: ${remove.filter((s) => !list.includes(s)).map((s) => `"${s}"`).join(', ')}`);
     const next = list.filter((s) => !remove.includes(s)).concat(adds.map((a) => a.text).filter((t) => !list.includes(t)));
     const newMoves = moves.filter((m) => !watch.includes(m));
