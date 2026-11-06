@@ -1735,6 +1735,60 @@ export function lintCulinaryAim(entry) {
   return out;
 }
 
+/* ═══════════════════════════ Look-for scope (S3) ═══════════════════════════ */
+
+// LOOK FOR IS THE HEALTHIEST-VERSION CRITERIA, NOT THE KITCHEN (Devon 2026-11-06, handoff
+// lookfor-scope-plan.md). A line in look_for, pick_steps or buying_tips (projected as Look for)
+// names a label, seal, grade, ingredient or source; storing, ripening, rinsing, cooking and
+// tasting belong to the five home cards. Not wired into `lintCard` (counterGenerate.js runs that
+// on generated cards, and the one live generated card was never read against this list); the
+// corpus test holds the curated KB. scripts/lookfor/classify.mjs tags with the same vocabulary.
+export const LOOKFOR_OFF_TOPIC = Object.freeze({
+  storage: /\bstore (it|them|whole|cut|just|away)\b|^store\b|\b(in|back in) the (fridge|freezer)\b|\bhome freezer\b|\bkeep\b[^.;]{0,30}\b(cold|in the|out of the)\b|\bkeeps? (up to |about |for )?(several|a few|one|two|\d+( to \d+)?) (days?|weeks?|months?)\b|\b(once|after) open(ed|ing)\b|\bopened (jar|tub|bottle|pack|bag)\b|\buse (it |them )?within\b|\bfinish an? opened\b|\bfreeze (an?|it|them)\b|\bthaw\b|\bjust above freezing\b/i,
+  ripening: /\bripen(s|ing|ed)?\b|\bripeness\b/i,
+  rinse: /\brins(e|es|ing)\b|\bwash (it|them|before|under)\b/i,
+  cook: /^(cook|toast|roast|bake|grill|sear|boil|simmer|fry|saut[eé])\b|\b(toast|roast|bake|grill|sear|boil|simmer|fry) (it|them)\b|\bdry pan\b|\bbefore (cooking|cutting)\b/i,
+  taste: /\btast(e|es) (like|of)\b|\btasting\b/i,
+});
+// Label claims and buying criteria that use a handling word; masked before the test. Each must hit
+// the vocabulary (lookforScope.test), so a dead allow entry cannot hide here.
+export const LOOKFOR_ALLOW = Object.freeze([
+  [/\b(tree|vine)[- ]ripened\b/gi, 'a label claim on the pack, not a ripening instruction'],
+]);
+export const LOOKFOR_HOME = Object.freeze(new Set(['washing_produce', 'produce_storage', 'baking_soda_soak', 'revive_greens', 'freezing_produce']));
+// Lines that still hit, held on purpose. Keyed `id\tline`. Can only shrink: the test fails when a
+// listed line is gone from its card, so a fixed line must leave this list in the same commit.
+export const LOOKFOR_GRANDFATHER = Object.freeze(new Map([
+  ['beans_dried_vs_canned\tLook for “sprouted” beans, or soak dried ones before cooking; both reduce phytic acid.', 'mixed: the sprouted label criterion carries the line'],
+  ['produce_ripeness_by_item\tPick at staggered firmness so they ripen across the week, not all on Tuesday.', 'floor: question card needs 3 tips; no quoted criterion on the card'],
+  ['flour_basics\tPick a small bag and keep it cold; whole-grain flour carries the oil in the germ.', 'mixed: small bag and whole-grain carry the line'],
+  ['venison_game\tNo fresh venison: pick wrapped frozen venison from the same cold processor; it keeps 9 to 12 months.', 'mixed: the fallback pick carries the line; science repeats "9 to 12 months"'],
+  ['sauerkraut\tPick it from the refrigerated case, and keep raw kraut cold at home.', 'mixed: the refrigerated-case criterion carries the line'],
+  ['mayo\tOnce opened, keep it in the fridge and use it within 1 to 2 months.', 'apply.mjs HOLD: science repeats "1 to 2 months" (KT_NEW_NUMBER)'],
+  ['fam_cured_seafood\tCheck the label for how it was cured and how to store it.', 'mixed: the cure-method label read carries the line'],
+  ['frozen\tKeep the home freezer at 0°F, 5°F at most. Label, date and use the oldest first.', 'science repeats "5°F at most"; removing it orphans the number (KT_NEW_NUMBER)'],
+]));
+
+// The first off-topic family a line hits, or null.
+export function lookforOffTopic(text) {
+  let s = String(text || '');
+  for (const [re] of LOOKFOR_ALLOW) s = s.replace(re, ' ');
+  return Object.keys(LOOKFOR_OFF_TOPIC).find((k) => LOOKFOR_OFF_TOPIC[k].test(s)) || null;
+}
+
+export function lintLookforScope(entry) {
+  if (LOOKFOR_HOME.has(entry?.id)) return [];
+  const out = [];
+  for (const field of ['look_for', 'pick_steps', 'buying_tips']) {
+    for (const line of Array.isArray(entry?.[field]) ? entry[field] : []) {
+      if (typeof line !== 'string' || LOOKFOR_GRANDFATHER.has(`${entry.id}\t${line}`)) continue;
+      const hit = lookforOffTopic(line);
+      if (hit) out.push({ code: 'LOOKFOR_OFF_TOPIC', field, text: line, detail: `${hit} vocabulary in ${field}: Look for names the healthiest version (label, seal, grade, ingredient, source), never how to store, ripen, rinse, cook or taste it` });
+    }
+  }
+  return out;
+}
+
 const KB_TITLE = new Map(perimeterKb.entries.map((e) => [e.id, e.title]));
 
 const ownedFact = (fact, owner, family, pattern) => ({

@@ -4,9 +4,11 @@
 // --write-patch (re)writes scripts/lookfor/out/deletions.patch.json (run it on the pre-pass KB, 4facbd4^): deletions of off-topic lines
 // plus verbatim safety moves, never an add. A proposal; humans confirm tags in S2.
 // Tags: healthiest-criterion / storage / taste / freshness-handling / prep-cook / safety-reject / other.
-// ponytail: regex tags only (the plan allows it); S3 moves the vocab into counterCardLint.js.
+// ponytail: regex tags only (the plan allows it). S3: the handling vocabulary lives in counterCardLint.js
+// (LOOKFOR_OFF_TOPIC) and wins over every tag below, criterion and °F safety included.
 import { readFileSync, readdirSync, writeFileSync, mkdirSync } from 'node:fs';
 import { nonEmpty } from '../../lib/testGuards.js';
+import { lookforOffTopic } from '../../lib/counterCardLint.js';
 
 const root = new URL('../../', import.meta.url);
 const kb = JSON.parse(readFileSync(new URL('kristy_perimeter_kb.json', root)));
@@ -38,7 +40,6 @@ const OVERRIDE = new Map([
   ["cream_vs_creamer\tCheck the fat: heavy cream is 36% milkfat or more, half-and-half 10.5 to 18%. Both are fixed by law.", "healthiest-criterion"],
   ["cream_vs_creamer\tRead the milkfat: heavy cream is 36% or more, half-and-half 10.5 to 18%.", "healthiest-criterion"],
   ["bulk_bins_buying\tBuy nuts, seeds and flour in sealed packages; their oil goes rancid in an open bin.", "healthiest-criterion"],
-  ["olive_oil_grades\tPick dark glass or tin, and store it away from the stove.", "healthiest-criterion"],
   ["label_wild_vs_farm_raised\tCooked and breaded seafood falls outside the labeling rule.", "healthiest-criterion"],
   ["raw_kefir\tTake it from the refrigerated case; shelf-stable kefir’s cultures are no longer live.", "healthiest-criterion"],
   ["produce_brassicas\tFlorets and leaves are eaten whole, with no peel to take surface residue away.", "healthiest-criterion"],
@@ -92,7 +93,10 @@ const OVERRIDE = new Map([
   ["bulk_bins_buying\tSmell before bagging; crayons, putty or wet cardboard means rancid.", "freshness-handling"],
 ]);
 
+const HANDLING_TAG = { storage: 'storage', ripening: 'freshness-handling', rinse: 'prep-cook', cook: 'prep-cook', taste: 'taste' };
 export function tag(text) {
+  const h = lookforOffTopic(text);
+  if (h) return { tag: HANDLING_TAG[h], why: `lint ${h}` };
   const masked = text.replace(MASK, ' ');
   const off = OFF.filter((t) => TAGS[t].test(masked));
   const strong = CRITERION.test(text);

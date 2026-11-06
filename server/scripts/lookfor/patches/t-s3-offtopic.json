@@ -1,0 +1,21 @@
+{
+  "source": "S3 (lookfor-scope-plan.md): off-topic Look-for lines the S0 regex missed, found by the LOOKFOR_OFF_TOPIC lint vocabulary; critic round 1 notes",
+  "format": "apply.mjs row: {id, field, remove:[exact], add:[{text, field, quote}], to_watch_out:[]}. Each add.quote is verbatim on that card before the run (add.field names where). Sorted after shortfall-*.json so a rebuild from the pass base applies it last. produce_avocados is fixed in shortfall-2.json (its own add). frozen keeps the home-freezer line: science’s 5°F would orphan (KT_NEW_NUMBER), grandfathered in LOOKFOR_GRANDFATHER.",
+  "patches": [
+    {"id":"produce_stone_fruit","field":"buying_tips","remove":["Store just above freezing, 30.5 to 32°F; cherries at or below 41°F.","Plums still ripening: keep them out of the 36 to 46°F range."],"add":[],"to_watch_out":[]},
+    {"id":"produce_tropical_fruit","field":"buying_tips","remove":["Can’t find ripe fruit: ripen pineapple, mango and kiwi on the counter, then refrigerate.","A paper bag speeds ripening.","Rinse under running water before cutting."],"add":[{"text":"Pineapple ranks 1, papaya 4, mangoes 11 and kiwi 15 of 47 on the 2026 residue list.","field":"science","quote":"Pineapple ranks 1, papaya 4, mangoes 11 and kiwi 15 of 47 on the 2026 residue list."}],"to_watch_out":[]},
+    {"id":"frozen","field":"buying_tips","remove":["Cook or thaw by the label instructions."],"add":[],"to_watch_out":[]},
+    {"id":"olives","field":"buying_tips","remove":["Finish an opened jar within about 2 weeks."],"add":[],"to_watch_out":[]},
+    {"id":"whole_spices","field":"buying_tips","remove":["Toast them in a dry pan over medium heat, until you can smell them across the kitchen."],"add":[],"to_watch_out":[]},
+    {"id":"rancidity_check","field":"buying_tips","remove":["Keep whole-grain flour and shelled nuts in the freezer. The germ oil is what turns."],"add":[{"text":"Pick cold-pressed oil in dark glass.","field":"decision","quote":"Cold-pressed oil in dark glass"}],"to_watch_out":[]},
+    {"id":"olive_oil_grades","field":"buying_tips","remove":["Pick dark glass or tin, and store it away from the stove."],"add":[],"to_watch_out":[]},
+    {"id":"label_cold_pressed_expeller","field":"buying_tips","remove":["Unrefined oils taste like their source; refined ones taste like nothing."],"add":[],"to_watch_out":[]},
+    {"id":"raw_aged_cheese","field":"buying_tips","remove":["Aged raw-milk cheese tastes of one herd and season; a commodity block tastes of very little."],"add":[],"to_watch_out":[]},
+    {"id":"produce_brassicas","field":"buying_tips","remove":["Cabbage keeps several weeks in a bag or wrap in the fridge, at 41°F or below."],"add":[],"to_watch_out":[]},
+    {"id":"miso","field":"buying_tips","remove":["Keep the tub in the fridge after opening."],"add":[],"to_watch_out":[]},
+    {"id":"tempeh","field":"buying_tips","remove":["Keep it cold, or freeze an unopened block."],"add":[],"to_watch_out":[]},
+    {"id":"salsa","field":"buying_tips","remove":["Put a cold-case tub straight back in the fridge at home; it is meant to stay cold.","Homemade salsa keeps up to one week in the fridge."],"add":[],"to_watch_out":[]},
+    {"id":"split_peas","field":"buying_tips","remove":["Simmer them in broth for added minerals."],"add":[],"to_watch_out":[]},
+    {"id":"fam_finish_at_home","field":"buying_tips","remove":["Pick avocados and bananas by ripeness; the peel comes off."],"add":[],"to_watch_out":[]}
+  ]
+}

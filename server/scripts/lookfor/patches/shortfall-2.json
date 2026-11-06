@@ -605,9 +605,10 @@
           "quote": "the rules bar GMOs, irradiation and sewage sludge"
         },
         {
-          "text": "Organic is still the default, though the skin comes off.",
-          "field": "why",
-          "quote": "Organic remains the default despite the discarded skin"
+          "text": "Avocados rank 3 of 47 on the 2026 residue list, ordered from least residue to most.",
+          "field": "detail",
+          "quote": "Avocados rank 3 of 47 on the 2026 residue list, ordered from least residue to most.",
+          "s3": "replaces \"Organic is still the default, though the skin comes off.\", a near-copy of line 1 (S3 critic note)"
         }
       ],
       "to_watch_out": [
