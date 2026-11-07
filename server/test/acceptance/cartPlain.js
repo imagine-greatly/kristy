@@ -284,7 +284,20 @@ export const preFamilyCascade = (entries) => entries
     ? { ...entry, decision: PRE_FAMILY_FLOUR_DECISION }
     : PRE_SHELF_DECISIONS[entry.id] ? { ...entry, decision: PRE_SHELF_DECISIONS[entry.id] } : entry);
 
-export const restoreOrganicCarts = (kb) => {
+// v3-newcards (ef4f2f8, 2026-11-07): 42 new item cards. 30 promoted a pick into a card in the pick's
+// slot (pick_X → X); the other 12 are new subjects. Older batch tests read the corpus as of fc8d434
+// through preNewCards (restoreOrganicCarts applies it unless { newCards: true }); twoLinePin pins and the k/ca matcher tests own the new cards live.
+export const NEW_CARDS = new Set(['frozen_peas', 'frozen_broccoli', 'cucumbers', 'asparagus', 'corn', 'eggplant', 'zucchini', 'cilantro', 'parsley', 'basil', 'snap_peas', 'kohlrabi', 'okra', 'swiss_chard', 'mangoes', 'tofu', 'celery', 'winter_squash', 'microgreens', 'egg_whites', 'jerky', 'soup_bones', 'fish_sticks', 'pita_naan', 'margarine', 'shortening', 'sports_drink', 'energy_drink', 'fruit_snacks', 'whipped_topping', 'catfish', 'bologna', 'pork_ribs', 'beer', 'cookies', 'candy', 'popsicles', 'ramen', 'baby_food', 'guacamole', 'mac_and_cheese', 'pancake_mix']);
+export const NEW_CARDS_BASE = 'fc8d434';
+export const PRE_NEW_CARDS = JSON.parse(execFileSync('git', ['show', `${NEW_CARDS_BASE}:server/kristy_perimeter_kb.json`], { cwd: join(dirname(fileURLToPath(import.meta.url)), '..', '..', '..'), maxBuffer: 64 << 20 }).toString());
+export const NEW_CARDS_RETIRED_PICKS = new Set([...NEW_CARDS].map((id) => `pick_${id}`).filter((id) => PRE_NEW_CARDS.entries.some((e) => e.id === id)));
+export const preNewCards = (entries) => entries.flatMap((e) => {
+  if (!e || !NEW_CARDS.has(e.id)) return [e];
+  const pick = PRE_NEW_CARDS.entries.find((x) => x.id === `pick_${e.id}`);
+  return pick ? [pick] : [];
+});
+export const restoreOrganicCarts = (kb, { newCards = false } = {}) => {
+  if (!newCards) kb.entries = preNewCards(kb.entries);
   kb.entries = preFamilyCascade(kb.entries).filter((e) => !GAP_ADDS.has(e.id)).map(preCompleteness).map(preDialed).map(preCleanJ9).map(preCleanJ8).map(preCleanJ7).map(preCleanJ6).map(preCleanJ5).map(preCleanJ4).map(preCleanJ3).map(preCleanJ1);
   for (const e of kb.entries) if (OLD[e.id]) Object.assign(e, OLD[e.id]);
   return kb;

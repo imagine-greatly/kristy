@@ -16,8 +16,9 @@ const probe = (rows, ...flags) => {
   return spawnSync('node', ['scripts/listMatchProbe.js', '--universe', p, ...flags], { cwd: SERVER, encoding: 'utf8' });
 };
 
-test('fixture list_words pita+naan expect pick_pita_naan is covered', () => {
-  const r = probe([{ section: 'Bread', item: 'pita and naan', expect: 'pick_pita_naan', list_words: ['pita', 'naan'] }], '--strict');
+// v3-newcards (ef4f2f8): pick_pita_naan became the pita_naan card.
+test('fixture list_words pita+naan expect pita_naan is covered', () => {
+  const r = probe([{ section: 'Bread', item: 'pita and naan', expect: 'pita_naan', list_words: ['pita', 'naan'] }], '--strict');
   assert.equal(r.status, 0);
   assert.match(r.stdout, /TOTAL\s+1\/1/);
   assert.match(r.stdout, /MISSING 0/);

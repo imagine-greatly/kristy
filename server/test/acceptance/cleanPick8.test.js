@@ -10,7 +10,7 @@ import { nonEmpty } from '../../lib/testGuards.js';
 import { lintCard, lintPick, lintSections, words as lintWords } from '../../lib/counterCardLint.js';
 import { projectEntry } from '../../lib/counterCards.js';
 import { attachCards, matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
-import { CLEAN_PICK_8, prePickAvoid } from './twoLinePin.js';
+import { CLEAN_PICK_8, prePickAvoid, NEW_CARDS_RETIRED_PICKS } from './twoLinePin.js';
 
 const BASE = '125244d';
 const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
@@ -493,6 +493,11 @@ test('C13 pick routing equals the base; each pick row carries its new line', () 
   for (const id of PICKS) {
     const name = live(id).aliases[0];
     const row = attachCards({ items: [{ name, source: 'user' }] }, { log: false }).items[0];
+    if (NEW_CARDS_RETIRED_PICKS.has(id)) { // v3-newcards (ef4f2f8): the card that took the pick's slot owns the row now
+      assert.equal(row.cardSlug, id.slice(5), `${name} cardSlug ${row.cardSlug}`);
+      assert.equal(row.pickId, undefined, `${name} pickId ${row.pickId}`);
+      continue;
+    }
     assert.equal(row.pickId, id, `${name} pickId ${row.pickId}`);
     assert.equal(row.pickLine, liveDecision(id), `${name} pickLine`);
     assert.equal(row.cardSlug, undefined, `${name} cardSlug ${row.cardSlug}`);

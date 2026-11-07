@@ -236,9 +236,10 @@ test('an unreadable generated corpus stops generation instead of spending on it'
   // "how do I pick a good cantaloupe", which stopped missing when the retrieval gate
   // dropped to `> 2` — the by-item ripeness card answers it now, which is the point of
   // that change. Kohlrabi is in scope (a grocery act plus a concrete noun) and the KB
-  // genuinely has nothing for it.
+  // genuinely has nothing for it. Kohlrabi got its own card in v3-newcards (ef4f2f8, 2026-11-07),
+  // so the miss is jicama now.
   const out = await answerCounterQuestion({
-    query: 'how do I choose a good kohlrabi',
+    query: 'how do I choose a good jicama',
     ip: '203.0.113.9',
     client: brokenClient,
   });

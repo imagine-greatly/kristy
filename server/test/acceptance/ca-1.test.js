@@ -9,6 +9,7 @@ import * as pass from './passRule.js';
 import { RETIRED } from '../../lib/counterCards.js';
 
 const SERVER = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
+import { NEW_CARDS_RETIRED_PICKS } from './cartPlain.js';
 const kb = JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8'));
 const rules = JSON.parse(readFileSync(join(SERVER, 'lib', 'sectionRules.json'), 'utf8'));
 const CODES = ['SECTION_TIP_REPEATS_CARD', 'SECTION_PHRASE_REPEATED', 'SECTION_TIP_HANDLING', 'TERM_UNGLOSSED', 'CART_PICK_DISAGREES'];
@@ -198,7 +199,9 @@ test('C9 passRule CARD_ALIGN_REWRITE relaxes copy and growth and keeps sources c
   assert.ok(CARD_ALIGN_REWRITE instanceof Set, 'CARD_ALIGN_REWRITE is not an exported Set');
   assert.deepEqual([...CARD_ALIGN_REWRITE].sort(), [...CA_IDS].sort());
   const known = new Set(kb.entries.map((e) => e.id));
-  for (const id of CARD_ALIGN_REWRITE) assert.ok(known.has(id) || RETIRED_IDS.has(id), `${id} is neither a KB id nor RETIRED`);
+  // v3-newcards (ef4f2f8): a promoted pick (pick_soup_bones) counts through the card that took its slot.
+  const promoted = (id) => NEW_CARDS_RETIRED_PICKS.has(id) && known.has(id.slice(5));
+  for (const id of CARD_ALIGN_REWRITE) assert.ok(known.has(id) || RETIRED_IDS.has(id) || promoted(id), `${id} is neither a KB id nor RETIRED`);
   const organOld = {
     id: 'organ_meats', title: 'Organ meats', category: 'meat_counter', evidence_tier: 'fixture',
     decision: 'Old front', tier_note: 'Old why line here.', instead: 'Old second', cart_pick: 'Old pick',

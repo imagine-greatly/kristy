@@ -6,11 +6,11 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { nonEmpty } from '../../lib/testGuards.js';
-import { preCleanPick8 } from './twoLinePin.js';
+import { preCleanPick8, preNewCards } from './twoLinePin.js';
 
 const kb = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'));
 import { preT6_2 } from './twoLinePin.js';
-kb.entries = kb.entries.map(preT6_2); // t6-2: dairy/egg pins read ca32bef; t6_2.test.js owns live copy.
+kb.entries = preNewCards(kb.entries).map(preT6_2); // v3-newcards: pick_egg_whites read as of fc8d434; // t6-2: dairy/egg pins read ca32bef; t6_2.test.js owns live copy.
 const ROOT = new URL('../../../', import.meta.url).pathname;
 const pre = JSON.parse(execFileSync('git', ['show', '215e92d:server/kristy_perimeter_kb.json'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 const card = (id) => { const e = kb.entries.find((x) => x.id === id); assert.ok(e, `${id} missing`); return e; };

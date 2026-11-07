@@ -3337,6 +3337,358 @@ export const TWO_LINE = {
       "Label and date frozen food, and use the oldest first.",
       "Cook or thaw by the label instructions."
     ]
+  },
+  // v3-newcards (ef4f2f8, 2026-11-07): the 42 new item cards, decision and buying_tips as applied.
+  "frozen_peas": {
+    "decision": "Organic frozen peas, peas alone on the list.",
+    "buying_tips": [
+      "Organic frozen peas, peas the only ingredient.",
+      "A loose bag, peas rattling free.",
+      "Plain peas over sauced or buttered bags."
+    ]
+  },
+  "frozen_broccoli": {
+    "decision": "Organic frozen broccoli florets, broccoli alone on the list.",
+    "buying_tips": [
+      "Organic frozen broccoli, broccoli the only ingredient.",
+      "Florets frozen loose, not in a block.",
+      "Plain florets over cheese-sauce bags."
+    ]
+  },
+  "cucumbers": {
+    "decision": "Organic cucumbers, firm, dark green and unwaxed.",
+    "buying_tips": [
+      "Certified Naturally Grown on the sign: no synthetic sprays or GMOs.",
+      "No Certified Naturally Grown sign: USDA Organic on the sticker.",
+      "Firm along the whole length, dark green, slender.",
+      "Wrapped English or mini cucumbers over waxed ones."
+    ]
+  },
+  "asparagus": {
+    "decision": "Organic asparagus, bright green and fresh.",
+    "buying_tips": [
+      "Certified Naturally Grown on the sign: no synthetic sprays or GMOs.",
+      "No Certified Naturally Grown sign: USDA Organic on the sticker.",
+      "Closed, compact, dry tips on smooth, round spears.",
+      "Green over most of the spear."
+    ]
+  },
+  "corn": {
+    "decision": "Organic sweet corn in green husks with fresh silk.",
+    "buying_tips": [
+      "Organic or Certified Naturally Grown sweet corn, which excludes GMOs.",
+      "Green, snug husks and fresh, undecayed silk.",
+      "Plump kernels, stem ends not dried out."
+    ]
+  },
+  "eggplant": {
+    "decision": "Organic eggplant, heavy, shiny, with a green stem.",
+    "buying_tips": [
+      "Certified Naturally Grown on the sign: no synthetic sprays or GMOs.",
+      "No Certified Naturally Grown sign: USDA Organic on the sticker.",
+      "Shiny, smooth skin, heavy for its size.",
+      "A fresh green cap with no mold."
+    ]
+  },
+  "zucchini": {
+    "decision": "Organic zucchini, small to medium, glossy and heavy.",
+    "buying_tips": [
+      "Certified Naturally Grown on the sign: no synthetic sprays or GMOs.",
+      "No Certified Naturally Grown sign: USDA Organic on the sticker.",
+      "Small to medium, glossy, heavy for its size.",
+      "Firm with no blemishes."
+    ]
+  },
+  "cilantro": {
+    "decision": "Organic cilantro, bright and upright, with a strong smell.",
+    "buying_tips": [
+      "Certified Naturally Grown on the sign: no synthetic sprays or GMOs.",
+      "No Certified Naturally Grown sign: USDA Organic on the sticker.",
+      "Bright leaves, upright stems, a strong smell."
+    ]
+  },
+  "parsley": {
+    "decision": "Organic parsley, bright and upright, with a strong smell.",
+    "buying_tips": [
+      "Certified Naturally Grown on the sign: no synthetic sprays or GMOs.",
+      "No Certified Naturally Grown sign: USDA Organic on the sticker.",
+      "Bright leaves, upright stems, a strong smell."
+    ]
+  },
+  "basil": {
+    "decision": "Organic basil, bright and upright, with a strong smell.",
+    "buying_tips": [
+      "Certified Naturally Grown on the sign: no synthetic sprays or GMOs.",
+      "No Certified Naturally Grown sign: USDA Organic on the sticker.",
+      "Bright leaves, upright stems, a strong smell."
+    ]
+  },
+  "snap_peas": {
+    "decision": "Organic snap peas, bright green, firm pods.",
+    "buying_tips": [
+      "Certified Naturally Grown on the sign: no synthetic sprays or GMOs.",
+      "No Certified Naturally Grown sign: USDA Organic on the sticker.",
+      "Bright green all around, firm pods."
+    ]
+  },
+  "kohlrabi": {
+    "decision": "Small, firm kohlrabi, heavy for its size.",
+    "buying_tips": [
+      "Small globes, firm and heavy for their size.",
+      "Bright green, firm leaves still attached.",
+      "Organic or Certified Naturally Grown when the leaves get eaten."
+    ]
+  },
+  "okra": {
+    "decision": "Organic okra, young pods two to four inches.",
+    "buying_tips": [
+      "Certified Naturally Grown on the sign: no synthetic sprays or GMOs.",
+      "No Certified Naturally Grown sign: USDA Organic on the sticker.",
+      "Young pods, two to four inches, bright and firm."
+    ]
+  },
+  "swiss_chard": {
+    "decision": "Organic Swiss chard, dark green and unblemished.",
+    "buying_tips": [
+      "Certified Naturally Grown on the sign: no synthetic sprays or GMOs.",
+      "No Certified Naturally Grown sign: USDA Organic on the sticker.",
+      "Dark green leaves, stalks whole and unsplit."
+    ]
+  },
+  "mangoes": {
+    "decision": "Mangoes soft to the touch, fragrant at the stem.",
+    "buying_tips": [
+      "Soft to the touch, fragrant near the stem.",
+      "Firmer mangoes for later in the week.",
+      "Organic when it is on offer."
+    ]
+  },
+  "tofu": {
+    "decision": "Organic tofu: soybeans, water, nigari or calcium sulfate.",
+    "buying_tips": [
+      "Organic tofu, with no bioengineered soy.",
+      "Soybeans, water, and nigari or calcium sulfate.",
+      "Firmness matched to the dish."
+    ]
+  },
+  "celery": {
+    "decision": "Organic celery, solid stalks and fresh leaves.",
+    "buying_tips": [
+      "Certified Naturally Grown on the sign: no synthetic sprays or GMOs.",
+      "No Certified Naturally Grown sign: USDA Organic on the sticker.",
+      "Solid, crisp stalks with fresh-looking leaves."
+    ]
+  },
+  "winter_squash": {
+    "decision": "Winter squash heavy for its size, shell intact.",
+    "buying_tips": [
+      "Heavy for its size, hard shell, no cracks.",
+      "A dry, intact stem.",
+      "Organic, or a farmers market stand in fall."
+    ]
+  },
+  "microgreens": {
+    "decision": "Organic microgreens, crisp and fresh, from the cold case.",
+    "buying_tips": [
+      "Certified Naturally Grown on the sign: no synthetic sprays or GMOs.",
+      "No Certified Naturally Grown sign: USDA Organic on the sticker.",
+      "Crisp leaves and stems, dry, in the cold case."
+    ]
+  },
+  "egg_whites": {
+    "decision": "Whole pastured eggs, separated at home, over cartons.",
+    "buying_tips": [
+      "Pasture-raised eggs, soy-free feed, cracked and separated at home.",
+      "Carton whites stating pasture-raised or organic hens.",
+      "Egg whites as the only ingredient."
+    ]
+  },
+  "jerky": {
+    "decision": "Grass-fed beef jerky, salt and real smoke only.",
+    "buying_tips": [
+      "100% grass-fed beef jerky with the AGA Grassfed logo.",
+      "Meat, salt, a little sugar and spices named one by one.",
+      "Naturally smoked, with no liquid smoke or smoke flavoring.",
+      "Celery or beet powder as the next rung, still with no MSG."
+    ]
+  },
+  "soup_bones": {
+    "decision": "Grass-fed marrow and knuckle bones, plus a calf’s foot.",
+    "buying_tips": [
+      "100% grass-fed marrow and knuckle bones, AGA Grassfed on the label.",
+      "A calf’s foot or chicken feet, the most gelatinous parts.",
+      "Meaty rib or neck bones for browning first.",
+      "Frozen bones from a grazing farm when the case has none."
+    ]
+  },
+  "fish_sticks": {
+    "decision": "Wild Alaska pollock fillet sticks, breaded without seed oils.",
+    "buying_tips": [
+      "Wild Alaska pollock named on the box, cut from whole fillets.",
+      "Breading with no soy oil or vegetable oil on the list.",
+      "No hydrolyzed protein or citric acid on the list.",
+      "Plain frozen pollock fillets to bread at home."
+    ]
+  },
+  "pita_naan": {
+    "decision": "Whole wheat pita with a short list.",
+    "buying_tips": [
+      "Organic whole wheat pita, with whole wheat flour first on a short list.",
+      "Flour, water, yeast and salt, with nothing else needed.",
+      "Can’t find it: naan made with yogurt and butter or ghee, not vegetable oil.",
+      "A list without “enriched flour” leading, which never means whole grain."
+    ]
+  },
+  "margarine": {
+    "decision": "Grass-fed butter, cream and salt, in place of margarine.",
+    "buying_tips": [
+      "Grass-fed butter listing only cream and salt.",
+      "Ghee with no added flavoring, grass-fed where possible.",
+      "Raw butter from a grass-fed farm, where sold."
+    ]
+  },
+  "shortening": {
+    "decision": "Leaf lard or tallow, not hardened vegetable shortening.",
+    "buying_tips": [
+      "Pasture-raised leaf lard or grass-fed tallow, with one fat on the label.",
+      "A label free of hydrogenated lard and lard stearin, the two hardeners lard may carry.",
+      "Can’t find it: plain rendered lard, not a vegetable oil shortening.",
+      "A tub labeled only “Shortening” read for each fat named in the list."
+    ]
+  },
+  "sports_drink": {
+    "decision": "Plain coconut water, or plain water, nothing added.",
+    "buying_tips": [
+      "Coconut water with only coconut water on the list.",
+      "Plain mineral water in glass or cans.",
+      "A list with no added sugar, natural flavors or citric acid."
+    ]
+  },
+  "energy_drink": {
+    "decision": "Organic herb tea or mineral water, not energy drinks.",
+    "buying_tips": [
+      "Organic herb tea with no caffeine, natural flavors or citric acid.",
+      "Plain mineral water in glass or cans.",
+      "Kombucha made with organic black tea, in glass."
+    ]
+  },
+  "fruit_snacks": {
+    "decision": "Dried fruit with only the fruit on the list.",
+    "buying_tips": [
+      "Dried fruit with only the fruit on the list.",
+      "Organic on the bag.",
+      "A list with no Red 40, Yellow 5, Yellow 6 or Blue 1."
+    ]
+  },
+  "whipped_topping": {
+    "decision": "Grass-fed heavy cream, whipped at home.",
+    "buying_tips": [
+      "Grass-fed heavy cream, pasteurized, not ultra-pasteurized.",
+      "Cream as the only ingredient, no gums or emulsifiers.",
+      "Non-homogenized cream when the case has it."
+    ]
+  },
+  "catfish": {
+    "decision": "Wild catfish from known clean waters.",
+    "buying_tips": [
+      "Wild catfish, its river or lake named at the counter.",
+      "Plain fillets with nothing added.",
+      "The country of origin on the sign or bag."
+    ]
+  },
+  "bologna": {
+    "decision": "Grass-fed beef bologna, no mechanically separated poultry.",
+    "buying_tips": [
+      "100% grass-fed beef bologna with the AGA Grassfed logo.",
+      "One named meat first, no mechanically separated chicken or turkey.",
+      "Naturally smoked, not liquid smoke or smoke flavoring."
+    ]
+  },
+  "pork_ribs": {
+    "decision": "Ribs from pigs raised outdoors, fat left on.",
+    "buying_tips": [
+      "Pasture-raised pork ribs with the Animal Welfare Approved logo.",
+      "Organic pork ribs as the next rung.",
+      "Ribs from a farm that lets pigs root outdoors, fresh or frozen."
+    ]
+  },
+  "beer": {
+    "decision": "Organic unpasteurized beer, in moderation.",
+    "buying_tips": [
+      "Organic and unpasteurized, both printed on the label.",
+      "Can’t find unpasteurized: organic beer.",
+      "A beer with no natural flavors, corn syrup or added sweeteners."
+    ]
+  },
+  "cookies": {
+    "decision": "Sprouted whole-grain cookies, butter, natural sweetener.",
+    "buying_tips": [
+      "Sprouted or soaked whole-grain flour, butter, and maple syrup or honey.",
+      "Can’t find sprouted: organic whole-grain flour with butter or coconut oil.",
+      "A list with no partially hydrogenated oil, corn syrup or agave.",
+      "A list with no natural flavors."
+    ]
+  },
+  "candy": {
+    "decision": "Candy sweetened with honey or maple, no synthetic dyes.",
+    "buying_tips": [
+      "Raw honey, maple syrup or molasses as the sweetener.",
+      "A list with no Red 3, Red 40, Yellow 5, Yellow 6 or Blue 1.",
+      "A list with no corn syrup, sugar alcohols or artificial sweeteners."
+    ]
+  },
+  "popsicles": {
+    "decision": "Fruit ice pops: whole fruit, no dyes or juice concentrate.",
+    "buying_tips": [
+      "Whole fruit or fruit puree first on the list.",
+      "A list with no Red 40, Yellow 5, Yellow 6 or Blue 1.",
+      "Honey or maple syrup as the sweetener, if any."
+    ]
+  },
+  "ramen": {
+    "decision": "Ramen that skipped the fryer, with a short list.",
+    "buying_tips": [
+      "Organic air-dried ramen, with flour, water, salt and kansui as the noodle list.",
+      "“Non-fried” or “air-dried” printed on the pack.",
+      "Can’t find it: plain dried noodles with no seasoning packet.",
+      "A noodle list without palm oil, TBHQ or added MSG."
+    ]
+  },
+  "baby_food": {
+    "decision": "Single-food purees and infant oatmeal, not rice snacks.",
+    "buying_tips": [
+      "Organic single-food purees, like banana, apple or butternut squash, one food per jar.",
+      "Infant oatmeal in place of infant rice cereal.",
+      "Can’t find it: plain frozen fruit or vegetables, not canned fruit.",
+      "Teething snacks made without rice, read on the list."
+    ]
+  },
+  "guacamole": {
+    "decision": "Avocado first, lime and salt, no added oil.",
+    "buying_tips": [
+      "Organic guacamole, with avocado first and lime, onion and salt after.",
+      "“High pressure processed” or “HPP” on the tub, with no preservatives listed.",
+      "Can’t find it: organic avocados and a lime instead of the tub.",
+      "A list free of vegetable oils and gums."
+    ]
+  },
+  "mac_and_cheese": {
+    "decision": "Organic pasta and real cheese, made at home.",
+    "buying_tips": [
+      "Organic pasta and a block of cheddar, in place of a boxed powder.",
+      "A box with real cheese or a cheese sauce pouch, not powder.",
+      "Can’t find it: organic boxed mac with a short list.",
+      "Whole wheat or legume pasta when the box offers it."
+    ]
+  },
+  "pancake_mix": {
+    "decision": "Whole grain mix with no added oil or dextrose.",
+    "buying_tips": [
+      "Organic whole grain pancake mix, with whole wheat or oat flour first.",
+      "A dry mix with no oil in it, so the fat is the butter added at home.",
+      "Can’t find it: organic whole wheat flour and baking powder instead.",
+      "A list without dextrose or corn syrup solids."
+    ]
   }
 };
 
@@ -3435,15 +3787,21 @@ Object.defineProperties(TWO_LINE, Object.fromEntries(
 ));
 
 test('every full-card and concern pick pin matches the live KB', () => {
-  const kb = restoreOrganicCarts(JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8')));
+  const kb = restoreOrganicCarts(JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8')), { newCards: true });
+  const hist = restoreOrganicCarts(JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8'))); // fc8d434 corpus for the retired pick pins
   kb.entries = preSwapPicks1(kb.entries); // swap-picks-1: 8 swap picks + 2 aliases after 58d6160; swap_picks_1.test.js owns them.
   kb.entries = kb.entries.map(preT6_4); // t6-4 owns the six produce/label cards after 2f67540.
   kb.entries = kb.entries.map(preT6_3); // t6-3 owns the 14 pantry cards after 6d6ca49.
   kb.entries = kb.entries.map(preT6_2); // t6-2 owns the six dairy/egg cards after ca32bef.
-  const cards = nonEmpty(kb.entries.filter((e) => e.kind !== 'pick'), 'full cards', 179); // 180 → 179: meat stance 2026-11-02 folded beef_cuts_basics into Beef.
-  const picks = ['pick_sausage', 'pick_jerky', 'pick_juice', 'pick_canned_tomatoes'];
-  const pinnedIds = nonEmpty(Object.getOwnPropertyNames(TWO_LINE), 'all two-line pins', 183); // 185 → 184: chicken unification 2026-11-01 folded two pinned cards into one; 184 → 183: meat stance 2026-11-02 folded beef_cuts_basics into Beef.
+  const cards = nonEmpty(kb.entries.filter((e) => e.kind !== 'pick'), 'full cards', 221); // 180 → 179: meat stance 2026-11-02 folded beef_cuts_basics into Beef; 179 → 221: v3-newcards 2026-11-07 added 42.
+  const picks = ['pick_sausage', 'pick_juice', 'pick_canned_tomatoes'];
+  // v3-newcards promoted pick_jerky into the jerky card; its pick pin stays as history, checked against the base below.
+  const pinnedIds = nonEmpty(Object.getOwnPropertyNames(TWO_LINE).filter((id) => !NEW_CARDS_RETIRED_PICKS.has(id)), 'all two-line pins', 224); // 185 → 184: chicken unification 2026-11-01 folded two pinned cards into one; 184 → 183: meat stance 2026-11-02 folded beef_cuts_basics into Beef; 183 → 224: v3-newcards +42 cards, pick_jerky promoted.
   assert.deepEqual(pinnedIds.toSorted(), [...cards.map((e) => e.id), ...picks].toSorted(), 'missing or stale pin');
+  for (const id of Object.getOwnPropertyNames(TWO_LINE).filter((id) => NEW_CARDS_RETIRED_PICKS.has(id))) {
+    const old = hist.entries.find((e) => e.id === id);
+    for (const [field, expected] of Object.entries(TWO_LINE[id])) assert.deepEqual(old[field], expected, `${id}.${field} differs from its pin at ${NEW_CARDS_BASE}`);
+  }
   for (const id of pinnedIds) {
     const entry = kb.entries.find((e) => e.id === id);
     assert.ok(entry, `${id} pin has no live entry`);
@@ -3632,6 +3990,17 @@ export const SWAP_PICKS_1_CARDS = new Set(['sandwich_bread', 'maple_syrup']);
 export const SWAP_PICKS_1_BASE = '58d6160';
 const PRE_SWAP_PICKS_1 = JSON.parse(execFileSync('git', ['show', `${SWAP_PICKS_1_BASE}:server/kristy_perimeter_kb.json`], { cwd: ROOT, maxBuffer: 64 << 20 }).toString());
 export const preSwapPicks1 = (entries) => entries.filter((e) => !SWAP_PICKS_1_NEW.has(e.id)).map((e) => (SWAP_PICKS_1_CARDS.has(e.id) ? PRE_SWAP_PICKS_1.entries.find((x) => x.id === e.id) : e));
+
+export { NEW_CARDS, NEW_CARDS_BASE, NEW_CARDS_RETIRED_PICKS, preNewCards, PRE_NEW_CARDS } from './cartPlain.js';
+import { NEW_CARDS, NEW_CARDS_BASE, NEW_CARDS_RETIRED_PICKS, preNewCards, PRE_NEW_CARDS } from './cartPlain.js';
+test('preNewCards restores the fc8d434 corpus exactly: 30 picks back in their slots, 12 new subjects out', () => {
+  assert.equal(NEW_CARDS.size, 42);
+  assert.equal(NEW_CARDS_RETIRED_PICKS.size, 30);
+  const live = JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8')).entries;
+  for (const id of NEW_CARDS) assert.ok(live.some((e) => e.id === id && e.kind !== 'pick'), `${id} is a live card`);
+  for (const id of NEW_CARDS_RETIRED_PICKS) assert.ok(!live.some((e) => e.id === id), `${id} is retired live`);
+  assert.deepEqual(preNewCards(live).map((e) => e.id), PRE_NEW_CARDS.entries.map((e) => e.id));
+});
 
 // Copy pass 2026-10-29 (Devon: olive oil option A; produce peeled clause). TWO_LINE above reads these
 // cards through the restored history, so this pins the LIVE KB and do line directly.

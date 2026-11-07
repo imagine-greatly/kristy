@@ -3,7 +3,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { preCompleteness, notGap } from './cartPlain.js';
+import { preCompleteness, notGap, preNewCards } from './cartPlain.js';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
@@ -18,7 +18,7 @@ const ROOT = join(SERVER, '..');
 import { unfoldMeat, unfoldMeatDoLines } from './twoLinePin.js'; // meat stance 2026-11-02: reads the meat cards as of cd4c011; meatStance.test.js owns them now
 const kb = unfoldMeat(JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8')));
 import { preT6_1 } from "./twoLinePin.js";
-kb.entries = kb.entries.filter(notGap).map(preCompleteness).map(preT6_1); // t6-1: the 15 meat/seafood cards read as of 85c399e; t6_1.test.js owns them now
+kb.entries = preNewCards(kb.entries).filter(notGap).map(preCompleteness).map(preT6_1); // v3-newcards: pick_soup_bones read as of fc8d434; // t6-1: the 15 meat/seafood cards read as of 85c399e; t6_1.test.js owns them now
 const doLines = unfoldMeatDoLines(JSON.parse(readFileSync(join(SERVER, 'lib', 'doLines.json'), 'utf8')));
 import { meatReview } from './twoLinePin.js';
 const review = meatReview(); // meat stance 2026-11-02: the review table as of cd4c011, matching the unfolded meat cards

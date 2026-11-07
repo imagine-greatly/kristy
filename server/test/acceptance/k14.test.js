@@ -11,7 +11,12 @@ import { projectEntry, parseReviewTable } from '../../lib/counterCards.js';
 import { matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
 import { scoreEntries } from '../../lib/perimeter.js';
 import { WEAK_MATCH_CEILING } from '../../lib/counterGaps.js';
-import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
+import kb0 from '../../kristy_perimeter_kb.json' with { type: 'json' };
+import { preNewCards, NEW_CARDS_RETIRED_PICKS } from './cartPlain.js';
+// v3-newcards (ef4f2f8): entry checks read the corpus as of fc8d434 (picks intact); the live matcher
+// now lands a retired pick's rows on the card that took its slot (pick_X → X), so row pins go through owner().
+const kb = { ...kb0, entries: preNewCards(kb0.entries) };
+const owner = (id) => (NEW_CARDS_RETIRED_PICKS.has(id) ? id.slice(5) : id);
 import pre from './fixtures/kb-pre-readability.json' with { type: 'json' };
 import { beforeConcern, preCleanPick9, preCleanPick10 } from './twoLinePin.js';
 import { preCleanJ1, preCleanJ3 } from './cartPlain.js';
@@ -59,7 +64,7 @@ const KEEPS = nonEmpty([
 ], 'K14 collision rows', 40);
 const FORBIDDEN = ['squash', 'duck', 'quail', 'egg', 'eggs', 'bean', 'beans', 'white', 'whites', 'oyster', 'root'];
 
-for (const [row, id] of BARE) test(`C1 "${row}" matches ${id}`, () => assert.equal(rowMatch(row), id));
+for (const [row, id] of BARE) test(`C1 "${row}" matches ${owner(id)}`, () => assert.equal(rowMatch(row), owner(id)));
 
 for (const id of CARDS) test(`C2 ${id}: every asked_as tops the ask door`, () => {
   for (const q of nonEmpty(byId(id)?.asked_as ?? [], `${id} asked_as`, 3)) assert.equal(top(q).id, id, q);
@@ -67,7 +72,7 @@ for (const id of CARDS) test(`C2 ${id}: every asked_as tops the ask door`, () =>
 
 for (const [row, want] of KEEPS) test(`C3 "${row}" keeps its prior match`, () => {
   const got = rowMatch(row);
-  assert.ok((Array.isArray(want) ? want : [want]).includes(got), `${row} -> ${got}`);
+  assert.ok((Array.isArray(want) ? want : [want]).map(owner).includes(got), `${row} -> ${got}`);
 });
 
 for (const q of ['how do i pick a good cantaloupe', 'how do i pick a good pineapple']) test(`C4 "${q}" is a strong match`, () => {

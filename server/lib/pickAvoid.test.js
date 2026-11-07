@@ -8,22 +8,25 @@ import { sanitizeList } from './cartEdit.js';
 import { lintPick } from './counterCardLint.js';
 
 const AVOIDS = {
-  pick_corn: ['corn', 'Skip corn labeled bioengineered, the US label word for genetically engineered.'],
-  pick_tofu: ['tofu', 'Skip tofu labeled bioengineered, the US label word for genetically engineered.'],
   pick_juice: ['orange juice', 'Skip juice drinks listing benzoates, benzoic acid, BVO or artificial color.'],
-  pick_cucumbers: ['cucumbers', 'Skip cucumbers coated with wax, shellac or carnauba wax.'],
-  // clean-sweep-J1 (2026-10-22): register BPA line; juice and cucumber lines widened.
+  // clean-sweep-J1 (2026-10-22): register BPA line; juice line widened.
   pick_canned_tomatoes: ['canned tomatoes', 'Skip cans with no BPA-free lining stated on the label.'],
-  // clean-sweep-J3 (2026-10-22): register mechanically-separated and liquid-smoke lines.
+  // clean-sweep-J3 (2026-10-22): register mechanically-separated line.
   pick_sausage: ['sausage', 'Skip sausage that lists mechanically separated (machine-stripped) chicken, turkey or pork.'],
-  pick_jerky: ['jerky', 'Skip jerky that lists liquid smoke or smoke flavoring.'],
-  // clean-sweep-J4 (2026-10-22): register pangasius and MSC low-bar lines.
-  pick_fish_sticks: ['fish sticks', 'Skip Vietnam swai or basa; critics call ‘MSC certified’ a low bar.'],
+};
+// v3-newcards (ef4f2f8, 2026-11-07): pick_corn, pick_tofu, pick_cucumbers, pick_jerky and pick_fish_sticks became
+// cards, and a card has no `avoid`. The card that took each slot carries the avoid subject in its own copy instead;
+// fish_sticks carries no swai/basa/MSC line, a gap reported for review, not invented here.
+const CARRIED = {
+  corn: ['watch_out', 'Skip corn labeled bioengineered, the US label word for genetically engineered.'],
+  tofu: ['watch_out', 'Skip tofu labeled bioengineered, the US label word for genetically engineered.'],
+  cucumbers: ['watch_out', 'A shiny, slick skin usually means a wax coating.'],
+  jerky: ['buying_tips', 'Naturally smoked, with no liquid smoke or smoke flavoring.'],
 };
 const entries = perimeterKb.entries || [];
 const byId = (id) => entries.find((e) => e.id === id);
 
-test('exactly the eight picks carry avoid, each lint-clean', () => {
+test('exactly the three picks carry avoid, each lint-clean', () => {
   const withAvoid = entries.filter((e) => 'avoid' in e).map((e) => e.id).sort();
   assert.deepEqual(withAvoid, Object.keys(AVOIDS).sort());
   for (const [id, [, line]] of Object.entries(AVOIDS)) {
@@ -32,14 +35,22 @@ test('exactly the eight picks carry avoid, each lint-clean', () => {
   }
 });
 
-test('the eight picks resolve with pickAvoid through attachCards', () => {
+test('the three picks resolve with pickAvoid through attachCards', () => {
   const rows = Object.values(AVOIDS).map(([name], i) => ({ id: `r${i}`, name, source: 'user' }));
-  nonEmpty(rows, 'rows', 8);
+  nonEmpty(rows, 'rows', 3);
   const out = attachCards({ items: rows }, { log: false }).items;
   Object.entries(AVOIDS).forEach(([id, [name, line]], i) => {
     assert.equal(out[i].pickId, id, name);
     assert.equal(out[i].pickAvoid, line, name);
   });
+});
+
+test('the cards that took four avoid picks\u2019 slots carry the avoid subject', () => {
+  nonEmpty(Object.keys(CARRIED), 'carried', 4);
+  for (const [id, [field, line]] of Object.entries(CARRIED)) {
+    assert.ok(!byId(`pick_${id}`), `pick_${id} is retired`);
+    assert.ok((byId(id)[field] || []).includes(line), `${id}.${field}`);
+  }
 });
 
 test('a pick without avoid attaches with no pickAvoid key', () => {

@@ -125,7 +125,11 @@ test('a compound row attaches only its own authored card, never the generic pick
 
 test('a state or a count in front of a pick’s own noun still lands', () => {
   // The coverage rule must not eat the rows the picks were authored for.
-  assert.equal(attach('frozen peas').pickId, 'pick_frozen_peas');
+  // Frozen peas are a CARD now (v3-newcards, ef4f2f8); the state word still lands the row on it.
+  for (const name of ['frozen peas', '2 frozen peas']) {
+    assert.equal(attach(name).cardSlug, 'frozen_peas', name);
+    assert.equal(attach(name).pickId, undefined, name);
+  }
   // Carrots are a CARD now (P2, produce_root_vegetables); the same rule holds on the card path.
   for (const name of ['2 carrots', 'baby carrots']) {
     assert.equal(attach(name).cardSlug, 'produce_root_vegetables', name);
@@ -156,6 +160,7 @@ test('a modifier that names a different product never earns a pick', () => {
 
 test('"fresh" is inert for coverage and a state for the veto: fresh peas never gets the frozen pick', () => {
   assert.notEqual(attach('fresh peas').pickId, 'pick_frozen_peas');
+  assert.notEqual(attach('fresh peas').cardSlug, 'frozen_peas', 'fresh peas never gets the frozen peas card');
   assert.equal(attach('whole milk').pickId, undefined, 'whole milk is a card row, not a pick');
   assert.ok(attach('whole milk').cardSlug, 'whole milk keeps its card');
 });

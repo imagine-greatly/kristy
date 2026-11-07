@@ -9,7 +9,12 @@ import { readability, lintCard, lintPick } from '../../lib/counterCardLint.js';
 import { projectEntry, parseReviewTable, RETIRED, RETIRED_GENERATED } from '../../lib/counterCards.js';
 import { matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
 import { scoreEntries } from '../../lib/perimeter.js';
-import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
+import kb0 from '../../kristy_perimeter_kb.json' with { type: 'json' };
+import { preNewCards, NEW_CARDS_RETIRED_PICKS } from './cartPlain.js';
+// v3-newcards (ef4f2f8): entry checks read the corpus as of fc8d434 (picks intact); the live matcher
+// now lands a retired pick's rows on the card that took its slot (pick_X → X), so row pins go through owner().
+const kb = { ...kb0, entries: preNewCards(kb0.entries) };
+const owner = (id) => (NEW_CARDS_RETIRED_PICKS.has(id) ? id.slice(5) : id);
 import { preT6_3 } from './twoLinePin.js';
 kb.entries = kb.entries.map(preT6_3); // t6-3: pantry pins read 6d6ca49; t6_3.test.js owns live copy.
 import { preCleanJ8, preCleanJ9 } from './cartPlain.js';
@@ -56,13 +61,13 @@ const FOLD = { slug: 'gen_choosing_a_real_cereal', card: 'breakfast_cereal', kee
 const FOLD_ASKS = nonEmpty(['what cereal'], 'fold asks', 1);
 const PROSE = ['question', 'decision', 'why', 'short_answer', 'detail', 'kristy_take', 'cart_pick', 'buying_tips', 'watch_out', 'labels_decoded', 'tier_note'];
 
-for (const [row, id] of BARE) test(`C1 "${row}" matches ${id}`, () => assert.equal(rowMatch(row), id));
+for (const [row, id] of BARE) test(`C1 "${row}" matches ${owner(id)}`, () => assert.equal(rowMatch(row), owner(id)));
 
 for (const id of CARDS) test(`C2 ${id}: every asked_as tops the ask door`, () => {
   for (const q of nonEmpty(byId(id)?.asked_as ?? [], `${id} asked_as`, 3)) assert.equal(top(q).id, id, q);
 });
 
-for (const [row, want] of KEEPS) test(`C3 "${row}" keeps its prior match`, () => assert.equal(rowMatch(row), want));
+for (const [row, want] of KEEPS) test(`C3 "${row}" keeps its prior match`, () => assert.equal(rowMatch(row), owner(want)));
 
 for (const row of NOT_NEW) test(`C3b "${row}" lands on no K18 id`, () => {
   const got = rowMatch(row);

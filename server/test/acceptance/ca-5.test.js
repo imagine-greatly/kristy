@@ -9,7 +9,8 @@ import { execFileSync } from 'node:child_process';
 import * as lint from '../../lib/counterCardLint.js';
 
 const SERVER = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
-const kb = restoreOrganicCarts(JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8')));
+// v3-newcards (ef4f2f8): section sources now cite the frozen_peas/frozen_broccoli cards, so check the live corpus.
+const kb = restoreOrganicCarts(JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8')), { newCards: true });
 const raw = JSON.parse(readFileSync(join(SERVER, 'lib', 'sectionRules.json'), 'utf8'));
 const rows = Array.isArray(raw) ? raw : raw.sections ?? raw.rules ?? Object.values(raw).find(Array.isArray);
 const row = (s) => rows.find((r) => r.section === s);

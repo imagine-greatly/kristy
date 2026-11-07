@@ -1,4 +1,4 @@
-import { restoreOrganicCarts } from './cartPlain.js';
+import { restoreOrganicCarts, NEW_CARDS_RETIRED_PICKS } from './cartPlain.js';
 // swap-picks-1: sourced, gentle list nudges; cards keep their own cart picks.
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -46,11 +46,10 @@ const NEGATIVES = nonEmpty([
   'vegetable broth', 'salad greens', 'candy thermometer',
 ], 'negative rows', 13);
 const CARRIED = nonEmpty([
-  ['candy', 'No card plainly supports a same-use candy choice.'],
-  ['cookies', 'No card plainly supports a same-use cookie choice.'],
-  ['instant noodles', 'No card plainly supports a same-use instant noodle choice.'],
   ['chips', 'The bare word is ambiguous, including chocolate chips; never add it as an alias.'],
-], 'reasoned carries', 4);
+], 'reasoned carries', 1);
+// v3-newcards (ef4f2f8): the candy, cookies and ramen cards now own these former carries.
+const NEWLY_CARDED = nonEmpty([['candy', 'candy'], ['cookies', 'cookies'], ['instant noodles', 'ramen']], 'newly carded carries', 3);
 // Gap pass (2026-10-23): the two dressing carries are now authored by the salad_dressing card.
 const GAP_COVERED = nonEmpty(['ranch dressing', 'salad dressing'], 'gap-covered rows', 2);
 
@@ -65,6 +64,18 @@ for (const [name, id, cartPick] of CARD_ALIASES) {
 for (const [id, rows] of SWAPS) {
   for (const name of nonEmpty(rows, `${id} rows`)) {
     test(`swap-picks-1: ${name} gets ${id} without removing the row`, () => {
+      if (NEW_CARDS_RETIRED_PICKS.has(id)) {
+        // v3-newcards (ef4f2f8): this swap pick became its own card; the row stays and carries the card.
+        assert.equal(matchItemToCard(name)?.slug, id.slice(5));
+        assert.equal(matchItemToPick(name), null);
+        const attached = attachCards({ items: [{ name, source: 'user' }] }, { log: false });
+        assert.equal(attached.items.length, 1);
+        assert.equal(attached.items[0].name, name);
+        assert.equal(attached.items[0].source, 'user');
+        assert.equal(attached.items[0].cardSlug, id.slice(5));
+        assert.equal(attached.items[0].pickId, undefined);
+        return;
+      }
       assert.equal(matchItemToCard(name), null);
       const pick = matchItemToPick(name);
       assert.equal(pick?.id, id);
@@ -103,6 +114,10 @@ test('swap-picks-1: negatives never attach a new pick or either new card alias',
 
 test('swap-picks-1: the dressing carries reach the salad_dressing card', () => {
   for (const name of GAP_COVERED) assert.equal(matchItemToCard(name)?.slug, 'salad_dressing', name);
+});
+
+test('swap-picks-1: former carries reach their new cards', () => {
+  for (const [name, slug] of NEWLY_CARDED) assert.equal(matchItemToCard(name)?.slug, slug, name);
 });
 
 test('swap-picks-1: reasoned carries stay without guidance', () => {

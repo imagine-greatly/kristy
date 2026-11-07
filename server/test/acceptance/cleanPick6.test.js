@@ -16,7 +16,7 @@ const CP9or10 = (id) => CLEAN_PICK_9.has(id) || CLEAN_PICK_10.has(id);
 const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
 const git = (ref) => execFileSync('git', ['show', ref], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
 const kb = restoreOrganicCarts(JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8')));
-import { preSwapPicks1 } from './twoLinePin.js';
+import { preSwapPicks1, NEW_CARDS_RETIRED_PICKS } from './twoLinePin.js';
 kb.entries = preSwapPicks1(kb.entries); // swap-picks-1: 8 swap picks + 2 aliases after 58d6160; swap_picks_1.test.js owns them.
 import { preT6_4 } from './twoLinePin.js';
 kb.entries = kb.entries.map(preT6_4); // t6-4: produce/label pins read 2f67540; t6_4.test.js owns live copy.
@@ -132,6 +132,12 @@ test('C9 every alias of the 17 reaches its own pick and no card', () => {
   const rows = IDS.flatMap((id) => live(id).aliases.map((a) => [a, id]));
   nonEmpty(rows, 'aliases', 70);
   for (const [a, id] of rows) {
+    // v3-newcards (ef4f2f8): a retired pick's aliases now reach the card that took its slot, and no pick.
+    if (NEW_CARDS_RETIRED_PICKS.has(id)) {
+      assert.equal(matchItemToPick(a), null, `${a} -> pick ${matchItemToPick(a)?.id}`);
+      assert.equal(matchItemToCard(a)?.slug, id.slice(5), `${a} -> card ${matchItemToCard(a)?.slug}`);
+      continue;
+    }
     assert.equal(matchItemToPick(a)?.id, id, `${a} -> pick ${matchItemToPick(a)?.id}`);
     assert.equal(matchItemToCard(a), null, `${a} -> card ${matchItemToCard(a)?.slug}`);
   }
@@ -150,6 +156,11 @@ test('C11 a list row of each pick’s first alias carries the new organic line',
   for (const id of IDS) {
     const name = live(id).aliases[0];
     const row = attachCards({ items: [{ name, source: 'user' }] }, { log: false }).items[0];
+    if (NEW_CARDS_RETIRED_PICKS.has(id)) { // v3-newcards: the card owns the row now
+      assert.equal(row.cardSlug, id.slice(5), `${name} cardSlug ${row.cardSlug}`);
+      assert.equal(row.pickId, undefined, `${name} pickId ${row.pickId}`);
+      continue;
+    }
     assert.equal(row.pickId, id, `${name} pickId ${row.pickId}`);
     assert.equal(row.pickLine, liveDecision(id), `${name} pickLine`);
     assert.equal(row.cardSlug, undefined, `${name} cardSlug ${row.cardSlug}`);

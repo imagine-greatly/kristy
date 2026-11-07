@@ -126,7 +126,7 @@ test('add_card: a lint-clean card with fetched sources adds once, then reads as 
 });
 
 test('add_card refuses duplicate ids, a kind, unknown fields and missing required fields', () => {
-  for (const id of ['chicken', 'pick_frozen_peas', 'fam_tinned_fish']) assert.match(check(row({}, { id })).errors.join(), /duplicate id/, id);
+  for (const id of ['chicken', 'pick_juice', 'fam_tinned_fish']) assert.match(check(row({}, { id })).errors.join(), /duplicate id/, id);
   assert.match(check(row({}, { kind: 'pick' })).errors.join(), /no kind/);
   assert.match(check(row({}, { price: 'cheap' })).errors.join(), /unknown field price/);
   assert.match(check(row({}, { asked_as: undefined })).errors.join(), /missing asked_as/);
@@ -162,8 +162,9 @@ test('add_card runs the lint bar and the two-line rule', () => {
   assert.match(checkAddCard(row(), kb.entries, { ...opts, doLines }).errors.join(), /no do line/);
 });
 
+// v3-newcards (ef4f2f8): pick_frozen_peas became the frozen_peas card; the fixture pick is a live one.
 test('add_card with promotes replaces the pick in its slot; the pick aliases move with it', () => {
-  const pick = byId.get('pick_frozen_peas');
+  const pick = byId.get('pick_english_muffins');
   const r = row({ promotes: pick.id }, { aliases: pick.aliases });
   assert.deepEqual(check(r).errors, []);
   assert.match(check(row({ promotes: 'pick_nope' })).errors.join(), /no such pick/);

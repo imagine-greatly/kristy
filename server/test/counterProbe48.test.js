@@ -43,7 +43,7 @@ const QUERIES = nonEmpty([
   ['frozen vegetables', 'frozen_vs_fresh_produce'],
   ['chips', 'miss'],
   ['crackers', 'crackers'], // K23: pinned gap now covered by the crackers card.
-  ['cookies', 'miss'],
+  ['cookies', 'cookies'], // v3-newcards (ef4f2f8): pinned gap now covered by the cookies card.
   ['ice cream', 'ice_cream'], // K19 covers it (admin ruling 2026-10-06).
   ['juice', 'miss', 'pick_juice'],
   ['soda', 'miss', 'pick_soda'], // swap-picks-1: soda now gets its list pick.
@@ -57,7 +57,7 @@ const QUERIES = nonEmpty([
   ['maple syrup', 'maple_syrup'], // K21 admin ruling: pinned gap now covered by the maple_syrup card.
   ['hot dogs', 'hot_dogs'],
   ['frozen pizza', 'frozen_pizza'], // K24: pinned gap now covered by the frozen_pizza card.
-  ['baby food', 'miss'],
+  ['baby food', 'baby_food'], // v3-newcards (ef4f2f8): pinned gap now covered by the baby_food card.
   ['kombucha', 'kombucha'], // K20 admin ruling: pinned gap now covered by the kombucha card.
 ], '48 weekly grocery queries', 48);
 assert.equal(QUERIES.length, 48);
@@ -99,15 +99,15 @@ for (const query of nonEmpty([
   });
 }
 
-// K20 admin ruling: kombucha now matches a card.
+// K20 admin ruling: kombucha now matches a card. v3-newcards (ef4f2f8): baby food too; the phrased miss is jicama.
 test('phrased grocery miss reaches the injected generator', async () => {
   const generator = mock.fn(async () => ({ card: null, attempts: [], reason: 'insufficient' }));
   const modelCalls = model.mock.callCount();
   const out = await answerCounterQuestion({
-    query: 'how do I choose baby food', client: offline, ip: 'phrased-probe', generator,
+    query: 'how do I choose jicama', client: offline, ip: 'phrased-probe', generator,
   });
   assert.equal(generator.mock.callCount(), 1);
-  assert.equal(generator.mock.calls[0].arguments[0].query, 'how do I choose baby food');
+  assert.equal(generator.mock.calls[0].arguments[0].query, 'how do I choose jicama');
   assert.equal(model.mock.callCount(), modelCalls);
   assert.equal(out.card, null);
   assert.equal(out.reason, 'insufficient');

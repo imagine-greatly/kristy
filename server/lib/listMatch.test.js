@@ -457,10 +457,11 @@ test('the implicit fresh is produce-only: a stateless non-produce card still nam
 });
 
 test('a row sorts by the section it displays, never one it is not in', () => {
-  // "Baby zucchini" matches no card at all. It used to sort to the trailing group while
+  // "Baby bok choy" matches no card at all. It used to sort to the trailing group while
   // rendering the word Produce beside itself — sorted by cardSection, labelled by category.
-  assert.equal(matchItemToCard('Baby zucchini'), null);
-  assert.equal(sectionForItem({ name: 'Baby zucchini', category: 'Produce' }), 'produce');
+  // (Was "Baby zucchini" until v3-newcards gave zucchini a card, ef4f2f8.)
+  assert.equal(matchItemToCard('Baby bok choy'), null);
+  assert.equal(sectionForItem({ name: 'Baby bok choy', category: 'Produce' }), 'produce');
   // A category that names no walk section still falls to the trailing group, and keeps its
   // label there — which is honest, because "Bakery" is not a section it could have sorted to.
   assert.equal(sectionForItem({ name: 'Real sourdough', category: 'Bakery' }), null);
@@ -495,14 +496,15 @@ const PICK_APPLES = pickFixture('pick_apples', 'Apples', ['apples', 'apple'],
   'Pick firm apples with tight skin.');
 const PICK_TOMATOES = pickFixture('pick_tomatoes', 'Tomatoes', ['tomatoes', 'tomato'],
   'Pick tomatoes heavy for their size.');
-// A frozen pick whose aliases carry the state — the shape lintPick admits. `frozen peas`
-// on a list must reach it; bare `peas` must not.
-const PICK_FROZEN_PEAS = pickFixture('pick_frozen_peas', 'Frozen peas', ['frozen peas', 'frozen pea'],
+// A frozen pick whose aliases carry the state — the shape lintPick admits. `frozen edamame`
+// on a list must reach it; bare `edamame` must not. (Was frozen peas until v3-newcards gave
+// frozen peas a card, ef4f2f8; a card owning the noun would prove precedence, not the floor.)
+const PICK_FROZEN_EDAMAME = pickFixture('pick_frozen_edamame', 'Frozen edamame', ['frozen edamame'],
   'Pick a bag that shakes loose, not one frozen into a block.');
 // The real KB with every pick removed, so the no-pick tests hold after Piece 3 authors picks.
 const CARDS_ONLY = nonEmpty((perimeterKb.entries || []).filter((e) => !isPick(e)), 'KB cards', 50);
 const PICK_POOL = nonEmpty(
-  [...CARDS_ONLY, PICK_CELERY, PICK_APPLES, PICK_TOMATOES, PICK_FROZEN_PEAS],
+  [...CARDS_ONLY, PICK_CELERY, PICK_APPLES, PICK_TOMATOES, PICK_FROZEN_EDAMAME],
   'KB plus fixture picks', 5
 );
 nonEmpty(pickEntries(PICK_POOL), 'fixture picks in the pool', 4);
@@ -592,9 +594,10 @@ test('with no picks in the pool the floor is a no-op: same rows as before', () =
 });
 
 test('a state-bearing pick reaches its own state and never the bare row', () => {
-  assert.equal(matchItemToCard('peas'), null, 'peas has no card today; re-pick the fixture noun');
-  const [frozen, bare] = attachWithPicks('frozen peas', 'peas');
-  assert.equal(frozen.pickId, 'pick_frozen_peas');
+  assert.equal(matchItemToCard('edamame'), null, 'edamame has no card today; re-pick the fixture noun');
+  assert.equal(matchItemToCard('frozen edamame'), null, 'frozen edamame has no card today; re-pick the fixture noun');
+  const [frozen, bare] = attachWithPicks('frozen edamame', 'edamame');
+  assert.equal(frozen.pickId, 'pick_frozen_edamame');
   assert.equal(bare.pickId, undefined);
   assert.equal(bare.pickLine, undefined);
 });

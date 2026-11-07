@@ -8,7 +8,7 @@ import { nonEmpty } from '../../lib/testGuards.js';
 import { TWO_LINE } from './twoLinePin.js';
 import { matchItemToCard } from '../../lib/listMatch.js';
 
-const kb = restoreOrganicCarts(JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8')));
+const kb = restoreOrganicCarts(JSON.parse(readFileSync(new URL('../../kristy_perimeter_kb.json', import.meta.url), 'utf8')), { newCards: true }); // v3-newcards: the 42 new cards are pinned live
 import { preT6_4 } from './twoLinePin.js';
 kb.entries = kb.entries.map(preT6_4); // t6-4: produce/label pins read 2f67540; t6_4.test.js owns live copy.
 import { preT6_3 } from './twoLinePin.js';
@@ -17,7 +17,7 @@ import { preT6_2 } from './twoLinePin.js';
 kb.entries = kb.entries.map(preT6_2); // t6-2: dairy/egg pins read ca32bef; t6_2.test.js owns live copy.
 
 test('every card carries the pinned two-line decision and buying_tips', () => {
-  const cards = nonEmpty(kb.entries.filter((e) => e.kind !== 'pick'), 'cards', 179); // 2026-11-02 meat stance: beef_cuts_basics folded into Beef
+  const cards = nonEmpty(kb.entries.filter((e) => e.kind !== 'pick'), 'cards', 221); // 2026-11-02 meat stance: beef_cuts_basics folded into Beef; 2026-11-07 v3-newcards +42
   for (const e of cards) {
     assert.ok(TWO_LINE[e.id], `${e.id} has no two-line pin`);
     // Every pinned field, so a field the older tests restore (cart_pick, pick_steps) is still checked live.

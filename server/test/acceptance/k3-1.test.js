@@ -11,7 +11,12 @@ import { matchItemToCard, matchItemToPick } from '../../lib/listMatch.js';
 import { scoreEntries } from '../../lib/perimeter.js';
 import { execSync } from 'node:child_process';
 import pre from './fixtures/kb-pre-readability.json' with { type: 'json' };
-import kb from '../../kristy_perimeter_kb.json' with { type: 'json' };
+import kb0 from '../../kristy_perimeter_kb.json' with { type: 'json' };
+import { preNewCards, NEW_CARDS_RETIRED_PICKS } from './cartPlain.js';
+// v3-newcards (ef4f2f8): entry checks read the corpus as of fc8d434 (picks intact); the live matcher
+// now lands a retired pick's rows on the card that took its slot (pick_X → X), so row pins go through owner().
+const kb = { ...kb0, entries: preNewCards(kb0.entries) };
+const owner = (id) => (NEW_CARDS_RETIRED_PICKS.has(id) ? id.slice(5) : id);
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../../..');
 const reviewed = parseReviewTable(readFileSync(join(ROOT, 'docs/do-lines-review.md'), 'utf8'));
@@ -35,7 +40,7 @@ const COLLISIONS = nonEmpty([
 const EDITED = nonEmpty(['seafood_counter', 'white_fish', 'salmon_wild_vs_farmed', 'clams_mussels_oysters', 'smoked_salmon', 'farmed_fish_by_species'], 'K3-1 edited cards', 6);
 
 for (const [w, id] of WORDS) test(`L "${w}" lands on ${id}`, () => assert.equal(rowMatch(w), id));
-for (const [w, want] of COLLISIONS) test(`collision "${w}" unchanged (${want})`, () => assert.equal(rowMatch(w), want));
+for (const [w, want] of COLLISIONS) test(`collision "${w}" unchanged (${owner(want)})`, () => assert.equal(rowMatch(w), owner(want)));
 test('ask "what should fish smell like" unchanged', () => assert.equal(top('what should fish smell like'), 'seafood_counter'));
 
 test('M3: the fish/shellfish buying asks live on seafood_counter only, in aliases and asked_as', () => {

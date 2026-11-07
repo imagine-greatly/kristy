@@ -13,7 +13,8 @@ const SERVER = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const ROOT = join(SERVER, '..');
 const BASE = '951441c';
 const show = (path) => execFileSync('git', ['show', `${BASE}:${path}`], { cwd: ROOT, maxBuffer: 64 << 20 }).toString();
-const kb = restoreOrganicCarts(JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8')));
+// v3-newcards (ef4f2f8): section sources now cite the frozen_peas/frozen_broccoli cards, so check the live corpus.
+const kb = restoreOrganicCarts(JSON.parse(readFileSync(join(SERVER, 'kristy_perimeter_kb.json'), 'utf8')), { newCards: true });
 const rows = nonEmpty(JSON.parse(readFileSync(join(SERVER, 'lib', 'sectionRules.json'), 'utf8')), 'section rules', 6);
 const base = nonEmpty(JSON.parse(show('server/lib/sectionRules.json')), 'base section rules', 6);
 const row = (s) => rows.find((r) => r.section === s);
@@ -30,7 +31,8 @@ const FROZEN_CHECK = 'Organic frozen counts as a close second when the season is
 const CHANGED = {
   produce: { rule: PRODUCE_RULE, 'checks.1': PRODUCE_CHECK, sources: PRODUCE_SOURCES },
   eggs_dairy: { 'checks.0': EGGS_CHECK },
-  frozen: { 'checks.1': FROZEN_CHECK },
+  // v3-newcards (ef4f2f8): the frozen sources repoint from the retired picks to their promoted cards.
+  frozen: { 'checks.1': FROZEN_CHECK, sources: ['frozen_peas', 'frozen_broccoli'] },
 };
 const UNCHANGED = ['meat', 'seafood', 'bulk_pantry'];
 const textOf = (r) => [r.rule, ...(r.checks ?? []), ...(r.beyond ? [r.beyond] : [])];
