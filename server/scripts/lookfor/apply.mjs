@@ -2,7 +2,7 @@
 //   node scripts/lookfor/apply.mjs [--dry-run] [--deletions-only]     (from server/)
 // Applies scripts/lookfor/out/deletions.patch.json, then scripts/lookfor/patches/*.json in name order
 // (the directory may be missing or empty). Row: {id, field, remove:[exact], add:[text | {text, quote}],
-// to_watch_out:[exact], evidence?:{field, quote}}. Every add needs a quote (its own, or the row's evidence.quote)
+// to_watch_out:[exact], evidence?:{field, quote}}, or {id, field, replace:[{from, text, quote}]} (in place). Every add needs a quote (its own, or the row's evidence.quote)
 // that appears word for word in that card's text as it read BEFORE this run; one bad add refuses the whole run.
 // Shape floors: the authored patches/*.json refuse the run on a breach; the regex-made deletions patch only
 // HOLDS the breaching row (left on the card, printed for Pass B), because S0's floors were looser than the suite's.
@@ -87,6 +87,24 @@ for (const url of files) {
       if (typeof a.text !== 'string' || !a.text.trim()) errors.push(`${at}: add without text`);
       else if (typeof a.quote !== 'string' || !a.quote.trim()) errors.push(`${at}: add "${a.text}" has no quote`);
       else if (!(e[r.field] || []).includes(a.text) && !before.get(r.id).some((s) => s.includes(a.quote))) errors.push(`${at}: quote "${a.quote}" not verbatim in ${r.id}`);
+    }
+    // In-place rewrites keep the KB's best-first order: replace:[{from, text, quote}], nothing else in the row.
+    if (r.replace) {
+      if (labels || single || (r.remove || []).length || adds.length || (r.to_watch_out || []).length) return errors.push(`${at}: a replace row carries only replace, on a list field`);
+      const list = e[r.field];
+      const todo = r.replace.filter((x) => list.includes(x.from));
+      for (const x of r.replace) {
+        if (typeof x.text !== 'string' || !x.text.trim() || typeof x.quote !== 'string' || !x.quote.trim()) errors.push(`${at}: replace "${x.from}" needs text and quote`);
+        else if (list.includes(x.from) && !before.get(r.id).some((s) => s.includes(x.quote))) errors.push(`${at}: quote "${x.quote}" not verbatim in ${r.id}`);
+        else if (!list.includes(x.from) && !list.includes(x.text)) errors.push(`${at}: replace "${x.from}" matches nothing`);
+        else if (list.includes(x.from) && list.includes(x.text)) errors.push(`${at}: replace "${x.text}" already on the card (duplicate)`);
+      }
+      if (!todo.length) return stats.already++;
+      e[r.field] = list.map((s) => todo.find((x) => x.from === s)?.text ?? s);
+      stats.applied++; stats.removed += todo.length; stats.added += todo.length; touched.add(r.id);
+      if (!dry) return console.log(`  ${r.id}.${r.field}: ~${todo.length}`);
+      for (const x of todo) console.log(`~ ${r.id}.${r.field}: ${x.from}\n    -> ${x.text}`);
+      return;
     }
     for (const m of r.to_watch_out || []) if (!(r.remove || []).includes(m)) errors.push(`${at}: to_watch_out "${m}" is not also a remove`);
     for (const s of (r.remove || []).filter((s) => held(r.id, s))) holds.push(`${r.id}.${r.field}: "${s}" (${HOLD.get(`${r.id}\t${s}`)})`);

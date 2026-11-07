@@ -1,0 +1,4 @@
+{
+  "source": "v3-flat Look-for sweep (scripts/lookfor/v3sweep.mjs): \"Look for X.\" -> \"X.\" in place, quote = X; pick steps iOS folds as near duplicates of look_for removed.",
+  "patches": []
+}

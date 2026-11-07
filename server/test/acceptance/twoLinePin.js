@@ -3663,12 +3663,12 @@ const SECOND_PASS = {
   },
   "egg_labels": {
     "decision": "Pasture-raised eggs from hens on soy-free, corn-free feed.",
-    "tip0": "Look for “corn-free” and “soy-free” feed printed beside “pasture-raised”.",
+    "tip0": "“corn-free” and “soy-free” feed printed beside “pasture-raised”.",
     "do": "Find Certified Humane Pasture Raised or Animal Welfare Approved on the carton."
   },
   "pork_cuts_and_enhanced": {
     "decision": "Pork from pigs on pasture, never crated.",
-    "tip0": "Look for “Pastured” on the pack.",
+    "tip0": "“Pastured” on the pack.",
     "do": "Find “Pastured” and Animal Welfare Approved on the pack, pork the only ingredient."
   },
   "bacon": {
@@ -3683,12 +3683,12 @@ const SECOND_PASS = {
   },
   "ground_beef_lean_ratio": {
     "decision": "Ground beef from cattle that ate only grass.",
-    "tip0": "Look for “grass-finished” beside “100% grass-fed” on the label.",
+    "tip0": "“grass-finished” beside “100% grass-fed” on the label.",
     "do": "Find “100% grass-fed” and “grass-finished” on the pack, beef the only ingredient."
   },
   "lamb_goat": {
     "decision": "Lamb or goat that ate grass to the end.",
-    "tip0": "Look for “100% grass-fed” and “grass-finished” on lamb or goat.",
+    "tip0": "“100% grass-fed” and “grass-finished” on lamb or goat.",
     "do": "Check for “100% grass-fed,” “grass-finished,” and American Grassfed or Animal Welfare Approved."
   },
   "bison": {
@@ -3703,7 +3703,7 @@ const SECOND_PASS = {
   },
   "raw_kefir": {
     "decision": "Plain raw or grass-fed kefir from whole milk, Certified Grassfed, farm named.",
-    "tip0": "Look for ‘raw’ and a farm name on the bottle, the same farm as the milk.",
+    "tip0": "‘raw’ and a farm name on the bottle, the same farm as the milk.",
     "do": "Buy it from the refrigerated case, never the shelf-stable carton."
   },
   "plain_kefir": {
@@ -3723,7 +3723,7 @@ const SECOND_PASS = {
   },
   "raw_aged_cheese": {
     "decision": "Grass-fed raw-milk cheese, aged 60 days or more.",
-    "tip0": "Look for ‘raw milk’ or ‘lait cru’ (French for raw milk) with an age on the label.",
+    "tip0": "‘raw milk’ or ‘lait cru’ (French for raw milk) with an age on the label.",
     "do": "Read the rind label for an age in months."
   },
   "grassfed_butter": {
@@ -3738,7 +3738,7 @@ const SECOND_PASS = {
   },
   "salmon_wild_vs_farmed": {
     "decision": "Wild Alaskan salmon, blue MSC label, fresh or frozen, like sockeye or coho.",
-    "tip0": "Look for “wild-caught”, “Alaska” and the blue MSC label, with the kind of salmon named.",
+    "tip0": "“wild-caught”, “Alaska” and the blue MSC label, with the kind of salmon named.",
     "do": "Find the MSC label and wild Alaskan, then check for deep red flesh."
   },
   "canned_fish_choosing": {
@@ -3763,7 +3763,7 @@ const SECOND_PASS = {
   },
   "maple_syrup": {
     "decision": "Organic pure maple syrup, Dark or Very Dark, state and sugarhouse named.",
-    "tip0": "Look for ‘100% pure maple syrup’ on the label, and maple syrup alone on the list.",
+    "tip0": "‘100% pure maple syrup’ on the label, and maple syrup alone on the list.",
     "do": "Read for pure maple syrup alone; skip corn syrup in the ingredients."
   },
   "nut_butter_ingredients": {
@@ -3773,12 +3773,12 @@ const SECOND_PASS = {
   },
   "coffee_beans": {
     "decision": "Whole beans, Bird Friendly, single origin, roasted-on date, mold-testing roaster.",
-    "tip0": "Look for ‘whole bean’ and Bird Friendly on a sealed bag with a roasted-on date.",
+    "tip0": "‘whole bean’ and Bird Friendly on a sealed bag with a roasted-on date.",
     "do": "Check the bag’s seal and keep the coffee closed between uses."
   },
   "flour_basics": {
     "decision": "Sprouted whole-wheat flour, unbleached, not enriched.",
-    "tip0": "Look for “sprouted” and “whole wheat” in the flour name.",
+    "tip0": "“sprouted” and “whole wheat” in the flour name.",
     "do": "Read the bag for whole wheat before choosing flour."
   },
   "sandwich_bread": {
