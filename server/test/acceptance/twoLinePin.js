@@ -3515,7 +3515,7 @@ export const TWO_LINE = {
   "soup_bones": {
     "decision": "Grass-fed marrow and knuckle bones, plus a calf’s foot.",
     "buying_tips": [
-      "100% grass-fed marrow and knuckle bones, AGA Grassfed on the label.",
+      "Marrow and knuckle bones from animals kept on pasture, with the AGA logo on the label.",
       "A calf’s foot or chicken feet, the most gelatinous parts.",
       "Meaty rib or neck bones for browning first.",
       "Frozen bones from a grazing farm when the case has none."
