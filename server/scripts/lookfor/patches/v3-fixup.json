@@ -1,0 +1,77 @@
+{
+  "source": "v3-flat fixup (Devon 2026-11-07 rules): restores concern facts the v3 batches dropped (rBST, dyes, glyphosate, seed oils, egg safety), the G2/G3 glosses, two allowlisted or pointer sentences tests pin verbatim, and breaks two meat-section repeated phrases and one tier_note restatement. Every quote is a verbatim substring of the same card before the run.",
+  "format": "apply.mjs rows",
+  "patches": [
+    { "id": "yogurt_plain_vs_flavored", "field": "buying_tips", "replace": [
+      { "from": "“100% grass-fed” plain whole-milk yogurt with the Certified Grassfed seal, “cream-top” or “non-homogenized”.", "text": "“100% grass-fed” plain whole-milk yogurt with the Certified Grassfed seal.", "quote": "with the Certified Grassfed seal" }
+    ] },
+    { "id": "yogurt_plain_vs_flavored", "field": "buying_tips",
+      "remove": ["A short list is the sign: milk and cultures.", "No added vitamins and no thickeners. Thickeners do the job straining does, for less."],
+      "add": [
+        { "text": "Organic or “rBST free”: no rBST, a synthetic growth hormone, in the herd.", "quote": "rBST is a synthetic growth hormone used in dairy cows" },
+        { "text": "A short list is the sign: milk and cultures. No added color, dyes, thickeners or vitamins. Thickeners do the job straining does, for less.", "quote": "A short list is the sign: milk and cultures" }
+      ] },
+    { "id": "yogurt_plain_vs_flavored", "field": "pick_steps", "replace": [
+      { "from": "Plain over flavored and fruit-on-the-bottom tubs, where the added sugar is.", "text": "100% grass-fed on the tub means the cows ate grass and hay, never grain.", "quote": "100% grass-fed on the tub means the cows ate grass and hay, never grain." },
+      { "from": "Greek and skyr are strained: thicker, with less whey. Whole-milk versions are more filling and less tinkered with than fat-free.", "text": "Greek and skyr are strained: thicker, with less whey.", "quote": "Greek and skyr are strained: thicker, with less whey." }
+    ] },
+    { "id": "yogurt_plain_vs_flavored", "field": "buying_tips", "replace": [
+      { "from": "Can’t find 100% grass-fed: plain organic whole-milk yogurt.", "text": "Can’t find 100% grass-fed: plain organic whole-milk yogurt. Whole-milk versions are more filling and less tinkered with than fat-free.", "quote": "Whole-milk versions are more filling and less tinkered with than fat-free." }
+    ] },
+    { "id": "egg_labels", "field": "buying_tips",
+      "remove": ["Farm stands and farmers markets for soy-free eggs.", "The farm named on the carton."],
+      "add": [
+        { "text": "Farm stands, farmers markets or the farm named on the carton, for soy-free eggs.", "quote": "farmers markets for soy-free eggs" },
+        { "text": "Open the carton and check for cracks and leaks before it goes in the cart.", "quote": "Open the carton and check for cracks and leaks before it goes in the cart." }
+      ] },
+    { "id": "egg_labels", "field": "pick_steps",
+      "remove": ["Time outdoors in print, beyond “cage-free” or “vegetarian-fed”."],
+      "add": [
+        { "text": "“Pasture-raised” means time outdoors on pasture, audited only with a certifier’s seal.", "quote": "“Pasture-raised” means time outdoors on pasture, audited only with a certifier’s seal." },
+        { "text": "Time outdoors in print, beyond “cage-free” or “vegetarian-fed”.", "quote": "“cage-free” and “vegetarian-fed”" }
+      ] },
+    { "id": "muesli", "field": "buying_tips", "replace": [
+      { "from": "Organic, over conventional oats.", "text": "Organic, since conventional oats may be sprayed with glyphosate before harvest.", "quote": "Conventional oats may be sprayed with glyphosate" }
+    ] },
+    { "id": "sandwich_bread", "field": "buying_tips", "replace": [
+      { "from": "‘Whole’ in the first ingredient; a loaf called just ‘wheat’ may be white flour.", "text": "Whole wheat in the first ingredient; a loaf called just ‘wheat’ may be white flour.", "quote": "a loaf called just ‘wheat’ may be white flour" }
+    ] },
+    { "id": "sandwich_bread", "field": "pick_steps", "replace": [
+      { "from": "A 100% Whole Grain Stamp over 50%+ or Basic.", "text": "A 100% Whole Grain Stamp, the top of its three tiers.", "quote": "Check the Whole Grain Stamp: 100%, 50%+ and Basic" }
+    ] },
+    { "id": "honey_adulteration", "field": "buying_tips", "replace": [
+      { "from": "“Raw” and “unfiltered”, with the pollen left in: cloudy, not clear.", "text": "Honey labeled “raw” and “unfiltered”, with the pollen left in: cloudy, not clear.", "quote": "“raw” and “unfiltered”, with the pollen left in" }
+    ] },
+    { "id": "hot_dogs", "field": "pick_steps", "replace": [
+      { "from": "The qualifier after “Uncured”, which can still mean celery-based curing.", "text": "“Uncured” can still mean celery-based curing; read the qualifier.", "quote": "“Uncured” can still mean celery-based curing; read the qualifier." }
+    ] },
+    { "id": "olives", "field": "pick_steps", "replace": [
+      { "from": "Brine-cured olives over lye-cured.", "text": "Olives in brine over lye-treated olives.", "quote": "Brine-cured olives" }
+    ] },
+    { "id": "sandwich_bread", "field": "pick_steps",
+      "add": [{ "text": "Organic, since conventional wheat may be sprayed with glyphosate.", "quote": "conventional wheat may be sprayed with glyphosate" }] },
+    { "id": "hummus", "field": "buying_tips",
+      "add": [{ "text": "No sunflower, safflower, canola, soybean, corn or cottonseed oil.", "quote": "sunflower, safflower, canola, soybean, corn, cottonseed" }] },
+    { "id": "hummus", "field": "pick_steps",
+      "add": [{ "text": "Organic, since conventional chickpeas may get glyphosate before harvest.", "quote": "Conventional chickpeas may get glyphosate" }] },
+    { "id": "beans_dried_vs_canned", "field": "buying_tips", "replace": [
+      { "from": "Organic beans, dried or canned.", "text": "Organic beans, dried or canned, since conventional pulses may get glyphosate.", "quote": "conventional pulses may get glyphosate" }
+    ] },
+    { "id": "snacks", "field": "buying_tips",
+      "add": [{ "text": "No Red 40, Yellow 5, Yellow 6 or Blue 1 dyes; a “Lake” dye still counts.", "quote": "A “Lake” dye still counts." }] },
+    { "id": "deli_meat_uncured", "field": "pick_steps", "replace": [
+      { "from": "Every curing substance named on the ingredients list.", "text": "Read the ingredients list; every curing substance has to be named there.", "quote": "Read the ingredients list; every curing substance has to be named there." }
+    ] },
+    { "id": "goat_sheep_dairy", "field": "buying_tips",
+      "add": [{ "text": "Homogenized or ultra-pasteurized: see Milk.", "quote": "Homogenized or ultra-pasteurized: see Milk." }] },
+    { "id": "farmed_fish_by_species", "field": "buying_tips", "replace": [
+      { "from": "Farmed mussels, oysters and clams.", "text": "Farmed mussels, oysters and clams, which filter their food from the water.", "quote": "they filter their food from the water" }
+    ] },
+    { "id": "beef_veal", "field": "pick_steps", "replace": [
+      { "from": "Veal alone in the ingredients, nothing added.", "text": "Veal as the only ingredient, nothing added.", "quote": "veal alone, nothing added" }
+    ] },
+    { "id": "cured_pork", "field": "pick_steps", "replace": [
+      { "from": "A list with no smoke flavoring, liquid smoke or MSG.", "text": "A list free of MSG, smoke flavoring and liquid smoke.", "quote": "smoke flavoring, liquid smoke and MSG" }
+    ] }
+  ]
+}

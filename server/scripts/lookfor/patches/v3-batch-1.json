@@ -1,0 +1,1361 @@
+{
+  "source": "v3-flat Look-for rewrite, batch 1 (Devon 2026-11-07): buying_tips and pick_steps as noun phrases, winner first, at most 5 look-for lines, no duplicate across buying_tips/pick_steps, one Can't-find-it fallback; watch_out and tier_note untouched. Skipped: butcher_counter_asking, produce_avocados, produce_leafy_greens.",
+  "format": "apply.mjs row: {id, field, replace:[{from, text, quote}]} rewrites in place; {id, field, remove:[exact]} drops lines. Each quote is verbatim in the same card before the run.",
+  "patches": [
+    {
+      "id": "applesauce",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read the list: apples, and nothing else.",
+          "text": "Apples, and nothing else, on the list.",
+          "quote": "apples, and nothing else"
+        },
+        {
+          "from": "‘USDA Organic’. Apples rank on the yearly pesticide residue list.",
+          "text": "‘USDA Organic’ on the jar.",
+          "quote": "‘USDA Organic’"
+        },
+        {
+          "from": "Skip corn syrup, sugar and juice concentrate.",
+          "text": "No corn syrup, sugar or juice concentrate.",
+          "quote": "corn syrup, sugar and juice concentrate"
+        }
+      ]
+    },
+    {
+      "id": "applesauce",
+      "field": "buying_tips",
+      "remove": [
+        "Fresh organic apples cooked at home come closest to the fruit."
+      ]
+    },
+    {
+      "id": "applesauce",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Pick a jar whose list reads apples and nothing else.",
+          "text": "Unsweetened on the label.",
+          "quote": "Unsweetened"
+        }
+      ]
+    },
+    {
+      "id": "beans_dried_vs_canned",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Look for “sprouted” beans, or soak dried ones before cooking; both reduce phytic acid.",
+          "text": "“Sprouted” beans on the bag.",
+          "quote": "“sprouted” beans"
+        },
+        {
+          "from": "Pick organic beans, dried or canned: conventional pulses may get glyphosate before harvest, and organic farming bans it.",
+          "text": "Organic beans, dried or canned.",
+          "quote": "organic beans, dried or canned"
+        }
+      ]
+    },
+    {
+      "id": "beans_dried_vs_canned",
+      "field": "buying_tips",
+      "remove": [
+        "Drift can still leave residues on organic beans."
+      ]
+    },
+    {
+      "id": "beans_dried_vs_canned",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Pick a sealed bag of dried beans first; organic is a bonus.",
+          "text": "A sealed bag of dried beans first; organic as a bonus.",
+          "quote": "a sealed bag of dried beans first"
+        },
+        {
+          "from": "Read canned labels for beans, water and salt only.",
+          "text": "Beans, water and salt only on a canned label.",
+          "quote": "beans, water and salt only"
+        }
+      ]
+    },
+    {
+      "id": "beans_dried_vs_canned",
+      "field": "pick_steps",
+      "remove": [
+        "“BPA-free” printed on the can."
+      ]
+    },
+    {
+      "id": "bread_aisle",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read the first ingredient for ‘whole’; trust ‘100% whole wheat’ or ‘100% whole grain’.",
+          "text": "‘Whole’ in the first ingredient, or ‘100% whole wheat’ or ‘100% whole grain’.",
+          "quote": "trust ‘100% whole wheat’ or ‘100% whole grain’"
+        },
+        {
+          "from": "Check which Whole Grain Stamp is shown, if any.",
+          "text": "A 100% Whole Grain Stamp, not the Basic Stamp.",
+          "quote": "100% Whole Grain Stamp, not the Basic Stamp"
+        }
+      ]
+    },
+    {
+      "id": "bread_aisle",
+      "field": "buying_tips",
+      "remove": [
+        "‘Enriched flour’, ‘bran’ and ‘wheat germ’ never mean whole grain on a list."
+      ]
+    },
+    {
+      "id": "bread_aisle",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Pick the loaf type first, then read the first ingredient for “whole”.",
+          "text": "The loaf type first, then “whole” in the first ingredient.",
+          "quote": "the loaf type first"
+        }
+      ]
+    },
+    {
+      "id": "bread_aisle",
+      "field": "pick_steps",
+      "remove": [
+        "The 100% Whole Grain Stamp, not the Basic Stamp.",
+        "Skip “enriched flour”, “bran” and “wheat germ” as whole-grain stand-ins."
+      ]
+    },
+    {
+      "id": "cheese_real_vs_processed",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read the block’s list: milk, salt, cultures, and enzymes or rennet.",
+          "text": "Milk, salt, cultures, and enzymes or rennet on the block’s list.",
+          "quote": "milk, salt, cultures, and enzymes or rennet"
+        },
+        {
+          "from": "Pick raw-milk cheese from grass-fed herds first; imported and deli-counter wheels are the easiest raw finds.",
+          "text": "Raw-milk cheese from grass-fed herds.",
+          "quote": "raw-milk cheese from grass-fed herds"
+        },
+        {
+          "from": "Can’t find a block: bagged shreds named cheese. Starch coats them to keep them apart, so they melt poorly.",
+          "text": "Can’t find a block: bagged shreds named cheese.",
+          "quote": "Can’t find a block: bagged shreds named cheese."
+        },
+        {
+          "from": "No organic block: find a wrapper saying the milk is from cows not given rBST, or “rBST free”. US labels need not say.",
+          "text": "No organic block: a wrapper saying the milk is from cows not given rBST, or “rBST free”.",
+          "quote": "a wrapper saying the milk is from cows not given rBST, or “rBST free”"
+        }
+      ]
+    },
+    {
+      "id": "cheese_real_vs_processed",
+      "field": "buying_tips",
+      "remove": [
+        "Skip “cheese food” and “cheese product” wording, and cheese made from homogenized milk.",
+        "Pick smoked cheese made over real smoke, not liquid smoke or smoke flavoring.",
+        "‘Parmesan’ is a generic word in the US. ‘Parmigiano-Reggiano’ is a protected one with a stamped rind.",
+        "Keep hard-cheese rinds. They belong in a pot of beans or soup.",
+        "Milk for cheese can come from cows given rBST, a synthetic growth hormone. Certified organic rules exclude it."
+      ]
+    },
+    {
+      "id": "cheese_real_vs_processed",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Buy the block; bagged shreds carry starch, cellulose and natamycin.",
+          "text": "The block, not bagged shreds.",
+          "quote": "Buy the block"
+        }
+      ]
+    },
+    {
+      "id": "cheese_real_vs_processed",
+      "field": "pick_steps",
+      "remove": [
+        "Read the front name: ‘cheese product’, ‘cheese food’ or ‘process’ means emulsifiers.",
+        "Check for 100% grass-fed with AGA: the cows ate grass and hay, never grain."
+      ]
+    },
+    {
+      "id": "coffee_beans",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Pick a roaster that states it tests for mold.",
+          "text": "A roaster that states it tests for mold.",
+          "quote": "a roaster that states it tests for mold"
+        },
+        {
+          "from": "Can’t find a mold-tested roaster: pick organic whole beans in a sealed bag.",
+          "text": "Can’t find a mold-tested roaster: organic whole beans in a sealed bag.",
+          "quote": "organic whole beans in a sealed bag"
+        },
+        {
+          "from": "Decaf: pick Swiss Water or another water-only process.",
+          "text": "Decaf: Swiss Water or another water-only process.",
+          "quote": "Swiss Water or another water-only process"
+        }
+      ]
+    },
+    {
+      "id": "coffee_beans",
+      "field": "buying_tips",
+      "remove": [
+        "Keep the sealed bag away from heat; heat changes the beans.",
+        "Coffee beans can carry mold from hot, humid growing and storage.",
+        "Bird Friendly farms are 100% organic certified and meet habitat standards for tree cover.",
+        "Look for one origin, with the farm or cooperative named."
+      ]
+    },
+    {
+      "id": "coffee_beans",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Pick whole beans over preground coffee.",
+          "text": "Whole beans over preground coffee.",
+          "quote": "whole beans over preground coffee"
+        },
+        {
+          "from": "Pick a sealed bag with a one-way degassing valve.",
+          "text": "A sealed bag with a one-way degassing valve.",
+          "quote": "a sealed bag with a one-way degassing valve"
+        }
+      ]
+    },
+    {
+      "id": "crab",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Buy unpackaged cooked crab only from a case kept apart from raw seafood.",
+          "text": "Unpackaged cooked crab from a case kept apart from raw seafood.",
+          "quote": "a case kept apart from raw seafood"
+        }
+      ]
+    },
+    {
+      "id": "dairy_case",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Pick the type first: milk, yogurt, cheese, butter, cream or plant drink; each has a card.",
+          "text": "Raw from a farm, then whole and non-homogenized with no added vitamins.",
+          "quote": "whole and non-homogenized with no added vitamins"
+        },
+        {
+          "from": "Read the milk label for added vitamins A and D. Plain milk without them ranks higher.",
+          "text": "Organic first, then a label stating the cows got no rBST.",
+          "quote": "a label stating the cows got no rBST"
+        }
+      ]
+    },
+    {
+      "id": "dairy_case",
+      "field": "buying_tips",
+      "remove": [
+        "Raw from a farm tops each type. Across the case, whole and non-homogenized with no added vitamins comes next.",
+        "Organic leads; next comes a label stating the cows got no rBST, the synthetic growth hormone. Labels with neither rank last.",
+        "Organic rules bar rBST, and US labels do not have to say it was used.",
+        "Read a filtered milk panel for its protein and sugar lines.",
+        "The carton shows added vitamins, pasture and filtering."
+      ]
+    },
+    {
+      "id": "dairy_case",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Check the milk label for vitamins A and D; they are optional.",
+          "text": "No added vitamins A and D on the milk label.",
+          "quote": "vitamins A and D"
+        }
+      ]
+    },
+    {
+      "id": "deli_salads",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read the dressing: olive oil, or mayonnaise made with it. Ask the counter for the list.",
+          "text": "Olive oil dressing, or mayonnaise made with it.",
+          "quote": "olive oil, or mayonnaise made with it"
+        }
+      ]
+    },
+    {
+      "id": "farmed_fish_by_species",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Pick farmed mussels, oysters and clams; they filter their food from the water.",
+          "text": "Farmed mussels, oysters and clams.",
+          "quote": "farmed mussels, oysters and clams"
+        },
+        {
+          "from": "For salmon and shrimp, ask the counter for the country, and choose wild where it is stocked.",
+          "text": "For salmon and shrimp, wild where it is stocked.",
+          "quote": "wild where it is stocked"
+        }
+      ]
+    },
+    {
+      "id": "farmed_fish_by_species",
+      "field": "buying_tips",
+      "remove": [
+        "Mussels, oysters and clams are farmed almost everywhere and need no feed.",
+        "Country-of-origin is required on unprocessed seafood. Read it.",
+        "‘Farmed’ alone is not a verdict. The species and the operation are the question."
+      ]
+    },
+    {
+      "id": "farmed_fish_by_species",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Check the species; farmed mussels, oysters and clams need no feed.",
+          "text": "The species, named on the label.",
+          "quote": "Check the species"
+        }
+      ]
+    },
+    {
+      "id": "farmed_fish_by_species",
+      "field": "pick_steps",
+      "remove": [
+        "Pick farmed trout, arctic char or barramundi."
+      ]
+    },
+    {
+      "id": "frozen",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read the list: the fruit or vegetable alone, no sauce, ascorbic acid or citric acid.",
+          "text": "The fruit or vegetable alone on the list, no sauce, ascorbic acid or citric acid.",
+          "quote": "the fruit or vegetable alone, no sauce, ascorbic acid or citric acid"
+        }
+      ]
+    },
+    {
+      "id": "frozen",
+      "field": "buying_tips",
+      "remove": [
+        "Keep the home freezer at 0°F, 5°F at most. Label, date and use the oldest first."
+      ]
+    },
+    {
+      "id": "frozen",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Shake the bag: pieces should move freely, not sit in one block.",
+          "text": "Pieces that move freely in the bag.",
+          "quote": "pieces should move freely"
+        }
+      ]
+    },
+    {
+      "id": "frozen_vs_fresh_produce",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read the bag: just the fruit or vegetable, with no sauce, syrup or added sugar.",
+          "text": "Just the fruit or vegetable on the bag, with no sauce, syrup or added sugar.",
+          "quote": "just the fruit or vegetable, with no sauce, syrup or added sugar"
+        },
+        {
+          "from": "Check that the pieces move loose in the bag, not frozen into one block.",
+          "text": "Pieces loose in the bag, not frozen into one block.",
+          "quote": "not frozen into one block"
+        },
+        {
+          "from": "Pick fresh in season; it reaches the shelf riper than produce shipped across the country.",
+          "text": "Fresh in season.",
+          "quote": "fresh in season"
+        },
+        {
+          "from": "Pick organic frozen in any season, with one ingredient on the bag.",
+          "text": "Organic frozen in any season, with one ingredient on the bag.",
+          "quote": "organic frozen in any season, with one ingredient on the bag"
+        },
+        {
+          "from": "Pick broccoli, spinach or kale and green beans; they are the frozen staples worth keeping.",
+          "text": "Broccoli, spinach or kale and green beans, the frozen staples.",
+          "quote": "broccoli, spinach or kale and green beans"
+        }
+      ]
+    },
+    {
+      "id": "frozen_vs_fresh_produce",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Buy fresh in season from a farm stand or garden when it is there.",
+          "text": "Fresh in season from a farm stand or garden.",
+          "quote": "fresh in season from a farm stand or garden"
+        }
+      ]
+    },
+    {
+      "id": "frozen_vs_fresh_produce",
+      "field": "pick_steps",
+      "remove": [
+        "Any time of year, take organic frozen listing only the vegetable or fruit."
+      ]
+    },
+    {
+      "id": "grains_beyond_rice",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read the list for one grain alone, and look for “hulled” over “pearled”.",
+          "text": "One grain alone on the list, “hulled” over “pearled”.",
+          "quote": "“hulled” over “pearled”"
+        },
+        {
+          "from": "Pick buckwheat, millet, sorghum or quinoa for no gluten; barley, farro and bulgur have it.",
+          "text": "Buckwheat, millet, sorghum or quinoa for no gluten.",
+          "quote": "buckwheat, millet, sorghum or quinoa for no gluten"
+        }
+      ]
+    },
+    {
+      "id": "grains_beyond_rice",
+      "field": "buying_tips",
+      "remove": [
+        "Rotate in farro, millet or sorghum so rice isn’t every meal.",
+        "Pearled grains have some or all of the bran polished off; hulled loses only the hull."
+      ]
+    },
+    {
+      "id": "grains_beyond_rice",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Skip bulgur and quick-cooking grain packs.",
+          "text": "No bulgur or quick-cooking grain packs.",
+          "quote": "bulgur and quick-cooking grain packs"
+        }
+      ]
+    },
+    {
+      "id": "grains_beyond_rice",
+      "field": "pick_steps",
+      "remove": [
+        "Read the bag for “hulled” or “whole” and skip “pearled”.",
+        "Pick buckwheat, millet or sorghum when avoiding gluten."
+      ]
+    },
+    {
+      "id": "honey_adulteration",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read the list: honey and nothing else, plus the producer, origin and lot code.",
+          "text": "Honey and nothing else on the list, plus the producer, origin and lot code.",
+          "quote": "honey and nothing else, plus the producer, origin and lot code"
+        },
+        {
+          "from": "Look for “raw” and “unfiltered”, with the pollen left in; it looks cloudy, not clear.",
+          "text": "“Raw” and “unfiltered”, with the pollen left in: cloudy, not clear.",
+          "quote": "with the pollen left in"
+        }
+      ]
+    },
+    {
+      "id": "honey_adulteration",
+      "field": "buying_tips",
+      "remove": [
+        "Some commercial honey is blended, with corn syrup added.",
+        "Ask the seller whether it was heated or filtered. Crystallized honey is normal.",
+        "It’s still a sweetener. Use it with intention.",
+        "A single named origin and a lot code let a jar be traced back toward the harvest."
+      ]
+    },
+    {
+      "id": "honey_adulteration",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Pick a jar with the USDA Organic seal when one is shelved.",
+          "text": "A jar with the USDA Organic seal, when one is shelved.",
+          "quote": "a jar with the USDA Organic seal"
+        }
+      ]
+    },
+    {
+      "id": "honey_adulteration",
+      "field": "pick_steps",
+      "remove": [
+        "Read the list for one ingredient: honey.",
+        "“raw” and “unfiltered” on the label."
+      ]
+    },
+    {
+      "id": "jam",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read the list: fruit first, honey or another natural sweetener, no citric acid.",
+          "text": "Fruit first on the list, honey or another natural sweetener, no citric acid.",
+          "quote": "fruit first, honey or another natural sweetener, no citric acid"
+        },
+        {
+          "from": "Read the name for ‘Jam’ or ‘Preserves’ with the fruit named.",
+          "text": "‘Jam’ or ‘Preserves’ in the name, with the fruit named.",
+          "quote": "‘Jam’ or ‘Preserves’ with the fruit named"
+        },
+        {
+          "from": "At farmers markets, home-kitchen jam labels name the maker and address.",
+          "text": "At farmers markets, a home-kitchen label naming the maker and address.",
+          "quote": "home-kitchen jam labels name the maker and address"
+        }
+      ]
+    },
+    {
+      "id": "jam",
+      "field": "buying_tips",
+      "remove": [
+        "Skip jam sweetened with white sugar or corn syrup.",
+        "Preserves hold small whole fruits or even pieces in a thick syrup.",
+        "In a mixed-fruit jam, the fruits are listed most first.",
+        "Jam and preserves start from the fruit itself; jelly is strained juice."
+      ]
+    },
+    {
+      "id": "jam",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Pick preserves for small whole fruits or uniform pieces in thick syrup.",
+          "text": "Preserves: small whole fruits or uniform pieces in thick syrup.",
+          "quote": "small whole fruits or uniform pieces in thick syrup"
+        }
+      ]
+    },
+    {
+      "id": "label_artificial_color",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Skip any list that says ‘artificial color’ or ‘color added’.",
+          "text": "The version with no dye at all.",
+          "quote": "the version with no dye at all"
+        },
+        {
+          "from": "Can’t find it: pick one colored with a named food.",
+          "text": "Can’t find it: one colored with a named food.",
+          "quote": "one colored with a named food"
+        },
+        {
+          "from": "Read dyes by name and number: ‘Red 40’ is always printed as ‘Red 40’.",
+          "text": "No ‘artificial color’ or ‘color added’ on the list.",
+          "quote": "‘artificial color’ or ‘color added’"
+        }
+      ]
+    },
+    {
+      "id": "label_artificial_color",
+      "field": "buying_tips",
+      "remove": [
+        "Pick the version with no dye at all.",
+        "‘Artificial color’ can cover titanium dioxide, a white coloring, without naming it.",
+        "‘Colored with titanium dioxide’ names that additive by choice, not because a rule requires it.",
+        "Color sits low on the list, because the amounts used are small."
+      ]
+    },
+    {
+      "id": "label_artificial_color",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Read “artificial color” or “color added” as a color that need not be named.",
+          "text": "“Artificial color” or “color added”: a color that need not be named.",
+          "quote": "a color that need not be named"
+        }
+      ]
+    },
+    {
+      "id": "label_artificial_color",
+      "field": "pick_steps",
+      "remove": [
+        "Certified dyes like “Red 40” appear by name and number and cannot be pooled."
+      ]
+    },
+    {
+      "id": "label_ingredient_order",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read the first three ingredients; the list runs heaviest first, so they are most of it.",
+          "text": "The first three ingredients: the list runs heaviest first.",
+          "quote": "the list runs heaviest first"
+        },
+        {
+          "from": "Check the added-sugars line; it totals every sweetener, whatever each one was named.",
+          "text": "The added-sugars line, which totals every sweetener.",
+          "quote": "it totals every sweetener"
+        },
+        {
+          "from": "Read for split sugars: syrups, concentrates, dextrose and honey listed separately.",
+          "text": "Split sugars: syrups, concentrates, dextrose and honey listed separately.",
+          "quote": "syrups, concentrates, dextrose and honey listed separately"
+        }
+      ]
+    },
+    {
+      "id": "label_ingredient_order",
+      "field": "buying_tips",
+      "remove": [
+        "Everything after “contains 2% or less of” is a trace amount, in any order.",
+        "A first ingredient of ‘enriched wheat flour’ is not ‘whole wheat flour’."
+      ]
+    },
+    {
+      "id": "label_ingredient_order",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Check the first ingredient: “enriched wheat flour” and “whole wheat flour” are different foods.",
+          "text": "“Whole wheat flour” as the first ingredient, not “enriched wheat flour”.",
+          "quote": "“enriched wheat flour”"
+        }
+      ]
+    },
+    {
+      "id": "label_no_artificial_flavors",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read the list and pick the one with no flavors line at all.",
+          "text": "No flavors line at all on the list.",
+          "quote": "no flavors line at all"
+        },
+        {
+          "from": "Pick a short list of foods you recognize over any flavor claim on the front.",
+          "text": "A short list of foods you recognize, over any flavor claim on the front.",
+          "quote": "a short list of foods you recognize"
+        }
+      ]
+    },
+    {
+      "id": "label_no_artificial_flavors",
+      "field": "buying_tips",
+      "remove": [
+        "“No artificial flavors” still allows natural flavoring.",
+        "Natural flavors are still engineered and can hide dozens of substances in two words.",
+        "Natural and artificial flavors are both made in a lab; the legal difference is the starting material.",
+        "“Natural flavors” can carry solvents and carriers that need no separate declaration."
+      ]
+    },
+    {
+      "id": "label_no_artificial_flavors",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Between packs, pick the shorter ingredient list over the front flavor claim.",
+          "text": "Between packs, the shorter ingredient list.",
+          "quote": "the shorter ingredient list"
+        }
+      ]
+    },
+    {
+      "id": "label_no_artificial_flavors",
+      "field": "pick_steps",
+      "remove": [
+        "Find “natural flavors” on the list: two words that can carry solvents and carriers."
+      ]
+    },
+    {
+      "id": "label_sugar_free_substitutes",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Pick “unsweetened”; it generally means nothing sweet was added at all.",
+          "text": "“Unsweetened” on the pack.",
+          "quote": "“unsweetened”"
+        },
+        {
+          "from": "Check “stevia” and “monk fruit” blends; erythritol is often most of the blend.",
+          "text": "No erythritol in a “stevia” or “monk fruit” blend.",
+          "quote": "erythritol is often most of the blend"
+        }
+      ]
+    },
+    {
+      "id": "label_sugar_free_substitutes",
+      "field": "buying_tips",
+      "remove": [
+        "Read the list for the substitute: erythritol, maltitol, xylitol, stevia, monk fruit, sucralose, aspartame.",
+        "Sugar-free means under half a gram of sugar; something else does the sweetening.",
+        "‘Naturally sweetened’ has no definition. Honey, syrup and juice concentrate all qualify.",
+        "Sugar alcohols are totalled on the panel under their own line."
+      ]
+    },
+    {
+      "id": "label_sugar_free_substitutes",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Read “sugar-free” as under half a gram per serving, not as unsweetened.",
+          "text": "“Sugar-free”: under half a gram per serving, not unsweetened.",
+          "quote": "under half a gram per serving"
+        }
+      ]
+    },
+    {
+      "id": "lobster",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Can’t find live: pick hard-frozen tails with clear white meat.",
+          "text": "A live lobster whose claws and legs move.",
+          "quote": "a live lobster whose claws and legs move"
+        },
+        {
+          "from": "Read frozen tails for sodium tripolyphosphate, a phosphate additive, and for the country they came from.",
+          "text": "Can’t find live: hard-frozen tails with clear white meat.",
+          "quote": "hard-frozen tails with clear white meat"
+        },
+        {
+          "from": "Skip frozen packs that are torn or show ice crystals.",
+          "text": "Frozen packs with no tears or ice crystals.",
+          "quote": "frozen packs"
+        }
+      ]
+    },
+    {
+      "id": "lobster",
+      "field": "buying_tips",
+      "remove": [
+        "Eat the green tomalley inside when the water was clean; it holds the fat-soluble vitamins."
+      ]
+    },
+    {
+      "id": "molasses_whole_cane_sweeteners",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read the list for one ingredient: molasses, or dehydrated whole cane juice.",
+          "text": "One ingredient: molasses, or dehydrated whole cane juice.",
+          "quote": "one ingredient: molasses, or dehydrated whole cane juice"
+        },
+        {
+          "from": "Skip white sugar, corn syrup and brown rice syrup.",
+          "text": "No white sugar, corn syrup or brown rice syrup.",
+          "quote": "white sugar, corn syrup and brown rice syrup"
+        }
+      ]
+    },
+    {
+      "id": "molasses_whole_cane_sweeteners",
+      "field": "buying_tips",
+      "remove": [
+        "Molasses and dried cane juice keep more of the cane than white sugar does.",
+        "Use even natural sweeteners in small amounts, with a meal."
+      ]
+    },
+    {
+      "id": "molasses_whole_cane_sweeteners",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Pick a small jar; a little goes a long way.",
+          "text": "A small jar; a little goes a long way.",
+          "quote": "a little goes a long way"
+        }
+      ]
+    },
+    {
+      "id": "molasses_whole_cane_sweeteners",
+      "field": "pick_steps",
+      "remove": [
+        "Pick molasses or dehydrated cane juice with nothing added."
+      ]
+    },
+    {
+      "id": "nuts_raw_vs_roasted",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Skip nuts with sugar or coatings.",
+          "text": "Nuts with no sugar or coatings.",
+          "quote": "sugar or coatings"
+        }
+      ]
+    },
+    {
+      "id": "nuts_raw_vs_roasted",
+      "field": "buying_tips",
+      "remove": [
+        "Read the list, and skip roasted nuts cooked in cottonseed or soybean oil.",
+        "Read the ingredient list on bulk-bin nuts as well as jars."
+      ]
+    },
+    {
+      "id": "nuts_raw_vs_roasted",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Skip roasted nuts whose ingredient line lists cottonseed or soybean oil.",
+          "text": "No cottonseed or soybean oil on the ingredient line.",
+          "quote": "cottonseed or soybean oil"
+        }
+      ]
+    },
+    {
+      "id": "organ_meats",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Pick liver or heart with the farm on the label, or ask the counter which farm.",
+          "text": "Liver or heart with the farm on the label.",
+          "quote": "liver or heart with the farm on the label"
+        },
+        {
+          "from": "Ask the counter or a farmer which organs they offer.",
+          "text": "An AGA seal on beef liver and heart; organic as a bonus.",
+          "quote": "an AGA seal on beef liver and heart"
+        },
+        {
+          "from": "No organs on offer: pick a beef blend with liver and heart ground in.",
+          "text": "No organs on offer: a beef blend with liver and heart ground in.",
+          "quote": "a beef blend with liver and heart ground in"
+        }
+      ]
+    },
+    {
+      "id": "organ_meats",
+      "field": "buying_tips",
+      "remove": [
+        "Match the organ to the method: braise heart and tongue."
+      ]
+    },
+    {
+      "id": "organ_meats",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Ask the meat counter which organs it stocks, fresh or frozen.",
+          "text": "Organs in stock at the meat counter, fresh or frozen.",
+          "quote": "fresh or frozen"
+        }
+      ]
+    },
+    {
+      "id": "organ_meats",
+      "field": "pick_steps",
+      "remove": [
+        "Look for an AGA seal on beef liver and heart; organic is a bonus.",
+        "Match each organ to its method; heart and tongue go in liquid."
+      ]
+    },
+    {
+      "id": "pesto",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read the oil: extra virgin olive oil and no other.",
+          "text": "Extra virgin olive oil, and no other oil.",
+          "quote": "extra virgin olive oil and no other"
+        },
+        {
+          "from": "Skip sunflower, canola and soybean oil.",
+          "text": "No sunflower, canola or soybean oil.",
+          "quote": "sunflower, canola and soybean oil"
+        }
+      ]
+    },
+    {
+      "id": "pesto",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Pick pesto with extra virgin olive oil as the only oil.",
+          "text": "Pesto Genovese: olive oil, pine nuts, parmesan and basil.",
+          "quote": "olive oil, pine nuts, parmesan and basil"
+        }
+      ]
+    },
+    {
+      "id": "poultry_duck",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Ask the counter whether the duck was pasture-raised and fed without soy.",
+          "text": "Pasture-raised duck fed without soy.",
+          "quote": "fed without soy"
+        }
+      ]
+    },
+    {
+      "id": "poultry_duck",
+      "field": "buying_tips",
+      "remove": [
+        "USDA Organic on the duck is a bonus, never in place of pasture."
+      ]
+    },
+    {
+      "id": "poultry_duck",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Look for pasture-raised on the duck; USDA Organic is a bonus.",
+          "text": "USDA Organic on the duck, as a bonus.",
+          "quote": "USDA Organic is a bonus"
+        }
+      ]
+    },
+    {
+      "id": "produce_potatoes",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Pick organic: the skin gets eaten, and conventional potatoes carry a sprout inhibitor.",
+          "text": "Organic potatoes.",
+          "quote": "organic potatoes"
+        },
+        {
+          "from": "Look for a Real Organic or Certified Naturally Grown logo; each goes past plain organic.",
+          "text": "A Real Organic or Certified Naturally Grown logo, past plain organic.",
+          "quote": "a Real Organic or Certified Naturally Grown logo"
+        },
+        {
+          "from": "No organic: sweet potatoes are not treated with chlorpropham, the sprout inhibitor.",
+          "text": "No organic: sweet potatoes, not treated with chlorpropham.",
+          "quote": "sweet potatoes are not treated with chlorpropham"
+        }
+      ]
+    },
+    {
+      "id": "produce_potatoes",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Choose organic potatoes.",
+          "text": "No green or sprouting potatoes.",
+          "quote": "Green or sprouting potatoes"
+        }
+      ]
+    },
+    {
+      "id": "produce_potatoes",
+      "field": "pick_steps",
+      "remove": [
+        "No organic, choose sweet potatoes instead."
+      ]
+    },
+    {
+      "id": "produce_tropical_fruit",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Pick whole fruit with no bruises or torn skin, firm but not rock hard.",
+          "text": "Whole fruit with no bruises or torn skin, firm but not rock hard.",
+          "quote": "whole fruit with no bruises or torn skin, firm but not rock hard"
+        },
+        {
+          "from": "Read the sticker for where it grew.",
+          "text": "Where it grew, on the sticker.",
+          "quote": "where it grew"
+        }
+      ]
+    },
+    {
+      "id": "produce_tropical_fruit",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Choose whole fruit over precut.",
+          "text": "Whole fruit over precut.",
+          "quote": "whole fruit over precut"
+        }
+      ]
+    },
+    {
+      "id": "produce_tropical_fruit",
+      "field": "pick_steps",
+      "remove": [
+        "Read the sticker for the country of origin."
+      ]
+    },
+    {
+      "id": "raw_milk",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Pick a farm that publishes its herd test results; the farmer makes the difference.",
+          "text": "A farm that publishes its herd test results.",
+          "quote": "a farm that publishes its herd test results"
+        }
+      ]
+    },
+    {
+      "id": "raw_milk",
+      "field": "buying_tips",
+      "remove": [
+        "Ask the farmer about pasture, winter hay, sprays on the fields and how fast the milk is chilled.",
+        "Raw cultured dairy from the same farm: kefir, clabber, aged raw cheese.",
+        "Buy an extra bottle and let one sit out a day or two. Live raw milk clabbers into something worth eating; pasteurized milk only spoils."
+      ]
+    },
+    {
+      "id": "raw_milk",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Pick non-homogenized, cream-top milk with an AGA Grassfed seal.",
+          "text": "Non-homogenized, cream-top milk with an AGA Grassfed seal.",
+          "quote": "non-homogenized, cream-top milk with an AGA Grassfed seal"
+        }
+      ]
+    },
+    {
+      "id": "raw_milk",
+      "field": "pick_steps",
+      "remove": [
+        "“vat pasteurized” or “low-temperature” on the bottle.",
+        "Ask staff whether the store sells raw milk, where state law allows."
+      ]
+    },
+    {
+      "id": "salmon_wild_vs_farmed",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Pick sockeye or coho; they are almost always wild, and their deep color comes from diet, not dye.",
+          "text": "Sockeye or coho, almost always wild.",
+          "quote": "almost always wild"
+        },
+        {
+          "from": "Pick frozen wild Alaskan as gladly as fresh: same fish, frozen at its best. “Fresh” at the counter is often thawed, so ask.",
+          "text": "Frozen wild Alaskan, as gladly as fresh.",
+          "quote": "frozen wild Alaskan as gladly as fresh"
+        },
+        {
+          "from": "Can’t find it: canned wild salmon. For farmed salmon, read the country of origin.",
+          "text": "Can’t find it: canned wild salmon.",
+          "quote": "Can’t find it: canned wild salmon."
+        }
+      ]
+    },
+    {
+      "id": "salmon_wild_vs_farmed",
+      "field": "buying_tips",
+      "remove": [
+        "Farmed salmon eats plant protein and vegetable oil, not the krill and small fish wild salmon eat.",
+        "MSC fisheries are assessed by accredited independent certifiers, and the blue label goes on the catch."
+      ]
+    },
+    {
+      "id": "salmon_wild_vs_farmed",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Read the species: Atlantic is farmed; sockeye and coho are almost always wild.",
+          "text": "Atlantic on the label means farmed.",
+          "quote": "Atlantic is farmed"
+        }
+      ]
+    },
+    {
+      "id": "salmon_wild_vs_farmed",
+      "field": "pick_steps",
+      "remove": [
+        "Check the freezer case: frozen wild Alaskan is often fresher than ‘fresh’ farmed.",
+        "Pick wild salmon; choose frozen wild Alaskan before fresh farmed."
+      ]
+    },
+    {
+      "id": "scallops",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read the pack or sign for ‘dry’ or ‘dry-packed’, with no phosphate or water listed.",
+          "text": "Dayboat scallops, first when sold.",
+          "quote": "Dayboat scallops"
+        },
+        {
+          "from": "Ask the counter whether loose scallops are dry.",
+          "text": "‘Dry’ or ‘dry-packed’ on the pack or sign.",
+          "quote": "‘dry’ or ‘dry-packed’"
+        },
+        {
+          "from": "Can’t find dry ones at the counter: pick frozen dry-packed scallops.",
+          "text": "Can’t find dry ones at the counter: frozen dry-packed scallops.",
+          "quote": "frozen dry-packed scallops"
+        }
+      ]
+    },
+    {
+      "id": "scallops",
+      "field": "buying_tips",
+      "remove": [
+        "Skip packs sitting in extra liquid, and smell for a sweetish odor.",
+        "Dayboat scallops spend under 24 hours at sea with no ice touching them; pick them first when sold.",
+        "Wet scallops are treated with phosphate and water, so they hold extra water."
+      ]
+    },
+    {
+      "id": "scallops",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "On a pack, read the ingredients: phosphate and water means wet.",
+          "text": "No phosphate or water in the ingredients of a pack.",
+          "quote": "phosphate and water means wet"
+        }
+      ]
+    },
+    {
+      "id": "seafood_trout",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Look for “wild-caught” and where it was caught; ask the counter if it is not labeled.",
+          "text": "“Wild-caught” and where it was caught.",
+          "quote": "“wild-caught” and where it was caught"
+        },
+        {
+          "from": "Can’t find it: US farm-raised rainbow trout is next. It is rated green.",
+          "text": "Can’t find it: US farm-raised rainbow trout.",
+          "quote": "US farm-raised rainbow trout"
+        },
+        {
+          "from": "Ask the country of origin on any farmed trout.",
+          "text": "The country of origin on any farmed trout.",
+          "quote": "the country of origin on any farmed trout"
+        }
+      ]
+    },
+    {
+      "id": "seafood_trout",
+      "field": "buying_tips",
+      "remove": [
+        "Steelhead is ocean-going rainbow trout; ask whether it is wild or farmed."
+      ]
+    },
+    {
+      "id": "seafood_trout",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Ask the counter whether wild trout is in stock.",
+          "text": "Wild trout in stock at the counter.",
+          "quote": "wild trout is in stock"
+        }
+      ]
+    },
+    {
+      "id": "seafood_trout",
+      "field": "pick_steps",
+      "remove": [
+        "Without wild, pick US farmed rainbow trout."
+      ]
+    },
+    {
+      "id": "snack_bars",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Look for a bar of only nuts, seeds and dates; the first ingredient is what it holds most.",
+          "text": "Whole nuts, fruit, jerky or cheese before any bar.",
+          "quote": "whole nuts, fruit, jerky or cheese before any bar"
+        },
+        {
+          "from": "Pick whole nuts, fruit, jerky or cheese before any bar.",
+          "text": "A bar of only nuts, seeds and dates.",
+          "quote": "a bar of only nuts, seeds and dates"
+        },
+        {
+          "from": "Skip granola and energy bars, bars bound with syrup and bars made with soy.",
+          "text": "No granola or energy bars, bars bound with syrup or bars made with soy.",
+          "quote": "bars bound with syrup"
+        },
+        {
+          "from": "Skip dyes: Red 40, Yellow 5, Yellow 6 and Blue 1. A “Lake” dye still counts.",
+          "text": "No dyes: Red 40, Yellow 5, Yellow 6 and Blue 1, “Lake” dyes too.",
+          "quote": "Red 40, Yellow 5, Yellow 6 and Blue 1"
+        }
+      ]
+    },
+    {
+      "id": "snack_bars",
+      "field": "buying_tips",
+      "remove": [
+        "Read “zero added sugar” bars for sucralose, aspartame or acesulfame potassium.",
+        "“No added sugar” can still mean maltitol, erythritol or another sugar alcohol on the list."
+      ]
+    },
+    {
+      "id": "snack_bars",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Check that oats or another whole grain lead the list, not enriched refined grain.",
+          "text": "Oats or another whole grain leading the list, not enriched refined grain.",
+          "quote": "oats or another whole grain lead the list"
+        },
+        {
+          "from": "Read the list for sugar, high fructose corn syrup and hydrogenated oils.",
+          "text": "No sugar, high fructose corn syrup or hydrogenated oils on the list.",
+          "quote": "sugar, high fructose corn syrup and hydrogenated oils"
+        }
+      ]
+    },
+    {
+      "id": "specialty_flours",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Pick fresh-ground organic whole flour, or organic sprouted flour.",
+          "text": "Fresh-ground organic whole flour, or organic sprouted flour.",
+          "quote": "fresh-ground organic whole flour, or organic sprouted flour"
+        },
+        {
+          "from": "Check the fat line: about 2.5% for whole wheat flour, under 1% for white.",
+          "text": "The fat line: about 2.5% for whole wheat flour, under 1% for white.",
+          "quote": "about 2.5% for whole wheat flour, under 1% for white"
+        }
+      ]
+    },
+    {
+      "id": "specialty_flours",
+      "field": "buying_tips",
+      "remove": [
+        "Read almond flour as usually skinned; almond meal can be either.",
+        "Soak whole-grain flour overnight with a little acid before baking.",
+        "A stone mill can still sift the bran out, so ‘whole’ on the bag is what settles it."
+      ]
+    },
+    {
+      "id": "specialty_flours",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Read spelt and einkorn as wheat, so both contain gluten.",
+          "text": "‘Whole’ on the bag, whatever the mill.",
+          "quote": "‘whole’ on the bag is what settles it"
+        }
+      ]
+    },
+    {
+      "id": "sugars",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read the list: coconut sugar or maple sugar alone, nothing added, with ‘organic’.",
+          "text": "Coconut sugar or maple sugar alone, nothing added, with ‘organic’.",
+          "quote": "coconut sugar or maple sugar alone, nothing added, with ‘organic’"
+        },
+        {
+          "from": "Look for ‘pure maple sugar’; a maple-flavored product is not maple sugar.",
+          "text": "‘Pure maple sugar’, not a maple-flavored product.",
+          "quote": "‘pure maple sugar’"
+        },
+        {
+          "from": "Plain ‘sugar’ names no crop. Pick organic, which must come from non-GMO plants; Non-GMO Project Verified is next.",
+          "text": "On plain sugar, organic first, then Non-GMO Project Verified.",
+          "quote": "Non-GMO Project Verified is next"
+        }
+      ]
+    },
+    {
+      "id": "sugars",
+      "field": "buying_tips",
+      "remove": [
+        "Each stays closer to its plant than sugar crystallized from cane or beet juice."
+      ]
+    },
+    {
+      "id": "sugars",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Skip white sugar and fructose.",
+          "text": "No white sugar or fructose.",
+          "quote": "white sugar and fructose"
+        }
+      ]
+    },
+    {
+      "id": "trail_mix",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read the first few ingredients: nuts and dried fruit lead, with no candy, sugar or oil.",
+          "text": "Nuts and dried fruit leading the first few ingredients, with no candy, sugar or oil.",
+          "quote": "nuts and dried fruit lead, with no candy, sugar or oil"
+        },
+        {
+          "from": "Can’t find it: pick the mix with the shortest list beyond nuts and fruit.",
+          "text": "Can’t find it: the mix with the shortest list beyond nuts and fruit.",
+          "quote": "the mix with the shortest list beyond nuts and fruit"
+        }
+      ]
+    },
+    {
+      "id": "trail_mix",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Skip mixes listing sugar, added oil or chocolate pieces.",
+          "text": "No sugar, added oil or chocolate pieces on the list.",
+          "quote": "sugar, added oil or chocolate pieces"
+        }
+      ]
+    },
+    {
+      "id": "trail_mix",
+      "field": "pick_steps",
+      "remove": [
+        "Check that nuts and dried fruit lead the list.",
+        "Pick the mix with the shortest list beyond nuts and fruit."
+      ]
+    },
+    {
+      "id": "white_fish",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Can’t find fresh wild fish: pick wild cod or halibut by name, frozen at sea, in a sealed pack.",
+          "text": "Can’t find fresh wild fish: wild cod or halibut by name, frozen at sea, in a sealed pack.",
+          "quote": "wild cod or halibut by name, frozen at sea, in a sealed pack"
+        },
+        {
+          "from": "Skip fillets with dried, dark or discolored edges.",
+          "text": "Fillets with no dried, dark or discolored edges.",
+          "quote": "dried, dark or discolored edges"
+        }
+      ]
+    },
+    {
+      "id": "white_fish",
+      "field": "buying_tips",
+      "remove": [
+        "Ask the counter which kind the fillet is. A fillet is hard to identify by eye, so the name does that work."
+      ]
+    },
+    {
+      "id": "white_fish",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Ask the counter for the species; a fillet is hard to identify by eye.",
+          "text": "The species on the sign; a fillet is hard to identify by eye.",
+          "quote": "a fillet is hard to identify by eye"
+        }
+      ]
+    }
+  ]
+}

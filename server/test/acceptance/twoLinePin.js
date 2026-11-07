@@ -3655,6 +3655,7 @@ test('copy pass 2026-10-29: olive oil and produce live copy', () => {
 
 // Second-pass shelf markers 2026-10-29 (Devon: research adds markers, never strips one). Pins the LIVE
 // KB headline, first tip and do line on the cards docs/research/brand-labels/second-pass-proposals.md drafted.
+// v3-flat 2026-11-07: tip0 values follow the noun-phrase Look-for rewrite (v3-batch-*, v3-fixup); markers unchanged.
 const SECOND_PASS = {
   "chicken": {
     "decision": "Chicken that lived outside.",
@@ -3673,7 +3674,7 @@ const SECOND_PASS = {
   },
   "bacon": {
     "decision": "Bacon from pigs kept on pasture, smoked over real wood.",
-    "tip0": "Find “Pastured” or the Animal Welfare Approved mark.",
+    "tip0": "“Pastured” or the Animal Welfare Approved mark.",
     "do": "Check for “Pastured” and Animal Welfare Approved, with no liquid smoke on the list."
   },
   "beef_grassfed_vs_grainfed": {
@@ -3693,7 +3694,7 @@ const SECOND_PASS = {
   },
   "bison": {
     "decision": "100% grass-fed and grass-finished bison, ranch named, bison the only ingredient.",
-    "tip0": "Read for a label stating the bison ate only grass, with the ranch named.",
+    "tip0": "A label stating the bison ate only grass, with the ranch named.",
     "do": "Read the pack for bison alone and the AGA mark beside the cut."
   },
   "whole_vs_reduced_fat_milk": {
@@ -3713,12 +3714,12 @@ const SECOND_PASS = {
   },
   "yogurt_plain_vs_flavored": {
     "decision": "Plain whole-milk yogurt, 100% grass-fed, Certified Grassfed, cultures named.",
-    "tip0": "Read the tub for plain whole milk and named cultures, and nothing else.",
+    "tip0": "“100% grass-fed” plain whole-milk yogurt with the Certified Grassfed seal.",
     "do": "Read for milk and culture names; skip sugar, pectin or flavors."
   },
   "cheese_real_vs_processed": {
     "decision": "Grass-fed block cheese, Certified Grassfed: milk, salt, cultures and rennet.",
-    "tip0": "Read the block’s list: milk, salt, cultures, and enzymes or rennet.",
+    "tip0": "Milk, salt, cultures, and enzymes or rennet on the block’s list.",
     "do": "Read the printed name; skip cheese followed by food or product."
   },
   "raw_aged_cheese": {
@@ -3728,7 +3729,7 @@ const SECOND_PASS = {
   },
   "grassfed_butter": {
     "decision": "100% grass-fed butter, Certified Grassfed, creamery named: cream and salt only.",
-    "tip0": "Read the wrapper for “100% grass-fed”, the Certified Grassfed seal, and cream and salt.",
+    "tip0": "“100% grass-fed” and the Certified Grassfed seal on the wrapper, with cream and salt.",
     "do": "Read for cream and salt; skip any natural flavor entry."
   },
   "ghee": {
@@ -3748,7 +3749,7 @@ const SECOND_PASS = {
   },
   "shrimp_imported_vs_domestic": {
     "decision": "Wild US or Gulf shrimp, frozen raw; read the country.",
-    "tip0": "Read the bag for “wild” and the country; wild US shrimp is a managed fishery.",
+    "tip0": "“Wild” and the country on the bag; wild US shrimp is a managed fishery.",
     "do": "Read the bag for Gulf or US wild origin; check for shells."
   },
   "label_wild_vs_farm_raised": {
@@ -3758,7 +3759,7 @@ const SECOND_PASS = {
   },
   "honey_adulteration": {
     "decision": "Raw unfiltered honey, producer and origin named, honey the only ingredient.",
-    "tip0": "Read the list: honey and nothing else, plus the producer, origin and lot code.",
+    "tip0": "Honey and nothing else on the list, plus the producer, origin and lot code.",
     "do": "Look through the jar for cloudy honey, then a named origin and lot code."
   },
   "maple_syrup": {
@@ -3768,7 +3769,7 @@ const SECOND_PASS = {
   },
   "nut_butter_ingredients": {
     "decision": "Nut butter, Non-GMO Project Verified: nuts and salt, nothing else.",
-    "tip0": "Read the list: peanuts, and salt if you want it. Nothing else is needed.",
+    "tip0": "Peanuts, and salt if wanted; nothing else on the list.",
     "do": "Read the list for nuts and salt; skip sugar, palm or hydrogenated oils."
   },
   "coffee_beans": {
@@ -3783,7 +3784,7 @@ const SECOND_PASS = {
   },
   "sandwich_bread": {
     "decision": "Whole-grain sandwich bread, “whole” first on the list, sourdough or sprouted.",
-    "tip0": "Read the first ingredient for ‘whole’; a loaf called just ‘wheat’ may be white flour.",
+    "tip0": "‘Sourdough’ or ‘sprouted’ on the bag, plus organic.",
     "do": "Read the list’s top; skip enriched wheat flour, sugar or soybean oil."
   },
   "label_cold_pressed_expeller": {

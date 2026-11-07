@@ -1,0 +1,1255 @@
+{
+  "source": "v3-flat Look-for batch 0 (Devon 2026-11-07 rules): imperative-led buying_tips and pick_steps rewritten in place as noun phrases, quote = the card's own words; duplicate, trivia and handling lines removed; first line the single winner, at most 5 Look-for lines.",
+  "format": "apply.mjs rows: {id, field, remove:[exact]} or {id, field, replace:[{from, text, quote}]}; replace keeps list order; every quote is a verbatim substring of the same card before the run.",
+  "patches": [
+    {
+      "id": "almond_milk",
+      "field": "buying_tips",
+      "remove": [
+        "Pick unsweetened over sweetened, vanilla or chocolate.",
+        "Whole dairy that suits you comes first. Almond milk is for a shopper skipping dairy."
+      ]
+    },
+    {
+      "id": "almond_milk",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read Added Sugars on the panel; almond drinks vary, so the panel is the guide.",
+          "text": "Added Sugars on the panel, since almond drinks vary.",
+          "quote": "Added Sugars on the panel; almond drinks vary"
+        },
+        {
+          "from": "Skip carrageenan, a seaweed thickener that even some organic almond drinks use.",
+          "text": "A list with no carrageenan, a seaweed thickener even some organic almond drinks use.",
+          "quote": "carrageenan, a seaweed thickener that even some organic almond drinks use"
+        }
+      ]
+    },
+    {
+      "id": "almond_milk",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Skip cartons listing sunflower, safflower, canola or other oils.",
+          "text": "A carton with no sunflower, safflower, canola or other oils.",
+          "quote": "sunflower, safflower, canola or other oils"
+        }
+      ]
+    },
+    {
+      "id": "bbq_sauce_marinades",
+      "field": "buying_tips",
+      "remove": [
+        "Mustard is a traditional condiment with a short list."
+      ]
+    },
+    {
+      "id": "bbq_sauce_marinades",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read the sweetener: molasses, honey or maple. Many BBQ sauces use high fructose corn syrup.",
+          "text": "Molasses, honey or maple as the sweetener.",
+          "quote": "molasses, honey or maple"
+        }
+      ]
+    },
+    {
+      "id": "bbq_sauce_marinades",
+      "field": "pick_steps",
+      "remove": [
+        "Pick a sauce sweetened with molasses, honey or maple."
+      ]
+    },
+    {
+      "id": "bbq_sauce_marinades",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Pick the shortest fully named list.",
+          "text": "The shortest fully named list.",
+          "quote": "the shortest fully named list"
+        }
+      ]
+    },
+    {
+      "id": "bottled_water_buying",
+      "field": "buying_tips",
+      "remove": [
+        "Pick sparkling from a named spring the same way.",
+        "“Purified”, “distilled”, “deionized” and “reverse osmosis” are processes. The source is not on that label, and it does not have to be.",
+        "Spring water comes from a place; purified is a process, often run on city water."
+      ]
+    },
+    {
+      "id": "bottled_water_buying",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read the label for a spring with a name and a town behind it.",
+          "text": "A spring with a name and a town on the label.",
+          "quote": "a spring with a name and a town"
+        },
+        {
+          "from": "Pick glass where the water is sold in glass. It is inert; it adds nothing and takes nothing.",
+          "text": "Glass, where the water is sold in glass.",
+          "quote": "glass where the water is sold in glass"
+        },
+        {
+          "from": "Can’t find spring: mineral water, spring water with the dissolved solids to prove its ground. Nothing may be added.",
+          "text": "Can’t find spring: mineral water, spring water with the dissolved solids to prove its ground.",
+          "quote": "Can’t find spring: mineral water, spring water with the dissolved solids to prove its ground"
+        }
+      ]
+    },
+    {
+      "id": "bottled_water_buying",
+      "field": "pick_steps",
+      "remove": [
+        "Pick water from a named spring and town, sparkling or not.",
+        "Pick glass where offered; “BPA-free” on PET is true and empty."
+      ]
+    },
+    {
+      "id": "bottled_water_buying",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Skip “distilled” or “deionized” water in favor of a named spring.",
+          "text": "Spring water over “distilled” or “deionized” water.",
+          "quote": "“distilled” or “deionized” water in favor of a named spring"
+        }
+      ]
+    },
+    {
+      "id": "buns_rolls",
+      "field": "buying_tips",
+      "remove": [
+        "‘sourdough’ or ‘sprouted’, with organic whole-grain flour first."
+      ]
+    },
+    {
+      "id": "buns_rolls",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read the name for ‘whole wheat’: whole wheat buns use no white flour; enriched buns do.",
+          "text": "‘Sourdough’ or ‘sprouted’ buns, organic whole-grain flour first.",
+          "quote": "‘sourdough’ or ‘sprouted’, with organic whole-grain flour first"
+        },
+        {
+          "from": "Skip a list with sugar or soybean oil after the whole wheat flour.",
+          "text": "A list with no sugar or soybean oil after the whole wheat flour.",
+          "quote": "sugar or soybean oil after the whole wheat flour"
+        },
+        {
+          "from": "Skip a list with added gluten, soy or ascorbic acid.",
+          "text": "A list free of added gluten, soy or ascorbic acid.",
+          "quote": "added gluten, soy or ascorbic acid"
+        }
+      ]
+    },
+    {
+      "id": "buns_rolls",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Skip bags named “enriched buns”.",
+          "text": "Whole wheat buns over bags named “enriched buns”.",
+          "quote": "bags named “enriched buns”"
+        }
+      ]
+    },
+    {
+      "id": "canned_tuna",
+      "field": "buying_tips",
+      "remove": [
+        "Fresh or frozen tuna comes with no can lining.",
+        "Small, young tuna carry less mercury than big ones; skipjack is the small one."
+      ]
+    },
+    {
+      "id": "canned_tuna",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read the can for how it was caught: pole, troll or school-caught.",
+          "text": "Pole, troll or school-caught printed on the can.",
+          "quote": "pole, troll or school-caught"
+        },
+        {
+          "from": "No catch method on any can: pick skipjack, the small tuna.",
+          "text": "Can’t find a catch method: skipjack, the small tuna.",
+          "quote": "skipjack, the small tuna"
+        },
+        {
+          "from": "Pick a can marked BPA-free; many cans use a lining made with BPA, a plastic chemical.",
+          "text": "A can marked BPA-free.",
+          "quote": "a can marked BPA-free"
+        },
+        {
+          "from": "Pick tuna in olive oil, water or its own juice; skip soybean or vegetable oil.",
+          "text": "Tuna in olive oil, water or its own juice.",
+          "quote": "tuna in olive oil, water or its own juice"
+        }
+      ]
+    },
+    {
+      "id": "canned_tuna",
+      "field": "pick_steps",
+      "remove": [
+        "Pass over ‘white’: it means albacore, in Good Choices rather than Best.",
+        "Read oil or water separately; packing does not change the mercury category."
+      ]
+    },
+    {
+      "id": "canned_tuna",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Read the front for ‘light’ or skipjack, the small tuna.",
+          "text": "‘Light’ or skipjack on the front.",
+          "quote": "‘light’ or skipjack"
+        }
+      ]
+    },
+    {
+      "id": "coconut_water",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read the list: coconut water and nothing else. Some brands add sugar.",
+          "text": "Coconut water and nothing else on the list.",
+          "quote": "coconut water and nothing else"
+        },
+        {
+          "from": "Skip coconut water made from concentrate; look for “not from concentrate”.",
+          "text": "“Not from concentrate” on the label.",
+          "quote": "“not from concentrate”"
+        }
+      ]
+    },
+    {
+      "id": "coconut_water",
+      "field": "pick_steps",
+      "remove": [
+        "Read the ingredients for coconut water alone; some brands add sugar."
+      ]
+    },
+    {
+      "id": "cottage_cheese",
+      "field": "buying_tips",
+      "remove": [
+        "Check beside the name: ‘directly set’ or ‘curd set by direct acidification’ means acid, not a culture, set the curd.",
+        "Read the milkfat line beside the name. Pick creamed whole-milk curd over dry curd, lowfat or fat-free.",
+        "Dry curd runs under 0.5 percent milkfat.",
+        "Organic dairy bars rBST, and US law does not require labels to say it was used.",
+        "Carrageenan is a seaweed thickener found even in some organic foods; pick a tub that lists none.",
+        "A culture sets the curd unless the tub prints ‘directly set’ beside the name."
+      ]
+    },
+    {
+      "id": "cottage_cheese",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read the list: milk, cream, salt and cultures, with no carrageenan or gum.",
+          "text": "Raw whole cottage cheese from a farm.",
+          "quote": "Raw whole cottage cheese from a farm"
+        },
+        {
+          "from": "Raw whole cottage cheese from a farm is the top pick. Next is whole milk, non-homogenized, no additives.",
+          "text": "Milk, cream, salt and cultures on the list, with no carrageenan or gum.",
+          "quote": "milk, cream, salt and cultures, with no carrageenan or gum"
+        },
+        {
+          "from": "Pick organic first. Next, a tub saying the cows got no rBST, a synthetic growth hormone. Neither comes last.",
+          "text": "Organic first, then a tub saying the cows got no rBST.",
+          "quote": "a tub saying the cows got no rBST"
+        }
+      ]
+    },
+    {
+      "id": "cottage_cheese",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Read the milkfat statement beside the name; the floor is 4 percent.",
+          "text": "Creamed whole-milk curd over dry curd, lowfat or fat-free.",
+          "quote": "creamed whole-milk curd over dry curd, lowfat or fat-free"
+        }
+      ]
+    },
+    {
+      "id": "cured_pork",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read the list for pork and salt, with a little sugar at most.",
+          "text": "Pork and salt on the list, with a little sugar at most.",
+          "quote": "pork and salt, with a little sugar at most"
+        }
+      ]
+    },
+    {
+      "id": "cured_pork",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Skip smoke flavoring, liquid smoke and MSG.",
+          "text": "A list with no smoke flavoring, liquid smoke or MSG.",
+          "quote": "smoke flavoring, liquid smoke and MSG"
+        }
+      ]
+    },
+    {
+      "id": "deli_meat_uncured",
+      "field": "buying_tips",
+      "remove": [
+        "A whole roast sliced at the counter, with nothing added."
+      ]
+    },
+    {
+      "id": "deli_meat_uncured",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read for an asterisk on “no nitrates added”; it can point to celery powder or juice.",
+          "text": "A whole roast, sliced at the counter, with nothing added.",
+          "quote": "A whole roast sliced at the counter, with nothing added"
+        },
+        {
+          "from": "Ask for the counter’s ingredient list; slicing there does not change what went into the meat.",
+          "text": "The counter’s ingredient list, which slicing there does not change.",
+          "quote": "the counter’s ingredient list"
+        },
+        {
+          "from": "Celery powder or juice supplies nitrite during curing. It is still a curing agent.",
+          "text": "Celery powder or juice on the list: still a curing agent.",
+          "quote": "It is still a curing agent"
+        }
+      ]
+    },
+    {
+      "id": "deli_meat_uncured",
+      "field": "pick_steps",
+      "remove": [
+        "Pick whole roasted meat first, then counter-sliced meat before the prepacked tub."
+      ]
+    },
+    {
+      "id": "deli_meat_uncured",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Read the ingredients list; every curing substance has to be named there.",
+          "text": "Every curing substance named on the ingredients list.",
+          "quote": "every curing substance has to be named"
+        }
+      ]
+    },
+    {
+      "id": "egg_labels",
+      "field": "buying_tips",
+      "remove": [
+        "Read for “corn-free” and “soy-free” in print; they are the only carton words about what the hens ate.",
+        "An organic carton printed with “pasture-raised”, “corn-free” and “soy-free”.",
+        "No carton names the feed: pick certified organic, since organic rules cover what the hens eat.",
+        "Open the carton and check for cracks and leaks before it goes in the cart.",
+        "Shell color is the breed; white and brown are the same egg inside. Speckles and rough patches are normal.",
+        "AA vs A is firmness of the white. Freshness matters more than either.",
+        "Organic means organic feed, no GMOs and no routine antibiotics. The feed is usually still soy and corn.",
+        "Most hens eat corn and soy, organic hens too, and the feed becomes the egg.",
+        "Certified Humane Pasture Raised sets hens on pasture all year, mostly living plants, at 2.5 acres per 1,000 hens."
+      ]
+    },
+    {
+      "id": "egg_labels",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "No corn-free carton: soy-free, organic, pasture-raised. Next, organic pasture-raised.",
+          "text": "Can’t find corn-free: soy-free, organic, pasture-raised, then organic pasture-raised.",
+          "quote": "soy-free, organic, pasture-raised"
+        },
+        {
+          "from": "Pick farm stands and farmers markets for soy-free eggs, and ask the grower who keeps the hens.",
+          "text": "Farm stands and farmers markets for soy-free eggs.",
+          "quote": "farm stands and farmers markets for soy-free eggs"
+        }
+      ]
+    },
+    {
+      "id": "egg_labels",
+      "field": "pick_steps",
+      "remove": [
+        "“Pasture-raised” means time outdoors on pasture, audited only with a certifier’s seal.",
+        "“Organic” means certified organic feed; pasture words tell how hens lived."
+      ]
+    },
+    {
+      "id": "egg_labels",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Skip “cage-free” and “vegetarian-fed” cartons; neither promises time outdoors.",
+          "text": "Time outdoors in print, beyond “cage-free” or “vegetarian-fed”.",
+          "quote": "neither promises time outdoors"
+        }
+      ]
+    },
+    {
+      "id": "fresh_pasta",
+      "field": "buying_tips",
+      "remove": [
+        "“whole grain” on the flour and “pasture-raised” on the eggs."
+      ]
+    },
+    {
+      "id": "fresh_pasta",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read the list: organic flour and egg, with no ascorbic or citric acid added.",
+          "text": "“Whole grain” flour and “pasture-raised” eggs on the list.",
+          "quote": "“whole grain” on the flour and “pasture-raised” on the eggs"
+        },
+        {
+          "from": "Pick a pack that is vacuum sealed or holds an oxygen packet.",
+          "text": "A vacuum-sealed pack, or one holding an oxygen packet.",
+          "quote": "vacuum sealed or holds an oxygen packet"
+        }
+      ]
+    },
+    {
+      "id": "fresh_pasta",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Read the list; flour and egg with little else marks a plain pack.",
+          "text": "Flour and egg with little else on the list.",
+          "quote": "flour and egg with little else"
+        },
+        {
+          "from": "Note any ascorbic or citric acid; some packs add them.",
+          "text": "A list with no ascorbic or citric acid.",
+          "quote": "ascorbic or citric acid"
+        }
+      ]
+    },
+    {
+      "id": "frozen_pizza",
+      "field": "buying_tips",
+      "remove": [
+        "Flour, water, salt and yeast is the old Neapolitan dough, with nothing else in it."
+      ]
+    },
+    {
+      "id": "frozen_pizza",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read the cheese: real mozzarella. “Imitation cheese” is a substitute.",
+          "text": "Real mozzarella as the cheese.",
+          "quote": "real mozzarella"
+        },
+        {
+          "from": "Skip soybean oil, hydrolyzed protein and MSG.",
+          "text": "A list with no soybean oil, hydrolyzed protein or MSG.",
+          "quote": "soybean oil, hydrolyzed protein and MSG"
+        }
+      ]
+    },
+    {
+      "id": "frozen_pizza",
+      "field": "pick_steps",
+      "remove": [
+        "Check whole wheat crusts for whole wheat flour listed first."
+      ]
+    },
+    {
+      "id": "frozen_pizza",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Pick frozen pizza with a short crust list: flour, water, salt, yeast.",
+          "text": "A short crust list: flour, water, salt, yeast.",
+          "quote": "a short crust list: flour, water, salt, yeast"
+        }
+      ]
+    },
+    {
+      "id": "goat_sheep_dairy",
+      "field": "buying_tips",
+      "remove": [
+        "Homogenized or ultra-pasteurized: see Milk.",
+        "The animal on the list decides the food."
+      ]
+    },
+    {
+      "id": "goat_sheep_dairy",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read for goat or sheep milk; cheese or yogurt lists that milk, cultures and salt alone.",
+          "text": "Goat or sheep milk, cultures and salt alone on the list.",
+          "quote": "that milk, cultures and salt alone"
+        },
+        {
+          "from": "Expect goat butter to be white, not yellow.",
+          "text": "Goat butter that is white, not yellow.",
+          "quote": "goat butter to be white, not yellow"
+        }
+      ]
+    },
+    {
+      "id": "goat_sheep_dairy",
+      "field": "pick_steps",
+      "remove": [
+        "For sheep milk cheese, look for feta, pecorino romano, Roquefort or Manchego."
+      ]
+    },
+    {
+      "id": "goat_sheep_dairy",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Read the ingredients for goat milk or sheep milk.",
+          "text": "The animal’s milk, goat or sheep, named in the ingredients.",
+          "quote": "The animal’s milk named in the ingredients"
+        }
+      ]
+    },
+    {
+      "id": "ham",
+      "field": "buying_tips",
+      "remove": [
+        "Check where water sits on the list, and for any percent of added ingredients.",
+        "Check whether the label says fully cooked or cook before eating.",
+        "Fresh ham is the raw pork leg itself, and it needs cooking before eating."
+      ]
+    },
+    {
+      "id": "ham",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read the name: plain ‘Ham’ beats ‘Ham With Natural Juices’; ‘Water Added’ means more added liquid.",
+          "text": "Plain ‘Ham’ in the name, over ‘Ham With Natural Juices’ or ‘Water Added’.",
+          "quote": "plain ‘Ham’ beats ‘Ham With Natural Juices’"
+        },
+        {
+          "from": "No dry-cured ham: pick uncured ham cut from one whole piece, with pork and salt.",
+          "text": "Can’t find dry-cured: uncured ham cut from one whole piece, with pork and salt.",
+          "quote": "uncured ham cut from one whole piece, with pork and salt"
+        },
+        {
+          "from": "Pick wood-smoked over liquid smoke or smoke flavoring, which add condensed smoke to the meat.",
+          "text": "Wood-smoked, not liquid smoke or smoke flavoring.",
+          "quote": "wood-smoked over liquid smoke or smoke flavoring"
+        }
+      ]
+    },
+    {
+      "id": "ham",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Read the name for “Water Added” or a percent of added ingredients.",
+          "text": "A name without “Water Added” or a percent of added ingredients.",
+          "quote": "“Water Added” or a percent of added ingredients"
+        }
+      ]
+    },
+    {
+      "id": "ice_cream",
+      "field": "buying_tips",
+      "remove": [
+        "Read the list: cream, milk and sugar first, then egg yolks and real vanilla, no carrageenan or guar gum.",
+        "Look for ‘frozen dairy dessert’ in the small print; it means the carton missed the ice cream standard.",
+        "Carrageenan is a seaweed thickener that some organic foods use too; pick an ice cream without it.",
+        "Homemade from grass-fed cream, raw if you can get it, with egg yolks and real vanilla, comes before any carton.",
+        "The name ‘ice cream’ needs 10 percent milkfat and no oils beyond incidental amounts."
+      ]
+    },
+    {
+      "id": "ice_cream",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read the name on the carton, not the picture: it should say ‘ice cream’.",
+          "text": "Cream, milk and sugar first, then egg yolks and real vanilla.",
+          "quote": "cream, milk and sugar first, then egg yolks and real vanilla"
+        },
+        {
+          "from": "Skip natural flavors, vanilla flavor, powdered milk and powdered egg on the list.",
+          "text": "A list with no natural flavors, vanilla flavor, powdered milk or powdered egg.",
+          "quote": "natural flavors, vanilla flavor, powdered milk and powdered egg"
+        },
+        {
+          "from": "Read the list for oils such as coconut or palm oil.",
+          "text": "A list with no oils such as coconut or palm oil, and no carrageenan or guar gum.",
+          "quote": "oils such as coconut or palm oil"
+        },
+        {
+          "from": "Organic first, then ‘rBST free’ (no synthetic growth hormone) on the carton.",
+          "text": "Organic first, then ‘rBST free’ on the carton.",
+          "quote": "Organic first, then ‘rBST free’"
+        }
+      ]
+    },
+    {
+      "id": "ice_cream",
+      "field": "pick_steps",
+      "remove": [
+        "“Frozen dairy dessert” in the small print means it missed the ice cream standard.",
+        "Read the ingredients for oils such as coconut or palm oil."
+      ]
+    },
+    {
+      "id": "ice_cream",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Read the name on the carton, not the picture.",
+          "text": "‘Ice cream’ in the name on the carton, not the picture.",
+          "quote": "the name on the carton, not the picture"
+        }
+      ]
+    },
+    {
+      "id": "kombucha",
+      "field": "buying_tips",
+      "remove": [
+        "Bottled kombucha can keep fermenting, and its alcohol can climb."
+      ]
+    },
+    {
+      "id": "kombucha",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read Added Sugars on the Nutrition Facts panel.",
+          "text": "Added Sugars on the Nutrition Facts panel.",
+          "quote": "Added Sugars on the Nutrition Facts panel"
+        }
+      ]
+    },
+    {
+      "id": "kombucha",
+      "field": "pick_steps",
+      "remove": [
+        "Check for an alcohol statement; hard kombucha is over 5 percent alcohol."
+      ]
+    },
+    {
+      "id": "kombucha",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Pick plain kombucha in glass from the refrigerated case.",
+          "text": "Plain kombucha from the refrigerated case.",
+          "quote": "plain kombucha in glass from the refrigerated case"
+        }
+      ]
+    },
+    {
+      "id": "label_grass_fed_term",
+      "field": "buying_tips",
+      "remove": [
+        "Ask the butcher; they usually know where it came from."
+      ]
+    },
+    {
+      "id": "label_grass_fed_term",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Look for “100% grass-fed”; a bare “grass-fed” can still end on grain in a feedlot.",
+          "text": "“100% grass-fed” on the label, not a bare “grass-fed”.",
+          "quote": "“100% grass-fed”; a bare “grass-fed”"
+        },
+        {
+          "from": "Buying direct, ask the rancher whether the cattle ate any grain at the end.",
+          "text": "Buying direct: a rancher’s answer on whether the cattle ate any grain at the end.",
+          "quote": "whether the cattle ate any grain at the end"
+        }
+      ]
+    },
+    {
+      "id": "label_grass_fed_term",
+      "field": "pick_steps",
+      "remove": [
+        "Check for third-party certification backing the claim."
+      ]
+    },
+    {
+      "id": "label_grass_fed_term",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Pick “100% grass-fed” or “grass-finished” over bare “grass-fed”.",
+          "text": "“Grass-finished” over bare “grass-fed”.",
+          "quote": "“grass-finished” over bare “grass-fed”"
+        }
+      ]
+    },
+    {
+      "id": "label_natural",
+      "field": "buying_tips",
+      "remove": [
+        "Defined words instead: organic, pasture-raised, 100% grass-fed.",
+        "On meat, ‘natural’ only means no artificial ingredients and minimal processing."
+      ]
+    },
+    {
+      "id": "label_natural",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read the ingredient list; it beats any front-of-pack adjective.",
+          "text": "Defined words: organic, pasture-raised, 100% grass-fed.",
+          "quote": "organic, pasture-raised, 100% grass-fed"
+        },
+        {
+          "from": "Read for “natural flavors” on the list; it is a processed flavoring, whatever the front says.",
+          "text": "“Natural flavors” on the list: a processed flavoring, whatever the front says.",
+          "quote": "it is a processed flavoring, whatever the front says"
+        },
+        {
+          "from": "Don’t pay more for “natural”. It is rarely enforced.",
+          "text": "The ingredient list over any front-of-pack adjective.",
+          "quote": "any front-of-pack adjective"
+        }
+      ]
+    },
+    {
+      "id": "label_natural",
+      "field": "pick_steps",
+      "remove": [
+        "Check the ingredient list before front-of-pack adjectives."
+      ]
+    },
+    {
+      "id": "label_natural",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Pick organic, grass-finished or pasture-raised over “natural”.",
+          "text": "Organic, grass-finished or pasture-raised over “natural”.",
+          "quote": "organic, grass-finished or pasture-raised over “natural”"
+        }
+      ]
+    },
+    {
+      "id": "lard_tallow",
+      "field": "buying_tips",
+      "remove": [
+        "Check that a tub called shortening is not taken for plain lard.",
+        "Render leaf lard or suet at home from a small pasture farm’s fat.",
+        "Lard may be hardened with lard stearin or hydrogenated lard, and the label says so."
+      ]
+    },
+    {
+      "id": "lard_tallow",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read the list for one fat: pork for lard, beef for tallow (beef fat).",
+          "text": "Pigs raised outdoors or cattle grass-fed their whole life, on the label.",
+          "quote": "Pigs raised outdoors, or cattle grass-fed their whole life"
+        },
+        {
+          "from": "Pigs raised outdoors, or cattle grass-fed their whole life, on the label.",
+          "text": "One fat on the list: pork for lard, beef for tallow (beef fat).",
+          "quote": "one fat: pork for lard, beef for tallow (beef fat)"
+        },
+        {
+          "from": "Pick leaf lard, made from the fat around the belly, for lard.",
+          "text": "Leaf lard, made from the fat around the belly.",
+          "quote": "leaf lard, made from the fat around the belly"
+        }
+      ]
+    },
+    {
+      "id": "lard_tallow",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Skip shortening tubs, which are not plain lard.",
+          "text": "Plain lard, not a shortening tub.",
+          "quote": "not plain lard"
+        }
+      ]
+    },
+    {
+      "id": "miso",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read the list: organic soybeans, koji (the ferment culture), salt, maybe rice or barley.",
+          "text": "Organic soybeans, koji (the ferment culture), salt, maybe rice or barley.",
+          "quote": "organic soybeans, koji (the ferment culture), salt, maybe rice or barley"
+        },
+        {
+          "from": "Pick white miso if buying only one; it is mild and sweet.",
+          "text": "White miso as the one jar: mild and sweet.",
+          "quote": "white miso if buying only one; it is mild and sweet"
+        },
+        {
+          "from": "Pick red miso knowing it is the saltiest, so a little goes far.",
+          "text": "Red miso, the saltiest kind, where a little goes far.",
+          "quote": "it is the saltiest, so a little goes far"
+        }
+      ]
+    },
+    {
+      "id": "miso",
+      "field": "pick_steps",
+      "remove": [
+        "Read the list for soybeans, salt, koji and the grain: rice, barley or none.",
+        "Pick by color: red miso is the saltiest, white the mildest."
+      ]
+    },
+    {
+      "id": "nutritional_yeast",
+      "field": "buying_tips",
+      "remove": [
+        "Pick flakes, granules or powder by how it will be used.",
+        "Fortified and unfortified look alike in the bag; only the list shows added vitamins."
+      ]
+    },
+    {
+      "id": "nutritional_yeast",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read the list: inactive dried yeast and nothing else, with no vitamins named.",
+          "text": "Inactive dried yeast and nothing else on the list, no vitamins named.",
+          "quote": "inactive dried yeast and nothing else, with no vitamins named"
+        },
+        {
+          "from": "Look in the spice aisle or the bulk bins.",
+          "text": "The spice aisle or the bulk bins.",
+          "quote": "the spice aisle or the bulk bins"
+        }
+      ]
+    },
+    {
+      "id": "nutritional_yeast",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Read the ingredient list to tell fortified from unfortified.",
+          "text": "Unfortified yeast, told apart only by the ingredient list.",
+          "quote": "to tell fortified from unfortified"
+        }
+      ]
+    },
+    {
+      "id": "olives",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read the jar: olives, water and salt, with no ferrous gluconate, which sets a dark color.",
+          "text": "Olives, water and salt on the jar, with no ferrous gluconate.",
+          "quote": "olives, water and salt, with no ferrous gluconate"
+        },
+        {
+          "from": "Read the curing method on the jar: brine, lye or dry salt.",
+          "text": "The curing method on the jar: brine, lye or dry salt.",
+          "quote": "the curing method on the jar: brine, lye or dry salt"
+        }
+      ]
+    },
+    {
+      "id": "olives",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Read the jar for the method: brine, lye or dry salt.",
+          "text": "Brine-cured olives over lye-cured.",
+          "quote": "Brine-cured olives"
+        }
+      ]
+    },
+    {
+      "id": "pastries_muffins",
+      "field": "buying_tips",
+      "remove": [
+        "Butter is the traditional fat in Danish pastry; factory-made often uses other fats."
+      ]
+    },
+    {
+      "id": "pastries_muffins",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read the fat: butter as the only fat, with no shortening or hydrogenated oil.",
+          "text": "Whole-grain flour, soaked or sprouted where the baker does it, not ‘bleached’.",
+          "quote": "whole-grain flour, soaked or sprouted where the baker does it"
+        },
+        {
+          "from": "Look for whole-grain flour, soaked or sprouted where the baker does it, and skip ‘bleached’ flour.",
+          "text": "Butter as the only fat, with no shortening or hydrogenated oil.",
+          "quote": "butter as the only fat, with no shortening or hydrogenated oil"
+        },
+        {
+          "from": "Ask the baker which fat and sweetener go in.",
+          "text": "The baker’s answer on which fat and sweetener go in.",
+          "quote": "which fat and sweetener go in"
+        }
+      ]
+    },
+    {
+      "id": "pastries_muffins",
+      "field": "pick_steps",
+      "remove": [
+        "Read the ingredients for butter by name, or ask the baker.",
+        "On factory-made Danish, skip a list naming hydrogenated sunflower oil."
+      ]
+    },
+    {
+      "id": "pastries_muffins",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Read the sweetener: maple, honey or molasses over sugar or corn syrup.",
+          "text": "Maple, honey or molasses over sugar or corn syrup.",
+          "quote": "maple, honey or molasses over sugar or corn syrup"
+        }
+      ]
+    },
+    {
+      "id": "potato_chips",
+      "field": "buying_tips",
+      "remove": [
+        "Skip stacked crisps in identical shapes; they are pressed from dried potato flakes and cornstarch.",
+        "Skip BHA, BHT and TBHQ, preservatives added to fats."
+      ]
+    },
+    {
+      "id": "potato_chips",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read the list: potatoes first, then one fat and salt.",
+          "text": "Potatoes first on the list, then one fat and salt.",
+          "quote": "potatoes first, then one fat and salt"
+        },
+        {
+          "from": "Pick chips fried in lard, tallow (beef fat), coconut oil or olive oil.",
+          "text": "Chips fried in lard, tallow (beef fat), coconut oil or olive oil.",
+          "quote": "chips fried in lard, tallow (beef fat), coconut oil or olive oil"
+        },
+        {
+          "from": "Skip seed oils: sunflower, safflower, canola, soybean, corn and cottonseed.",
+          "text": "No seed oils: sunflower, safflower, canola, soybean, corn or cottonseed.",
+          "quote": "sunflower, safflower, canola, soybean, corn"
+        }
+      ]
+    },
+    {
+      "id": "potato_chips",
+      "field": "pick_steps",
+      "remove": [
+        "Read the ingredients: a sliced chip starts with potatoes, not dried flakes.",
+        "Read “potato crisps” or “made from dried potatoes” as a possible pressed product."
+      ]
+    },
+    {
+      "id": "raw_kefir",
+      "field": "buying_tips",
+      "remove": [
+        "Kefir is only as good as its milk, and the ferment stays live only when cold."
+      ]
+    },
+    {
+      "id": "raw_kefir",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "No raw kefir: pick plain kefir made from 100% grass-fed whole milk, with the Certified Grassfed seal.",
+          "text": "Can’t find raw kefir: plain kefir from 100% grass-fed whole milk, with the Certified Grassfed seal.",
+          "quote": "plain kefir made from 100% grass-fed whole milk, with the Certified Grassfed seal"
+        },
+        {
+          "from": "Pick plain. Sweetened kefir is a dessert wearing a ferment’s name.",
+          "text": "Plain kefir over sweetened.",
+          "quote": "Pick plain. Sweetened kefir"
+        },
+        {
+          "from": "Pick glass, and a pour thick enough to cling to the side.",
+          "text": "Glass, and a pour thick enough to cling to the side.",
+          "quote": "glass, and a pour thick enough to cling to the side"
+        }
+      ]
+    },
+    {
+      "id": "raw_kefir",
+      "field": "pick_steps",
+      "remove": [
+        "Read for an AGA Grassfed seal: the cows ate grass and hay, never grain."
+      ]
+    },
+    {
+      "id": "raw_kefir",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Take it from the refrigerated case; shelf-stable kefir’s cultures are no longer live.",
+          "text": "The refrigerated case, not shelf-stable kefir.",
+          "quote": "from the refrigerated case; shelf-stable kefir"
+        },
+        {
+          "from": "Read the label for live and active cultures named on the bottle.",
+          "text": "Live and active cultures named on the bottle.",
+          "quote": "live and active cultures named on the bottle"
+        }
+      ]
+    },
+    {
+      "id": "salad_dressing",
+      "field": "buying_tips",
+      "remove": [
+        "Count the ingredients: the longer the list, the more additives it tends to carry."
+      ]
+    },
+    {
+      "id": "salad_dressing",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read the oil first: extra virgin olive oil, with every ingredient named.",
+          "text": "Extra virgin olive oil first, with every ingredient named.",
+          "quote": "extra virgin olive oil, with every ingredient named"
+        },
+        {
+          "from": "Look in the refrigerated section; some of the shortest lists live there.",
+          "text": "The refrigerated section, where some of the shortest lists live.",
+          "quote": "the refrigerated section; some of the shortest lists live there"
+        }
+      ]
+    },
+    {
+      "id": "salad_dressing",
+      "field": "pick_steps",
+      "remove": [
+        "Pick a dressing whose oil is olive oil."
+      ]
+    },
+    {
+      "id": "salad_dressing",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Pick the shortest fully named list.",
+          "text": "The shortest fully named list.",
+          "quote": "the shortest fully named list"
+        }
+      ]
+    },
+    {
+      "id": "sauerkraut",
+      "field": "pick_steps",
+      "remove": [
+        "Refrigerated alone does not prove raw, so read the label.",
+        "Vinegar on the list means it was not soured by fermenting alone."
+      ]
+    },
+    {
+      "id": "seafood_fresh_sardines_mackerel",
+      "field": "buying_tips",
+      "remove": [
+        "Skip king mackerel.",
+        "Eat sardines whole with their tiny bones. Pick the sharp bones out of cooked mackerel."
+      ]
+    },
+    {
+      "id": "seafood_fresh_sardines_mackerel",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Choose fresh sardines or Atlantic mackerel.",
+          "text": "Fresh sardines or Atlantic mackerel.",
+          "quote": "fresh sardines or Atlantic mackerel"
+        }
+      ]
+    },
+    {
+      "id": "smoked_salmon",
+      "field": "buying_tips",
+      "remove": [
+        "Wild salmon get their color from krill and shrimp. Farmed salmon is gray until astaxanthin in the feed turns it pink.",
+        "That pink from the feed is what ‘color added’ on the pack means."
+      ]
+    },
+    {
+      "id": "smoked_salmon",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read the list: fish, salt, sugar at most and wood smoke. Skip liquid smoke or smoke flavoring.",
+          "text": "Fish, salt, sugar at most and wood smoke on the list.",
+          "quote": "fish, salt, sugar at most and wood smoke"
+        }
+      ]
+    },
+    {
+      "id": "smoked_salmon",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Read the label word: nova, lox or kippered means refrigerated cold-smoked.",
+          "text": "Nova, lox or kippered on the label: refrigerated cold-smoked.",
+          "quote": "nova, lox or kippered means refrigerated cold-smoked"
+        },
+        {
+          "from": "For the shelf, choose canned or jarred smoked fish, heat-treated and sealed.",
+          "text": "For the shelf: canned or jarred smoked fish, heat-treated and sealed.",
+          "quote": "canned or jarred smoked fish, heat-treated and sealed"
+        }
+      ]
+    },
+    {
+      "id": "soy_milk",
+      "field": "buying_tips",
+      "remove": [
+        "Whole dairy that suits you comes first. Among plant drinks, nut or coconut milk ranks above soy.",
+        "Every addition is another ingredient; soybeans and water stay closest to the bean."
+      ]
+    },
+    {
+      "id": "soy_milk",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Pick organic first, with Non-GMO Project Verified a close second; most US soybeans are bioengineered.",
+          "text": "Organic first, Non-GMO Project Verified a close second.",
+          "quote": "organic first, with Non-GMO Project Verified a close second"
+        },
+        {
+          "from": "Skip carrageenan, a thickener made from seaweed that some organic foods use as well.",
+          "text": "A list with no carrageenan, a thickener made from seaweed.",
+          "quote": "carrageenan, a thickener made from seaweed"
+        }
+      ]
+    },
+    {
+      "id": "soy_milk",
+      "field": "pick_steps",
+      "remove": [
+        "Pick the shortest list, soybeans and water with little else."
+      ]
+    },
+    {
+      "id": "soy_milk",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Pick unsweetened over flavored.",
+          "text": "Unsweetened over flavored.",
+          "quote": "unsweetened over flavored"
+        }
+      ]
+    },
+    {
+      "id": "tortillas",
+      "field": "buying_tips",
+      "remove": [
+        "Check corn tortillas for wheat; some packaged ones add it.",
+        "Flour tortillas: read the flour and the fat by name, not by the color.",
+        "US corn ends up as grain, syrup, oil and starch."
+      ]
+    },
+    {
+      "id": "tortillas",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Read the list: corn, water and lime. Masa is corn cooked and soaked in limewater.",
+          "text": "Corn, water and lime on the list; masa is corn cooked and soaked in limewater.",
+          "quote": "corn, water and lime. Masa is corn cooked and soaked in limewater"
+        },
+        {
+          "from": "Look for ‘organic’ on the bag; most US corn is bioengineered, the label word for genetically engineered.",
+          "text": "‘Organic’ on the bag; most US corn is bioengineered, the label word for genetically engineered.",
+          "quote": "‘organic’ on the bag; most US corn is bioengineered, the label word for genetically engineered"
+        },
+        {
+          "from": "No organic: pick Non-GMO Project Verified, a close second.",
+          "text": "Can’t find organic: Non-GMO Project Verified, a close second.",
+          "quote": "Non-GMO Project Verified, a close second"
+        },
+        {
+          "from": "Flour tortillas: skip soybean, canola or other seed oil; pick butter or olive oil.",
+          "text": "Flour tortillas: butter or olive oil, not soybean, canola or other seed oil.",
+          "quote": "pick butter or olive oil"
+        }
+      ]
+    },
+    {
+      "id": "tortillas",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Corn tortillas: look for masa or masa harina, water and salt.",
+          "text": "Corn tortillas: masa or masa harina, water and salt.",
+          "quote": "masa or masa harina, water and salt"
+        },
+        {
+          "from": "Check that a corn tortilla doesn’t also list wheat flour.",
+          "text": "A corn tortilla with no wheat flour on the list.",
+          "quote": "also list wheat flour"
+        }
+      ]
+    },
+    {
+      "id": "vinegar",
+      "field": "buying_tips",
+      "remove": [
+        "Bottles at 4 percent are sold too, and tested pickling recipes rely on 5."
+      ]
+    },
+    {
+      "id": "vinegar",
+      "field": "buying_tips",
+      "replace": [
+        {
+          "from": "Skip distilled white vinegar, and vinegar with natural flavors or caramel added.",
+          "text": "A list with no natural flavors or caramel added.",
+          "quote": "natural flavors or caramel added"
+        },
+        {
+          "from": "Read the label for percent acidity; pick 5 percent for canning or pickling.",
+          "text": "5 percent acidity on the label, for canning or pickling.",
+          "quote": "5 percent for canning or pickling"
+        },
+        {
+          "from": "On balsamic, read for the full protected name and its aging words.",
+          "text": "On balsamic, the full protected name and its aging words.",
+          "quote": "the full protected name and its aging words"
+        }
+      ]
+    },
+    {
+      "id": "vinegar",
+      "field": "pick_steps",
+      "remove": [
+        "Choose 5 percent acidity for canning or pickling, never a 4 percent bottle."
+      ]
+    },
+    {
+      "id": "vinegar",
+      "field": "pick_steps",
+      "replace": [
+        {
+          "from": "Read the label for percent acidity; 10 grain equals 1 percent.",
+          "text": "Percent acidity on the label; 10 grain equals 1 percent.",
+          "quote": "10 grain equals 1 percent"
+        }
+      ]
+    }
+  ]
+}

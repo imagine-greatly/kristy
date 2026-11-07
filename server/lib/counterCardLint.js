@@ -1759,14 +1759,12 @@ export const LOOKFOR_HOME = Object.freeze(new Set(['washing_produce', 'produce_s
 // Lines that still hit, held on purpose. Keyed `id\tline`. Can only shrink: the test fails when a
 // listed line is gone from its card, so a fixed line must leave this list in the same commit.
 export const LOOKFOR_GRANDFATHER = Object.freeze(new Map([
-  ['beans_dried_vs_canned\tLook for “sprouted” beans, or soak dried ones before cooking; both reduce phytic acid.', 'mixed: the sprouted label criterion carries the line'],
   ['produce_ripeness_by_item\tPick at staggered firmness so they ripen across the week, not all on Tuesday.', 'floor: question card needs 3 tips; no quoted criterion on the card'],
   ['flour_basics\tPick a small bag and keep it cold; whole-grain flour carries the oil in the germ.', 'mixed: small bag and whole-grain carry the line'],
   ['venison_game\tNo fresh venison: pick wrapped frozen venison from the same cold processor; it keeps 9 to 12 months.', 'mixed: the fallback pick carries the line; science repeats "9 to 12 months"'],
   ['sauerkraut\tPick it from the refrigerated case, and keep raw kraut cold at home.', 'mixed: the refrigerated-case criterion carries the line'],
   ['mayo\tOnce opened, keep it in the fridge and use it within 1 to 2 months.', 'apply.mjs HOLD: science repeats "1 to 2 months" (KT_NEW_NUMBER)'],
   ['fam_cured_seafood\tCheck the label for how it was cured and how to store it.', 'mixed: the cure-method label read carries the line'],
-  ['frozen\tKeep the home freezer at 0°F, 5°F at most. Label, date and use the oldest first.', 'science repeats "5°F at most"; removing it orphans the number (KT_NEW_NUMBER)'],
 ]));
 
 // The first off-topic family a line hits, or null.
