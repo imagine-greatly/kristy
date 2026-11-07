@@ -240,6 +240,48 @@ Also: imperative, starts with a verb, ≤14 words.
 | `seafood_fresh_sardines_mackerel` | seafood | Fresh sardines or Atlantic mackerel; skip king mackerel. | Check these fish for bright stripes or shiny skin. | — |
 | `seafood_trout` | seafood | Wild trout first; US farmed rainbow trout next. | Ask the counter whether the trout is wild, or farmed in the US. | — |
 | `beef_veal` | meat | Veal from calves that grazed outside. | Look for “Pasture-Raised” and Animal Welfare Approved, from calves allowed to graze. | — |
+| `cilantro` | produce | Organic cilantro, bright and upright, with a strong smell. | Smell the bunch, then check the leaves for yellow or brown spots. | — |
+| `parsley` | produce | Organic parsley, bright and upright, with a strong smell. | Smell the bunch, then check the stems for wilting or yellow. | — |
+| `basil` | produce | Organic basil, bright and upright, with a strong smell. | Smell the bunch, then check the leaves for dark or brown spots. | — |
+| `cucumbers` | produce | Organic cucumbers, firm, dark green and unwaxed. | Press along the length for soft spots; skip a slick waxed skin. | — |
+| `asparagus` | produce | Organic asparagus, bright green and fresh. | Check the tips are closed and the spears round, not ridged. | — |
+| `corn` | produce | Organic sweet corn in green husks with fresh silk. | Find organic on the sign, then peel back an inch of husk. | — |
+| `eggplant` | produce | Organic eggplant, heavy, shiny, with a green stem. | Lift it for weight, then check the cap for mold or browning. | — |
+| `zucchini` | produce | Organic zucchini, small to medium, glossy and heavy. | Pick the smaller, glossy ones that feel heavy in the hand. | — |
+| `snap_peas` | produce | Organic snap peas, bright green, firm pods. | Press a pod; it should feel firm, not limp. | — |
+| `kohlrabi` | produce | Small, firm kohlrabi, heavy for its size. | Pick the smaller globes and check for cracks. | — |
+| `okra` | produce | Organic okra, young pods two to four inches. | Pick short pods under four inches; skip dull or shriveled ones. | — |
+| `swiss_chard` | produce | Organic Swiss chard, dark green and unblemished. | Check the stalks for splits and the leaves for yellowing. | — |
+| `mangoes` | produce | Mangoes soft to the touch, fragrant at the stem. | Press gently near the stem and smell for sweetness. | — |
+| `celery` | produce | Organic celery, solid stalks and fresh leaves. | Squeeze the stalks for a solid feel; check the center for dark spots. | — |
+| `winter_squash` | produce | Winter squash heavy for its size, shell intact. | Lift it for weight, then check the stem is dry and whole. | — |
+| `microgreens` | produce | Organic microgreens, crisp and fresh, from the cold case. | Check the pack for crisp leaves and no pooled moisture. | — |
+| `tofu` | produce | Organic tofu: soybeans, water, nigari or calcium sulfate. | Read the list for soybeans, water and one coagulant. | — |
+| `frozen_peas` | produce | Organic frozen peas, peas alone on the list. | Read the bag for one ingredient, then shake it for loose peas. | — |
+| `frozen_broccoli` | produce | Organic frozen broccoli florets, broccoli alone on the list. | Read the bag for one ingredient, then feel for loose florets. | — |
+| `jerky` | meat | Grass-fed beef jerky, cured with salt and real smoke. | Flip the bag and check the list for liquid smoke and MSG. | — |
+| `soup_bones` | meat | Grass-fed marrow and knuckle bones, plus a calf’s foot. | Ask the butcher for joints and feet kept in the back cooler. | — |
+| `fish_sticks` | seafood | Wild Alaska pollock fillet sticks, breaded without seed oils. | Turn the box over and find the fish species and the oil named. | — |
+| `egg_whites` | eggs_dairy | Whole pastured eggs, separated at home, over cartons. | Read the carton for pasture-raised hens and whites as the only ingredient. | — |
+| `whipped_topping` | eggs_dairy | Grass-fed heavy cream, whipped at home. | Read the cream carton for cream alone, without gums or emulsifiers. | — |
+| `margarine` | eggs_dairy | Grass-fed butter, cream and salt, in place of margarine. | Read the butter wrapper for cream and salt, nothing else. | — |
+| `catfish` | seafood | Wild catfish from known clean waters. | Ask the counter whether the catfish is wild and where it came from. | — |
+| `bologna` | meat | Grass-fed beef bologna, no mechanically separated poultry. | Read the product name for “with byproducts” or “with variety meats”. | — |
+| `pork_ribs` | meat | Ribs from pigs raised outdoors, fat left on. | Find the Animal Welfare Approved logo on the rib pack. | — |
+| `sports_drink` | bulk_pantry | Plain coconut water, or plain water, nothing added. | Read the coconut water list; it should say coconut water alone. | — |
+| `energy_drink` | bulk_pantry | Organic herb tea or mineral water, not energy drinks. | Check the herb tea box for caffeine-free and no natural flavors. | — |
+| `beer` | bulk_pantry | Organic unpasteurized beer, in moderation. | Check the label for the USDA seal and a never-pasteurized mention. | — |
+| `cookies` | bulk_pantry | Sprouted whole-grain cookies, butter, natural sweetener. | Read the first three ingredients: the flour, the fat, then what sweetens it. | — |
+| `fruit_snacks` | bulk_pantry | Dried fruit with only the fruit on the list. | Read the dried fruit bag; the list should name only the fruit. | — |
+| `candy` | bulk_pantry | Candy sweetened with honey or maple, no synthetic dyes. | Read the list for any numbered dye such as Red 40 or Yellow 5. | — |
+| `popsicles` | bulk_pantry | Fruit ice pops: whole fruit, no dyes or juice concentrate. | Read the first ingredient for whole fruit, not juice concentrate. | — |
+| `shortening` | bulk_pantry | Leaf lard or tallow, not hardened vegetable shortening. | Read the label for hydrogenated lard, lard stearin or vegetable oils. | — |
+| `pita_naan` | bulk_pantry | Whole wheat pita with a short list. | Read the first ingredient for whole wheat flour, not enriched flour. | — |
+| `ramen` | bulk_pantry | Ramen that skipped the fryer, with a short list. | Read the pack for “air-dried” or “non-fried” noodles. | — |
+| `baby_food` | bulk_pantry | Single-food purees and infant oatmeal, not rice snacks. | Check the jar lists one fruit or vegetable, not rice. | — |
+| `guacamole` | bulk_pantry | Avocado first, lime and salt, no added oil. | Read the list for avocado first and no added oils. | — |
+| `mac_and_cheese` | bulk_pantry | Organic pasta and real cheese, made at home. | Check the sauce packet for powder, and pass on it. | — |
+| `pancake_mix` | bulk_pantry | Whole grain mix with no added oil or dextrose. | Check the list for whole grain flour first and no hydrogenated oil. | — |
 
 **80 cards · 0 flagged · 33 redrafted in the 2026-07-31 sweep.**
 

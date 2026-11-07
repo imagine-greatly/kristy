@@ -1,0 +1,662 @@
+{
+  "patches": [
+    {
+      "op": "add_card",
+      "promotes": "pick_jerky",
+      "entry": {
+        "id": "jerky",
+        "title": "Jerky",
+        "category": "pork",
+        "family": "fam_prepared_meats",
+        "aliases": [
+          "jerky",
+          "beef jerky",
+          "turkey jerky",
+          "meat stick",
+          "meat sticks",
+          "grass fed jerky"
+        ],
+        "question": "Which jerky should I buy?",
+        "decision": "Grass-fed beef jerky, salt and real smoke only.",
+        "why": "Jerky from grazing animals, made without MSG-type additives, leads the Weston A. Price list.",
+        "short_answer": "The best jerky comes from animals allowed to graze, made with salt, a little sugar and natural smoke. Hydrolyzed protein, citric acid, “spices” or “natural flavors” usually signal hidden MSG.",
+        "detail": "Celery, spinach or beet powder versions without MSG sit one rung down. AGA Grassfed means grass and forage alone from weaning to harvest, with no antibiotics or added growth hormones.",
+        "evidence_tier": "kristys_standard",
+        "sources": [
+          {
+            "name": "Weston A. Price Foundation, Shopping guide categories",
+            "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+          },
+          {
+            "name": "American Grassfed Association, Our standards",
+            "url": "https://www.americangrassfed.org/about-us/our-standards/"
+          }
+        ],
+        "kristy_take": "Jerky is meat, salt and smoke at its simplest. The grazing animal and the short list do the work.",
+        "cart_pick": "Grass-fed beef jerky",
+        "buying_tips": [
+          "100% grass-fed beef jerky with the AGA Grassfed logo.",
+          "Meat, salt, a little sugar and spices named one by one.",
+          "Naturally smoked, with no liquid smoke or smoke flavoring.",
+          "Celery or beet powder as the next rung, still with no MSG."
+        ],
+        "pick_steps": [
+          "Pemmican from the same grazing animals."
+        ],
+        "watch_out": [
+          "Hydrolyzed protein, citric acid or “natural flavors” usually mean hidden MSG.",
+          "Skip jerky with sugar near the top of the list."
+        ],
+        "science": "The Weston A. Price shopping guide ranks meat snacks from grazing animals, made with salt and natural smoke, first. It flags hydrolyzed protein, citric acid, “spices” and “natural flavors” as usual MSG sources. AGA Grassfed means a grass and forage diet from weaning to harvest, raised on pasture.",
+        "labels_decoded": [
+          {
+            "term": "AGA Grassfed",
+            "meaning": "Grass and forage only from weaning to harvest, on pasture, no antibiotics or added hormones."
+          }
+        ],
+        "tier_note": "Holistic guides skip liquid smoke and MSG; federal rules allow both.",
+        "asked_as": [
+          "which jerky should i buy",
+          "what should beef jerky list",
+          "are meat sticks a good snack"
+        ]
+      },
+      "fetched": [
+        {
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/",
+          "fetched": true,
+          "archive": "counter/jerky/wapf-shopping-guide.md"
+        },
+        {
+          "url": "https://www.americangrassfed.org/about-us/our-standards/",
+          "fetched": true,
+          "archive": "counter/jerky/aga-standards.md"
+        }
+      ]
+    },
+    {
+      "op": "add_card",
+      "promotes": "pick_soup_bones",
+      "entry": {
+        "id": "soup_bones",
+        "title": "Soup bones",
+        "category": "pork",
+        "family": "fam_ruminant_meat",
+        "aliases": [
+          "soup bone",
+          "soup bones",
+          "marrow bones",
+          "beef bones",
+          "knuckle bones",
+          "beef soup bones"
+        ],
+        "question": "Which soup bones should I buy?",
+        "decision": "Grass-fed marrow and knuckle bones, plus a calf’s foot.",
+        "why": "Feet, knuckles and marrow bones are the gelatin-rich parts traditional stock is built on.",
+        "short_answer": "Traditional beef stock starts with marrow and knuckle bones, meaty neck bones and an optional calf’s foot. Hooves, feet and heads are the most gelatinous parts of the animal.",
+        "detail": "Cooled stock congeals because of gelatin. Bones from animals allowed to graze, fresh or frozen, sit at the top of the Weston A. Price list; bones with the AGA Grassfed logo come from animals kept on pasture.",
+        "evidence_tier": "time_tested",
+        "sources": [
+          {
+            "name": "Weston A. Price Foundation, Broth is beautiful",
+            "url": "https://www.westonaprice.org/health-topics/food-features/broth-is-beautiful/"
+          },
+          {
+            "name": "Weston A. Price Foundation, Shopping guide categories",
+            "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+          },
+          {
+            "name": "American Grassfed Association, Our standards",
+            "url": "https://www.americangrassfed.org/about-us/our-standards/"
+          }
+        ],
+        "kristy_take": "Soup bones are the cheapest way to use the whole animal. Gelatin-rich joints make the stock set.",
+        "cart_pick": "Grass-fed marrow and knuckle bones",
+        "buying_tips": [
+          "100% grass-fed marrow and knuckle bones, AGA Grassfed on the label.",
+          "A calf’s foot or chicken feet, the most gelatinous parts.",
+          "Meaty rib or neck bones for browning first.",
+          "Frozen bones from a grazing farm when the case has none."
+        ],
+        "pick_steps": [
+          "The butcher counter, for bones kept off display."
+        ],
+        "science": "Stock that congeals when cooled holds gelatin, drawn from joints, feet and knuckles. The Weston A. Price beef stock recipe calls for marrow and knuckle bones, meaty neck bones and a calf’s foot. The bones soak in water with vinegar before simmering.",
+        "labels_decoded": [],
+        "tier_note": "Joints and feet for stock rest on generations of kitchen practice, not trials.",
+        "asked_as": [
+          "which soup bones should i buy",
+          "what marrow bones are best for broth",
+          "which knuckle bones should i buy for stock"
+        ]
+      },
+      "fetched": [
+        {
+          "url": "https://www.westonaprice.org/health-topics/food-features/broth-is-beautiful/",
+          "fetched": true,
+          "archive": "counter/soup_bones/wapf-broth.md"
+        },
+        {
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/",
+          "fetched": true,
+          "archive": "counter/soup_bones/wapf-shopping-guide.md"
+        },
+        {
+          "url": "https://www.americangrassfed.org/about-us/our-standards/",
+          "fetched": true,
+          "archive": "counter/soup_bones/aga-standards.md"
+        }
+      ]
+    },
+    {
+      "op": "add_card",
+      "promotes": "pick_fish_sticks",
+      "entry": {
+        "id": "fish_sticks",
+        "title": "Fish sticks",
+        "category": "seafood",
+        "family": "fam_wild_first_seafood",
+        "aliases": [
+          "fish stick",
+          "fish sticks",
+          "fish finger",
+          "fish fingers",
+          "breaded fish sticks"
+        ],
+        "question": "Which fish sticks should I buy?",
+        "decision": "Wild Alaska pollock fillet sticks, breaded without seed oils.",
+        "why": "US wild-caught Alaska pollock is sustainably managed, and close to half the catch becomes fillets.",
+        "short_answer": "NOAA Fisheries calls US wild-caught Alaska pollock a smart seafood choice, sustainably managed and responsibly harvested. About half of pollock products are fillets; a quarter is surimi.",
+        "detail": "The Weston A. Price guide avoids seafood containing soy oil, vegetable oil, hydrolyzed protein or citric acid, and seafood from China. The fish species and the frying oil are the two lines to read on the box.",
+        "evidence_tier": "kristys_standard",
+        "sources": [
+          {
+            "name": "NOAA Fisheries, Alaska pollock",
+            "url": "https://www.fisheries.noaa.gov/species/alaska-pollock"
+          },
+          {
+            "name": "Weston A. Price Foundation, Shopping guide categories",
+            "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+          }
+        ],
+        "kristy_take": "Fish sticks are only as good as the fish and the fry oil. Wild pollock fillet, then a short coating.",
+        "cart_pick": "Wild Alaska pollock fish sticks",
+        "buying_tips": [
+          "Wild Alaska pollock named on the box, cut from whole fillets.",
+          "Breading with no soy oil or vegetable oil on the list.",
+          "No hydrolyzed protein or citric acid on the list.",
+          "Plain frozen pollock fillets to bread at home."
+        ],
+        "pick_steps": [
+          "The country of catch printed on the back."
+        ],
+        "watch_out": [
+          "Skip boxes listing soy oil or vegetable oil.",
+          "Seafood from China sits on the holistic avoid list."
+        ],
+        "science": "NOAA Fisheries reports that the Aleutian Islands, eastern Bering Sea and Gulf of Alaska pollock stocks are not overfished. Close to half of pollock products are fillets, a quarter is surimi and almost a fifth is roe.",
+        "labels_decoded": [
+          {
+            "term": "Surimi",
+            "meaning": "Minced, washed fish paste, the base of imitation crab."
+          }
+        ],
+        "tier_note": "The fish species’ stock status is federal fact; the oil bar is holistic.",
+        "asked_as": [
+          "which fish sticks should i buy",
+          "what fish is in fish sticks",
+          "are frozen fish fingers ok"
+        ]
+      },
+      "fetched": [
+        {
+          "url": "https://www.fisheries.noaa.gov/species/alaska-pollock",
+          "fetched": true,
+          "archive": "counter/fish_sticks/noaa-pollock.md"
+        },
+        {
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/",
+          "fetched": true,
+          "archive": "counter/fish_sticks/wapf-shopping-guide.md"
+        }
+      ]
+    },
+    {
+      "op": "add_card",
+      "promotes": "pick_egg_whites",
+      "entry": {
+        "id": "egg_whites",
+        "title": "Egg whites",
+        "category": "poultry_eggs",
+        "family": "fam_eggs",
+        "aliases": [
+          "egg whites",
+          "egg white",
+          "carton egg whites",
+          "liquid egg whites"
+        ],
+        "question": "Which egg whites should I buy?",
+        "decision": "Whole pastured eggs, separated at home, over cartons.",
+        "why": "Fresh eggs from pastured hens lead the holistic list; carton whites are a processed step away.",
+        "short_answer": "Under the federal standard, liquid egg whites are separated from the yolk and pasteurized or otherwise treated to destroy Salmonella. Whipping aids may be added to restore whipping properties.",
+        "detail": "The Weston A. Price guide puts fresh eggs from pastured poultry, preferably soy-free and GMO-free, first, with organic eggs next. A carton of whites carries no hen claim unless the label states one.",
+        "evidence_tier": "kristys_standard",
+        "sources": [
+          {
+            "name": "Cornell LII, 21 CFR 160.140 Egg whites",
+            "url": "https://www.law.cornell.edu/cfr/text/21/160.140"
+          },
+          {
+            "name": "Weston A. Price Foundation, Shopping guide categories",
+            "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+          }
+        ],
+        "kristy_take": "A whole egg cracked at home is the closest form. Carton whites are a convenience, read for the hen.",
+        "cart_pick": "Whole pastured eggs",
+        "buying_tips": [
+          "Pasture-raised eggs, soy-free feed, cracked and separated at home.",
+          "Carton whites stating pasture-raised or organic hens.",
+          "Egg whites as the only ingredient."
+        ],
+        "pick_steps": [
+          "A whipping aid named on the carton."
+        ],
+        "science": "Under the federal standard, liquid egg whites come from hen eggs, separated from the yolks. They are pasteurized or otherwise treated to destroy all viable Salmonella. Safe and suitable whipping aids may be added.",
+        "labels_decoded": [
+          {
+            "term": "Whipping aid",
+            "meaning": "An added substance the standard allows to protect or restore how whites whip."
+          }
+        ],
+        "tier_note": "Pasteurized whites are federal law; the pasture-raised hen rung is holistic.",
+        "asked_as": [
+          "which egg whites should i buy",
+          "are carton egg whites pasteurized",
+          "what is in liquid egg whites"
+        ]
+      },
+      "fetched": [
+        {
+          "url": "https://www.law.cornell.edu/cfr/text/21/160.140",
+          "fetched": true,
+          "archive": "counter/egg_whites/cornell-21cfr160-140.md"
+        },
+        {
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/",
+          "fetched": true,
+          "archive": "counter/egg_whites/wapf-shopping-guide.md"
+        }
+      ]
+    },
+    {
+      "op": "add_card",
+      "promotes": "pick_whipped_topping",
+      "entry": {
+        "id": "whipped_topping",
+        "title": "Whipped topping",
+        "category": "dairy",
+        "family": "fam_concentrated_dairy_fats",
+        "aliases": [
+          "whipped topping",
+          "whipped toppings",
+          "imitation whipped cream"
+        ],
+        "question": "Which whipped topping should I buy?",
+        "decision": "Grass-fed heavy cream, whipped at home.",
+        "why": "Holistic guides avoid canned and imitation whipped cream; plain cream is the whole-food swap.",
+        "short_answer": "Heavy cream holds at least 36 percent milkfat and whips on its own. Imitation whipped cream made with vegetable oils and canned whipped cream both sit on the Weston A. Price avoid list.",
+        "detail": "The federal heavy cream standard permits emulsifiers, stabilizers and sweeteners, so a short label still needs reading. Polysorbates keep oil from separating out of artificial whipped cream.",
+        "evidence_tier": "kristys_standard",
+        "sources": [
+          {
+            "name": "Cornell LII, 21 CFR 131.150 Heavy cream",
+            "url": "https://www.law.cornell.edu/cfr/text/21/131.150"
+          },
+          {
+            "name": "CSPI, Polysorbate 60, 65 and 80",
+            "url": "https://www.cspi.org/node/7467"
+          },
+          {
+            "name": "Weston A. Price Foundation, Shopping guide categories",
+            "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+          }
+        ],
+        "kristy_take": "Whipped cream is cream and air. The tub version swaps the cream for oil and emulsifiers.",
+        "instead": "Heavy cream whipped at home.",
+        "cart_pick": "Grass-fed heavy cream",
+        "buying_tips": [
+          "Grass-fed heavy cream, pasteurized, not ultra-pasteurized.",
+          "Cream as the only ingredient, no gums or emulsifiers.",
+          "Non-homogenized cream when the case has it."
+        ],
+        "pick_steps": [
+          "Heavy cream, at least 36 percent milkfat."
+        ],
+        "watch_out": [
+          "Skip tubs made with vegetable oil.",
+          "Polysorbates on the list mark an oil-based topping.",
+          "Canned whipped cream sits on the holistic avoid list."
+        ],
+        "science": "Heavy cream must contain at least 36 percent milkfat and may be pasteurized or ultra-pasteurized. Its standard allows emulsifiers and stabilizers. Polysorbates are emulsifiers that keep oil from separating out of artificial whipped cream.",
+        "labels_decoded": [
+          {
+            "term": "Ultra-pasteurized",
+            "meaning": "Cream heated beyond standard pasteurization, avoided by the holistic guide."
+          }
+        ],
+        "tier_note": "The cream standard is federal; avoiding oil-based toppings is a holistic call.",
+        "asked_as": [
+          "which whipped topping should i buy",
+          "is whipped topping real cream",
+          "what is imitation whipped cream made of"
+        ]
+      },
+      "fetched": [
+        {
+          "url": "https://www.law.cornell.edu/cfr/text/21/131.150",
+          "fetched": true,
+          "archive": "counter/whipped_topping/cornell-21cfr131-150.md"
+        },
+        {
+          "url": "https://www.cspi.org/node/7467",
+          "fetched": true,
+          "archive": "counter/whipped_topping/cspi-polysorbate.md"
+        },
+        {
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/",
+          "fetched": true,
+          "archive": "counter/whipped_topping/wapf-shopping-guide.md"
+        }
+      ]
+    },
+    {
+      "op": "add_card",
+      "promotes": "pick_margarine",
+      "entry": {
+        "id": "margarine",
+        "title": "Margarine",
+        "category": "dairy",
+        "family": "fam_cooking_fats",
+        "aliases": [
+          "margarine",
+          "margarines",
+          "vegetable spread",
+          "vegetable spreads",
+          "oleomargarine"
+        ],
+        "question": "Is margarine worth buying?",
+        "decision": "Grass-fed butter, cream and salt, in place of margarine.",
+        "why": "Holistic guides avoid margarines and spreads, and rank grass-fed butter first.",
+        "short_answer": "Margarine is at least 80 percent fat, and that fat may be vegetable oil, rendered animal fat or marine oil. The Weston A. Price guide avoids all margarines and spreads, including butter blended with vegetable oil.",
+        "detail": "Raw butter from grass-fed animals is the top fat on that list; pasteurized butter or ghee with no added flavoring comes next.",
+        "evidence_tier": "kristys_standard",
+        "sources": [
+          {
+            "name": "Cornell LII, 21 CFR 166.110 Margarine",
+            "url": "https://www.law.cornell.edu/cfr/text/21/166.110"
+          },
+          {
+            "name": "Weston A. Price Foundation, Shopping guide categories",
+            "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+          }
+        ],
+        "kristy_take": "Butter is churned cream. Margarine is a blended fat built to look like it.",
+        "instead": "Grass-fed butter or ghee, with no natural flavors.",
+        "cart_pick": "Grass-fed butter",
+        "buying_tips": [
+          "Grass-fed butter listing only cream and salt.",
+          "Ghee with no added flavoring, grass-fed where possible.",
+          "Raw butter from a grass-fed farm, where sold."
+        ],
+        "pick_steps": [
+          "Butter alone, not blended with vegetable oil."
+        ],
+        "watch_out": [
+          "Skip spreads that blend butter with vegetable oils.",
+          "Partially hydrogenated oil on any spread.",
+          "Whipped butter sits on the holistic avoid list."
+        ],
+        "science": "The federal standard defines margarine as at least 80 percent fat, with vitamin A added. The fat may be vegetable oil, rendered animal fat or marine oil. The Weston A. Price guide avoids margarines, spreads, shortenings and partially hydrogenated vegetable oils.",
+        "labels_decoded": [],
+        "tier_note": "The 80 percent fat floor is federal; preferring butter is a holistic standard.",
+        "asked_as": [
+          "is margarine worth buying",
+          "should i buy margarine",
+          "what is in a vegetable spread"
+        ]
+      },
+      "fetched": [
+        {
+          "url": "https://www.law.cornell.edu/cfr/text/21/166.110",
+          "fetched": true,
+          "archive": "counter/margarine/cornell-21cfr166-110.md"
+        },
+        {
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/",
+          "fetched": true,
+          "archive": "counter/margarine/wapf-shopping-guide.md"
+        }
+      ]
+    },
+    {
+      "op": "add_card",
+      "entry": {
+        "id": "catfish",
+        "title": "Catfish",
+        "category": "seafood",
+        "family": "fam_wild_first_seafood",
+        "aliases": [
+          "catfish",
+          "catfish fillet",
+          "catfish fillets",
+          "whole catfish",
+          "channel catfish",
+          "wild catfish"
+        ],
+        "question": "Which catfish should I buy?",
+        "decision": "Wild catfish from known clean waters.",
+        "why": "Holistic guides rank catfish from clean waters best and avoid farmed catfish.",
+        "short_answer": "Catfish sits on the FDA and EPA list of commonly eaten fish consistently low in mercury. The Weston A. Price guide wants catfish guaranteed from clean waters and avoids farmed catfish.",
+        "detail": "That guide also avoids seafood from China and seafood containing soy oil, vegetable oil or added flavorings. Where the source cannot be named, the fish counter can say where the catfish came from.",
+        "evidence_tier": "kristys_standard",
+        "sources": [
+          {
+            "name": "Weston A. Price Foundation, Shopping guide categories",
+            "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+          },
+          {
+            "name": "Chris Kresser, Is eating fish safe?",
+            "url": "https://chriskresser.com/is-eating-fish-safe-a-lot-safer-than-not-eating-fish/"
+          }
+        ],
+        "kristy_take": "Catfish is low in mercury, so the water it grew in is the real question. Wild and traceable first.",
+        "cart_pick": "Wild catfish fillets",
+        "buying_tips": [
+          "Wild catfish, its river or lake named at the counter.",
+          "Plain fillets with nothing added.",
+          "The country of origin on the sign or bag."
+        ],
+        "pick_steps": [
+          "A counter answer on wild or farmed."
+        ],
+        "watch_out": [
+          "Farmed catfish sits on the holistic avoid list.",
+          "Skip catfish imported from China."
+        ],
+        "science": "FDA and EPA advice, summarized by Chris Kresser, lists catfish among commonly eaten fish consistently low in mercury. Shrimp, canned light tuna, salmon and pollock share that list. The Weston A. Price guide separates catfish from clean waters, its best rung, from farmed catfish.",
+        "labels_decoded": [],
+        "tier_note": "Low mercury is federal fact; the clean-water and wild rung is a holistic standard.",
+        "asked_as": [
+          "which catfish should i buy",
+          "should i buy farmed catfish",
+          "what catfish fillets should i buy"
+        ]
+      },
+      "fetched": [
+        {
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/",
+          "fetched": true,
+          "archive": "counter/catfish/wapf-shopping-guide.md"
+        },
+        {
+          "url": "https://chriskresser.com/is-eating-fish-safe-a-lot-safer-than-not-eating-fish/",
+          "fetched": true,
+          "archive": "counter/catfish/kresser-fish-safe.md"
+        }
+      ]
+    },
+    {
+      "op": "add_card",
+      "entry": {
+        "id": "bologna",
+        "title": "Bologna",
+        "category": "deli",
+        "family": "fam_prepared_meats",
+        "aliases": [
+          "bologna",
+          "beef bologna",
+          "garlic bologna",
+          "sliced bologna",
+          "ring bologna",
+          "bologna slices"
+        ],
+        "question": "What should you check on bologna?",
+        "decision": "Grass-fed beef bologna, no mechanically separated poultry.",
+        "why": "The federal bologna standard allows poultry paste and byproducts, so the label decides.",
+        "short_answer": "Bologna shares a federal standard with frankfurters, capping fat at 30 percent and mechanically separated poultry at 15 percent. Byproducts require “with byproducts” or “with variety meats” in the name.",
+        "detail": "The Weston A. Price guide favors processed meats from animals allowed to graze, made with salt and natural smoke, without MSG. AGA Grassfed certification requires a grass and forage diet on pasture.",
+        "evidence_tier": "kristys_standard",
+        "sources": [
+          {
+            "name": "Cornell LII, 9 CFR 319.180 Frankfurter, bologna and similar products",
+            "url": "https://www.law.cornell.edu/cfr/text/9/319.180"
+          },
+          {
+            "name": "Weston A. Price Foundation, Shopping guide categories",
+            "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+          },
+          {
+            "name": "American Grassfed Association, Our standards",
+            "url": "https://www.americangrassfed.org/about-us/our-standards/"
+          }
+        ],
+        "kristy_take": "Bologna is a finely ground sausage. One named meat and a short list is the whole test.",
+        "cart_pick": "Grass-fed beef bologna",
+        "buying_tips": [
+          "100% grass-fed beef bologna with the AGA Grassfed logo.",
+          "One named meat first, no mechanically separated chicken or turkey.",
+          "Naturally smoked, not liquid smoke or smoke flavoring."
+        ],
+        "pick_steps": [
+          "No “with byproducts” or “with variety meats” in the name."
+        ],
+        "watch_out": [
+          "Natural flavors or hydrolyzed protein usually mean hidden MSG.",
+          "Skip bologna listing dry milk powder or sodium lactate."
+        ],
+        "science": "Under 9 CFR 319.180, bologna may contain no more than 30 percent fat. Mechanically separated poultry may reach 15 percent of ingredients. Byproduct versions must say so in the product name.",
+        "labels_decoded": [
+          {
+            "term": "With variety meats",
+            "meaning": "Required name wording when bologna contains meat byproducts."
+          }
+        ],
+        "tier_note": "“With byproducts” naming is federal law; the grass-fed rung is holistic.",
+        "asked_as": [
+          "which bologna should i buy",
+          "is beef bologna better",
+          "is ring bologna worth buying"
+        ]
+      },
+      "fetched": [
+        {
+          "url": "https://www.law.cornell.edu/cfr/text/9/319.180",
+          "fetched": true,
+          "archive": "counter/bologna/cornell-9cfr319-180.md"
+        },
+        {
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/",
+          "fetched": true,
+          "archive": "counter/bologna/wapf-shopping-guide.md"
+        },
+        {
+          "url": "https://www.americangrassfed.org/about-us/our-standards/",
+          "fetched": true,
+          "archive": "counter/bologna/aga-standards.md"
+        }
+      ]
+    },
+    {
+      "op": "add_card",
+      "entry": {
+        "id": "pork_ribs",
+        "title": "Pork ribs",
+        "category": "pork",
+        "family": "fam_poultry_pork",
+        "aliases": [
+          "ribs",
+          "pork ribs",
+          "spare ribs",
+          "baby back ribs",
+          "st louis ribs",
+          "rack of ribs",
+          "country style ribs"
+        ],
+        "question": "Which pork ribs should I buy?",
+        "decision": "Ribs from pigs raised outdoors, fat left on.",
+        "why": "Most commercial pork is raised in confinement; pigs allowed outdoors lead the holistic list.",
+        "short_answer": "The Weston A. Price guide puts pork from animals allowed to graze first, eaten with its fat. It avoids most commercial pork, raised in confinement on industrial farms.",
+        "detail": "Animal Welfare Approved by A Greener World audits high-welfare production, transport and slaughter on independent farms, and is rated the only excellent welfare label.",
+        "evidence_tier": "kristys_standard",
+        "sources": [
+          {
+            "name": "Weston A. Price Foundation, Shopping guide categories",
+            "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+          },
+          {
+            "name": "A Greener World, Certified Animal Welfare Approved",
+            "url": "https://agreenerworld.org/certifications/animal-welfare-approved/"
+          }
+        ],
+        "kristy_take": "Ribs carry their own fat, so the pig’s life shows. Outdoors and audited first.",
+        "cart_pick": "Pork ribs from pigs raised outdoors",
+        "buying_tips": [
+          "Pasture-raised pork ribs with the Animal Welfare Approved logo.",
+          "Organic pork ribs as the next rung.",
+          "Ribs from a farm that lets pigs root outdoors, fresh or frozen."
+        ],
+        "pick_steps": [
+          "Untrimmed racks with the fat cap on."
+        ],
+        "watch_out": [
+          "Most commercial pork comes from confinement farms."
+        ],
+        "science": "The Weston A. Price guide ranks fresh or frozen pork from animals allowed to graze first and organic or naturally raised pork second. Certified Animal Welfare Approved requires audited high-welfare production, transport and slaughter.",
+        "labels_decoded": [
+          {
+            "term": "Animal Welfare Approved",
+            "meaning": "An audited high-welfare label for independent farms, from A Greener World."
+          }
+        ],
+        "tier_note": "Welfare and pasture are a holistic standard, not a federal grade.",
+        "asked_as": [
+          "which pork ribs should i buy",
+          "are baby back ribs or spare ribs better",
+          "what ribs should i get"
+        ]
+      },
+      "fetched": [
+        {
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/",
+          "fetched": true,
+          "archive": "counter/pork_ribs/wapf-shopping-guide.md"
+        },
+        {
+          "url": "https://agreenerworld.org/certifications/animal-welfare-approved/",
+          "fetched": true,
+          "archive": "counter/pork_ribs/agw-awa.md"
+        }
+      ]
+    }
+  ]
+}

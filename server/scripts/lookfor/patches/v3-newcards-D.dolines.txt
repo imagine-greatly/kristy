@@ -1,0 +1,7 @@
+shortening	Read the label for hydrogenated lard, lard stearin or vegetable oils.
+pita_naan	Read the first ingredient for whole wheat flour, not enriched flour.
+ramen	Read the pack for “air-dried” or “non-fried” noodles.
+baby_food	Check the jar lists one fruit or vegetable, not rice.
+guacamole	Read the list for avocado first and no added oils.
+mac_and_cheese	Check the sauce packet for powder, and pass on it.
+pancake_mix	Check the list for whole grain flour first and no hydrogenated oil.

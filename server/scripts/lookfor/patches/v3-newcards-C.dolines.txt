@@ -1,0 +1,8 @@
+sports_drink	| `sports_drink` | bulk_pantry | Plain coconut water, or plain water, nothing added. | Read the coconut water list; it should say coconut water alone. | — |
+energy_drink	| `energy_drink` | bulk_pantry | Organic herb tea or mineral water, not energy drinks. | Check the herb tea box for caffeine-free and no natural flavors. | — |
+beer	| `beer` | bulk_pantry | Organic unpasteurized beer, in moderation. | Check the label for the USDA seal and a never-pasteurized mention. | — |
+cookies	| `cookies` | bulk_pantry | Sprouted whole-grain cookies, butter, natural sweetener. | Read the first three ingredients: the flour, the fat, then what sweetens it. | — |
+whipped_topping	| `whipped_topping` | dairy | Cream to whip at home, raw or non-homogenized. | Grab a carton of plain cream and check it is not ultra-pasteurized. | — |
+fruit_snacks	| `fruit_snacks` | bulk_pantry | Dried fruit with only the fruit on the list. | Read the dried fruit bag; the list should name only the fruit. | — |
+candy	| `candy` | bulk_pantry | Candy sweetened with honey or maple, no synthetic dyes. | Read the list for any numbered dye such as Red 40 or Yellow 5. | — |
+popsicles	| `popsicles` | bulk_pantry | Fruit ice pops: whole fruit, no dyes or juice concentrate. | Read the first ingredient for whole fruit, not juice concentrate. | — |

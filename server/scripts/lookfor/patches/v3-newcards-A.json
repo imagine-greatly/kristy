@@ -1,0 +1,1720 @@
+{
+ "patches": [
+  {
+   "op": "add_card",
+   "promotes": "pick_cilantro",
+   "entry": {
+    "id": "cilantro",
+    "title": "Cilantro",
+    "aliases": [
+     "cilantro",
+     "cilantro bunch",
+     "cilantro bunches",
+     "coriander leaves"
+    ],
+    "category": "produce",
+    "question": "Which cilantro should I buy?",
+    "decision": "Organic cilantro, bright and upright, with a strong smell.",
+    "why": "Cilantro is eaten leaf and stem, with no peel to discard.",
+    "short_answer": "Nebraska Extension: herbs not limp or drooping, bright, with a strong smell. Skip brown or yellowed leaves. Purdue Extension adds bright green leaves, with no wilting and no yellow or brown spots.",
+    "detail": "Herbs are eaten whole, with no peel to discard. Organic rules exclude synthetic substances and genetic engineering outside an approved list, and Certified Naturally Grown farms use no synthetic herbicides, pesticides, fertilizers or GMOs. A strong smell at the shelf is the freshness check.",
+    "evidence_tier": "established",
+    "sources": [
+     {
+      "name": "Nebraska Extension: Cilantro",
+      "url": "https://food.unl.edu/article/fresh-herbs"
+     },
+     {
+      "name": "Purdue Extension FoodLink: foods",
+      "url": "https://www.extension.purdue.edu/foodlink/foods.php"
+     },
+     {
+      "name": "Certified Naturally Grown: FAQs",
+      "url": "https://www.naturallygrown.org/faqs/"
+     },
+     {
+      "name": "7 CFR 205.105, organic allowed and prohibited substances",
+      "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+     }
+    ],
+    "kristy_take": "Cilantro goes in raw, leaf and stem, so organic earns its place. A strong smell means fresh.",
+    "cart_pick": "Cilantro",
+    "buying_tips": [
+     "Certified Naturally Grown on the sign: no synthetic sprays or GMOs.",
+     "No Certified Naturally Grown sign: USDA Organic on the sticker.",
+     "Bright leaves, upright stems, a strong smell."
+    ],
+    "watch_out": [
+     "Skip limp or drooping bunches.",
+     "Skip brown spots or yellowed leaves."
+    ],
+    "pick_steps": [
+     "A farmers market bunch, in season."
+    ],
+    "science": "Herbs are leaves eaten whole, so there is no peel to carry surface residue away. Wilting and yellowing mean the leaves have lost water and are past their best.",
+    "labels_decoded": [
+     {
+      "term": "Certified Naturally Grown",
+      "meaning": "A peer-reviewed label for small farms that use no synthetic herbicides, pesticides, fertilizers or GMOs."
+     }
+    ],
+    "tier_note": "Yellow or brown spots on cilantro leaves are the extension age check.",
+    "asked_as": [
+     "which cilantro should i buy",
+     "how do i pick fresh cilantro",
+     "is cilantro worth buying fresh"
+    ],
+    "family": "fam_living_leaf"
+   },
+   "fetched": [
+    {
+     "url": "https://food.unl.edu/article/fresh-herbs",
+     "fetched": true,
+     "archive": "counter/cilantro/unl-fresh-herbs.md"
+    },
+    {
+     "url": "https://www.extension.purdue.edu/foodlink/foods.php",
+     "fetched": true,
+     "archive": "counter/cilantro/purdue-foodlink.md"
+    },
+    {
+     "url": "https://www.naturallygrown.org/faqs/",
+     "fetched": true,
+     "archive": "counter/cilantro/naturallygrown-faqs.md"
+    },
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/7/205.105",
+     "fetched": true,
+     "archive": "counter/cilantro/cfr-205-105.md"
+    }
+   ]
+  },
+  {
+   "op": "add_card",
+   "promotes": "pick_parsley",
+   "entry": {
+    "id": "parsley",
+    "title": "Parsley",
+    "aliases": [
+     "fresh parsley",
+     "parsley bunch",
+     "parsley bunches",
+     "italian parsley",
+     "flat leaf parsley"
+    ],
+    "category": "produce",
+    "question": "Which parsley should I buy?",
+    "decision": "Organic parsley, bright and upright, with a strong smell.",
+    "why": "Parsley leaves go in whole, so how the bunch was grown rides along.",
+    "short_answer": "Nebraska Extension: herbs not limp or drooping, bright, with a strong smell. Skip brown or yellowed leaves. Purdue Extension adds deep green, crisp leaves, with stems that are not wilted or yellow.",
+    "detail": "Herbs are eaten whole, with no peel to discard. Organic rules exclude synthetic substances and genetic engineering outside an approved list, and Certified Naturally Grown farms use no synthetic herbicides, pesticides, fertilizers or GMOs. A strong smell at the shelf is the freshness check.",
+    "evidence_tier": "established",
+    "sources": [
+     {
+      "name": "Nebraska Extension: Parsley",
+      "url": "https://food.unl.edu/article/fresh-herbs"
+     },
+     {
+      "name": "Purdue Extension FoodLink: foods",
+      "url": "https://www.extension.purdue.edu/foodlink/foods.php"
+     },
+     {
+      "name": "Certified Naturally Grown: FAQs",
+      "url": "https://www.naturallygrown.org/faqs/"
+     },
+     {
+      "name": "7 CFR 205.105, organic allowed and prohibited substances",
+      "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+     }
+    ],
+    "kristy_take": "A parsley bunch is eaten whole, so organic leads. Crisp, deep green stems tell the rest.",
+    "cart_pick": "Parsley",
+    "buying_tips": [
+     "Certified Naturally Grown on the sign: no synthetic sprays or GMOs.",
+     "No Certified Naturally Grown sign: USDA Organic on the sticker.",
+     "Bright leaves, upright stems, a strong smell."
+    ],
+    "watch_out": [
+     "Skip limp or drooping bunches.",
+     "Skip brown spots or yellowed leaves."
+    ],
+    "pick_steps": [
+     "A farmers market bunch, in season."
+    ],
+    "science": "Herbs are leaves eaten whole, so there is no peel to carry surface residue away. Wilting and yellowing mean the leaves have lost water and are past their best.",
+    "labels_decoded": [
+     {
+      "term": "Certified Naturally Grown",
+      "meaning": "A peer-reviewed label for small farms that use no synthetic herbicides, pesticides, fertilizers or GMOs."
+     }
+    ],
+    "tier_note": "Wilted or yellow parsley stems are the extension freshness check.",
+    "asked_as": [
+     "which fresh parsley should i buy",
+     "how do i pick fresh parsley",
+     "how do i tell fresh parsley"
+    ],
+    "family": "fam_living_leaf"
+   },
+   "fetched": [
+    {
+     "url": "https://food.unl.edu/article/fresh-herbs",
+     "fetched": true,
+     "archive": "counter/parsley/unl-fresh-herbs.md"
+    },
+    {
+     "url": "https://www.extension.purdue.edu/foodlink/foods.php",
+     "fetched": true,
+     "archive": "counter/parsley/purdue-foodlink.md"
+    },
+    {
+     "url": "https://www.naturallygrown.org/faqs/",
+     "fetched": true,
+     "archive": "counter/parsley/naturallygrown-faqs.md"
+    },
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/7/205.105",
+     "fetched": true,
+     "archive": "counter/parsley/cfr-205-105.md"
+    }
+   ]
+  },
+  {
+   "op": "add_card",
+   "promotes": "pick_basil",
+   "entry": {
+    "id": "basil",
+    "title": "Basil",
+    "aliases": [
+     "fresh basil",
+     "basil bunch",
+     "basil bunches",
+     "fresh sweet basil"
+    ],
+    "category": "produce",
+    "question": "Which basil should I buy?",
+    "decision": "Organic basil, bright and upright, with a strong smell.",
+    "why": "Basil leaves are eaten whole and bruise easily, so freshness shows fast.",
+    "short_answer": "Nebraska Extension: herbs not limp or drooping, bright, with a strong smell. Skip brown or yellowed leaves. Purdue Extension adds smooth, whole, bright leaves with a strong aroma.",
+    "detail": "Herbs are eaten whole, with no peel to discard. Organic rules exclude synthetic substances and genetic engineering outside an approved list, and Certified Naturally Grown farms use no synthetic herbicides, pesticides, fertilizers or GMOs. A strong smell at the shelf is the freshness check.",
+    "evidence_tier": "established",
+    "sources": [
+     {
+      "name": "Nebraska Extension: Basil",
+      "url": "https://food.unl.edu/article/fresh-herbs"
+     },
+     {
+      "name": "Purdue Extension FoodLink: foods",
+      "url": "https://www.extension.purdue.edu/foodlink/foods.php"
+     },
+     {
+      "name": "Certified Naturally Grown: FAQs",
+      "url": "https://www.naturallygrown.org/faqs/"
+     },
+     {
+      "name": "7 CFR 205.105, organic allowed and prohibited substances",
+      "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+     }
+    ],
+    "kristy_take": "Basil is eaten leaf by leaf, so organic leads. Smell it before it goes in the cart.",
+    "cart_pick": "Basil",
+    "buying_tips": [
+     "Certified Naturally Grown on the sign: no synthetic sprays or GMOs.",
+     "No Certified Naturally Grown sign: USDA Organic on the sticker.",
+     "Bright leaves, upright stems, a strong smell."
+    ],
+    "watch_out": [
+     "Skip limp or drooping bunches.",
+     "Skip brown spots or yellowed leaves."
+    ],
+    "pick_steps": [
+     "A farmers market bunch, in season."
+    ],
+    "science": "Herbs are leaves eaten whole, so there is no peel to carry surface residue away. Wilting and yellowing mean the leaves have lost water and are past their best.",
+    "labels_decoded": [
+     {
+      "term": "Certified Naturally Grown",
+      "meaning": "A peer-reviewed label for small farms that use no synthetic herbicides, pesticides, fertilizers or GMOs."
+     }
+    ],
+    "tier_note": "Dark or brown spots on basil leaves are the extension freshness check.",
+    "asked_as": [
+     "which fresh basil should i buy",
+     "how do i pick fresh basil",
+     "how do i tell fresh basil"
+    ],
+    "family": "fam_living_leaf"
+   },
+   "fetched": [
+    {
+     "url": "https://food.unl.edu/article/fresh-herbs",
+     "fetched": true,
+     "archive": "counter/basil/unl-fresh-herbs.md"
+    },
+    {
+     "url": "https://www.extension.purdue.edu/foodlink/foods.php",
+     "fetched": true,
+     "archive": "counter/basil/purdue-foodlink.md"
+    },
+    {
+     "url": "https://www.naturallygrown.org/faqs/",
+     "fetched": true,
+     "archive": "counter/basil/naturallygrown-faqs.md"
+    },
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/7/205.105",
+     "fetched": true,
+     "archive": "counter/basil/cfr-205-105.md"
+    }
+   ]
+  },
+  {
+   "op": "add_card",
+   "promotes": "pick_cucumbers",
+   "entry": {
+    "id": "cucumbers",
+    "title": "Cucumbers",
+    "aliases": [
+     "cucumbers",
+     "cucumber",
+     "english cucumber",
+     "persian cucumbers",
+     "mini cucumbers"
+    ],
+    "category": "produce",
+    "question": "Which cucumbers should I buy?",
+    "decision": "Organic cucumbers, firm, dark green and unwaxed.",
+    "why": "The skin is eaten, and shippers often coat it with wax to hold in moisture.",
+    "short_answer": "Nebraska Extension says firm and dark green, with no bulge in the middle and no soft spots. Purdue adds slender, and not ripening to yellow. Keep them unwashed in the fridge for up to a week.",
+    "detail": "NDSU Extension notes cucumbers may carry an edible wax coating to keep moisture in. The Northwest Horticultural Council describes such coatings, including carnauba and shellac. Thin-skinned English and mini cucumbers are often sold wrapped instead. Organic rules exclude synthetic substances outside an approved list.",
+    "evidence_tier": "established",
+    "sources": [
+     {
+      "name": "Nebraska Extension: Cucumbers",
+      "url": "https://food.unl.edu/article/cucumbers"
+     },
+     {
+      "name": "NDSU Extension: Vary Your Veggies, how to select and store vegetables",
+      "url": "https://www.ndsu.edu/agriculture/extension/publications/vary-your-veggies-how-select-and-store-vegetables"
+     },
+     {
+      "name": "Purdue Extension FoodLink: foods",
+      "url": "https://www.extension.purdue.edu/foodlink/foods.php"
+     },
+     {
+      "name": "Northwest Horticultural Council: Fruit Coatings (Wax)",
+      "url": "https://nwhort.org/technicalbulletins/fruitcoatings/"
+     },
+     {
+      "name": "Certified Naturally Grown: FAQs",
+      "url": "https://www.naturallygrown.org/faqs/"
+     },
+     {
+      "name": "7 CFR 205.105, organic allowed and prohibited substances",
+      "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+     }
+    ],
+    "kristy_take": "The skin is part of the bite, so organic and unwaxed lead. Firm and dark green tells the rest.",
+    "cart_pick": "Cucumbers",
+    "buying_tips": [
+     "Certified Naturally Grown on the sign: no synthetic sprays or GMOs.",
+     "No Certified Naturally Grown sign: USDA Organic on the sticker.",
+     "Firm along the whole length, dark green, slender.",
+     "Wrapped English or mini cucumbers over waxed ones."
+    ],
+    "watch_out": [
+     "Skip a bulge in the middle or soft spots.",
+     "Skip cucumbers turning yellow.",
+     "A shiny, slick skin usually means a wax coating."
+    ],
+    "pick_steps": [
+     "A farmers market stand in summer, sold unwaxed."
+    ],
+    "science": "Cucumbers lose water through the skin, so shippers often coat them with an edible wax. A bulging middle or yellowing skin signals an over-mature cucumber with big seeds.",
+    "labels_decoded": [
+     {
+      "term": "Wax coating",
+      "meaning": "An edible coating such as carnauba or shellac applied to slow moisture loss."
+     }
+    ],
+    "tier_note": "Soft spots and a waxed skin are extension-guide checks at the shelf.",
+    "asked_as": [
+     "which cucumbers should i buy",
+     "are waxed cucumbers bad",
+     "are unwaxed cucumbers better"
+    ],
+    "family": "fam_crisp_heads_pods"
+   },
+   "fetched": [
+    {
+     "url": "https://food.unl.edu/article/cucumbers",
+     "fetched": true,
+     "archive": "counter/cucumbers/unl-cucumbers.md"
+    },
+    {
+     "url": "https://www.ndsu.edu/agriculture/extension/publications/vary-your-veggies-how-select-and-store-vegetables",
+     "fetched": true,
+     "archive": "counter/cucumbers/ndsu-veggies.md"
+    },
+    {
+     "url": "https://www.extension.purdue.edu/foodlink/foods.php",
+     "fetched": true,
+     "archive": "counter/cucumbers/purdue-foodlink.md"
+    },
+    {
+     "url": "https://nwhort.org/technicalbulletins/fruitcoatings/",
+     "fetched": true,
+     "archive": "counter/cucumbers/nwhort-fruitcoatings.md"
+    },
+    {
+     "url": "https://www.naturallygrown.org/faqs/",
+     "fetched": true,
+     "archive": "counter/cucumbers/naturallygrown-faqs.md"
+    },
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/7/205.105",
+     "fetched": true,
+     "archive": "counter/cucumbers/cfr-205-105.md"
+    }
+   ]
+  },
+  {
+   "op": "add_card",
+   "promotes": "pick_asparagus",
+   "entry": {
+    "id": "asparagus",
+    "title": "Asparagus",
+    "aliases": [
+     "fresh asparagus",
+     "asparagus spears",
+     "asparagus spear",
+     "asparagus bunch"
+    ],
+    "category": "produce",
+    "question": "Which asparagus should I buy?",
+    "decision": "Organic asparagus, bright green and fresh.",
+    "why": "Open, spread tips and ridged spears are signs of aging and toughness.",
+    "short_answer": "Nebraska Extension: dry, compact, closed tips, no limp stalks, no odor. Purdue: bright green stems that snap rather than bend. Thickness does not decide tenderness.",
+    "detail": "NDSU Extension says closed, compact tips and smooth round spears mean freshness, and green should cover most of the spear. Open, moldy tips and ribbed spears signal aging, toughness and poor flavor. Stalk size has no relationship to tenderness. Very sandy spears hide grit under the scales.",
+    "evidence_tier": "established",
+    "sources": [
+     {
+      "name": "Nebraska Extension: Asparagus",
+      "url": "https://food.unl.edu/article/asparagus"
+     },
+     {
+      "name": "NDSU Extension: Vary Your Veggies, how to select and store vegetables",
+      "url": "https://www.ndsu.edu/agriculture/extension/publications/vary-your-veggies-how-select-and-store-vegetables"
+     },
+     {
+      "name": "Purdue Extension FoodLink: foods",
+      "url": "https://www.extension.purdue.edu/foodlink/foods.php"
+     },
+     {
+      "name": "Certified Naturally Grown: FAQs",
+      "url": "https://www.naturallygrown.org/faqs/"
+     },
+     {
+      "name": "7 CFR 205.105, organic allowed and prohibited substances",
+      "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+     }
+    ],
+    "kristy_take": "The tips tell the story: closed and compact is fresh. Organic covers the spear you eat whole.",
+    "cart_pick": "Asparagus",
+    "buying_tips": [
+     "Certified Naturally Grown on the sign: no synthetic sprays or GMOs.",
+     "No Certified Naturally Grown sign: USDA Organic on the sticker.",
+     "Closed, compact, dry tips on smooth, round spears.",
+     "Green over most of the spear."
+    ],
+    "watch_out": [
+     "Skip open, spread, moldy or slimy tips.",
+     "Skip ribbed spears: aging and tough.",
+     "Skip very sandy bunches."
+    ],
+    "pick_steps": [
+     "A farmers market stand in spring."
+    ],
+    "science": "Asparagus keeps growing and toughening after harvest. Tips that open and spears that ridge show it has aged. Stalk thickness has no link to tenderness.",
+    "labels_decoded": [],
+    "tier_note": "Three extension buying guides agree on tips and spears.",
+    "asked_as": [
+     "which fresh asparagus should i buy",
+     "how do i pick fresh asparagus",
+     "what makes good fresh asparagus"
+    ],
+    "family": "fam_crisp_heads_pods"
+   },
+   "fetched": [
+    {
+     "url": "https://food.unl.edu/article/asparagus",
+     "fetched": true,
+     "archive": "counter/asparagus/unl-asparagus.md"
+    },
+    {
+     "url": "https://www.ndsu.edu/agriculture/extension/publications/vary-your-veggies-how-select-and-store-vegetables",
+     "fetched": true,
+     "archive": "counter/asparagus/ndsu-veggies.md"
+    },
+    {
+     "url": "https://www.extension.purdue.edu/foodlink/foods.php",
+     "fetched": true,
+     "archive": "counter/asparagus/purdue-foodlink.md"
+    },
+    {
+     "url": "https://www.naturallygrown.org/faqs/",
+     "fetched": true,
+     "archive": "counter/asparagus/naturallygrown-faqs.md"
+    },
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/7/205.105",
+     "fetched": true,
+     "archive": "counter/asparagus/cfr-205-105.md"
+    }
+   ]
+  },
+  {
+   "op": "add_card",
+   "promotes": "pick_corn",
+   "entry": {
+    "id": "corn",
+    "title": "Sweet corn",
+    "aliases": [
+     "sweet corn",
+     "corn on the cob",
+     "ears of corn",
+     "ear of corn",
+     "corn cobs",
+     "corn cob"
+    ],
+    "category": "produce",
+    "question": "Which sweet corn should I buy?",
+    "decision": "Organic sweet corn in green husks with fresh silk.",
+    "why": "Corn is on the federal list of bioengineered foods, and organic rules exclude genetic engineering.",
+    "short_answer": "Nebraska Extension: green husks, fresh silk, tender plump kernels, no dried-out ears. NDSU adds stem ends that are not discolored or dried. Keep husked ears cold and use them within two or three days.",
+    "detail": "Corn appears on the List of Bioengineered Foods in 7 CFR 66.6. The organic standard excludes genetic engineering as a method, and Certified Naturally Grown farms use no GMOs. NDSU warns off old ears with very large or dented kernels and yellowed, wilted husks.",
+    "evidence_tier": "established",
+    "sources": [
+     {
+      "name": "Nebraska Extension: Sweet corn",
+      "url": "https://food.unl.edu/article/sweet-corn"
+     },
+     {
+      "name": "NDSU Extension: Vary Your Veggies, how to select and store vegetables",
+      "url": "https://www.ndsu.edu/agriculture/extension/publications/vary-your-veggies-how-select-and-store-vegetables"
+     },
+     {
+      "name": "Purdue Extension FoodLink: foods",
+      "url": "https://www.extension.purdue.edu/foodlink/foods.php"
+     },
+     {
+      "name": "7 CFR 66.6, List of Bioengineered Foods",
+      "url": "https://www.law.cornell.edu/cfr/text/7/66.6"
+     },
+     {
+      "name": "Certified Naturally Grown: FAQs",
+      "url": "https://www.naturallygrown.org/faqs/"
+     },
+     {
+      "name": "7 CFR 205.105, organic allowed and prohibited substances",
+      "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+     }
+    ],
+    "kristy_take": "Organic or Certified Naturally Grown settles the bioengineered question. Then the husk and silk say how fresh it is.",
+    "cart_pick": "Sweet corn",
+    "buying_tips": [
+     "Organic or Certified Naturally Grown sweet corn, which excludes GMOs.",
+     "Green, snug husks and fresh, undecayed silk.",
+     "Plump kernels, stem ends not dried out."
+    ],
+    "watch_out": [
+     "Skip corn labeled bioengineered, the US label word for genetically engineered.",
+     "Skip yellowed, wilted or dry husks.",
+     "Skip very large or dented kernels."
+    ],
+    "pick_steps": [
+     "A farmers market stand in July and August, picked that morning."
+    ],
+    "science": "Sweet corn starts losing quality once picked, which shows in drying husks and stem ends. Corn is on the federal bioengineered list; organic and Certified Naturally Grown both exclude it.",
+    "labels_decoded": [
+     {
+      "term": "Bioengineered",
+      "meaning": "The US disclosure word for food made with genetic engineering."
+     }
+    ],
+    "tier_note": "The bioengineered list and the organic rule are written law; freshness signs come from extension guides.",
+    "asked_as": [
+     "which sweet corn should i buy",
+     "how do i pick fresh corn on the cob",
+     "how do i pick good corn on the cob"
+    ],
+    "family": "fam_crisp_heads_pods"
+   },
+   "fetched": [
+    {
+     "url": "https://food.unl.edu/article/sweet-corn",
+     "fetched": true,
+     "archive": "counter/corn/unl-sweet-corn.md"
+    },
+    {
+     "url": "https://www.ndsu.edu/agriculture/extension/publications/vary-your-veggies-how-select-and-store-vegetables",
+     "fetched": true,
+     "archive": "counter/corn/ndsu-veggies.md"
+    },
+    {
+     "url": "https://www.extension.purdue.edu/foodlink/foods.php",
+     "fetched": true,
+     "archive": "counter/corn/purdue-foodlink.md"
+    },
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/7/66.6",
+     "fetched": true,
+     "archive": "counter/corn/cfr-66-6.md"
+    },
+    {
+     "url": "https://www.naturallygrown.org/faqs/",
+     "fetched": true,
+     "archive": "counter/corn/naturallygrown-faqs.md"
+    },
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/7/205.105",
+     "fetched": true,
+     "archive": "counter/corn/cfr-205-105.md"
+    }
+   ]
+  },
+  {
+   "op": "add_card",
+   "promotes": "pick_eggplant",
+   "entry": {
+    "id": "eggplant",
+    "title": "Eggplant",
+    "aliases": [
+     "eggplant",
+     "eggplants",
+     "globe eggplant",
+     "japanese eggplant"
+    ],
+    "category": "produce",
+    "question": "Which eggplant should I buy?",
+    "decision": "Organic eggplant, heavy, shiny, with a green stem.",
+    "why": "A shiny skin, heavy feel and fresh green cap mark a fresh eggplant.",
+    "short_answer": "Nebraska Extension: shiny, smooth skin, no bruises, heavy for its size, green stem free of mold. Smaller ones are usually less bitter. Purdue: a fresh green calyx, not brown or dry, and no cracks.",
+    "detail": "Eggplant is sensitive to cold and its flesh browns fast once cut, so cut it right before cooking. Organic rules exclude synthetic substances outside an approved list.",
+    "evidence_tier": "established",
+    "sources": [
+     {
+      "name": "Nebraska Extension: Eggplant",
+      "url": "https://food.unl.edu/article/eggplant"
+     },
+     {
+      "name": "Purdue Extension FoodLink: foods",
+      "url": "https://www.extension.purdue.edu/foodlink/foods.php"
+     },
+     {
+      "name": "Certified Naturally Grown: FAQs",
+      "url": "https://www.naturallygrown.org/faqs/"
+     },
+     {
+      "name": "7 CFR 205.105, organic allowed and prohibited substances",
+      "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+     }
+    ],
+    "kristy_take": "Heavy and shiny with a green cap is the whole test. Smaller ones run less bitter.",
+    "cart_pick": "Eggplant",
+    "buying_tips": [
+     "Certified Naturally Grown on the sign: no synthetic sprays or GMOs.",
+     "No Certified Naturally Grown sign: USDA Organic on the sticker.",
+     "Shiny, smooth skin, heavy for its size.",
+     "A fresh green cap with no mold."
+    ],
+    "watch_out": [
+     "Skip bruises, cracks or discolored skin.",
+     "Skip a brown, dry or moldy cap."
+    ],
+    "pick_steps": [
+     "Smaller eggplant, usually less bitter."
+    ],
+    "science": "Eggplant is sensitive to temperature, and its white flesh browns quickly once cut. A dry or brown calyx means it has been off the plant a while.",
+    "labels_decoded": [],
+    "tier_note": "Two extension buying guides agree on skin, weight and cap.",
+    "asked_as": [
+     "which eggplant should i buy",
+     "how do i pick a good eggplant",
+     "how do i tell a fresh eggplant"
+    ],
+    "family": "fam_crisp_heads_pods"
+   },
+   "fetched": [
+    {
+     "url": "https://food.unl.edu/article/eggplant",
+     "fetched": true,
+     "archive": "counter/eggplant/unl-eggplant.md"
+    },
+    {
+     "url": "https://www.extension.purdue.edu/foodlink/foods.php",
+     "fetched": true,
+     "archive": "counter/eggplant/purdue-foodlink.md"
+    },
+    {
+     "url": "https://www.naturallygrown.org/faqs/",
+     "fetched": true,
+     "archive": "counter/eggplant/naturallygrown-faqs.md"
+    },
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/7/205.105",
+     "fetched": true,
+     "archive": "counter/eggplant/cfr-205-105.md"
+    }
+   ]
+  },
+  {
+   "op": "add_card",
+   "promotes": "pick_zucchini",
+   "entry": {
+    "id": "zucchini",
+    "title": "Zucchini and summer squash",
+    "aliases": [
+     "zucchini",
+     "zucchinis",
+     "summer squash",
+     "summer squashes",
+     "yellow squash"
+    ],
+    "category": "produce",
+    "question": "Which zucchini should I buy?",
+    "decision": "Organic zucchini, small to medium, glossy and heavy.",
+    "why": "The whole squash is eaten skin and all, and small ones are the most tender.",
+    "short_answer": "Nebraska Extension: glossy, small to medium, heavy for its size, firm, no blemishes. NDSU agrees small to medium is the most tender. Keep unwashed in the fridge up to five days.",
+    "detail": "Summer squash is completely edible, skin included. Some summer squash varieties appear on the federal List of Bioengineered Foods, and the organic standard excludes genetic engineering. Rinse and trim both ends before cooking.",
+    "evidence_tier": "established",
+    "sources": [
+     {
+      "name": "Nebraska Extension: Zucchini and summer squash",
+      "url": "https://food.unl.edu/article/summer-squash"
+     },
+     {
+      "name": "NDSU Extension: Vary Your Veggies, how to select and store vegetables",
+      "url": "https://www.ndsu.edu/agriculture/extension/publications/vary-your-veggies-how-select-and-store-vegetables"
+     },
+     {
+      "name": "Certified Naturally Grown: FAQs",
+      "url": "https://www.naturallygrown.org/faqs/"
+     },
+     {
+      "name": "7 CFR 205.105, organic allowed and prohibited substances",
+      "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+     }
+    ],
+    "kristy_take": "Small, glossy and heavy picks the tender ones. Organic covers the skin that gets eaten.",
+    "cart_pick": "Zucchini",
+    "buying_tips": [
+     "Certified Naturally Grown on the sign: no synthetic sprays or GMOs.",
+     "No Certified Naturally Grown sign: USDA Organic on the sticker.",
+     "Small to medium, glossy, heavy for its size.",
+     "Firm with no blemishes."
+    ],
+    "watch_out": [
+     "Skip soft, dull or damaged squash.",
+     "Skip oversized squash: tougher, seedier flesh."
+    ],
+    "pick_steps": [
+     "A farmers market stand in summer."
+    ],
+    "science": "Summer squash is picked young, with a thin edible rind. Oversized squash has grown tougher and seedier. Virus-resistant engineered summer squash is on the federal bioengineered list.",
+    "labels_decoded": [],
+    "tier_note": "Small, glossy, heavy squash is the extension-guide call for tender flesh.",
+    "asked_as": [
+     "which zucchini should i buy",
+     "how do i pick summer squash",
+     "are small zucchini better"
+    ],
+    "family": "fam_crisp_heads_pods"
+   },
+   "fetched": [
+    {
+     "url": "https://food.unl.edu/article/summer-squash",
+     "fetched": true,
+     "archive": "counter/zucchini/unl-summer-squash.md"
+    },
+    {
+     "url": "https://www.ndsu.edu/agriculture/extension/publications/vary-your-veggies-how-select-and-store-vegetables",
+     "fetched": true,
+     "archive": "counter/zucchini/ndsu-veggies.md"
+    },
+    {
+     "url": "https://www.naturallygrown.org/faqs/",
+     "fetched": true,
+     "archive": "counter/zucchini/naturallygrown-faqs.md"
+    },
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/7/205.105",
+     "fetched": true,
+     "archive": "counter/zucchini/cfr-205-105.md"
+    }
+   ]
+  },
+  {
+   "op": "add_card",
+   "promotes": "pick_snap_peas",
+   "entry": {
+    "id": "snap_peas",
+    "title": "Snap and snow peas",
+    "aliases": [
+     "snap peas",
+     "snap pea",
+     "sugar snap peas",
+     "sugar snap pea",
+     "snow peas",
+     "snow pea"
+    ],
+    "category": "produce",
+    "question": "Which snap peas should I buy?",
+    "decision": "Organic snap peas, bright green, firm pods.",
+    "why": "The whole pod is eaten, so organic covers every bite.",
+    "short_answer": "Nebraska Extension: bright green all around the shell, firm pods free of blemishes. Purdue, on pea pods: medium size, firm, with no wilting or decay.",
+    "detail": "Snap and snow peas are eaten pod and all. Organic rules exclude synthetic substances outside an approved list, and Certified Naturally Grown farms use no synthetic sprays.",
+    "evidence_tier": "established",
+    "sources": [
+     {
+      "name": "Nebraska Extension: Snap and snow peas",
+      "url": "https://food.unl.edu/article/snap-peas"
+     },
+     {
+      "name": "Purdue Extension FoodLink: foods",
+      "url": "https://www.extension.purdue.edu/foodlink/foods.php"
+     },
+     {
+      "name": "Certified Naturally Grown: FAQs",
+      "url": "https://www.naturallygrown.org/faqs/"
+     },
+     {
+      "name": "7 CFR 205.105, organic allowed and prohibited substances",
+      "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+     }
+    ],
+    "kristy_take": "Bright green and firm is fresh. The pod is eaten, so organic leads.",
+    "cart_pick": "Snap peas",
+    "buying_tips": [
+     "Certified Naturally Grown on the sign: no synthetic sprays or GMOs.",
+     "No Certified Naturally Grown sign: USDA Organic on the sticker.",
+     "Bright green all around, firm pods."
+    ],
+    "watch_out": [
+     "Skip limp, wilted or blemished pods.",
+     "Skip yellowing or decay."
+    ],
+    "pick_steps": [
+     "A farmers market stand in spring."
+    ],
+    "science": "Edible-pod peas are picked young, before the peas inside swell. Limp pods have lost water and sweetness.",
+    "labels_decoded": [],
+    "tier_note": "A firm pod over a limp one is the extension-guide freshness call.",
+    "asked_as": [
+     "which snap peas should i buy",
+     "how do i pick sugar snap peas",
+     "how do i tell fresh snap peas"
+    ],
+    "family": "fam_crisp_heads_pods"
+   },
+   "fetched": [
+    {
+     "url": "https://food.unl.edu/article/snap-peas",
+     "fetched": true,
+     "archive": "counter/snap_peas/unl-snap-peas.md"
+    },
+    {
+     "url": "https://www.extension.purdue.edu/foodlink/foods.php",
+     "fetched": true,
+     "archive": "counter/snap_peas/purdue-foodlink.md"
+    },
+    {
+     "url": "https://www.naturallygrown.org/faqs/",
+     "fetched": true,
+     "archive": "counter/snap_peas/naturallygrown-faqs.md"
+    },
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/7/205.105",
+     "fetched": true,
+     "archive": "counter/snap_peas/cfr-205-105.md"
+    }
+   ]
+  },
+  {
+   "op": "add_card",
+   "promotes": "pick_kohlrabi",
+   "entry": {
+    "id": "kohlrabi",
+    "title": "Kohlrabi",
+    "aliases": [
+     "kohlrabi",
+     "kohlrabis",
+     "kohlrabi bulb",
+     "kohlrabi bulbs"
+    ],
+    "category": "produce",
+    "question": "Which kohlrabi should I buy?",
+    "decision": "Small, firm kohlrabi, heavy for its size.",
+    "why": "Smaller globes are more tender, and the peel comes off before eating.",
+    "short_answer": "Nebraska Extension: firm globes, heavy for their size, no bruises or cracks; smaller ones are more tender. Leaves green and not wilted. Purdue: avoid wilted leaves, brown spots or cracks.",
+    "detail": "Kohlrabi is a brassica whose swollen stem is peeled and eaten raw or cooked. Its leaves are edible too. Organic rules exclude synthetic substances outside an approved list.",
+    "evidence_tier": "established",
+    "sources": [
+     {
+      "name": "Nebraska Extension: Kohlrabi",
+      "url": "https://food.unl.edu/article/kohlrabi"
+     },
+     {
+      "name": "Purdue Extension FoodLink: foods",
+      "url": "https://www.extension.purdue.edu/foodlink/foods.php"
+     },
+     {
+      "name": "Certified Naturally Grown: FAQs",
+      "url": "https://www.naturallygrown.org/faqs/"
+     },
+     {
+      "name": "7 CFR 205.105, organic allowed and prohibited substances",
+      "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+     }
+    ],
+    "kristy_take": "Small and heavy beats big. Bright leaves still on are a freshness bonus.",
+    "cart_pick": "Kohlrabi",
+    "buying_tips": [
+     "Small globes, firm and heavy for their size.",
+     "Bright green, firm leaves still attached.",
+     "Organic or Certified Naturally Grown when the leaves get eaten."
+    ],
+    "watch_out": [
+     "Skip cracked or bruised globes.",
+     "Skip wilted leaves or brown spots."
+    ],
+    "pick_steps": [
+     "A farmers market stand, spring or fall."
+    ],
+    "science": "Kohlrabi toughens and turns woody as the globe grows. Cracks let it dry out. The tough peel is trimmed off before eating.",
+    "labels_decoded": [],
+    "tier_note": "Two extension buying guides agree on size and firmness.",
+    "asked_as": [
+     "which kohlrabi should i buy",
+     "how do i pick kohlrabi",
+     "what size kohlrabi should i buy"
+    ],
+    "family": "fam_crisp_heads_pods"
+   },
+   "fetched": [
+    {
+     "url": "https://food.unl.edu/article/kohlrabi",
+     "fetched": true,
+     "archive": "counter/kohlrabi/unl-kohlrabi.md"
+    },
+    {
+     "url": "https://www.extension.purdue.edu/foodlink/foods.php",
+     "fetched": true,
+     "archive": "counter/kohlrabi/purdue-foodlink.md"
+    },
+    {
+     "url": "https://www.naturallygrown.org/faqs/",
+     "fetched": true,
+     "archive": "counter/kohlrabi/naturallygrown-faqs.md"
+    },
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/7/205.105",
+     "fetched": true,
+     "archive": "counter/kohlrabi/cfr-205-105.md"
+    }
+   ]
+  },
+  {
+   "op": "add_card",
+   "promotes": "pick_okra",
+   "entry": {
+    "id": "okra",
+    "title": "Okra",
+    "aliases": [
+     "okra",
+     "okras",
+     "okra pods",
+     "okra pod"
+    ],
+    "category": "produce",
+    "question": "Which okra should I buy?",
+    "decision": "Organic okra, young pods two to four inches.",
+    "why": "Young pods are tender; dull, dry or shriveled ones are past it.",
+    "short_answer": "NDSU Extension: young, tender pods, two to four inches long. Nebraska Extension: bright green and firm. Purdue: brightly colored, dry and firm. Refrigerate and use within three to five days.",
+    "detail": "The whole okra pod is eaten. NDSU warns off dull, dry or shriveled pods; Nebraska adds moldy or limp ones. Organic rules exclude synthetic substances outside an approved list.",
+    "evidence_tier": "established",
+    "sources": [
+     {
+      "name": "Nebraska Extension: Okra",
+      "url": "https://food.unl.edu/article/okra"
+     },
+     {
+      "name": "NDSU Extension: Vary Your Veggies, how to select and store vegetables",
+      "url": "https://www.ndsu.edu/agriculture/extension/publications/vary-your-veggies-how-select-and-store-vegetables"
+     },
+     {
+      "name": "Purdue Extension FoodLink: foods",
+      "url": "https://www.extension.purdue.edu/foodlink/foods.php"
+     },
+     {
+      "name": "Certified Naturally Grown: FAQs",
+      "url": "https://www.naturallygrown.org/faqs/"
+     },
+     {
+      "name": "7 CFR 205.105, organic allowed and prohibited substances",
+      "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+     }
+    ],
+    "kristy_take": "Short, bright and firm is tender okra. The pod is eaten whole, so organic leads.",
+    "cart_pick": "Okra",
+    "buying_tips": [
+     "Certified Naturally Grown on the sign: no synthetic sprays or GMOs.",
+     "No Certified Naturally Grown sign: USDA Organic on the sticker.",
+     "Young pods, two to four inches, bright and firm."
+    ],
+    "watch_out": [
+     "Skip dull, dry or shriveled pods.",
+     "Skip moldy or limp pods."
+    ],
+    "pick_steps": [
+     "A farmers market stand, July to October."
+    ],
+    "science": "Okra pods turn woody and fibrous as they grow past a few inches. Shriveling means water loss.",
+    "labels_decoded": [],
+    "tier_note": "Short pods over dull or shriveled ones is an extension-guide call.",
+    "asked_as": [
+     "which okra should i buy",
+     "how do i pick fresh okra",
+     "what size okra is best"
+    ],
+    "family": "fam_crisp_heads_pods"
+   },
+   "fetched": [
+    {
+     "url": "https://food.unl.edu/article/okra",
+     "fetched": true,
+     "archive": "counter/okra/unl-okra.md"
+    },
+    {
+     "url": "https://www.ndsu.edu/agriculture/extension/publications/vary-your-veggies-how-select-and-store-vegetables",
+     "fetched": true,
+     "archive": "counter/okra/ndsu-veggies.md"
+    },
+    {
+     "url": "https://www.extension.purdue.edu/foodlink/foods.php",
+     "fetched": true,
+     "archive": "counter/okra/purdue-foodlink.md"
+    },
+    {
+     "url": "https://www.naturallygrown.org/faqs/",
+     "fetched": true,
+     "archive": "counter/okra/naturallygrown-faqs.md"
+    },
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/7/205.105",
+     "fetched": true,
+     "archive": "counter/okra/cfr-205-105.md"
+    }
+   ]
+  },
+  {
+   "op": "add_card",
+   "promotes": "pick_swiss_chard",
+   "entry": {
+    "id": "swiss_chard",
+    "title": "Swiss chard",
+    "aliases": [
+     "swiss chard",
+     "chard",
+     "chards",
+     "rainbow chard"
+    ],
+    "category": "produce",
+    "question": "Which Swiss chard should I buy?",
+    "decision": "Organic Swiss chard, dark green and unblemished.",
+    "why": "Chard is a leafy green eaten whole, with no peel to discard.",
+    "short_answer": "Nebraska Extension: dark green leaves, no discolored or damaged leaves, and stalks that are not split. Keep it unwashed in the crisper for up to three days.",
+    "detail": "Chard is eaten leaf and stalk. Organic rules exclude synthetic substances outside an approved list, and Certified Naturally Grown farms use no synthetic sprays or fertilizers.",
+    "evidence_tier": "established",
+    "sources": [
+     {
+      "name": "Nebraska Extension: Swiss chard",
+      "url": "https://food.unl.edu/article/swiss-chard"
+     },
+     {
+      "name": "Purdue Extension FoodLink: foods",
+      "url": "https://www.extension.purdue.edu/foodlink/foods.php"
+     },
+     {
+      "name": "Certified Naturally Grown: FAQs",
+      "url": "https://www.naturallygrown.org/faqs/"
+     },
+     {
+      "name": "7 CFR 205.105, organic allowed and prohibited substances",
+      "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+     }
+    ],
+    "kristy_take": "A leaf eaten whole earns the organic floor. Look at the stalks for splits.",
+    "cart_pick": "Swiss chard",
+    "buying_tips": [
+     "Certified Naturally Grown on the sign: no synthetic sprays or GMOs.",
+     "No Certified Naturally Grown sign: USDA Organic on the sticker.",
+     "Dark green leaves, stalks whole and unsplit."
+    ],
+    "watch_out": [
+     "Skip discolored or damaged leaves.",
+     "Skip split stalks."
+    ],
+    "pick_steps": [
+     "A farmers market stand, spring through fall."
+    ],
+    "science": "Leafy greens lose water and color fast after harvest. Split stalks and yellowing leaves show age.",
+    "labels_decoded": [],
+    "tier_note": "Split stalks and yellowing leaves are extension-guide age signs.",
+    "asked_as": [
+     "which swiss chard should i buy",
+     "how do i pick fresh chard",
+     "how do i tell fresh swiss chard"
+    ],
+    "family": "fam_living_leaf"
+   },
+   "fetched": [
+    {
+     "url": "https://food.unl.edu/article/swiss-chard",
+     "fetched": true,
+     "archive": "counter/swiss_chard/unl-swiss-chard.md"
+    },
+    {
+     "url": "https://www.extension.purdue.edu/foodlink/foods.php",
+     "fetched": true,
+     "archive": "counter/swiss_chard/purdue-foodlink.md"
+    },
+    {
+     "url": "https://www.naturallygrown.org/faqs/",
+     "fetched": true,
+     "archive": "counter/swiss_chard/naturallygrown-faqs.md"
+    },
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/7/205.105",
+     "fetched": true,
+     "archive": "counter/swiss_chard/cfr-205-105.md"
+    }
+   ]
+  },
+  {
+   "op": "add_card",
+   "promotes": "pick_mangoes",
+   "entry": {
+    "id": "mangoes",
+    "title": "Mangoes",
+    "aliases": [
+     "mangoes",
+     "fresh mango",
+     "mangos",
+     "whole mango"
+    ],
+    "category": "produce",
+    "question": "Which mangoes should I buy?",
+    "decision": "Mangoes soft to the touch, fragrant at the stem.",
+    "why": "A ripe mango gives a little and smells sweet near the stem end.",
+    "short_answer": "NDSU Extension: ripe mangoes are soft to the touch and fragrant near the stem end. Keep unripe mangoes out of the fridge, since cold can stop them ripening to good flavor.",
+    "detail": "Mango skin is peeled away, so organic matters less here than on fruit eaten skin-on. NDSU lists mangoes among fruit not to refrigerate before ripe. Sort out any with bruises or soft spots.",
+    "evidence_tier": "established",
+    "sources": [
+     {
+      "name": "NDSU Extension: Focus on Whole Fruits, how to select and store fruit",
+      "url": "https://www.ndsu.edu/agriculture/extension/publications/focus-whole-fruits-how-select-and-store-fruit"
+     },
+     {
+      "name": "Certified Naturally Grown: FAQs",
+      "url": "https://www.naturallygrown.org/faqs/"
+     },
+     {
+      "name": "7 CFR 205.105, organic allowed and prohibited substances",
+      "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+     }
+    ],
+    "kristy_take": "The peel goes in the bin, so ripeness leads here. Firmer ones finish on the counter.",
+    "cart_pick": "Mangoes",
+    "buying_tips": [
+     "Soft to the touch, fragrant near the stem.",
+     "Firmer mangoes for later in the week.",
+     "Organic when it is on offer."
+    ],
+    "watch_out": [
+     "Skip bruised mangoes or mushy spots.",
+     "Skip refrigerating unripe mangoes."
+    ],
+    "pick_steps": [
+     "Ripe now for today, firmer for later."
+    ],
+    "science": "Mangoes ripen after picking. Cold storage before ripe can cause chill damage and stop flavor from developing.",
+    "labels_decoded": [],
+    "tier_note": "Softness near the stem and a sweet smell are extension ripeness signs.",
+    "asked_as": [
+     "which mangoes should i buy",
+     "how do i pick a fresh mango",
+     "should mangoes go in the fridge"
+    ],
+    "family": "fam_finish_at_home"
+   },
+   "fetched": [
+    {
+     "url": "https://www.ndsu.edu/agriculture/extension/publications/focus-whole-fruits-how-select-and-store-fruit",
+     "fetched": true,
+     "archive": "counter/mangoes/ndsu-fruit.md"
+    },
+    {
+     "url": "https://www.naturallygrown.org/faqs/",
+     "fetched": true,
+     "archive": "counter/mangoes/naturallygrown-faqs.md"
+    },
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/7/205.105",
+     "fetched": true,
+     "archive": "counter/mangoes/cfr-205-105.md"
+    }
+   ]
+  },
+  {
+   "op": "add_card",
+   "promotes": "pick_celery",
+   "entry": {
+    "id": "celery",
+    "title": "Celery",
+    "aliases": [
+     "fresh celery",
+     "celery stalk",
+     "celery stalks",
+     "celery heart",
+     "celery hearts",
+     "celery stick",
+     "celery sticks",
+     "bunch of celery",
+     "bunches of celery"
+    ],
+    "category": "produce",
+    "question": "Which celery should I buy?",
+    "decision": "Organic celery, solid stalks and fresh leaves.",
+    "why": "Celery is eaten stalk and all, with no peel to discard.",
+    "short_answer": "NDSU Extension: stalks with a solid feel and fresh-looking leaflets; soft branches can mean pithiness. Purdue: pale to bright green, crisp when pulled apart, no wilted leaves or dark spots.",
+    "detail": "Celery has no peel, so the whole stalk is eaten. NDSU warns off brown or black discoloration in the central branches. Organic rules exclude synthetic substances outside an approved list.",
+    "evidence_tier": "established",
+    "sources": [
+     {
+      "name": "NDSU Extension: Vary Your Veggies, how to select and store vegetables",
+      "url": "https://www.ndsu.edu/agriculture/extension/publications/vary-your-veggies-how-select-and-store-vegetables"
+     },
+     {
+      "name": "Purdue Extension FoodLink: foods",
+      "url": "https://www.extension.purdue.edu/foodlink/foods.php"
+     },
+     {
+      "name": "Certified Naturally Grown: FAQs",
+      "url": "https://www.naturallygrown.org/faqs/"
+     },
+     {
+      "name": "7 CFR 205.105, organic allowed and prohibited substances",
+      "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+     }
+    ],
+    "kristy_take": "Nothing gets peeled, so organic leads. Solid stalks and fresh leaves say the rest.",
+    "cart_pick": "Celery",
+    "buying_tips": [
+     "Certified Naturally Grown on the sign: no synthetic sprays or GMOs.",
+     "No Certified Naturally Grown sign: USDA Organic on the sticker.",
+     "Solid, crisp stalks with fresh-looking leaves."
+    ],
+    "watch_out": [
+     "Skip soft, pithy branches.",
+     "Skip brown or black spots in the center.",
+     "Skip wilted leaves."
+    ],
+    "pick_steps": [
+     "A farmers market stand in season."
+    ],
+    "science": "Celery stalks turn soft and pithy as they age and lose water. Badly wilted celery never fully crisps again.",
+    "labels_decoded": [],
+    "tier_note": "A solid stalk and a clean center are extension-guide freshness signs.",
+    "asked_as": [
+     "which fresh celery should i buy",
+     "how do i pick fresh celery",
+     "what makes good fresh celery"
+    ],
+    "family": "fam_crisp_heads_pods"
+   },
+   "fetched": [
+    {
+     "url": "https://www.ndsu.edu/agriculture/extension/publications/vary-your-veggies-how-select-and-store-vegetables",
+     "fetched": true,
+     "archive": "counter/celery/ndsu-veggies.md"
+    },
+    {
+     "url": "https://www.extension.purdue.edu/foodlink/foods.php",
+     "fetched": true,
+     "archive": "counter/celery/purdue-foodlink.md"
+    },
+    {
+     "url": "https://www.naturallygrown.org/faqs/",
+     "fetched": true,
+     "archive": "counter/celery/naturallygrown-faqs.md"
+    },
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/7/205.105",
+     "fetched": true,
+     "archive": "counter/celery/cfr-205-105.md"
+    }
+   ]
+  },
+  {
+   "op": "add_card",
+   "promotes": "pick_winter_squash",
+   "entry": {
+    "id": "winter_squash",
+    "title": "Winter squash",
+    "aliases": [
+     "winter squash",
+     "winter squashes",
+     "butternut squash",
+     "acorn squash",
+     "spaghetti squash"
+    ],
+    "category": "produce",
+    "question": "Which winter squash should I buy?",
+    "decision": "Winter squash heavy for its size, shell intact.",
+    "why": "A heavy, hard-shelled squash stores for months in a cool spot.",
+    "short_answer": "Nebraska Extension: firm, heavy for its size, thick skin, no soft spots or cracks. Purdue: avoid moist, black or shriveled stems. Store cool and dry, not in the fridge.",
+    "detail": "NDSU Extension says winter squash keeps several months in a cool, dry, ventilated place, and should not be refrigerated: cold changes starch to sugar and affects flavor. The hard rind is usually peeled or scooped away.",
+    "evidence_tier": "established",
+    "sources": [
+     {
+      "name": "Nebraska Extension: Winter squash",
+      "url": "https://food.unl.edu/article/winter-squash"
+     },
+     {
+      "name": "NDSU Extension: Vary Your Veggies, how to select and store vegetables",
+      "url": "https://www.ndsu.edu/agriculture/extension/publications/vary-your-veggies-how-select-and-store-vegetables"
+     },
+     {
+      "name": "Purdue Extension FoodLink: foods",
+      "url": "https://www.extension.purdue.edu/foodlink/foods.php"
+     }
+    ],
+    "kristy_take": "Heavy with a dry stem and a whole shell is the pick. It keeps for months.",
+    "cart_pick": "Winter squash",
+    "buying_tips": [
+     "Heavy for its size, hard shell, no cracks.",
+     "A dry, intact stem.",
+     "Organic, or a farmers market stand in fall."
+    ],
+    "watch_out": [
+     "Skip soft spots or cracks.",
+     "Skip moist, black or shriveled stems."
+    ],
+    "pick_steps": [
+     "A farmers market stand, August to November."
+    ],
+    "science": "Winter squash is picked mature with a hard rind that lets it store for months. Soft spots and wet stems mean decay has started.",
+    "labels_decoded": [],
+    "tier_note": "Three extension buying guides agree on weight, shell and stem.",
+    "asked_as": [
+     "which winter squash should i buy",
+     "how do i pick a butternut squash",
+     "should winter squash go in the fridge"
+    ],
+    "family": "fam_storage_crops"
+   },
+   "fetched": [
+    {
+     "url": "https://food.unl.edu/article/winter-squash",
+     "fetched": true,
+     "archive": "counter/winter_squash/unl-winter-squash.md"
+    },
+    {
+     "url": "https://www.ndsu.edu/agriculture/extension/publications/vary-your-veggies-how-select-and-store-vegetables",
+     "fetched": true,
+     "archive": "counter/winter_squash/ndsu-veggies.md"
+    },
+    {
+     "url": "https://www.extension.purdue.edu/foodlink/foods.php",
+     "fetched": true,
+     "archive": "counter/winter_squash/purdue-foodlink.md"
+    }
+   ]
+  },
+  {
+   "op": "add_card",
+   "promotes": "pick_microgreens",
+   "entry": {
+    "id": "microgreens",
+    "title": "Microgreens",
+    "aliases": [
+     "microgreens",
+     "microgreen",
+     "micro greens"
+    ],
+    "category": "produce",
+    "question": "Which microgreens should I buy?",
+    "decision": "Organic microgreens, crisp and fresh, from the cold case.",
+    "why": "Microgreens are eaten raw and whole, so freshness and growing both count.",
+    "short_answer": "Purdue Extension: crisp, fresh leaves and stems, no limp or wilted greens. Penn State Extension notes microgreens are eaten raw, so growers must keep pathogens out of water and handling.",
+    "detail": "Penn State Extension explains that water for soaking, irrigating and washing microgreens must be free of E. coli, and that worker hygiene matters because poor hygiene can introduce pathogens. Organic rules exclude synthetic substances outside an approved list.",
+    "evidence_tier": "established",
+    "sources": [
+     {
+      "name": "Purdue Extension FoodLink: foods",
+      "url": "https://www.extension.purdue.edu/foodlink/foods.php"
+     },
+     {
+      "name": "Penn State Extension: Ensuring food safety in microgreens production",
+      "url": "https://extension.psu.edu/ensuring-food-safety-in-microgreens-production"
+     },
+     {
+      "name": "Certified Naturally Grown: FAQs",
+      "url": "https://www.naturallygrown.org/faqs/"
+     },
+     {
+      "name": "7 CFR 205.105, organic allowed and prohibited substances",
+      "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+     }
+    ],
+    "kristy_take": "Crisp and cold is the test. A farmers market tray is the best source.",
+    "cart_pick": "Microgreens",
+    "buying_tips": [
+     "Certified Naturally Grown on the sign: no synthetic sprays or GMOs.",
+     "No Certified Naturally Grown sign: USDA Organic on the sticker.",
+     "Crisp leaves and stems, dry, in the cold case."
+    ],
+    "watch_out": [
+     "Skip limp, wilted or slimy greens.",
+     "Skip packs with moisture pooled inside."
+    ],
+    "pick_steps": [
+     "A farmers market tray."
+    ],
+    "science": "Microgreens are harvested young and eaten raw, so there is no cooking step to kill pathogens. That is why growers test water for E. coli.",
+    "labels_decoded": [],
+    "tier_note": "Crisp leaves and a dry pack are extension freshness signs.",
+    "asked_as": [
+     "which microgreens should i buy",
+     "are microgreens safe to eat raw",
+     "how do i pick fresh microgreens"
+    ],
+    "family": "fam_living_leaf"
+   },
+   "fetched": [
+    {
+     "url": "https://www.extension.purdue.edu/foodlink/foods.php",
+     "fetched": true,
+     "archive": "counter/microgreens/purdue-foodlink.md"
+    },
+    {
+     "url": "https://extension.psu.edu/ensuring-food-safety-in-microgreens-production",
+     "fetched": true,
+     "archive": "counter/microgreens/psu-microgreens.md"
+    },
+    {
+     "url": "https://www.naturallygrown.org/faqs/",
+     "fetched": true,
+     "archive": "counter/microgreens/naturallygrown-faqs.md"
+    },
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/7/205.105",
+     "fetched": true,
+     "archive": "counter/microgreens/cfr-205-105.md"
+    }
+   ]
+  },
+  {
+   "op": "add_card",
+   "promotes": "pick_tofu",
+   "entry": {
+    "id": "tofu",
+    "title": "Tofu",
+    "aliases": [
+     "tofu",
+     "firm tofu",
+     "extra firm tofu",
+     "silken tofu",
+     "soft tofu",
+     "tofu block",
+     "tofu blocks",
+     "block of tofu",
+     "blocks of tofu"
+    ],
+    "category": "produce",
+    "question": "Which tofu should I buy?",
+    "decision": "Organic tofu: soybeans, water, nigari or calcium sulfate.",
+    "why": "Soybeans are on the federal bioengineered list, and organic excludes genetic engineering.",
+    "short_answer": "Tofu is curdled soy milk pressed into blocks. Calcium sulfate and nigari salts are the traditional coagulants. Firmness is a cooking choice: silken for blending, firm and extra-firm for pressing and searing.",
+    "detail": "Soybean appears on the List of Bioengineered Foods in 7 CFR 66.6. The organic standard excludes genetic engineering as a method. Food Hero groups tofu by firmness: silken, firm, extra-firm and super-firm, with firmer tofu needing less pressing.",
+    "evidence_tier": "established",
+    "sources": [
+     {
+      "name": "Food Hero: All about tofu",
+      "url": "https://foodhero.org/healthy-food/all-about-tofu-tips-select-press-marinate-and-cook-tofu"
+     },
+     {
+      "name": "Wikipedia: Tofu",
+      "url": "https://en.wikipedia.org/wiki/Tofu"
+     },
+     {
+      "name": "7 CFR 66.6, List of Bioengineered Foods",
+      "url": "https://www.law.cornell.edu/cfr/text/7/66.6"
+     },
+     {
+      "name": "Certified Naturally Grown: FAQs",
+      "url": "https://www.naturallygrown.org/faqs/"
+     },
+     {
+      "name": "7 CFR 205.105, organic allowed and prohibited substances",
+      "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+     }
+    ],
+    "kristy_take": "Organic answers the soybean question. The list should be short: beans, water and one coagulant.",
+    "cart_pick": "Organic tofu",
+    "buying_tips": [
+     "Organic tofu, with no bioengineered soy.",
+     "Soybeans, water, and nigari or calcium sulfate.",
+     "Firmness matched to the dish."
+    ],
+    "watch_out": [
+     "Skip tofu labeled bioengineered, the US label word for genetically engineered.",
+     "Skip flavored or marinated tofu with long lists."
+    ],
+    "pick_steps": [
+     "Nigari named on the package."
+    ],
+    "science": "Tofu is made by curdling soy milk with a coagulant and pressing the curds. Calcium sulfate gives a tender curd; nigari, mostly magnesium chloride, gives a firmer one.",
+    "labels_decoded": [
+     {
+      "term": "Nigari",
+      "meaning": "A traditional coagulant from seawater, mostly magnesium chloride."
+     },
+     {
+      "term": "Calcium sulfate",
+      "meaning": "Gypsum, the most common traditional tofu coagulant."
+     }
+    ],
+    "tier_note": "The bioengineered list and the organic rule are written law.",
+    "asked_as": [
+     "which tofu should i buy",
+     "what should tofu ingredients be",
+     "what does tofu need on the label"
+    ]
+   },
+   "fetched": [
+    {
+     "url": "https://foodhero.org/healthy-food/all-about-tofu-tips-select-press-marinate-and-cook-tofu",
+     "fetched": true,
+     "archive": "counter/tofu/foodhero-tofu.md"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Tofu",
+     "fetched": true,
+     "archive": "counter/tofu/wikipedia-tofu.md"
+    },
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/7/66.6",
+     "fetched": true,
+     "archive": "counter/tofu/cfr-66-6.md"
+    },
+    {
+     "url": "https://www.naturallygrown.org/faqs/",
+     "fetched": true,
+     "archive": "counter/tofu/naturallygrown-faqs.md"
+    },
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/7/205.105",
+     "fetched": true,
+     "archive": "counter/tofu/cfr-205-105.md"
+    }
+   ]
+  },
+  {
+   "op": "add_card",
+   "promotes": "pick_frozen_peas",
+   "entry": {
+    "id": "frozen_peas",
+    "title": "Frozen peas",
+    "aliases": [
+     "frozen peas",
+     "frozen pea",
+     "frozen green peas",
+     "frozen sweet peas"
+    ],
+    "category": "produce",
+    "question": "Which frozen peas should I buy?",
+    "decision": "Organic frozen peas, peas alone on the list.",
+    "why": "Peas are blanched and frozen soon after shelling, which holds their quality.",
+    "short_answer": "Frozen peas are shelled, briefly blanched and frozen. A bag listing only peas, loose and not clumped, is the pick. Organic covers how they were grown.",
+    "detail": "The National Center for Home Food Preservation blanches shelled peas briefly, cools them and freezes them. Clemson HGIC explains blanching stops the enzymes that cause loss of flavor, color and texture. Penn State Extension describes the same process for freezing vegetables.",
+    "evidence_tier": "established",
+    "sources": [
+     {
+      "name": "National Center for Home Food Preservation: Freezing green peas",
+      "url": "https://nchfp.uga.edu/how/freeze/vegetable/freezing-green-peas/"
+     },
+     {
+      "name": "Clemson HGIC: Why blanch?",
+      "url": "https://hgic.clemson.edu/why-blanch/"
+     },
+     {
+      "name": "Penn State Extension: Freezing vegetables",
+      "url": "https://extension.psu.edu/freezing-vegetables"
+     },
+     {
+      "name": "Certified Naturally Grown: FAQs",
+      "url": "https://www.naturallygrown.org/faqs/"
+     },
+     {
+      "name": "7 CFR 205.105, organic allowed and prohibited substances",
+      "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+     }
+    ],
+    "kristy_take": "Peas alone on the list is the whole rule. Organic is the floor.",
+    "cart_pick": "Frozen peas",
+    "buying_tips": [
+     "Organic frozen peas, peas the only ingredient.",
+     "A loose bag, peas rattling free.",
+     "Plain peas over sauced or buttered bags."
+    ],
+    "watch_out": [
+     "Skip bags with sauce, butter or salt added.",
+     "Skip a solid frozen clump: thawed and refrozen."
+    ],
+    "pick_steps": [
+     "From the back of the freezer case."
+    ],
+    "science": "Blanching stops the enzymes that would otherwise break down flavor, color and texture in the freezer. Quick freezing after blanching locks that in.",
+    "labels_decoded": [],
+    "tier_note": "Loose peas in the bag show a clean freeze; extension guides explain blanching.",
+    "asked_as": [
+     "which frozen peas should i buy",
+     "are frozen peas as good as fresh",
+     "what should frozen peas list"
+    ],
+    "family": "fam_frozen_plain_produce"
+   },
+   "fetched": [
+    {
+     "url": "https://nchfp.uga.edu/how/freeze/vegetable/freezing-green-peas/",
+     "fetched": true,
+     "archive": "counter/frozen_peas/nchfp-peas.md"
+    },
+    {
+     "url": "https://hgic.clemson.edu/why-blanch/",
+     "fetched": true,
+     "archive": "counter/frozen_peas/clemson-why-blanch.md"
+    },
+    {
+     "url": "https://extension.psu.edu/freezing-vegetables",
+     "fetched": true,
+     "archive": "counter/frozen_peas/psu-freezing-vegetables.md"
+    },
+    {
+     "url": "https://www.naturallygrown.org/faqs/",
+     "fetched": true,
+     "archive": "counter/frozen_peas/naturallygrown-faqs.md"
+    },
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/7/205.105",
+     "fetched": true,
+     "archive": "counter/frozen_peas/cfr-205-105.md"
+    }
+   ]
+  },
+  {
+   "op": "add_card",
+   "promotes": "pick_frozen_broccoli",
+   "entry": {
+    "id": "frozen_broccoli",
+    "title": "Frozen broccoli",
+    "aliases": [
+     "frozen broccoli",
+     "frozen broccoli florets",
+     "frozen broccoli floret"
+    ],
+    "category": "produce",
+    "question": "Which frozen broccoli should I buy?",
+    "decision": "Organic frozen broccoli florets, broccoli alone on the list.",
+    "why": "Broccoli is blanched before freezing, which holds its color and texture.",
+    "short_answer": "Frozen broccoli is cut, briefly blanched and frozen. A bag listing only broccoli, frozen loose, is the pick. Organic covers how it was grown.",
+    "detail": "The National Center for Home Food Preservation blanches broccoli pieces before freezing. Clemson HGIC explains blanching stops the enzymes that cause loss of flavor, color and texture. Penn State Extension describes the same process for freezing vegetables.",
+    "evidence_tier": "established",
+    "sources": [
+     {
+      "name": "National Center for Home Food Preservation: Freezing broccoli",
+      "url": "https://nchfp.uga.edu/how/freeze/vegetables/freezing-broccoli/"
+     },
+     {
+      "name": "Clemson HGIC: Why blanch?",
+      "url": "https://hgic.clemson.edu/why-blanch/"
+     },
+     {
+      "name": "Penn State Extension: Freezing vegetables",
+      "url": "https://extension.psu.edu/freezing-vegetables"
+     },
+     {
+      "name": "Certified Naturally Grown: FAQs",
+      "url": "https://www.naturallygrown.org/faqs/"
+     },
+     {
+      "name": "7 CFR 205.105, organic allowed and prohibited substances",
+      "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+     }
+    ],
+    "kristy_take": "Broccoli alone on the list is the rule, organic on the bag.",
+    "cart_pick": "Frozen broccoli",
+    "buying_tips": [
+     "Organic frozen broccoli, broccoli the only ingredient.",
+     "Florets frozen loose, not in a block.",
+     "Plain florets over cheese-sauce bags."
+    ],
+    "watch_out": [
+     "Skip bags with sauce, cheese or salt added.",
+     "Skip a solid frozen clump: thawed and refrozen."
+    ],
+    "pick_steps": [
+     "From the back of the freezer case."
+    ],
+    "science": "Blanching stops the enzymes that would otherwise break down flavor, color and texture in the freezer. Quick freezing after blanching locks that in.",
+    "labels_decoded": [],
+    "tier_note": "Loose florets in the bag show a clean freeze; extension guides explain blanching.",
+    "asked_as": [
+     "which frozen broccoli should i buy",
+     "is frozen broccoli as good as fresh",
+     "what should frozen broccoli list"
+    ],
+    "family": "fam_frozen_plain_produce"
+   },
+   "fetched": [
+    {
+     "url": "https://nchfp.uga.edu/how/freeze/vegetables/freezing-broccoli/",
+     "fetched": true,
+     "archive": "counter/frozen_broccoli/nchfp-broccoli.md"
+    },
+    {
+     "url": "https://hgic.clemson.edu/why-blanch/",
+     "fetched": true,
+     "archive": "counter/frozen_broccoli/clemson-why-blanch.md"
+    },
+    {
+     "url": "https://extension.psu.edu/freezing-vegetables",
+     "fetched": true,
+     "archive": "counter/frozen_broccoli/psu-freezing-vegetables.md"
+    },
+    {
+     "url": "https://www.naturallygrown.org/faqs/",
+     "fetched": true,
+     "archive": "counter/frozen_broccoli/naturallygrown-faqs.md"
+    },
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/7/205.105",
+     "fetched": true,
+     "archive": "counter/frozen_broccoli/cfr-205-105.md"
+    }
+   ]
+  }
+ ]
+}

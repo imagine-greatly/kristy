@@ -6283,67 +6283,131 @@
       "avoid": "Skip cans with no BPA-free lining stated on the label."
     },
     {
-      "id": "pick_frozen_peas",
-      "kind": "pick",
+      "id": "frozen_peas",
       "title": "Frozen peas",
-      "category": "produce",
       "aliases": [
         "frozen peas",
         "frozen pea",
         "frozen green peas",
         "frozen sweet peas"
       ],
-      "decision": "Organic frozen peas over fresh, with peas alone on the bag’s list.",
+      "category": "produce",
+      "question": "Which frozen peas should I buy?",
+      "decision": "Organic frozen peas, peas alone on the list.",
+      "why": "Peas are blanched and frozen soon after shelling, which holds their quality.",
+      "short_answer": "Frozen peas are shelled, briefly blanched and frozen. A bag listing only peas, loose and not clumped, is the pick. Organic covers how they were grown.",
+      "detail": "The National Center for Home Food Preservation blanches shelled peas briefly, cools them and freezes them. Clemson HGIC explains blanching stops the enzymes that cause loss of flavor, color and texture. Penn State Extension describes the same process for freezing vegetables.",
+      "evidence_tier": "established",
       "sources": [
         {
-          "name": "S11 — ricardocuisine.com",
-          "url": "https://www.ricardocuisine.com/en/articles/the-ingredient/970-frozen-peas-from-the-field-to-your-freezer"
-        },
-        {
-          "name": "S29 — extension.oregonstate.edu",
-          "url": "https://extension.oregonstate.edu/food/preservation/preserving-peas-edible-pea-pods"
-        },
-        {
-          "name": "S30 — nchfp.uga.edu",
+          "name": "National Center for Home Food Preservation: Freezing green peas",
           "url": "https://nchfp.uga.edu/how/freeze/vegetable/freezing-green-peas/"
+        },
+        {
+          "name": "Clemson HGIC: Why blanch?",
+          "url": "https://hgic.clemson.edu/why-blanch/"
+        },
+        {
+          "name": "Penn State Extension: Freezing vegetables",
+          "url": "https://extension.psu.edu/freezing-vegetables"
+        },
+        {
+          "name": "Certified Naturally Grown: FAQs",
+          "url": "https://www.naturallygrown.org/faqs/"
+        },
+        {
+          "name": "7 CFR 205.105, organic allowed and prohibited substances",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
         }
-      ]
+      ],
+      "kristy_take": "Peas alone on the list is the whole rule. Organic is the floor.",
+      "cart_pick": "Frozen peas",
+      "buying_tips": [
+        "Organic frozen peas, peas the only ingredient.",
+        "A loose bag, peas rattling free.",
+        "Plain peas over sauced or buttered bags."
+      ],
+      "watch_out": [
+        "Skip bags with sauce, butter or salt added.",
+        "Skip a solid frozen clump: thawed and refrozen."
+      ],
+      "pick_steps": [
+        "From the back of the freezer case."
+      ],
+      "science": "Blanching stops the enzymes that would otherwise break down flavor, color and texture in the freezer. Quick freezing after blanching locks that in.",
+      "labels_decoded": [],
+      "tier_note": "Loose peas in the bag show a clean freeze; extension guides explain blanching.",
+      "asked_as": [
+        "which frozen peas should i buy",
+        "are frozen peas as good as fresh",
+        "what should frozen peas list"
+      ],
+      "family": "fam_frozen_plain_produce"
     },
     {
-      "id": "pick_frozen_broccoli",
-      "kind": "pick",
+      "id": "frozen_broccoli",
       "title": "Frozen broccoli",
-      "category": "produce",
       "aliases": [
         "frozen broccoli",
         "frozen broccoli florets",
         "frozen broccoli floret"
       ],
-      "decision": "Organic frozen broccoli florets, with broccoli alone on the bag’s list.",
+      "category": "produce",
+      "question": "Which frozen broccoli should I buy?",
+      "decision": "Organic frozen broccoli florets, broccoli alone on the list.",
+      "why": "Broccoli is blanched before freezing, which holds its color and texture.",
+      "short_answer": "Frozen broccoli is cut, briefly blanched and frozen. A bag listing only broccoli, frozen loose, is the pick. Organic covers how it was grown.",
+      "detail": "The National Center for Home Food Preservation blanches broccoli pieces before freezing. Clemson HGIC explains blanching stops the enzymes that cause loss of flavor, color and texture. Penn State Extension describes the same process for freezing vegetables.",
+      "evidence_tier": "established",
       "sources": [
         {
-          "name": "S27 — extension.wsu.edu",
-          "url": "https://extension.wsu.edu/skagit/2025/07/13/skagit-food-preservation-broccoli/"
-        },
-        {
-          "name": "S28 — nchfp.uga.edu",
+          "name": "National Center for Home Food Preservation: Freezing broccoli",
           "url": "https://nchfp.uga.edu/how/freeze/vegetables/freezing-broccoli/"
         },
         {
-          "name": "S09 — hgic.clemson.edu",
+          "name": "Clemson HGIC: Why blanch?",
           "url": "https://hgic.clemson.edu/why-blanch/"
         },
         {
-          "name": "S10 — extension.psu.edu",
+          "name": "Penn State Extension: Freezing vegetables",
           "url": "https://extension.psu.edu/freezing-vegetables"
+        },
+        {
+          "name": "Certified Naturally Grown: FAQs",
+          "url": "https://www.naturallygrown.org/faqs/"
+        },
+        {
+          "name": "7 CFR 205.105, organic allowed and prohibited substances",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
         }
-      ]
+      ],
+      "kristy_take": "Broccoli alone on the list is the rule, organic on the bag.",
+      "cart_pick": "Frozen broccoli",
+      "buying_tips": [
+        "Organic frozen broccoli, broccoli the only ingredient.",
+        "Florets frozen loose, not in a block.",
+        "Plain florets over cheese-sauce bags."
+      ],
+      "watch_out": [
+        "Skip bags with sauce, cheese or salt added.",
+        "Skip a solid frozen clump: thawed and refrozen."
+      ],
+      "pick_steps": [
+        "From the back of the freezer case."
+      ],
+      "science": "Blanching stops the enzymes that would otherwise break down flavor, color and texture in the freezer. Quick freezing after blanching locks that in.",
+      "labels_decoded": [],
+      "tier_note": "Loose florets in the bag show a clean freeze; extension guides explain blanching.",
+      "asked_as": [
+        "which frozen broccoli should i buy",
+        "is frozen broccoli as good as fresh",
+        "what should frozen broccoli list"
+      ],
+      "family": "fam_frozen_plain_produce"
     },
     {
-      "id": "pick_cucumbers",
-      "kind": "pick",
+      "id": "cucumbers",
       "title": "Cucumbers",
-      "category": "produce",
       "aliases": [
         "cucumbers",
         "cucumber",
@@ -6351,88 +6415,270 @@
         "persian cucumbers",
         "mini cucumbers"
       ],
-      "decision": "Organic cucumbers, firm and dark green, with no wax on the skin.",
-      "avoid": "Skip cucumbers coated with wax, shellac or carnauba wax.",
+      "category": "produce",
+      "question": "Which cucumbers should I buy?",
+      "decision": "Organic cucumbers, firm, dark green and unwaxed.",
+      "why": "The skin is eaten, and shippers often coat it with wax to hold in moisture.",
+      "short_answer": "Nebraska Extension says firm and dark green, with no bulge in the middle and no soft spots. Purdue adds slender, and not ripening to yellow. Keep them unwashed in the fridge for up to a week.",
+      "detail": "NDSU Extension notes cucumbers may carry an edible wax coating to keep moisture in. The Northwest Horticultural Council describes such coatings, including carnauba and shellac. Thin-skinned English and mini cucumbers are often sold wrapped instead. Organic rules exclude synthetic substances outside an approved list.",
+      "evidence_tier": "established",
       "sources": [
         {
           "name": "Nebraska Extension: Cucumbers",
           "url": "https://food.unl.edu/article/cucumbers"
         },
         {
+          "name": "NDSU Extension: Vary Your Veggies, how to select and store vegetables",
+          "url": "https://www.ndsu.edu/agriculture/extension/publications/vary-your-veggies-how-select-and-store-vegetables"
+        },
+        {
+          "name": "Purdue Extension FoodLink: foods",
+          "url": "https://www.extension.purdue.edu/foodlink/foods.php"
+        },
+        {
           "name": "Northwest Horticultural Council: Fruit Coatings (Wax)",
           "url": "https://nwhort.org/technicalbulletins/fruitcoatings/"
+        },
+        {
+          "name": "Certified Naturally Grown: FAQs",
+          "url": "https://www.naturallygrown.org/faqs/"
+        },
+        {
+          "name": "7 CFR 205.105, organic allowed and prohibited substances",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
         }
-      ]
+      ],
+      "kristy_take": "The skin is part of the bite, so organic and unwaxed lead. Firm and dark green tells the rest.",
+      "cart_pick": "Cucumbers",
+      "buying_tips": [
+        "Certified Naturally Grown on the sign: no synthetic sprays or GMOs.",
+        "No Certified Naturally Grown sign: USDA Organic on the sticker.",
+        "Firm along the whole length, dark green, slender.",
+        "Wrapped English or mini cucumbers over waxed ones."
+      ],
+      "watch_out": [
+        "Skip a bulge in the middle or soft spots.",
+        "Skip cucumbers turning yellow.",
+        "A shiny, slick skin usually means a wax coating."
+      ],
+      "pick_steps": [
+        "A farmers market stand in summer, sold unwaxed."
+      ],
+      "science": "Cucumbers lose water through the skin, so shippers often coat them with an edible wax. A bulging middle or yellowing skin signals an over-mature cucumber with big seeds.",
+      "labels_decoded": [
+        {
+          "term": "Wax coating",
+          "meaning": "An edible coating such as carnauba or shellac applied to slow moisture loss."
+        }
+      ],
+      "tier_note": "Soft spots and a waxed skin are extension-guide checks at the shelf.",
+      "asked_as": [
+        "which cucumbers should i buy",
+        "are waxed cucumbers bad",
+        "are unwaxed cucumbers better"
+      ],
+      "family": "fam_crisp_heads_pods"
     },
     {
-      "id": "pick_asparagus",
-      "kind": "pick",
+      "id": "asparagus",
       "title": "Asparagus",
-      "category": "produce",
       "aliases": [
-        "asparagus",
+        "fresh asparagus",
         "asparagus spears",
         "asparagus spear",
         "asparagus bunch"
       ],
-      "decision": "Organic asparagus, with ‘organic’ on the sign or sticker.",
+      "category": "produce",
+      "question": "Which asparagus should I buy?",
+      "decision": "Organic asparagus, bright green and fresh.",
+      "why": "Open, spread tips and ridged spears are signs of aging and toughness.",
+      "short_answer": "Nebraska Extension: dry, compact, closed tips, no limp stalks, no odor. Purdue: bright green stems that snap rather than bend. Thickness does not decide tenderness.",
+      "detail": "NDSU Extension says closed, compact tips and smooth round spears mean freshness, and green should cover most of the spear. Open, moldy tips and ribbed spears signal aging, toughness and poor flavor. Stalk size has no relationship to tenderness. Very sandy spears hide grit under the scales.",
+      "evidence_tier": "established",
       "sources": [
         {
-          "name": "F169 — extension.illinois.edu",
-          "url": "https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf"
+          "name": "Nebraska Extension: Asparagus",
+          "url": "https://food.unl.edu/article/asparagus"
         },
         {
-          "name": "F127 — law.cornell.edu",
+          "name": "NDSU Extension: Vary Your Veggies, how to select and store vegetables",
+          "url": "https://www.ndsu.edu/agriculture/extension/publications/vary-your-veggies-how-select-and-store-vegetables"
+        },
+        {
+          "name": "Purdue Extension FoodLink: foods",
+          "url": "https://www.extension.purdue.edu/foodlink/foods.php"
+        },
+        {
+          "name": "Certified Naturally Grown: FAQs",
+          "url": "https://www.naturallygrown.org/faqs/"
+        },
+        {
+          "name": "7 CFR 205.105, organic allowed and prohibited substances",
           "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
         }
-      ]
+      ],
+      "kristy_take": "The tips tell the story: closed and compact is fresh. Organic covers the spear you eat whole.",
+      "cart_pick": "Asparagus",
+      "buying_tips": [
+        "Certified Naturally Grown on the sign: no synthetic sprays or GMOs.",
+        "No Certified Naturally Grown sign: USDA Organic on the sticker.",
+        "Closed, compact, dry tips on smooth, round spears.",
+        "Green over most of the spear."
+      ],
+      "watch_out": [
+        "Skip open, spread, moldy or slimy tips.",
+        "Skip ribbed spears: aging and tough.",
+        "Skip very sandy bunches."
+      ],
+      "pick_steps": [
+        "A farmers market stand in spring."
+      ],
+      "science": "Asparagus keeps growing and toughening after harvest. Tips that open and spears that ridge show it has aged. Stalk thickness has no link to tenderness.",
+      "labels_decoded": [],
+      "tier_note": "Three extension buying guides agree on tips and spears.",
+      "asked_as": [
+        "which fresh asparagus should i buy",
+        "how do i pick fresh asparagus",
+        "what makes good fresh asparagus"
+      ],
+      "family": "fam_crisp_heads_pods"
     },
     {
-      "id": "pick_corn",
-      "kind": "pick",
-      "title": "Corn",
-      "category": "produce",
+      "id": "corn",
+      "title": "Sweet corn",
       "aliases": [
-        "corn",
         "sweet corn",
+        "corn on the cob",
         "ears of corn",
         "ear of corn",
         "corn cobs",
         "corn cob"
       ],
-      "decision": "Corn in green husks with fresh silk; skip dried-out ears.",
-      "avoid": "Skip corn labeled bioengineered, the US label word for genetically engineered.",
+      "category": "produce",
+      "question": "Which sweet corn should I buy?",
+      "decision": "Organic sweet corn in green husks with fresh silk.",
+      "why": "Corn is on the federal list of bioengineered foods, and organic rules exclude genetic engineering.",
+      "short_answer": "Nebraska Extension: green husks, fresh silk, tender plump kernels, no dried-out ears. NDSU adds stem ends that are not discolored or dried. Keep husked ears cold and use them within two or three days.",
+      "detail": "Corn appears on the List of Bioengineered Foods in 7 CFR 66.6. The organic standard excludes genetic engineering as a method, and Certified Naturally Grown farms use no GMOs. NDSU warns off old ears with very large or dented kernels and yellowed, wilted husks.",
+      "evidence_tier": "established",
       "sources": [
         {
-          "name": "Nebraska Extension: Sweet Corn",
+          "name": "Nebraska Extension: Sweet corn",
           "url": "https://food.unl.edu/article/sweet-corn"
+        },
+        {
+          "name": "NDSU Extension: Vary Your Veggies, how to select and store vegetables",
+          "url": "https://www.ndsu.edu/agriculture/extension/publications/vary-your-veggies-how-select-and-store-vegetables"
+        },
+        {
+          "name": "Purdue Extension FoodLink: foods",
+          "url": "https://www.extension.purdue.edu/foodlink/foods.php"
+        },
+        {
+          "name": "7 CFR 66.6, List of Bioengineered Foods",
+          "url": "https://www.law.cornell.edu/cfr/text/7/66.6"
+        },
+        {
+          "name": "Certified Naturally Grown: FAQs",
+          "url": "https://www.naturallygrown.org/faqs/"
+        },
+        {
+          "name": "7 CFR 205.105, organic allowed and prohibited substances",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
         }
-      ]
+      ],
+      "kristy_take": "Organic or Certified Naturally Grown settles the bioengineered question. Then the husk and silk say how fresh it is.",
+      "cart_pick": "Sweet corn",
+      "buying_tips": [
+        "Organic or Certified Naturally Grown sweet corn, which excludes GMOs.",
+        "Green, snug husks and fresh, undecayed silk.",
+        "Plump kernels, stem ends not dried out."
+      ],
+      "watch_out": [
+        "Skip corn labeled bioengineered, the US label word for genetically engineered.",
+        "Skip yellowed, wilted or dry husks.",
+        "Skip very large or dented kernels."
+      ],
+      "pick_steps": [
+        "A farmers market stand in July and August, picked that morning."
+      ],
+      "science": "Sweet corn starts losing quality once picked, which shows in drying husks and stem ends. Corn is on the federal bioengineered list; organic and Certified Naturally Grown both exclude it.",
+      "labels_decoded": [
+        {
+          "term": "Bioengineered",
+          "meaning": "The US disclosure word for food made with genetic engineering."
+        }
+      ],
+      "tier_note": "The bioengineered list and the organic rule are written law; freshness signs come from extension guides.",
+      "asked_as": [
+        "which sweet corn should i buy",
+        "how do i pick fresh corn on the cob",
+        "how do i pick good corn on the cob"
+      ],
+      "family": "fam_crisp_heads_pods"
     },
     {
-      "id": "pick_eggplant",
-      "kind": "pick",
+      "id": "eggplant",
       "title": "Eggplant",
-      "category": "produce",
       "aliases": [
         "eggplant",
         "eggplants",
         "globe eggplant",
         "japanese eggplant"
       ],
-      "decision": "Eggplant that feels heavy, shiny and smooth, with a green stem and no mold.",
+      "category": "produce",
+      "question": "Which eggplant should I buy?",
+      "decision": "Organic eggplant, heavy, shiny, with a green stem.",
+      "why": "A shiny skin, heavy feel and fresh green cap mark a fresh eggplant.",
+      "short_answer": "Nebraska Extension: shiny, smooth skin, no bruises, heavy for its size, green stem free of mold. Smaller ones are usually less bitter. Purdue: a fresh green calyx, not brown or dry, and no cracks.",
+      "detail": "Eggplant is sensitive to cold and its flesh browns fast once cut, so cut it right before cooking. Organic rules exclude synthetic substances outside an approved list.",
+      "evidence_tier": "established",
       "sources": [
         {
           "name": "Nebraska Extension: Eggplant",
           "url": "https://food.unl.edu/article/eggplant"
+        },
+        {
+          "name": "Purdue Extension FoodLink: foods",
+          "url": "https://www.extension.purdue.edu/foodlink/foods.php"
+        },
+        {
+          "name": "Certified Naturally Grown: FAQs",
+          "url": "https://www.naturallygrown.org/faqs/"
+        },
+        {
+          "name": "7 CFR 205.105, organic allowed and prohibited substances",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
         }
-      ]
+      ],
+      "kristy_take": "Heavy and shiny with a green cap is the whole test. Smaller ones run less bitter.",
+      "cart_pick": "Eggplant",
+      "buying_tips": [
+        "Certified Naturally Grown on the sign: no synthetic sprays or GMOs.",
+        "No Certified Naturally Grown sign: USDA Organic on the sticker.",
+        "Shiny, smooth skin, heavy for its size.",
+        "A fresh green cap with no mold."
+      ],
+      "watch_out": [
+        "Skip bruises, cracks or discolored skin.",
+        "Skip a brown, dry or moldy cap."
+      ],
+      "pick_steps": [
+        "Smaller eggplant, usually less bitter."
+      ],
+      "science": "Eggplant is sensitive to temperature, and its white flesh browns quickly once cut. A dry or brown calyx means it has been off the plant a while.",
+      "labels_decoded": [],
+      "tier_note": "Two extension buying guides agree on skin, weight and cap.",
+      "asked_as": [
+        "which eggplant should i buy",
+        "how do i pick a good eggplant",
+        "how do i tell a fresh eggplant"
+      ],
+      "family": "fam_crisp_heads_pods"
     },
     {
-      "id": "pick_zucchini",
-      "kind": "pick",
-      "title": "Zucchini",
-      "category": "produce",
+      "id": "zucchini",
+      "title": "Zucchini and summer squash",
       "aliases": [
         "zucchini",
         "zucchinis",
@@ -6440,101 +6686,249 @@
         "summer squashes",
         "yellow squash"
       ],
-      "decision": "Small to medium zucchini, glossy and firm, heavy for their size.",
+      "category": "produce",
+      "question": "Which zucchini should I buy?",
+      "decision": "Organic zucchini, small to medium, glossy and heavy.",
+      "why": "The whole squash is eaten skin and all, and small ones are the most tender.",
+      "short_answer": "Nebraska Extension: glossy, small to medium, heavy for its size, firm, no blemishes. NDSU agrees small to medium is the most tender. Keep unwashed in the fridge up to five days.",
+      "detail": "Summer squash is completely edible, skin included. Some summer squash varieties appear on the federal List of Bioengineered Foods, and the organic standard excludes genetic engineering. Rinse and trim both ends before cooking.",
+      "evidence_tier": "established",
       "sources": [
         {
-          "name": "Nebraska Extension: Summer Squash",
+          "name": "Nebraska Extension: Zucchini and summer squash",
           "url": "https://food.unl.edu/article/summer-squash"
+        },
+        {
+          "name": "NDSU Extension: Vary Your Veggies, how to select and store vegetables",
+          "url": "https://www.ndsu.edu/agriculture/extension/publications/vary-your-veggies-how-select-and-store-vegetables"
+        },
+        {
+          "name": "Certified Naturally Grown: FAQs",
+          "url": "https://www.naturallygrown.org/faqs/"
+        },
+        {
+          "name": "7 CFR 205.105, organic allowed and prohibited substances",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
         }
-      ]
+      ],
+      "kristy_take": "Small, glossy and heavy picks the tender ones. Organic covers the skin that gets eaten.",
+      "cart_pick": "Zucchini",
+      "buying_tips": [
+        "Certified Naturally Grown on the sign: no synthetic sprays or GMOs.",
+        "No Certified Naturally Grown sign: USDA Organic on the sticker.",
+        "Small to medium, glossy, heavy for its size.",
+        "Firm with no blemishes."
+      ],
+      "watch_out": [
+        "Skip soft, dull or damaged squash.",
+        "Skip oversized squash: tougher, seedier flesh."
+      ],
+      "pick_steps": [
+        "A farmers market stand in summer."
+      ],
+      "science": "Summer squash is picked young, with a thin edible rind. Oversized squash has grown tougher and seedier. Virus-resistant engineered summer squash is on the federal bioengineered list.",
+      "labels_decoded": [],
+      "tier_note": "Small, glossy, heavy squash is the extension-guide call for tender flesh.",
+      "asked_as": [
+        "which zucchini should i buy",
+        "how do i pick summer squash",
+        "are small zucchini better"
+      ],
+      "family": "fam_crisp_heads_pods"
     },
     {
-      "id": "pick_cilantro",
-      "kind": "pick",
+      "id": "cilantro",
       "title": "Cilantro",
-      "category": "produce",
       "aliases": [
         "cilantro",
         "cilantro bunch",
         "cilantro bunches",
         "coriander leaves"
       ],
-      "decision": "Organic cilantro in bright, upright bunches.",
+      "category": "produce",
+      "question": "Which cilantro should I buy?",
+      "decision": "Organic cilantro, bright and upright, with a strong smell.",
+      "why": "Cilantro is eaten leaf and stem, with no peel to discard.",
+      "short_answer": "Nebraska Extension: herbs not limp or drooping, bright, with a strong smell. Skip brown or yellowed leaves. Purdue Extension adds bright green leaves, with no wilting and no yellow or brown spots.",
+      "detail": "Herbs are eaten whole, with no peel to discard. Organic rules exclude synthetic substances and genetic engineering outside an approved list, and Certified Naturally Grown farms use no synthetic herbicides, pesticides, fertilizers or GMOs. A strong smell at the shelf is the freshness check.",
+      "evidence_tier": "established",
       "sources": [
         {
-          "name": "Nebraska Extension: Fresh Herbs",
+          "name": "Nebraska Extension: Cilantro",
           "url": "https://food.unl.edu/article/fresh-herbs"
+        },
+        {
+          "name": "Purdue Extension FoodLink: foods",
+          "url": "https://www.extension.purdue.edu/foodlink/foods.php"
         },
         {
           "name": "Certified Naturally Grown: FAQs",
           "url": "https://www.naturallygrown.org/faqs/"
         },
         {
-          "name": "7 CFR 205.206, organic crop pest and weed management standard",
-          "url": "https://www.law.cornell.edu/cfr/text/7/205.206"
+          "name": "7 CFR 205.105, organic allowed and prohibited substances",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
         }
-      ]
+      ],
+      "kristy_take": "Cilantro goes in raw, leaf and stem, so organic earns its place. A strong smell means fresh.",
+      "cart_pick": "Cilantro",
+      "buying_tips": [
+        "Certified Naturally Grown on the sign: no synthetic sprays or GMOs.",
+        "No Certified Naturally Grown sign: USDA Organic on the sticker.",
+        "Bright leaves, upright stems, a strong smell."
+      ],
+      "watch_out": [
+        "Skip limp or drooping bunches.",
+        "Skip brown spots or yellowed leaves."
+      ],
+      "pick_steps": [
+        "A farmers market bunch, in season."
+      ],
+      "science": "Herbs are leaves eaten whole, so there is no peel to carry surface residue away. Wilting and yellowing mean the leaves have lost water and are past their best.",
+      "labels_decoded": [
+        {
+          "term": "Certified Naturally Grown",
+          "meaning": "A peer-reviewed label for small farms that use no synthetic herbicides, pesticides, fertilizers or GMOs."
+        }
+      ],
+      "tier_note": "Yellow or brown spots on cilantro leaves are the extension age check.",
+      "asked_as": [
+        "which cilantro should i buy",
+        "how do i pick fresh cilantro",
+        "is cilantro worth buying fresh"
+      ],
+      "family": "fam_living_leaf"
     },
     {
-      "id": "pick_parsley",
-      "kind": "pick",
+      "id": "parsley",
       "title": "Parsley",
-      "category": "produce",
       "aliases": [
-        "parsley",
+        "fresh parsley",
         "parsley bunch",
         "parsley bunches",
         "italian parsley",
         "flat leaf parsley"
       ],
-      "decision": "Organic parsley, bright green and upright.",
+      "category": "produce",
+      "question": "Which parsley should I buy?",
+      "decision": "Organic parsley, bright and upright, with a strong smell.",
+      "why": "Parsley leaves go in whole, so how the bunch was grown rides along.",
+      "short_answer": "Nebraska Extension: herbs not limp or drooping, bright, with a strong smell. Skip brown or yellowed leaves. Purdue Extension adds deep green, crisp leaves, with stems that are not wilted or yellow.",
+      "detail": "Herbs are eaten whole, with no peel to discard. Organic rules exclude synthetic substances and genetic engineering outside an approved list, and Certified Naturally Grown farms use no synthetic herbicides, pesticides, fertilizers or GMOs. A strong smell at the shelf is the freshness check.",
+      "evidence_tier": "established",
       "sources": [
         {
-          "name": "Nebraska Extension: Fresh Herbs",
+          "name": "Nebraska Extension: Parsley",
           "url": "https://food.unl.edu/article/fresh-herbs"
+        },
+        {
+          "name": "Purdue Extension FoodLink: foods",
+          "url": "https://www.extension.purdue.edu/foodlink/foods.php"
         },
         {
           "name": "Certified Naturally Grown: FAQs",
           "url": "https://www.naturallygrown.org/faqs/"
         },
         {
-          "name": "7 CFR 205.206, organic crop pest and weed management standard",
-          "url": "https://www.law.cornell.edu/cfr/text/7/205.206"
+          "name": "7 CFR 205.105, organic allowed and prohibited substances",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
         }
-      ]
+      ],
+      "kristy_take": "A parsley bunch is eaten whole, so organic leads. Crisp, deep green stems tell the rest.",
+      "cart_pick": "Parsley",
+      "buying_tips": [
+        "Certified Naturally Grown on the sign: no synthetic sprays or GMOs.",
+        "No Certified Naturally Grown sign: USDA Organic on the sticker.",
+        "Bright leaves, upright stems, a strong smell."
+      ],
+      "watch_out": [
+        "Skip limp or drooping bunches.",
+        "Skip brown spots or yellowed leaves."
+      ],
+      "pick_steps": [
+        "A farmers market bunch, in season."
+      ],
+      "science": "Herbs are leaves eaten whole, so there is no peel to carry surface residue away. Wilting and yellowing mean the leaves have lost water and are past their best.",
+      "labels_decoded": [
+        {
+          "term": "Certified Naturally Grown",
+          "meaning": "A peer-reviewed label for small farms that use no synthetic herbicides, pesticides, fertilizers or GMOs."
+        }
+      ],
+      "tier_note": "Wilted or yellow parsley stems are the extension freshness check.",
+      "asked_as": [
+        "which fresh parsley should i buy",
+        "how do i pick fresh parsley",
+        "how do i tell fresh parsley"
+      ],
+      "family": "fam_living_leaf"
     },
     {
-      "id": "pick_basil",
-      "kind": "pick",
+      "id": "basil",
       "title": "Basil",
-      "category": "produce",
       "aliases": [
-        "basil",
+        "fresh basil",
         "basil bunch",
         "basil bunches",
-        "sweet basil"
+        "fresh sweet basil"
       ],
-      "decision": "Organic basil, bright and upright.",
+      "category": "produce",
+      "question": "Which basil should I buy?",
+      "decision": "Organic basil, bright and upright, with a strong smell.",
+      "why": "Basil leaves are eaten whole and bruise easily, so freshness shows fast.",
+      "short_answer": "Nebraska Extension: herbs not limp or drooping, bright, with a strong smell. Skip brown or yellowed leaves. Purdue Extension adds smooth, whole, bright leaves with a strong aroma.",
+      "detail": "Herbs are eaten whole, with no peel to discard. Organic rules exclude synthetic substances and genetic engineering outside an approved list, and Certified Naturally Grown farms use no synthetic herbicides, pesticides, fertilizers or GMOs. A strong smell at the shelf is the freshness check.",
+      "evidence_tier": "established",
       "sources": [
         {
-          "name": "Nebraska Extension: Fresh Herbs",
+          "name": "Nebraska Extension: Basil",
           "url": "https://food.unl.edu/article/fresh-herbs"
+        },
+        {
+          "name": "Purdue Extension FoodLink: foods",
+          "url": "https://www.extension.purdue.edu/foodlink/foods.php"
         },
         {
           "name": "Certified Naturally Grown: FAQs",
           "url": "https://www.naturallygrown.org/faqs/"
         },
         {
-          "name": "7 CFR 205.206, organic crop pest and weed management standard",
-          "url": "https://www.law.cornell.edu/cfr/text/7/205.206"
+          "name": "7 CFR 205.105, organic allowed and prohibited substances",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
         }
-      ]
+      ],
+      "kristy_take": "Basil is eaten leaf by leaf, so organic leads. Smell it before it goes in the cart.",
+      "cart_pick": "Basil",
+      "buying_tips": [
+        "Certified Naturally Grown on the sign: no synthetic sprays or GMOs.",
+        "No Certified Naturally Grown sign: USDA Organic on the sticker.",
+        "Bright leaves, upright stems, a strong smell."
+      ],
+      "watch_out": [
+        "Skip limp or drooping bunches.",
+        "Skip brown spots or yellowed leaves."
+      ],
+      "pick_steps": [
+        "A farmers market bunch, in season."
+      ],
+      "science": "Herbs are leaves eaten whole, so there is no peel to carry surface residue away. Wilting and yellowing mean the leaves have lost water and are past their best.",
+      "labels_decoded": [
+        {
+          "term": "Certified Naturally Grown",
+          "meaning": "A peer-reviewed label for small farms that use no synthetic herbicides, pesticides, fertilizers or GMOs."
+        }
+      ],
+      "tier_note": "Dark or brown spots on basil leaves are the extension freshness check.",
+      "asked_as": [
+        "which fresh basil should i buy",
+        "how do i pick fresh basil",
+        "how do i tell fresh basil"
+      ],
+      "family": "fam_living_leaf"
     },
     {
-      "id": "pick_snap_peas",
-      "kind": "pick",
-      "title": "Snap peas",
-      "category": "produce",
+      "id": "snap_peas",
+      "title": "Snap and snow peas",
       "aliases": [
         "snap peas",
         "snap pea",
@@ -6543,112 +6937,286 @@
         "snow peas",
         "snow pea"
       ],
-      "decision": "Organic snap and snow peas, with ‘organic’ on the sign or sticker.",
+      "category": "produce",
+      "question": "Which snap peas should I buy?",
+      "decision": "Organic snap peas, bright green, firm pods.",
+      "why": "The whole pod is eaten, so organic covers every bite.",
+      "short_answer": "Nebraska Extension: bright green all around the shell, firm pods free of blemishes. Purdue, on pea pods: medium size, firm, with no wilting or decay.",
+      "detail": "Snap and snow peas are eaten pod and all. Organic rules exclude synthetic substances outside an approved list, and Certified Naturally Grown farms use no synthetic sprays.",
+      "evidence_tier": "established",
       "sources": [
         {
-          "name": "F150 — extension.illinois.edu",
-          "url": "https://extension.illinois.edu/sites/default/files/pennsylvania-produce-a-guide-to-quality-produce.pdf"
+          "name": "Nebraska Extension: Snap and snow peas",
+          "url": "https://food.unl.edu/article/snap-peas"
         },
         {
-          "name": "F127 — law.cornell.edu",
-          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
-        }
-      ]
-    },
-    {
-      "id": "pick_kohlrabi",
-      "kind": "pick",
-      "title": "Kohlrabi",
-      "category": "produce",
-      "aliases": [
-        "kohlrabi",
-        "kohlrabis",
-        "kohlrabi bulb",
-        "kohlrabi bulbs"
-      ],
-      "decision": "Firm kohlrabi, heavy for its size.",
-      "sources": [
-        {
-          "name": "F192 — extension.purdue.edu",
+          "name": "Purdue Extension FoodLink: foods",
           "url": "https://www.extension.purdue.edu/foodlink/foods.php"
-        },
-        {
-          "name": "F128 — law.cornell.edu",
-          "url": "https://www.law.cornell.edu/cfr/text/7/205.203"
-        }
-      ]
-    },
-    {
-      "id": "pick_okra",
-      "kind": "pick",
-      "title": "Okra",
-      "category": "produce",
-      "aliases": [
-        "okra",
-        "okras",
-        "okra pods",
-        "okra pod"
-      ],
-      "decision": "Organic okra, with ‘organic’ on the sign or sticker.",
-      "sources": [
-        {
-          "name": "F151 — ndsu.edu",
-          "url": "https://www.ndsu.edu/agriculture/extension/publications/vary-your-veggies-how-select-and-store-vegetables"
-        },
-        {
-          "name": "F127 — law.cornell.edu",
-          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
-        }
-      ]
-    },
-    {
-      "id": "pick_swiss_chard",
-      "kind": "pick",
-      "title": "Swiss chard",
-      "category": "produce",
-      "aliases": [
-        "swiss chard",
-        "chard",
-        "chards",
-        "rainbow chard"
-      ],
-      "decision": "Organic chard, dark green, with stalks that are not split.",
-      "sources": [
-        {
-          "name": "Nebraska Extension: Swiss Chard",
-          "url": "https://food.unl.edu/article/swiss-chard"
         },
         {
           "name": "Certified Naturally Grown: FAQs",
           "url": "https://www.naturallygrown.org/faqs/"
         },
         {
-          "name": "7 CFR 205.206, organic crop pest and weed management standard",
-          "url": "https://www.law.cornell.edu/cfr/text/7/205.206"
+          "name": "7 CFR 205.105, organic allowed and prohibited substances",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
         }
-      ]
+      ],
+      "kristy_take": "Bright green and firm is fresh. The pod is eaten, so organic leads.",
+      "cart_pick": "Snap peas",
+      "buying_tips": [
+        "Certified Naturally Grown on the sign: no synthetic sprays or GMOs.",
+        "No Certified Naturally Grown sign: USDA Organic on the sticker.",
+        "Bright green all around, firm pods."
+      ],
+      "watch_out": [
+        "Skip limp, wilted or blemished pods.",
+        "Skip yellowing or decay."
+      ],
+      "pick_steps": [
+        "A farmers market stand in spring."
+      ],
+      "science": "Edible-pod peas are picked young, before the peas inside swell. Limp pods have lost water and sweetness.",
+      "labels_decoded": [],
+      "tier_note": "A firm pod over a limp one is the extension-guide freshness call.",
+      "asked_as": [
+        "which snap peas should i buy",
+        "how do i pick sugar snap peas",
+        "how do i tell fresh snap peas"
+      ],
+      "family": "fam_crisp_heads_pods"
     },
     {
-      "id": "pick_mangoes",
-      "kind": "pick",
-      "title": "Mangoes",
-      "category": "produce",
+      "id": "kohlrabi",
+      "title": "Kohlrabi",
       "aliases": [
-        "mangoes",
-        "mango",
-        "mangos"
+        "kohlrabi",
+        "kohlrabis",
+        "kohlrabi bulb",
+        "kohlrabi bulbs"
       ],
-      "decision": "Mangoes that give slightly when pressed.",
+      "category": "produce",
+      "question": "Which kohlrabi should I buy?",
+      "decision": "Small, firm kohlrabi, heavy for its size.",
+      "why": "Smaller globes are more tender, and the peel comes off before eating.",
+      "short_answer": "Nebraska Extension: firm globes, heavy for their size, no bruises or cracks; smaller ones are more tender. Leaves green and not wilted. Purdue: avoid wilted leaves, brown spots or cracks.",
+      "detail": "Kohlrabi is a brassica whose swollen stem is peeled and eaten raw or cooked. Its leaves are edible too. Organic rules exclude synthetic substances outside an approved list.",
+      "evidence_tier": "established",
       "sources": [
         {
-          "name": "F182 — ndsu.edu",
+          "name": "Nebraska Extension: Kohlrabi",
+          "url": "https://food.unl.edu/article/kohlrabi"
+        },
+        {
+          "name": "Purdue Extension FoodLink: foods",
+          "url": "https://www.extension.purdue.edu/foodlink/foods.php"
+        },
+        {
+          "name": "Certified Naturally Grown: FAQs",
+          "url": "https://www.naturallygrown.org/faqs/"
+        },
+        {
+          "name": "7 CFR 205.105, organic allowed and prohibited substances",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ],
+      "kristy_take": "Small and heavy beats big. Bright leaves still on are a freshness bonus.",
+      "cart_pick": "Kohlrabi",
+      "buying_tips": [
+        "Small globes, firm and heavy for their size.",
+        "Bright green, firm leaves still attached.",
+        "Organic or Certified Naturally Grown when the leaves get eaten."
+      ],
+      "watch_out": [
+        "Skip cracked or bruised globes.",
+        "Skip wilted leaves or brown spots."
+      ],
+      "pick_steps": [
+        "A farmers market stand, spring or fall."
+      ],
+      "science": "Kohlrabi toughens and turns woody as the globe grows. Cracks let it dry out. The tough peel is trimmed off before eating.",
+      "labels_decoded": [],
+      "tier_note": "Two extension buying guides agree on size and firmness.",
+      "asked_as": [
+        "which kohlrabi should i buy",
+        "how do i pick kohlrabi",
+        "what size kohlrabi should i buy"
+      ],
+      "family": "fam_crisp_heads_pods"
+    },
+    {
+      "id": "okra",
+      "title": "Okra",
+      "aliases": [
+        "okra",
+        "okras",
+        "okra pods",
+        "okra pod"
+      ],
+      "category": "produce",
+      "question": "Which okra should I buy?",
+      "decision": "Organic okra, young pods two to four inches.",
+      "why": "Young pods are tender; dull, dry or shriveled ones are past it.",
+      "short_answer": "NDSU Extension: young, tender pods, two to four inches long. Nebraska Extension: bright green and firm. Purdue: brightly colored, dry and firm. Refrigerate and use within three to five days.",
+      "detail": "The whole okra pod is eaten. NDSU warns off dull, dry or shriveled pods; Nebraska adds moldy or limp ones. Organic rules exclude synthetic substances outside an approved list.",
+      "evidence_tier": "established",
+      "sources": [
+        {
+          "name": "Nebraska Extension: Okra",
+          "url": "https://food.unl.edu/article/okra"
+        },
+        {
+          "name": "NDSU Extension: Vary Your Veggies, how to select and store vegetables",
+          "url": "https://www.ndsu.edu/agriculture/extension/publications/vary-your-veggies-how-select-and-store-vegetables"
+        },
+        {
+          "name": "Purdue Extension FoodLink: foods",
+          "url": "https://www.extension.purdue.edu/foodlink/foods.php"
+        },
+        {
+          "name": "Certified Naturally Grown: FAQs",
+          "url": "https://www.naturallygrown.org/faqs/"
+        },
+        {
+          "name": "7 CFR 205.105, organic allowed and prohibited substances",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ],
+      "kristy_take": "Short, bright and firm is tender okra. The pod is eaten whole, so organic leads.",
+      "cart_pick": "Okra",
+      "buying_tips": [
+        "Certified Naturally Grown on the sign: no synthetic sprays or GMOs.",
+        "No Certified Naturally Grown sign: USDA Organic on the sticker.",
+        "Young pods, two to four inches, bright and firm."
+      ],
+      "watch_out": [
+        "Skip dull, dry or shriveled pods.",
+        "Skip moldy or limp pods."
+      ],
+      "pick_steps": [
+        "A farmers market stand, July to October."
+      ],
+      "science": "Okra pods turn woody and fibrous as they grow past a few inches. Shriveling means water loss.",
+      "labels_decoded": [],
+      "tier_note": "Short pods over dull or shriveled ones is an extension-guide call.",
+      "asked_as": [
+        "which okra should i buy",
+        "how do i pick fresh okra",
+        "what size okra is best"
+      ],
+      "family": "fam_crisp_heads_pods"
+    },
+    {
+      "id": "swiss_chard",
+      "title": "Swiss chard",
+      "aliases": [
+        "swiss chard",
+        "chard",
+        "chards",
+        "rainbow chard"
+      ],
+      "category": "produce",
+      "question": "Which Swiss chard should I buy?",
+      "decision": "Organic Swiss chard, dark green and unblemished.",
+      "why": "Chard is a leafy green eaten whole, with no peel to discard.",
+      "short_answer": "Nebraska Extension: dark green leaves, no discolored or damaged leaves, and stalks that are not split. Keep it unwashed in the crisper for up to three days.",
+      "detail": "Chard is eaten leaf and stalk. Organic rules exclude synthetic substances outside an approved list, and Certified Naturally Grown farms use no synthetic sprays or fertilizers.",
+      "evidence_tier": "established",
+      "sources": [
+        {
+          "name": "Nebraska Extension: Swiss chard",
+          "url": "https://food.unl.edu/article/swiss-chard"
+        },
+        {
+          "name": "Purdue Extension FoodLink: foods",
+          "url": "https://www.extension.purdue.edu/foodlink/foods.php"
+        },
+        {
+          "name": "Certified Naturally Grown: FAQs",
+          "url": "https://www.naturallygrown.org/faqs/"
+        },
+        {
+          "name": "7 CFR 205.105, organic allowed and prohibited substances",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+        }
+      ],
+      "kristy_take": "A leaf eaten whole earns the organic floor. Look at the stalks for splits.",
+      "cart_pick": "Swiss chard",
+      "buying_tips": [
+        "Certified Naturally Grown on the sign: no synthetic sprays or GMOs.",
+        "No Certified Naturally Grown sign: USDA Organic on the sticker.",
+        "Dark green leaves, stalks whole and unsplit."
+      ],
+      "watch_out": [
+        "Skip discolored or damaged leaves.",
+        "Skip split stalks."
+      ],
+      "pick_steps": [
+        "A farmers market stand, spring through fall."
+      ],
+      "science": "Leafy greens lose water and color fast after harvest. Split stalks and yellowing leaves show age.",
+      "labels_decoded": [],
+      "tier_note": "Split stalks and yellowing leaves are extension-guide age signs.",
+      "asked_as": [
+        "which swiss chard should i buy",
+        "how do i pick fresh chard",
+        "how do i tell fresh swiss chard"
+      ],
+      "family": "fam_living_leaf"
+    },
+    {
+      "id": "mangoes",
+      "title": "Mangoes",
+      "aliases": [
+        "mangoes",
+        "fresh mango",
+        "mangos",
+        "whole mango"
+      ],
+      "category": "produce",
+      "question": "Which mangoes should I buy?",
+      "decision": "Mangoes soft to the touch, fragrant at the stem.",
+      "why": "A ripe mango gives a little and smells sweet near the stem end.",
+      "short_answer": "NDSU Extension: ripe mangoes are soft to the touch and fragrant near the stem end. Keep unripe mangoes out of the fridge, since cold can stop them ripening to good flavor.",
+      "detail": "Mango skin is peeled away, so organic matters less here than on fruit eaten skin-on. NDSU lists mangoes among fruit not to refrigerate before ripe. Sort out any with bruises or soft spots.",
+      "evidence_tier": "established",
+      "sources": [
+        {
+          "name": "NDSU Extension: Focus on Whole Fruits, how to select and store fruit",
           "url": "https://www.ndsu.edu/agriculture/extension/publications/focus-whole-fruits-how-select-and-store-fruit"
         },
         {
-          "name": "F127 — law.cornell.edu",
+          "name": "Certified Naturally Grown: FAQs",
+          "url": "https://www.naturallygrown.org/faqs/"
+        },
+        {
+          "name": "7 CFR 205.105, organic allowed and prohibited substances",
           "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
         }
-      ]
+      ],
+      "kristy_take": "The peel goes in the bin, so ripeness leads here. Firmer ones finish on the counter.",
+      "cart_pick": "Mangoes",
+      "buying_tips": [
+        "Soft to the touch, fragrant near the stem.",
+        "Firmer mangoes for later in the week.",
+        "Organic when it is on offer."
+      ],
+      "watch_out": [
+        "Skip bruised mangoes or mushy spots.",
+        "Skip refrigerating unripe mangoes."
+      ],
+      "pick_steps": [
+        "Ripe now for today, firmer for later."
+      ],
+      "science": "Mangoes ripen after picking. Cold storage before ripe can cause chill damage and stop flavor from developing.",
+      "labels_decoded": [],
+      "tier_note": "Softness near the stem and a sweet smell are extension ripeness signs.",
+      "asked_as": [
+        "which mangoes should i buy",
+        "how do i pick a fresh mango",
+        "should mangoes go in the fridge"
+      ],
+      "family": "fam_finish_at_home"
     },
     {
       "id": "pick_juice",
@@ -6703,10 +7271,8 @@
       "avoid": "Skip sausage that lists mechanically separated (machine-stripped) chicken, turkey or pork."
     },
     {
-      "id": "pick_tofu",
-      "kind": "pick",
+      "id": "tofu",
       "title": "Tofu",
-      "category": "produce",
       "aliases": [
         "tofu",
         "firm tofu",
@@ -6718,26 +7284,72 @@
         "block of tofu",
         "blocks of tofu"
       ],
-      "decision": "Tofu in your firmness: soybeans, water, and nigari or gypsum to set it.",
-      "avoid": "Skip tofu labeled bioengineered, the US label word for genetically engineered.",
+      "category": "produce",
+      "question": "Which tofu should I buy?",
+      "decision": "Organic tofu: soybeans, water, nigari or calcium sulfate.",
+      "why": "Soybeans are on the federal bioengineered list, and organic excludes genetic engineering.",
+      "short_answer": "Tofu is curdled soy milk pressed into blocks. Calcium sulfate and nigari salts are the traditional coagulants. Firmness is a cooking choice: silken for blending, firm and extra-firm for pressing and searing.",
+      "detail": "Soybean appears on the List of Bioengineered Foods in 7 CFR 66.6. The organic standard excludes genetic engineering as a method. Food Hero groups tofu by firmness: silken, firm, extra-firm and super-firm, with firmer tofu needing less pressing.",
+      "evidence_tier": "established",
       "sources": [
         {
-          "name": "Food Hero (Oregon State University Extension): All About Tofu",
+          "name": "Food Hero: All about tofu",
           "url": "https://foodhero.org/healthy-food/all-about-tofu-tips-select-press-marinate-and-cook-tofu"
         },
         {
-          "name": "Smithsonian Asian Pacific American Center: How to Make Tofu",
-          "url": "https://apa.si.edu/picklesandtea/how-to-make-tofu/"
+          "name": "Wikipedia: Tofu",
+          "url": "https://en.wikipedia.org/wiki/Tofu"
+        },
+        {
+          "name": "7 CFR 66.6, List of Bioengineered Foods",
+          "url": "https://www.law.cornell.edu/cfr/text/7/66.6"
+        },
+        {
+          "name": "Certified Naturally Grown: FAQs",
+          "url": "https://www.naturallygrown.org/faqs/"
+        },
+        {
+          "name": "7 CFR 205.105, organic allowed and prohibited substances",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
         }
+      ],
+      "kristy_take": "Organic answers the soybean question. The list should be short: beans, water and one coagulant.",
+      "cart_pick": "Organic tofu",
+      "buying_tips": [
+        "Organic tofu, with no bioengineered soy.",
+        "Soybeans, water, and nigari or calcium sulfate.",
+        "Firmness matched to the dish."
+      ],
+      "watch_out": [
+        "Skip tofu labeled bioengineered, the US label word for genetically engineered.",
+        "Skip flavored or marinated tofu with long lists."
+      ],
+      "pick_steps": [
+        "Nigari named on the package."
+      ],
+      "science": "Tofu is made by curdling soy milk with a coagulant and pressing the curds. Calcium sulfate gives a tender curd; nigari, mostly magnesium chloride, gives a firmer one.",
+      "labels_decoded": [
+        {
+          "term": "Nigari",
+          "meaning": "A traditional coagulant from seawater, mostly magnesium chloride."
+        },
+        {
+          "term": "Calcium sulfate",
+          "meaning": "Gypsum, the most common traditional tofu coagulant."
+        }
+      ],
+      "tier_note": "The bioengineered list and the organic rule are written law.",
+      "asked_as": [
+        "which tofu should i buy",
+        "what should tofu ingredients be",
+        "what does tofu need on the label"
       ]
     },
     {
-      "id": "pick_celery",
-      "kind": "pick",
+      "id": "celery",
       "title": "Celery",
-      "category": "produce",
       "aliases": [
-        "celery",
+        "fresh celery",
         "celery stalk",
         "celery stalks",
         "celery heart",
@@ -6747,17 +7359,55 @@
         "bunch of celery",
         "bunches of celery"
       ],
-      "decision": "Organic celery, with ‘organic’ on the sign or sticker.",
+      "category": "produce",
+      "question": "Which celery should I buy?",
+      "decision": "Organic celery, solid stalks and fresh leaves.",
+      "why": "Celery is eaten stalk and all, with no peel to discard.",
+      "short_answer": "NDSU Extension: stalks with a solid feel and fresh-looking leaflets; soft branches can mean pithiness. Purdue: pale to bright green, crisp when pulled apart, no wilted leaves or dark spots.",
+      "detail": "Celery has no peel, so the whole stalk is eaten. NDSU warns off brown or black discoloration in the central branches. Organic rules exclude synthetic substances outside an approved list.",
+      "evidence_tier": "established",
       "sources": [
         {
-          "name": "F159 — extension.purdue.edu",
+          "name": "NDSU Extension: Vary Your Veggies, how to select and store vegetables",
+          "url": "https://www.ndsu.edu/agriculture/extension/publications/vary-your-veggies-how-select-and-store-vegetables"
+        },
+        {
+          "name": "Purdue Extension FoodLink: foods",
           "url": "https://www.extension.purdue.edu/foodlink/foods.php"
         },
         {
-          "name": "F127 — law.cornell.edu",
+          "name": "Certified Naturally Grown: FAQs",
+          "url": "https://www.naturallygrown.org/faqs/"
+        },
+        {
+          "name": "7 CFR 205.105, organic allowed and prohibited substances",
           "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
         }
-      ]
+      ],
+      "kristy_take": "Nothing gets peeled, so organic leads. Solid stalks and fresh leaves say the rest.",
+      "cart_pick": "Celery",
+      "buying_tips": [
+        "Certified Naturally Grown on the sign: no synthetic sprays or GMOs.",
+        "No Certified Naturally Grown sign: USDA Organic on the sticker.",
+        "Solid, crisp stalks with fresh-looking leaves."
+      ],
+      "watch_out": [
+        "Skip soft, pithy branches.",
+        "Skip brown or black spots in the center.",
+        "Skip wilted leaves."
+      ],
+      "pick_steps": [
+        "A farmers market stand in season."
+      ],
+      "science": "Celery stalks turn soft and pithy as they age and lose water. Badly wilted celery never fully crisps again.",
+      "labels_decoded": [],
+      "tier_note": "A solid stalk and a clean center are extension-guide freshness signs.",
+      "asked_as": [
+        "which fresh celery should i buy",
+        "how do i pick fresh celery",
+        "what makes good fresh celery"
+      ],
+      "family": "fam_crisp_heads_pods"
     },
     {
       "id": "sandwich_bread",
@@ -7880,10 +8530,8 @@
       "delta": "Duck or quail named on the carton."
     },
     {
-      "id": "pick_winter_squash",
-      "kind": "pick",
+      "id": "winter_squash",
       "title": "Winter squash",
-      "category": "produce",
       "aliases": [
         "winter squash",
         "winter squashes",
@@ -7891,13 +8539,50 @@
         "acorn squash",
         "spaghetti squash"
       ],
-      "decision": "Winter squash and pumpkin, heavy for their size.",
+      "category": "produce",
+      "question": "Which winter squash should I buy?",
+      "decision": "Winter squash heavy for its size, shell intact.",
+      "why": "A heavy, hard-shelled squash stores for months in a cool spot.",
+      "short_answer": "Nebraska Extension: firm, heavy for its size, thick skin, no soft spots or cracks. Purdue: avoid moist, black or shriveled stems. Store cool and dry, not in the fridge.",
+      "detail": "NDSU Extension says winter squash keeps several months in a cool, dry, ventilated place, and should not be refrigerated: cold changes starch to sugar and affects flavor. The hard rind is usually peeled or scooped away.",
+      "evidence_tier": "established",
       "sources": [
         {
-          "name": "F127 — law.cornell.edu",
-          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
+          "name": "Nebraska Extension: Winter squash",
+          "url": "https://food.unl.edu/article/winter-squash"
+        },
+        {
+          "name": "NDSU Extension: Vary Your Veggies, how to select and store vegetables",
+          "url": "https://www.ndsu.edu/agriculture/extension/publications/vary-your-veggies-how-select-and-store-vegetables"
+        },
+        {
+          "name": "Purdue Extension FoodLink: foods",
+          "url": "https://www.extension.purdue.edu/foodlink/foods.php"
         }
-      ]
+      ],
+      "kristy_take": "Heavy with a dry stem and a whole shell is the pick. It keeps for months.",
+      "cart_pick": "Winter squash",
+      "buying_tips": [
+        "Heavy for its size, hard shell, no cracks.",
+        "A dry, intact stem.",
+        "Organic, or a farmers market stand in fall."
+      ],
+      "watch_out": [
+        "Skip soft spots or cracks.",
+        "Skip moist, black or shriveled stems."
+      ],
+      "pick_steps": [
+        "A farmers market stand, August to November."
+      ],
+      "science": "Winter squash is picked mature with a hard rind that lets it store for months. Soft spots and wet stems mean decay has started.",
+      "labels_decoded": [],
+      "tier_note": "Three extension buying guides agree on weight, shell and stem.",
+      "asked_as": [
+        "which winter squash should i buy",
+        "how do i pick a butternut squash",
+        "should winter squash go in the fridge"
+      ],
+      "family": "fam_storage_crops"
     },
     {
       "id": "pick_ginger_turmeric",
@@ -7929,23 +8614,27 @@
       ]
     },
     {
-      "id": "pick_microgreens",
-      "kind": "pick",
+      "id": "microgreens",
       "title": "Microgreens",
-      "category": "produce",
       "aliases": [
         "microgreens",
         "microgreen",
         "micro greens"
       ],
-      "decision": "Organic microgreens, crisp and dry; rinse them before eating.",
+      "category": "produce",
+      "question": "Which microgreens should I buy?",
+      "decision": "Organic microgreens, crisp and fresh, from the cold case.",
+      "why": "Microgreens are eaten raw and whole, so freshness and growing both count.",
+      "short_answer": "Purdue Extension: crisp, fresh leaves and stems, no limp or wilted greens. Penn State Extension notes microgreens are eaten raw, so growers must keep pathogens out of water and handling.",
+      "detail": "Penn State Extension explains that water for soaking, irrigating and washing microgreens must be free of E. coli, and that worker hygiene matters because poor hygiene can introduce pathogens. Organic rules exclude synthetic substances outside an approved list.",
+      "evidence_tier": "established",
       "sources": [
         {
-          "name": "Science Meets Food: Microgreens",
-          "url": "https://sciencemeetsfood.org/microgreens/"
+          "name": "Purdue Extension FoodLink: foods",
+          "url": "https://www.extension.purdue.edu/foodlink/foods.php"
         },
         {
-          "name": "Penn State Extension: Ensuring Food Safety in Microgreens Production",
+          "name": "Penn State Extension: Ensuring food safety in microgreens production",
           "url": "https://extension.psu.edu/ensuring-food-safety-in-microgreens-production"
         },
         {
@@ -7953,44 +8642,83 @@
           "url": "https://www.naturallygrown.org/faqs/"
         },
         {
-          "name": "7 CFR 205.206, organic crop pest and weed management standard",
-          "url": "https://www.law.cornell.edu/cfr/text/7/205.206"
+          "name": "7 CFR 205.105, organic allowed and prohibited substances",
+          "url": "https://www.law.cornell.edu/cfr/text/7/205.105"
         }
-      ]
+      ],
+      "kristy_take": "Crisp and cold is the test. A farmers market tray is the best source.",
+      "cart_pick": "Microgreens",
+      "buying_tips": [
+        "Certified Naturally Grown on the sign: no synthetic sprays or GMOs.",
+        "No Certified Naturally Grown sign: USDA Organic on the sticker.",
+        "Crisp leaves and stems, dry, in the cold case."
+      ],
+      "watch_out": [
+        "Skip limp, wilted or slimy greens.",
+        "Skip packs with moisture pooled inside."
+      ],
+      "pick_steps": [
+        "A farmers market tray."
+      ],
+      "science": "Microgreens are harvested young and eaten raw, so there is no cooking step to kill pathogens. That is why growers test water for E. coli.",
+      "labels_decoded": [],
+      "tier_note": "Crisp leaves and a dry pack are extension freshness signs.",
+      "asked_as": [
+        "which microgreens should i buy",
+        "are microgreens safe to eat raw",
+        "how do i pick fresh microgreens"
+      ],
+      "family": "fam_living_leaf"
     },
     {
-      "id": "pick_egg_whites",
-      "kind": "pick",
+      "id": "egg_whites",
       "title": "Egg whites",
       "category": "poultry_eggs",
+      "family": "fam_eggs",
       "aliases": [
         "egg whites",
         "egg white",
         "carton egg whites",
         "liquid egg whites"
       ],
-      "decision": "Pastured-hen whites with soy-free, corn-free feed; pasteurized by law.",
+      "question": "Which egg whites should I buy?",
+      "decision": "Whole pastured eggs, separated at home, over cartons.",
+      "why": "Fresh eggs from pastured hens lead the holistic list; carton whites are a processed step away.",
+      "short_answer": "Under the federal standard, liquid egg whites are separated from the yolk and pasteurized or otherwise treated to destroy Salmonella. Whipping aids may be added to restore whipping properties.",
+      "detail": "The Weston A. Price guide puts fresh eggs from pastured poultry, preferably soy-free and GMO-free, first, with organic eggs next. A carton of whites carries no hen claim unless the label states one.",
+      "evidence_tier": "kristys_standard",
       "sources": [
         {
-          "name": "USDA FSIS: Egg Products and Food Safety",
-          "url": "https://www.fsis.usda.gov/es/node/3373"
-        },
-        {
-          "name": "21 CFR 160.140, Egg whites",
+          "name": "Cornell LII, 21 CFR 160.140 Egg whites",
           "url": "https://www.law.cornell.edu/cfr/text/21/160.140"
         },
         {
-          "name": "Cornell LII: 7 CFR § 205.237 Livestock feed",
-          "url": "https://www.law.cornell.edu/cfr/text/7/205.237"
-        },
-        {
-          "name": "Cornell LII: 7 CFR § 205.239 Livestock living conditions",
-          "url": "https://www.law.cornell.edu/cfr/text/7/205.239"
-        },
-        {
-          "name": "Cornucopia Institute: Egg Scorecard criteria",
-          "url": "https://www.cornucopia.org/egg-scorecard-criteria/"
+          "name": "Weston A. Price Foundation, Shopping guide categories",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
         }
+      ],
+      "kristy_take": "A whole egg cracked at home is the closest form. Carton whites are a convenience, read for the hen.",
+      "cart_pick": "Whole pastured eggs",
+      "buying_tips": [
+        "Pasture-raised eggs, soy-free feed, cracked and separated at home.",
+        "Carton whites stating pasture-raised or organic hens.",
+        "Egg whites as the only ingredient."
+      ],
+      "pick_steps": [
+        "A whipping aid named on the carton."
+      ],
+      "science": "Under the federal standard, liquid egg whites come from hen eggs, separated from the yolks. They are pasteurized or otherwise treated to destroy all viable Salmonella. Safe and suitable whipping aids may be added.",
+      "labels_decoded": [
+        {
+          "term": "Whipping aid",
+          "meaning": "An added substance the standard allows to protect or restore how whites whip."
+        }
+      ],
+      "tier_note": "Pasteurized whites are federal law; the pasture-raised hen rung is holistic.",
+      "asked_as": [
+        "which egg whites should i buy",
+        "are carton egg whites pasteurized",
+        "what is in liquid egg whites"
       ]
     },
     {
@@ -8519,48 +9247,114 @@
       "family": "fam_ruminant_meat"
     },
     {
-      "id": "pick_jerky",
-      "kind": "pick",
+      "id": "jerky",
       "title": "Jerky",
       "category": "pork",
+      "family": "fam_prepared_meats",
       "aliases": [
         "jerky",
         "beef jerky",
         "turkey jerky",
         "meat stick",
-        "meat sticks"
+        "meat sticks",
+        "grass fed jerky"
       ],
-      "decision": "Lifelong grass-fed beef jerky with a short list of simple ingredients.",
+      "question": "Which jerky should I buy?",
+      "decision": "Grass-fed beef jerky, salt and real smoke only.",
+      "why": "Jerky from grazing animals, made without MSG-type additives, leads the Weston A. Price list.",
+      "short_answer": "The best jerky comes from animals allowed to graze, made with salt, a little sugar and natural smoke. Hydrolyzed protein, citric acid, “spices” or “natural flavors” usually signal hidden MSG.",
+      "detail": "Celery, spinach or beet powder versions without MSG sit one rung down. AGA Grassfed means grass and forage alone from weaning to harvest, with no antibiotics or added growth hormones.",
+      "evidence_tier": "kristys_standard",
       "sources": [
         {
-          "name": "Weston A. Price Foundation",
-          "url": "https://www.westonaprice.org/health-topics/best-healthy-snacks/"
+          "name": "Weston A. Price Foundation, Shopping guide categories",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        },
+        {
+          "name": "American Grassfed Association, Our standards",
+          "url": "https://www.americangrassfed.org/about-us/our-standards/"
         }
       ],
-      "avoid": "Skip jerky that lists liquid smoke or smoke flavoring."
+      "kristy_take": "Jerky is meat, salt and smoke at its simplest. The grazing animal and the short list do the work.",
+      "cart_pick": "Grass-fed beef jerky",
+      "buying_tips": [
+        "100% grass-fed beef jerky with the AGA Grassfed logo.",
+        "Meat, salt, a little sugar and spices named one by one.",
+        "Naturally smoked, with no liquid smoke or smoke flavoring.",
+        "Celery or beet powder as the next rung, still with no MSG."
+      ],
+      "pick_steps": [
+        "Pemmican from the same grazing animals."
+      ],
+      "watch_out": [
+        "Hydrolyzed protein, citric acid or “natural flavors” usually mean hidden MSG.",
+        "Skip jerky with sugar near the top of the list."
+      ],
+      "science": "The Weston A. Price shopping guide ranks meat snacks from grazing animals, made with salt and natural smoke, first. It flags hydrolyzed protein, citric acid, “spices” and “natural flavors” as usual MSG sources. AGA Grassfed means a grass and forage diet from weaning to harvest, raised on pasture.",
+      "labels_decoded": [
+        {
+          "term": "AGA Grassfed",
+          "meaning": "Grass and forage only from weaning to harvest, on pasture, no antibiotics or added hormones."
+        }
+      ],
+      "tier_note": "Holistic guides skip liquid smoke and MSG; federal rules allow both.",
+      "asked_as": [
+        "which jerky should i buy",
+        "what should beef jerky list",
+        "are meat sticks a good snack"
+      ]
     },
     {
-      "id": "pick_soup_bones",
-      "kind": "pick",
+      "id": "soup_bones",
       "title": "Soup bones",
       "category": "pork",
+      "family": "fam_ruminant_meat",
       "aliases": [
         "soup bone",
         "soup bones",
         "marrow bones",
         "beef bones",
-        "knuckle bones"
+        "knuckle bones",
+        "beef soup bones"
       ],
-      "decision": "Ask your meat counter for lifelong grass-fed marrow or knuckle soup bones.",
+      "question": "Which soup bones should I buy?",
+      "decision": "Grass-fed marrow and knuckle bones, plus a calf’s foot.",
+      "why": "Feet, knuckles and marrow bones are the gelatin-rich parts traditional stock is built on.",
+      "short_answer": "Traditional beef stock starts with marrow and knuckle bones, meaty neck bones and an optional calf’s foot. Hooves, feet and heads are the most gelatinous parts of the animal.",
+      "detail": "Cooled stock congeals because of gelatin. Bones from animals allowed to graze, fresh or frozen, sit at the top of the Weston A. Price list; bones with the AGA Grassfed logo come from animals kept on pasture.",
+      "evidence_tier": "time_tested",
       "sources": [
         {
-          "name": "MSU Extension: Are you throwing away valuable food? Part three: Meat",
-          "url": "https://www.canr.msu.edu/news/are_you_throwing_away_valuable_food_part_three_meat"
+          "name": "Weston A. Price Foundation, Broth is beautiful",
+          "url": "https://www.westonaprice.org/health-topics/food-features/broth-is-beautiful/"
         },
         {
-          "name": "American Grassfed Association: Our Standards",
+          "name": "Weston A. Price Foundation, Shopping guide categories",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        },
+        {
+          "name": "American Grassfed Association, Our standards",
           "url": "https://www.americangrassfed.org/about-us/our-standards/"
         }
+      ],
+      "kristy_take": "Soup bones are the cheapest way to use the whole animal. Gelatin-rich joints make the stock set.",
+      "cart_pick": "Grass-fed marrow and knuckle bones",
+      "buying_tips": [
+        "100% grass-fed marrow and knuckle bones, AGA Grassfed on the label.",
+        "A calf’s foot or chicken feet, the most gelatinous parts.",
+        "Meaty rib or neck bones for browning first.",
+        "Frozen bones from a grazing farm when the case has none."
+      ],
+      "pick_steps": [
+        "The butcher counter, for bones kept off display."
+      ],
+      "science": "Stock that congeals when cooled holds gelatin, drawn from joints, feet and knuckles. The Weston A. Price beef stock recipe calls for marrow and knuckle bones, meaty neck bones and a calf’s foot. The bones soak in water with vinegar before simmering.",
+      "labels_decoded": [],
+      "tier_note": "Joints and feet for stock rest on generations of kitchen practice, not trials.",
+      "asked_as": [
+        "which soup bones should i buy",
+        "what marrow bones are best for broth",
+        "which knuckle bones should i buy for stock"
       ]
     },
     {
@@ -9094,24 +9888,61 @@
       "family": "fam_wild_first_seafood"
     },
     {
-      "id": "pick_fish_sticks",
-      "kind": "pick",
+      "id": "fish_sticks",
       "title": "Fish sticks",
       "category": "seafood",
+      "family": "fam_wild_first_seafood",
       "aliases": [
         "fish stick",
         "fish sticks",
         "fish finger",
-        "fish fingers"
+        "fish fingers",
+        "breaded fish sticks"
       ],
-      "decision": "Wild pollock fish sticks made from whole fillets, not minced pieces.",
+      "question": "Which fish sticks should I buy?",
+      "decision": "Wild Alaska pollock fillet sticks, breaded without seed oils.",
+      "why": "US wild-caught Alaska pollock is sustainably managed, and close to half the catch becomes fillets.",
+      "short_answer": "NOAA Fisheries calls US wild-caught Alaska pollock a smart seafood choice, sustainably managed and responsibly harvested. About half of pollock products are fillets; a quarter is surimi.",
+      "detail": "The Weston A. Price guide avoids seafood containing soy oil, vegetable oil, hydrolyzed protein or citric acid, and seafood from China. The fish species and the frying oil are the two lines to read on the box.",
+      "evidence_tier": "kristys_standard",
       "sources": [
         {
-          "name": "NOAA Fisheries",
+          "name": "NOAA Fisheries, Alaska pollock",
           "url": "https://www.fisheries.noaa.gov/species/alaska-pollock"
+        },
+        {
+          "name": "Weston A. Price Foundation, Shopping guide categories",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
         }
       ],
-      "avoid": "Skip Vietnam swai or basa; critics call ‘MSC certified’ a low bar."
+      "kristy_take": "Fish sticks are only as good as the fish and the fry oil. Wild pollock fillet, then a short coating.",
+      "cart_pick": "Wild Alaska pollock fish sticks",
+      "buying_tips": [
+        "Wild Alaska pollock named on the box, cut from whole fillets.",
+        "Breading with no soy oil or vegetable oil on the list.",
+        "No hydrolyzed protein or citric acid on the list.",
+        "Plain frozen pollock fillets to bread at home."
+      ],
+      "pick_steps": [
+        "The country of catch printed on the back."
+      ],
+      "watch_out": [
+        "Skip boxes listing soy oil or vegetable oil.",
+        "Seafood from China sits on the holistic avoid list."
+      ],
+      "science": "NOAA Fisheries reports that the Aleutian Islands, eastern Bering Sea and Gulf of Alaska pollock stocks are not overfished. Close to half of pollock products are fillets, a quarter is surimi and almost a fifth is roe.",
+      "labels_decoded": [
+        {
+          "term": "Surimi",
+          "meaning": "Minced, washed fish paste, the base of imitation crab."
+        }
+      ],
+      "tier_note": "The fish species’ stock status is federal fact; the oil bar is holistic.",
+      "asked_as": [
+        "which fish sticks should i buy",
+        "what fish is in fish sticks",
+        "are frozen fish fingers ok"
+      ]
     },
     {
       "id": "pick_anchovies",
@@ -9655,10 +10486,10 @@
       ]
     },
     {
-      "id": "pick_pita_naan",
-      "kind": "pick",
+      "id": "pita_naan",
       "title": "Pita and naan",
       "category": "bulk_pantry",
+      "family": "fam_whole_grain_baking",
       "aliases": [
         "pita",
         "pitas",
@@ -9670,7 +10501,12 @@
         "naans",
         "naan bread"
       ],
-      "decision": "Pita listing whole wheat flour first, not enriched; naan is the richer one, made with yogurt.",
+      "question": "Which pita or naan should I buy?",
+      "decision": "Whole wheat pita with a short list.",
+      "why": "Pita is flour, water, yeast and salt, so the first ingredient decides the bread.",
+      "short_answer": "Pita has few ingredients: wheat flour, water, yeast and salt. Naan adds milk, yogurt and oil or butter, and is often brushed with ghee. Enriched flour and wheat flour never describe a whole grain.",
+      "detail": "Pita consists of whole and white wheat flour, water, yeast and salt. It puffs in a hot oven and opens into a pocket. Naan is made with flour, water, yeast, milk, yogurt, and oil or butter. Eggs and nigella seeds are common, and the baked bread is often brushed with ghee. Yogurt, sugar and fat give naan its soft texture. The Whole Grains Council says “enriched flour” and “wheat flour” never describe whole grains.",
+      "evidence_tier": "kristys_standard",
       "sources": [
         {
           "name": "Busby’s Bakery: Naan vs pita",
@@ -9680,6 +10516,37 @@
           "name": "Whole Grains Council: Identifying whole grain products",
           "url": "https://wholegrainscouncil.org/node/13040"
         }
+      ],
+      "kristy_take": "A whole grain listed first is the standard here. Naan made with yogurt and butter is the richer bread, not the everyday one.",
+      "cart_pick": "Whole wheat pita",
+      "buying_tips": [
+        "Organic whole wheat pita, with whole wheat flour first on a short list.",
+        "Flour, water, yeast and salt, with nothing else needed.",
+        "Can’t find it: naan made with yogurt and butter or ghee, not vegetable oil.",
+        "A list without “enriched flour” leading, which never means whole grain."
+      ],
+      "watch_out": [
+        "“Wheat flour” listed first never describes a whole grain."
+      ],
+      "pick_steps": [
+        "Sprouted whole wheat pita, if the shelf carries it."
+      ],
+      "science": "Pita is wheat flour, water, yeast and salt. Naan adds milk, yogurt and fat. The Whole Grains Council says enriched flour and wheat flour never describe whole grains.",
+      "labels_decoded": [
+        {
+          "term": "Wheat flour",
+          "meaning": "Never a whole grain on its own."
+        },
+        {
+          "term": "Enriched flour",
+          "meaning": "White flour with some nutrients added back; not whole grain."
+        }
+      ],
+      "tier_note": "Pita needs only four ingredients, so anything past them is the bakery’s choice.",
+      "asked_as": [
+        "which pita bread should i buy",
+        "is naan or pita better",
+        "what should naan bread list"
       ]
     },
     {
@@ -13896,42 +14763,123 @@
       ]
     },
     {
-      "id": "pick_margarine",
-      "kind": "pick",
+      "id": "margarine",
       "title": "Margarine",
       "category": "dairy",
+      "family": "fam_cooking_fats",
       "aliases": [
         "margarine",
         "margarines",
         "vegetable spread",
-        "vegetable spreads"
+        "vegetable spreads",
+        "oleomargarine"
       ],
-      "decision": "Look for grass-fed butter listing only cream and salt, in place of margarine.",
+      "question": "Is margarine worth buying?",
+      "decision": "Grass-fed butter, cream and salt, in place of margarine.",
+      "why": "Holistic guides avoid margarines and spreads, and rank grass-fed butter first.",
+      "short_answer": "Margarine is at least 80 percent fat, and that fat may be vegetable oil, rendered animal fat or marine oil. The Weston A. Price guide avoids all margarines and spreads, including butter blended with vegetable oil.",
+      "detail": "Raw butter from grass-fed animals is the top fat on that list; pasteurized butter or ghee with no added flavoring comes next.",
+      "evidence_tier": "kristys_standard",
       "sources": [
-        "Saxelby Cheesemongers “Grass-Fed Butter Is Better” https://saxelbycheese.com/blogs/cheese-blog/grass-fed-butter-is-better",
-        "https://www.law.cornell.edu/cfr/text/21/166.110",
-        "https://www.wegmans.com/shop/product/980978",
         {
-          "name": "Dr. Cate Shanahan: The Hateful Eight seed oils",
-          "url": "https://drcate.com/hateful-eight/"
+          "name": "Cornell LII, 21 CFR 166.110 Margarine",
+          "url": "https://www.law.cornell.edu/cfr/text/21/166.110"
+        },
+        {
+          "name": "Weston A. Price Foundation, Shopping guide categories",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
         }
+      ],
+      "kristy_take": "Butter is churned cream. Margarine is a blended fat built to look like it.",
+      "instead": "Grass-fed butter or ghee, with no natural flavors.",
+      "cart_pick": "Grass-fed butter",
+      "buying_tips": [
+        "Grass-fed butter listing only cream and salt.",
+        "Ghee with no added flavoring, grass-fed where possible.",
+        "Raw butter from a grass-fed farm, where sold."
+      ],
+      "pick_steps": [
+        "Butter alone, not blended with vegetable oil."
+      ],
+      "watch_out": [
+        "Skip spreads that blend butter with vegetable oils.",
+        "Partially hydrogenated oil on any spread.",
+        "Whipped butter sits on the holistic avoid list."
+      ],
+      "science": "The federal standard defines margarine as at least 80 percent fat, with vitamin A added. The fat may be vegetable oil, rendered animal fat or marine oil. The Weston A. Price guide avoids margarines, spreads, shortenings and partially hydrogenated vegetable oils.",
+      "labels_decoded": [],
+      "tier_note": "The 80 percent fat floor is federal; preferring butter is a holistic standard.",
+      "asked_as": [
+        "is margarine worth buying",
+        "should i buy margarine",
+        "what is in a vegetable spread"
       ]
     },
     {
-      "id": "pick_shortening",
-      "kind": "pick",
+      "id": "shortening",
       "title": "Shortening",
       "category": "bulk_pantry",
+      "family": "fam_cooking_fats",
       "aliases": [
         "shortening",
-        "shortenings"
+        "shortenings",
+        "vegetable shortening",
+        "solid shortening"
       ],
-      "decision": "Look for pasture-raised leaf lard or grass-fed tallow (beef fat), with nothing added to harden it.",
+      "question": "Which shortening should I buy?",
+      "decision": "Leaf lard or tallow, not hardened vegetable shortening.",
+      "why": "Lard and tallow are single rendered animal fats, named plainly on the label.",
+      "short_answer": "A tub labeled “Shortening” can be a blend of fats. Federal rules allow that name only with an ingredient statement, listed by weight. Lard is rendered pork fat, and tallow is rendered beef fat.",
+      "detail": "Under federal meat rules, lard is the fat rendered from clean, sound edible tissues of swine. Leaf lard is lard made from fresh leaf fat, the abdominal fat. Lard may be hardened with lard stearin or hydrogenated lard, and the label must say so. A shortening of meat fats and vegetable oils is named by the fat that leads. It may also be labeled “Shortening” with an ingredient statement in descending order. Tallow is the rendered fat from a beef animal.",
+      "evidence_tier": "kristys_standard",
       "sources": [
-        "https://www.law.cornell.edu/cfr/text/9/319.702",
-        "https://animalscience.unl.edu/meats-terms-glossary/",
-        "https://www.law.cornell.edu/cfr/text/9/319.701",
-        "https://www.law.cornell.edu/cfr/text/9/319.703"
+        {
+          "name": "9 CFR 319.702, Lard, leaf lard",
+          "url": "https://www.law.cornell.edu/cfr/text/9/319.702"
+        },
+        {
+          "name": "9 CFR 319.701, Mixed fat shortening",
+          "url": "https://www.law.cornell.edu/cfr/text/9/319.701"
+        },
+        {
+          "name": "University of Nebraska–Lincoln, Meats terms glossary",
+          "url": "https://animalscience.unl.edu/meats-terms-glossary/"
+        }
+      ],
+      "kristy_take": "One named animal fat is the standard here. A label that lists a single fat and nothing to harden it is the one to take.",
+      "cart_pick": "Leaf lard",
+      "buying_tips": [
+        "Pasture-raised leaf lard or grass-fed tallow, with one fat on the label.",
+        "A label free of hydrogenated lard and lard stearin, the two hardeners lard may carry.",
+        "Can’t find it: plain rendered lard, not a vegetable oil shortening.",
+        "A tub labeled only “Shortening” read for each fat named in the list."
+      ],
+      "watch_out": [
+        "“Shortening” alone on the front means a blend; the list names the fats."
+      ],
+      "pick_steps": [
+        "Leaf lard, made from the abdominal fat of the hog."
+      ],
+      "science": "Lard is the fat rendered from swine tissue. Leaf lard comes from the abdominal fat. Lard hardened with lard stearin or hydrogenated lard must say so on the label. Tallow is rendered beef fat.",
+      "labels_decoded": [
+        {
+          "term": "Leaf lard",
+          "meaning": "Lard made from fresh leaf fat, the abdominal fat of the hog."
+        },
+        {
+          "term": "Hydrogenated lard",
+          "meaning": "A hardener lard may contain; the label must state it."
+        },
+        {
+          "term": "Shortening",
+          "meaning": "A mixed fat; an ingredient statement names each fat by weight."
+        }
+      ],
+      "tier_note": "A federal rule sets what lard is and makes any hardener show on the label.",
+      "asked_as": [
+        "which shortening should i buy",
+        "is vegetable shortening worth buying",
+        "is shortening worth buying"
       ]
     },
     {
@@ -13960,110 +14908,221 @@
       ]
     },
     {
-      "id": "pick_sports_drink",
-      "kind": "pick",
-      "title": "Sports drink",
+      "id": "sports_drink",
+      "title": "Sports drinks",
       "category": "bulk_pantry",
       "aliases": [
         "sports drink",
-        "sports drinks"
+        "sports drinks",
+        "electrolyte drink",
+        "electrolyte drinks"
       ],
-      "decision": "Look for pure coconut water treated with high pressure instead of heat, with nothing added.",
+      "question": "What should you buy instead of a sports drink?",
+      "decision": "Plain coconut water, or plain water, nothing added.",
+      "why": "Coconut water carries potassium, sodium and magnesium, and in most cases regular water hydrates just as well.",
+      "short_answer": "Coconut water is the clear liquid inside green coconuts and carries potassium, sodium, magnesium and phosphorus. There is no proof it hydrates better than regular water. Sports drinks add the sweeteners, flavors, citric acid and added minerals traditional guides skip.",
+      "detail": "Coconut water is the clear liquid found inside green, unripe coconuts. It carries potassium, sodium, magnesium and phosphorus, the electrolytes, which can help replace what is lost to workouts, mild illness or heat; mineral amounts vary with the coconut’s maturity and some brands add sugar. Extension advice is that a healthy diet and regular water work just as well for most hydration. Traditional guides list drinks with high fructose corn syrup, artificial sweeteners, natural flavors, citric acid and added vitamins or minerals among drinks to avoid.",
+      "evidence_tier": "established",
       "sources": [
-        "https://brunswick.ces.ncsu.edu/2025/04/coconut-products",
-        "https://www.law.cornell.edu/cfr/text/21/101.30",
-        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6475728",
-        "https://pubmed.ncbi.nlm.nih.gov/23572707/"
+        {
+          "name": "N.C. Cooperative Extension: Coconut products",
+          "url": "https://brunswick.ces.ncsu.edu/2025/04/coconut-products"
+        },
+        {
+          "name": "Weston A. Price Foundation: Shopping guide categories",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ],
+      "kristy_take": "Water does the hydrating. Coconut water is the plain swap when a sweeter drink is wanted.",
+      "cart_pick": "Plain coconut water",
+      "buying_tips": [
+        "Coconut water with only coconut water on the list.",
+        "Plain mineral water in glass or cans.",
+        "A list with no added sugar, natural flavors or citric acid."
+      ],
+      "watch_out": [
+        "Added vitamins and minerals, artificial sweeteners and natural flavors sit on the traditional avoid list.",
+        "On blood pressure medication? Check the label minerals with a doctor first."
+      ],
+      "pick_steps": [
+        "‘No sugar added’ on the coconut water carton."
+      ],
+      "science": "Coconut water is the liquid inside green coconuts. It carries potassium, sodium, magnesium and phosphorus, in amounts that vary with the coconut’s maturity. There is no scientific proof it hydrates better than regular water. Some brands add sugar.",
+      "labels_decoded": [
+        {
+          "term": "Electrolytes",
+          "meaning": "Minerals such as potassium, sodium and magnesium."
+        }
+      ],
+      "tier_note": "Extension guidance backs the facts: coconut water carries the same minerals, and plain water hydrates as well.",
+      "asked_as": [
+        "which sports drink should i buy",
+        "what should i buy instead of a sports drink",
+        "are electrolyte drinks worth buying"
       ]
     },
     {
-      "id": "pick_energy_drink",
-      "kind": "pick",
-      "title": "Energy drink",
+      "id": "energy_drink",
+      "title": "Energy drinks",
       "category": "bulk_pantry",
       "aliases": [
         "energy drink",
-        "energy drinks"
+        "energy drinks",
+        "energy shot",
+        "energy shots"
       ],
-      "decision": "Look for plain tea with only tea leaves on the list.",
+      "question": "What should you buy instead of an energy drink?",
+      "decision": "Organic herb tea or mineral water, not energy drinks.",
+      "why": "Traditional guides list caffeine, added vitamins, citric acid and artificial sweeteners among drink ingredients to skip.",
+      "short_answer": "An energy drink stacks several things traditional guides skip in a drink: caffeine, added vitamins, citric acid, sweeteners and flavors. Organic herb tea without caffeine or natural flavors, or plain mineral water, is the swap.",
+      "detail": "The traditional shopping guide lists drinks containing caffeine, high fructose corn syrup, artificial sweeteners, sugar alcohols, stevia leaf extract, natural flavors, citric acid, ascorbic acid or added vitamins or minerals among drinks to avoid. Organic herb teas without natural flavors, citric acid and caffeine sit in the next tier, in moderation, with a caution that some herb teas can have drug-like effects. Plain mineral water in cans or glass bottles ranks first.",
+      "evidence_tier": "kristys_standard",
       "sources": [
-        "https://lpi.oregonstate.edu/mic/food-beverages/tea",
-        "https://www.law.cornell.edu/cfr/text/21/173.228",
-        "https://www.mentalfloss.com/food/beverages/decaffeinated-vs-caffeine-free-tea-whats-the-difference",
         {
-          "name": "PMC: Microplastics from plastic tea bags",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10389239/"
+          "name": "Weston A. Price Foundation: Shopping guide categories",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
         }
+      ],
+      "kristy_take": "An energy drink is the caffeine plus everything else on the skip list. Herb tea or mineral water is the plain swap.",
+      "cart_pick": "Organic herb tea",
+      "buying_tips": [
+        "Organic herb tea with no caffeine, natural flavors or citric acid.",
+        "Plain mineral water in glass or cans.",
+        "Kombucha made with organic black tea, in glass."
+      ],
+      "watch_out": [
+        "Caffeine, added vitamins and citric acid all sit on the traditional avoid list for drinks.",
+        "Some herb teas can have drug-like effects; anything medical is a doctor’s call."
+      ],
+      "pick_steps": [
+        "‘Caffeine-free’ on the herb tea box."
+      ],
+      "science": "Traditional guides list caffeine, added vitamins or minerals and citric acid among drink ingredients to avoid. Artificial sweeteners and natural flavors are on it too. Organic herb teas without caffeine are the moderate tier, with a caution that some herbs act like drugs.",
+      "labels_decoded": [
+        {
+          "term": "Added vitamins",
+          "meaning": "Synthetic vitamins added to the drink, on the traditional avoid list."
+        }
+      ],
+      "tier_note": "A traditional ranking: the swap drops the caffeine and additives together, not one at a time.",
+      "asked_as": [
+        "what should i buy instead of an energy drink",
+        "is an energy drink worth buying",
+        "which energy drink should i buy"
       ]
     },
     {
-      "id": "pick_fruit_snacks",
-      "kind": "pick",
+      "id": "fruit_snacks",
       "title": "Fruit snacks",
       "category": "bulk_pantry",
       "aliases": [
         "fruit snack",
-        "fruit snacks"
+        "fruit snacks",
+        "fruit gummies",
+        "gummy fruit snacks"
       ],
-      "decision": "Look for dried fruit with only the fruit on the list.",
+      "question": "What should you buy instead of fruit snacks?",
+      "decision": "Dried fruit with only the fruit on the list.",
+      "why": "Fruit snacks lean on refined sweeteners, concentrated juice and dyes that traditional guides and CSPI flag.",
+      "short_answer": "Dried fruit with the fruit alone on the list is the swap. Fruit snacks are usually built on sugar, corn syrup or concentrated fruit juice. Traditional guides list all three to avoid, and some carry synthetic dyes.",
+      "detail": "The traditional shopping guide lists white sugar, corn syrup, high fructose corn syrup, brown rice syrup and concentrated fruit juices among sweeteners to avoid. CSPI names candy and gelatin desserts as common homes for synthetic dyes; Red 40 and Yellow 5 are the two most widely used, and Yellow 5 triggers hyperactivity in some children. Dyes are petroleum-based colors that do not occur in nature.",
+      "evidence_tier": "kristys_standard",
       "sources": [
-        "https://www.law.cornell.edu/cfr/text/21/101.100",
-        "https://farrp.unl.edu/farrp-resources/regulatory/sulfites-usa/",
-        "https://ask.ifas.ufl.edu/publication/FY731",
-        "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/guidance-industry-declaration-added-sugars-honey-maple-syrup-other-single-ingredient-sugars-and"
+        {
+          "name": "Weston A. Price Foundation: Shopping guide categories",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        },
+        {
+          "name": "CSPI: Artificial colorings (synthetic food dyes)",
+          "url": "https://www.cspi.org/node/7436"
+        }
+      ],
+      "kristy_take": "A fruit snack is candy shaped like fruit. Dried fruit is the fruit.",
+      "cart_pick": "Unsweetened dried fruit",
+      "buying_tips": [
+        "Dried fruit with only the fruit on the list.",
+        "Organic on the bag.",
+        "A list with no Red 40, Yellow 5, Yellow 6 or Blue 1."
+      ],
+      "watch_out": [
+        "Fruit juice concentrate on the list is a sweetener on the traditional avoid list.",
+        "Corn syrup or sugar listed first."
+      ],
+      "pick_steps": [
+        "Unsweetened on the dried fruit bag."
+      ],
+      "science": "Traditional guides list refined sugar, corn syrup and concentrated fruit juices among sweeteners to avoid. Synthetic dyes are petroleum-based colors that do not occur in nature. CSPI reports Yellow 5 triggers hyperactivity in some children.",
+      "labels_decoded": [
+        {
+          "term": "Made with real fruit",
+          "meaning": "Some fruit is in it; the list shows how much and what else."
+        }
+      ],
+      "tier_note": "Two sources line up on the list: fruit alone beats concentrated juice and synthetic dyes.",
+      "asked_as": [
+        "what should i buy instead of fruit snacks",
+        "are fruit snacks healthy",
+        "which fruit snacks should i buy"
       ]
     },
     {
-      "id": "pick_whipped_topping",
-      "kind": "pick",
+      "id": "whipped_topping",
       "title": "Whipped topping",
       "category": "dairy",
+      "family": "fam_concentrated_dairy_fats",
       "aliases": [
         "whipped topping",
-        "whipped toppings"
+        "whipped toppings",
+        "imitation whipped cream"
       ],
-      "decision": "Look for plain cream to whip at home, in place of imitation whipped topping.",
+      "question": "Which whipped topping should I buy?",
+      "decision": "Grass-fed heavy cream, whipped at home.",
+      "why": "Holistic guides avoid canned and imitation whipped cream; plain cream is the whole-food swap.",
+      "short_answer": "Heavy cream holds at least 36 percent milkfat and whips on its own. Imitation whipped cream made with vegetable oils and canned whipped cream both sit on the Weston A. Price avoid list.",
+      "detail": "The federal heavy cream standard permits emulsifiers, stabilizers and sweeteners, so a short label still needs reading. Polysorbates keep oil from separating out of artificial whipped cream.",
+      "evidence_tier": "kristys_standard",
       "sources": [
         {
-          "name": "Cornell LII: 7 CFR § 205.238 Organic livestock hormone rules",
-          "url": "https://www.law.cornell.edu/cfr/text/7/205.238"
+          "name": "Cornell LII, 21 CFR 131.150 Heavy cream",
+          "url": "https://www.law.cornell.edu/cfr/text/21/131.150"
         },
         {
-          "name": "BCPP: rBGH / rBST labeling",
-          "url": "https://www.bcpp.org/resource/rbgh-rbst/"
-        },
-        {
-          "name": "Cornucopia Institute: Carrageenan report and buyer’s guide",
-          "url": "https://www.cornucopia.org/research/carrageenan/"
-        },
-        {
-          "name": "CSPI: Carrageenan",
-          "url": "https://www.cspi.org/node/7465"
-        },
-        {
-          "name": "21 CFR 131.3, pasteurized and ultra-pasteurized defined",
-          "url": "https://www.law.cornell.edu/cfr/text/21/131.3"
-        },
-        {
-          "name": "Weston A. Price Foundation: FAQ, dairy",
-          "url": "https://www.westonaprice.org/health-topics/faq-dairy/"
-        },
-        {
-          "name": "American Grassfed Association: Our Standards",
-          "url": "https://www.americangrassfed.org/about-us/our-standards/"
-        },
-        {
-          "name": "CSPI: Titanium dioxide",
-          "url": "https://www.cspi.org/node/8046"
-        },
-        {
-          "name": "CSPI: Polysorbate 60, 65 and 80",
+          "name": "CSPI, Polysorbate 60, 65 and 80",
           "url": "https://www.cspi.org/node/7467"
         },
         {
-          "name": "CSPI Chemical Cuisine: food additive safety ratings",
-          "url": "https://www.cspi.org/page/chemical-cuisine-food-additive-safety-ratings"
+          "name": "Weston A. Price Foundation, Shopping guide categories",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
         }
+      ],
+      "kristy_take": "Whipped cream is cream and air. The tub version swaps the cream for oil and emulsifiers.",
+      "instead": "Heavy cream whipped at home.",
+      "cart_pick": "Grass-fed heavy cream",
+      "buying_tips": [
+        "Grass-fed heavy cream, pasteurized, not ultra-pasteurized.",
+        "Cream as the only ingredient, no gums or emulsifiers.",
+        "Non-homogenized cream when the case has it."
+      ],
+      "pick_steps": [
+        "Heavy cream, at least 36 percent milkfat."
+      ],
+      "watch_out": [
+        "Skip tubs made with vegetable oil.",
+        "Polysorbates on the list mark an oil-based topping.",
+        "Canned whipped cream sits on the holistic avoid list."
+      ],
+      "science": "Heavy cream must contain at least 36 percent milkfat and may be pasteurized or ultra-pasteurized. Its standard allows emulsifiers and stabilizers. Polysorbates are emulsifiers that keep oil from separating out of artificial whipped cream.",
+      "labels_decoded": [
+        {
+          "term": "Ultra-pasteurized",
+          "meaning": "Cream heated beyond standard pasteurization, avoided by the holistic guide."
+        }
+      ],
+      "tier_note": "The cream standard is federal; avoiding oil-based toppings is a holistic call.",
+      "asked_as": [
+        "which whipped topping should i buy",
+        "is whipped topping real cream",
+        "what is imitation whipped cream made of"
       ]
     },
     {
@@ -15507,6 +16566,684 @@
       "delta": "“Pasture-Raised” veal, Animal Welfare Approved; veal alone in the ingredients.",
       "family": "fam_ruminant_meat",
       "instead": "USDA Organic veal."
+    },
+    {
+      "id": "catfish",
+      "title": "Catfish",
+      "category": "seafood",
+      "family": "fam_wild_first_seafood",
+      "aliases": [
+        "catfish",
+        "catfish fillet",
+        "catfish fillets",
+        "whole catfish",
+        "channel catfish",
+        "wild catfish"
+      ],
+      "question": "Which catfish should I buy?",
+      "decision": "Wild catfish from known clean waters.",
+      "why": "Holistic guides rank catfish from clean waters best and avoid farmed catfish.",
+      "short_answer": "Catfish sits on the FDA and EPA list of commonly eaten fish consistently low in mercury. The Weston A. Price guide wants catfish guaranteed from clean waters and avoids farmed catfish.",
+      "detail": "That guide also avoids seafood from China and seafood containing soy oil, vegetable oil or added flavorings. Where the source cannot be named, the fish counter can say where the catfish came from.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation, Shopping guide categories",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        },
+        {
+          "name": "Chris Kresser, Is eating fish safe?",
+          "url": "https://chriskresser.com/is-eating-fish-safe-a-lot-safer-than-not-eating-fish/"
+        }
+      ],
+      "kristy_take": "Catfish is low in mercury, so the water it grew in is the real question. Wild and traceable first.",
+      "cart_pick": "Wild catfish fillets",
+      "buying_tips": [
+        "Wild catfish, its river or lake named at the counter.",
+        "Plain fillets with nothing added.",
+        "The country of origin on the sign or bag."
+      ],
+      "pick_steps": [
+        "A counter answer on wild or farmed."
+      ],
+      "watch_out": [
+        "Farmed catfish sits on the holistic avoid list.",
+        "Skip catfish imported from China."
+      ],
+      "science": "FDA and EPA advice, summarized by Chris Kresser, lists catfish among commonly eaten fish consistently low in mercury. Shrimp, canned light tuna, salmon and pollock share that list. The Weston A. Price guide separates catfish from clean waters, its best rung, from farmed catfish.",
+      "labels_decoded": [],
+      "tier_note": "Low mercury is federal fact; the clean-water and wild rung is a holistic standard.",
+      "asked_as": [
+        "which catfish should i buy",
+        "should i buy farmed catfish",
+        "what catfish fillets should i buy"
+      ]
+    },
+    {
+      "id": "bologna",
+      "title": "Bologna",
+      "category": "deli",
+      "family": "fam_prepared_meats",
+      "aliases": [
+        "bologna",
+        "beef bologna",
+        "garlic bologna",
+        "sliced bologna",
+        "ring bologna",
+        "bologna slices"
+      ],
+      "question": "What should you check on bologna?",
+      "decision": "Grass-fed beef bologna, no mechanically separated poultry.",
+      "why": "The federal bologna standard allows poultry paste and byproducts, so the label decides.",
+      "short_answer": "Bologna shares a federal standard with frankfurters, capping fat at 30 percent and mechanically separated poultry at 15 percent. Byproducts require “with byproducts” or “with variety meats” in the name.",
+      "detail": "The Weston A. Price guide favors processed meats from animals allowed to graze, made with salt and natural smoke, without MSG. AGA Grassfed certification requires a grass and forage diet on pasture.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        {
+          "name": "Cornell LII, 9 CFR 319.180 Frankfurter, bologna and similar products",
+          "url": "https://www.law.cornell.edu/cfr/text/9/319.180"
+        },
+        {
+          "name": "Weston A. Price Foundation, Shopping guide categories",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        },
+        {
+          "name": "American Grassfed Association, Our standards",
+          "url": "https://www.americangrassfed.org/about-us/our-standards/"
+        }
+      ],
+      "kristy_take": "Bologna is a finely ground sausage. One named meat and a short list is the whole test.",
+      "cart_pick": "Grass-fed beef bologna",
+      "buying_tips": [
+        "100% grass-fed beef bologna with the AGA Grassfed logo.",
+        "One named meat first, no mechanically separated chicken or turkey.",
+        "Naturally smoked, not liquid smoke or smoke flavoring."
+      ],
+      "pick_steps": [
+        "No “with byproducts” or “with variety meats” in the name."
+      ],
+      "watch_out": [
+        "Natural flavors or hydrolyzed protein usually mean hidden MSG.",
+        "Skip bologna listing dry milk powder or sodium lactate."
+      ],
+      "science": "Under 9 CFR 319.180, bologna may contain no more than 30 percent fat. Mechanically separated poultry may reach 15 percent of ingredients. Byproduct versions must say so in the product name.",
+      "labels_decoded": [
+        {
+          "term": "With variety meats",
+          "meaning": "Required name wording when bologna contains meat byproducts."
+        }
+      ],
+      "tier_note": "“With byproducts” naming is federal law; the grass-fed rung is holistic.",
+      "asked_as": [
+        "which bologna should i buy",
+        "is beef bologna better",
+        "is ring bologna worth buying"
+      ]
+    },
+    {
+      "id": "pork_ribs",
+      "title": "Pork ribs",
+      "category": "pork",
+      "family": "fam_poultry_pork",
+      "aliases": [
+        "ribs",
+        "pork ribs",
+        "spare ribs",
+        "baby back ribs",
+        "st louis ribs",
+        "rack of ribs",
+        "country style ribs"
+      ],
+      "question": "Which pork ribs should I buy?",
+      "decision": "Ribs from pigs raised outdoors, fat left on.",
+      "why": "Most commercial pork is raised in confinement; pigs allowed outdoors lead the holistic list.",
+      "short_answer": "The Weston A. Price guide puts pork from animals allowed to graze first, eaten with its fat. It avoids most commercial pork, raised in confinement on industrial farms.",
+      "detail": "Animal Welfare Approved by A Greener World audits high-welfare production, transport and slaughter on independent farms, and is rated the only excellent welfare label.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation, Shopping guide categories",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        },
+        {
+          "name": "A Greener World, Certified Animal Welfare Approved",
+          "url": "https://agreenerworld.org/certifications/animal-welfare-approved/"
+        }
+      ],
+      "kristy_take": "Ribs carry their own fat, so the pig’s life shows. Outdoors and audited first.",
+      "cart_pick": "Pork ribs from pigs raised outdoors",
+      "buying_tips": [
+        "Pasture-raised pork ribs with the Animal Welfare Approved logo.",
+        "Organic pork ribs as the next rung.",
+        "Ribs from a farm that lets pigs root outdoors, fresh or frozen."
+      ],
+      "pick_steps": [
+        "Untrimmed racks with the fat cap on."
+      ],
+      "watch_out": [
+        "Most commercial pork comes from confinement farms."
+      ],
+      "science": "The Weston A. Price guide ranks fresh or frozen pork from animals allowed to graze first and organic or naturally raised pork second. Certified Animal Welfare Approved requires audited high-welfare production, transport and slaughter.",
+      "labels_decoded": [
+        {
+          "term": "Animal Welfare Approved",
+          "meaning": "An audited high-welfare label for independent farms, from A Greener World."
+        }
+      ],
+      "tier_note": "Welfare and pasture are a holistic standard, not a federal grade.",
+      "asked_as": [
+        "which pork ribs should i buy",
+        "are baby back ribs or spare ribs better",
+        "what ribs should i get"
+      ]
+    },
+    {
+      "id": "beer",
+      "title": "Beer",
+      "category": "bulk_pantry",
+      "aliases": [
+        "craft beer",
+        "craft beers",
+        "organic beer",
+        "organic beers",
+        "unpasteurized beer"
+      ],
+      "question": "Which beer should you buy?",
+      "decision": "Organic unpasteurized beer, in moderation.",
+      "why": "Traditional guides list organic unpasteurized beer among acceptable drinks, below water and lacto-fermented drinks.",
+      "short_answer": "Organic unpasteurized beer sits in the traditional guide’s acceptable tier, with organic wine. Plain mineral water and lacto-fermented drinks rank above it. Drinks with natural flavors, sweeteners or added colors land on the avoid list.",
+      "detail": "The traditional shopping guide places organic unpasteurized beer and organic wine in its middle tier of drinks, alongside herb teas, in moderation. First place goes to organic lacto-fermented drinks in glass jars and plain mineral water in cans or glass bottles. Drinks containing high fructose corn syrup, agave, artificial sweeteners, natural flavors or citric acid are listed to avoid.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation: Shopping guide categories",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ],
+      "kristy_take": "Organic and unpasteurized are the two words that matter on a beer. It stays a moderate drink.",
+      "cart_pick": "Organic unpasteurized beer",
+      "buying_tips": [
+        "Organic and unpasteurized, both printed on the label.",
+        "Can’t find unpasteurized: organic beer.",
+        "A beer with no natural flavors, corn syrup or added sweeteners."
+      ],
+      "watch_out": [
+        "Flavored beers with natural flavors or added sweeteners fall on the traditional avoid list."
+      ],
+      "pick_steps": [
+        "Glass bottles or cans over plastic."
+      ],
+      "science": "Traditional guides place organic unpasteurized beer and organic wine in the acceptable tier of drinks, in moderation. Plain mineral water and lacto-fermented drinks rank above them. Drinks with corn syrup, artificial sweeteners or natural flavors are listed to avoid.",
+      "labels_decoded": [
+        {
+          "term": "Unpasteurized",
+          "meaning": "Not heat-treated after brewing."
+        }
+      ],
+      "tier_note": "A traditional ranking: beer is an acceptable drink, not a first one, and the label words decide which.",
+      "asked_as": [
+        "which craft beer should i buy",
+        "is organic beer better",
+        "what craft beer is best to buy"
+      ]
+    },
+    {
+      "id": "cookies",
+      "title": "Cookies",
+      "category": "bulk_pantry",
+      "family": "fam_sweet_bakery",
+      "aliases": [
+        "cookie",
+        "cookies",
+        "chocolate chip cookies",
+        "packaged cookies",
+        "bakery cookies"
+      ],
+      "question": "Which cookies should you buy?",
+      "decision": "Sprouted whole-grain cookies, butter, natural sweetener.",
+      "why": "Traditional guides rank cookies of sprouted whole grain, traditional fats and organic natural sweeteners first.",
+      "short_answer": "The best cookies use soaked or sprouted whole-grain flour and butter or coconut oil. The sweetener is maple syrup or honey. Hydrogenated oils, refined sugar and corn syrup land on the avoid list.",
+      "detail": "The traditional shopping guide ranks cookies, bars and muffins made with organic natural sweeteners, soaked or sprouted whole-grain flour, soaked and dried nuts and seeds, and butter, coconut oil or other traditional fats first. Organic whole-grain flour with butter, palm oil or coconut oil is the next tier. It lists cookies made with non-organic grains, partially hydrogenated vegetable oils, or refined sweeteners such as sugar, high fructose corn syrup and agave to avoid, along with cookies containing natural flavors, coffee, chocolate, cocoa or cacao.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation: Shopping guide categories",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ],
+      "kristy_take": "A cookie is read by its flour, fat and sweetener. Sprouted grain, butter and maple or honey make the better one.",
+      "cart_pick": "Sprouted whole-grain butter cookies",
+      "buying_tips": [
+        "Sprouted or soaked whole-grain flour, butter, and maple syrup or honey.",
+        "Can’t find sprouted: organic whole-grain flour with butter or coconut oil.",
+        "A list with no partially hydrogenated oil, corn syrup or agave.",
+        "A list with no natural flavors."
+      ],
+      "watch_out": [
+        "Non-organic grain, refined sugar and partially hydrogenated oils put a cookie on the traditional avoid list.",
+        "Chocolate, cocoa and cacao also sit on the traditional avoid list for cookies."
+      ],
+      "pick_steps": [
+        "Organic on the package."
+      ],
+      "science": "Traditional guides rank cookies of sprouted whole-grain flour, traditional fats and natural sweeteners first. Organic whole-grain flour with butter or coconut oil is second. Non-organic grain, hydrogenated oils, refined sweeteners and natural flavors are listed to avoid.",
+      "labels_decoded": [
+        {
+          "term": "Sprouted whole grain",
+          "meaning": "Grain allowed to sprout before it is dried and milled."
+        }
+      ],
+      "tier_note": "A traditional ranking by flour, fat and sweetener; organic whole-grain flour with butter is the second rung.",
+      "asked_as": [
+        "which cookies should i buy",
+        "are store cookies worth buying",
+        "what cookies should i buy for kids"
+      ]
+    },
+    {
+      "id": "candy",
+      "title": "Candy",
+      "category": "bulk_pantry",
+      "aliases": [
+        "candy",
+        "candies",
+        "gummy candy",
+        "hard candy",
+        "candy bar"
+      ],
+      "question": "Which candy should you buy?",
+      "decision": "Candy sweetened with honey or maple, no synthetic dyes.",
+      "why": "CSPI names candy as a main home for synthetic dyes, and traditional guides rank honey and maple over refined sugar.",
+      "short_answer": "Candy is where synthetic dyes concentrate: CSPI names candy for Red 3, Red 40, Yellow 5 and Blue 1. The better candy uses an organic natural sweetener such as raw honey, maple syrup or molasses. It carries no synthetic dye.",
+      "detail": "CSPI lists candy among the foods carrying synthetic dyes and says dyes are used almost solely in foods of low nutritional value. Red 3 caused thyroid tumors in rats; Red 40 is the most widely used dye; Yellow 5 triggers hyperactivity in some children. The traditional shopping guide ranks organic natural sweeteners such as molasses, maple syrup, coconut sugar and raw honey first, and lists white sugar, corn syrup, high fructose corn syrup, artificial sweeteners and sugar alcohols to avoid.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        {
+          "name": "CSPI: Artificial colorings (synthetic food dyes)",
+          "url": "https://www.cspi.org/node/7436"
+        },
+        {
+          "name": "Weston A. Price Foundation: Shopping guide categories",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        }
+      ],
+      "kristy_take": "Candy is a treat food. Honey or maple for sweetness and no dyes make the better pick.",
+      "cart_pick": "Honey or maple candy, no dyes",
+      "buying_tips": [
+        "Raw honey, maple syrup or molasses as the sweetener.",
+        "A list with no Red 3, Red 40, Yellow 5, Yellow 6 or Blue 1.",
+        "A list with no corn syrup, sugar alcohols or artificial sweeteners."
+      ],
+      "watch_out": [
+        "Red 3 caused thyroid tumors in rats in a review requested by FDA.",
+        "‘Sugar-free’ candy usually swaps in sugar alcohols, on the traditional avoid list."
+      ],
+      "pick_steps": [
+        "Organic on the package."
+      ],
+      "science": "CSPI names candy for Red 3, Red 40, Yellow 5 and Blue 1. Red 3 caused thyroid tumors in rats; Yellow 5 triggers hyperactivity in some children. Traditional guides rank raw honey, maple syrup and molasses over white sugar and corn syrup.",
+      "labels_decoded": [
+        {
+          "term": "Artificial color",
+          "meaning": "Synthetic, petroleum-based dyes such as Red 40 and Yellow 5."
+        }
+      ],
+      "tier_note": "Two sources line up: dyes are the first thing to read off, then the sweetener.",
+      "asked_as": [
+        "which candy should i buy",
+        "what candy is best to buy",
+        "which candy should i buy without dyes"
+      ]
+    },
+    {
+      "id": "popsicles",
+      "title": "Ice pops",
+      "category": "bulk_pantry",
+      "aliases": [
+        "popsicle",
+        "popsicles",
+        "ice pop",
+        "ice pops",
+        "fruit pops"
+      ],
+      "question": "Which ice pops should you buy?",
+      "decision": "Fruit ice pops: whole fruit, no dyes or juice concentrate.",
+      "why": "Traditional guides list concentrated fruit juice and refined sugar to avoid, and CSPI flags synthetic dyes in sweets.",
+      "short_answer": "The better ice pop is mostly fruit. Any sweetener is an organic natural one such as honey or maple syrup. Concentrated fruit juice, corn syrup and synthetic dyes like Red 40 and Blue 1 are the ones to read off.",
+      "detail": "The traditional shopping guide ranks organic natural sweeteners such as maple syrup and raw honey first and lists white sugar, corn syrup, high fructose corn syrup and concentrated fruit juices to avoid. CSPI says synthetic dyes are petroleum-based colors that do not occur in nature and are used almost solely in foods of low nutritional value; Red 40 is the most widely used.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        {
+          "name": "Weston A. Price Foundation: Shopping guide categories",
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        },
+        {
+          "name": "CSPI: Artificial colorings (synthetic food dyes)",
+          "url": "https://www.cspi.org/node/7436"
+        }
+      ],
+      "kristy_take": "An ice pop is as good as the fruit in it. Whole fruit first on the list is the one.",
+      "cart_pick": "Whole-fruit ice pops",
+      "buying_tips": [
+        "Whole fruit or fruit puree first on the list.",
+        "A list with no Red 40, Yellow 5, Yellow 6 or Blue 1.",
+        "Honey or maple syrup as the sweetener, if any."
+      ],
+      "watch_out": [
+        "Fruit juice concentrate or corn syrup first on the list.",
+        "Artificial sweeteners and sugar alcohols in ‘no sugar added’ pops."
+      ],
+      "pick_steps": [
+        "Organic on the box."
+      ],
+      "science": "Traditional guides rank organic natural sweeteners first and list refined sugar, corn syrup and concentrated fruit juice to avoid. Synthetic dyes are petroleum-based colors that do not occur in nature, used almost solely in foods of low nutritional value.",
+      "labels_decoded": [
+        {
+          "term": "Juice concentrate",
+          "meaning": "Concentrated fruit juice, listed with refined sweeteners to avoid."
+        }
+      ],
+      "tier_note": "Two sources line up: concentrated juice is a sweetener to skip, and the dyes are synthetic.",
+      "asked_as": [
+        "which popsicles should i buy",
+        "are fruit ice pops healthy",
+        "which ice pops should i buy without dyes"
+      ]
+    },
+    {
+      "id": "ramen",
+      "title": "Instant ramen",
+      "category": "bulk_pantry",
+      "family": "fam_dry_pasta",
+      "aliases": [
+        "ramen",
+        "instant ramen",
+        "instant noodles",
+        "ramen noodles",
+        "cup noodles"
+      ],
+      "question": "Which instant ramen should I buy?",
+      "decision": "Ramen that skipped the fryer, with a short list.",
+      "why": "Most blocks are flash-fried in palm oil, while air-dried blocks skip the fryer.",
+      "short_answer": "Instant noodles are flour, starch, water, salt or kansui, cooked and dried into a block. Most are flash-fried; air-dried blocks are the other way. The flavor packet is separate and mostly salt, MSG and sugar.",
+      "detail": "The main ingredients in instant noodles are flour, starch, water, salt and kansui, an alkaline mineral water. The block was first made by flash-frying cooked noodles, still the main method in Asia. Air-dried blocks are favored in Western countries. USDA caps fried noodles at 20% fat and non-fried noodles below 3%. Frying oils include palm, canola and cottonseed. TBHQ is an antioxidant that slows rancidity in fats and oils. Hong Kong’s food safety agency calls instant noodles generally high in salt and fat.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        {
+          "name": "Wikipedia: Instant noodles",
+          "url": "https://en.wikipedia.org/wiki/Instant_noodles"
+        },
+        {
+          "name": "Hong Kong food safety agency: TBHQ in instant noodles",
+          "url": "https://www.cfs.gov.hk/english/multimedia/multimedia_pub/multimedia_pub_fsf_132_04.html"
+        },
+        {
+          "name": "Healthline: Ramen noodles",
+          "url": "https://www.healthline.com/nutrition/ramen-noodles"
+        }
+      ],
+      "kristy_take": "Noodles that were never fried are the standard here. Plain dried noodles with real vegetables come closer to source than any packet.",
+      "cart_pick": "Air-dried ramen noodles",
+      "buying_tips": [
+        "Organic air-dried ramen, with flour, water, salt and kansui as the noodle list.",
+        "“Non-fried” or “air-dried” printed on the pack.",
+        "Can’t find it: plain dried noodles with no seasoning packet.",
+        "A noodle list without palm oil, TBHQ or added MSG."
+      ],
+      "watch_out": [
+        "Palm oil in the noodle list means the block was fried.",
+        "TBHQ, an additive that slows rancidity in the frying fat."
+      ],
+      "pick_steps": [
+        "Buckwheat or whole wheat noodles, when the shelf has them."
+      ],
+      "science": "The block was first made by flash-frying cooked noodles. Air-dried blocks skip the fryer. USDA caps fried noodles at 20% fat and non-fried below 3%. TBHQ slows rancidity in the fat.",
+      "labels_decoded": [
+        {
+          "term": "Kansui",
+          "meaning": "Alkaline mineral water that gives ramen its spring."
+        },
+        {
+          "term": "TBHQ",
+          "meaning": "An antioxidant additive that slows fats going rancid."
+        },
+        {
+          "term": "Non-fried",
+          "meaning": "Dried by hot air, not oil; USDA caps these below 3% fat."
+        }
+      ],
+      "tier_note": "Frying is the main fork between blocks, and the noodle list shows which way it went.",
+      "asked_as": [
+        "which instant ramen should i buy",
+        "are instant noodles worth buying",
+        "which ramen noodles are best"
+      ]
+    },
+    {
+      "id": "baby_food",
+      "title": "Baby food",
+      "category": "bulk_pantry",
+      "family": "fam_plain_fruit_preparations",
+      "aliases": [
+        "baby food",
+        "baby foods",
+        "baby food pouches",
+        "infant cereal"
+      ],
+      "question": "Which baby food should I buy?",
+      "decision": "Single-food purees and infant oatmeal, not rice snacks.",
+      "why": "Rice-based snacks and rice cereal test highest for arsenic in baby food studies.",
+      "short_answer": "Testing found heavy metals in most baby foods, store-bought and homemade alike. Rice cakes, crisped rice cereal and rice puffs ran highest. A varied rotation is the main step.",
+      "detail": "Healthy Babies Bright Futures tested baby foods for lead, arsenic, mercury and cadmium. Homemade purees carried detectable metals as often as store-bought ones. The most contaminated foods were rice cakes, crisped rice cereal, rice-based puffs, brown rice and teething biscuits. Among the least were banana, grits, plain meats, butternut squash, apple, eggs and watermelon. Four of seven infant rice cereals exceeded FDA’s proposed action level for inorganic arsenic. Their swaps are infant oatmeal for rice cereal, fresh or frozen fruit for canned, and peeled sweet potatoes.",
+      "evidence_tier": "credible_concern",
+      "sources": [
+        {
+          "name": "Healthy Babies Bright Futures: What’s in my baby’s food?",
+          "url": "https://hbbf.org/report/whats-in-my-babys-food"
+        },
+        {
+          "name": "Healthy Babies Bright Futures: Is homemade baby food better?",
+          "url": "https://hbbf.org/report/is-homemade-baby-food-better"
+        }
+      ],
+      "kristy_take": "Plain single foods in rotation are the standard here. Any question about a baby’s diet goes to a pediatrician.",
+      "cart_pick": "Organic single-fruit puree",
+      "buying_tips": [
+        "Organic single-food purees, like banana, apple or butternut squash, one food per jar.",
+        "Infant oatmeal in place of infant rice cereal.",
+        "Can’t find it: plain frozen fruit or vegetables, not canned fruit.",
+        "Teething snacks made without rice, read on the list."
+      ],
+      "watch_out": [
+        "Rice cakes, crisped rice cereal and rice puffs tested highest for arsenic.",
+        "Fruit juice pouches, which the same testing flags as higher."
+      ],
+      "pick_steps": [
+        "Plain meat or egg purees, among the least contaminated foods tested."
+      ],
+      "science": "Testing found heavy metals in most baby foods, store-bought and homemade alike. Rice cakes, crisped rice cereal and rice puffs ran highest. Banana, squash, apple and plain meats ran among the least.",
+      "labels_decoded": [
+        {
+          "term": "Infant rice cereal",
+          "meaning": "The cereal four of seven tested samples put over FDA’s proposed arsenic level."
+        },
+        {
+          "term": "Single-ingredient",
+          "meaning": "One food per jar, which makes rotation easy to track."
+        }
+      ],
+      "tier_note": "One testing group’s data shows rice foods run highest in heavy metals.",
+      "asked_as": [
+        "which baby food should i buy",
+        "what is the best baby food to buy",
+        "what baby food pouches are best"
+      ]
+    },
+    {
+      "id": "guacamole",
+      "title": "Guacamole",
+      "category": "bulk_pantry",
+      "family": "fam_dressings_deli_salads",
+      "aliases": [
+        "guacamole",
+        "guac",
+        "store bought guacamole",
+        "avocado dip"
+      ],
+      "question": "Which guacamole should I buy?",
+      "decision": "Avocado first, lime and salt, no added oil.",
+      "why": "Traditional guacamole is avocado, lime and salt, and some tubs add vegetable oils.",
+      "short_answer": "Read the list for avocado as the main ingredient and no added oils. High pressure processing is a cold step that keeps a tub fresh for weeks without preservatives.",
+      "detail": "Traditional guacamole is avocado, lime and salt. Some store products add vegetable oils, so the list is worth a look for avocado first. High pressure processing, or HPP, is a cold process. It lets makers sell guacamole as natural and preservative-free. HPP extends shelf life by six to eight weeks, so preservatives or additives are not needed.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        {
+          "name": "Nutrition Advance: Guacamole nutrition guide",
+          "url": "https://www.nutritionadvance.com/guacamole-nutrition-guide/"
+        },
+        {
+          "name": "Hiperbaric: HPP guacamole and avocado products",
+          "url": "https://www.hiperbaric.com/en/hpp-technology/hpp-applications/guacamole-and-avocado-products/"
+        }
+      ],
+      "kristy_take": "A tub that reads like the home recipe is the standard here. Ripe avocados mashed at home are closer to source still.",
+      "cart_pick": "Organic guacamole",
+      "buying_tips": [
+        "Organic guacamole, with avocado first and lime, onion and salt after.",
+        "“High pressure processed” or “HPP” on the tub, with no preservatives listed.",
+        "Can’t find it: organic avocados and a lime instead of the tub.",
+        "A list free of vegetable oils and gums."
+      ],
+      "watch_out": [
+        "Vegetable oil in the list, a filler traditional guacamole never carries."
+      ],
+      "pick_steps": [
+        "A short list a home cook would recognize."
+      ],
+      "science": "Traditional guacamole is avocado, lime and salt. High pressure processing is a cold step. It lets a tub stay fresh for weeks with no preservatives added.",
+      "labels_decoded": [
+        {
+          "term": "HPP",
+          "meaning": "High pressure processing, a cold step that stands in for preservatives."
+        }
+      ],
+      "tier_note": "The home recipe is avocado, lime and salt, so added oils stand out.",
+      "asked_as": [
+        "which guacamole should i buy",
+        "is store bought guacamole worth buying",
+        "what is the best store bought guacamole"
+      ]
+    },
+    {
+      "id": "mac_and_cheese",
+      "title": "Mac and cheese",
+      "category": "bulk_pantry",
+      "family": "fam_dry_pasta",
+      "aliases": [
+        "mac and cheese",
+        "macaroni and cheese",
+        "boxed mac and cheese",
+        "mac n cheese"
+      ],
+      "question": "Which mac and cheese should I buy?",
+      "decision": "Organic pasta and real cheese, made at home.",
+      "why": "Testing found phthalates in every boxed cheese powder, far above block cheese.",
+      "short_answer": "A test of ten boxed cheese powders found phthalates in all ten. Levels averaged more than four times those in block cheese, fat for fat. Phthalates move into food from processing and packaging.",
+      "detail": "Testing reported by Toxic-Free Future covered ten macaroni and cheese powders. Phthalates turned up in all ten, and DEHP in every one. Levels averaged more than four times higher, on a fat basis, than in hard block cheese and other natural cheese. Phthalates are industrial chemicals used in plastics, inks and coatings. They migrate into food during processing, packaging and preparation.",
+      "evidence_tier": "credible_concern",
+      "sources": [
+        {
+          "name": "Toxic-Free Future: Phthalates in macaroni and cheese powders",
+          "url": "https://toxicfreefuture.org/press-room/toxic-industrial-chemicals-found-in-10-varieties-of-macaroni-and-cheese-powders/"
+        }
+      ],
+      "kristy_take": "Real cheese is the standard here. Organic pasta and a block of cheese grated at home beat any box.",
+      "cart_pick": "Organic pasta and block cheddar",
+      "buying_tips": [
+        "Organic pasta and a block of cheddar, in place of a boxed powder.",
+        "A box with real cheese or a cheese sauce pouch, not powder.",
+        "Can’t find it: organic boxed mac with a short list.",
+        "Whole wheat or legume pasta when the box offers it."
+      ],
+      "watch_out": [
+        "Cheese powder, where testing found phthalates in all ten samples."
+      ],
+      "pick_steps": [
+        "Cheese named as cheese, not “cheese sauce mix”."
+      ],
+      "science": "Ten boxed cheese powders were tested. Phthalates turned up in all ten. Levels averaged more than four times those in block cheese, fat for fat. Phthalates migrate from processing and packaging.",
+      "labels_decoded": [
+        {
+          "term": "Cheese sauce mix",
+          "meaning": "A powder, the form where testing found the most phthalates."
+        }
+      ],
+      "tier_note": "One lab test found the same chemicals in every powder it tested.",
+      "asked_as": [
+        "which mac and cheese should i buy",
+        "is boxed mac and cheese worth buying",
+        "what should macaroni and cheese list"
+      ]
+    },
+    {
+      "id": "pancake_mix",
+      "title": "Pancake mix",
+      "category": "bulk_pantry",
+      "family": "fam_whole_grain_baking",
+      "aliases": [
+        "pancake mix",
+        "pancake mixes",
+        "pancake batter mix",
+        "waffle mix"
+      ],
+      "question": "Which pancake mix should I buy?",
+      "decision": "Whole grain mix with no added oil or dextrose.",
+      "why": "A pancake needs flour, milk, egg, baking powder and a little sugar, and boxed mixes add more.",
+      "short_answer": "Homemade pancakes are flour, milk, egg, baking powder and a little sugar. Boxed mixes can add enriched flour, dextrose, partially hydrogenated soybean oil and corn syrup solids. A whole grain flour first is the mark of a better mix.",
+      "detail": "A homemade pancake is flour, salt, baking powder, a little sugar, eggs and milk. One boxed mix lists enriched flour, sugar, sodium aluminum phosphate, dextrose and partially hydrogenated soybean oil. It also carries corn syrup solids, mono- and diglycerides and more. White flour lacks the bran and germ, so it is enriched. Sodium aluminum phosphate is an aluminum-containing leavening acid used in pancake and cake mixes.",
+      "evidence_tier": "kristys_standard",
+      "sources": [
+        {
+          "name": "FoodCrumbles: Homemade vs store-bought pancakes",
+          "url": "https://foodcrumbles.com/homemade-vs-store-bought-pancake-usa/"
+        },
+        {
+          "name": "BAKERpedia: Sodium aluminum phosphate",
+          "url": "https://bakerpedia.com/ingredients/sodium-aluminium-phosphate-salp/"
+        }
+      ],
+      "kristy_take": "A mix that reads like the home recipe is the standard here. Whole grain flour, baking powder and salt, with eggs and milk added at home, is the whole job.",
+      "cart_pick": "Organic whole grain pancake mix",
+      "buying_tips": [
+        "Organic whole grain pancake mix, with whole wheat or oat flour first.",
+        "A dry mix with no oil in it, so the fat is the butter added at home.",
+        "Can’t find it: organic whole wheat flour and baking powder instead.",
+        "A list without dextrose or corn syrup solids."
+      ],
+      "watch_out": [
+        "Partially hydrogenated oil in the mix.",
+        "Sodium aluminum phosphate, an aluminum leavening acid."
+      ],
+      "pick_steps": [
+        "Buckwheat or sprouted whole grain flour as the base."
+      ],
+      "science": "A homemade pancake is flour, milk, egg, baking powder and a little sugar. Boxed mixes can add enriched flour, dextrose, hydrogenated oil and an aluminum leavening acid.",
+      "labels_decoded": [
+        {
+          "term": "Sodium aluminum phosphate",
+          "meaning": "A slow leavening acid containing aluminum, common in pancake mixes."
+        },
+        {
+          "term": "Enriched flour",
+          "meaning": "White flour without bran or germ, with nutrients added back."
+        }
+      ],
+      "tier_note": "The home recipe has no hydrogenated oil, so the box is judged against it.",
+      "asked_as": [
+        "which pancake mix should i buy",
+        "is boxed pancake mix worth buying",
+        "what is the best pancake mix"
+      ]
     },
     {
       "id": "fam_ruminant_meat",

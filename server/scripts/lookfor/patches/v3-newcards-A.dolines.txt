@@ -1,0 +1,19 @@
+cilantro	Smell the bunch, then check the leaves for yellow or brown spots.
+parsley	Smell the bunch, then check the stems for wilting or yellow.
+basil	Smell the bunch, then check the leaves for dark or brown spots.
+cucumbers	Press along the length for soft spots; skip a slick waxed skin.
+asparagus	Check the tips are closed and the spears round, not ridged.
+corn	Find organic on the sign, then peel back an inch of husk.
+eggplant	Lift it for weight, then check the cap for mold or browning.
+zucchini	Pick the smaller, glossy ones that feel heavy in the hand.
+snap_peas	Press a pod; it should feel firm, not limp.
+kohlrabi	Pick the smaller globes and check for cracks.
+okra	Pick short pods under four inches; skip dull or shriveled ones.
+swiss_chard	Check the stalks for splits and the leaves for yellowing.
+mangoes	Press gently near the stem and smell for sweetness.
+celery	Squeeze the stalks for a solid feel; check the center for dark spots.
+winter_squash	Lift it for weight, then check the stem is dry and whole.
+microgreens	Check the pack for crisp leaves and no pooled moisture.
+tofu	Read the list for soybeans, water and one coagulant.
+frozen_peas	Read the bag for one ingredient, then shake it for loose peas.
+frozen_broccoli	Read the bag for one ingredient, then feel for loose florets.

@@ -1,0 +1,293 @@
+{ "patches": [
+{ "op": "add_card", "promotes": "pick_shortening",
+  "entry": {
+    "id": "shortening", "title": "Shortening", "category": "bulk_pantry", "family": "fam_cooking_fats",
+    "aliases": ["shortening", "shortenings", "vegetable shortening", "solid shortening"],
+    "question": "Which shortening should I buy?",
+    "decision": "Leaf lard or tallow, not hardened vegetable shortening.",
+    "why": "Lard and tallow are single rendered animal fats, named plainly on the label.",
+    "short_answer": "A tub labeled “Shortening” can be a blend of fats. Federal rules allow that name only with an ingredient statement, listed by weight. Lard is rendered pork fat, and tallow is rendered beef fat.",
+    "detail": "Under federal meat rules, lard is the fat rendered from clean, sound edible tissues of swine. Leaf lard is lard made from fresh leaf fat, the abdominal fat. Lard may be hardened with lard stearin or hydrogenated lard, and the label must say so. A shortening of meat fats and vegetable oils is named by the fat that leads. It may also be labeled “Shortening” with an ingredient statement in descending order. Tallow is the rendered fat from a beef animal.",
+    "evidence_tier": "kristys_standard",
+    "sources": [
+      { "name": "9 CFR 319.702, Lard, leaf lard", "url": "https://www.law.cornell.edu/cfr/text/9/319.702" },
+      { "name": "9 CFR 319.701, Mixed fat shortening", "url": "https://www.law.cornell.edu/cfr/text/9/319.701" },
+      { "name": "University of Nebraska–Lincoln, Meats terms glossary", "url": "https://animalscience.unl.edu/meats-terms-glossary/" }
+    ],
+    "kristy_take": "One named animal fat is the standard here. A label that lists a single fat and nothing to harden it is the one to take.",
+    "cart_pick": "Leaf lard",
+    "buying_tips": [
+      "Pasture-raised leaf lard or grass-fed tallow, with one fat on the label.",
+      "A label free of hydrogenated lard and lard stearin, the two hardeners lard may carry.",
+      "Can’t find it: plain rendered lard, not a vegetable oil shortening.",
+      "A tub labeled only “Shortening” read for each fat named in the list."
+    ],
+    "watch_out": [
+      "“Shortening” alone on the front means a blend; the list names the fats."
+    ],
+    "pick_steps": [
+      "Leaf lard, made from the abdominal fat of the hog."
+    ],
+    "science": "Lard is the fat rendered from swine tissue. Leaf lard comes from the abdominal fat. Lard hardened with lard stearin or hydrogenated lard must say so on the label. Tallow is rendered beef fat.",
+    "labels_decoded": [
+      { "term": "Leaf lard", "meaning": "Lard made from fresh leaf fat, the abdominal fat of the hog." },
+      { "term": "Hydrogenated lard", "meaning": "A hardener lard may contain; the label must state it." },
+      { "term": "Shortening", "meaning": "A mixed fat; an ingredient statement names each fat by weight." }
+    ],
+    "tier_note": "A federal rule sets what lard is and makes any hardener show on the label.",
+    "asked_as": ["which shortening should i buy", "is vegetable shortening worth buying", "is shortening worth buying"]
+  },
+  "fetched": [
+    { "url": "https://www.law.cornell.edu/cfr/text/9/319.702", "fetched": true, "archive": "counter/shortening/cornell-9cfr319-702.md" },
+    { "url": "https://www.law.cornell.edu/cfr/text/9/319.701", "fetched": true, "archive": "counter/shortening/cornell-9cfr319-701.md" },
+    { "url": "https://animalscience.unl.edu/meats-terms-glossary/", "fetched": true, "archive": "counter/shortening/unl-meats-glossary.md" }
+  ] },
+
+{ "op": "add_card", "promotes": "pick_pita_naan",
+  "entry": {
+    "id": "pita_naan", "title": "Pita and naan", "category": "bulk_pantry", "family": "fam_whole_grain_baking",
+    "aliases": ["pita", "pitas", "pita bread", "pita breads", "pita pocket", "pita pockets", "naan", "naans", "naan bread"],
+    "question": "Which pita or naan should I buy?",
+    "decision": "Whole wheat pita with a short list.",
+    "why": "Pita is flour, water, yeast and salt, so the first ingredient decides the bread.",
+    "short_answer": "Pita has few ingredients: wheat flour, water, yeast and salt. Naan adds milk, yogurt and oil or butter, and is often brushed with ghee. Enriched flour and wheat flour never describe a whole grain.",
+    "detail": "Pita consists of whole and white wheat flour, water, yeast and salt. It puffs in a hot oven and opens into a pocket. Naan is made with flour, water, yeast, milk, yogurt, and oil or butter. Eggs and nigella seeds are common, and the baked bread is often brushed with ghee. Yogurt, sugar and fat give naan its soft texture. The Whole Grains Council says “enriched flour” and “wheat flour” never describe whole grains.",
+    "evidence_tier": "kristys_standard",
+    "sources": [
+      { "name": "Busby’s Bakery: Naan vs pita", "url": "https://www.busbysbakery.com/difference-between-naan-and-pita/" },
+      { "name": "Whole Grains Council: Identifying whole grain products", "url": "https://wholegrainscouncil.org/node/13040" }
+    ],
+    "kristy_take": "A whole grain listed first is the standard here. Naan made with yogurt and butter is the richer bread, not the everyday one.",
+    "cart_pick": "Whole wheat pita",
+    "buying_tips": [
+      "Organic whole wheat pita, with whole wheat flour first on a short list.",
+      "Flour, water, yeast and salt, with nothing else needed.",
+      "Can’t find it: naan made with yogurt and butter or ghee, not vegetable oil.",
+      "A list without “enriched flour” leading, which never means whole grain."
+    ],
+    "watch_out": [
+      "“Wheat flour” listed first never describes a whole grain."
+    ],
+    "pick_steps": [
+      "Sprouted whole wheat pita, if the shelf carries it."
+    ],
+    "science": "Pita is wheat flour, water, yeast and salt. Naan adds milk, yogurt and fat. The Whole Grains Council says enriched flour and wheat flour never describe whole grains.",
+    "labels_decoded": [
+      { "term": "Wheat flour", "meaning": "Never a whole grain on its own." },
+      { "term": "Enriched flour", "meaning": "White flour with some nutrients added back; not whole grain." }
+    ],
+    "tier_note": "Pita needs only four ingredients, so anything past them is the bakery’s choice.",
+    "asked_as": ["which pita bread should i buy", "is naan or pita better", "what should naan bread list"]
+  },
+  "fetched": [
+    { "url": "https://www.busbysbakery.com/difference-between-naan-and-pita/", "fetched": true, "archive": "counter/pita_naan/busbys-naan-vs-pita.md" },
+    { "url": "https://wholegrainscouncil.org/node/13040", "fetched": true, "archive": "counter/pita_naan/wholegrainscouncil-identifying.md" }
+  ] },
+
+{ "op": "add_card",
+  "entry": {
+    "id": "ramen", "title": "Instant ramen", "category": "bulk_pantry", "family": "fam_dry_pasta",
+    "aliases": ["ramen", "instant ramen", "instant noodles", "ramen noodles", "cup noodles"],
+    "question": "Which instant ramen should I buy?",
+    "decision": "Ramen that skipped the fryer, with a short list.",
+    "why": "Most blocks are flash-fried in palm oil, while air-dried blocks skip the fryer.",
+    "short_answer": "Instant noodles are flour, starch, water, salt or kansui, cooked and dried into a block. Most are flash-fried; air-dried blocks are the other way. The flavor packet is separate and mostly salt, MSG and sugar.",
+    "detail": "The main ingredients in instant noodles are flour, starch, water, salt and kansui, an alkaline mineral water. The block was first made by flash-frying cooked noodles, still the main method in Asia. Air-dried blocks are favored in Western countries. USDA caps fried noodles at 20% fat and non-fried noodles below 3%. Frying oils include palm, canola and cottonseed. TBHQ is an antioxidant that slows rancidity in fats and oils. Hong Kong’s food safety agency calls instant noodles generally high in salt and fat.",
+    "evidence_tier": "kristys_standard",
+    "sources": [
+      { "name": "Wikipedia: Instant noodles", "url": "https://en.wikipedia.org/wiki/Instant_noodles" },
+      { "name": "Hong Kong food safety agency: TBHQ in instant noodles", "url": "https://www.cfs.gov.hk/english/multimedia/multimedia_pub/multimedia_pub_fsf_132_04.html" },
+      { "name": "Healthline: Ramen noodles", "url": "https://www.healthline.com/nutrition/ramen-noodles" }
+    ],
+    "kristy_take": "Noodles that were never fried are the standard here. Plain dried noodles with real vegetables come closer to source than any packet.",
+    "cart_pick": "Air-dried ramen noodles",
+    "buying_tips": [
+      "Organic air-dried ramen, with flour, water, salt and kansui as the noodle list.",
+      "“Non-fried” or “air-dried” printed on the pack.",
+      "Can’t find it: plain dried noodles with no seasoning packet.",
+      "A noodle list without palm oil, TBHQ or added MSG."
+    ],
+    "watch_out": [
+      "Palm oil in the noodle list means the block was fried.",
+      "TBHQ, an additive that slows rancidity in the frying fat."
+    ],
+    "pick_steps": [
+      "Buckwheat or whole wheat noodles, when the shelf has them."
+    ],
+    "science": "The block was first made by flash-frying cooked noodles. Air-dried blocks skip the fryer. USDA caps fried noodles at 20% fat and non-fried below 3%. TBHQ slows rancidity in the fat.",
+    "labels_decoded": [
+      { "term": "Kansui", "meaning": "Alkaline mineral water that gives ramen its spring." },
+      { "term": "TBHQ", "meaning": "An antioxidant additive that slows fats going rancid." },
+      { "term": "Non-fried", "meaning": "Dried by hot air, not oil; USDA caps these below 3% fat." }
+    ],
+    "tier_note": "Frying is the main fork between blocks, and the noodle list shows which way it went.",
+    "asked_as": ["which instant ramen should i buy", "are instant noodles worth buying", "which ramen noodles are best"]
+  },
+  "fetched": [
+    { "url": "https://en.wikipedia.org/wiki/Instant_noodles", "fetched": true, "archive": "counter/ramen/wikipedia-instant-noodles.md" },
+    { "url": "https://www.cfs.gov.hk/english/multimedia/multimedia_pub/multimedia_pub_fsf_132_04.html", "fetched": true, "archive": "counter/ramen/cfs-hk-instant-noodles.md" },
+    { "url": "https://www.healthline.com/nutrition/ramen-noodles", "fetched": true, "archive": "counter/ramen/healthline-ramen.md" }
+  ] },
+
+{ "op": "add_card",
+  "entry": {
+    "id": "baby_food", "title": "Baby food", "category": "bulk_pantry", "family": "fam_plain_fruit_preparations",
+    "aliases": ["baby food", "baby foods", "baby food pouches", "infant cereal"],
+    "question": "Which baby food should I buy?",
+    "decision": "Single-food purees and infant oatmeal, not rice snacks.",
+    "why": "Rice-based snacks and rice cereal test highest for arsenic in baby food studies.",
+    "short_answer": "Testing found heavy metals in most baby foods, store-bought and homemade alike. Rice cakes, crisped rice cereal and rice puffs ran highest. A varied rotation is the main step.",
+    "detail": "Healthy Babies Bright Futures tested baby foods for lead, arsenic, mercury and cadmium. Homemade purees carried detectable metals as often as store-bought ones. The most contaminated foods were rice cakes, crisped rice cereal, rice-based puffs, brown rice and teething biscuits. Among the least were banana, grits, plain meats, butternut squash, apple, eggs and watermelon. Four of seven infant rice cereals exceeded FDA’s proposed action level for inorganic arsenic. Their swaps are infant oatmeal for rice cereal, fresh or frozen fruit for canned, and peeled sweet potatoes.",
+    "evidence_tier": "credible_concern",
+    "sources": [
+      { "name": "Healthy Babies Bright Futures: What’s in my baby’s food?", "url": "https://hbbf.org/report/whats-in-my-babys-food" },
+      { "name": "Healthy Babies Bright Futures: Is homemade baby food better?", "url": "https://hbbf.org/report/is-homemade-baby-food-better" }
+    ],
+    "kristy_take": "Plain single foods in rotation are the standard here. Any question about a baby’s diet goes to a pediatrician.",
+    "cart_pick": "Organic single-fruit puree",
+    "buying_tips": [
+      "Organic single-food purees, like banana, apple or butternut squash, one food per jar.",
+      "Infant oatmeal in place of infant rice cereal.",
+      "Can’t find it: plain frozen fruit or vegetables, not canned fruit.",
+      "Teething snacks made without rice, read on the list."
+    ],
+    "watch_out": [
+      "Rice cakes, crisped rice cereal and rice puffs tested highest for arsenic.",
+      "Fruit juice pouches, which the same testing flags as higher."
+    ],
+    "pick_steps": [
+      "Plain meat or egg purees, among the least contaminated foods tested."
+    ],
+    "science": "Testing found heavy metals in most baby foods, store-bought and homemade alike. Rice cakes, crisped rice cereal and rice puffs ran highest. Banana, squash, apple and plain meats ran among the least.",
+    "labels_decoded": [
+      { "term": "Infant rice cereal", "meaning": "The cereal four of seven tested samples put over FDA’s proposed arsenic level." },
+      { "term": "Single-ingredient", "meaning": "One food per jar, which makes rotation easy to track." }
+    ],
+    "tier_note": "One testing group’s data shows rice foods run highest in heavy metals.",
+    "asked_as": ["which baby food should i buy", "what is the best baby food to buy", "what baby food pouches are best"]
+  },
+  "fetched": [
+    { "url": "https://hbbf.org/report/whats-in-my-babys-food", "fetched": true, "archive": "counter/baby_food/hbbf-whats-in-my-babys-food.md" },
+    { "url": "https://hbbf.org/report/is-homemade-baby-food-better", "fetched": true, "archive": "counter/baby_food/hbbf-homemade-baby-food.md" }
+  ] },
+
+{ "op": "add_card",
+  "entry": {
+    "id": "guacamole", "title": "Guacamole", "category": "bulk_pantry", "family": "fam_dressings_deli_salads",
+    "aliases": ["guacamole", "guac", "store bought guacamole", "avocado dip"],
+    "question": "Which guacamole should I buy?",
+    "decision": "Avocado first, lime and salt, no added oil.",
+    "why": "Traditional guacamole is avocado, lime and salt, and some tubs add vegetable oils.",
+    "short_answer": "Read the list for avocado as the main ingredient and no added oils. High pressure processing is a cold step that keeps a tub fresh for weeks without preservatives.",
+    "detail": "Traditional guacamole is avocado, lime and salt. Some store products add vegetable oils, so the list is worth a look for avocado first. High pressure processing, or HPP, is a cold process. It lets makers sell guacamole as natural and preservative-free. HPP extends shelf life by six to eight weeks, so preservatives or additives are not needed.",
+    "evidence_tier": "kristys_standard",
+    "sources": [
+      { "name": "Nutrition Advance: Guacamole nutrition guide", "url": "https://www.nutritionadvance.com/guacamole-nutrition-guide/" },
+      { "name": "Hiperbaric: HPP guacamole and avocado products", "url": "https://www.hiperbaric.com/en/hpp-technology/hpp-applications/guacamole-and-avocado-products/" }
+    ],
+    "kristy_take": "A tub that reads like the home recipe is the standard here. Ripe avocados mashed at home are closer to source still.",
+    "cart_pick": "Organic guacamole",
+    "buying_tips": [
+      "Organic guacamole, with avocado first and lime, onion and salt after.",
+      "“High pressure processed” or “HPP” on the tub, with no preservatives listed.",
+      "Can’t find it: organic avocados and a lime instead of the tub.",
+      "A list free of vegetable oils and gums."
+    ],
+    "watch_out": [
+      "Vegetable oil in the list, a filler traditional guacamole never carries."
+    ],
+    "pick_steps": [
+      "A short list a home cook would recognize."
+    ],
+    "science": "Traditional guacamole is avocado, lime and salt. High pressure processing is a cold step. It lets a tub stay fresh for weeks with no preservatives added.",
+    "labels_decoded": [
+      { "term": "HPP", "meaning": "High pressure processing, a cold step that stands in for preservatives." }
+    ],
+    "tier_note": "The home recipe is avocado, lime and salt, so added oils stand out.",
+    "asked_as": ["which guacamole should i buy", "is store bought guacamole worth buying", "what is the best store bought guacamole"]
+  },
+  "fetched": [
+    { "url": "https://www.nutritionadvance.com/guacamole-nutrition-guide/", "fetched": true, "archive": "counter/guacamole/nutritionadvance-guacamole.md" },
+    { "url": "https://www.hiperbaric.com/en/hpp-technology/hpp-applications/guacamole-and-avocado-products/", "fetched": true, "archive": "counter/guacamole/hiperbaric-hpp-guacamole.md" }
+  ] },
+
+{ "op": "add_card",
+  "entry": {
+    "id": "mac_and_cheese", "title": "Mac and cheese", "category": "bulk_pantry", "family": "fam_dry_pasta",
+    "aliases": ["mac and cheese", "macaroni and cheese", "boxed mac and cheese", "mac n cheese"],
+    "question": "Which mac and cheese should I buy?",
+    "decision": "Organic pasta and real cheese, made at home.",
+    "why": "Testing found phthalates in every boxed cheese powder, far above block cheese.",
+    "short_answer": "A test of ten boxed cheese powders found phthalates in all ten. Levels averaged more than four times those in block cheese, fat for fat. Phthalates move into food from processing and packaging.",
+    "detail": "Testing reported by Toxic-Free Future covered ten macaroni and cheese powders. Phthalates turned up in all ten, and DEHP in every one. Levels averaged more than four times higher, on a fat basis, than in hard block cheese and other natural cheese. Phthalates are industrial chemicals used in plastics, inks and coatings. They migrate into food during processing, packaging and preparation.",
+    "evidence_tier": "credible_concern",
+    "sources": [
+      { "name": "Toxic-Free Future: Phthalates in macaroni and cheese powders", "url": "https://toxicfreefuture.org/press-room/toxic-industrial-chemicals-found-in-10-varieties-of-macaroni-and-cheese-powders/" }
+    ],
+    "kristy_take": "Real cheese is the standard here. Organic pasta and a block of cheese grated at home beat any box.",
+    "cart_pick": "Organic pasta and block cheddar",
+    "buying_tips": [
+      "Organic pasta and a block of cheddar, in place of a boxed powder.",
+      "A box with real cheese or a cheese sauce pouch, not powder.",
+      "Can’t find it: organic boxed mac with a short list.",
+      "Whole wheat or legume pasta when the box offers it."
+    ],
+    "watch_out": [
+      "Cheese powder, where testing found phthalates in all ten samples."
+    ],
+    "pick_steps": [
+      "Cheese named as cheese, not “cheese sauce mix”."
+    ],
+    "science": "Ten boxed cheese powders were tested. Phthalates turned up in all ten. Levels averaged more than four times those in block cheese, fat for fat. Phthalates migrate from processing and packaging.",
+    "labels_decoded": [
+      { "term": "Cheese sauce mix", "meaning": "A powder, the form where testing found the most phthalates." }
+    ],
+    "tier_note": "One lab test found the same chemicals in every powder it tested.",
+    "asked_as": ["which mac and cheese should i buy", "is boxed mac and cheese worth buying", "what should macaroni and cheese list"]
+  },
+  "fetched": [
+    { "url": "https://toxicfreefuture.org/press-room/toxic-industrial-chemicals-found-in-10-varieties-of-macaroni-and-cheese-powders/", "fetched": true, "archive": "counter/mac_and_cheese/toxicfreefuture-phthalates.md" }
+  ] },
+
+{ "op": "add_card",
+  "entry": {
+    "id": "pancake_mix", "title": "Pancake mix", "category": "bulk_pantry", "family": "fam_whole_grain_baking",
+    "aliases": ["pancake mix", "pancake mixes", "pancake batter mix", "waffle mix"],
+    "question": "Which pancake mix should I buy?",
+    "decision": "Whole grain mix with no added oil or dextrose.",
+    "why": "A pancake needs flour, milk, egg, baking powder and a little sugar, and boxed mixes add more.",
+    "short_answer": "Homemade pancakes are flour, milk, egg, baking powder and a little sugar. Boxed mixes can add enriched flour, dextrose, partially hydrogenated soybean oil and corn syrup solids. A whole grain flour first is the mark of a better mix.",
+    "detail": "A homemade pancake is flour, salt, baking powder, a little sugar, eggs and milk. One boxed mix lists enriched flour, sugar, sodium aluminum phosphate, dextrose and partially hydrogenated soybean oil. It also carries corn syrup solids, mono- and diglycerides and more. White flour lacks the bran and germ, so it is enriched. Sodium aluminum phosphate is an aluminum-containing leavening acid used in pancake and cake mixes.",
+    "evidence_tier": "kristys_standard",
+    "sources": [
+      { "name": "FoodCrumbles: Homemade vs store-bought pancakes", "url": "https://foodcrumbles.com/homemade-vs-store-bought-pancake-usa/" },
+      { "name": "BAKERpedia: Sodium aluminum phosphate", "url": "https://bakerpedia.com/ingredients/sodium-aluminium-phosphate-salp/" }
+    ],
+    "kristy_take": "A mix that reads like the home recipe is the standard here. Whole grain flour, baking powder and salt, with eggs and milk added at home, is the whole job.",
+    "cart_pick": "Organic whole grain pancake mix",
+    "buying_tips": [
+      "Organic whole grain pancake mix, with whole wheat or oat flour first.",
+      "A dry mix with no oil in it, so the fat is the butter added at home.",
+      "Can’t find it: organic whole wheat flour and baking powder instead.",
+      "A list without dextrose or corn syrup solids."
+    ],
+    "watch_out": [
+      "Partially hydrogenated oil in the mix.",
+      "Sodium aluminum phosphate, an aluminum leavening acid."
+    ],
+    "pick_steps": [
+      "Buckwheat or sprouted whole grain flour as the base."
+    ],
+    "science": "A homemade pancake is flour, milk, egg, baking powder and a little sugar. Boxed mixes can add enriched flour, dextrose, hydrogenated oil and an aluminum leavening acid.",
+    "labels_decoded": [
+      { "term": "Sodium aluminum phosphate", "meaning": "A slow leavening acid containing aluminum, common in pancake mixes." },
+      { "term": "Enriched flour", "meaning": "White flour without bran or germ, with nutrients added back." }
+    ],
+    "tier_note": "The home recipe has no hydrogenated oil, so the box is judged against it.",
+    "asked_as": ["which pancake mix should i buy", "is boxed pancake mix worth buying", "what is the best pancake mix"]
+  },
+  "fetched": [
+    { "url": "https://foodcrumbles.com/homemade-vs-store-bought-pancake-usa/", "fetched": true, "archive": "counter/pancake_mix/foodcrumbles-pancake-mix.md" },
+    { "url": "https://bakerpedia.com/ingredients/sodium-aluminium-phosphate-salp/", "fetched": true, "archive": "counter/pancake_mix/bakerpedia-salp.md" }
+  ] }
+] }

@@ -1,0 +1,468 @@
+{
+  "patches": [
+    {
+      "op": "add_card",
+      "promotes": "pick_sports_drink",
+      "entry": {
+        "id": "sports_drink",
+        "title": "Sports drinks",
+        "category": "bulk_pantry",
+        "aliases": [
+          "sports drink",
+          "sports drinks",
+          "electrolyte drink",
+          "electrolyte drinks"
+        ],
+        "question": "What should you buy instead of a sports drink?",
+        "decision": "Plain coconut water, or plain water, nothing added.",
+        "why": "Coconut water carries potassium, sodium and magnesium, and in most cases regular water hydrates just as well.",
+        "short_answer": "Coconut water is the clear liquid inside green coconuts and carries potassium, sodium, magnesium and phosphorus. There is no proof it hydrates better than regular water. Sports drinks add the sweeteners, flavors, citric acid and added minerals traditional guides skip.",
+        "detail": "Coconut water is the clear liquid found inside green, unripe coconuts. It carries potassium, sodium, magnesium and phosphorus, the electrolytes, which can help replace what is lost to workouts, mild illness or heat; mineral amounts vary with the coconut’s maturity and some brands add sugar. Extension advice is that a healthy diet and regular water work just as well for most hydration. Traditional guides list drinks with high fructose corn syrup, artificial sweeteners, natural flavors, citric acid and added vitamins or minerals among drinks to avoid.",
+        "evidence_tier": "established",
+        "sources": [
+          {
+            "name": "N.C. Cooperative Extension: Coconut products",
+            "url": "https://brunswick.ces.ncsu.edu/2025/04/coconut-products"
+          },
+          {
+            "name": "Weston A. Price Foundation: Shopping guide categories",
+            "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+          }
+        ],
+        "kristy_take": "Water does the hydrating. Coconut water is the plain swap when a sweeter drink is wanted.",
+        "cart_pick": "Plain coconut water",
+        "buying_tips": [
+          "Coconut water with only coconut water on the list.",
+          "Plain mineral water in glass or cans.",
+          "A list with no added sugar, natural flavors or citric acid."
+        ],
+        "watch_out": [
+          "Added vitamins and minerals, artificial sweeteners and natural flavors sit on the traditional avoid list.",
+          "On blood pressure medication? Check the label minerals with a doctor first."
+        ],
+        "pick_steps": [
+          "‘No sugar added’ on the coconut water carton."
+        ],
+        "science": "Coconut water is the liquid inside green coconuts. It carries potassium, sodium, magnesium and phosphorus, in amounts that vary with the coconut’s maturity. There is no scientific proof it hydrates better than regular water. Some brands add sugar.",
+        "labels_decoded": [
+          {
+            "term": "Electrolytes",
+            "meaning": "Minerals such as potassium, sodium and magnesium."
+          }
+        ],
+        "tier_note": "Extension guidance backs the facts: coconut water carries the same minerals, and plain water hydrates as well.",
+        "asked_as": [
+          "which sports drink should i buy",
+          "what should i buy instead of a sports drink",
+          "are electrolyte drinks worth buying"
+        ]
+      },
+      "fetched": [
+        {
+          "url": "https://brunswick.ces.ncsu.edu/2025/04/coconut-products",
+          "fetched": true,
+          "archive": "counter/sports_drink/ncsu-coconut-products.md"
+        },
+        {
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/",
+          "fetched": true,
+          "archive": "counter/sports_drink/wapf-shopping-guide-categories.md"
+        }
+      ]
+    },
+    {
+      "op": "add_card",
+      "promotes": "pick_energy_drink",
+      "entry": {
+        "id": "energy_drink",
+        "title": "Energy drinks",
+        "category": "bulk_pantry",
+        "aliases": [
+          "energy drink",
+          "energy drinks",
+          "energy shot",
+          "energy shots"
+        ],
+        "question": "What should you buy instead of an energy drink?",
+        "decision": "Organic herb tea or mineral water, not energy drinks.",
+        "why": "Traditional guides list caffeine, added vitamins, citric acid and artificial sweeteners among drink ingredients to skip.",
+        "short_answer": "An energy drink stacks several things traditional guides skip in a drink: caffeine, added vitamins, citric acid, sweeteners and flavors. Organic herb tea without caffeine or natural flavors, or plain mineral water, is the swap.",
+        "detail": "The traditional shopping guide lists drinks containing caffeine, high fructose corn syrup, artificial sweeteners, sugar alcohols, stevia leaf extract, natural flavors, citric acid, ascorbic acid or added vitamins or minerals among drinks to avoid. Organic herb teas without natural flavors, citric acid and caffeine sit in the next tier, in moderation, with a caution that some herb teas can have drug-like effects. Plain mineral water in cans or glass bottles ranks first.",
+        "evidence_tier": "kristys_standard",
+        "sources": [
+          {
+            "name": "Weston A. Price Foundation: Shopping guide categories",
+            "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+          }
+        ],
+        "kristy_take": "An energy drink is the caffeine plus everything else on the skip list. Herb tea or mineral water is the plain swap.",
+        "cart_pick": "Organic herb tea",
+        "buying_tips": [
+          "Organic herb tea with no caffeine, natural flavors or citric acid.",
+          "Plain mineral water in glass or cans.",
+          "Kombucha made with organic black tea, in glass."
+        ],
+        "watch_out": [
+          "Caffeine, added vitamins and citric acid all sit on the traditional avoid list for drinks.",
+          "Some herb teas can have drug-like effects; anything medical is a doctor’s call."
+        ],
+        "pick_steps": [
+          "‘Caffeine-free’ on the herb tea box."
+        ],
+        "science": "Traditional guides list caffeine, added vitamins or minerals and citric acid among drink ingredients to avoid. Artificial sweeteners and natural flavors are on it too. Organic herb teas without caffeine are the moderate tier, with a caution that some herbs act like drugs.",
+        "labels_decoded": [
+          {
+            "term": "Added vitamins",
+            "meaning": "Synthetic vitamins added to the drink, on the traditional avoid list."
+          }
+        ],
+        "tier_note": "A traditional ranking: the swap drops the caffeine and additives together, not one at a time.",
+        "asked_as": [
+          "what should i buy instead of an energy drink",
+          "is an energy drink worth buying",
+          "which energy drink should i buy"
+        ]
+      },
+      "fetched": [
+        {
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/",
+          "fetched": true,
+          "archive": "counter/energy_drink/wapf-shopping-guide-categories.md"
+        }
+      ]
+    },
+    {
+      "op": "add_card",
+      "entry": {
+        "id": "beer",
+        "title": "Beer",
+        "category": "bulk_pantry",
+        "aliases": [
+          "craft beer",
+          "craft beers",
+          "organic beer",
+          "organic beers",
+          "unpasteurized beer"
+        ],
+        "question": "Which beer should you buy?",
+        "decision": "Organic unpasteurized beer, in moderation.",
+        "why": "Traditional guides list organic unpasteurized beer among acceptable drinks, below water and lacto-fermented drinks.",
+        "short_answer": "Organic unpasteurized beer sits in the traditional guide’s acceptable tier, with organic wine. Plain mineral water and lacto-fermented drinks rank above it. Drinks with natural flavors, sweeteners or added colors land on the avoid list.",
+        "detail": "The traditional shopping guide places organic unpasteurized beer and organic wine in its middle tier of drinks, alongside herb teas, in moderation. First place goes to organic lacto-fermented drinks in glass jars and plain mineral water in cans or glass bottles. Drinks containing high fructose corn syrup, agave, artificial sweeteners, natural flavors or citric acid are listed to avoid.",
+        "evidence_tier": "kristys_standard",
+        "sources": [
+          {
+            "name": "Weston A. Price Foundation: Shopping guide categories",
+            "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+          }
+        ],
+        "kristy_take": "Organic and unpasteurized are the two words that matter on a beer. It stays a moderate drink.",
+        "cart_pick": "Organic unpasteurized beer",
+        "buying_tips": [
+          "Organic and unpasteurized, both printed on the label.",
+          "Can’t find unpasteurized: organic beer.",
+          "A beer with no natural flavors, corn syrup or added sweeteners."
+        ],
+        "watch_out": [
+          "Flavored beers with natural flavors or added sweeteners fall on the traditional avoid list."
+        ],
+        "pick_steps": [
+          "Glass bottles or cans over plastic."
+        ],
+        "science": "Traditional guides place organic unpasteurized beer and organic wine in the acceptable tier of drinks, in moderation. Plain mineral water and lacto-fermented drinks rank above them. Drinks with corn syrup, artificial sweeteners or natural flavors are listed to avoid.",
+        "labels_decoded": [
+          {
+            "term": "Unpasteurized",
+            "meaning": "Not heat-treated after brewing."
+          }
+        ],
+        "tier_note": "A traditional ranking: beer is an acceptable drink, not a first one, and the label words decide which.",
+        "asked_as": [
+          "which craft beer should i buy",
+          "is organic beer better",
+          "what craft beer is best to buy"
+        ]
+      },
+      "fetched": [
+        {
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/",
+          "fetched": true,
+          "archive": "counter/beer/wapf-shopping-guide-categories.md"
+        }
+      ]
+    },
+    {
+      "op": "add_card",
+      "entry": {
+        "id": "cookies",
+        "title": "Cookies",
+        "category": "bulk_pantry",
+        "family": "fam_sweet_bakery",
+        "aliases": [
+          "cookie",
+          "cookies",
+          "chocolate chip cookies",
+          "packaged cookies",
+          "bakery cookies"
+        ],
+        "question": "Which cookies should you buy?",
+        "decision": "Sprouted whole-grain cookies, butter, natural sweetener.",
+        "why": "Traditional guides rank cookies of sprouted whole grain, traditional fats and organic natural sweeteners first.",
+        "short_answer": "The best cookies use soaked or sprouted whole-grain flour and butter or coconut oil. The sweetener is maple syrup or honey. Hydrogenated oils, refined sugar and corn syrup land on the avoid list.",
+        "detail": "The traditional shopping guide ranks cookies, bars and muffins made with organic natural sweeteners, soaked or sprouted whole-grain flour, soaked and dried nuts and seeds, and butter, coconut oil or other traditional fats first. Organic whole-grain flour with butter, palm oil or coconut oil is the next tier. It lists cookies made with non-organic grains, partially hydrogenated vegetable oils, or refined sweeteners such as sugar, high fructose corn syrup and agave to avoid, along with cookies containing natural flavors, coffee, chocolate, cocoa or cacao.",
+        "evidence_tier": "kristys_standard",
+        "sources": [
+          {
+            "name": "Weston A. Price Foundation: Shopping guide categories",
+            "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+          }
+        ],
+        "kristy_take": "A cookie is read by its flour, fat and sweetener. Sprouted grain, butter and maple or honey make the better one.",
+        "cart_pick": "Sprouted whole-grain butter cookies",
+        "buying_tips": [
+          "Sprouted or soaked whole-grain flour, butter, and maple syrup or honey.",
+          "Can’t find sprouted: organic whole-grain flour with butter or coconut oil.",
+          "A list with no partially hydrogenated oil, corn syrup or agave.",
+          "A list with no natural flavors."
+        ],
+        "watch_out": [
+          "Non-organic grain, refined sugar and partially hydrogenated oils put a cookie on the traditional avoid list.",
+          "Chocolate, cocoa and cacao also sit on the traditional avoid list for cookies."
+        ],
+        "pick_steps": [
+          "Organic on the package."
+        ],
+        "science": "Traditional guides rank cookies of sprouted whole-grain flour, traditional fats and natural sweeteners first. Organic whole-grain flour with butter or coconut oil is second. Non-organic grain, hydrogenated oils, refined sweeteners and natural flavors are listed to avoid.",
+        "labels_decoded": [
+          {
+            "term": "Sprouted whole grain",
+            "meaning": "Grain allowed to sprout before it is dried and milled."
+          }
+        ],
+        "tier_note": "A traditional ranking by flour, fat and sweetener; organic whole-grain flour with butter is the second rung.",
+        "asked_as": [
+          "which cookies should i buy",
+          "are store cookies worth buying",
+          "what cookies should i buy for kids"
+        ]
+      },
+      "fetched": [
+        {
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/",
+          "fetched": true,
+          "archive": "counter/cookies/wapf-shopping-guide-categories.md"
+        }
+      ]
+    },
+    {
+      "op": "add_card",
+      "promotes": "pick_fruit_snacks",
+      "entry": {
+        "id": "fruit_snacks",
+        "title": "Fruit snacks",
+        "category": "bulk_pantry",
+        "aliases": [
+          "fruit snack",
+          "fruit snacks",
+          "fruit gummies",
+          "gummy fruit snacks"
+        ],
+        "question": "What should you buy instead of fruit snacks?",
+        "decision": "Dried fruit with only the fruit on the list.",
+        "why": "Fruit snacks lean on refined sweeteners, concentrated juice and dyes that traditional guides and CSPI flag.",
+        "short_answer": "Dried fruit with the fruit alone on the list is the swap. Fruit snacks are usually built on sugar, corn syrup or concentrated fruit juice. Traditional guides list all three to avoid, and some carry synthetic dyes.",
+        "detail": "The traditional shopping guide lists white sugar, corn syrup, high fructose corn syrup, brown rice syrup and concentrated fruit juices among sweeteners to avoid. CSPI names candy and gelatin desserts as common homes for synthetic dyes; Red 40 and Yellow 5 are the two most widely used, and Yellow 5 triggers hyperactivity in some children. Dyes are petroleum-based colors that do not occur in nature.",
+        "evidence_tier": "kristys_standard",
+        "sources": [
+          {
+            "name": "Weston A. Price Foundation: Shopping guide categories",
+            "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+          },
+          {
+            "name": "CSPI: Artificial colorings (synthetic food dyes)",
+            "url": "https://www.cspi.org/node/7436"
+          }
+        ],
+        "kristy_take": "A fruit snack is candy shaped like fruit. Dried fruit is the fruit.",
+        "cart_pick": "Unsweetened dried fruit",
+        "buying_tips": [
+          "Dried fruit with only the fruit on the list.",
+          "Organic on the bag.",
+          "A list with no Red 40, Yellow 5, Yellow 6 or Blue 1."
+        ],
+        "watch_out": [
+          "Fruit juice concentrate on the list is a sweetener on the traditional avoid list.",
+          "Corn syrup or sugar listed first."
+        ],
+        "pick_steps": [
+          "Unsweetened on the dried fruit bag."
+        ],
+        "science": "Traditional guides list refined sugar, corn syrup and concentrated fruit juices among sweeteners to avoid. Synthetic dyes are petroleum-based colors that do not occur in nature. CSPI reports Yellow 5 triggers hyperactivity in some children.",
+        "labels_decoded": [
+          {
+            "term": "Made with real fruit",
+            "meaning": "Some fruit is in it; the list shows how much and what else."
+          }
+        ],
+        "tier_note": "Two sources line up on the list: fruit alone beats concentrated juice and synthetic dyes.",
+        "asked_as": [
+          "what should i buy instead of fruit snacks",
+          "are fruit snacks healthy",
+          "which fruit snacks should i buy"
+        ]
+      },
+      "fetched": [
+        {
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/",
+          "fetched": true,
+          "archive": "counter/fruit_snacks/wapf-shopping-guide-categories.md"
+        },
+        {
+          "url": "https://www.cspi.org/node/7436",
+          "fetched": true,
+          "archive": "counter/fruit_snacks/cspi-artificial-colorings.md"
+        }
+      ]
+    },
+    {
+      "op": "add_card",
+      "entry": {
+        "id": "candy",
+        "title": "Candy",
+        "category": "bulk_pantry",
+        "aliases": [
+          "candy",
+          "candies",
+          "gummy candy",
+          "hard candy",
+          "candy bar"
+        ],
+        "question": "Which candy should you buy?",
+        "decision": "Candy sweetened with honey or maple, no synthetic dyes.",
+        "why": "CSPI names candy as a main home for synthetic dyes, and traditional guides rank honey and maple over refined sugar.",
+        "short_answer": "Candy is where synthetic dyes concentrate: CSPI names candy for Red 3, Red 40, Yellow 5 and Blue 1. The better candy uses an organic natural sweetener such as raw honey, maple syrup or molasses. It carries no synthetic dye.",
+        "detail": "CSPI lists candy among the foods carrying synthetic dyes and says dyes are used almost solely in foods of low nutritional value. Red 3 caused thyroid tumors in rats; Red 40 is the most widely used dye; Yellow 5 triggers hyperactivity in some children. The traditional shopping guide ranks organic natural sweeteners such as molasses, maple syrup, coconut sugar and raw honey first, and lists white sugar, corn syrup, high fructose corn syrup, artificial sweeteners and sugar alcohols to avoid.",
+        "evidence_tier": "kristys_standard",
+        "sources": [
+          {
+            "name": "CSPI: Artificial colorings (synthetic food dyes)",
+            "url": "https://www.cspi.org/node/7436"
+          },
+          {
+            "name": "Weston A. Price Foundation: Shopping guide categories",
+            "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+          }
+        ],
+        "kristy_take": "Candy is a treat food. Honey or maple for sweetness and no dyes make the better pick.",
+        "cart_pick": "Honey or maple candy, no dyes",
+        "buying_tips": [
+          "Raw honey, maple syrup or molasses as the sweetener.",
+          "A list with no Red 3, Red 40, Yellow 5, Yellow 6 or Blue 1.",
+          "A list with no corn syrup, sugar alcohols or artificial sweeteners."
+        ],
+        "watch_out": [
+          "Red 3 caused thyroid tumors in rats in a review requested by FDA.",
+          "‘Sugar-free’ candy usually swaps in sugar alcohols, on the traditional avoid list."
+        ],
+        "pick_steps": [
+          "Organic on the package."
+        ],
+        "science": "CSPI names candy for Red 3, Red 40, Yellow 5 and Blue 1. Red 3 caused thyroid tumors in rats; Yellow 5 triggers hyperactivity in some children. Traditional guides rank raw honey, maple syrup and molasses over white sugar and corn syrup.",
+        "labels_decoded": [
+          {
+            "term": "Artificial color",
+            "meaning": "Synthetic, petroleum-based dyes such as Red 40 and Yellow 5."
+          }
+        ],
+        "tier_note": "Two sources line up: dyes are the first thing to read off, then the sweetener.",
+        "asked_as": [
+          "which candy should i buy",
+          "what candy is best to buy",
+          "which candy should i buy without dyes"
+        ]
+      },
+      "fetched": [
+        {
+          "url": "https://www.cspi.org/node/7436",
+          "fetched": true,
+          "archive": "counter/candy/cspi-artificial-colorings.md"
+        },
+        {
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/",
+          "fetched": true,
+          "archive": "counter/candy/wapf-shopping-guide-categories.md"
+        }
+      ]
+    },
+    {
+      "op": "add_card",
+      "entry": {
+        "id": "popsicles",
+        "title": "Ice pops",
+        "category": "bulk_pantry",
+        "aliases": [
+          "popsicle",
+          "popsicles",
+          "ice pop",
+          "ice pops",
+          "fruit pops"
+        ],
+        "question": "Which ice pops should you buy?",
+        "decision": "Fruit ice pops: whole fruit, no dyes or juice concentrate.",
+        "why": "Traditional guides list concentrated fruit juice and refined sugar to avoid, and CSPI flags synthetic dyes in sweets.",
+        "short_answer": "The better ice pop is mostly fruit. Any sweetener is an organic natural one such as honey or maple syrup. Concentrated fruit juice, corn syrup and synthetic dyes like Red 40 and Blue 1 are the ones to read off.",
+        "detail": "The traditional shopping guide ranks organic natural sweeteners such as maple syrup and raw honey first and lists white sugar, corn syrup, high fructose corn syrup and concentrated fruit juices to avoid. CSPI says synthetic dyes are petroleum-based colors that do not occur in nature and are used almost solely in foods of low nutritional value; Red 40 is the most widely used.",
+        "evidence_tier": "kristys_standard",
+        "sources": [
+          {
+            "name": "Weston A. Price Foundation: Shopping guide categories",
+            "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+          },
+          {
+            "name": "CSPI: Artificial colorings (synthetic food dyes)",
+            "url": "https://www.cspi.org/node/7436"
+          }
+        ],
+        "kristy_take": "An ice pop is as good as the fruit in it. Whole fruit first on the list is the one.",
+        "cart_pick": "Whole-fruit ice pops",
+        "buying_tips": [
+          "Whole fruit or fruit puree first on the list.",
+          "A list with no Red 40, Yellow 5, Yellow 6 or Blue 1.",
+          "Honey or maple syrup as the sweetener, if any."
+        ],
+        "watch_out": [
+          "Fruit juice concentrate or corn syrup first on the list.",
+          "Artificial sweeteners and sugar alcohols in ‘no sugar added’ pops."
+        ],
+        "pick_steps": [
+          "Organic on the box."
+        ],
+        "science": "Traditional guides rank organic natural sweeteners first and list refined sugar, corn syrup and concentrated fruit juice to avoid. Synthetic dyes are petroleum-based colors that do not occur in nature, used almost solely in foods of low nutritional value.",
+        "labels_decoded": [
+          {
+            "term": "Juice concentrate",
+            "meaning": "Concentrated fruit juice, listed with refined sweeteners to avoid."
+          }
+        ],
+        "tier_note": "Two sources line up: concentrated juice is a sweetener to skip, and the dyes are synthetic.",
+        "asked_as": [
+          "which popsicles should i buy",
+          "are fruit ice pops healthy",
+          "which ice pops should i buy without dyes"
+        ]
+      },
+      "fetched": [
+        {
+          "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/",
+          "fetched": true,
+          "archive": "counter/popsicles/wapf-shopping-guide-categories.md"
+        },
+        {
+          "url": "https://www.cspi.org/node/7436",
+          "fetched": true,
+          "archive": "counter/popsicles/cspi-artificial-colorings.md"
+        }
+      ]
+    }
+  ]
+}

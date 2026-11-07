@@ -1,0 +1,9 @@
+jerky	| `jerky` | meat | Grass-fed beef jerky, cured with salt and real smoke. | Flip the bag and check the list for liquid smoke and MSG. | — |
+soup_bones	| `soup_bones` | meat | Grass-fed marrow and knuckle bones, plus a calf’s foot. | Ask the butcher for joints and feet kept in the back cooler. | — |
+fish_sticks	| `fish_sticks` | seafood | Wild Alaska pollock fillet sticks, breaded without seed oils. | Turn the box over and find the fish species and the oil named. | — |
+egg_whites	| `egg_whites` | eggs_dairy | Whole pastured eggs, separated at home, over cartons. | Read the carton for pasture-raised hens and whites as the only ingredient. | — |
+whipped_topping	| `whipped_topping` | eggs_dairy | Grass-fed heavy cream, whipped at home. | Read the cream carton for cream alone, without gums or emulsifiers. | — |
+margarine	| `margarine` | eggs_dairy | Grass-fed butter, cream and salt, in place of margarine. | Read the butter wrapper for cream and salt, nothing else. | — |
+catfish	| `catfish` | seafood | Wild catfish from known clean waters. | Ask the counter whether the catfish is wild and where it came from. | — |
+bologna	| `bologna` | meat | Grass-fed beef bologna, no mechanically separated poultry. | Read the product name for “with byproducts” or “with variety meats”. | — |
+pork_ribs	| `pork_ribs` | meat | Ribs from pigs raised outdoors, fat left on. | Find the Animal Welfare Approved logo on the rib pack. | — |
