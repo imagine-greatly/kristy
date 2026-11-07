@@ -99,3 +99,80 @@ test('chicken v3-flat Look for: five noun-phrase lines, no duplicate, no Non-GMO
   assert.doesNotMatch(lines.join(' '), /non-gmo/i);
   assert.ok(!c.labels_decoded.some((l) => c.instead.includes(l.term)), 'the Can\u2019t-find-it line borrows no label meaning');
 });
+
+// add_card rows (scripts/lookfor/addCard.mjs, ADD-CARD.md): a new item card, or a pick promoted to one.
+import { checkAddCard, applyAddCard } from '../scripts/lookfor/addCard.mjs';
+import doLines from '../lib/doLines.json' with { type: 'json' };
+import { mkdtempSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+
+const archiveDir = mkdtempSync(join(tmpdir(), 'addcard-'));
+const tuna = byId.get('canned_tuna');
+writeFileSync(join(archiveDir, 'tuna.md'), `Fetched ${tuna.sources[0].url}\nPole-and-troll caught tuna is a best choice.\n`);
+const opts = { doLines: { ...doLines, zz_new_tuna: doLines.canned_tuna }, archiveDir, evidenceTiers: kb.evidence_tiers };
+const entry = (over = {}) => ({ ...structuredClone(tuna), id: 'zz_new_tuna', aliases: ['zz tinned fish'], watch_out: tuna.watch_out.slice(0, 3), ...over });
+const row = (over = {}, e = {}) => ({ op: 'add_card', entry: entry(e), fetched: [{ url: tuna.sources[0].url, fetched: true, archive: 'tuna.md' }], ...over });
+const check = (r, entries = kb.entries) => checkAddCard(r, entries, opts);
+
+test('add_card: a lint-clean card with fetched sources adds once, then reads as already applied', () => {
+  assert.deepEqual(check(row()), { status: 'add', errors: [] });
+  const entries = structuredClone(kb.entries);
+  applyAddCard(entries, row());
+  assert.equal(entries.length, kb.entries.length + 1);
+  assert.equal(entries[entries.findLastIndex((e) => !e.kind)].id, 'zz_new_tuna', 'goes after the last item card');
+  assert.deepEqual(check(row(), entries), { status: 'already', errors: [] });
+  assert.match(check(row({}, { decision: 'Other tuna.' }), entries).errors[0], /duplicate id/);
+});
+
+test('add_card refuses duplicate ids, a kind, unknown fields and missing required fields', () => {
+  for (const id of ['chicken', 'pick_frozen_peas', 'fam_tinned_fish']) assert.match(check(row({}, { id })).errors.join(), /duplicate id/, id);
+  assert.match(check(row({}, { kind: 'pick' })).errors.join(), /no kind/);
+  assert.match(check(row({}, { price: 'cheap' })).errors.join(), /unknown field price/);
+  assert.match(check(row({}, { asked_as: undefined })).errors.join(), /missing asked_as/);
+  assert.match(check(row({}, { asked_as: ['a?', 'a?', 'b?'] })).errors.join(), /asked_as needs 3/);
+  assert.match(check(row({}, { buying_tips: tuna.buying_tips.slice(0, 2) })).errors.join(), /buying_tips holds 2/);
+  assert.match(check(row({}, { family: 'fam_nope' })).errors.join(), /family fam_nope/);
+  assert.match(check(row({}, { watch_out: tuna.watch_out })).errors.join(), /watch_out holds 4/);
+});
+
+test('add_card refuses sources that were not fetched and recorded in the row', () => {
+  assert.match(check(row({ fetched: [] })).errors.join(), /no fetched:true record/);
+  assert.match(check(row({ fetched: [{ url: tuna.sources[0].url, archive: 'tuna.md' }] })).errors.join(), /no fetched:true record/);
+  assert.match(check(row({ fetched: [{ url: tuna.sources[0].url, fetched: true, archive: 'gone.md' }] })).errors.join(), /not found/);
+  writeFileSync(join(archiveDir, 'other.md'), 'some other page');
+  assert.match(check(row({ fetched: [{ url: tuna.sources[0].url, fetched: true, archive: 'other.md' }] })).errors.join(), /URL not verbatim/);
+  assert.match(check(row({ fetched: [{ url: tuna.sources[0].url, fetched: true, archive: 'tuna.md', quote: 'made up line' }] })).errors.join(), /quote not verbatim/);
+  assert.deepEqual(check(row({ fetched: [{ url: tuna.sources[0].url, fetched: true, quote: 'Pole-and-troll caught tuna is a best choice.' }] })).errors, []);
+  assert.match(check(row({ fetched: [{ url: tuna.sources[0].url, fetched: true }] })).errors.join(), /archive path or a quote/);
+  assert.match(check(row({}, { sources: ['Seafood Watch, from memory'] })).errors.join(), /must be \{name, url\}/);
+});
+
+test('add_card refuses an alias that steals a card alias unless it is longer and more specific', () => {
+  assert.match(check(row({}, { aliases: ['Canned tuna'] })).errors.join(), /steals canned_tuna's "canned tuna"/);
+  assert.match(check(row({}, { aliases: ['tuna'] })).errors.join(), /steals canned_tuna.*shorter, generic/);
+  assert.match(check(row({}, { aliases: ['wild caught canned tuna fish'] })).errors.join(), /over 4 words/);
+  assert.deepEqual(check(row({}, { aliases: ['canned tuna in oil'] })).errors, []);
+});
+
+test('add_card runs the lint bar and the two-line rule', () => {
+  assert.match(check(row({}, { tier_note: "Light tuna's label." })).errors.join(), /lint COPY_STRAIGHT_QUOTE/);
+  assert.match(check(row({}, { decision: 'Pole- or troll-caught light skipjack tuna in olive oil, water or its own juice.' })).errors.join(), /two-line: decision/);
+  assert.match(check(row({}, { buying_tips: ['Keep the opened can in the fridge.', ...tuna.buying_tips.slice(1)] })).errors.join(), /LOOKFOR_OFF_TOPIC/);
+  assert.match(checkAddCard(row(), kb.entries, { ...opts, doLines }).errors.join(), /no do line/);
+});
+
+test('add_card with promotes replaces the pick in its slot; the pick aliases move with it', () => {
+  const pick = byId.get('pick_frozen_peas');
+  const r = row({ promotes: pick.id }, { aliases: pick.aliases });
+  assert.deepEqual(check(r).errors, []);
+  assert.match(check(row({ promotes: 'pick_nope' })).errors.join(), /no such pick/);
+  assert.match(check(row({ promotes: 'chicken' })).errors.join(), /no such pick/);
+  const entries = structuredClone(kb.entries);
+  const at = entries.findIndex((e) => e.id === pick.id);
+  applyAddCard(entries, r);
+  assert.equal(entries.length, kb.entries.length);
+  assert.equal(entries[at].id, 'zz_new_tuna');
+  assert.ok(!entries.some((e) => e.id === pick.id));
+  assert.deepEqual(check(r, entries), { status: 'already', errors: [] });
+});

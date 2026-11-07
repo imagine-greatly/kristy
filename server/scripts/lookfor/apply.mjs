@@ -2,7 +2,8 @@
 //   node scripts/lookfor/apply.mjs [--dry-run] [--deletions-only]     (from server/)
 // Applies scripts/lookfor/out/deletions.patch.json, then scripts/lookfor/patches/*.json in name order
 // (the directory may be missing or empty). Row: {id, field, remove:[exact], add:[text | {text, quote}],
-// to_watch_out:[exact], evidence?:{field, quote}}, or {id, field, replace:[{from, text, quote}]} (in place). Every add needs a quote (its own, or the row's evidence.quote)
+// to_watch_out:[exact], evidence?:{field, quote}}, or {id, field, replace:[{from, text, quote}]} (in place), or
+// {op:'add_card', entry, fetched, promotes?} (a new item card, optionally replacing a pick; addCard.mjs, ADD-CARD.md). Every add needs a quote (its own, or the row's evidence.quote)
 // that appears word for word in that card's text as it read BEFORE this run; one bad add refuses the whole run.
 // Shape floors: the authored patches/*.json refuse the run on a breach; the regex-made deletions patch only
 // HOLDS the breaching row (left on the card, printed for Pass B), because S0's floors were looser than the suite's.
@@ -10,6 +11,7 @@
 // Writes JSON.stringify(kb, null, 2) + '\n', which round-trips the KB byte for byte, so the diff is only changed lines.
 import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs';
 import { MAX_FAMILY_TIPS } from '../../lib/dialRules.js';
+import { checkAddCard, applyAddCard } from './addCard.mjs';
 
 const here = new URL('./', import.meta.url);
 const kbUrl = new URL('../../kristy_perimeter_kb.json', import.meta.url);
@@ -31,6 +33,8 @@ const HOLD = new Map([
 const held = (id, s) => HOLD.has(`${id}\t${s}`);
 
 const kb = JSON.parse(readFileSync(kbUrl, 'utf8'));
+const doLines = JSON.parse(readFileSync(new URL('../../lib/doLines.json', import.meta.url), 'utf8'));
+const archiveDir = new URL('../../../archive/', import.meta.url).pathname;
 const byId = new Map(kb.entries.map((e) => [e.id, e]));
 const strings = (v) => (typeof v === 'string' ? [v] : v && typeof v === 'object' ? Object.values(v).flatMap(strings) : []);
 const before = new Map(kb.entries.map((e) => [e.id, strings(e)])); // every string field, pre-run
@@ -66,6 +70,19 @@ for (const url of files) {
   if (!Array.isArray(rows)) { errors.push(`${name}: no "patches" array`); continue; }
   rows.forEach((r, i) => {
     stats.rows++;
+    if (r.op !== undefined) {
+      const at = `${name}#${i} ${r.op} ${r.entry?.id}`;
+      if (r.op !== 'add_card') return errors.push(`${at}: unknown op`);
+      const res = checkAddCard(r, kb.entries, { doLines, archiveDir, evidenceTiers: kb.evidence_tiers });
+      if (res.errors.length) return errors.push(...res.errors.map((s) => `${at}: ${s}`));
+      if (res.status === 'already') return stats.already++;
+      applyAddCard(kb.entries, r);
+      byId.set(r.entry.id, r.entry);
+      if (r.promotes) byId.delete(r.promotes);
+      before.set(r.entry.id, strings(r.entry)); // later rows this run may quote the new card's own text
+      stats.applied++; touched.add(r.entry.id);
+      return console.log(`${dry ? '+ ' : '  '}${r.entry.id}: new card${r.promotes ? `, replaces ${r.promotes}` : ''}`);
+    }
     const at = `${name}#${i} ${r.id}.${r.field}`;
     const e = byId.get(r.id);
     if (!e) return errors.push(`${at}: unknown id`);
