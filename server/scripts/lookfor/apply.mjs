@@ -3,7 +3,8 @@
 // Applies scripts/lookfor/out/deletions.patch.json, then scripts/lookfor/patches/*.json in name order
 // (the directory may be missing or empty). Row: {id, field, remove:[exact], add:[text | {text, quote}],
 // to_watch_out:[exact], evidence?:{field, quote}}, or {id, field, replace:[{from, text, quote}]} (in place), or
-// {op:'add_card', entry, fetched, promotes?} (a new item card, optionally replacing a pick; addCard.mjs, ADD-CARD.md). Every add needs a quote (its own, or the row's evidence.quote)
+// {op:'add_card', entry, fetched, promotes?} (a new item card, optionally replacing a pick; addCard.mjs, ADD-CARD.md),
+// {op:'add_alias', id, aliases:[...]} or {op:'restore_watch_out', id, text, from:{commit, id, field}} (ADD-CARD.md). Every add needs a quote (its own, or the row's evidence.quote)
 // that appears word for word in that card's text as it read BEFORE this run; one bad add refuses the whole run.
 // Shape floors: the authored patches/*.json refuse the run on a breach; the regex-made deletions patch only
 // HOLDS the breaching row (left on the card, printed for Pass B), because S0's floors were looser than the suite's.
@@ -12,6 +13,9 @@
 import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs';
 import { MAX_FAMILY_TIPS } from '../../lib/dialRules.js';
 import { checkAddCard, applyAddCard } from './addCard.mjs';
+import { words, MAX_ALIAS_WORDS } from '../../lib/counterCardLint.js';
+import { execFileSync } from 'node:child_process';
+const norm = (s) => String(s ?? '').toLowerCase().replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim(); // = addCard.mjs, perimeter.js
 
 const here = new URL('./', import.meta.url);
 const kbUrl = new URL('../../kristy_perimeter_kb.json', import.meta.url);
@@ -70,6 +74,46 @@ for (const url of files) {
   if (!Array.isArray(rows)) { errors.push(`${name}: no "patches" array`); continue; }
   rows.forEach((r, i) => {
     stats.rows++;
+    if (r.op === 'add_alias' || r.op === 'restore_watch_out') {
+      const at = `${name}#${i} ${r.op} ${r.id}`;
+      const e = byId.get(r.id);
+      if (!e) return errors.push(`${at}: unknown id`);
+      if (FROZEN.has(r.id)) return errors.push(`${at}: frozen card (gold or home), never patched`);
+      if (r.op === 'add_alias') {
+        if (!Array.isArray(r.aliases) || !r.aliases.length) return errors.push(`${at}: aliases must be a non-empty list`);
+        const own = new Set((e.aliases || []).map(norm));
+        const todo = [];
+        for (const a of r.aliases) {
+          const n = norm(a);
+          if (!n) { errors.push(`${at}: empty alias`); continue; }
+          if (words(a) > MAX_ALIAS_WORDS) errors.push(`${at}: alias "${a}" over ${MAX_ALIAS_WORDS} words`);
+          // Hub steal: an alias another entry (any kind) already carries stays where it is.
+          const owner = [...byId.values()].find((x) => x.id !== r.id && (x.aliases || []).some((b) => norm(b) === n));
+          if (owner) errors.push(`${at}: alias "${a}" already on ${owner.id} (hub steal)`);
+          else if (!own.has(n)) { own.add(n); todo.push(a); }
+        }
+        if (!todo.length) return stats.already++;
+        e.aliases = [...(e.aliases || []), ...todo];
+        stats.applied++; touched.add(r.id);
+        return console.log(`${dry ? '+ ' : '  '}${r.id}.aliases: +${todo.join(', ')}`);
+      }
+      // restore_watch_out {id, text, from:{commit, id, field}}: a line the card lost, verbatim from an
+      // entry in git history (its provenance stands in for the quote rule). No new wording.
+      const f = r.from || {};
+      if (typeof r.text !== 'string' || !r.text.trim() || !f.commit || !f.id || !f.field) return errors.push(`${at}: needs text and from:{commit, id, field}`);
+      const watch = Array.isArray(e.watch_out) ? e.watch_out : [];
+      if (watch.includes(r.text)) return stats.already++;
+      let old;
+      try { old = JSON.parse(execFileSync('git', ['-C', new URL('../..', import.meta.url).pathname, 'show', `${f.commit}:./kristy_perimeter_kb.json`], { encoding: 'utf8', maxBuffer: 64 << 20 })).entries.find((x) => x.id === f.id); }
+      catch { return errors.push(`${at}: cannot read the KB at ${f.commit}`); }
+      if (!old) return errors.push(`${at}: no ${f.id} at ${f.commit}`);
+      if (!strings(old[f.field]).includes(r.text)) return errors.push(`${at}: text not verbatim in ${f.id}.${f.field} at ${f.commit}`);
+      const why = breach(e, 'watch_out', [], watch.concat(r.text), true);
+      if (why) return errors.push(`${at}: ${why}`);
+      e.watch_out = watch.concat(r.text);
+      stats.applied++; stats.added++; touched.add(r.id);
+      return console.log(`${dry ? '+ ' : '  '}${r.id}.watch_out: ${r.text}`);
+    }
     if (r.op !== undefined) {
       const at = `${name}#${i} ${r.op} ${r.entry?.id}`;
       if (r.op !== 'add_card') return errors.push(`${at}: unknown op`);

@@ -1,0 +1,13 @@
+{
+  "patches": [
+    { "op": "add_alias", "id": "asparagus", "aliases": ["asparagus"] },
+    { "op": "add_alias", "id": "corn", "aliases": ["corn"] },
+    { "op": "add_alias", "id": "parsley", "aliases": ["parsley"] },
+    { "op": "add_alias", "id": "basil", "aliases": ["basil", "sweet basil"] },
+    { "op": "add_alias", "id": "mangoes", "aliases": ["mango"] },
+    { "op": "add_alias", "id": "celery", "aliases": ["celery"] },
+    { "op": "restore_watch_out", "id": "fish_sticks",
+      "text": "Skip Vietnam swai or basa; critics call ‘MSC certified’ a low bar.",
+      "from": { "commit": "fc8d434", "id": "pick_fish_sticks", "field": "avoid" } }
+  ]
+}

@@ -6486,7 +6486,8 @@
         "fresh asparagus",
         "asparagus spears",
         "asparagus spear",
-        "asparagus bunch"
+        "asparagus bunch",
+        "asparagus"
       ],
       "category": "produce",
       "question": "Which asparagus should I buy?",
@@ -6552,7 +6553,8 @@
         "ears of corn",
         "ear of corn",
         "corn cobs",
-        "corn cob"
+        "corn cob",
+        "corn"
       ],
       "category": "produce",
       "question": "Which sweet corn should I buy?",
@@ -6807,7 +6809,8 @@
         "parsley bunch",
         "parsley bunches",
         "italian parsley",
-        "flat leaf parsley"
+        "flat leaf parsley",
+        "parsley"
       ],
       "category": "produce",
       "question": "Which parsley should I buy?",
@@ -6870,7 +6873,9 @@
         "fresh basil",
         "basil bunch",
         "basil bunches",
-        "fresh sweet basil"
+        "fresh sweet basil",
+        "basil",
+        "sweet basil"
       ],
       "category": "produce",
       "question": "Which basil should I buy?",
@@ -7171,7 +7176,8 @@
         "mangoes",
         "fresh mango",
         "mangos",
-        "whole mango"
+        "whole mango",
+        "mango"
       ],
       "category": "produce",
       "question": "Which mangoes should I buy?",
@@ -7357,7 +7363,8 @@
         "celery stick",
         "celery sticks",
         "bunch of celery",
-        "bunches of celery"
+        "bunches of celery",
+        "celery"
       ],
       "category": "produce",
       "question": "Which celery should I buy?",
@@ -9928,7 +9935,8 @@
       ],
       "watch_out": [
         "Skip boxes listing soy oil or vegetable oil.",
-        "Seafood from China sits on the holistic avoid list."
+        "Seafood from China sits on the holistic avoid list.",
+        "Skip Vietnam swai or basa; critics call ‘MSC certified’ a low bar."
       ],
       "science": "NOAA Fisheries reports that the Aleutian Islands, eastern Bering Sea and Gulf of Alaska pollock stocks are not overfished. Close to half of pollock products are fillets, a quarter is surimi and almost a fifth is roe.",
       "labels_decoded": [

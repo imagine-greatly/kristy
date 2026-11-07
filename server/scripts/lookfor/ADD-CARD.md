@@ -51,6 +51,25 @@ Optional: `instead`, `cart_pick`, `watch_out` (3 at most), `family` (must be an 
 
 Before promoting, grep for the pick id (`grep -rn pick_frozen_peas server/ ../kristy-ios`). Carts, probes and pins that name it need repointing in the same unit.
 
+## add_alias: a bare alias a card is missing
+
+```json
+{ "op": "add_alias", "id": "celery", "aliases": ["celery"] }
+```
+
+Appends each alias to the entry's `aliases`. Idempotent: an alias already on the entry (after normalisation) counts as applied. The run is refused if an alias is empty, over 4 words, or already on any other entry of any kind (hub steal: an alias stays where it is). Unlike `add_card`, a shorter alias sitting inside another card's longer one is allowed, because that is how a promoted pick's bare noun (`corn` beside `corn tortillas`) comes back; run `listMatchProbe.js` after, which fails if a compound row now lands wrong. Used by `patches/v3-aliases.json` for the bare nouns v3-newcards dropped.
+
+## restore_watch_out: a line a card lost
+
+```json
+{ "op": "restore_watch_out", "id": "fish_sticks", "text": "<exact line>",
+  "from": { "commit": "fc8d434", "id": "pick_fish_sticks", "field": "avoid" } }
+```
+
+Appends `text` to the card's `watch_out`, only if it is word for word in that entry's field in the KB at that commit (`git show`); this stands in for the quote rule, so no new wording can come in. Idempotent; refused on a family or past 3 watch_out lines. Lint runs in `npm test`.
+
+Note: an `add_card` row stops being idempotent once any later row edits its card (`duplicate id`); run such rows in isolation.
+
 ## Run after applying
 
 ```

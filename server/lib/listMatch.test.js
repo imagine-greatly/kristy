@@ -481,8 +481,8 @@ test('a matched card still beats the category fallback', () => {
 
    THE CORPUS HOLDS NO PICKS YET (they are authored in Piece 3), so the pool is injected the
    way kindFilter.test.js does it, and bound with `nonEmpty` so a fixture that stops being a
-   pick fails here instead of passing vacuously. `celery` is a real bare noun no card owns
-   today (the probe lists it as a miss); `apples` is owned by `produce_apples_pears` since P3
+   pick fails here instead of passing vacuously. `fennel` is a real bare noun no card owns
+   today (it was `celery` until v3-aliases gave the celery card the bare noun); `apples` is owned by `produce_apples_pears` since P3
    (by `organic_worth_it_by_type` before that). It was `carrots` until P2 gave
    `produce_root_vegetables` the bare alias. */
 
@@ -490,8 +490,8 @@ const pickFixture = (id, title, aliases, decision) => ({
   id, kind: 'pick', title, category: 'produce', aliases, decision,
   sources: [{ name: 'fixture', url: 'https://example.invalid/pick' }],
 });
-const PICK_CELERY = pickFixture('pick_celery', 'Celery', ['celery'],
-  'Pick firm, crisp celery with tight stalks.');
+const PICK_FENNEL = pickFixture('pick_fennel', 'Fennel', ['fennel'],
+  'Pick firm fennel bulbs with fresh green fronds.');
 const PICK_APPLES = pickFixture('pick_apples', 'Apples', ['apples', 'apple'],
   'Pick firm apples with tight skin.');
 const PICK_TOMATOES = pickFixture('pick_tomatoes', 'Tomatoes', ['tomatoes', 'tomato'],
@@ -504,25 +504,25 @@ const PICK_FROZEN_EDAMAME = pickFixture('pick_frozen_edamame', 'Frozen edamame',
 // The real KB with every pick removed, so the no-pick tests hold after Piece 3 authors picks.
 const CARDS_ONLY = nonEmpty((perimeterKb.entries || []).filter((e) => !isPick(e)), 'KB cards', 50);
 const PICK_POOL = nonEmpty(
-  [...CARDS_ONLY, PICK_CELERY, PICK_APPLES, PICK_TOMATOES, PICK_FROZEN_EDAMAME],
+  [...CARDS_ONLY, PICK_FENNEL, PICK_APPLES, PICK_TOMATOES, PICK_FROZEN_EDAMAME],
   'KB plus fixture picks', 5
 );
 nonEmpty(pickEntries(PICK_POOL), 'fixture picks in the pool', 4);
 
 // The fixture must be a bare noun no card owns, or the test proves precedence, not the floor.
-assert.equal(matchItemToCard('celery'), null, 'celery has no card today; re-pick the fixture noun');
+assert.equal(matchItemToCard('fennel'), null, 'fennel has no card today; re-pick the fixture noun');
 assert.equal(matchItemToCard('apples')?.slug, 'produce_apples_pears');
 
 const attachWithPicks = (...names) =>
   attachCards({ items: names.map((n) => item(n)) }, { log: false, pickPool: PICK_POOL }).items;
 
 test('a bare noun with no card gets the pick line, and no slug', () => {
-  const [row] = attachWithPicks('celery');
+  const [row] = attachWithPicks('fennel');
   assert.equal(row.carded, true);
   assert.equal(row.cardSlug, undefined);
   assert.equal(row.cardSection, undefined);
-  assert.equal(row.pickId, 'pick_celery');
-  assert.equal(row.pickLine, PICK_CELERY.decision);
+  assert.equal(row.pickId, 'pick_fennel');
+  assert.equal(row.pickLine, PICK_FENNEL.decision);
 });
 
 /* ═══════════════ The card path is at least as conservative as the pick path ═══════════════
@@ -562,7 +562,7 @@ test('a row a card owns keeps the card even when a pick also matches it', () => 
 });
 
 test('a stateless produce pick is fresh: canned/frozen rows get nothing', () => {
-  for (const name of ['Canned tomatoes', 'frozen celery']) {
+  for (const name of ['Canned tomatoes', 'frozen fennel']) {
     const [row] = attachWithPicks(name);
     assert.equal(row.carded, true, name);
     assert.equal(row.cardSlug, undefined, name);
@@ -579,16 +579,16 @@ test('a non-food row gets no pick', () => {
 });
 
 test('the pick line survives sanitizeList, and stays additive beside the card fields', () => {
-  const [row] = attachWithPicks('celery');
+  const [row] = attachWithPicks('fennel');
   const round = sanitizeList({ items: [row] }).items[0];
   assert.equal(round.carded, true);
-  assert.equal(round.pickLine, PICK_CELERY.decision);
-  assert.equal(round.pickId, 'pick_celery');
+  assert.equal(round.pickLine, PICK_FENNEL.decision);
+  assert.equal(round.pickId, 'pick_fennel');
   assert.equal(round.cardSlug, undefined);
 });
 
 test('with no picks in the pool the floor is a no-op: same rows as before', () => {
-  const rows = attachCards({ items: [item('celery')] }, { log: false, pickPool: CARDS_ONLY }).items;
+  const rows = attachCards({ items: [item('fennel')] }, { log: false, pickPool: CARDS_ONLY }).items;
   assert.equal(rows[0].carded, true);
   assert.equal(rows[0].pickLine, undefined);
 });
@@ -604,12 +604,12 @@ test('a state-bearing pick reaches its own state and never the bare row', () => 
 
 test('an authored perimeterId naming a pick falls through to retrieval, never to a slug', () => {
   const [row] = attachCards(
-    { items: [{ ...item('celery'), perimeterId: 'pick_celery' }] },
+    { items: [{ ...item('fennel'), perimeterId: 'pick_fennel' }] },
     { log: false, pickPool: PICK_POOL }
   ).items;
   assert.equal(row.cardSlug, undefined);
   assert.equal(row.cardSection, undefined);
-  assert.equal(row.pickId, 'pick_celery');
+  assert.equal(row.pickId, 'pick_fennel');
 });
 
 test('family and aisle explicit IDs cannot attach a card or a pick', () => {
