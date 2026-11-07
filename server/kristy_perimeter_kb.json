@@ -192,7 +192,8 @@
         "beef grades matter",
         "beef grades",
         "usda grades",
-        "usda choice"
+        "usda choice",
+        "short ribs"
       ],
       "category": "beef",
       "question": "Which beef should I buy?",
@@ -17155,7 +17156,7 @@
       ],
       "question": "Which mac and cheese should I buy?",
       "decision": "Organic pasta and real cheese, made at home.",
-      "why": "Testing found phthalates in every boxed cheese powder, far above block cheese.",
+      "why": "Testing found phthalates in every boxed cheese powder tested, far above block cheese.",
       "short_answer": "A test of ten boxed cheese powders found phthalates in all ten. Levels averaged more than four times those in block cheese, fat for fat. Phthalates move into food from processing and packaging.",
       "detail": "Testing reported by Toxic-Free Future covered ten macaroni and cheese powders. Phthalates turned up in all ten, and DEHP in every one. Levels averaged more than four times higher, on a fat basis, than in hard block cheese and other natural cheese. Phthalates are industrial chemicals used in plastics, inks and coatings. They migrate into food during processing, packaging and preparation.",
       "evidence_tier": "credible_concern",
