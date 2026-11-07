@@ -1,0 +1,46 @@
+{
+  "source": "v3-flat item page copy (handoff kristy-card-v3-flat.md, Devon 2026-11-07): chicken. Bold line = noun phrase; the why under it is the labels_decoded meaning of the one term it names (iOS ShopDeckPageView.why); five Look-for lines, first = Grab this; no duplicate across buying_tips/pick_steps; no Non-GMO row; the Can't-find-it line names no label, so it carries no borrowed why.",
+  "format": "apply.mjs row: {id, field, remove:[exact], add:[{text, field, quote}]}. labels_decoded rows remove by exact term. Each add.quote is verbatim in chicken (add.field names where) before the run.",
+  "patches": [
+    {
+      "id": "chicken",
+      "field": "buying_tips",
+      "remove": [
+        "Look for Certified Humane Pasture-Raised or Animal Welfare Approved on the pack.",
+        "Read USDA Organic as a bonus on top: organic feed with pasture and forage, no antibiotics in feed.",
+        "Packs can carry added water or broth, up to 15% of the weight. Choose the least; air-chilled chicken holds the least."
+      ],
+      "add": [
+        { "text": "Certified Humane Pasture-Raised logo on the pack.", "field": "buying_tips", "quote": "Look for Certified Humane Pasture-Raised" },
+        { "text": "Animal Welfare Approved logo on the pack.", "field": "buying_tips", "quote": "Animal Welfare Approved on the pack." },
+        { "text": "USDA Organic as a bonus on top.", "field": "buying_tips", "quote": "USDA Organic as a bonus on top" },
+        { "text": "Air-chilled chicken, with the least added water.", "field": "buying_tips", "quote": "air-chilled chicken holds the least" }
+      ]
+    },
+    {
+      "id": "chicken",
+      "field": "pick_steps",
+      "remove": [
+        "Look for Certified Humane Pasture-Raised or Animal Welfare Approved on the pack.",
+        "Read USDA Organic as a bonus: certified organic feed and outdoor access.",
+        "Read the ingredients for chicken alone, nothing added."
+      ],
+      "add": [
+        { "text": "Chicken alone in the ingredients, nothing added.", "field": "delta", "quote": "chicken alone in the ingredients" }
+      ]
+    },
+    {
+      "id": "chicken",
+      "field": "labels_decoded",
+      "remove": ["Non-GMO Project Verified"]
+    },
+    {
+      "id": "chicken",
+      "field": "instead",
+      "remove": ["USDA Organic alone, or a pasture-raised seal alone, with nothing added."],
+      "add": [
+        { "text": "Organic chicken alone, or a pasture-raised seal alone, with nothing added.", "field": "instead", "quote": "a pasture-raised seal alone, with nothing added" }
+      ]
+    }
+  ]
+}

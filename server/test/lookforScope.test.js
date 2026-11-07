@@ -8,7 +8,9 @@ import kb from '../kristy_perimeter_kb.json' with { type: 'json' };
 import { nonEmpty } from '../lib/testGuards.js';
 import {
   LOOKFOR_OFF_TOPIC, LOOKFOR_ALLOW, LOOKFOR_HOME, LOOKFOR_GRANDFATHER, lookforOffTopic, lintLookforScope,
+  lintTierNoteVsLookFor,
 } from '../lib/counterCardLint.js';
+import { projectEntry } from '../lib/counterCards.js';
 
 const byId = new Map(kb.entries.map((e) => [e.id, e]));
 const cards = nonEmpty(kb.entries.filter((e) => e.buying_tips || e.pick_steps || e.look_for), 'look-for corpus', 250);
@@ -75,4 +77,25 @@ test('every allowlist phrase would hit without its mask', () => {
     assert.ok(phrase, `allow ${re} has no sample`);
     assert.ok(Object.values(LOOKFOR_OFF_TOPIC).some((v) => v.test(phrase)), `allow ${re} masks nothing (${why})`);
   }
+});
+
+test('tier_note never restates look_for[0] on any projected card; a restating one goes red', () => {
+  const projected = nonEmpty(cards.filter((e) => e.tier_note).map((e) => projectEntry(e)), 'cards with a tier_note', 100);
+  const bad = projected.flatMap((c) => lintTierNoteVsLookFor(c).map((v) => `${c.slug ?? c.id}: ${v.detail}`));
+  assert.deepEqual(bad, [], bad.join('\n  '));
+  const chicken = projectEntry(byId.get('chicken'));
+  assert.deepEqual(lintTierNoteVsLookFor(chicken), [], 'chicken passes');
+  const v = lintTierNoteVsLookFor({ ...chicken, tier_note: `${chicken.look_for[0]} Audited.` });
+  assert.equal(v[0]?.code, 'TIER_NOTE_RESTATES_LOOK_FOR');
+  assert.equal(lintTierNoteVsLookFor({ buying_tips: ['Certified Humane Pasture-Raised logo on the pack.'], tier_note: 'Certified Humane pasture-raised, on the pack.' })[0]?.code, 'TIER_NOTE_RESTATES_LOOK_FOR', 'reads buying_tips on a KB entry');
+});
+
+test('chicken v3-flat Look for: five noun-phrase lines, no duplicate, no Non-GMO row', () => {
+  const c = projectEntry(byId.get('chicken'));
+  const lines = [...c.look_for, ...c.pick_steps];
+  assert.equal(lines.length, 5, lines.join(' | '));
+  assert.equal(new Set(lines).size, 5);
+  for (const l of lines) assert.doesNotMatch(l, /^(look|read|pick|choose|check|buy|find|skip|ask)\b/i, l);
+  assert.doesNotMatch(lines.join(' '), /non-gmo/i);
+  assert.ok(!c.labels_decoded.some((l) => c.instead.includes(l.term)), 'the Can\u2019t-find-it line borrows no label meaning');
 });

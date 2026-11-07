@@ -14,9 +14,14 @@ import { MAX_FAMILY_TIPS } from '../../lib/dialRules.js';
 const here = new URL('./', import.meta.url);
 const kbUrl = new URL('../../kristy_perimeter_kb.json', import.meta.url);
 const dry = process.argv.includes('--dry-run');
-const FIELDS = new Set(['buying_tips', 'pick_steps']);
-// Gold shape cards and home cards: never touched by this pass (plan: byte-identical).
-const FROZEN = new Set(['chicken', 'beef_grassfed_vs_grainfed', 'washing_produce', 'produce_storage', 'baking_soda_soak', 'revive_greens', 'freezing_produce']);
+const FIELDS = new Set(['buying_tips', 'pick_steps', 'instead', 'labels_decoded']);
+// `instead` is one string, patched as a one-line list. `labels_decoded` rows only remove, by exact
+// `term` (remove:["Term"]); a decoded label the card should not show (chicken's Non-GMO row) goes
+// with it, since the projection lists debunk labels in look_for and iOS hangs each term's meaning
+// under any row that names it.
+// Gold shape card and home cards: never touched by this pass (plan: byte-identical). Chicken left
+// this set for the v3-flat copy pass (Devon 2026-11-07, handoff kristy-card-v3-flat.md).
+const FROZEN = new Set(['beef_grassfed_vs_grainfed', 'washing_produce', 'produce_storage', 'baking_soda_soak', 'revive_greens', 'freezing_produce']);
 // Exact lines the deletions patch proposes that must stay, one reason each.
 const HOLD = new Map([
   ['coffee_beans\tLook for ‘whole bean’ and Bird Friendly on a sealed bag with a roasted-on date.', 'a seal criterion, and Devon-approved line 2 (twoLinePin)'],
@@ -65,7 +70,17 @@ for (const url of files) {
     const e = byId.get(r.id);
     if (!e) return errors.push(`${at}: unknown id`);
     if (FROZEN.has(r.id)) return errors.push(`${at}: frozen card (gold or home), never patched`);
-    if (!FIELDS.has(r.field) || !Array.isArray(e[r.field])) return errors.push(`${at}: field must be an existing buying_tips/pick_steps list`);
+    const single = r.field === 'instead', labels = r.field === 'labels_decoded';
+    if (!FIELDS.has(r.field) || !(single ? typeof e.instead === 'string' : Array.isArray(e[r.field]))) return errors.push(`${at}: field must be an existing buying_tips/pick_steps/labels_decoded list or instead string`);
+    if (labels) {
+      if ((r.add || []).length || (r.to_watch_out || []).length) return errors.push(`${at}: labels_decoded rows only remove terms`);
+      const gone = (r.remove || []).filter((t) => !e.labels_decoded.some((l) => l.term === t));
+      if (gone.length === (r.remove || []).length) return stats.already++;
+      if (gone.length) return errors.push(`${at}: partly applied or term not matching: ${gone.join(', ')}`);
+      e.labels_decoded = e.labels_decoded.filter((l) => !r.remove.includes(l.term));
+      stats.applied++; stats.removed += r.remove.length; touched.add(r.id);
+      return console.log(`${dry ? '- ' : '  '}${r.id}.labels_decoded: -${r.remove.join(', ')}`);
+    }
     const adds = (r.add || []).map((a) => (typeof a === 'string' ? { text: a, quote: r.evidence?.quote } : a));
     // An add already on the card was quote-checked when it went on; its quote may be a line that row removed.
     for (const a of adds) {
@@ -78,7 +93,7 @@ for (const url of files) {
     const remove = (r.remove || []).filter((s) => !held(r.id, s));
     const moves = (r.to_watch_out || []).filter((s) => !held(r.id, s));
     if ((r.remove || []).length && !remove.length && !adds.length) return stats.held++;
-    const list = e[r.field], watch = Array.isArray(e.watch_out) ? e.watch_out : [];
+    const list = single ? [e.instead] : e[r.field], watch = Array.isArray(e.watch_out) ? e.watch_out : [];
     const present = remove.filter((s) => list.includes(s));
     if (present.length === 0 && adds.every((a) => list.includes(a.text)) && moves.every((m) => watch.includes(m))) return stats.already++;
     // A regex row an authored patch already trimmed (seen on a re-run) is held, not fatal; authored rows stay strict.
@@ -86,10 +101,10 @@ for (const url of files) {
     if (present.length !== remove.length) return errors.push(`${at}: partly applied or remove not matching: ${remove.filter((s) => !list.includes(s)).map((s) => `"${s}"`).join(', ')}`);
     const next = list.filter((s) => !remove.includes(s)).concat(adds.map((a) => a.text).filter((t) => !list.includes(t)));
     const newMoves = moves.filter((m) => !watch.includes(m));
-    const why = breach(e, r.field, next, watch.concat(newMoves), newMoves.length > 0);
+    const why = single && next.length !== 1 ? `instead would hold ${next.length} lines (exactly 1)` : breach(e, r.field, next, watch.concat(newMoves), newMoves.length > 0);
     if (why && strict) return errors.push(`${at}: ${why}`);
     if (why) { stats.held++; return holds.push(`${r.id}.${r.field}: whole row (${why})`); }
-    e[r.field] = next;
+    if (single) e.instead = next[0]; else e[r.field] = next;
     if (newMoves.length) e.watch_out = watch.concat(newMoves);
     stats.applied++; stats.removed += remove.length; stats.added += adds.length; stats.moved += newMoves.length;
     touched.add(r.id);

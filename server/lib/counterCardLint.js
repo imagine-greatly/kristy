@@ -1789,6 +1789,22 @@ export function lintLookforScope(entry) {
   return out;
 }
 
+// THE TIER SENTENCE NEVER RESTATES THE GRAB (Devon 2026-11-07, v3-flat item page). The item page
+// shows look_for[0] tagged "Grab this" and tier_note at the foot; the second must say something
+// the first does not. Same measure as iOS `ShopDeckPageView.restates`: 80%+ of the shorter line's
+// distinct words appear in the other. Takes a projected card (look_for) or a KB entry (buying_tips).
+export function lintTierNoteVsLookFor(card) {
+  const first = (card?.look_for ?? card?.buying_tips ?? [])[0];
+  const tier = card?.tier_note;
+  if (typeof first !== 'string' || typeof tier !== 'string') return [];
+  const set = (s) => new Set(s.toLowerCase().split(/[^\p{L}\p{N}]+/u).filter(Boolean));
+  const a = set(first), b = set(tier);
+  if (!a.size || !b.size) return [];
+  const shared = [...a].filter((w) => b.has(w)).length;
+  if (shared < 0.8 * Math.min(a.size, b.size)) return [];
+  return [{ code: 'TIER_NOTE_RESTATES_LOOK_FOR', field: 'tier_note', text: tier, detail: `tier_note repeats look_for[0] ("${first}"): the tier sentence must add what the grab line does not` }];
+}
+
 const KB_TITLE = new Map(perimeterKb.entries.map((e) => [e.id, e.title]));
 
 const ownedFact = (fact, owner, family, pattern) => ({

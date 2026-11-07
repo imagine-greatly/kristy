@@ -3009,9 +3009,10 @@
       "kristy_take": "The logo on the pack is the check. Pasture-raised with a logo tells how the bird lived; organic tells what it ate.",
       "cart_pick": "Chicken with a Certified Humane logo",
       "buying_tips": [
-        "Look for Certified Humane Pasture-Raised or Animal Welfare Approved on the pack.",
-        "Read USDA Organic as a bonus on top: organic feed with pasture and forage, no antibiotics in feed.",
-        "Packs can carry added water or broth, up to 15% of the weight. Choose the least; air-chilled chicken holds the least."
+        "Certified Humane Pasture-Raised logo on the pack.",
+        "Animal Welfare Approved logo on the pack.",
+        "USDA Organic as a bonus on top.",
+        "Air-chilled chicken, with the least added water."
       ],
       "labels_decoded": [
         {
@@ -3025,10 +3026,6 @@
         {
           "term": "USDA Organic",
           "meaning": "Organic feed ration including pasture and forage, outdoor space, no antibiotics in feed."
-        },
-        {
-          "term": "Non-GMO Project Verified",
-          "meaning": "Covers the feed from the second day after hatching. Says nothing about how the bird lived."
         },
         {
           "term": "Natural",
@@ -3065,12 +3062,10 @@
         "‘Raised without antibiotics’ rests on the producer’s own word unless a seal stands behind it."
       ],
       "pick_steps": [
-        "Look for Certified Humane Pasture-Raised or Animal Welfare Approved on the pack.",
-        "Read USDA Organic as a bonus: certified organic feed and outdoor access.",
-        "Read the ingredients for chicken alone, nothing added."
+        "Chicken alone in the ingredients, nothing added."
       ],
       "science": "Farms that carry a welfare seal are inspected against a written standard for how the birds live. The organic seal adds a feed rule: an organic ration that includes pasture and forage.",
-      "instead": "USDA Organic alone, or a pasture-raised seal alone, with nothing added.",
+      "instead": "Organic chicken alone, or a pasture-raised seal alone, with nothing added.",
       "family": "fam_poultry_pork",
       "delta": "A pasture-raised seal plus USDA Organic; chicken alone in the ingredients.",
       "deck": {

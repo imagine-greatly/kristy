@@ -733,9 +733,10 @@ export const TWO_LINE = {
   "chicken": {
     "decision": "Chicken that lived outside.",
     "buying_tips": [
-      "Look for Certified Humane Pasture-Raised or Animal Welfare Approved on the pack.",
-      "Read USDA Organic as a bonus on top: organic feed with pasture and forage, no antibiotics in feed.",
-      "Packs can carry added water or broth, up to 15% of the weight. Choose the least; air-chilled chicken holds the least."
+      "Certified Humane Pasture-Raised logo on the pack.",
+      "Animal Welfare Approved logo on the pack.",
+      "USDA Organic as a bonus on top.",
+      "Air-chilled chicken, with the least added water."
     ]
   },
   "pork_cuts_and_enhanced": {
@@ -3657,7 +3658,7 @@ test('copy pass 2026-10-29: olive oil and produce live copy', () => {
 const SECOND_PASS = {
   "chicken": {
     "decision": "Chicken that lived outside.",
-    "tip0": "Look for Certified Humane Pasture-Raised or Animal Welfare Approved on the pack.",
+    "tip0": "Certified Humane Pasture-Raised logo on the pack.",
     "do": "Look for “Pasture-Raised,” Certified Humane, organic or non-GMO feed, least added water."
   },
   "egg_labels": {
