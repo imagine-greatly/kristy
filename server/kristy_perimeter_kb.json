@@ -6938,7 +6938,7 @@
       "decision": "Organic snap peas, bright green, firm pods.",
       "why": "The whole pod is eaten, so organic covers every bite.",
       "short_answer": "Nebraska Extension: bright green all around the shell, firm pods free of blemishes. Purdue, on pea pods: medium size, firm, with no wilting or decay.",
-      "detail": "Snap and snow peas are eaten pod and all. Organic rules exclude synthetic substances outside an approved list, and Certified Naturally Grown farms use no synthetic sprays.",
+      "detail": "Organic rules exclude synthetic substances outside an approved list. Certified Naturally Grown farms use no synthetic herbicides, pesticides, fertilizers or GMOs, checked by yearly peer inspections. The label is built for small farms that sell direct, so look for it at farmers markets, CSAs and local grocers. Snap peas keep up to 2 days in a perforated bag in the crisper. Rub them under cold running water just before eating.",
       "evidence_tier": "established",
       "sources": [
         {
@@ -7116,7 +7116,7 @@
       "decision": "Organic Swiss chard, dark green and unblemished.",
       "why": "Chard is a leafy green eaten whole, with no peel to discard.",
       "short_answer": "Nebraska Extension: dark green leaves, no discolored or damaged leaves, and stalks that are not split. Keep it unwashed in the crisper for up to three days.",
-      "detail": "Chard is eaten leaf and stalk. Organic rules exclude synthetic substances outside an approved list, and Certified Naturally Grown farms use no synthetic sprays or fertilizers.",
+      "detail": "Certified Naturally Grown farms use no synthetic herbicides, pesticides, fertilizers or GMOs. Nearby farmers and county extension agents inspect them every year, and most sell direct at farmers markets and CSAs. Organic rules exclude synthetic substances outside an approved list. Purdue’s guide adds full leaves, bright in color. Stems come red, white or yellow, all the same plant. In Nebraska the harvest runs May through September.",
       "evidence_tier": "established",
       "sources": [
         {
@@ -7752,7 +7752,7 @@
       "decision": "Ground turkey from birds raised on pasture.",
       "why": "Most commercial turkey is raised in confinement, ground turkey included. Birds that grazed outdoors rank first.",
       "short_answer": "Look for “Pasture-Raised” and Animal Welfare Approved, with turkey alone in the ingredients.",
-      "detail": "Ground turkey from birds allowed to graze is the best tier; organic is next. Organic rules set organic feed and outdoor access through the year, and bar hormones.",
+      "detail": "Animal Welfare Approved spells out the bird’s life. Turkeys must have continuous daytime range from four weeks old, with growing green vegetation whenever conditions allow. Beak trimming and toe trimming are banned. So is feed made from meat or animal by-products, and so are routine antibiotics for growth. A sick bird still gets care, then waits at least twice the drug’s withdrawal period before slaughter.",
       "evidence_tier": "kristys_standard",
       "sources": [
         {
@@ -8700,6 +8700,10 @@
         "Carton whites stating pasture-raised or organic hens.",
         "Egg whites as the only ingredient."
       ],
+      "watch_out": [
+        "Skip cartons listing whipping aids or anything beyond whites.",
+        "Skip cartons silent on how the hens were raised."
+      ],
       "pick_steps": [
         "A whipping aid named on the carton."
       ],
@@ -9317,7 +9321,7 @@
       "decision": "Grass-fed marrow and knuckle bones, plus a calf’s foot.",
       "why": "Feet, knuckles and marrow bones are the gelatin-rich parts traditional stock is built on.",
       "short_answer": "Traditional beef stock starts with marrow and knuckle bones, meaty neck bones and an optional calf’s foot. Hooves, feet and heads are the most gelatinous parts of the animal.",
-      "detail": "Cooled stock congeals because of gelatin.",
+      "detail": "Calves’ feet take some hunting. Asian and Latin American markets sometimes carry them, and wholesalers that supply restaurants sell them frozen in bulk. Ask the butcher to cut them into one-inch pieces. About 2 pounds of pieces, with the marrow and knuckle bones, makes a large pot of beef stock. For chicken stock, 2 to 4 chicken feet do the same job. Bouillon cubes and powdered soup bases get their meaty taste from hydrolyzed proteins, not simmered bones.",
       "evidence_tier": "time_tested",
       "sources": [
         {
@@ -9340,6 +9344,9 @@
         "A calf’s foot or chicken feet, the most gelatinous parts.",
         "Meaty rib or neck bones for browning first.",
         "Frozen bones from a grazing farm when the case has none."
+      ],
+      "watch_out": [
+        "Skip bouillon cubes and soup bases built on hydrolyzed protein."
       ],
       "pick_steps": [
         "The butcher counter, for bones kept off display."
@@ -15261,12 +15268,24 @@
       "decision": "Baking powder marked aluminum-free, with no aluminum listed.",
       "why": "WAPF lists aluminum-free baking powder as best and baking powder containing aluminum under avoid.",
       "short_answer": "Read the ingredient list for aluminum. Traditional shopping guides keep aluminum-free baking powder and pass on powder that contains aluminum.",
-      "detail": "Traditional shopping guides list aluminum-free baking powder as the best choice in the baking aisle. Baking powder containing aluminum sits on the avoid list in the same section.",
+      "detail": "Aluminum hides inside longer ingredient names. Sodium aluminum phosphate and aluminum sodium sulfate are both on the federal list of food substances, and either one means the powder contains aluminum. The federal self-rising flour standard names three leavening acids: monocalcium phosphate, sodium acid pyrophosphate and sodium aluminum phosphate. Only the last carries aluminum, so a bag of self-rising flour needs the same read as the tin.",
       "evidence_tier": "kristys_standard",
       "sources": [
         {
           "name": "Weston A. Price Foundation",
           "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
+        },
+        {
+          "name": "Cornell LII, 21 CFR 182.1781 Sodium aluminum phosphate",
+          "url": "https://www.law.cornell.edu/cfr/text/21/182.1781"
+        },
+        {
+          "name": "Cornell LII, 21 CFR 182.1131 Aluminum sodium sulfate",
+          "url": "https://www.law.cornell.edu/cfr/text/21/182.1131"
+        },
+        {
+          "name": "Cornell LII, 21 CFR 137.180 Self-rising flour",
+          "url": "https://www.law.cornell.edu/cfr/text/21/137.180"
         }
       ],
       "kristy_take": "One small swap in the baking aisle: the powder without aluminum.",
@@ -15275,6 +15294,10 @@
         "“aluminum-free” printed on the tin.",
         "Read the list and skip any baking powder that names aluminum.",
         "Traditional cooking guides keep aluminum-free baking powder."
+      ],
+      "watch_out": [
+        "Skip tins naming sodium aluminum phosphate or aluminum sodium sulfate.",
+        "Skip self-rising flour listing sodium aluminum phosphate."
       ],
       "pick_steps": [
         "Pick a can marked aluminum-free."
@@ -15422,7 +15445,7 @@
       "decision": "Wild rice gathered from lakes and rivers, nothing mixed in.",
       "why": "WAPF favors wildcrafted wild rice; MSU Extension classifies wild rice as a whole grain.",
       "short_answer": "Look for wildcrafted wild rice, gathered from where it grows. Traditional guides list it with organic whole grains as the best choices. Soak it at least seven hours in warm water with a splash of something sour before cooking.",
-      "detail": "Wild rice was a traditional food of the Great Lakes peoples. Traditional shopping guides list wildcrafted wild rice among the best grains, alongside organic whole grain rice and dried beans, and say all grains should be soaked in an acidic medium. A traditional recipe soaks wild rice in warm water with whey, yogurt, kefir, buttermilk, lemon juice or vinegar for at least seven hours, then simmers it with broth. Grains keep best bought in sealed packages rather than bins.",
+      "detail": "Minnesota law splits wild rice into two labeled kinds. Rice grown in paddies must say “paddy” or “cultivated.” A pack of only lake and river rice may say “100 percent naturally grown, lake and river wild rice.” Lake rice gathered by machine must say “machine harvested”; rice gathered fully by hand may say “hand harvested.” The rule binds only rice sold in Minnesota. For the soak, warm water with whey, yogurt, kefir, buttermilk, lemon juice or vinegar all work.",
       "evidence_tier": "kristys_standard",
       "sources": [
         {
@@ -15432,6 +15455,10 @@
         {
           "name": "Michigan State University Extension",
           "url": "https://www.canr.msu.edu/resources/grain-label-claims"
+        },
+        {
+          "name": "Minnesota Statutes 30.49, Wild rice labeling",
+          "url": "https://www.revisor.mn.gov/statutes/cite/30.49"
         }
       ],
       "kristy_take": "Wild rice is a gathered grain with a long traditional history. Wildcrafted is the closest to how it grows.",
@@ -15440,6 +15467,9 @@
         "“wildcrafted” or a named lake or river: rice gathered where it grows wild.",
         "Can’t find it: organic wild rice in a sealed bag is next.",
         "Sealed bags over bins, and no quick-cooking mixes."
+      ],
+      "watch_out": [
+        "Read “paddy” or “cultivated” as farmed rice, not wildcrafted."
       ],
       "pick_steps": [
         "Wild rice alone on the list, no white rice blended in."

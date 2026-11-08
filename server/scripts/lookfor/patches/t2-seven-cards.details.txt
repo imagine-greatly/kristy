@@ -1,0 +1,66 @@
+{
+  "source": "T2 seven-card completion (2026-11-08). Written by a one-off JSON round-trip script (same JSON.stringify(kb,null,2) as apply.mjs), not apply.mjs: apply.mjs has no detail/sources/new-watch_out row, and at 2d324a5 its full replay already refuses (75 problems from patches superseded by the direct edits in 2d324a5/e9a4af1/21bcfe9). Kept as .txt so apply.mjs never loads it. watch_out is set only on cards where it was empty. Each claim traces to the archive or a live fetch named per card.",
+  "details": {
+    "soup_bones": {
+      "evidence": "archive/counter/soup_bones/wapf-broth.md (WAPF Broth is beautiful): Asian and Latin American markets, frozen calves feet from restaurant-trade wholesalers, one-inch cubes, about 2 pounds for a large pot of beef stock, 2-4 chicken feet, bouillon cubes from hydrolyzed proteins",
+      "text": "Calves’ feet take some hunting. Asian and Latin American markets sometimes carry them, and wholesalers that supply restaurants sell them frozen in bulk. Ask the butcher to cut them into one-inch pieces. About 2 pounds of pieces, with the marrow and knuckle bones, makes a large pot of beef stock. For chicken stock, 2 to 4 chicken feet do the same job. Bouillon cubes and powdered soup bases get their meaty taste from hydrolyzed proteins, not simmered bones.",
+      "watch_out": [
+        "Skip bouillon cubes and soup bases built on hydrolyzed protein."
+      ]
+    },
+    "baking_powder": {
+      "evidence": "live fetch 2026-11-08: law.cornell.edu/cfr/text/21/182.1781 (Sodium aluminum phosphate), /182.1131 (Aluminum sodium sulfate), /137.180 (self-rising flour acid-reacting substances)",
+      "text": "Aluminum hides inside longer ingredient names. Sodium aluminum phosphate and aluminum sodium sulfate are both on the federal list of food substances, and either one means the powder contains aluminum. The federal self-rising flour standard names three leavening acids: monocalcium phosphate, sodium acid pyrophosphate and sodium aluminum phosphate. Only the last carries aluminum, so a bag of self-rising flour needs the same read as the tin.",
+      "add_sources": [
+        {
+          "name": "Cornell LII, 21 CFR 182.1781 Sodium aluminum phosphate",
+          "url": "https://www.law.cornell.edu/cfr/text/21/182.1781"
+        },
+        {
+          "name": "Cornell LII, 21 CFR 182.1131 Aluminum sodium sulfate",
+          "url": "https://www.law.cornell.edu/cfr/text/21/182.1131"
+        },
+        {
+          "name": "Cornell LII, 21 CFR 137.180 Self-rising flour",
+          "url": "https://www.law.cornell.edu/cfr/text/21/137.180"
+        }
+      ],
+      "watch_out": [
+        "Skip tins naming sodium aluminum phosphate or aluminum sodium sulfate.",
+        "Skip self-rising flour listing sodium aluminum phosphate."
+      ]
+    },
+    "wild_rice": {
+      "evidence": "live fetch 2026-11-08: revisor.mn.gov/statutes/cite/30.49 (paddy/cultivated label, 100 percent naturally grown lake and river, machine/hand harvested, in-state only); soak liquids from the card's prior detail (WAPF)",
+      "text": "Minnesota law splits wild rice into two labeled kinds. Rice grown in paddies must say “paddy” or “cultivated.” A pack of only lake and river rice may say “100 percent naturally grown, lake and river wild rice.” Lake rice gathered by machine must say “machine harvested”; rice gathered fully by hand may say “hand harvested.” The rule binds only rice sold in Minnesota. For the soak, warm water with whey, yogurt, kefir, buttermilk, lemon juice or vinegar all work.",
+      "add_sources": [
+        {
+          "name": "Minnesota Statutes 30.49, Wild rice labeling",
+          "url": "https://www.revisor.mn.gov/statutes/cite/30.49"
+        }
+      ],
+      "watch_out": [
+        "Read “paddy” or “cultivated” as farmed rice, not wildcrafted."
+      ]
+    },
+    "snap_peas": {
+      "evidence": "archive/counter/snap_peas/naturallygrown-faqs.md (no synthetic herbicides, pesticides, fertilizers, or GMOs; annual peer-review inspections; direct-market farmers, CSAs, farmers markets, local food businesses); cfr-205-105.md; unl-snap-peas.md (perforated bag, crisper, up to 2 days, rub under cold running water)",
+      "text": "Organic rules exclude synthetic substances outside an approved list. Certified Naturally Grown farms use no synthetic herbicides, pesticides, fertilizers or GMOs, checked by yearly peer inspections. The label is built for small farms that sell direct, so look for it at farmers markets, CSAs and local grocers. Snap peas keep up to 2 days in a perforated bag in the crisper. Rub them under cold running water just before eating."
+    },
+    "swiss_chard": {
+      "evidence": "archive/counter/swiss_chard/naturallygrown-faqs.md (local inspectors: nearby producers, county Extension Agents; direct-market farmers); cfr-205-105.md; purdue-foodlink.md (full leaves bright in color); unl-swiss-chard.md (stems red, white or yellow; harvest May through September)",
+      "text": "Certified Naturally Grown farms use no synthetic herbicides, pesticides, fertilizers or GMOs. Nearby farmers and county extension agents inspect them every year, and most sell direct at farmers markets and CSAs. Organic rules exclude synthetic substances outside an approved list. Purdue’s guide adds full leaves, bright in color. Stems come red, white or yellow, all the same plant. In Nebraska the harvest runs May through September."
+    },
+    "ground_turkey": {
+      "evidence": "archive/completeness/premium-packs/awa-turkey-standards.md (7.0.3 continuous daytime range from four weeks; 7.0.8.2 growing green vegetation whenever conditions allow; 5.4.1 de-beaking and toe trimming prohibited; 6.0.5 meat or animal by-products prohibited; 3.1.2 antibiotics to prevent disease or promote growth prohibited; 3.1.1.2 and 3.1.6 treatment, twice the withdrawal period)",
+      "text": "Animal Welfare Approved spells out the bird’s life. Turkeys must have continuous daytime range from four weeks old, with growing green vegetation whenever conditions allow. Beak trimming and toe trimming are banned. So is feed made from meat or animal by-products, and so are routine antibiotics for growth. A sick bird still gets care, then waits at least twice the drug’s withdrawal period before slaughter."
+    },
+    "egg_whites": {
+      "evidence": "card text already on file: science (whipping aids may be added, 21 CFR 160.140) and detail (no hen claim unless the label states one)",
+      "watch_out": [
+        "Skip cartons listing whipping aids or anything beyond whites.",
+        "Skip cartons silent on how the hens were raised."
+      ]
+    }
+  }
+}
