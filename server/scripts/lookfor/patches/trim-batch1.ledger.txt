@@ -1,0 +1,217 @@
+TRIM BATCH 1 FACT LEDGER (2026-11-08)
+Route: one-off JSON round-trip on server/kristy_perimeter_kb.json (KB round-trips exactly as
+JSON.stringify(kb, null, 2) + "\n"; checked before every write). apply.mjs not used: it cannot
+replay cleanly and has no detail/labels row. No do line changed (all 8 already <=14 words).
+Aliases, asked_as, sources, cta_item, ids, decision, cart_pick, eyebrow_short untouched.
+Word counts use counterCardLint words(); labels count term + meaning; (n) = bullet count.
+Format: BEFORE fact -> AFTER field: "short quote". DROPPED lines are restatement only.
+
+======================================================================
+egg_labels                                   TOTAL 1177 -> 933
+  why 21->12  short_answer 40->22  tier_note 13->12  buying_tips 52(4)->56(5)
+  watch_out 436(18)->44(4)  pick_steps 12->12  science 68->55  detail 173->384
+  labels 296(22)->280(21)  kristy_take 33->23  instead 14->14  delta 11->11  decision 8->8
+----------------------------------------------------------------------
+why "A hen eats what she is given... both her food and her life" -> why: "Space words describe
+  the hen’s room; only feed words describe the ration." (she/her removed)
+short_answer s1 (pick CHPR/AWA, soy-free corn-free) -> DROPPED: restates decision + do line.
+short_answer 108 sq ft / organic feed / cage-free, veg-fed no outdoors -> short_answer, verbatim.
+tier_note certifier seal audited vs producer words -> tier_note: "Trust the certifier’s pasture seal;
+  carton words alone are the producer’s own."
+tips 0-2 -> buying_tips 0-2 ("the farm named on the carton, for soy-free").
+tip 1 "the strongest outdoor claim" -> detail: "an audited space claim, the strongest outdoor claim".
+tip 3 cracks and leaks -> buying_tips 4, verbatim.
+W0 no feed on supermarket cartons -> watch_out 2: "Most supermarket cartons, big pasture brands
+  included, never mention feed." Organic reliable rung -> buying_tips 3: "certified organic, the reliable floor".
+W1 feed traceability -> detail: "feed grown on the farm can be traced, feed from several unnamed suppliers often cannot".
+W2 vegetarian fed, no outdoor access -> science ‘Vegetarian-fed’ + detail: "‘Vegetarian fed’ says nothing about outdoor access."
+W3 cage free / free range small space -> watch_out 0: "“Cage free” means no cages, not outdoors; “free range” space can be small."
+W4 omega-3 sets no amount -> watch_out 3.
+W5 Certified Humane three labels; cage-free tier no outdoor access; 60/50/30 -> watch_out 1 (cage-free tier)
+  + detail: "Certified Humane is three labels ... 60, 50 and 30 on the same scale".
+W6 watchdog top labels, zero score -> detail: "scores Animal Welfare Approved, Biodynamic, Real Organic Project
+  and Regenerative Organic Certified highest; ... scores zero on that line".
+W7 yolk color not a feed tell -> science: "Yolk color is not a feed tell; marigold in the ration deepens it too."
+W8 yolk photo artwork -> detail, verbatim.
+W9 paler brown shell, pigment last hours -> detail: "Shell pigment goes on in the last hours before laying ...".
+W10 next size up, never smaller -> detail: "may legally hold the next size up, never smaller".
+W11 sell-by vs pack date -> detail: "same sell-by ... packed weeks apart, so compare the three-digit pack dates".
+W12 4-5 weeks past pack date -> detail: "eggs keep four to five weeks past the pack date, refrigerated".
+W13 counter ageing -> detail: "Eggs age far faster on the counter than in the fridge." ("spent its window
+  early" DROPPED: restates it.)
+W14 sweat, two hours -> detail, verbatim sentences.
+W15 middle shelf, not door -> detail: "keep the carton on a middle or lower shelf, not the door".
+W16/W17 no washing; 45F -> detail, verbatim sentences.
+pick_steps unchanged. science organic feed sentence -> detail + label "USDA Organic" (already there).
+detail "she"/"her" wording -> "the hen"/"it". "(Certified Humane, AWA)" parenthetical DROPPED: in buying_tips 1.
+detail "space words say nothing of the trough" -> science s1 (same claim, already there).
+labels: "Soy-free / corn-free" + "Corn- and soy-free" merged into "Soy-free / corn-free": "Both words must be
+  printed explicitly." All other 20 labels kept as separate terms (folded egg terms are pinned by ic4aeggs C5).
+kristy_take "Find pasture, a welfare certifier and the feed words together" DROPPED: restates detail's
+  "all three on one carton". Pack date / fresh egg kept.
+
+======================================================================
+whole_vs_reduced_fat_milk                    TOTAL 887 -> 657
+  why 15->15  short_answer 28->11  tier_note 25->10  buying_tips 259(16)->72(6)
+  watch_out 251(11)->48(4)  pick_steps 31(3)->23(2)  science 64->60  detail 70->257
+  labels 100(8)->117(7)  kristy_take 12  instead 13  delta 10  decision 9
+----------------------------------------------------------------------
+short_answer s1 (100% grass-fed, no ultra-pasteurized) -> DROPPED: restates decision + do line.
+short_answer cream-top next, organic after -> short_answer: "Cream-top or non-homogenized milk comes next,
+  then plain organic whole milk."
+tier_note 145°F/30 min vat; 161°F/15 s regular -> labels "Vat pasteurized" (145°F, 30 minutes) and
+  "Pasteurized" ("regularly 161°F for 15 seconds"). Organic feed and outdoor access -> detail:
+  "Certified organic means organic feed, outdoor access and a 30 percent grazing minimum".
+  New tier_note: "Reach for whole, low-temperature milk; ultra-pasteurized sits at the bottom."
+tip0 grass-fed cream-top -> buying_tips 0, verbatim.
+tip1 UHT explains far date, skip -> watch_out 1: "Skip “ultra-pasteurized” or “UHT”: about 280°F, and a date months out."
+tip2 ladder -> buying_tips 1: "low-temperature and cream-top, then A2, then the carton at hand."
+tip3 3.25 / 2 / 1 / <0.5% -> labels "Whole / reduced-fat (2%) / low-fat (1%) / skim".
+tip4 grass and hay never grain -> pick_steps 0; pasture separate from fat -> science last sentence.
+tip5 cream-top separates, shake, still pasteurized -> labels "Cream-top / non-homogenized": "shake it. Still pasteurized, not raw."
+tip6 Jersey/Guernsey; small dairies name breed -> detail: "Jerseys and Guernseys carry more A2 genes ...
+  Small dairies name the breed; the big labels only print the seal."
+tip7 A2 yogurt/cheese same milk -> detail. tip8 resists culturing, skip for yogurt -> detail.
+tip9 shortest date = least processing -> detail. tip10/11 rBST, organic cows cannot, labels need not say
+  -> detail + buying_tips 3 ("from cows not treated with rBST").
+tip12 organic 30% grazing; Certified Grassfed 100% -> detail. tips 13-15 -> buying_tips 4, 2, 5 verbatim.
+W0 flavored milk sugar -> watch_out 0. W1 UHT a further step -> DROPPED: restates W2/tip1.
+W2 280°F few seconds -> watch_out 1 + label "Ultra-pasteurized / UHT" (about 2 seconds).
+W3 whole not all fat; skimming, no water -> science s1-s2 + whole label.
+W4 UHT A2 still UHT; processing higher-order -> detail. W5 seal licensed, protein only -> detail.
+W6 digestion promising, unproven -> detail: "Easier digestion is the most promising A2 claim and still unproven by science."
+  New watch_out 2 condenses W4/W5 at the shelf: "A2 names a protein, not the processing or how the herd lived."
+W7 breed tendency, Holstein >half A2A2, A1A2 both, tested herd -> detail.
+W8 homogenization no benefit/risk -> detail. W9 non-homogenized not raw -> label "Still pasteurized, not raw."
+W10 raw milk germs -> watch_out 3.
+pick_steps 1 "Read the carton for ultra-pasteurized and skip it" DROPPED: restates do line.
+labels: "Ultra-pasteurized / UHT" + "Ultra-pasteurized" merged (280°F, 2 s kept). "Reduced-fat / low-fat / skim"
+  meaning replaced by the federal percentages from tip3.
+Detail: original sentences kept, tightened ("For years the guidance was..." -> "The old ‘always low-fat dairy’
+  guidance has weakened for otherwise-healthy people").
+Pin: test/acceptance/ic7a.test.js TRIM1_REPHRASED lists the 24 folded A2/processing sentences reworded here.
+
+======================================================================
+rotisserie_chicken                           TOTAL 768 -> 537
+  why 15->14  short_answer 40->14  tier_note 15->11  buying_tips 59(5)->37(4)
+  watch_out 100(4)->32(2)  pick_steps 11  science 61->55  detail 295->203
+  labels 107(3)->95(3)  kristy_take 27  instead 20  delta 10  decision 8
+----------------------------------------------------------------------
+why organic seal = certified organic feed -> why: "the organic seal means certified organic feed."
+short_answer plain vs solution; plain = chicken, salt, spices -> decision + why carry the plain bird
+  (DROPPED as restatement); solution pumped before the spit, sticker says which -> short_answer.
+tier_note starches/sweeteners -> watch_out 0; organic feed + outdoor access -> detail: "Organic means
+  certified organic feed and outdoor access." New tier_note: "Trust the sticker’s list, not ‘seasoned’ or ‘traditional’ on the front."
+tip3 plain raw bird at home -> DROPPED from tips: restates instead ("A plain raw bird from the case, roasted at home...").
+tips 0,1,2,4 -> buying_tips 0-3 (tip2 trimmed: "backed by organic or Animal Welfare Approved").
+W0 2 hours; cut up, shallow covered containers -> science (2 hours) + detail ("goes home cut up,
+  refrigerated in shallow covered containers").
+W1 140°F hold; 40-140°F -> watch_out 1: "A case bird below 140°F has left its hot hold; FSIS puts growth at 40 to 140°F."
+W2 3-4 days, 165°F, 4 months frozen -> detail.
+W3 skip phosphate/starch/sugar/seed oil -> watch_out 0, verbatim.
+science "A solution names its contents" DROPPED: restated by label "Contains up to X% solution".
+detail: 381.117(h), 381.118(a), 424.21 potassium phosphates + sodium hydroxide 1:4 kept; sodium phosphate 0.5%
+  cap -> label "Sodium phosphate"; FSIS basted definition -> label "Basted / self basted"; "second word settles
+  it" -> science + pick_steps; "Two federal label rules settle it" DROPPED: restates detail s1.
+labels: "‘Enhanced’ is not allowed in the product name" -> detail ("‘enhanced’ may not appear in the product name").
+
+======================================================================
+bottled_water_buying                         TOTAL 713 -> 487
+  why 17->15  short_answer 31->19  tier_note 20->12  buying_tips 45(4)->39(4)
+  watch_out 125(3)->13(1)  pick_steps 7  science 70->70  detail 249->175
+  labels 115(5)->103(5)  kristy_take 24  decision 10
+----------------------------------------------------------------------
+short_answer "Two products share one shelf. Spring ... underground source" DROPPED: restates why.
+  Purified = treatment, often city water, source need not be named -> short_answer.
+tier_note federal definitions by source -> science s1 ("federal standard of identity") + new tier_note
+  "Judge by source and container; the label’s type word is federally defined." "Source and container,
+  never a health claim" -> detail: "the standard is source and container, never a health claim".
+W0 skip bottled / carbon filter fallback -> detail: "a carbon filter on the tap is the same industrial treatment
+  moved into the kitchen, the honest fallback, not the standard."
+W1 caps: paint on painted metal caps, scratched in storage -> watch_out 0; cleaning caps, low counts, glass
+  slightly higher -> detail.
+W2 BPA-free empty -> label "BPA-free": "PET is not made with BPA."
+detail type word earned -> science s1. Mineral 250 ppm, nothing added -> label "Mineral water". Spring
+  definition -> label "Spring water" + why; composition before treatment -> detail. Community water system
+  rule -> label + science. Natural/artificial flavors -> detail, kept.
+Pin: test/acceptance/t6_3.test.js checks the facts of the three old watch-outs instead of the old sentences.
+
+======================================================================
+ground_beef_lean_ratio                       TOTAL 650 -> 503
+  why 17->14  short_answer 17->6  tier_note 12->12  buying_tips 32(3)  watch_out 52(3)->37(3)
+  pick_steps 10  science 41->35  detail 319->212  labels 101(5)->96(5)  kristy_take 19  instead 8  delta 14  decision 8
+----------------------------------------------------------------------
+why "“100% grass-fed” and “grass-finished” say this beef ate grass to the end" DROPPED: restates do line;
+  "Most cattle finish on grain" -> why: "Most cattle finish on grain, so the grass words have to reach the end."
+short_answer grass words + beef only DROPPED: restates do line; Certified Regenerative -> short_answer:
+  "Certified Regenerative marks an audited ranch."
+tier_note organ blends grind liver/heart with muscle -> label "Organ blend". New tier_note:
+  "Read an organ blend’s beef, liver and heart shares on the list."
+W1 both cap at 30% -> science ("both cap at 30% fat"); fat added rule -> watch_out 1: "‘Hamburger’ may have
+  beef fat added; ‘ground beef’ may not."
+science fat-added sentence DROPPED: restated in watch_out 1 and pick_steps.
+detail duplicates DROPPED (each kept once): second "no added water, phosphates, binders or extenders";
+  second NIH liver sentence; second shares sentence; "A blend carries its own descriptive name"; "plain ground
+  beef with a measured amount of organ folded in". Kept: 319.15(a), cheek meat 25%, 317.2, ancestral/primal,
+  8%/4/4/92 and 92/5/3 shares, 6,582 mcg RAE per 3 oz, 3,000 mcg UL ("more than twice"), whole animal.
+labels "Hamburger is"/"Ground beef is" prefixes DROPPED.
+
+======================================================================
+produce_ripeness_by_item                     TOTAL 632 -> 477
+  why 19->14  short_answer 38->16  tier_note 16->12  buying_tips 209(14)->139(11)
+  watch_out 48(3)->29(3)  pick_steps 11  science 69->56  detail 96->65  labels 82(4)->91(4)  kristy_take 25  delta 9  decision 10
+----------------------------------------------------------------------
+why "Compare two pieces in your hands" -> pick_steps 0 (already). Weight vs pith -> buying_tips 0 (already).
+  New why: "Each item has one or two checks that work; color is almost never one." (was short_answer s1)
+short_answer heavy near-universal -> detail s1; smell stem end DROPPED: do line; berry containers -> watch_out 2.
+  New short_answer from old detail: ripens after picking vs bought ready.
+tier_note settled handling + smell -> tier_note: "Smell fruit that ripens after picking; that much is settled produce handling."
+tips 1-6 kept, trimmed ("Color is not the tell", "Weight beats color" DROPPED: why says color is almost never a check).
+tips 7-9 (asparagus, broccoli/cauliflower, greens) -> buying_tips 8 one line + detail, full wording.
+tip10 avocado; "stuck fast means give it days" -> detail.
+tip11 palm not fingertips -> buying_tips 9: "Press with your palm, never your fingertips, which bruise the fruit."
+tip12 staggered firmness -> buying_tips 10, verbatim (LOOKFOR_GRANDFATHER entry unchanged).
+tip13 shorter trip closer to ripe -> label "Product of ___": "a shorter trip usually means picked closer to ripe."
+W0 pale ground spot; creamy yellow -> watch_out 0 + buying_tips 2 ("a deep yellow field spot").
+W1 shiny rind underripe; dull good -> watch_out 0 + buying_tips 2 ("a dull rind").
+W2 thump -> watch_out 1 (metallic = unripe) + buying_tips 2 ("a hollow thunk").
+science per-item checks DROPPED: each restates a buying tip. Old detail ripening classes -> science.
+detail "single best habit ... heavier one" DROPPED: restates pick_steps 0.
+
+======================================================================
+label_artificial_color                       TOTAL 604 -> 421
+  why 17->16  short_answer 39->14  tier_note 18->12  buying_tips 25  watch_out 61->34
+  pick_steps 12  science 63->36  detail 276->179  labels 54  kristy_take 31  decision 8
+----------------------------------------------------------------------
+short_answer "Two rules, split on certification" + exempt colors ride as group, TiO2 one of them DROPPED:
+  restated by why; "Red 40" by name -> short_answer.
+tier_note "written into federal labeling regulation" -> detail "written into 21 CFR 101.22(k)"; new tier_note
+  "Read the color terms; federal labeling rules decide which must be named."
+W0 EU removed after authority review -> watch_out 1 + detail. W1 TiO2 need not be named, three group terms ->
+  watch_out 0 + detail (all three terms). W2 put back; panel can’t say which -> watch_out 2 + detail.
+science EU sentences DROPPED: in watch_out and detail.
+detail duplicate third paragraph DROPPED (restates paragraph 1); unique items kept: candy shells, frosting,
+  chewing gum, creamy dressings; 1% cap; "colored with titanium dioxide" (label); food makers took it out;
+  plain move at the shelf. "the generic phrase is a signal rather than a blank" DROPPED: restates next sentence.
+
+======================================================================
+salmon_wild_vs_farmed                        TOTAL 466 -> 351
+  why 14  short_answer 30->15  tier_note 19->12  buying_tips 26  watch_out 66(4)->20(2)
+  pick_steps 6  science 70->65  detail 143->101  labels 42  kristy_take 17  instead 8  delta 12  decision 13
+----------------------------------------------------------------------
+short_answer "Two different animals sold under one name", "across open ocean", "not krill" DROPPED: restatement.
+tier_note frozen wild documented same fish -> tier_note: "Reach past fresh Atlantic for frozen wild,
+  documented as the same fish." ("whole-food standard" DROPPED: filler.)
+W0 Atlantic farmed without exception -> pick_steps 0; wild Atlantic off market -> watch_out 0.
+W1 routine antibiotics, varies by country, ask -> watch_out 1 + detail (Norway near zero).
+W2 Alaska law, ranching supplements wild runs -> science.
+W3 skip farmed Atlantic DROPPED: restates decision + tier_note + pick_steps.
+science ration sentence merged; all facts kept.
+detail astaxanthin sentence DROPPED: in science and label "Color added"; "that is the difference worth naming"
+  DROPPED: filler.
+
+======================================================================
+OTHER FILES
+test/acceptance/ic7a.test.js   TRIM1_REPHRASED (24 milk sentences, facts kept, see milk section).
+test/acceptance/t6_3.test.js   bottled_water_buying watch-out retention pinned by fact regexes.
+No frozen card touched. Nothing dropped except the restatements listed above.

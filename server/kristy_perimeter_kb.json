@@ -32,8 +32,8 @@
       "question": "Is wild or farmed salmon better?",
       "decision": "Wild Alaskan salmon, blue MSC label, fresh or frozen, like sockeye or coho.",
       "why": "Wild is a whole-food preference; read the species name, with deep-red flesh identifying sockeye.",
-      "short_answer": "Two different animals sold under one name. Wild salmon eats krill and small fish across open ocean. Farmed salmon eats a ration of plant protein and vegetable oil, not krill.",
-      "detail": "That ration leaves farmed salmon with far more omega-6 and a much worse omega-3 to omega-6 ratio. Astaxanthin goes into the ration because the flesh comes out gray without it. Sea lice and the treatments used against them are the cost of penning fish that close together, and antibiotic use varies enormously by country of origin. The ratio is the claim, not the amount. Farmed salmon is fatter, so a serving can carry as much total omega-3 as wild or more; what the feed changes is the balance against omega-6, and that is the difference worth naming. Country of origin does most of the work on the rest: Norwegian farming runs close to zero antibiotic use on the back of vaccination, and other producing countries run far higher. The fish never swam anywhere, and it was colored to look like one that did.",
+      "short_answer": "Wild salmon eats krill and small fish; farmed salmon eats plant protein and vegetable oil.",
+      "detail": "That ration leaves farmed salmon with far more omega-6. The ratio is the claim, not the amount: farmed salmon is fatter, so a serving can carry as much total omega-3 as wild or more; what the feed changes is the balance against omega-6. Sea lice and the treatments used against them are the cost of penning fish that close together. Antibiotic use varies enormously by country of origin: Norwegian farming runs close to zero on the back of vaccination, and other producing countries run far higher. The fish never swam anywhere, and it was colored to look like one that did.",
       "evidence_tier": "kristys_standard",
       "sources": [
         {
@@ -50,15 +50,13 @@
         "Frozen wild Alaskan, as gladly as fresh."
       ],
       "watch_out": [
-        "Atlantic salmon is farmed, effectively without exception. Wild Atlantic is off the market.",
-        "Some salmon farms rely on routine antibiotics, and practice varies by country. Ask where it was farmed.",
-        "Alaska law limits aquatic farming to shellfish and seaweeds, so Alaska salmon is not net-pen farmed. Hatchery ‘ranching’ there releases juveniles to supplement wild runs, not replace them.",
-        "Skip farmed Atlantic salmon; wild is the pick."
+        "Wild Atlantic salmon is effectively off the market.",
+        "Some farms rely on routine antibiotics; practice varies by country, so ask."
       ],
       "pick_steps": [
         "Atlantic on the label means farmed."
       ],
-      "science": "Farmed salmon eats a ration built largely on plant protein and vegetable oil, not krill and small fish. That leaves a worse omega-3 to omega-6 ratio. Its flesh comes out gray without added astaxanthin; sockeye and coho get their color from diet. Alaska law limits farming to shellfish and seaweeds, so Alaska salmon is not net-pen farmed. ‘Fresh’ at the counter is often previously frozen, which is not a downgrade.",
+      "science": "Farmed salmon’s plant-protein and vegetable-oil ration leaves a worse omega-3 to omega-6 ratio. Its flesh comes out gray without added astaxanthin; sockeye and coho get their color from diet. Alaska law limits aquatic farming to shellfish and seaweeds, so Alaska salmon is not net-pen farmed. Hatchery ‘ranching’ there releases juveniles to supplement wild runs. ‘Fresh’ at the counter is often previously frozen, not a downgrade.",
       "labels_decoded": [
         {
           "term": "Farm-raised",
@@ -73,7 +71,7 @@
           "meaning": "Astaxanthin in the feed set the pink; farmed flesh is gray without it."
         }
       ],
-      "tier_note": "Frozen wild being the same fish is documented; reaching past the fresh Atlantic for it is the whole-food standard.",
+      "tier_note": "Reach past fresh Atlantic for frozen wild, documented as the same fish.",
       "eyebrow_short": "Wild or farmed",
       "asked_as": [
         "wild or farmed salmon",
@@ -343,9 +341,9 @@
       "category": "poultry",
       "question": "Is the rotisserie chicken worth buying?",
       "decision": "Rotisserie chicken listing only chicken, salt and spices.",
-      "why": "Chicken and salt keep the recipe simple; the organic seal identifies certified organic livestock feed.",
-      "short_answer": "A rotisserie bird is a plain chicken or a solution bird. A plain one is chicken with salt and spices, roasted in the store. A solution bird was pumped with a seasoning solution before the spit. The sticker says which.",
-      "detail": "Two label rules do the work. 9 CFR 381.117(h): a raw poultry product with added solution must carry a descriptive designation stating the percentage of added solution as a number with the % sign, e.g. ‘contains 15% added solution of water and salt’, plus the common or usual name of every solution ingredient in descending order; the word ‘enhanced’ may not appear in the product name. 9 CFR 381.118(a): any poultry product fabricated from two or more ingredients lists them by common or usual name in descending order of predominance; ingredients at 2 percent or less may trail the list under a ‘contains 2% or less of’ line. 9 CFR 424.21 permits sodium and potassium phosphates in poultry ‘to decrease the amount of cooked out juices’, capped at 0.5 percent of total product, and sodium hydroxide only alongside phosphate at one part to four. FSIS’s labeling glossary defines a bone-in bird injected or marinated with broth, water, fat or flavor enhancers as ‘basted’ or ‘self basted’, about 3 percent solution, with the solution ingredients named on the label. At the shelf the two kinds read differently: a plain bird’s panel is one line (one store’s organic rotisserie chicken lists ‘organic chicken’ and nothing else); a solution bird lists water and its seasoning after the chicken, in descending order as 381.118 requires; a phosphate, a starch and a sweetener are the usual entries. On the sticker, the second word on the list settles it: ‘salt’ or ‘spices’ is a plain bird; ‘water’ followed by ‘sodium phosphate’, ‘modified food starch’, ‘sugar’ is a solution bird, roasted. Both are cooked chicken. One of them is also a marinade injection. Two federal label rules settle it; the ingredient list just needs reading.",
+      "why": "A short list keeps the bird plain; the organic seal means certified organic feed.",
+      "short_answer": "A solution bird was pumped with seasoning before the spit; the sticker says which.",
+      "detail": "Two label rules do the work. Under 9 CFR 381.117(h), a raw bird with added solution must state the percent as a number with the % sign, such as ‘contains 15% added solution of water and salt’, then name every solution ingredient in descending order; ‘enhanced’ may not appear in the product name. Under 9 CFR 381.118(a), a poultry product made from two or more ingredients lists them in descending order, and those at 2 percent or less may trail under a ‘contains 2% or less of’ line. 9 CFR 424.21 also permits potassium phosphates, and sodium hydroxide only alongside phosphate at one part to four. A plain bird’s panel is one line (one store’s organic rotisserie chicken lists ‘organic chicken’ and nothing else); a solution bird lists water after the chicken, then usually a phosphate, a starch and a sweetener. Both are cooked chicken; one is also a marinade injection. Organic means certified organic feed and outdoor access. A bird that will not be eaten soon goes home cut up, refrigerated in shallow covered containers; eat it within 3 to 4 days, cold or reheated to 165°F, or freeze it and use within 4 months for texture.",
       "evidence_tier": "kristys_standard",
       "sources": [
         {
@@ -359,35 +357,32 @@
       "buying_tips": [
         "“Pasture-raised” or “organic” on the sticker.",
         "Chicken, salt and spices on the sticker’s list, the shorter the better.",
-        "“raised without antibiotics” on the sticker, with organic or Animal Welfare Approved behind it.",
-        "Can’t find it: a plain raw bird from the case, salted the night before and roasted at home.",
+        "“Raised without antibiotics”, backed by organic or Animal Welfare Approved.",
         "Olive oil or no added oil in the seasoning."
       ],
       "watch_out": [
-        "FSIS: eat or refrigerate a hot rotisserie bird within 2 hours of purchase. If it will not be eaten in that window, cut it up. Refrigerate it in shallow covered containers.",
-        "Hot food is held at or above 140°F. A bird sitting in the case long enough to fall below that has left its hold. FSIS puts the growth range at 40 to 140°F.",
-        "Eat within 3 to 4 days, cold or reheated to 165°F. Freezing is fine; use within 4 months for texture.",
-        "Skip a bird whose sticker lists sodium phosphate, starch, sugar or seed oil."
+        "Skip a bird whose sticker lists sodium phosphate, starch, sugar or seed oil.",
+        "A case bird below 140°F has left its hot hold; FSIS puts growth at 40 to 140°F."
       ],
       "pick_steps": [
         "Water second, then phosphate, starch or sweetener, means a solution bird."
       ],
-      "science": "‘Seasoned’, ‘original’ and ‘traditional’ are marketing; the ingredient list is regulated and runs in descending order. A solution names its contents, so the second word on the list settles it. Hot food is held at or above 140°F. FSIS puts the growth range at 40 to 140°F. Eat or refrigerate a hot rotisserie bird within 2 hours of purchase.",
+      "science": "‘Seasoned’, ‘original’ and ‘traditional’ are marketing; the ingredient list is regulated and runs in descending order. The second word on the list settles it. Hot food is held at or above 140°F. FSIS puts the growth range at 40 to 140°F. Eat or refrigerate a hot rotisserie bird within 2 hours of purchase.",
       "labels_decoded": [
         {
           "term": "Contains up to X% solution",
-          "meaning": "Required wording under 9 CFR 381.117(h) for a raw bird with added solution: the percent as a number, then every solution ingredient in descending order. ‘Enhanced’ is not allowed in the product name."
+          "meaning": "Required by 9 CFR 381.117(h) on a raw bird with added solution: the percent as a number, then every solution ingredient in descending order."
         },
         {
           "term": "Basted / self basted",
-          "meaning": "FSIS term for a bone-in bird injected or marinated with broth, water, fat, spices or flavor enhancers, about 3 percent solution, with the ingredients named on the label."
+          "meaning": "FSIS term for a bone-in bird injected or marinated with broth, water, fat, spices or flavor enhancers, about 3 percent solution, ingredients named on the label."
         },
         {
           "term": "Sodium phosphate",
-          "meaning": "A permitted poultry ingredient under 9 CFR 424.21 ‘to decrease the amount of cooked out juices’, capped at 0.5 percent of total product. On a rotisserie sticker it marks a solution bird."
+          "meaning": "Permitted in poultry under 9 CFR 424.21 ‘to decrease the amount of cooked out juices’, capped at 0.5 percent of total product. On a rotisserie sticker it marks a solution bird."
         }
       ],
-      "tier_note": "The sticker lists added starches and sweeteners; organic means certified organic feed and outdoor access.",
+      "tier_note": "Trust the sticker’s list, not ‘seasoned’ or ‘traditional’ on the front.",
       "eyebrow_short": "Rotisserie chicken",
       "asked_as": [
         "is rotisserie chicken healthy",
@@ -425,9 +420,9 @@
       "category": "beef",
       "question": "Which ground beef should I buy?",
       "decision": "Ground beef from cattle that ate only grass.",
-      "why": "Most cattle finish on grain. “100% grass-fed” and “grass-finished” say this beef ate grass to the end.",
-      "short_answer": "Look for “100% grass-fed” and “grass-finished,” from a ranch Certified Regenerative. Beef should be the only ingredient.",
-      "detail": "Both ‘ground beef’ and ‘hamburger’ cap at 30% fat, so the name is where the difference lives. The ingredient list should be beef, with seasoning at most. ‘Ground beef’ may not contain added water, phosphates, binders or extenders, and may not have beef fat added as such. ‘Hamburger’ may. The ratio on the pack is lean to fat by weight. 80/20 is 20% fat; 90/10 is leaner. The name ‘ground beef’ allows no added water, phosphates, binders or extenders. 9 CFR 319.15(a) defines ‘Ground Beef’ as chopped fresh or frozen beef, fat capped at 30 percent, no added water, binders or extenders, with trimmed cheek meat the one allowed addition and capped at 25 percent. A product with liver or heart in it falls outside that definition, and 9 CFR 317.2 then requires a common or usual name or a truthful descriptive designation plus a full ingredient statement in descending order. ‘Ancestral blend’ and ‘primal blend’ are producer names for exactly this product, not standardized terms. Two label examples: one blend states 8 percent organ meats (4 percent liver, 4 percent heart, 92 percent muscle); another states 92 percent ground beef, 5 percent liver, 3 percent heart. Liver is the retinol-dense ingredient: the NIH fact sheet lists pan-fried beef liver at 6,582 mcg RAE per 3 ounces, against a tolerable upper intake of 3,000 mcg a day for adults. A blend that states its shares is plain ground beef with a measured amount of organ folded in. A blend carries its own descriptive name and a full ingredient list. By NIH figures, 3 ounces of pan-fried beef liver holds more than twice the adult daily vitamin A upper intake. Producers print shares such as 8 percent organ, or 5 percent liver plus 3 percent heart. Organs are part of eating the whole animal, and a blend puts them in a familiar grind.",
+      "why": "Most cattle finish on grain, so the grass words have to reach the end.",
+      "short_answer": "Certified Regenerative marks an audited ranch.",
+      "detail": "The ingredient list should be beef, with seasoning at most. ‘Ground beef’ may not contain added water, phosphates, binders or extenders, or beef fat added as such; ‘hamburger’ may add beef fat. 9 CFR 319.15(a) defines ‘Ground Beef’ as chopped fresh or frozen beef with fat capped at 30 percent, and trimmed cheek meat, capped at 25 percent, as the one allowed addition. The ratio is lean to fat by weight: 80/20 is 20% fat; 90/10 is leaner. A grind with liver or heart falls outside that definition, and 9 CFR 317.2 then requires a common or usual name or a truthful descriptive designation, plus a full ingredient statement in descending order. ‘Ancestral blend’ and ‘primal blend’ are producer names for this product, not standardized terms. Producers print shares such as 8 percent organ meats (4 percent liver, 4 percent heart, 92 percent muscle), or 92 percent ground beef, 5 percent liver, 3 percent heart. Liver is the retinol-dense ingredient: the NIH fact sheet lists pan-fried beef liver at 6,582 mcg RAE per 3 ounces, more than twice the adult tolerable upper intake of 3,000 mcg a day. Organs are part of eating the whole animal, and a blend puts them in a familiar grind.",
       "evidence_tier": "established",
       "sources": [
         "9 CFR 319.15 (label rule, raw meaning of the term)",
@@ -471,18 +466,18 @@
         },
         {
           "term": "Hamburger",
-          "meaning": "Hamburger is chopped beef that may have beef fat added."
+          "meaning": "Chopped beef that may have beef fat added."
         },
         {
           "term": "Ground beef",
-          "meaning": "Ground beef is chopped beef alone by regulation; trimmed cheek meat up to 25 percent is the one allowed addition, and liver and heart are not."
+          "meaning": "Chopped beef alone by regulation; trimmed cheek meat up to 25 percent is the one allowed addition, and liver and heart are not."
         },
         {
           "term": "Ancestral blend / primal blend",
           "meaning": "A producer’s name for ground beef with liver and heart folded in. Not a standardized term; the ingredient list carries the shares."
         }
       ],
-      "tier_note": "Organ blends grind beef liver or heart in with the muscle meat.",
+      "tier_note": "Read an organ blend’s beef, liver and heart shares on the list.",
       "asked_as": [
         "what ground beef should i buy",
         "which ground beef for burgers",
@@ -496,10 +491,10 @@
       ],
       "watch_out": [
         "USDA Organic alone still allows a grain finish in a feedlot, up to 120 days.",
-        "‘Ground beef’ may not have beef fat added as such; ‘hamburger’ may. Both cap at 30% fat, so the name is where the difference lives.",
+        "‘Hamburger’ may have beef fat added; ‘ground beef’ may not.",
         "Organ blends add liver, the most concentrated source of preformed vitamin A."
       ],
-      "science": "The numbers are lean to fat by weight, so a higher first number is leaner. ‘Ground beef’ may not have beef fat added as such, but ‘hamburger’ may. Both cap at 30% fat, so the name is where the difference lives.",
+      "science": "The numbers are lean to fat by weight, so a higher first number is leaner. ‘Ground beef’ and ‘hamburger’ both cap at 30% fat, so the name, not the cap, is where the difference lives.",
       "pick_steps": [
         "‘Ground beef’ over ‘hamburger’, which can include added beef fat."
       ],
@@ -596,9 +591,9 @@
       "category": "poultry_eggs",
       "question": "What do cage-free, free-range, and pasture-raised eggs actually mean?",
       "decision": "Pasture-raised eggs from hens on soy-free, corn-free feed.",
-      "why": "A hen eats what she is given. Pasture, certifier and feed words tell you about both her food and her life.",
-      "short_answer": "Pick pasture-raised eggs with Certified Humane Pasture Raised or Animal Welfare Approved, from hens on soy-free, corn-free feed. Certified Humane Pasture Raised means 108 square feet per hen. Organic sets the feed. Cage-free and vegetarian-fed say nothing about time outdoors.",
-      "detail": "Both ‘soy-free’ and ‘corn-free’ have to be printed outright, because nothing else on the carton implies them, and most cartons never do. The claim clusters on small regional brands, farm stands and farmers markets rather than on the national pasture-raised labels, so the supermarket case is often the wrong place to look for it. Organic reaches the ration from a different direction: organic feed, no GMOs, no routine antibiotics, no added hormones. Pasture-raised paired with a third-party certification (Certified Humane, Animal Welfare Approved) is a real and audited claim about space, the strongest of the space words, and it still sits below feed here. Cage-free and free-range are weaker again, and the words on their own are not worth paying up for. Cage-free, free-range and pasture-raised describe how much room the hen had and whether she got outside, and not one of them says a word about what went in the trough. The standard is all three on one carton: what she ate, how it was grown, and how much room she had.",
+      "why": "Space words describe the hen’s room; only feed words describe the ration.",
+      "short_answer": "Certified Humane Pasture Raised means 108 square feet per hen. Organic sets the feed. Cage-free and vegetarian-fed say nothing about time outdoors.",
+      "detail": "‘Soy-free’ and ‘corn-free’ have to be printed outright; nothing else on the carton implies them, and most cartons never say them. The claim clusters on small regional brands, farm stands and farmers markets, not the national pasture-raised labels, so the supermarket case is often the wrong place to look. A feed claim says what is in the ration, not where it came from: feed grown on the farm can be traced, feed from several unnamed suppliers often cannot, and the carton does not say which. ‘Vegetarian fed’ says nothing about outdoor access. Organic reaches the ration another way: organic feed, no GMOs, no routine antibiotics, no added hormones. Pasture-raised with a third-party certifier is an audited space claim, the strongest outdoor claim, and it still sits below feed here. Cage-free and free-range are weaker, and the words alone are not worth paying up for. Certified Humane is three labels: its pasture-raised tier sits well above its free-range tier, and the watchdog scores pasture-raised, free-range and cage-free 60, 50 and 30 on the same scale. The watchdog scores Animal Welfare Approved, Biodynamic, Real Organic Project and Regenerative Organic Certified highest; a carton with no add-on label scores zero on that line. The yolk photo on the carton is artwork, not a sample. Shell pigment goes on in the last hours before laying, so a stressed hen, an older hen or a hurried lay leaves a paler brown shell. A carton may legally hold the next size up, never smaller, as long as sizes are not mixed. Two cartons with the same sell-by can have been packed weeks apart, so compare the three-digit pack dates; eggs keep four to five weeks past the pack date, refrigerated. At home, keep the carton on a middle or lower shelf, not the door, which swings warm every time it opens. Eggs age far faster on the counter than in the fridge. A cold egg left out can sweat, where bacteria can take hold. Refrigerated eggs should not sit out more than two hours. Store-bought eggs do not need washing before use. US rules require washing and sanitizing, then holding at 45F or below from the plant onward. The standard is all three on one carton: what the hen ate, how it was grown, and how much room it had.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "The Cornucopia Institute “Organic Egg Scorecard Criteria”, “Add On Labels” section https://www.cornucopia.org/egg-scorecard-criteria/",
@@ -623,38 +618,25 @@
           "url": "https://certifiedhumane.org/decoding-the-carton-how-to-buy-clean-humane-eggs/"
         }
       ],
-      "kristy_take": "Pasture alone leaves the feed question open. Find pasture, a welfare certifier and the feed words together, then check the pack date: a fresh egg fries with a tall yolk and tight white.",
+      "kristy_take": "Pasture alone leaves the feed question open. Check the pack date too: a fresh egg fries with a tall yolk and tight white.",
       "cart_pick": "Pasture-raised soy-free, corn-free eggs",
       "buying_tips": [
         "“corn-free” and “soy-free” feed printed beside “pasture-raised”.",
-        "A Certified Humane Pasture Raised or Animal Welfare Approved logo beside “pasture-raised”, the strongest outdoor claim.",
-        "Farm stands, farmers markets or the farm named on the carton, for soy-free eggs.",
+        "Certified Humane Pasture Raised or Animal Welfare Approved beside “pasture-raised”.",
+        "Farm stands, farmers markets or the farm named on the carton, for soy-free.",
+        "No feed words on the shelf: certified organic, the reliable floor.",
         "Open the carton and check for cracks and leaks before it goes in the cart."
       ],
       "watch_out": [
-        "Most supermarket cartons never mention feed at all, the big pasture-raised brands included. Organic is the rung you can reliably buy there.",
-        "A feed claim says what is in the ration, not where it came from. Feed grown on the farm can be traced. Feed from several unnamed suppliers often cannot, and the carton does not say which.",
-        "“Vegetarian fed” means the hens were not fed animal byproducts; it does not describe outdoor access.",
-        "“Cage free” means no cages, not outdoor access. “Free range” adds outdoor access, which can be a small space.",
-        "‘Omega-3 enriched’ sets no amount. Two enriched cartons can differ a lot and both wear the same words.",
-        "Certified Humane is three different labels. Its pasture-raised tier sits well above its free-range tier. Its cage-free tier requires no outdoor access at all. The watchdog scores them 60, 50 and 30 on the same scale.",
-        "The labels the watchdog scores highest are Animal Welfare Approved, Biodynamic, Real Organic Project and Regenerative Organic Certified. A carton with no add-on label at all scores zero on that line.",
-        "Yolk color is not a feed tell. Deep orange comes from a varied diet or from marigold in the ration, and the carton never says which.",
-        "The yolk photo on the carton is artwork, not a sample.",
-        "A paler brown shell is not a fresher or older egg. Pigment goes on in the last hours before laying. A stressed hen, an older hen or a hurried lay leaves less of it.",
-        "A carton may legally hold the next size up, as long as the two sizes are not mixed. A ‘Large’ dozen can be Extra Large. It cannot be smaller.",
-        "The sell-by is not the pack date. Two cartons with the same sell-by can have been packed weeks apart. The three-digit code is the one that tells them apart.",
-        "Eggs keep four to five weeks past the pack date, refrigerated. Count from the three-digit code, not from the sell-by.",
-        "Eggs age far faster on the counter than in the fridge. A carton left out at the store or at home has spent its window early.",
-        "A cold egg left out at room temperature can sweat. Moisture on the shell is where bacteria can take hold. Refrigerated eggs should not sit out more than two hours.",
-        "Keep the carton on a middle or lower shelf, not the door. The door swings warm every time it opens.",
-        "Store-bought eggs do not need washing before use. They were already washed and sanitized at the plant.",
-        "US rules require washing and sanitizing, then holding at 45F or below from the plant onward."
+        "“Cage free” means no cages, not outdoors; “free range” space can be small.",
+        "Certified Humane’s cage-free tier requires no outdoor access at all.",
+        "Most supermarket cartons, big pasture brands included, never mention feed.",
+        "‘Omega-3 enriched’ sets no amount; two cartons can differ a lot."
       ],
       "pick_steps": [
         "“Pasture-raised” means time outdoors on pasture, audited only with a certifier’s seal."
       ],
-      "science": "Cage-free, free-range and pasture-raised are space claims; none says what the hen ate. Organic reaches the feed another way: organic feed, no GMOs, no routine antibiotics. ‘Vegetarian-fed’ keeps her off animal foods, yet a hen on real pasture eats bugs. Yolk color is not a feed tell; marigold in the ration deepens it too. With no feed named, certified organic is the floor; its rules reach the ration.",
+      "science": "Cage-free, free-range and pasture-raised are space claims; none says what the hen ate. ‘Vegetarian-fed’ keeps hens off animal foods, yet a hen on real pasture eats bugs. Yolk color is not a feed tell; marigold in the ration deepens it too. With no feed named, certified organic is the floor; its rules reach the ration.",
       "labels_decoded": [
         {
           "term": "Cage-free",
@@ -678,7 +660,15 @@
         },
         {
           "term": "Soy-free / corn-free",
-          "meaning": "A FEED claim, the only kind that addresses the ration. Must be printed explicitly."
+          "meaning": "A FEED claim, the only kind that addresses the ration. Both words must be printed explicitly."
+        },
+        {
+          "term": "Vegetarian-fed",
+          "meaning": "No animal protein in the ration. Hens are omnivores, so it also implies no foraging."
+        },
+        {
+          "term": "Omega-3 enriched",
+          "meaning": "Flax or algae in the feed. Real, but the amount varies by producer."
         },
         {
           "term": "Brown egg",
@@ -687,6 +677,10 @@
         {
           "term": "White egg",
           "meaning": "Laid by a white-egg breed. The same egg inside."
+        },
+        {
+          "term": "Blue or green shell",
+          "meaning": "A breed trait too, from a different pigment. Still nothing about the feed."
         },
         {
           "term": "Deep orange yolk",
@@ -714,19 +708,11 @@
         },
         {
           "term": "Grade B",
-          "meaning": "Fine to eat, mostly sold to processors rather than shelved."
+          "meaning": "Fine to eat, mostly sold to processors."
         },
         {
           "term": "Large / XL / Jumbo",
           "meaning": "Weight per dozen: 24, 27 and 30 ounces."
-        },
-        {
-          "term": "Vegetarian-fed",
-          "meaning": "No animal protein in the ration. Hens are omnivores, so it also implies no foraging."
-        },
-        {
-          "term": "Omega-3 enriched",
-          "meaning": "Flax or algae in the feed. Real, but the amount varies by producer."
         },
         {
           "term": "Washed / graded",
@@ -735,17 +721,9 @@
         {
           "term": "Unwashed / farm fresh",
           "meaning": "Cuticle intact. Can be held at room temperature until washed."
-        },
-        {
-          "term": "Blue or green shell",
-          "meaning": "A breed trait too, from a different pigment. Still nothing about the feed."
-        },
-        {
-          "term": "Corn- and soy-free",
-          "meaning": "The feed contains neither corn nor soy; both words must be printed."
         }
       ],
-      "tier_note": "Carton words alone are the producer’s own; a certifier’s pasture seal is audited.",
+      "tier_note": "Trust the certifier’s pasture seal; carton words alone are the producer’s own.",
       "eyebrow_short": "Egg labels",
       "asked_as": [
         "what eggs should i buy",
@@ -1286,8 +1264,8 @@
       "question": "Should you buy whole or low-fat milk?",
       "decision": "100% grass-fed whole milk, Certified Grassfed, cream-top, not ultra-pasteurized.",
       "why": "Whole milk keeps its milkfat; WAPF favors grass-fed dairy and lists ultra-pasteurized milk under avoid.",
-      "short_answer": "Pick 100% grass-fed whole milk without “ultra-pasteurized” on the carton. Cream-top or non-homogenized milk comes next when the case has it. Plain organic whole milk comes after grass-fed.",
-      "detail": "Whole milk is the one that had the least done to it. For years the guidance was ‘always low-fat dairy’, and the evidence behind that for otherwise-healthy people has weakened. Whole milk is a whole-food-standard pick rather than a finding. The handling is plain: skimming, standardizing and often ultra-pasteurizing are steps, and whole minimally-processed milk has fewer of them. A doctor’s advice for a specific person outranks a shelf standard.",
+      "short_answer": "Cream-top or non-homogenized milk comes next, then plain organic whole milk.",
+      "detail": "Whole milk is the one that had the least done to it: skimming, standardizing and often ultra-pasteurizing are steps it skips. The old ‘always low-fat dairy’ guidance has weakened for otherwise-healthy people; whole milk is a whole-food-standard pick rather than a finding, and a doctor’s advice for a specific person outranks a shelf standard. Every bit of heat changes milk, so the shortest date on the shelf usually means the least processing, not worse milk. Ultra-pasteurized milk resists culturing; skip it for homemade yogurt. Homogenization carries no health benefit and no health risk; cream-top is a preference about texture and steps. Certified organic means organic feed, outdoor access and a 30 percent grazing minimum in season; Certified Grassfed sets a 100 percent grass and forage diet. rBST is a synthetic growth hormone given to dairy cows; certified organic cows cannot receive it, and US labels need not say whether other cows did. The A2 seal is a licensed program that reports the protein, not how the herd lived; ultra-pasteurized A2 is still UHT, and processing is the higher-order question. Easier digestion is the most promising A2 claim and still unproven by science. Breed is a tendency, not a test: Jerseys and Guernseys carry more A2 genes than Holsteins, yet a Holstein herd can be more than half A2A2, and an A1A2 cow gives milk with both proteins, so the claim rests on a tested herd. Small dairies name the breed; the big labels only print the seal. A2 yogurt and A2 cheese are the same milk cultured.",
       "evidence_tier": "kristys_standard",
       "sources": [
         {
@@ -1309,45 +1287,27 @@
       "cart_pick": "100% grass-fed whole milk",
       "buying_tips": [
         "Look for “100% grass-fed” and Certified Grassfed on a cream-top carton.",
-        "Read near the date. ‘Ultra-pasteurized’ or ‘UHT’ on the carton explains a date months out. Skip that carton.",
-        "The ladder: low-temperature and cream-top, then A2 milk, then the carton in front of you.",
-        "Check the fat: whole is 3.25% milkfat by federal standard. Reduced-fat is 2%, low-fat 1%, skim under half a percent.",
-        "100% grass-fed means grass and hay, never grain. Pasture milk is a separate question from the fat.",
-        "‘Cream-top’ or ‘non-homogenized’ means the fat separates. Shake it. Non-homogenized is still pasteurized. Two different processes.",
-        "Jersey and Guernsey are the A2 breeds. Small dairies name the breed; the big labels only print the seal.",
-        "A2 yogurt and A2 cheese are the same milk cultured. The breed question does not change.",
-        "Ultra-pasteurized milk resists culturing. Skip it for homemade yogurt.",
-        "Every bit of heat changes milk. The shortest date on the shelf usually means the least processing, not worse milk.",
-        "rBST is a synthetic growth hormone given to dairy cows. Certified organic milk comes from cows that cannot receive it.",
-        "No organic carton: find “from cows not treated with rBST”. US labels need not say whether cows received it.",
-        "Organic sets a 30 percent grazing minimum in season; Certified Grassfed sets a 100 percent grass and forage diet.",
-        "Look for the farm named on the carton.",
+        "The ladder: low-temperature and cream-top, then A2, then the carton at hand.",
         "Look for Regenerative Organic Certified, Certified Regenerative by A Greener World or Land to Market Verified.",
+        "No organic carton: find “from cows not treated with rBST”.",
+        "Look for the farm named on the carton.",
         "Raw milk from a farm you can name, where it is sold, as an option."
       ],
       "watch_out": [
-        "Chocolate and strawberry jugs carry dessert-level added sugar. Check that line before the fat one.",
-        "Ultra-pasteurized whole milk is still a further step. A date months out is the tell.",
-        "“Ultra-pasteurized” or “UHT” on the carton means about 280°F for a few seconds: skip it.",
-        "‘Whole’ does not mean all fat. Whole milk is 3.25% milkfat. The 2%, 1% and skim jugs come from skimming cream off before homogenization and adding less back. None is made by adding water.",
-        "Ultra-pasteurized A2 is still UHT. The A2 claim says nothing about processing, and processing is the higher-order question.",
-        "The seal is a licensed program, not a farming standard. It reports the protein and nothing about how the herd lived.",
-        "Easier to digest is the most promising claim and still the unproven one. The digestion and health claims for A2 have not been proven by science. The label reports which protein is in the carton and nothing more.",
-        "Breed is a tendency, not a test. Jerseys and Guernseys carry more A2 genes than Holsteins. Still, a Holstein herd can be more than half A2A2. An A1A2 cow gives milk with both proteins. The claim rests on a tested herd, not on the breed.",
-        "Homogenization carries no health benefit and no health risk. Preferring cream-top is a preference about texture and steps.",
-        "Non-homogenized is not raw. It is still pasteurized; only the fat was left alone.",
-        "Raw milk can carry germs such as Campylobacter, E. coli, Listeria and Salmonella, which pasteurization kills."
+        "Chocolate and strawberry jugs carry dessert-level added sugar; check that first.",
+        "Skip “ultra-pasteurized” or “UHT”: about 280°F, and a date months out.",
+        "A2 names a protein, not the processing or how the herd lived.",
+        "Raw milk can carry Campylobacter, E. coli, Listeria and Salmonella, which pasteurization kills."
       ],
       "pick_steps": [
         "100% grass-fed on milk means the cows ate grass and hay, never grain.",
-        "Read the carton for “ultra-pasteurized” and skip it.",
         "Look for “low-temperature” or “vat pasteurized” printed on the label."
       ],
-      "science": "Reduced-fat, low-fat and skim are all whole milk with milkfat removed. They come from skimming cream off before homogenization and adding less back, never from adding water. The fat carries the flavor and most of the fullness. Dairy fat research is mixed, so the call rests on the processing, the checkable part. Grass-fed and pasture milk is a further layer, separate from the fat.",
+      "science": "Reduced-fat, low-fat and skim are whole milk with milkfat removed. Cream is skimmed off before homogenization and less is added back, never water. The fat carries the flavor and most of the fullness. Dairy fat research is mixed, so the call rests on the processing, the checkable part. Grass-fed and pasture milk is a further layer, separate from the fat.",
       "labels_decoded": [
         {
-          "term": "Reduced-fat (2%) / low-fat (1%) / skim",
-          "meaning": "Progressively more milk fat removed."
+          "term": "Whole / reduced-fat (2%) / low-fat (1%) / skim",
+          "meaning": "Whole is 3.25% milkfat by federal standard; reduced-fat is 2%, low-fat 1%, skim under half a percent."
         },
         {
           "term": "A2",
@@ -1355,11 +1315,15 @@
         },
         {
           "term": "Pasteurized",
-          "meaning": "Briefly heated to kill pathogens. The standard process."
+          "meaning": "Briefly heated to kill pathogens, regularly 161°F for 15 seconds. The standard process."
+        },
+        {
+          "term": "Vat pasteurized",
+          "meaning": "Held at 145°F for 30 minutes; also printed as low-temperature pasteurized."
         },
         {
           "term": "Ultra-pasteurized / UHT",
-          "meaning": "Much hotter for a shorter time. Long shelf life, changed flavor, resists culturing."
+          "meaning": "Heated to about 280°F for about 2 seconds. Long shelf life, changed flavor, resists culturing."
         },
         {
           "term": "Homogenized",
@@ -1367,18 +1331,10 @@
         },
         {
           "term": "Cream-top / non-homogenized",
-          "meaning": "Cream separates and rises. Still pasteurized."
-        },
-        {
-          "term": "Vat pasteurized",
-          "meaning": "Held at 145°F for 30 minutes; also printed as low-temperature pasteurized."
-        },
-        {
-          "term": "Ultra-pasteurized",
-          "meaning": "Heated to about 280°F for about 2 seconds."
+          "meaning": "Cream separates and rises; shake it. Still pasteurized, not raw."
         }
       ],
-      "tier_note": "Vat, or low-temp, pasteurizing holds milk at 145°F for 30 minutes; regular gets 161°F for 15 seconds; certified organic feed and outdoor access.",
+      "tier_note": "Reach for whole, low-temperature milk; ultra-pasteurized sits at the bottom.",
       "eyebrow_short": "Whole vs. reduced",
       "asked_as": [
         "whole milk or skim",
@@ -3527,9 +3483,9 @@
       "category": "produce",
       "question": "How do I tell if this particular fruit or vegetable is any good?",
       "decision": "Produce picked by smell, touch and weight, item by item.",
-      "why": "Compare two pieces in your hands. More weight means more water rather than pith, a better guide than color.",
-      "short_answer": "Each item has one or two checks that work, almost never color. Heavy for its size is the near-universal one. Smell the stem end on anything that ripens off the plant. Turn berry containers over, where mold starts.",
-      "detail": "Fruit that keeps ripening after picking (melon, peach, avocado, banana, mango, pear) gives you smell and give as signals. Fruit that does not ripen further once picked (berries, citrus, grapes, pineapple, cherries) has to be bought ready, so those checks are about weight and damage instead. Vegetables are mostly a firmness question: a limp stalk or a rubbery skin means it has been out of the ground a while and lost water. The single best habit is picking up two of the same thing and comparing them by weight. The heavier one is almost always better.",
+      "why": "Each item has one or two checks that work; color is almost never one.",
+      "short_answer": "Fruit that ripens after picking signals with smell and give; the rest must be bought ready.",
+      "detail": "Heavy for its size is the near-universal check. Asparagus should have tight closed tips and a cut end that is not dried and split. Broccoli and cauliflower should have tight dense heads with no yellowing between the florets. Leafy greens should be perky rather than limp, with no slimy dark patches at the stem base. An avocado stem nub stuck fast means give it days.",
       "evidence_tier": "established",
       "sources": [
         "University extension produce selection and ripening guidance",
@@ -3540,33 +3496,30 @@
       "kristy_take": "Use your palm to feel a peach’s shoulder for a little give; fingertips leave bruises. Choose staggered firmness so the fruit ripens across the week.",
       "buying_tips": [
         "Pick by weight: heavy for its size means more water, not pith, a better guide than color.",
-        "Cantaloupe: creamy gold under the netting, a sweet smell at the stem end, slight give.",
-        "Watermelon: a deep yellow field spot, heavy for its size, a hollow thunk.",
-        "Pineapple: sweet at the base, deep green leaves, a slight give in the shell. Color is not the tell.",
-        "Tomatoes: fragrant at the stem, heavy for their size, and never from the cold case.",
-        "Stone fruit: fragrant, with a slight give at the shoulder rather than the tip.",
-        "Citrus: heavy for its size, with thin smooth skin. Weight beats color.",
-        "Asparagus: tight closed tips and a cut end that is not dried and split.",
-        "Broccoli and cauliflower: tight dense heads, no yellowing between the florets.",
-        "Leafy greens: perky rather than limp, with no slimy dark patches at the stem base.",
-        "Avocado: pop the stem nub. Green under it means ripe, brown means overripe, and stuck fast means give it days.",
-        "Press with your palm, never your fingertips. Fingertip pressure is what bruises the fruit.",
-        "Pick at staggered firmness so they ripen across the week, not all on Tuesday.",
-        "A shorter trip usually means it was picked closer to ripe. That is transit, not country."
+        "Cantaloupe: creamy gold under the netting, sweet at the stem end, slight give.",
+        "Watermelon: a dull rind, a deep yellow field spot, a hollow thunk.",
+        "Pineapple: sweet at the base, deep green leaves, a slight give in the shell.",
+        "Tomatoes: fragrant at the stem, heavy for their size, never from the cold case.",
+        "Stone fruit: fragrant, with a slight give at the shoulder, not the tip.",
+        "Citrus: heavy for its size, with thin smooth skin.",
+        "Avocado: pop the stem nub; green under it means ripe, brown overripe.",
+        "Vegetables: tight asparagus tips, dense unyellowed broccoli heads, perky greens.",
+        "Press with your palm, never your fingertips, which bruise the fruit.",
+        "Pick at staggered firmness so they ripen across the week, not all on Tuesday."
       ],
       "watch_out": [
-        "Watermelon: a pale green or white ground spot means likely underripe. Creamy yellow is the one to take.",
-        "A shiny watermelon rind tends to be underripe. Dull skin is the good sign, not the bad one.",
-        "The thump: ripe sounds dull and hollow, unripe sounds high-pitched or metallic."
+        "Watermelon: a pale green or white ground spot, or a shiny rind, is likely underripe.",
+        "A high-pitched or metallic thump means unripe.",
+        "Turn berry containers over, where mold starts."
       ],
       "pick_steps": [
         "Pick up two the same size and take the heavier one."
       ],
-      "science": "Cantaloupe and tomatoes should be fragrant at the stem; skip cold-case tomatoes. Stone fruit gives slightly at the shoulder, and pineapple smells sweet at the base. Citrus should feel heavy with thin, smooth skin; color is not the tell. Vegetables are a firmness check: tight asparagus tips, dense broccoli heads without yellowing, perky greens without slime. Pop an avocado’s stem nub: green under it means ripe, brown means overripe.",
+      "science": "Fruit that keeps ripening after picking (melon, peach, avocado, banana, mango, pear) gives smell and give as signals. Fruit that does not (berries, citrus, grapes, pineapple, cherries) must be bought ready. Its checks are weight and damage. Vegetables are a firmness check: a limp stalk or rubbery skin has been out of the ground a while.",
       "labels_decoded": [
         {
           "term": "Product of ___",
-          "meaning": "Where it was grown. Mostly a season indicator, not a quality grade."
+          "meaning": "Where it was grown. Mostly a season indicator, not a quality grade; a shorter trip usually means picked closer to ripe."
         },
         {
           "term": "Hass",
@@ -3581,7 +3534,7 @@
           "meaning": "Can mean none were used or that residue was washed off. Without an organic label there is no way to tell which."
         }
       ],
-      "tier_note": "Which fruit ripens after picking is settled produce handling, and smell is the signal it gives.",
+      "tier_note": "Smell fruit that ripens after picking; that much is settled produce handling.",
       "eyebrow_short": "Picking produce",
       "asked_as": [
         "how do i pick a ripe cantaloupe",
@@ -4428,9 +4381,9 @@
       "category": "bulk_pantry",
       "question": "Which bottled water should I buy?",
       "decision": "Spring water in glass, with the spring and town named.",
-      "why": "Spring water must come from the spring or a bore hole tapping the underground formation feeding it.",
-      "short_answer": "Two products share one shelf. Spring water is defined by its underground source. Purified water is defined by its treatment, often of city water. Its label need not name the source.",
-      "detail": "The type on the label is a federal standard of identity, so it is the one word on the bottle that has to be earned. Spring, artesian and mineral name a source. Purified, distilled, deionized and reverse osmosis name a process. Mineral water is spring water carrying at least 250 parts per million of total dissolved solids picked up from the ground, and no minerals may be added to it, which is why the term still means something. Do not shop this on mineral content. Reverse osmosis removes dissolved solids by design, so a purified bottle reads lower on paper and that is the equipment working exactly as intended, not evidence against it. Provenance is the argument, and it is the only one that holds. Spring water is defined by where it came from: an underground formation that flows to the surface on its own, collected there or from a bore hole in the same formation, and carrying the composition that water had before treatment. Purified water is defined by what was done to it, which is distillation, deionization or reverse osmosis, run on whatever the feed water happened to be. That feed water is frequently a municipal system, and here the labeling rule does the arguing: a bottler drawing from a community water system has to say so on the label, unless the water was purified, which lifts the requirement. Pass on water with natural flavors or artificial flavoring; those terms do not name the individual flavoring ingredients.",
+      "why": "Spring water must come from its spring, or a bore hole into the same formation.",
+      "short_answer": "Purified water is defined by its treatment, often of city water, and its label need not name the source.",
+      "detail": "Spring, artesian and mineral name a source. Purified, distilled, deionized and reverse osmosis name a process, run on whatever the feed water happened to be, frequently a municipal system. Spring water also keeps the composition it had before treatment. Do not shop this on mineral content: reverse osmosis removes dissolved solids by design, so a purified bottle reads lower on paper, the equipment working as intended, not evidence against it. Provenance is the argument, and the only one that holds; the standard is source and container, never a health claim. Pass on water with natural flavors or artificial flavoring; neither term names the flavoring ingredients. Not buying bottled at all is a defensible answer: a carbon filter on the tap is the same industrial treatment moved into the kitchen, the honest fallback, not the standard. On caps, French food-safety researchers found the paint scratched by caps rubbing together before use; cleaning the caps first took most of the plastic back out. For water the counts were low in every container, glass slightly higher than plastic.",
       "evidence_tier": "kristys_standard",
       "sources": [
         {
@@ -4442,14 +4395,12 @@
       "cart_pick": "Spring water in glass, unpainted cap",
       "buying_tips": [
         "A spring with a name and a town on the label.",
-        "“Bottled at the source” means something when the source is printed.",
+        "“Bottled at the source”, with the source printed.",
         "Glass, where the water is sold in glass.",
-        "Can’t find spring: mineral water, spring water with the dissolved solids to prove its ground."
+        "Can’t find spring: mineral water, spring water proven by its dissolved solids."
       ],
       "watch_out": [
-        "Not buying bottled at all is a defensible answer. A carbon filter on the tap is the same industrial treatment moved into the kitchen. It is the honest fallback, not the standard.",
-        "The cap is the contamination point, not the bottle. French food-safety researchers traced the plastic in glass-bottled drinks to the paint on painted metal caps. The caps were scratched by rubbing together in storage, before they were ever used. Cleaning the caps first took most of it back out. For water specifically the counts were low in every container, glass or plastic, glass slightly higher than plastic.",
-        "“BPA-free” on a single-use bottle is true and empty. PET was never made with BPA, so the words describe something that was never in the bottle."
+        "In glass-bottled drinks, the plastic traced to painted metal caps scratched in storage."
       ],
       "pick_steps": [
         "Spring water over “distilled” or “deionized” water."
@@ -4458,11 +4409,11 @@
       "labels_decoded": [
         {
           "term": "Spring water",
-          "meaning": "From an underground formation that flows to the surface on its own. Collected at the spring or from a bore hole in the same formation."
+          "meaning": "From an underground formation that flows to the surface on its own, collected at the spring or from a bore hole in the same formation."
         },
         {
           "term": "Purified / distilled / deionized / reverse osmosis",
-          "meaning": "A treatment, not a place. It says what was done to the water and nothing about where it started."
+          "meaning": "A treatment, not a place: what was done to the water, nothing about where it started."
         },
         {
           "term": "Mineral water",
@@ -4474,10 +4425,10 @@
         },
         {
           "term": "BPA-free",
-          "meaning": "True of every PET bottle and always was. PET is not made with BPA. The claim describes a plastic the bottle never contained."
+          "meaning": "True of every PET bottle and always was: PET is not made with BPA."
         }
       ],
-      "tier_note": "Federal label definitions name spring water by its source; the standard here is source and container, never a health claim.",
+      "tier_note": "Judge by source and container; the label’s type word is federally defined.",
       "eyebrow_short": "Bottled water",
       "asked_as": [
         "what bottled water should i buy",
@@ -4970,9 +4921,9 @@
       "category": "label_terms",
       "question": "What does “artificial color” mean on an ingredient list?",
       "decision": "Food with no added coloring on the list.",
-      "why": "Certified dyes must be named. The rest, titanium dioxide among them, may hide under a group term.",
-      "short_answer": "Two rules, split on certification. A certified dye must be declared by name, so “Red 40” always appears as itself. A color exempt from certification may ride as “Artificial Color” or “Color Added.” Titanium dioxide is one of those.",
-      "detail": "The split is written into 21 CFR 101.22(k). Paragraph (k)(1) covers color additives subject to certification and requires each to be declared by the name in its own regulation, dropping the “FD&C” prefix but keeping “Lake” where it applies. Paragraph (k)(2) covers color additives not subject to certification and permits the collective terms instead, offering “Colored with ______” as the alternative that names the substance. Titanium dioxide is listed at 21 CFR 73.575, which sets the one percent ceiling and states that batches are exempt from certification.\n\nSo the generic phrase is a signal rather than a blank. Where a panel reads “artificial color” with no number beside it, the color is one federal rules did not require to be named, and the panel alone cannot say which.\n\nA certified dye must be declared by its own name, so “Red 40” and “Blue 1” always appear as themselves. A color exempt from certification does not have to: federal labeling rules let it ride as “Artificial Color,” “Artificial Color Added” or “Color Added.” Titanium dioxide is the white pigment used for opacity in candy shells, frosting, chewing gum and creamy dressings, capped at one percent of the food by weight. A label may name it outright as “colored with titanium dioxide,” and nothing requires that. The EU removed it from food after a review by its food safety authority, and food makers there took it out. US rules still allow it. The plain move at the shelf is to skip a list carrying a generic color term and take one with no added color, or a color named from a food.",
+      "why": "Certified dyes must be named; others, titanium dioxide among them, may hide under a group term.",
+      "short_answer": "“Red 40” always appears by name; a group term need not say which color.",
+      "detail": "The split is written into 21 CFR 101.22(k). Paragraph (k)(1) requires each color additive subject to certification to be declared by the name in its own regulation, dropping the “FD&C” prefix but keeping “Lake” where it applies. Paragraph (k)(2) lets colors not subject to certification use the collective terms “Artificial Color,” “Artificial Color Added” or “Color Added,” or “Colored with ______,” which names the substance. Titanium dioxide, listed at 21 CFR 73.575, is exempt from certification and capped at one percent of the food by weight; it is the white pigment for opacity in candy shells, frosting, chewing gum and creamy dressings. The EU removed it from food after a review by its food safety authority, and food makers there took it out. Where a panel reads “artificial color” with no number beside it, the color is one federal rules did not require to be named, and the panel alone cannot say which. The plain move at the shelf is a list with no added color, or a color named from a food.",
       "evidence_tier": "established",
       "sources": [
         "Food Babe: 3 ingredients to check for (titanium dioxide under “artificial color” or “color added”)",
@@ -4987,14 +4938,14 @@
         "No ‘artificial color’ or ‘color added’ on the list."
       ],
       "watch_out": [
-        "The EU removed titanium dioxide from food after a review by its food safety authority. US rules still allow it.",
-        "US labels need not name titanium dioxide. “Artificial color,” “artificial color added” or “color added” can stand in for it.",
-        "A generic color term is a reason to put the package back. The panel alone cannot say which color it is."
+        "US labels need not name titanium dioxide; a group term can cover it.",
+        "The EU removed titanium dioxide from food; US rules still allow it.",
+        "Put back a package listing a generic color term."
       ],
       "pick_steps": [
         "“Artificial color” or “color added”: a color that need not be named."
       ],
-      "science": "Certified dyes must be declared by name; colors exempt from certification may be declared as a group. Titanium dioxide is a white pigment exempt from certification. A label may name it outright, though nothing requires that. The EU removed it from food after a review by its food safety authority. US rules still allow it, under a group term if the maker chooses.",
+      "science": "Certified dyes must be declared by name; colors exempt from certification may be declared as a group. Titanium dioxide is a white pigment exempt from certification. A label may name it outright, though nothing requires that.",
       "labels_decoded": [
         {
           "term": "Artificial color",
@@ -5013,7 +4964,7 @@
           "meaning": "Certified dyes. Each must be declared by name, so they cannot be pooled."
         }
       ],
-      "tier_note": "Which colors may be declared as “artificial color” is written into federal labeling regulation, not inferred from practice.",
+      "tier_note": "Read the color terms; federal labeling rules decide which must be named.",
       "asked_as": [
         "what does artificial color mean",
         "what is titanium dioxide",

@@ -143,6 +143,13 @@ test('t6-3: capped watch-outs and overflow retain existing guidance', () => {
   for (const id of IDS) for (const line of preT6_3(card(id)).watch_out) {
     // The superseded avocado skip may give way to the pure/cold-pressed condition (DECISIONS-2026-10-22).
     if (/^Skip avocado oil too\b/.test(line) && AVO_COND.test(prose(card(id)).join(' '))) continue;
+    // Trim batch 1 2026-11-08: these three watch-outs were reworded into watch_out, detail and labels
+    // (scripts/lookfor/patches/trim-batch1.ledger.txt); the facts are pinned instead of the old sentences.
+    if (id === 'bottled_water_buying') {
+      const t = prose(card(id)).join(' ');
+      for (const re of [/carbon filter on the tap/, /painted metal caps/, /cleaning the caps first/i, /glass slightly higher than plastic/, /PET is not made with BPA/]) assert.match(t, re);
+      continue;
+    }
     assert.ok(card(id).watch_out.includes(line) || card(id).detail.includes(line), `${id}: lost existing watch-out`);
   }
 });

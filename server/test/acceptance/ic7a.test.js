@@ -32,12 +32,40 @@ const FOLD = { a2_vs_a1_milk: MILK, milk_processing: MILK, yogurt_live_cultures:
 const FOLDED = Object.keys(FOLD);
 const SURVIVORS = [MILK, YOG];
 const KEEP_OFF = new Set(['kefir', 'alive', 'still alive']);
+const TRIM1_REPHRASED = [
+  'Jersey and Guernsey are the A2 breeds.',
+  'The breed question does not change.',
+  'Ultra-pasteurized A2 is still UHT.',
+  'The A2 claim says nothing about processing, and processing is the higher-order question.',
+  'The seal is a licensed program, not a farming standard.',
+  'It reports the protein and nothing about how the herd lived.',
+  'Easier to digest is the most promising claim and still the unproven one.',
+  'The label reports which protein is in the carton and nothing more.',
+  'Breed is a tendency, not a test.',
+  'Jerseys and Guernseys carry more A2 genes than Holsteins.',
+  'Still, a Holstein herd can be more than half A2A2.',
+  'An A1A2 cow gives milk with both proteins.',
+  'The claim rests on a tested herd, not on the breed.',
+  "'Ultra-pasteurized' or 'UHT' on the carton explains a date months out.",
+  'Ultra-pasteurized milk resists culturing.',
+  'Skip it for homemade yogurt.',
+  "'Cream-top' or 'non-homogenized' means the fat separates.",
+  'Shake it.',
+  'Non-homogenized is still pasteurized.',
+  'Two different processes.',
+  'The shortest date on the shelf usually means the least processing, not worse milk.',
+  'Homogenization carries no health benefit and no health risk.',
+  'Non-homogenized is not raw.',
+  'It is still pasteurized; only the fat was left alone.',
+];
 const DROPPED = ['People who struggle with regular milk often do better on A2.', 'Worth trying for a week.'];
 const REPHRASED = ['Greek and skyr are strained: thicker, more protein per spoon.', 'Greek/strained is higher protein; whole-milk versions are more filling.',
   // Persona-walk copy pass 2026-11-08: raw moved off the top of the milk ladder; "the extension line says" source jargon dropped.
   'The ladder runs four steps.', 'Raw from a farm you can name.', 'Then low-temp pasteurized and cream-top.', 'Then A2, then the carton in front of you.',
   'The extension line says the digestion and health claims for A2 have not been proven by science.',
-  'Preferring cream-top is a preference about texture and steps, and the extension line says exactly that.'];
+  'Preferring cream-top is a preference about texture and steps, and the extension line says exactly that.',
+  // Trim batch 1 2026-11-08: A2 sentences tightened into detail; each fact kept (scripts/lookfor/patches/trim-batch1.ledger.txt).
+  ...TRIM1_REPHRASED];
 const EXTRA_ASKS = [['what is ultra pasteurized milk', MILK], ['cultured dairy', YOG], ['a2 milk', MILK]];
 const SPOKEN = ['decision', 'why', 'short_answer', 'detail', 'kristy_take', 'tier_note', 'buying_tips', 'watch_out', 'look_for', 'pick_steps', 'science', 'labels_decoded'];
 const strings = (e) => SPOKEN.flatMap((f) => [].concat(e?.[f] ?? [])).flatMap((x) => (typeof x === 'string' ? [x] : Object.values(x ?? {}).filter((v) => typeof v === 'string')));
