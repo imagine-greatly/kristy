@@ -33,7 +33,11 @@ const FOLDED = Object.keys(FOLD);
 const SURVIVORS = [MILK, YOG];
 const KEEP_OFF = new Set(['kefir', 'alive', 'still alive']);
 const DROPPED = ['People who struggle with regular milk often do better on A2.', 'Worth trying for a week.'];
-const REPHRASED = ['Greek and skyr are strained: thicker, more protein per spoon.', 'Greek/strained is higher protein; whole-milk versions are more filling.'];
+const REPHRASED = ['Greek and skyr are strained: thicker, more protein per spoon.', 'Greek/strained is higher protein; whole-milk versions are more filling.',
+  // Persona-walk copy pass 2026-11-08: raw moved off the top of the milk ladder; "the extension line says" source jargon dropped.
+  'The ladder runs four steps.', 'Raw from a farm you can name.', 'Then low-temp pasteurized and cream-top.', 'Then A2, then the carton in front of you.',
+  'The extension line says the digestion and health claims for A2 have not been proven by science.',
+  'Preferring cream-top is a preference about texture and steps, and the extension line says exactly that.'];
 const EXTRA_ASKS = [['what is ultra pasteurized milk', MILK], ['cultured dairy', YOG], ['a2 milk', MILK]];
 const SPOKEN = ['decision', 'why', 'short_answer', 'detail', 'kristy_take', 'tier_note', 'buying_tips', 'watch_out', 'look_for', 'pick_steps', 'science', 'labels_decoded'];
 const strings = (e) => SPOKEN.flatMap((f) => [].concat(e?.[f] ?? [])).flatMap((x) => (typeof x === 'string' ? [x] : Object.values(x ?? {}).filter((v) => typeof v === 'string')));

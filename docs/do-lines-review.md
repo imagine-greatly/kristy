@@ -122,7 +122,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `tortillas` | bulk_pantry | Organic corn tortillas of masa, water and salt. | Check for masa or masa harina, then read for added wheat and fat. | — |
 | `turkey_whole` | meat | Turkey that lived outside. | Look for “Pasture-Raised” and Animal Welfare Approved, turkey the only ingredient. | — |
 | `ground_turkey` | meat | Ground turkey from birds raised on pasture. | Find “Pasture-Raised” and Animal Welfare Approved, and turkey alone on the list. | — |
-| `breakfast_cereal` | bulk_pantry | Unfortified whole-grain cereal or granola, less added sugar, no dyes. | Compare the added-sugars line and check which Whole Grain Stamp is shown. | — |
+| `breakfast_cereal` | bulk_pantry | Sprouted or soaked-grain organic granola, or soaked cooked oats. | Compare the added-sugars line and check which Whole Grain Stamp is shown. | — |
 | `pasta_dry` | bulk_pantry | Organic dry pasta of durum semolina and water. | Turn the box over and read the flour and any added ingredients. | — |
 | `oat_milk` | eggs_dairy | Unsweetened, unfortified oat milk with nothing added, never seed oil. | Read the ingredients for added vitamins and minerals, then the stabilizers. | — |
 | `coffee_beans` | bulk_pantry | Beans in a sealed bag that limits air. | Check the bag’s seal and keep the coffee closed between uses. | — |
@@ -276,7 +276,7 @@ Also: imperative, starts with a verb, ≤14 words.
 | `candy` | bulk_pantry | Candy sweetened with honey or maple, no synthetic dyes. | Read the list for any numbered dye such as Red 40 or Yellow 5. | — |
 | `popsicles` | bulk_pantry | Fruit ice pops: whole fruit, no dyes or juice concentrate. | Read the first ingredient for whole fruit, not juice concentrate. | — |
 | `shortening` | bulk_pantry | Leaf lard or tallow, not hardened vegetable shortening. | Read the label for hydrogenated lard, lard stearin or vegetable oils. | — |
-| `pita_naan` | bulk_pantry | Whole wheat pita with a short list. | Read the first ingredient for whole wheat flour, not enriched flour. | — |
+| `pita_naan` | bulk_pantry | Whole wheat pita or naan with a short list. | Read the first ingredient for whole wheat flour, not enriched flour. | — |
 | `ramen` | bulk_pantry | Ramen that skipped the fryer, with a short list. | Read the pack for “air-dried” or “non-fried” noodles. | — |
 | `baby_food` | bulk_pantry | Single-food purees and infant oatmeal, not rice snacks. | Check the jar lists one fruit or vegetable, not rice. | — |
 | `guacamole` | bulk_pantry | Avocado first, lime and salt, no added oil. | Read the list for avocado first and no added oils. | — |

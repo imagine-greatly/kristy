@@ -3531,9 +3531,9 @@ export const TWO_LINE = {
     ]
   },
   "pita_naan": {
-    "decision": "Whole wheat pita with a short list.",
+    "decision": "Whole wheat pita or naan with a short list.",
     "buying_tips": [
-      "Organic whole wheat pita, with whole wheat flour first on a short list.",
+      "Organic whole wheat pita, whole wheat first on a short list.",
       "Flour, water, yeast and salt, with nothing else needed.",
       "Can’t find it: naan made with yogurt and butter or ghee, not vegetable oil.",
       "A list without “enriched flour” leading, which never means whole grain."
@@ -3544,7 +3544,7 @@ export const TWO_LINE = {
     "buying_tips": [
       "Grass-fed butter listing only cream and salt.",
       "Ghee with no added flavoring, grass-fed where possible.",
-      "Raw butter from a grass-fed farm, where sold."
+      "Raw butter from a grass-fed farm, where sold, as an option."
     ]
   },
   "shortening": {
@@ -4010,7 +4010,7 @@ test('copy pass 2026-10-29: olive oil and produce live copy', () => {
   const get = (id) => live.find((e) => e.id === id);
   const oil = get('olive_oil_grades');
   assert.equal(oil.decision, 'Extra virgin olive oil with a recent harvest date, one country, dark bottle.');
-  assert.equal(oil.buying_tips[0], 'Olive oil starts aging the day it is pressed, and dark glass keeps light off it.');
+  assert.equal(oil.buying_tips[0], 'Extra virgin olive oil in dark glass, since light ages it.'); // persona-walk 2026-11-08: Grab names the oil.
   assert.ok(oil.buying_tips.some((t) => /organic/i.test(t) && /single estate/i.test(t)), 'organic and single-estate stay in later tips');
   assert.equal(doLines.olive_oil_grades, 'Read for “product of”, where the olives grew; “packed in” only means bottled there.');
   assert.equal(get('aisle_produce').decision, 'Organic when you eat the skin or juice it; peeled, pick by ripeness.');

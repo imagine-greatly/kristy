@@ -42,13 +42,12 @@
         }
       ],
       "kristy_take": "Wild, and frozen wild before fresh farmed. Where wild is not in the case, the tin is.",
-      "instead": "Canned wild salmon, or sardines. Actually wild, and canned is the cheapest way to buy wild.",
+      "instead": "Canned wild salmon, or sardines, both actually wild.",
       "cart_pick": "Wild-caught salmon",
       "buying_tips": [
         "“wild-caught”, “Alaska” and the blue MSC label, with the kind of salmon named.",
         "Sockeye or coho, almost always wild.",
-        "Frozen wild Alaskan, as gladly as fresh.",
-        "Can’t find it: canned wild salmon."
+        "Frozen wild Alaskan, as gladly as fresh."
       ],
       "watch_out": [
         "Atlantic salmon is farmed, effectively without exception. Wild Atlantic is off the market.",
@@ -249,7 +248,7 @@
         }
       ],
       "kristy_take": "Grass-finished tells what the animal ate to the end; a regenerative certifier audits the ranch and its land.",
-      "instead": "100% grass-fed beef with American Grassfed on the pack, or USDA Organic beef.",
+      "instead": "USDA Organic beef.",
       "cart_pick": "Grass-only beef from an audited ranch",
       "buying_tips": [
         "Look for “100% grass-fed” and “grass-finished” on the pack.",
@@ -289,7 +288,7 @@
         },
         {
           "term": "Regenerative Organic Certified",
-          "meaning": "Built on USDA Organic plus an animal welfare certification: no permanent confinement and open access to pasture. Only its Gold level is 100% grass-fed through finishing."
+          "meaning": "Regenerative Organic starts from USDA Organic and adds animal welfare; only its Gold level is 100% grass-fed through finishing."
         },
         {
           "term": "Certified Regenerative by AGW",
@@ -297,15 +296,15 @@
         },
         {
           "term": "Land to Market",
-          "meaning": "The Savory Institute’s verification for ranches whose soil health, biodiversity and ecosystem function are measured and trending up."
+          "meaning": "Land to Market verifies that a ranch’s soil health and biodiversity are measured and improving."
         },
         {
           "term": "American Grassfed",
-          "meaning": "Grass and forage only from weaning until harvest, on pasture without confinement, never antibiotics or added growth hormones. Farms are inspected by third parties."
+          "meaning": "American Grassfed audits grass and forage only from weaning to harvest, with no antibiotics or added hormones."
         },
         {
           "term": "Animal Welfare Approved",
-          "meaning": "Continuous outdoor pasture for beef cattle, feedlots prohibited, no antibiotics for growth or routine use. Grass-finished is not required."
+          "meaning": "Animal Welfare Approved audits continuous pasture with feedlots barred; grass-finished is not required."
         }
       ],
       "tier_note": "On a beef label, “grass-finished” is the producer’s own word unless a certifier audits it.",
@@ -472,11 +471,11 @@
         },
         {
           "term": "Hamburger",
-          "meaning": "Chopped beef that may have beef fat added; ‘ground beef’ may not."
+          "meaning": "Hamburger is chopped beef that may have beef fat added."
         },
         {
           "term": "Ground beef",
-          "meaning": "By regulation, chopped beef only. Trimmed cheek meat up to 25 percent is the one allowed addition; liver and heart are not."
+          "meaning": "Ground beef is chopped beef alone by regulation; trimmed cheek meat up to 25 percent is the one allowed addition, and liver and heart are not."
         },
         {
           "term": "Ancestral blend / primal blend",
@@ -498,13 +497,13 @@
       "watch_out": [
         "USDA Organic alone still allows a grain finish in a feedlot, up to 120 days.",
         "‘Ground beef’ may not have beef fat added as such; ‘hamburger’ may. Both cap at 30% fat, so the name is where the difference lives.",
-        "Preformed vitamin A is most concentrated in liver, so keep servings ordinary."
+        "Organ blends add liver, the most concentrated source of preformed vitamin A."
       ],
       "science": "The numbers are lean to fat by weight, so a higher first number is leaner. ‘Ground beef’ may not have beef fat added as such, but ‘hamburger’ may. Both cap at 30% fat, so the name is where the difference lives.",
       "pick_steps": [
         "‘Ground beef’ over ‘hamburger’, which can include added beef fat."
       ],
-      "instead": "Organic ground beef with beef the only ingredient.",
+      "instead": "An organic grind with beef the only ingredient.",
       "family": "fam_ruminant_meat",
       "delta": "Grass-finished ground beef from an audited regenerative ranch; nothing but beef on the list."
     },
@@ -629,7 +628,6 @@
       "buying_tips": [
         "“corn-free” and “soy-free” feed printed beside “pasture-raised”.",
         "A Certified Humane Pasture Raised or Animal Welfare Approved logo beside “pasture-raised”, the strongest outdoor claim.",
-        "Can’t find corn-free: soy-free, organic, pasture-raised, then organic pasture-raised.",
         "Farm stands, farmers markets or the farm named on the carton, for soy-free eggs.",
         "Open the carton and check for cracks and leaks before it goes in the cart."
       ],
@@ -646,7 +644,7 @@
         "A paler brown shell is not a fresher or older egg. Pigment goes on in the last hours before laying. A stressed hen, an older hen or a hurried lay leaves less of it.",
         "A carton may legally hold the next size up, as long as the two sizes are not mixed. A ‘Large’ dozen can be Extra Large. It cannot be smaller.",
         "The sell-by is not the pack date. Two cartons with the same sell-by can have been packed weeks apart. The three-digit code is the one that tells them apart.",
-        "Four to five weeks past the pack date, refrigerated, is the extension guidance. Count from the three-digit code, not from the sell-by.",
+        "Eggs keep four to five weeks past the pack date, refrigerated. Count from the three-digit code, not from the sell-by.",
         "Eggs age far faster on the counter than in the fridge. A carton left out at the store or at home has spent its window early.",
         "A cold egg left out at room temperature can sweat. Moisture on the shell is where bacteria can take hold. Refrigerated eggs should not sit out more than two hours.",
         "Keep the carton on a middle or lower shelf, not the door. The door swings warm every time it opens.",
@@ -677,10 +675,6 @@
         {
           "term": "USDA Organic",
           "meaning": "Organic feed, no GMOs, no routine antibiotics. For how hens lived, read the pasture words."
-        },
-        {
-          "term": "Pasture-raised",
-          "meaning": "Real pasture time, meaningful mainly when third-party certified."
         },
         {
           "term": "Soy-free / corn-free",
@@ -774,7 +768,7 @@
         "where should i keep eggs",
         "why are us eggs in the fridge"
       ],
-      "instead": "If you can’t get corn- and soy-free eggs: soy-free, organic, pasture-raised eggs.",
+      "instead": "If you can’t get corn- and soy-free eggs: soy-free, organic, pasture-raised, then organic pasture-raised.",
       "family": "fam_eggs",
       "delta": "Hen shells may be white, brown or blue; color follows breed."
     },
@@ -1316,21 +1310,20 @@
       "buying_tips": [
         "Look for “100% grass-fed” and Certified Grassfed on a cream-top carton.",
         "Read near the date. ‘Ultra-pasteurized’ or ‘UHT’ on the carton explains a date months out. Skip that carton.",
-        "The ladder runs four steps. Raw from a farm you can name. Then low-temp pasteurized and cream-top. Then A2, then the carton in front of you.",
-        "Can’t find it: A2 milk, then the organic whole-milk carton in front of you.",
+        "The ladder: low-temperature and cream-top, then A2 milk, then the carton in front of you.",
         "Check the fat: whole is 3.25% milkfat by federal standard. Reduced-fat is 2%, low-fat 1%, skim under half a percent.",
         "100% grass-fed means grass and hay, never grain. Pasture milk is a separate question from the fat.",
         "‘Cream-top’ or ‘non-homogenized’ means the fat separates. Shake it. Non-homogenized is still pasteurized. Two different processes.",
         "Jersey and Guernsey are the A2 breeds. Small dairies name the breed; the big labels only print the seal.",
         "A2 yogurt and A2 cheese are the same milk cultured. The breed question does not change.",
-        "“A2 milk” names the A2 beta-casein variant, not a heat or fat-processing method.",
         "Ultra-pasteurized milk resists culturing. Skip it for homemade yogurt.",
         "Every bit of heat changes milk. The shortest date on the shelf usually means the least processing, not worse milk.",
         "rBST is a synthetic growth hormone given to dairy cows. Certified organic milk comes from cows that cannot receive it.",
         "No organic carton: find “from cows not treated with rBST”. US labels need not say whether cows received it.",
         "Organic sets a 30 percent grazing minimum in season; Certified Grassfed sets a 100 percent grass and forage diet.",
         "Look for the farm named on the carton.",
-        "Look for Regenerative Organic Certified, Certified Regenerative by A Greener World or Land to Market Verified."
+        "Look for Regenerative Organic Certified, Certified Regenerative by A Greener World or Land to Market Verified.",
+        "Raw milk from a farm you can name, where it is sold, as an option."
       ],
       "watch_out": [
         "Chocolate and strawberry jugs carry dessert-level added sugar. Check that line before the fat one.",
@@ -1339,9 +1332,9 @@
         "‘Whole’ does not mean all fat. Whole milk is 3.25% milkfat. The 2%, 1% and skim jugs come from skimming cream off before homogenization and adding less back. None is made by adding water.",
         "Ultra-pasteurized A2 is still UHT. The A2 claim says nothing about processing, and processing is the higher-order question.",
         "The seal is a licensed program, not a farming standard. It reports the protein and nothing about how the herd lived.",
-        "Easier to digest is the most promising claim and still the unproven one. The extension line says the digestion and health claims for A2 have not been proven by science. The label reports which protein is in the carton and nothing more.",
+        "Easier to digest is the most promising claim and still the unproven one. The digestion and health claims for A2 have not been proven by science. The label reports which protein is in the carton and nothing more.",
         "Breed is a tendency, not a test. Jerseys and Guernseys carry more A2 genes than Holsteins. Still, a Holstein herd can be more than half A2A2. An A1A2 cow gives milk with both proteins. The claim rests on a tested herd, not on the breed.",
-        "Homogenization carries no health benefit and no health risk. Preferring cream-top is a preference about texture and steps, and the extension line says exactly that.",
+        "Homogenization carries no health benefit and no health risk. Preferring cream-top is a preference about texture and steps.",
         "Non-homogenized is not raw. It is still pasteurized; only the fat was left alone.",
         "Raw milk can carry germs such as Campylobacter, E. coli, Listeria and Salmonella, which pasteurization kills."
       ],
@@ -1398,7 +1391,7 @@
         "what does homogenized mean",
         "difference between pasteurized and ultra pasteurized"
       ],
-      "instead": "If you can’t get raw: low-temp pasteurized, organic, 100% grass-fed whole milk.",
+      "instead": "If you can’t get 100% grass-fed: organic whole milk with a low-temperature label.",
       "family": "fam_fluid_animal_milk",
       "delta": "Whole milk on the label; skip skim, 1% and 2%."
     },
@@ -1447,9 +1440,8 @@
       "buying_tips": [
         "Milk, salt, cultures, and enzymes or rennet on the block’s list.",
         "100% grass-fed milk named on the block, with the Certified Grassfed seal and the creamery.",
-        "Raw-milk cheese from grass-fed herds.",
-        "Can’t find a block: bagged shreds named cheese.",
-        "No organic block: a wrapper saying the milk is from cows not given rBST, or “rBST free”."
+        "No organic block: a wrapper saying the milk is from cows not given rBST, or “rBST free”.",
+        "Raw-milk cheese from grass-fed herds, as an option."
       ],
       "labels_decoded": [
         {
@@ -1540,10 +1532,10 @@
       "cart_pick": "100% grass-fed plain whole yogurt",
       "buying_tips": [
         "“100% grass-fed” plain whole-milk yogurt with the Certified Grassfed seal.",
-        "Raw plain whole-milk yogurt from a farm, where it is sold.",
-        "Can’t find 100% grass-fed: plain organic whole-milk yogurt. Whole-milk versions are more filling and less tinkered with than fat-free.",
         "Organic or “rBST free”: no rBST, a synthetic growth hormone, in the herd.",
-        "A short list is the sign: milk and cultures. No added color, dyes, thickeners or vitamins. Thickeners do the job straining does, for less."
+        "A short list is the sign: milk and cultures. No added color, dyes, thickeners or vitamins. Thickeners do the job straining does, for less.",
+        "Whole-milk versions are more filling and less tinkered with than fat-free.",
+        "Raw whole-milk yogurt from a farm, where it is sold, as an option."
       ],
       "labels_decoded": [
         {
@@ -1599,7 +1591,7 @@
         "what does live and active cultures mean",
         "what is skyr"
       ],
-      "instead": "If you can’t get 100% grass-fed Greek yogurt: plain organic whole-milk yogurt.",
+      "instead": "If you can’t get 100% grass-fed: unflavored organic whole-milk yogurt.",
       "family": "fam_plain_cultured_dairy",
       "delta": "Greek or unstrained yogurt with milk and cultures; skip fruit-on-the-bottom pots."
     },
@@ -3389,7 +3381,7 @@
       ],
       "tier_note": "Mussels and oysters taking no feed at all is documented; which farmed species clear the bar is the whole-food standard.",
       "watch_out": [
-        "Farmed salmon, catfish and trout sit on traditional avoid lists; farmed shellfish needs no feed at all.",
+        "Skip farmed salmon, catfish and trout; farmed shellfish needs no feed at all.",
         "Skip farmed tilapia and pangasius; traditional guides list farmed fish to avoid."
       ],
       "pick_steps": [
@@ -3425,7 +3417,7 @@
       "decision": "Blue MSC logo on wild fish; ASC logo on farmed.",
       "why": "The MSC mark is only for wild fish from certified fisheries.",
       "short_answer": "The blue MSC label covers wild fishery management; ASC and BAP audit farms. None is a health claim. Wild, a named origin and a catch method say more.",
-      "detail": "Each seal answers one question. MSC audits whether a wild fishery is managed so the stock holds. ASC and BAP audit farms, and BAP’s stars count the audited links from plant up to feed mill. None tells anything about the fish in front of you: how fresh it is, what it ate, or how it was handled. A farmed salmon can carry a farm seal and still sit on traditional avoid lists. The origin, wild or farmed, and how it was caught say more than a seal.",
+      "detail": "Each seal answers one question. MSC audits whether a wild fishery is managed so the stock holds. ASC and BAP audit farms, and BAP’s stars count the audited links from plant up to feed mill. None tells anything about the fish in front of you: how fresh it is, what it ate, or how it was handled. A farmed salmon can carry a farm seal and still be one to skip. The origin, wild or farmed, and how it was caught say more than a seal.",
       "evidence_tier": "established",
       "sources": [
         {
@@ -4230,11 +4222,10 @@
       "kristy_take": "Harvest date, dark bottle, one country. Everything else on the front is decoration.",
       "instead": "Butter or ghee for anything cooked. Whole-food fats, with no harvest date to check.",
       "buying_tips": [
-        "Olive oil starts aging the day it is pressed, and dark glass keeps light off it.",
+        "Extra virgin olive oil in dark glass, since light ages it.",
         "A harvest date, not just “best by”, and a recent one.",
         "One country of origin, named with “product of”.",
-        "Organic oil from a single estate or a small producer.",
-        "Extra virgin: pressed without heat or solvent, and passed by a taste panel."
+        "Organic oil from a single estate or a small producer."
       ],
       "pick_steps": [
         "‘Pure’, ‘classic’ and ‘light’, all refined oil; pomace is solvent-extracted."
@@ -4243,10 +4234,10 @@
       "labels_decoded": [
         {
           "term": "Extra virgin",
-          "meaning": "Mechanically extracted, within a strict acidity limit, and taste-panel tested."
+          "meaning": "Pressed without heat or solvent, within a strict acidity limit, and passed by a taste panel."
         },
         {
-          "term": "Virgin",
+          "term": "Virgin (not extra virgin)",
           "meaning": "The same extraction with a looser limit."
         },
         {
@@ -5424,8 +5415,7 @@
       "watch_out": [
         "Florets enlarged, opened, yellowish-green, or wilted: the broccoli is not fresh.",
         "Browned florets on cauliflower: leave it and pick a creamy white head.",
-        "Soft or slippery anywhere on the head is a sign of spoilage. Leave it.",
-        "Keep cauliflower away from raw meat and meat juices."
+        "Soft or slippery anywhere on the head is a sign of spoilage. Leave it."
       ],
       "pick_steps": [
         "Broccoli, cabbage and cauliflower heavy for their size."
@@ -6337,7 +6327,7 @@
       ],
       "science": "Blanching stops the enzymes that would otherwise break down flavor, color and texture in the freezer. Quick freezing after blanching locks that in.",
       "labels_decoded": [],
-      "tier_note": "Loose peas in the bag show a clean freeze; extension guides explain blanching.",
+      "tier_note": "Loose peas in the bag show a clean freeze; university food guides explain blanching.",
       "asked_as": [
         "which frozen peas should i buy",
         "are frozen peas as good as fresh",
@@ -6398,7 +6388,7 @@
       ],
       "science": "Blanching stops the enzymes that would otherwise break down flavor, color and texture in the freezer. Quick freezing after blanching locks that in.",
       "labels_decoded": [],
-      "tier_note": "Loose florets in the bag show a clean freeze; extension guides explain blanching.",
+      "tier_note": "Loose florets in the bag show a clean freeze; university food guides explain blanching.",
       "asked_as": [
         "which frozen broccoli should i buy",
         "is frozen broccoli as good as fresh",
@@ -6612,7 +6602,7 @@
           "meaning": "The US disclosure word for food made with genetic engineering."
         }
       ],
-      "tier_note": "The bioengineered list and the organic rule are written law; freshness signs come from extension guides.",
+      "tier_note": "The bioengineered list and the organic rule are written law; freshness signs come from university food guides.",
       "asked_as": [
         "which sweet corn should i buy",
         "how do i pick fresh corn on the cob",
@@ -6731,7 +6721,7 @@
       ],
       "science": "Summer squash is picked young, with a thin edible rind. Oversized squash has grown tougher and seedier. Virus-resistant engineered summer squash is on the federal bioengineered list.",
       "labels_decoded": [],
-      "tier_note": "Small, glossy, heavy squash is the extension-guide call for tender flesh.",
+      "tier_note": "Small, glossy, heavy squash is the standard call for tender flesh.",
       "asked_as": [
         "which zucchini should i buy",
         "how do i pick summer squash",
@@ -6794,7 +6784,7 @@
           "meaning": "A peer-reviewed label for small farms that use no synthetic herbicides, pesticides, fertilizers or GMOs."
         }
       ],
-      "tier_note": "Yellow or brown spots on cilantro leaves are the extension age check.",
+      "tier_note": "Yellow or brown spots on cilantro leaves are the standard age check.",
       "asked_as": [
         "which cilantro should i buy",
         "how do i pick fresh cilantro",
@@ -6859,7 +6849,7 @@
           "meaning": "A peer-reviewed label for small farms that use no synthetic herbicides, pesticides, fertilizers or GMOs."
         }
       ],
-      "tier_note": "Wilted or yellow parsley stems are the extension freshness check.",
+      "tier_note": "Wilted or yellow parsley stems are the standard freshness check.",
       "asked_as": [
         "which fresh parsley should i buy",
         "how do i pick fresh parsley",
@@ -6924,7 +6914,7 @@
           "meaning": "A peer-reviewed label for small farms that use no synthetic herbicides, pesticides, fertilizers or GMOs."
         }
       ],
-      "tier_note": "Dark or brown spots on basil leaves are the extension freshness check.",
+      "tier_note": "Dark or brown spots on basil leaves are the standard freshness check.",
       "asked_as": [
         "which fresh basil should i buy",
         "how do i pick fresh basil",
@@ -6984,7 +6974,7 @@
       ],
       "science": "Edible-pod peas are picked young, before the peas inside swell. Limp pods have lost water and sweetness.",
       "labels_decoded": [],
-      "tier_note": "A firm pod over a limp one is the extension-guide freshness call.",
+      "tier_note": "A firm pod over a limp one is the standard freshness call.",
       "asked_as": [
         "which snap peas should i buy",
         "how do i pick sugar snap peas",
@@ -7217,7 +7207,7 @@
       ],
       "science": "Mangoes ripen after picking. Cold storage before ripe can cause chill damage and stop flavor from developing.",
       "labels_decoded": [],
-      "tier_note": "Softness near the stem and a sweet smell are extension ripeness signs.",
+      "tier_note": "Softness near the stem and a sweet smell are the standard ripeness signs.",
       "asked_as": [
         "which mangoes should i buy",
         "how do i pick a fresh mango",
@@ -7445,7 +7435,6 @@
       "buying_tips": [
         "‘Sourdough’ or ‘sprouted’ on the bag, plus organic.",
         "Whole wheat in the first ingredient; a loaf called just ‘wheat’ may be white flour.",
-        "Can’t find sourdough or sprouted: organic 100% whole grain.",
         "Whole-grain flour, water, salt and a starter or yeast, little else.",
         "Olive oil, butter or no added fat, in place of seed oil."
       ],
@@ -7477,7 +7466,7 @@
       ],
       "family": "fam_whole_grain_baking",
       "delta": "For a sliced loaf, read keep-frozen or freeze-upon-arrival instructions on the bag.",
-      "instead": "Organic sourdough or sprouted whole-grain sandwich bread."
+      "instead": "Organic 100% whole-grain bread."
     },
     {
       "id": "sourdough",
@@ -7832,7 +7821,7 @@
       ],
       "category": "bulk_pantry",
       "question": "How do you choose breakfast cereal or granola?",
-      "decision": "Plain oats soaked and cooked, or soaked or sprouted granola.",
+      "decision": "Sprouted or soaked-grain organic granola, or soaked cooked oats.",
       "why": "Cold cereal is made by extrusion, high heat and pressure. Soaked, cooked porridge is the traditional breakfast grain.",
       "short_answer": "Boxed cold cereal is extruded: a grain slurry forced through a small hole at high heat and pressure. Organic boxes are made the same way. Soaked, cooked porridge is the top rung; soaked or sprouted granola is the boxed pick.",
       "detail": "Modern cold breakfast cereals are made by extrusion. Grains are mixed with water into a slurry and forced out of a small hole under very high temperature and pressure; the shape of the die makes the flake, the O or the puff. Health food store cereals are usually made the same way, often with organic grains. The traditional breakfast grain is a porridge: whole grains soaked overnight and cooked, served with butter and cream. Unsoaked granola sits with extruded cereal on the low rung, and organic soaked granola is the boxed option. For oat cereal, certified organic skips glyphosate sprayed before harvest.",
@@ -7852,12 +7841,12 @@
         }
       ],
       "kristy_take": "A pot of soaked oats with butter and cream does the job the box claims to. If it has to be boxed, soaked or sprouted granola.",
-      "cart_pick": "Rolled oats to soak",
+      "cart_pick": "Sprouted-grain granola",
       "buying_tips": [
+        "Organic granola made with sprouted or soaked grain.",
         "Plain rolled oats to soak overnight and cook in the morning.",
-        "‘Soaked’ or ‘sprouted’ grain and ‘USDA Organic’ on the box.",
-        "No time for oats: organic granola that says the grain was soaked or sprouted.",
-        "Organic oats, over conventional."
+        "Organic oats, over conventional.",
+        "Sugar under other names on the list, honey and syrups included."
       ],
       "watch_out": [
         "Organic extruded cereal goes through the same process as the rest of the aisle.",
@@ -8196,7 +8185,6 @@
       "buying_tips": [
         "‘100% grass-fed’ on beef packs, plus a checking group’s logo like AGA Grassfed.",
         "The named meat first on the list, with no mechanically separated (machine-stripped) chicken or turkey.",
-        "No grass-fed hot dogs: fresh sausage from the butcher counter, its meat named.",
         "Wood-smoked, not ‘smoke flavoring’ or ‘liquid smoke’."
       ],
       "watch_out": [
@@ -8670,7 +8658,7 @@
       ],
       "science": "Microgreens are harvested young and eaten raw, so there is no cooking step to kill pathogens. That is why growers test water for E. coli.",
       "labels_decoded": [],
-      "tier_note": "Crisp leaves and a dry pack are extension freshness signs.",
+      "tier_note": "Crisp leaves and a dry pack are the standard freshness signs.",
       "asked_as": [
         "which microgreens should i buy",
         "are microgreens safe to eat raw",
@@ -8722,7 +8710,7 @@
           "meaning": "An added substance the standard allows to protect or restore how whites whip."
         }
       ],
-      "tier_note": "Pasteurized whites are federal law; the pasture-raised hen rung is holistic.",
+      "tier_note": "Pasteurized whites are federal law; the pasture-raised hen rung is a feed and pasture call.",
       "asked_as": [
         "which egg whites should i buy",
         "are carton egg whites pasteurized",
@@ -9212,7 +9200,7 @@
       "decision": "Wild or grass-farmed venison in plain cuts, the species named.",
       "why": "Venison is lean, and traditional guides say eat meat with its fat. Cold handling at the processor decides how it keeps.",
       "short_answer": "Choose game processed in fully refrigerated facilities, with each animal handled on its own. Use refrigerated venison within two or three days.",
-      "detail": "Deer and elk can carry Chronic Wasting Disease (CWD). Research finds its abnormal proteins in brain, spinal cord and lymph tissue, not in muscle. No evidence shows it passing to humans naturally, but that is not ruled out. Extension guidance advises avoiding the brain, spinal cord, eyes, spleen and lymph nodes. Cook whole cuts to 145°F and ground game to 160°F. Wrapped game keeps 9 to 12 months frozen.",
+      "detail": "Deer and elk can carry Chronic Wasting Disease (CWD). Research finds its abnormal proteins in brain, spinal cord and lymph tissue, not in muscle. No evidence shows it passing to humans naturally, but that is not ruled out. Food-safety guidance advises avoiding the brain, spinal cord, eyes, spleen and lymph nodes. Cook whole cuts to 145°F and ground game to 160°F. Wrapped game keeps 9 to 12 months frozen.",
       "evidence_tier": "kristys_standard",
       "sources": [
         "Weston A. Price Foundation: Shopping Guide (Best, Good and Avoid tiers)"
@@ -9233,7 +9221,7 @@
       "pick_steps": [
         "Keep the fat on, and use unfrozen venison within two or three days."
       ],
-      "science": "Game is often processed by small shops, so cold handling decides its safety. Research finds abnormal Chronic Wasting Disease proteins in deer and elk brain, spinal cord and lymph tissue, not muscle. Extension guidance advises skipping the brain, spinal cord, eyes, spleen and lymph nodes. Cook whole cuts to 145°F and ground game to 160°F.",
+      "science": "Game is often processed by small shops, so cold handling decides its safety. Research finds abnormal Chronic Wasting Disease proteins in deer and elk brain, spinal cord and lymph tissue, not muscle. Food-safety guidance advises skipping the brain, spinal cord, eyes, spleen and lymph nodes. Cook whole cuts to 145°F and ground game to 160°F.",
       "labels_decoded": [
         {
           "term": "Aging",
@@ -9270,7 +9258,7 @@
       "question": "Which jerky should I buy?",
       "decision": "Grass-fed beef jerky, salt and real smoke only.",
       "why": "Jerky from grazing animals, made without MSG-type additives, leads the Weston A. Price list.",
-      "short_answer": "The best jerky comes from animals allowed to graze, made with salt, a little sugar and natural smoke. Hydrolyzed protein, citric acid, “spices” or “natural flavors” usually signal hidden MSG.",
+      "short_answer": "The best jerky comes from animals allowed to graze, made with salt, a little sugar and natural smoke. Hydrolyzed protein signals hidden MSG, and “natural flavors” can hide it too.",
       "detail": "Celery, spinach or beet powder versions without MSG sit one rung down. AGA Grassfed means grass and forage alone from weaning to harvest, with no antibiotics or added growth hormones.",
       "evidence_tier": "kristys_standard",
       "sources": [
@@ -9295,17 +9283,17 @@
         "Pemmican from the same grazing animals."
       ],
       "watch_out": [
-        "Hydrolyzed protein, citric acid or “natural flavors” usually mean hidden MSG.",
+        "Hydrolyzed protein is a hidden source of MSG, and “natural flavors” can hide it too.",
         "Skip jerky with sugar near the top of the list."
       ],
-      "science": "The Weston A. Price shopping guide ranks meat snacks from grazing animals, made with salt and natural smoke, first. It flags hydrolyzed protein, citric acid, “spices” and “natural flavors” as usual MSG sources. AGA Grassfed means a grass and forage diet from weaning to harvest, raised on pasture.",
+      "science": "The Weston A. Price shopping guide ranks meat snacks from grazing animals, made with salt and natural smoke, first. It flags hydrolyzed protein and “natural flavors” as places MSG hides. AGA Grassfed means a grass and forage diet from weaning to harvest, raised on pasture.",
       "labels_decoded": [
         {
           "term": "AGA Grassfed",
           "meaning": "Grass and forage only from weaning to harvest, on pasture, no antibiotics or added hormones."
         }
       ],
-      "tier_note": "Holistic guides skip liquid smoke and MSG; federal rules allow both.",
+      "tier_note": "Federal rules allow liquid smoke and MSG; a cleaner jerky skips both.",
       "asked_as": [
         "which jerky should i buy",
         "what should beef jerky list",
@@ -9315,7 +9303,7 @@
     {
       "id": "soup_bones",
       "title": "Soup bones",
-      "category": "pork",
+      "category": "beef",
       "family": "fam_ruminant_meat",
       "aliases": [
         "soup bone",
@@ -9409,7 +9397,7 @@
       "decision": "Wild-caught white fish named by kind, like cod or halibut.",
       "why": "Wild Pacific cod is the pick; its gray or brown skin and paler belly provide a visible species check.",
       "short_answer": "Ask the counter which species it is, since a fillet is hard to identify by eye. Then look for shiny, firm flesh that springs back, a mild sea smell, and no dried or dark edges.",
-      "detail": "Seafood must be labeled with an acceptable market name for its species, so the name is the check. Wild cod or halibut by name, fresh or frozen at sea, is the pick. Tilapia, catfish and trout from farms sit on traditional avoid lists. Fillets should sit on ice, not buried in it. For frozen packs, skip tears, ice crystals, liquid inside, or soft flesh.",
+      "detail": "Seafood must be labeled with an acceptable market name for its species, so the name is the check. Wild cod or halibut by name, fresh or frozen at sea, is the pick. Skip tilapia, catfish and trout from farms. Fillets should sit on ice, not buried in it. For frozen packs, skip tears, ice crystals, liquid inside, or soft flesh.",
       "evidence_tier": "established",
       "sources": [
         "https://www.americastestkitchen.com/lessons/articles/431-buying-and-storing-white-fish",
@@ -9936,8 +9924,8 @@
       ],
       "watch_out": [
         "Skip boxes listing soy oil or vegetable oil.",
-        "Seafood from China sits on the holistic avoid list.",
-        "Skip Vietnam swai or basa; critics call ‘MSC certified’ a low bar."
+        "Skip seafood from China.",
+        "Skip Vietnam swai or basa."
       ],
       "science": "NOAA Fisheries reports that the Aleutian Islands, eastern Bering Sea and Gulf of Alaska pollock stocks are not overfished. Close to half of pollock products are fillets, a quarter is surimi and almost a fifth is roe.",
       "labels_decoded": [
@@ -9946,7 +9934,7 @@
           "meaning": "Minced, washed fish paste, the base of imitation crab."
         }
       ],
-      "tier_note": "The fish species’ stock status is federal fact; the oil bar is holistic.",
+      "tier_note": "The fish species’ stock status is federal fact; the oil bar is the whole-food standard.",
       "asked_as": [
         "which fish sticks should i buy",
         "what fish is in fish sticks",
@@ -10022,7 +10010,7 @@
           "meaning": "Gluten added to the dough on top of the grain."
         }
       ],
-      "tier_note": "Sprouted grains first is a label read; a loaf without added flour is the whole-food standard.",
+      "tier_note": "Sprouted grains first is printed on the list; a loaf without added flour is the whole-food standard.",
       "asked_as": [
         "is sprouted grain bread worth buying",
         "how do i pick a sprouted bread",
@@ -10511,7 +10499,7 @@
         "naan bread"
       ],
       "question": "Which pita or naan should I buy?",
-      "decision": "Whole wheat pita with a short list.",
+      "decision": "Whole wheat pita or naan with a short list.",
       "why": "Pita is flour, water, yeast and salt, so the first ingredient decides the bread.",
       "short_answer": "Pita has few ingredients: wheat flour, water, yeast and salt. Naan adds milk, yogurt and oil or butter, and is often brushed with ghee. Enriched flour and wheat flour never describe a whole grain.",
       "detail": "Pita consists of whole and white wheat flour, water, yeast and salt. It puffs in a hot oven and opens into a pocket. Naan is made with flour, water, yeast, milk, yogurt, and oil or butter. Eggs and nigella seeds are common, and the baked bread is often brushed with ghee. Yogurt, sugar and fat give naan its soft texture. The Whole Grains Council says “enriched flour” and “wheat flour” never describe whole grains.",
@@ -10527,9 +10515,9 @@
         }
       ],
       "kristy_take": "A whole grain listed first is the standard here. Naan made with yogurt and butter is the richer bread, not the everyday one.",
-      "cart_pick": "Whole wheat pita",
+      "cart_pick": "Whole wheat pita or naan",
       "buying_tips": [
-        "Organic whole wheat pita, with whole wheat flour first on a short list.",
+        "Organic whole wheat pita, whole wheat first on a short list.",
         "Flour, water, yeast and salt, with nothing else needed.",
         "Can’t find it: naan made with yogurt and butter or ghee, not vegetable oil.",
         "A list without “enriched flour” leading, which never means whole grain."
@@ -11011,7 +10999,6 @@
       "buying_tips": [
         "‘unsweetened’ and a list of almonds and water, no vitamins or minerals added.",
         "Added Sugars on the panel, since almond drinks vary.",
-        "Can’t find it: a short-list oat milk is the next plant drink.",
         "A list with no carrageenan, a seaweed thickener even some organic almond drinks use."
       ],
       "watch_out": [
@@ -11309,7 +11296,7 @@
       "decision": "Plain organic raw kombucha brewed with black tea, in glass.",
       "why": "WAPF recommends organic lacto-fermented beverages in glass jars, such as kombucha made with organic black tea.",
       "short_answer": "Pick plain kombucha from the refrigerated case, in glass, brewed with organic tea. It is a fizzy, fermented, sweetened tea, often with fruit juice added. Read the Nutrition Facts for added sugars, and the label for alcohol.",
-      "detail": "Kombucha is sugared tea fermented by a culture of bacteria and yeast. The traditional brew uses organic black tea and sugar and is kept in glass in the refrigerator. After fermenting, it is bottled for a second fermentation in the bottle, or kept cold. Its alcohol is usually under 0.5%, but it rises with longer fermentation. At one-half of 1 percent alcohol or more, it falls under federal alcohol rules, with a health warning statement on the container. Some makers sell hard kombucha at over 5 percent alcohol.",
+      "detail": "Kombucha is sugared tea fermented by a culture of bacteria and yeast. The traditional brew uses organic black tea and sugar and is kept in glass in the refrigerator. After fermenting, it is bottled for a second fermentation in the bottle, or kept cold. Its alcohol is usually under 0.5%, but it rises with longer fermentation. At one-half of 1 percent alcohol or more, it falls under federal alcohol rules, with a health warning statement on the container. Some makers brew hard kombucha as an alcoholic drink.",
       "evidence_tier": "kristys_standard",
       "sources": [
         {
@@ -11325,7 +11312,7 @@
         "An alcohol statement on the label."
       ],
       "watch_out": [
-        "Hard kombucha is an alcoholic drink, sold at over 5 percent alcohol.",
+        "Hard kombucha is brewed as an alcoholic drink.",
         "Pregnant, nursing or on medication? Ask a doctor about the alcohol in kombucha.",
         "Flavored kombucha often carries fruit juice. Plain is the traditional brew."
       ],
@@ -13881,7 +13868,7 @@
         "Fruit, honey or syrups as the sweetener, with nuts and seeds.",
         "No sugar, high fructose corn syrup or hydrogenated oils on the list."
       ],
-      "science": "Ingredients are listed in descending order of predominance, so the first one leads. Rolled oats count as whole grain, since flattening or steaming keeps every part of the oat. An extension guide favors bars with whole grains, sweetened with fruit, honey or syrups, with nuts and seeds. The same guide advises avoiding bars with hydrogenated oils.",
+      "science": "Ingredients are listed in descending order of predominance, so the first one leads. Rolled oats count as whole grain, since flattening or steaming keeps every part of the oat. A university food guide favors bars with whole grains, sweetened with fruit, honey or syrups, with nuts and seeds. The same guide advises avoiding bars with hydrogenated oils.",
       "labels_decoded": [
         {
           "term": "Added Sugars",
@@ -13919,7 +13906,7 @@
       "decision": "Organic raw nuts and unsulphured dried fruit, nothing else.",
       "why": "WAPF avoid list names nut mixtures with partially hydrogenated oils, sugar, chocolate or flavorings.",
       "short_answer": "Trail mix began as nuts and dried fruit carried on the trail. Ingredients run in order of amount, so the list shows what leads and what was added.",
-      "detail": "Under 21 CFR 101.4, ingredients are listed in descending order of predominance. An extension guide makes the same point: the foods at the start of the list are the most in the recipe. Raw versus roasted nuts is its own question, with its own card. So is dried fruit.",
+      "detail": "Under 21 CFR 101.4, ingredients are listed in descending order of predominance. A university food guide makes the same point: the foods at the start of the list are the most in the recipe. Raw versus roasted nuts is its own question, with its own card. So is dried fruit.",
       "evidence_tier": "kristys_standard",
       "sources": [
         {
@@ -14785,7 +14772,7 @@
       ],
       "question": "Is margarine worth buying?",
       "decision": "Grass-fed butter, cream and salt, in place of margarine.",
-      "why": "Holistic guides avoid margarines and spreads, and rank grass-fed butter first.",
+      "why": "The Weston A. Price guide avoids margarines and spreads, and ranks grass-fed butter first.",
       "short_answer": "Margarine is at least 80 percent fat, and that fat may be vegetable oil, rendered animal fat or marine oil. The Weston A. Price guide avoids all margarines and spreads, including butter blended with vegetable oil.",
       "detail": "Raw butter from grass-fed animals is the top fat on that list; pasteurized butter or ghee with no added flavoring comes next.",
       "evidence_tier": "kristys_standard",
@@ -14805,7 +14792,7 @@
       "buying_tips": [
         "Grass-fed butter listing only cream and salt.",
         "Ghee with no added flavoring, grass-fed where possible.",
-        "Raw butter from a grass-fed farm, where sold."
+        "Raw butter from a grass-fed farm, where sold, as an option."
       ],
       "pick_steps": [
         "Butter alone, not blended with vegetable oil."
@@ -14813,11 +14800,11 @@
       "watch_out": [
         "Skip spreads that blend butter with vegetable oils.",
         "Partially hydrogenated oil on any spread.",
-        "Whipped butter sits on the holistic avoid list."
+        "Skip whipped butter."
       ],
       "science": "The federal standard defines margarine as at least 80 percent fat, with vitamin A added. The fat may be vegetable oil, rendered animal fat or marine oil. The Weston A. Price guide avoids margarines, spreads, shortenings and partially hydrogenated vegetable oils.",
       "labels_decoded": [],
-      "tier_note": "The 80 percent fat floor is federal; preferring butter is a holistic standard.",
+      "tier_note": "The 80 percent fat floor is federal; preferring butter is a fewer-ingredients call.",
       "asked_as": [
         "is margarine worth buying",
         "should i buy margarine",
@@ -14950,7 +14937,7 @@
         "A list with no added sugar, natural flavors or citric acid."
       ],
       "watch_out": [
-        "Added vitamins and minerals, artificial sweeteners and natural flavors sit on the traditional avoid list.",
+        "Skip added vitamins and minerals, artificial sweeteners and natural flavors.",
         "On blood pressure medication? Check the label minerals with a doctor first."
       ],
       "pick_steps": [
@@ -14963,7 +14950,7 @@
           "meaning": "Minerals such as potassium, sodium and magnesium."
         }
       ],
-      "tier_note": "Extension guidance backs the facts: coconut water carries the same minerals, and plain water hydrates as well.",
+      "tier_note": "University food guides back the facts: coconut water carries the same minerals, and plain water hydrates as well.",
       "asked_as": [
         "which sports drink should i buy",
         "what should i buy instead of a sports drink",
@@ -15000,7 +14987,7 @@
         "Kombucha made with organic black tea, in glass."
       ],
       "watch_out": [
-        "Caffeine, added vitamins and citric acid all sit on the traditional avoid list for drinks.",
+        "Skip caffeine, added vitamins and citric acid in drinks.",
         "Some herb teas can have drug-like effects; anything medical is a doctor’s call."
       ],
       "pick_steps": [
@@ -15010,7 +14997,7 @@
       "labels_decoded": [
         {
           "term": "Added vitamins",
-          "meaning": "Synthetic vitamins added to the drink, on the traditional avoid list."
+          "meaning": "Synthetic vitamins added to the drink."
         }
       ],
       "tier_note": "A traditional ranking: the swap drops the caffeine and additives together, not one at a time.",
@@ -15054,7 +15041,7 @@
         "A list with no Red 40, Yellow 5, Yellow 6 or Blue 1."
       ],
       "watch_out": [
-        "Fruit juice concentrate on the list is a sweetener on the traditional avoid list.",
+        "Fruit juice concentrate on the list is an added sweetener.",
         "Corn syrup or sugar listed first."
       ],
       "pick_steps": [
@@ -15067,7 +15054,7 @@
           "meaning": "Some fruit is in it; the list shows how much and what else."
         }
       ],
-      "tier_note": "Two sources line up on the list: fruit alone beats concentrated juice and synthetic dyes.",
+      "tier_note": "On the list, fruit alone beats concentrated juice and synthetic dyes.",
       "asked_as": [
         "what should i buy instead of fruit snacks",
         "are fruit snacks healthy",
@@ -15086,7 +15073,7 @@
       ],
       "question": "Which whipped topping should I buy?",
       "decision": "Grass-fed heavy cream, whipped at home.",
-      "why": "Holistic guides avoid canned and imitation whipped cream; plain cream is the whole-food swap.",
+      "why": "The Weston A. Price guide avoids canned and imitation whipped cream; plain cream is the whole-food swap.",
       "short_answer": "Heavy cream holds at least 36 percent milkfat and whips on its own. Imitation whipped cream made with vegetable oils and canned whipped cream both sit on the Weston A. Price avoid list.",
       "detail": "The federal heavy cream standard permits emulsifiers, stabilizers and sweeteners, so a short label still needs reading. Polysorbates keep oil from separating out of artificial whipped cream.",
       "evidence_tier": "kristys_standard",
@@ -15118,16 +15105,16 @@
       "watch_out": [
         "Skip tubs made with vegetable oil.",
         "Polysorbates on the list mark an oil-based topping.",
-        "Canned whipped cream sits on the holistic avoid list."
+        "Skip canned whipped cream."
       ],
       "science": "Heavy cream must contain at least 36 percent milkfat and may be pasteurized or ultra-pasteurized. Its standard allows emulsifiers and stabilizers. Polysorbates are emulsifiers that keep oil from separating out of artificial whipped cream.",
       "labels_decoded": [
         {
           "term": "Ultra-pasteurized",
-          "meaning": "Cream heated beyond standard pasteurization, avoided by the holistic guide."
+          "meaning": "Cream heated beyond standard pasteurization."
         }
       ],
-      "tier_note": "The cream standard is federal; avoiding oil-based toppings is a holistic call.",
+      "tier_note": "The cream standard is federal; skipping oil-based toppings favors plain cream.",
       "asked_as": [
         "which whipped topping should i buy",
         "is whipped topping real cream",
@@ -16462,7 +16449,7 @@
         "The country of origin on any farmed trout."
       ],
       "watch_out": [
-        "Farmed trout sits on traditional avoid lists; wild is the first pick."
+        "Skip farmed trout; wild is the first pick."
       ],
       "pick_steps": [
         "Wild trout in stock at the counter."
@@ -16591,7 +16578,7 @@
       ],
       "question": "Which catfish should I buy?",
       "decision": "Wild catfish from known clean waters.",
-      "why": "Holistic guides rank catfish from clean waters best and avoid farmed catfish.",
+      "why": "Catfish from clean waters ranks best; farmed catfish is the one to skip.",
       "short_answer": "Catfish sits on the FDA and EPA list of commonly eaten fish consistently low in mercury. The Weston A. Price guide wants catfish guaranteed from clean waters and avoids farmed catfish.",
       "detail": "That guide also avoids seafood from China and seafood containing soy oil, vegetable oil or added flavorings. Where the source cannot be named, the fish counter can say where the catfish came from.",
       "evidence_tier": "kristys_standard",
@@ -16616,12 +16603,12 @@
         "A counter answer on wild or farmed."
       ],
       "watch_out": [
-        "Farmed catfish sits on the holistic avoid list.",
+        "Skip farmed catfish.",
         "Skip catfish imported from China."
       ],
       "science": "FDA and EPA advice, summarized by Chris Kresser, lists catfish among commonly eaten fish consistently low in mercury. Shrimp, canned light tuna, salmon and pollock share that list. The Weston A. Price guide separates catfish from clean waters, its best rung, from farmed catfish.",
       "labels_decoded": [],
-      "tier_note": "Low mercury is federal fact; the clean-water and wild rung is a holistic standard.",
+      "tier_note": "Low mercury is federal fact; the clean-water and wild rung is the whole-food standard.",
       "asked_as": [
         "which catfish should i buy",
         "should i buy farmed catfish",
@@ -16682,7 +16669,7 @@
           "meaning": "Required name wording when bologna contains meat byproducts."
         }
       ],
-      "tier_note": "“With byproducts” naming is federal law; the grass-fed rung is holistic.",
+      "tier_note": "“With byproducts” naming is federal law; the grass-fed rung is a sourcing preference.",
       "asked_as": [
         "which bologna should i buy",
         "is beef bologna better",
@@ -16739,7 +16726,7 @@
           "meaning": "An audited high-welfare label for independent farms, from A Greener World."
         }
       ],
-      "tier_note": "Welfare and pasture are a holistic standard, not a federal grade.",
+      "tier_note": "Welfare and pasture are a farm-practice call, not a federal grade.",
       "asked_as": [
         "which pork ribs should i buy",
         "are baby back ribs or spare ribs better",
@@ -16777,7 +16764,7 @@
         "A beer with no natural flavors, corn syrup or added sweeteners."
       ],
       "watch_out": [
-        "Flavored beers with natural flavors or added sweeteners fall on the traditional avoid list."
+        "Skip flavored beers with natural flavors or added sweeteners."
       ],
       "pick_steps": [
         "Glass bottles or cans over plastic."
@@ -16829,8 +16816,7 @@
         "A list with no natural flavors."
       ],
       "watch_out": [
-        "Non-organic grain, refined sugar and partially hydrogenated oils put a cookie on the traditional avoid list.",
-        "Chocolate, cocoa and cacao also sit on the traditional avoid list for cookies."
+        "Skip cookies made with non-organic grain, refined sugar or partially hydrogenated oils."
       ],
       "pick_steps": [
         "Organic on the package."
@@ -16842,7 +16828,7 @@
           "meaning": "Grain allowed to sprout before it is dried and milled."
         }
       ],
-      "tier_note": "A traditional ranking by flour, fat and sweetener; organic whole-grain flour with butter is the second rung.",
+      "tier_note": "Ranked by flour, fat and sweetener; organic whole-grain flour with butter is the second rung.",
       "asked_as": [
         "which cookies should i buy",
         "are store cookies worth buying",
@@ -16885,7 +16871,7 @@
       ],
       "watch_out": [
         "Red 3 caused thyroid tumors in rats in a review requested by FDA.",
-        "‘Sugar-free’ candy usually swaps in sugar alcohols, on the traditional avoid list."
+        "‘Sugar-free’ candy usually swaps in sugar alcohols."
       ],
       "pick_steps": [
         "Organic on the package."
@@ -16897,7 +16883,7 @@
           "meaning": "Synthetic, petroleum-based dyes such as Red 40 and Yellow 5."
         }
       ],
-      "tier_note": "Two sources line up: dyes are the first thing to read off, then the sweetener.",
+      "tier_note": "Dyes are the first thing to read off the list, then the sweetener.",
       "asked_as": [
         "which candy should i buy",
         "what candy is best to buy",
@@ -16952,7 +16938,7 @@
           "meaning": "Concentrated fruit juice, listed with refined sweeteners to avoid."
         }
       ],
-      "tier_note": "Two sources line up: concentrated juice is a sweetener to skip, and the dyes are synthetic.",
+      "tier_note": "Concentrated juice is a sweetener to skip, and the dyes are synthetic.",
       "asked_as": [
         "which popsicles should i buy",
         "are fruit ice pops healthy",
@@ -17074,7 +17060,7 @@
       "labels_decoded": [
         {
           "term": "Infant rice cereal",
-          "meaning": "The cereal four of seven tested samples put over FDA’s proposed arsenic level."
+          "meaning": "Four of seven tested samples came in over FDA’s proposed arsenic level."
         },
         {
           "term": "Single-ingredient",
@@ -17187,7 +17173,7 @@
           "meaning": "A powder, the form where testing found the most phthalates."
         }
       ],
-      "tier_note": "One lab test found the same chemicals in every powder it tested.",
+      "tier_note": "One testing group found phthalates in the boxed cheese powders it sampled.",
       "asked_as": [
         "which mac and cheese should i buy",
         "is boxed mac and cheese worth buying",
