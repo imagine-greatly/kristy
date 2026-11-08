@@ -100,7 +100,7 @@ const YOGURT_WATCH_TRIM2 = {
   'Fruit-on-the-bottom and drinkable yogurts can run higher in sugar than the pre-mixed cup. Drinkables are made by adding water and flavors.': [/Fruit-on-the-bottom and drinkable yogurts, made by adding water and flavors, can run higher in sugar than the pre-mixed cup\./],
   'A shelf-stable tub outside the cold case was heat-treated. It is yogurt, and nothing in it is alive.': [/A shelf-stable tub was heat-treated; nothing in it is alive\./],
   '‘Made with live cultures’ is a past-tense claim. The seal is the present-tense one.': [/Made with live cultures[\s\S]*A past-tense claim; the seal is the present-tense one\./],
-  'The live cultures have to appear in the ingredient list. A tub that names none was heat-processed after fermenting or never held them. The seal is voluntary, so its absence alone proves nothing.': [/No cultures named on the list: heat-treated after fermenting, or never cultured\./, /A voluntary seal: cultures present and viable\. Its absence alone proves nothing\./],
+  'The live cultures have to appear in the ingredient list. A tub that names none was heat-processed after fermenting or never held them. The seal is voluntary, so its absence alone proves nothing.': [/Live cultures must be listed; none named means heat-treated or never cultured\./, /A voluntary seal: cultures present and viable\. Its absence alone proves nothing\./],
   'Some non-dairy yogurts skip the live cultures entirely. Same aisle, same word on the lid, no ferment.': [/Some non-dairy yogurts skip the live cultures entirely: same aisle, same word on the lid, no ferment\./],
 };
 

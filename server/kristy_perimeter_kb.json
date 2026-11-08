@@ -1528,7 +1528,7 @@
         "Flavored, fruit-on-the-bottom and drinkable cups carry the added sugar.",
         "‘Light’ means sucralose or a similar high-intensity sweetener, not a plainer cup.",
         "A shelf-stable tub was heat-treated; nothing in it is alive.",
-        "No cultures named on the list: heat-treated after fermenting, or never cultured."
+        "Live cultures must be listed; none named means heat-treated or never cultured."
       ],
       "pick_steps": [
         "100% grass-fed on the tub means the cows ate grass and hay, never grain."
@@ -2289,7 +2289,7 @@
           "url": "https://www.cornucopia.org/egg-scorecard-criteria/"
         }
       ],
-      "kristy_take": "Pasture-raised plus printed feed words is the carton.",
+      "kristy_take": "Pick pasture-raised cartons that print soy-free or corn-free feed outright.",
       "buying_tips": [
         "“pasture-raised” plus “soy-free” or “corn-free” feed printed outright.",
         "A Certified Humane or Animal Welfare Approved logo beside “pasture-raised”.",
@@ -3833,9 +3833,9 @@
       ],
       "watch_out": [
         "Flavored creamers carry the most sugar; read that line first.",
-        "Real cream may list carrageenan or gellan gum; law fixes only fat.",
+        "Real cream may list carrageenan or gellan gum: the fat number is fixed by law, the list is not.",
         "Ultra-pasteurized means heated to at least 280 °F for 2 seconds.",
-        "In creamers: titanium dioxide, polysorbate 80, carboxymethylcellulose, sunflower or canola oil."
+        "Skip creamers listing titanium dioxide, polysorbate 80, carboxymethylcellulose, sunflower or canola oil."
       ],
       "pick_steps": [
         "Heavy cream at 36% milkfat or more, a standard fixed by law.",
@@ -4145,7 +4145,7 @@
       "decision": "Extra virgin olive oil with a recent harvest date, one country, dark bottle.",
       "why": "Dark glass or tins protect oil from light; UC Davis names harvest dates as a freshness cue.",
       "short_answer": "Extra virgin uses no heat or solvent, and has to pass lab and taste tests. ‘Pure’, ‘classic’ and ‘light’ are refined oil with some virgin added.",
-      "detail": "Grade and provenance are two separate checks, and a bottle has to pass both. Dark glass or tin protects it from light. ‘First cold pressed’ is a legacy phrase with no added legal force, and ‘product of’ is the phrase that names where the olives grew. In the same UC Davis testing, 73 percent of samples from the top-selling imported brands failed the extra-virgin standard. A price that is unusually low for extra virgin is a flag rather than a find; past the grade, olive oil is one of the more adulterated products in the store.",
+      "detail": "Grade and provenance are two separate checks, and a bottle has to pass both. Dark glass or tin protects it from light. ‘First cold pressed’ is a legacy phrase with no added legal force, and ‘product of’ is the phrase that names where the olives grew. In UC Davis testing of imported oils, 73 percent of samples from the top-selling imported brands failed the extra-virgin standard. A price that is unusually low for extra virgin is a flag rather than a find; past the grade, olive oil is one of the more adulterated products in the store.",
       "evidence_tier": "established",
       "sources": [
         {
