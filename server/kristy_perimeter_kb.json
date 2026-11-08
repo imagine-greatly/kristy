@@ -1462,9 +1462,9 @@
       "category": "dairy",
       "question": "What should you look for in yogurt?",
       "decision": "Plain whole-milk yogurt, 100% grass-fed, Certified Grassfed, cultures named.",
-      "why": "Organic yogurt can still contain added sugar; plain whole tubs are the pick, with grass-fed naming the milk source.",
+      "why": "Organic tubs can still carry added sugar; grass-fed names where the milk came from.",
       "short_answer": "Plain Greek yogurt from 100% grass-fed milk. Plain organic whole-milk yogurt is next. Flavored tubs are where the added sugar is.",
-      "detail": "Plain yogurt, especially Greek or strained, is a whole food: milk and cultures. The added sugar in fruit-on-the-bottom and flavored cups is where it goes sideways, and the gap between the plain tub and the fruit cup on the added-sugars line is the entire decision. Whether the cultures in that tub are still alive is a separate question, read from the ingredient list and the seal. Milk protein concentrate on the yogurt list is a concentrated milk powder made by filtering milk and drying it. Look for milk and cultures alone.",
+      "detail": "Plain yogurt, especially Greek or strained, is a whole food: milk and cultures, and the added-sugars gap between the plain tub and the fruit cup is the decision. Thickeners do the job straining does, for less. Whether the cultures are still alive is a separate question, read from the ingredient list and the seal. Some non-dairy yogurts skip the live cultures entirely: same aisle, same word on the lid, no ferment. Milk protein concentrate on the list is milk filtered and dried into a concentrated powder. Organic means certified organic feed and outdoor access.",
       "evidence_tier": "kristys_standard",
       "sources": [
         {
@@ -1484,61 +1484,56 @@
           "url": "https://www.americangrassfed.org/about-us/our-standards/"
         }
       ],
-      "kristy_take": "Big tub of plain, add your own berries. Plain has no added sugar.",
+      "kristy_take": "A big tub of plain; add your own berries.",
       "cart_pick": "100% grass-fed plain whole yogurt",
       "buying_tips": [
         "“100% grass-fed” plain whole-milk yogurt with the Certified Grassfed seal.",
-        "Organic or “rBST free”: no rBST, a synthetic growth hormone, in the herd.",
-        "A short list is the sign: milk and cultures. No added color, dyes, thickeners or vitamins. Thickeners do the job straining does, for less.",
-        "Whole-milk versions are more filling and less tinkered with than fat-free.",
-        "Raw whole-milk yogurt from a farm, where it is sold, as an option."
+        "Organic or “rBST free”: no synthetic growth hormone in the herd.",
+        "Milk and cultures only: no added color, dyes, thickeners or vitamins.",
+        "Whole milk over fat-free: more filling, less tinkered with.",
+        "Raw whole-milk yogurt from a farm, where sold."
       ],
       "labels_decoded": [
         {
           "term": "Added sugars",
-          "meaning": "The line that separates a plain tub from a dessert. It is printed on both."
+          "meaning": "Separates a plain tub from a dessert; printed on both."
         },
         {
           "term": "Live and Active Cultures",
-          "meaning": "A defined seal. The fermenting bacteria are present and viable."
+          "meaning": "A voluntary seal: cultures present and viable. Its absence alone proves nothing."
+        },
+        {
+          "term": "Made with live cultures",
+          "meaning": "A past-tense claim; the seal is the present-tense one."
         },
         {
           "term": "Heat-treated after culturing",
-          "meaning": "Shelf-stable, and the cultures are no longer live."
+          "meaning": "Shelf-stable; the cultures are no longer live."
         },
         {
           "term": "Greek / skyr",
-          "meaning": "Strained. Thicker, with less whey."
+          "meaning": "Strained to remove whey, so thicker."
         },
         {
           "term": "Kefir",
           "meaning": "A drinkable ferment with a wider mix of cultures."
         },
         {
-          "term": "Greek",
-          "meaning": "Yogurt strained to remove whey, which leaves it thicker."
-        },
-        {
           "term": "Plain",
           "meaning": "No added sugar or flavoring."
         }
       ],
-      "tier_note": "Plain means no added sugar, so sweeten it at home with fruit or honey; certified organic feed and outdoor access.",
+      "tier_note": "Plain means no added sugar; sweeten at home with fruit or honey.",
       "watch_out": [
-        "Plain still lists sugar, and it is lactose. On plain, the sugar line is the milk’s own. On flavored, it is lactose plus what was added. Only the added-sugars line separates the two.",
-        "‘Light’ means a high-intensity sweetener. Sucralose or similar stands in for the sugar; the cup is not plainer, only sweetened differently.",
-        "Fruit-on-the-bottom and drinkable yogurts can run higher in sugar than the pre-mixed cup. Drinkables are made by adding water and flavors.",
-        "A shelf-stable tub outside the cold case was heat-treated. It is yogurt, and nothing in it is alive.",
-        "‘Made with live cultures’ is a past-tense claim. The seal is the present-tense one.",
-        "The live cultures have to appear in the ingredient list. A tub that names none was heat-processed after fermenting or never held them. The seal is voluntary, so its absence alone proves nothing.",
-        "Some non-dairy yogurts skip the live cultures entirely. Same aisle, same word on the lid, no ferment."
+        "Flavored, fruit-on-the-bottom and drinkable cups carry the added sugar.",
+        "‘Light’ means sucralose or a similar high-intensity sweetener, not a plainer cup.",
+        "A shelf-stable tub was heat-treated; nothing in it is alive.",
+        "No cultures named on the list: heat-treated after fermenting, or never cultured."
       ],
       "pick_steps": [
-        "Greek and skyr are strained: thicker, with less whey.",
-        "Kefir is drinkable and carries a wider mix of cultures than yogurt.",
         "100% grass-fed on the tub means the cows ate grass and hay, never grain."
       ],
-      "science": "Plain still lists sugar, and it is lactose, the milk’s own. On flavored, it is lactose plus what was added, so only the added-sugars line separates the two. ‘Light’ means a high-intensity sweetener like sucralose, not a plainer cup. Fruit-on-the-bottom and drinkable yogurts can run higher in sugar than the pre-mixed cup.",
+      "science": "Plain still lists sugar, and it is lactose, the milk’s own. On flavored, it is lactose plus what was added. Only the added-sugars line separates the two. Fruit-on-the-bottom and drinkable yogurts, made by adding water and flavors, can run higher in sugar than the pre-mixed cup.",
       "asked_as": [
         "best yogurt to buy",
         "which yogurt should i get",
@@ -2282,7 +2277,7 @@
       "decision": "Pasture-raised eggs with soy-free and corn-free feed printed.",
       "why": "Certified Humane Pasture Raised specifies 108 square feet per bird.",
       "short_answer": "Most pasture-raised hens still eat soy and corn. “Vegetarian fed” means no animal byproducts in the feed. It says nothing about pasture or time outdoors. Hens on pasture eat insects and forage.",
-      "detail": "USDA has no regulatory definition of “pasture-raised” at all; where it means something, it is because a third-party certifier defined it. Certified Humane, for instance, requires 108 square feet of outdoor space per hen. Those standards govern housing and outdoor access. They do not specify a ration. “Certified organic” reaches feed, and it requires the feed be organic, which in practice is usually organic soy and organic corn. Organic answers how the feed was grown; it does not answer what the feed is. This is the single widest gap between what a carton implies and what it guarantees, and it is why two cartons with identical front-of-pack language can come from birds raised on completely different diets. These labels tell you how much room the animal had and whether it got outside. Look for pasture-raised with “soy-free” or “corn-free” feed printed outright. Organic is a bonus on pasture-raised, never in its place; cage-free alone comes last. “Vegetarian fed” means no animal byproducts in the supplied feed. It says nothing about pasture or time outdoors and does not tell whether a hen foraged. Hens on pasture eat insects and forage. “Vegetarian fed” says nothing about pasture or time outdoors.",
+      "detail": "Certified Humane, for instance, requires 108 square feet of outdoor space per hen. This is the single widest gap between what a carton implies and what it guarantees: two cartons with identical front-of-pack language can come from birds raised on completely different diets. “Vegetarian fed” covers only the supplied feed and does not tell whether a hen foraged.",
       "evidence_tier": "established",
       "sources": [
         {
@@ -2294,7 +2289,7 @@
           "url": "https://www.cornucopia.org/egg-scorecard-criteria/"
         }
       ],
-      "kristy_take": "Pasture-raised with a printed soy-free or corn-free feed claim. Organic is a bonus on pasture-raised, never in its place; cage-free alone comes last. “Vegetarian fed” describes the supplied feed. It does not say whether the hen went outdoors.",
+      "kristy_take": "Pasture-raised plus printed feed words is the carton.",
       "buying_tips": [
         "“pasture-raised” plus “soy-free” or “corn-free” feed printed outright.",
         "A Certified Humane or Animal Welfare Approved logo beside “pasture-raised”.",
@@ -2323,15 +2318,15 @@
         }
       ],
       "watch_out": [
-        "Cage-free, free-range and pasture-raised are all SPACE claims. None says a word about feed.",
-        "Organic reaches feed, but requires it be organic. That usually means organic soy and corn.",
-        "“Grass-fed” on beef is the same trap: it can still end on grain."
+        "Cage-free, free-range and pasture-raised are SPACE claims; none covers feed.",
+        "Organic feed usually means organic soy and corn.",
+        "“Grass-fed” beef is the same trap: it can still end on grain."
       ],
       "pick_steps": [
         "A Real Organic seal on pasture-raised eggs."
       ],
-      "science": "Cage-free, free-range and pasture-raised describe space. Most pasture-raised hens still eat soy and corn. USDA has no regulatory definition of pasture-raised; certifiers set outdoor requirements. Organic requires organic feed, usually soy and corn. It describes how feed was grown. “Vegetarian fed” means no animal byproducts in the feed, with no promise about outdoor time. Hens on pasture eat insects and forage.",
-      "tier_note": "Space claims and feed claims are separately defined, which is why one never implies the other.",
+      "science": "USDA has no regulatory definition of pasture-raised; certifiers set outdoor requirements. Those govern housing and outdoor access, not the ration. Organic describes how feed was grown, not what it is.",
+      "tier_note": "Space and feed claims are defined separately; one never implies the other.",
       "asked_as": [
         "what does pasture raised actually mean",
         "does pasture raised mean no soy",
@@ -3600,8 +3595,8 @@
       "question": "How do I pick a good carton of berries?",
       "decision": "Organic berries from the cold case, dry and mold-free throughout.",
       "why": "The bottom berries carry the weight and mold first, while the top can still look fresh.",
-      "short_answer": "Turn the container over first. The bottom fruit carries the load, so it bruises and molds first. A dry, clean underside means it was packed recently and has not sat wet. Juice or a fuzzy spot means decay is running.",
-      "detail": "Berries do not ripen after picking. Unlike a peach or a cantaloupe, what is in the carton is exactly what you are buying. There is no counter-ripening to rescue an underripe punnet, and no reason to buy firm and wait. That makes the carton itself the whole decision. Weight and moisture are what work against it: the bottom layer carries the load, condensation inside a clamshell keeps that layer damp, and mold spreads berry to berry by contact. Clamshells also get re-stacked at the store, so a fresh-looking top layer can sit on fruit that arrived days earlier. Buy them cold, keep them dry, and wash them at the moment you eat them rather than when you unpack. The top layer stays presentable long after the carton has turned, and one furry berry takes the punnet.",
+      "short_answer": "Turn the container over first. A dry, clean underside means it was packed recently and has not sat wet. Juice or a fuzzy spot means decay is running.",
+      "detail": "Unlike a peach or a cantaloupe, berries have no counter-ripening to rescue an underripe punnet, so there is no reason to buy firm and wait. The top layer stays presentable long after the carton has turned, and one furry berry takes the punnet. Buy them cold, keep them dry, and wash them when you eat them, not when you unpack. A clean-looking container says nothing about residue. Certified organic restricts synthetic pesticides; it is not a promise of a blank screen on every box. The organic box was screened for more than 500 pesticides, including ones approved for organic use, and came back non-detect: one sample, one time. One box of each, screened once, is what the testers call a spot-check: a reason to buy organic, not a measurement of a brand.",
       "evidence_tier": "established",
       "sources": [
         "postharvest handling references for soft fruit (non-climacteric ripening, decay by contact)",
@@ -3627,30 +3622,25 @@
           "url": "https://www.naturallygrown.org/faqs/"
         }
       ],
-      "kristy_take": "Berries will not ripen further at home, so buy them ready. Turn the carton over: a dry bottom, no fuzzy fruit. Keep them cold and wash just before eating.",
+      "kristy_take": "Buy them ready, keep them cold, wash just before eating.",
       "cart_pick": "Berries",
       "buying_tips": [
         "Real Organic or Certified Naturally Grown sign on the berries.",
-        "A dry, unstained box bottom, with no fuzzy white or gray spot on any berry.",
-        "Can’t find either: the USDA Organic seal on the clamshell, or organic frozen berries any time of year.",
-        "Strawberries with green caps still fresh, not browned and dry.",
-        "Deep, even color for the kind of berry, and even size in the box."
+        "A dry, unstained box bottom; no fuzzy white or gray spot.",
+        "Can’t find either: USDA Organic, or organic frozen berries year-round.",
+        "Strawberry caps green and fresh, not browned and dry.",
+        "Deep, even color for the kind, and even size."
       ],
       "watch_out": [
-        "Berries do not ripen after picking. Buying firm and waiting does not work the way it does for stone fruit.",
-        "Condensation fogging the plastic traps moisture and speeds the mold.",
-        "Clamshells re-stacked at the store hide older fruit under a fresh top layer.",
-        "A carton that already smells sweet or fermented is past it.",
-        "Juice stains on the bottom of the container mean crushed or moldy berries inside.",
-        "One box of each, screened once, and the testers call it a spot-check. It is a reason to buy organic, not a measurement of a brand.",
-        "Certified organic restricts synthetic pesticides. It is not a promise of a blank screen on every box.",
-        "The organic box was screened for more than 500 pesticides, including ones approved for organic use, and came back non-detect. One sample, one time.",
-        "Bifenthrin, a PFAS pesticide, was found most commonly on blackberries in USDA residue data."
+        "Fog inside the plastic traps moisture and speeds the mold.",
+        "Re-stacked clamshells hide older fruit under a fresh top layer.",
+        "A carton that smells sweet or fermented is past it.",
+        "USDA residue data finds bifenthrin, a PFAS pesticide, most on blackberries."
       ],
       "pick_steps": [
         "A cold carton with no fog inside the plastic."
       ],
-      "science": "Berries do not ripen after picking, so what is in the carton is what you are buying. The bottom layer carries the weight, condensation keeps it damp, and mold spreads berry to berry by contact. Re-stacked clamshells can hide older fruit under a fresh top layer, so the underside is the check.",
+      "science": "Berries do not ripen after picking, so what is in the carton is what you are buying. The bottom layer carries the weight and condensation keeps it damp. Mold spreads berry to berry by contact, so the underside is the check.",
       "labels_decoded": [
         {
           "term": "USDA Organic",
@@ -3661,7 +3651,7 @@
           "meaning": "The screen found nothing at its reporting limit. That is a result on one sample, not a property of a product line."
         }
       ],
-      "tier_note": "Strawberries, blackberries and blueberries sit high on EWG’s residue list, whatever the container looks like.",
+      "tier_note": "Buy organic: strawberries, blackberries and blueberries rank high on EWG’s residue list.",
       "eyebrow_short": "Picking berries",
       "asked_as": [
         "how do i pick berries",
@@ -3816,9 +3806,9 @@
       "category": "dairy",
       "question": "What is the difference between cream and coffee creamer?",
       "decision": "Grass-fed cream, not ultra-pasteurized, with cream alone listed.",
-      "why": "Cream has a legal fat minimum. Creamer is oil, sweetener and emulsifiers built to imitate it.",
-      "short_answer": "Cream is dairy with a legal fat minimum. ‘Non-dairy creamer’ is not dairy at all. It is typically water or corn syrup solids, an oil, and emulsifiers, flavors and thickeners built to imitate cream. Compare the two lists.",
-      "detail": "Heavy cream is at least 36% milkfat, light whipping 30 to 36, half-and-half 10.5 to 18. Standards of identity fix what cream can mean, which is why those fat percentages are consistent across every carton. Creamer has no such standard because it is a formulated product. The oil in it is usually a refined seed oil, not milkfat, and the sweetness usually comes from corn syrup solids or sugar, with the flavored versions adding more of both. Some cartons of real cream carry stabilizers like carrageenan or gellan gum, so a short list is worth checking on the dairy side too. Whole milk, half-and-half or real cream all do the job with a list you can read out loud. Read the two ingredient lists side by side and it takes three seconds. rBST is a synthetic hormone given to cows for milk production. The certified organic rules bar this growth hormone. Start with certified organic cream or half-and-half. Follow with a carton stating the cows were not treated with rBST, then one with neither. US companies need not label rBST use.",
+      "why": "Cream is one ingredient; creamer is a formulation built to look like it.",
+      "short_answer": "‘Non-dairy creamer’ is not dairy. It is typically water or corn syrup solids, an oil, and emulsifiers, flavors and thickeners built to imitate cream. Compare the two lists.",
+      "detail": "Heavy cream is at least 36% milkfat, light whipping 30 to 36, half-and-half 10.5 to 18; standards of identity fix those numbers on every carton. The oil in creamer is usually a refined seed oil, not milkfat, and the sweetness usually corn syrup solids or sugar, with flavored versions adding more of both. rBST is a synthetic hormone given to cows for milk production; certified organic rules bar it, and US companies need not label its use. Start with certified organic cream or half-and-half, then a carton stating the cows were not treated with rBST, then one with neither.",
       "evidence_tier": "established",
       "sources": [
         "Weston A. Price Foundation: Shopping Guide categories (cream)",
@@ -3833,26 +3823,25 @@
         },
         "Food Babe: Ingredients to avoid"
       ],
-      "kristy_take": "Cream is one ingredient. Creamer is a formulation built to look like it. Read the two lists back to back.",
+      "kristy_take": "Read the two lists back to back; it takes three seconds.",
       "cart_pick": "100% grass-fed cream or half-and-half",
       "buying_tips": [
-        "Raw cream from a grass-fed farm, where sold; next, pasteurized cream-top, not homogenized.",
-        "Grass-fed cows named on the carton, from a small dairy, pasteurized but not ultra-pasteurized.",
-        "Cream alone on the list, with no carrageenan or gellan gum, even on organic cream.",
-        "Can’t find it: grass-fed ultra-pasteurized cream, or whole milk or half-and-half."
+        "Raw grass-fed farm cream where sold; next, pasteurized cream-top, unhomogenized.",
+        "Grass-fed cows named, small dairy, not ultra-pasteurized.",
+        "Cream alone listed, no carrageenan or gellan gum, even organic.",
+        "Can’t find it: grass-fed ultra-pasteurized cream, whole milk or half-and-half."
       ],
       "watch_out": [
-        "Most coffee creamers are dairy-free. Water, sugar and vegetable oil, not cream, are the usual first three ingredients. Many are built on almond, oat or coconut milk rather than cream.",
-        "The flavored creamers carry the most sugar. That line on the panel is the one to read first.",
-        "Real cream can still carry carrageenan or gellan gum. The fat number is fixed by law; the list is not.",
-        "Cartons marked ultra-pasteurized were heated to at least 280 °F for 2 seconds.",
-        "In creamers, skip titanium dioxide, polysorbate 80 and carboxymethylcellulose on the list.",
-        "Skip a creamer listing sunflower oil or canola oil."
+        "Flavored creamers carry the most sugar; read that line first.",
+        "Real cream may list carrageenan or gellan gum; law fixes only fat.",
+        "Ultra-pasteurized means heated to at least 280 °F for 2 seconds.",
+        "In creamers: titanium dioxide, polysorbate 80, carboxymethylcellulose, sunflower or canola oil."
       ],
       "pick_steps": [
-        "Heavy cream at 36% milkfat or more, a standard fixed by law."
+        "Heavy cream at 36% milkfat or more, a standard fixed by law.",
+        "100% grass-fed means the cows ate grass and hay, never grain."
       ],
-      "science": "Cream is dairy with a legal fat minimum fixed by standards of identity. ‘Non-dairy creamer’ has no such standard because it is a formulated product. Water, sugar and vegetable oil, not cream, are the usual first three ingredients, with emulsifiers and thickeners. Many are built on almond, oat or coconut milk rather than cream. Whole milk or half-and-half does the same job with a two-word list.",
+      "science": "‘Non-dairy creamer’ has no standard of identity because it is a formulated product. Water, sugar and vegetable oil, not cream, are the usual first three ingredients, with emulsifiers and thickeners. Many are built on almond, oat or coconut milk. Whole milk or half-and-half does the same job with a two-word list.",
       "labels_decoded": [
         {
           "term": "Heavy / heavy whipping cream",
@@ -3867,7 +3856,7 @@
           "meaning": "No dairy. Water or corn syrup solids, oil, emulsifiers and flavors."
         }
       ],
-      "tier_note": "Cream carries a federal milkfat minimum, and creamer carries none because it is not dairy, and 100% grass-fed means the cows ate grass and hay, never grain.",
+      "tier_note": "Real cream has a federal milkfat minimum; creamer, not dairy, has none.",
       "asked_as": [
         "difference between cream and creamer",
         "is coffee creamer dairy",
@@ -4155,8 +4144,8 @@
       "question": "How do I buy real extra-virgin olive oil, and what do the grades mean?",
       "decision": "Extra virgin olive oil with a recent harvest date, one country, dark bottle.",
       "why": "Dark glass or tins protect oil from light; UC Davis names harvest dates as a freshness cue.",
-      "short_answer": "Extra virgin uses no heat or solvent, and has to pass lab and taste tests. ‘Pure’, ‘classic’ and ‘light’ are refined oil with some virgin added. Look for a recent harvest date, a dark bottle and one country of origin.",
-      "detail": "Grade and provenance are two separate checks and a bottle has to pass both. On grade: pomace oil is solvent-extracted from the paste left after pressing and is a different product; ‘first cold pressed’ is a legacy phrase with no added legal force. On provenance: ‘packed in [country]’ names where it was bottled, not where the olives grew, and ‘product of’ is the phrase that names the origin. A harvest date beats a best-by date every time, because the oil degrades from the day it is pressed. Dark glass or tin protects it from light, and a price that is unusually low for extra-virgin is a flag rather than a find. Extra virgin is mechanically extracted with no heat or solvent and has to pass both a chemical limit and a taste panel. Virgin is the same process with a looser limit. ‘Light’ refers to color and taste rather than calories. Past the grade, olive oil is one of the more adulterated products in the store.",
+      "short_answer": "Extra virgin uses no heat or solvent, and has to pass lab and taste tests. ‘Pure’, ‘classic’ and ‘light’ are refined oil with some virgin added.",
+      "detail": "Grade and provenance are two separate checks, and a bottle has to pass both. Dark glass or tin protects it from light. ‘First cold pressed’ is a legacy phrase with no added legal force, and ‘product of’ is the phrase that names where the olives grew. In the same UC Davis testing, 73 percent of samples from the top-selling imported brands failed the extra-virgin standard. A price that is unusually low for extra virgin is a flag rather than a find; past the grade, olive oil is one of the more adulterated products in the store.",
       "evidence_tier": "established",
       "sources": [
         {
@@ -4176,14 +4165,14 @@
       "instead": "Butter or ghee for anything cooked. Whole-food fats, with no harvest date to check.",
       "buying_tips": [
         "Extra virgin olive oil in dark glass, since light ages it.",
-        "A harvest date, not just “best by”, and a recent one.",
+        "A recent harvest date, not just “best by”.",
         "One country of origin, named with “product of”.",
-        "Organic oil from a single estate or a small producer."
+        "Organic, from a single estate or small producer."
       ],
       "pick_steps": [
         "‘Pure’, ‘classic’ and ‘light’, all refined oil; pomace is solvent-extracted."
       ],
-      "science": "Extra virgin is mechanically extracted with no heat or solvent. It has to pass both a chemical limit and a taste panel. Pomace oil is solvent-extracted from the paste left after pressing. The oil degrades from the day it is pressed, so a harvest date beats a best-by date. ‘Packed in’ names where it was bottled, not where the olives grew.",
+      "science": "The oil degrades from the day it is pressed, so a harvest date beats a best-by date. The word on the front does not settle the grade. In UC Davis testing, the signals that held up were a recent harvest year and a lightproof container.",
       "labels_decoded": [
         {
           "term": "Extra virgin",
@@ -4206,13 +4195,13 @@
           "meaning": "Where it was bottled. Not where the olives grew."
         }
       ],
-      "tier_note": "The extra virgin grade is a legal definition backed by a taste panel, and the “product of” wording is regulated.",
+      "tier_note": "Extra virgin is a legal grade, taste-panel tested; “product of” is regulated.",
       "cart_pick": "Extra-virgin olive oil",
       "watch_out": [
-        "‘Pure’, ‘classic’ and ‘light’ all mean refined oil. ‘Light’ refers to flavor and color, not calories.",
-        "Pomace oil is solvent-extracted from the paste left after pressing. A different product.",
-        "‘Packed in [country]’ is where it was bottled. Look for ‘product of’ instead.",
-        "The word on the front does not settle the grade. In UC Davis testing, 69 percent of imported oils sampled failed the extra-virgin standard. So did 73 percent of samples from the top-selling imported brands. The most recent harvest year and a container that keeps out light are the signals that held up."
+        "‘Pure’, ‘classic’ and ‘light’ mean refined; ‘light’ is flavor, not calories.",
+        "Pomace oil is solvent-extracted from pressing leftovers: a different product.",
+        "‘Packed in [country]’ is where it was bottled, not grown.",
+        "In UC Davis testing, 69 percent of imported oils sampled failed extra virgin."
       ],
       "eyebrow_short": "Real extra-virgin",
       "asked_as": [
@@ -5052,27 +5041,26 @@
       "question": "Is raw milk cheese worth buying?",
       "decision": "Grass-fed raw-milk cheese, aged 60 days or more.",
       "why": "Aged raw-milk cheese tastes of one herd and season, and its maker has to know the milk.",
-      "card_why": "Aged raw-milk cheese is the raw dairy nobody has to hunt for. US rules allow it at sixty days and up, so a decent cheese counter already keeps a case of it. Sixty days of aging is a technology of its own. It is the reason an aged raw cheddar tastes of the place it came from. A young commodity block tastes of very little. The organizing principle is the milk’s: ask who made it, from which herd, and how long it sat.",
-      "short_answer": "It is the raw dairy nobody has to go looking for. US law lets raw-milk cheese aged sixty days or more sell across state lines. It sits in ordinary cheese cases. Most traditional European cheeses are made this way.",
-      "detail": "The sixty-day rule is why raw cheese is legal at US retail where raw milk often is not. Aging concentrates the cheese and develops it, and a raw-milk cheese carries the character of one herd and one season in a way a standardized pasteurized curd is designed not to. A staffed counter can usually name the maker, the animal and the age, which is exactly the information the rind label is too small to hold. Raw-milk cheese sits in the case beside everything else: no farm visit, no herdshare, no state-by-state map. Most traditional European cheeses are made this way, which is why so many qualify.",
+      "card_why": "Sixty days of aging is a technology of its own. It is why an aged raw cheddar tastes of its place. A young commodity block tastes of very little. Ask who made it, from which herd, and how long it sat.",
+      "short_answer": "It is the raw dairy nobody has to go looking for: US law lets raw-milk cheese aged sixty days or more sell across state lines, so it sits in ordinary cheese cases.",
+      "detail": "The sixty-day rule is why raw cheese is legal at US retail where raw milk often is not, and why a decent cheese counter already keeps a case of it: no farm visit, no herdshare, no state-by-state map. Most traditional European cheeses are made this way, which is why so many qualify. Sixty days rules out every fresh style; a raw fromage blanc cannot meet it. A raw-cheese maker has to know the milk; cheesemakers buying pasteurized milk may know little about the farms it came from, and raw removes that distance, which is the point of buying it. A staffed counter can usually name the maker, the animal and the age, the information the rind label is too small to hold. Organic means certified organic feed and outdoor access.",
       "kristy_take": "Ask the monger who made it. A good one has been waiting to tell you.",
       "buying_tips": [
         "‘raw milk’ or ‘lait cru’ (French for raw milk) with an age on the label.",
-        "A named maker and a named herd, not just a country.",
-        "Can’t find it: cheese labeled thermized, made from milk warmed to just below pasteurizing.",
-        "Raw cheese from a grass-fed organic herd; organic alone next when the label says nothing about feed.",
+        "A named maker and herd, not just a country.",
+        "Grass-fed organic herd first; organic alone when feed goes unstated.",
         "Hard, aged styles first: alpine, aged cheddar, manchego, pecorino."
       ],
       "watch_out": [
-        "“Pasteurized process cheese”, “cheese product” and “cheese food” are progressively less cheese.",
-        "Raw dairy is not for every household. The raw milk card names who, once.",
-        "Sixty days rules out every fresh style. A raw fromage blanc cannot meet it. So ‘raw’ on a soft fresh cheese at retail is a question, not a label.",
-        "A raw-cheese maker has to know the milk. Most American cheesemakers buy milk already pasteurized and homogenized. They may know little about the farms it came from. Raw removes that distance, which is the point of buying it."
+        "‘Pasteurized process cheese’, ‘cheese product’, ‘cheese food’: progressively less cheese.",
+        "Raw dairy is not for every household; the raw milk card names who.",
+        "‘Raw’ on a soft fresh cheese is a question; sixty days rules fresh out.",
+        "Most American cheesemakers buy milk already pasteurized and homogenized, far from the farm."
       ],
       "pick_steps": [
         "A wedge aged 60 days or more."
       ],
-      "science": "US law lets raw-milk cheese aged sixty days or more sell across state lines. Sixty days rules out every fresh style, so ‘raw’ on a soft fresh cheese is a question. Most American cheesemakers buy milk already pasteurized, and raw removes that distance from the farm. ‘Pasteurized process cheese’, ‘cheese product’ and ‘cheese food’ are progressively less cheese. Raw dairy is not for every household.",
+      "science": "Aging concentrates the cheese and develops it. A raw-milk cheese carries the character of one herd and one season. A standardized pasteurized curd is designed not to.",
       "labels_decoded": [
         {
           "term": "Raw milk / lait cru",
@@ -5090,7 +5078,7 @@
         "Edible Seattle “In the Raw” (Cascadia Creamery, raw-milk cheese) https://edibleseattle.com/explore/artisans/in-the-raw/"
       ],
       "cart_pick": "Aged grass-fed raw-milk cheese",
-      "tier_note": "Aging raw milk into cheese predates refrigeration; the months on the rind are history, not health evidence; organic means certified organic feed and outdoor access.",
+      "tier_note": "Raw-milk aging predates refrigeration; rind months are history, not health evidence.",
       "evidence_tier": "time_tested",
       "asked_as": [
         "is raw milk cheese worth it",
@@ -11855,8 +11843,8 @@
       "question": "How do you pick salt?",
       "decision": "Unrefined colored salt from a named sea, not iodized.",
       "why": "WAPF lists unrefined salt in light gray, pink, red or beige as best and iodized salt as avoid.",
-      "short_answer": "Look for unrefined salt that is gray, pink or beige, with salt alone on the list. Skip iodized salt and salts with anti-caking agents or other additives.",
-      "detail": "A systematic review of ten studies found microplastics in the majority of salt samples, from none detected up to 1,674 particles per kilogram in sea salt, 8 to 462 in lake salt and 0 to 204 in rock and well salt. A study of 39 brands across six continents found that unrefined sea salt tracks the plastic pollution of the seawater around it, unless the particles are filtered out during manufacture. That makes the sea of origin and the way the salt is processed the two things worth reading for. No tested salt type was clear across every sample, so a package promising zero microplastics needs a stated method behind it. Under 21 CFR 100.155, table salt with no added iodide must carry a statement that it “does not supply iodide” right after the name. An anticaking agent, an additive that keeps salt from caking, may be added under 21 CFR 172.490, and the list names it. Sea salt is made by evaporating seawater and usually has larger crystals than the fine grains of table salt. Flaked salt is a type of sea salt with larger, irregular flakes. Pickling or canning salt is pure salt with nothing added, and it keeps a brine clear. Kosher salt has a coarse texture, so salts do not swap cup for cup. Pink Himalayan salt is sodium chloride, like other salts. Curing salt, sometimes dyed pink and labeled “pink salt,” is a different product used for curing meats.",
+      "short_answer": "Unrefined colored salt with salt alone on the list; skip iodized salt and anti-caking agents.",
+      "detail": "A systematic review of ten studies found microplastics in the majority of salt samples, from none detected up to 1,674 particles per kilogram in sea salt, 8 to 462 in lake salt and 0 to 204 in rock and well salt. A study of 39 brands across six continents found that unrefined sea salt tracks the plastic pollution of the seawater around it, unless the particles are filtered out during manufacture, which makes the sea of origin and the processing the two things worth reading for. No tested salt type was clear across every sample. Under 21 CFR 100.155, table salt with no added iodide must carry “does not supply iodide” right after the name. An anticaking agent, an additive that keeps salt from caking, may be added under 21 CFR 172.490, and the list names it. Sea salt is made by evaporating seawater and usually has larger crystals than table salt; flaked salt is a sea salt with larger, irregular flakes, and kosher salt has a coarse texture. Pickling or canning salt keeps a brine clear. Pink Himalayan salt is sodium chloride, like other salts; curing salt is a different product used for curing meats.",
       "evidence_tier": "established",
       "sources": [
         {
@@ -11864,25 +11852,25 @@
           "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
         }
       ],
-      "kristy_take": "A named sea and a list that reads salt: that is the pick.",
+      "kristy_take": "Colored, unrefined, and nothing on the list but salt.",
       "cart_pick": "Sea salt: named sea, salt alone on the list",
       "buying_tips": [
-        "Gray, pink, red or beige salt with its sea or coast named, not just ‘sea salt’.",
+        "Gray, pink, red or beige salt, its sea or coast named.",
         "Salt alone on the list, no anti-caking agent.",
-        "Can’t find it: pickling or canning salt, which is pure salt with nothing added.",
-        "Salt with no iodine says ‘does not supply iodide’ beside its name."
+        "Can’t find it: pickling or canning salt, nothing added.",
+        "No-iodine salt says ‘does not supply iodide’ by its name."
       ],
       "watch_out": [
         "“Sea salt” with no place named gives nothing to judge.",
         "A package promising zero microplastics needs a method stated behind the claim.",
-        "Curing salt, sometimes dyed pink and labeled “pink salt,” is not pink Himalayan salt.",
-        "Salts do not swap cup for cup, since crystal size changes the measure."
+        "Curing salt, sometimes dyed pink as “pink salt,” is not Himalayan salt.",
+        "Salts do not swap cup for cup; crystal size changes the measure."
       ],
       "pick_steps": [
         "Gray, pink or beige crystals, not bright white.",
         "No iodized salt or blends with additives."
       ],
-      "science": "Microplastics turn up in most salts of every origin. Sea salt follows the pollution of its own water unless the particles are filtered out in manufacture. Table salt with no added iodide must say so right after its name. An anti-caking agent may be added, and the list names it. Pickling or canning salt is pure salt.",
+      "science": "Microplastics turn up in most salts of every origin. Sea salt follows the pollution of its own water unless the particles are filtered out in manufacture.",
       "labels_decoded": [
         {
           "term": "Sea salt",
@@ -11901,7 +11889,7 @@
           "meaning": "Pure salt with nothing added."
         }
       ],
-      "tier_note": "A named sea and a list that reads salt alone set the best pick apart.",
+      "tier_note": "Read for a named sea and salt alone on the list.",
       "asked_as": [
         "which table salt should i buy",
         "is sea salt worth buying",
@@ -13044,9 +13032,9 @@
       "category": "bulk_pantry",
       "question": "How do you pick canned soup?",
       "decision": "Organic bone-broth soup with meat and vegetables, no yeast extract.",
-      "why": "Most canned soups lean on MSG and yeast extract for flavor. Bone broth makes the base, and homemade beats the can.",
-      "short_answer": "Most canned soup is seasoned with MSG, yeast extract or hydrolyzed protein. Homemade bone broth is the best start. In a can, pick broth-based soup with a short list, no seed oils. Skip deep dents, leaks, rust or bulging.",
-      "detail": "Under 21 CFR 101.61, sodium words on a label have set meanings per standard serving. Sodium free means less than 5 mg. Very low sodium means 35 mg or less. Low sodium means 140 mg or less. Reduced sodium, or less sodium, means at least 25 percent less than a reference food, and the label names that food and the percent difference. Salt is not the same word as sodium; salt means sodium chloride. No salt added means no salt went in during processing, and a soup that is not sodium free says “not a sodium free food”. On the shelf, a slightly dented can is fine, but skip deep dents the size of a finger and dents with sharp points on the seam. Dusty cans or torn labels may mean old stock. Dates on cans mark peak quality, not safety. In a cool, dry pantry, high-acid canned food keeps 12 to 18 months for best quality, and low-acid canned food, including vegetable soups other than tomato, keeps 2 to 5 years.",
+      "why": "Homemade soup on bone broth beats the can; bone broth makes the base.",
+      "short_answer": "Most canned soup is seasoned with MSG, yeast extract or hydrolyzed protein. In a can, pick broth-based soup with a short list and no seed oils.",
+      "detail": "Under 21 CFR 101.61, the sodium words on a label carry the set limits per standard serving decoded below; reduced or less sodium must name its reference food and the percent difference. No salt added means no salt went in during processing, and a soup that is not sodium free says “not a sodium free food”. A slightly dented can is fine; skip dents the size of a finger and sharp-pointed dents on the seam. Dates on cans mark peak quality, not safety. Store cans cool and dry, between 50 °F and 70 °F, with the oldest in front; wipe the lid before opening, and move opened soup to a covered container in the refrigerator. High-acid canned food keeps 12 to 18 months for best quality, and low-acid canned food, including vegetable soups other than tomato, keeps 2 to 5 years.",
       "evidence_tier": "established",
       "sources": [
         {
@@ -13062,23 +13050,22 @@
           "url": "https://chriskresser.com/re-examining-the-evidence-on-bpa-and-bpa-free-plastics/"
         }
       ],
-      "kristy_take": "A short ingredient list is a craft standard, not a safety line. The sodium words on the front each carry a fixed meaning.",
+      "kristy_take": "A short list is a craft standard, not a safety line.",
       "cart_pick": "Bone broth soup, short list, no yeast extract",
       "buying_tips": [
         "Bone broth first, herbs and spices by name, no natural flavor.",
-        "A list free of MSG, yeast extract, hydrolyzed protein and seed oils like soybean or canola.",
-        "Homemade soup on bone broth comes first.",
-        "Sodium words: ‘low sodium’ is a fixed limit; ‘reduced sodium’ only means less than a named soup."
+        "No MSG, yeast extract, hydrolyzed protein, or soybean or canola oil.",
+        "‘Low sodium’ is a fixed limit; ‘reduced sodium’ is relative."
       ],
       "watch_out": [
-        "“No salt added” is not “sodium free”; the soup can still carry sodium.",
-        "Store cans cool and dry, between 50 °F and 70 °F, with the oldest in front. Wipe the lid before opening, and move opened soup to a covered container in the refrigerator.",
-        "Leave cans with deep dents, seam dents, leaks, rust or bulging lids on the shelf."
+        "“No salt added” still allows sodium; it is not “sodium free”.",
+        "Leave cans with deep dents, seam dents, leaks, rust or bulging lids.",
+        "Dusty cans or torn labels may mean old stock."
       ],
       "pick_steps": [
         "A can with no deep dents, seam dents, leaks, rust or bulging lids."
       ],
-      "science": "Sodium words on a can have set meanings per standard serving. Low sodium is a fixed ceiling. Reduced sodium means at least 25 percent less than a food the label names. Salt is not the same word as sodium. Dates on cans mark peak quality. Cans keep best stored cool and dry, between 50 °F and 70 °F, with the oldest used first.",
+      "science": "Sodium words on a can have set meanings per standard serving. Low sodium is a fixed ceiling; reduced sodium is relative to a food the label names. Salt is not the same word as sodium; salt means sodium chloride.",
       "labels_decoded": [
         {
           "term": "Sodium free",
@@ -13105,7 +13092,7 @@
           "meaning": "Best flavor or quality, not a purchase or safety date."
         }
       ],
-      "tier_note": "MSG, yeast extract and seed oils are read from the list, as much as sodium.",
+      "tier_note": "Read the list for MSG, yeast extract and seed oils, beyond sodium.",
       "asked_as": [
         "which canned soup should i buy",
         "how do i pick a canned soup",

@@ -58,6 +58,20 @@ const TRIM1_REPHRASED = [
   'Non-homogenized is not raw.',
   'It is still pasteurized; only the fat was left alone.',
 ];
+const TRIM2_REPHRASED = [
+  "A short list is the sign: milk and cultures.",
+  "Kefir is drinkable and carries a wider mix of cultures than yogurt.",
+  "Whole-milk versions are more filling and less tinkered with than fat-free.",
+  "A shelf-stable tub outside the cold case was heat-treated.",
+  "It is yogurt, and nothing in it is alive.",
+  "'Made with live cultures' is a past-tense claim.",
+  "The seal is the present-tense one.",
+  "The live cultures have to appear in the ingredient list.",
+  "A tub that names none was heat-processed after fermenting or never held them.",
+  "The seal is voluntary, so its absence alone proves nothing.",
+  "Some non-dairy yogurts skip the live cultures entirely.",
+  "Same aisle, same word on the lid, no ferment.",
+];
 const DROPPED = ['People who struggle with regular milk often do better on A2.', 'Worth trying for a week.'];
 const REPHRASED = ['Greek and skyr are strained: thicker, more protein per spoon.', 'Greek/strained is higher protein; whole-milk versions are more filling.',
   // Persona-walk copy pass 2026-11-08: raw moved off the top of the milk ladder; "the extension line says" source jargon dropped.
@@ -65,7 +79,9 @@ const REPHRASED = ['Greek and skyr are strained: thicker, more protein per spoon
   'The extension line says the digestion and health claims for A2 have not been proven by science.',
   'Preferring cream-top is a preference about texture and steps, and the extension line says exactly that.',
   // Trim batch 1 2026-11-08: A2 sentences tightened into detail; each fact kept (scripts/lookfor/patches/trim-batch1.ledger.txt).
-  ...TRIM1_REPHRASED];
+  ...TRIM1_REPHRASED,
+  // Trim batch 2 2026-11-08: yogurt tips/watch-outs folded into tips, labels and detail; each fact kept (scripts/lookfor/patches/trim-batch2.ledger.txt).
+  ...TRIM2_REPHRASED];
 const EXTRA_ASKS = [['what is ultra pasteurized milk', MILK], ['cultured dairy', YOG], ['a2 milk', MILK]];
 const SPOKEN = ['decision', 'why', 'short_answer', 'detail', 'kristy_take', 'tier_note', 'buying_tips', 'watch_out', 'look_for', 'pick_steps', 'science', 'labels_decoded'];
 const strings = (e) => SPOKEN.flatMap((f) => [].concat(e?.[f] ?? [])).flatMap((x) => (typeof x === 'string' ? [x] : Object.values(x ?? {}).filter((v) => typeof v === 'string')));

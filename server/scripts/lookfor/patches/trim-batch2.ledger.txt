@@ -1,0 +1,183 @@
+TRIM BATCH 2 FACT LEDGER (2026-11-08)
+Route: one-off JSON round-trip on server/kristy_perimeter_kb.json (KB round-trips exactly as
+JSON.stringify(kb, null, 2) + "\n"; checked before every write). apply.mjs not used: no detail/labels row.
+No do line changed (all 8 already <=14 words). None of the 8 is frozen.
+Aliases, asked_as, sources, cta_item, ids, decision, cart_pick, instead, delta untouched.
+Word counts use counterCardLint words(); labels count term + meaning; (n) = bullet count.
+Format: BEFORE fact -> AFTER field: "short quote". DROPPED lines are restatement only.
+
+PER-CARD WORDS (before / after)
+BEFORE:
+yogurt_plain_vs_flavored     TOTAL 584 
+   why 19  short_answer 21  tier_note 20  buying_tips 71(5)  watch_out 157(7)  pick_steps 35(3)  science 52  detail 91  labels_decoded 75(7)  kristy_take 13  instead 10  delta 11  decision 9
+cream_vs_creamer             TOTAL 579 
+   why 16  short_answer 38  tier_note 27  buying_tips 53(4)  watch_out 102(6)  pick_steps 12(1)  science 66  detail 182  labels_decoded 33(3)  kristy_take 20  instead 11  delta 11  decision 8
+berries_picking              TOTAL 577 
+   why 16  short_answer 40  tier_note 15  buying_tips 67(5)  watch_out 149(9)  pick_steps 9(1)  science 52  detail 136  labels_decoded 43(2)  kristy_take 29  delta 11  decision 10
+raw_aged_cheese              TOTAL 574 
+   why 17  card_why 83  short_answer 39  tier_note 25  buying_tips 66(5)  watch_out 93(4)  pick_steps 7(1)  science 65  detail 106  labels_decoded 30(2)  kristy_take 15  instead 10  delta 10  decision 8
+olive_oil_grades             TOTAL 568 
+   why 17  short_answer 40  tier_note 20  buying_tips 40(4)  watch_out 96(4)  pick_steps 10(1)  science 61  detail 167  labels_decoded 65(5)  kristy_take 13  instead 14  delta 12  decision 13
+label_pasture_raised_feed    TOTAL 527 
+   why 10  short_answer 32  tier_note 16  buying_tips 31(3)  watch_out 42(3)  pick_steps 7(1)  science 61  detail 198  labels_decoded 68(5)  kristy_take 38  delta 16  decision 8
+canned_soup                  TOTAL 555 
+   why 21  short_answer 39  tier_note 15  buying_tips 51(4)  watch_out 60(3)  pick_steps 13(1)  science 63  detail 173  labels_decoded 77(6)  kristy_take 23  delta 10  decision 10
+salt                         TOTAL 547 
+   why 18  short_answer 27  tier_note 15  buying_tips 50(4)  watch_out 49(4)  pick_steps 15(2)  science 57  detail 247  labels_decoded 42(4)  kristy_take 13  delta 5  decision 9
+AFTER:
+yogurt_plain_vs_flavored     TOTAL 407 
+   why 14  short_answer 21  tier_note 12  buying_tips 49(5)  watch_out 43(4)  pick_steps 14(1)  science 46  detail 94  labels_decoded 75(7)  kristy_take 9  instead 10  delta 11  decision 9
+cream_vs_creamer             TOTAL 382 
+   why 13  short_answer 28  tier_note 12  buying_tips 37(4)  watch_out 44(4)  pick_steps 23(2)  science 51  detail 100  labels_decoded 33(3)  kristy_take 11  instead 11  delta 11  decision 8
+berries_picking              TOTAL 402 
+   why 16  short_answer 28  tier_note 12  buying_tips 49(5)  watch_out 41(4)  pick_steps 9(1)  science 41  detail 132  labels_decoded 43(2)  kristy_take 10  delta 11  decision 10
+raw_aged_cheese              TOTAL 431 
+   why 17  card_why 41  short_answer 32  tier_note 11  buying_tips 43(4)  watch_out 50(4)  pick_steps 7(1)  science 27  detail 130  labels_decoded 30(2)  kristy_take 15  instead 10  delta 10  decision 8
+olive_oil_grades             TOTAL 403 
+   why 17  short_answer 26  tier_note 12  buying_tips 35(4)  watch_out 45(4)  pick_steps 10(1)  science 45  detail 96  labels_decoded 65(5)  kristy_take 13  instead 14  delta 12  decision 13
+label_pasture_raised_feed    TOTAL 310 
+   why 10  short_answer 32  tier_note 12  buying_tips 31(3)  watch_out 30(3)  pick_steps 7(1)  science 30  detail 58  labels_decoded 68(5)  kristy_take 8  delta 16  decision 8
+canned_soup                  TOTAL 417 
+   why 13  short_answer 26  tier_note 12  buying_tips 32(3)  watch_out 32(3)  pick_steps 13(1)  science 39  detail 142  labels_decoded 77(6)  kristy_take 11  delta 10  decision 10
+salt                         TOTAL 433 
+   why 18  short_answer 15  tier_note 11  buying_tips 38(4)  watch_out 46(4)  pick_steps 15(2)  science 26  detail 199  labels_decoded 42(4)  kristy_take 9  delta 5  decision 9
+
+======================================================================
+yogurt_plain_vs_flavored                     TOTAL 584 -> 407
+----------------------------------------------------------------------
+why plain whole tubs are the pick -> DROPPED: restates decision. Organic can carry sugar, grass-fed
+  source -> why: "Organic tubs can still carry added sugar; grass-fed names where the milk came from."
+tier_note organic feed/outdoor clause -> detail: "Organic means certified organic feed and outdoor access."
+tip 1 rBST synthetic hormone -> buying_tips 1: "no synthetic growth hormone in the herd".
+tip 2 short list / no added color... -> buying_tips 2: "Milk and cultures only: no added color, dyes,
+  thickeners or vitamins." Thickeners vs straining -> detail, verbatim.
+tip 3 whole-milk filling -> buying_tips 3: "Whole milk over fat-free: more filling, less tinkered with."
+W0 lactose / added-sugars line -> science, verbatim sentences.
+W1 'Light' sucralose -> watch_out 1: "‘Light’ means sucralose or a similar high-intensity sweetener, not a plainer cup."
+W2 fruit-on-bottom/drinkable, water and flavors -> science: "made by adding water and flavors, can run higher".
+  Flavored cups carry the sugar -> watch_out 0.
+W3 shelf-stable heat-treated -> watch_out 2: "A shelf-stable tub was heat-treated; nothing in it is alive."
+W4 past-tense claim -> label "Made with live cultures": "A past-tense claim; the seal is the present-tense one."
+W5 cultures on list / heat-processed / seal voluntary -> watch_out 3: "No cultures named on the list:
+  heat-treated after fermenting, or never cultured." + label Live and Active Cultures: "A voluntary
+  seal ... Its absence alone proves nothing." + detail "read from the ingredient list and the seal".
+W6 non-dairy skip cultures -> detail: "Some non-dairy yogurts skip the live cultures entirely: same aisle ...".
+pick_steps Greek/skyr strained, Kefir -> labels Greek / skyr: "Strained to remove whey, so thicker." and
+  Kefir: "A drinkable ferment with a wider mix of cultures." (two Greek labels merged into one).
+science 'Light' sentence DROPPED: in watch_out 1.
+detail "where it goes sideways", "Look for milk and cultures alone" DROPPED: restates tips 2 / watch_out 0.
+kristy_take "Plain has no added sugar" DROPPED: in tier_note and label Plain.
+
+======================================================================
+cream_vs_creamer                             TOTAL 579 -> 382
+----------------------------------------------------------------------
+why legal fat minimum -> tier_note. Oil/sweetener/emulsifiers -> short_answer + detail. why now:
+  "Cream is one ingredient; creamer is a formulation built to look like it." (from kristy_take).
+short_answer "Cream is dairy with a legal fat minimum" DROPPED: in tier_note.
+tier_note 100% grass-fed gloss -> pick_steps 1: "100% grass-fed means the cows ate grass and hay, never grain."
+tips 0-3 tightened, every element kept (raw, cream-top, unhomogenized, small dairy, not UP, no
+  carrageenan/gellan even organic, fallback UP cream / whole milk / half-and-half).
+W0 dairy-free creamers, first three ingredients, almond/oat/coconut -> science, verbatim.
+W1 flavored most sugar -> watch_out 0. W2 cream with stabilizers -> watch_out 1: "law fixes only fat".
+W3 280 °F for 2 seconds -> watch_out 2. W4+W5 titanium dioxide etc. and sunflower/canola -> watch_out 3.
+science legal minimum sentence DROPPED: in tier_note and detail fat percents.
+detail "creamer has no such standard" DROPPED: in science. "a short list worth checking dairy side"
+  DROPPED: watch_out 1. "Whole milk ... read out loud" DROPPED: science last sentence. "three
+  seconds" -> kristy_take. rBST ladder kept, sentences merged.
+kristy_take one-ingredient line -> why.
+
+======================================================================
+berries_picking                              TOTAL 577 -> 402
+----------------------------------------------------------------------
+short_answer bottom fruit carries the load -> science: "The bottom layer carries the weight".
+tier_note "whatever the container looks like" -> detail: "A clean-looking container says nothing about residue."
+  tier_note now: "Buy organic: strawberries, blackberries and blueberries rank high on EWG’s residue list."
+tips 0-4 tightened, every element kept.
+W0 no ripening after picking -> science + detail ("no reason to buy firm and wait").
+W1 fog, W2 re-stacked, W3 smell -> watch_out 0-2. W8 bifenthrin -> watch_out 3.
+W4 juice stains -> short_answer: "Juice or a fuzzy spot means decay is running."
+W5 spot-check, W6 organic restricts synthetic pesticides, W7 500 pesticides non-detect -> detail, wording kept.
+science re-stacked sentence DROPPED: in watch_out 1.
+detail "Berries do not ripen", weight/moisture, re-stacked, "carton is the whole decision" DROPPED:
+  restate science / watch_out.
+kristy_take ripen and turn-the-carton lines DROPPED: in science and short_answer.
+
+======================================================================
+raw_aged_cheese                              TOTAL 574 -> 431
+----------------------------------------------------------------------
+card_why "raw dairy nobody has to hunt for" DROPPED: in short_answer. Sixty days / decent cheese
+  counter -> detail: "why a decent cheese counter already keeps a case of it".
+short_answer European cheeses -> detail, verbatim. Three sentences joined into one.
+tier_note organic gloss -> detail: "Organic means certified organic feed and outdoor access."
+tip 2 thermized fallback DROPPED from tips: instead "cheese labeled thermized" + label Thermized
+  "Heated below pasteurization" hold it.
+tip 3 grass-fed organic, organic alone next -> buying_tips 2: "Grass-fed organic herd first; organic
+  alone when feed goes unstated."
+W2 fromage blanc -> detail: "a raw fromage blanc cannot meet it"; watch_out 2 keeps the question.
+W3 maker must know the milk / distance -> detail, wording kept; watch_out 3 keeps pasteurized-milk fact.
+science legal / process cheese / household lines DROPPED: in short_answer and watch_out.
+  Aging concentrates / one herd -> science (moved from detail).
+
+======================================================================
+olive_oil_grades                             TOTAL 568 -> 403
+----------------------------------------------------------------------
+short_answer harvest date, dark bottle, one country DROPPED: buying_tips 0-2.
+tier_note tightened, both facts kept.
+tips 1, 3 tightened, all elements kept.
+W0 'light' flavor and color -> watch_out 0 ("flavor") + label ‘Light’ ("color and flavor").
+W3 word on front does not settle grade -> science. 69 percent -> watch_out 3. 73 percent -> detail.
+  Signals that held up -> science: "a recent harvest year and a lightproof container".
+science extra virgin process / pomace / packed in DROPPED: short_answer, watch_out 1-2, label.
+detail pomace, packed in, harvest date, extra virgin process, ‘Light’ DROPPED: watch_out / science /
+  labels. Virgin looser limit -> label Virgin (unchanged). Dark glass or tin -> detail: "Dark glass or
+  tin protects it from light." Price flag and adulteration -> detail, kept.
+NOTE (not changed): instead "Butter or ghee for anything cooked..." is a swap, not a close second.
+
+======================================================================
+label_pasture_raised_feed                    TOTAL 527 -> 310
+----------------------------------------------------------------------
+tier_note tightened, fact kept.
+W0-W2 tightened, every fact kept.
+science "Most pasture-raised hens still eat soy and corn", "Vegetarian fed" no byproducts, hens eat
+  insects and forage DROPPED from science: held verbatim in short_answer / labels.
+  Space vs housing -> science: "Those govern housing and outdoor access, not the ration."
+detail USDA no definition DROPPED: science. 108 sq ft -> detail kept. Organic reaches feed / soy
+  and corn DROPPED: watch_out 1 + label Organic. Widest gap -> detail kept. Look-for soy-free,
+  organic bonus, cage-free last DROPPED: buying_tips / label / short_answer hold them.
+  Vegetarian fed outdoor -> detail: "covers only the supplied feed and does not tell whether a hen foraged."
+kristy_take ladder DROPPED: restates tips and detail; now "Pasture-raised plus printed feed words is the carton."
+
+======================================================================
+canned_soup                                  TOTAL 555 -> 417
+----------------------------------------------------------------------
+why MSG/yeast extract DROPPED: short_answer + tier_note. Homemade on bone broth -> why.
+short_answer homemade DROPPED: why. Dents -> watch_out 1.
+tip 2 homemade first DROPPED: why. tip 3 sodium words -> buying_tips 2: "‘reduced sodium’ is relative".
+W1 storage 50-70 °F, wipe lid, opened soup -> detail, wording kept.
+Dusty cans/torn labels (detail) -> watch_out 2.
+science 25 percent -> label Reduced sodium. Dates and storage -> detail. "salt means sodium chloride" -> science.
+detail mg limits DROPPED from detail: labels Sodium free 5 mg / Very low 35 / Low 140 / Reduced 25
+  percent hold each. Shelf life 12-18 months / 2-5 years kept.
+kristy_take sodium words fixed meaning DROPPED: science.
+
+======================================================================
+salt                                         TOTAL 547 -> 433
+----------------------------------------------------------------------
+short_answer gray/pink/beige -> "Unrefined colored salt"; colors held in buying_tips 0.
+tier_note tightened, fact kept. tips 0-3 tightened, every element kept.
+W0-W3 tightened, every fact kept.
+science iodide statement, anti-caking named, pickling pure DROPPED from science: detail (21 CFR
+  100.155, 172.490) and buying_tips 2.
+detail every study number kept (ten studies, 1,674 / 8-462 / 0-204 per kg, 39 brands, six continents).
+  "package promising zero needs a method" DROPPED from detail: watch_out 1. Kosher no cup for cup
+  -> watch_out 3. Pickling "pure salt with nothing added" -> buying_tips 2. "dyed pink, labeled
+  pink salt" -> watch_out 2.
+kristy_take reworded, same pick.
+
+======================================================================
+OTHER FILES
+test/acceptance/concernAdditives.test.js  YOGURT_FACTS regexes repointed to the new wording (same facts);
+  yogurt watch_out deepEqual replaced by YOGURT_WATCH_TRIM2, one fact regex set per old bullet.
+test/acceptance/ic7a.test.js  TRIM2_REPHRASED (12 yogurt_live_cultures sentences, facts kept, see yogurt).
+Pinned tip0 strings (yogurt, olive, raw_aged_cheese) left verbatim; no twoLinePin change.
+No frozen card touched. Nothing dropped except the restatements listed above.
