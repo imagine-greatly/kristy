@@ -82,25 +82,25 @@ test('C2 antioxidant cards name the preservative and say to read the list', () =
 // rank-order nuance was trimmed to the facts below.
 const YOGURT_FACTS = {
   '100% grass-fed means grass and hay, never grain; flavored tubs carry added sugar.': [/100% grass-fed on the tub means the cows ate grass and hay, never grain./, /On flavored, it is lactose plus what was added./],
-  'Plain over flavored. Sweeten it yourself with fruit.': [/Plain means no added sugar[;,] (so )?sweeten (it )?at home with fruit/],
+  'Plain over flavored. Sweeten it yourself with fruit.': [/Plain means no added sugar[;,.] (so )?[Ss]weeten (it )?at home with fruit/],
   'Compare the added-sugars line on the plain tub against the fruit cup. That gap is the decision.': [/Only the added-sugars line separates the two./],
-  'Greek or strained yogurt is thicker; whole-milk versions are more filling.': [/Greek or strained/, /Strained to remove whey, so thicker/, /Whole milk over fat-free: more filling/],
-  'A short list is the sign: milk and cultures. Thickeners do the job straining does, for less.': [/Milk and cultures only: no added color, dyes, thickeners or vitamins\./, /Thickeners do the job straining does, for less\./],
+  'Greek or strained yogurt is thicker; whole-milk versions are more filling.': [/Greek or strained/, /Strained to remove whey, so thicker/, /Whole milk over fat-free[:.] (It’s )?more filling/],
+  'A short list is the sign: milk and cultures. Thickeners do the job straining does, for less.': [/Just milk and cultures on the list\. No added color, dyes, thickeners or vitamins\./, /Thickeners do the job straining does, for less\./],
   'Greek and skyr are strained: thicker, with less whey.': [/Strained to remove whey, so thicker\./],
   'Kefir is drinkable and carries a wider mix of cultures than yogurt.': [/A drinkable ferment with a wider mix of cultures\./],
-  'Whole-milk versions are more filling and less tinkered with than fat-free.': [/Whole milk over fat-free: more filling, less tinkered with\./],
-  'rBST names a synthetic growth hormone used in dairy cows. Certified organic yogurt rules bar it in the herd.': [/Organic or “rBST free”: no synthetic growth hormone in the herd\./],
-  'For this herd treatment, take certified organic yogurt first. Next is a tub stating its milk comes from cows not given rBST. Tubs bearing neither claim rank last. US labels need not disclose whether cows received rBST.': [/Organic or “rBST free”/],
+  'Whole-milk versions are more filling and less tinkered with than fat-free.': [/Whole milk over fat-free\. It’s more filling and less tinkered with\./],
+  'rBST names a synthetic growth hormone used in dairy cows. Certified organic yogurt rules bar it in the herd.': [/Organic or “rBST free,” so the herd got no synthetic growth hormone\./],
+  'For this herd treatment, take certified organic yogurt first. Next is a tub stating its milk comes from cows not given rBST. Tubs bearing neither claim rank last. US labels need not disclose whether cows received rBST.': [/Organic or “rBST free[,”]/],
 };
 // Trim batch 2 (2026-11-08): yogurt watch_out cut to four bullets; every old item's fact is
 // pinned here instead of by deepEqual (scripts/lookfor/patches/trim-batch2.ledger.txt).
 const YOGURT_WATCH_TRIM2 = {
   'Plain still lists sugar, and it is lactose. On plain, the sugar line is the milk’s own. On flavored, it is lactose plus what was added. Only the added-sugars line separates the two.': [/Plain still lists sugar, and it is lactose, the milk’s own\./, /On flavored, it is lactose plus what was added\./, /Only the added-sugars line separates the two\./],
-  '‘Light’ means a high-intensity sweetener. Sucralose or similar stands in for the sugar; the cup is not plainer, only sweetened differently.': [/‘Light’ means sucralose or a similar high-intensity sweetener, not a plainer cup\./],
+  '‘Light’ means a high-intensity sweetener. Sucralose or similar stands in for the sugar; the cup is not plainer, only sweetened differently.': [/Light yogurt uses sucralose or a similar sweetener in place of sugar\. It isn’t a plainer cup\./],
   'Fruit-on-the-bottom and drinkable yogurts can run higher in sugar than the pre-mixed cup. Drinkables are made by adding water and flavors.': [/Fruit-on-the-bottom and drinkable yogurts, made by adding water and flavors, can run higher in sugar than the pre-mixed cup\./],
-  'A shelf-stable tub outside the cold case was heat-treated. It is yogurt, and nothing in it is alive.': [/A shelf-stable tub was heat-treated; nothing in it is alive\./],
+  'A shelf-stable tub outside the cold case was heat-treated. It is yogurt, and nothing in it is alive.': [/A shelf-stable tub was heat-treated\. Nothing in it is alive\./],
   '‘Made with live cultures’ is a past-tense claim. The seal is the present-tense one.': [/Made with live cultures[\s\S]*A past-tense claim; the seal is the present-tense one\./],
-  'The live cultures have to appear in the ingredient list. A tub that names none was heat-processed after fermenting or never held them. The seal is voluntary, so its absence alone proves nothing.': [/Live cultures must be listed; none named means heat-treated or never cultured\./, /A voluntary seal: cultures present and viable\. Its absence alone proves nothing\./],
+  'The live cultures have to appear in the ingredient list. A tub that names none was heat-processed after fermenting or never held them. The seal is voluntary, so its absence alone proves nothing.': [/Live cultures have to be listed\. If none are named, it was heat-treated or never cultured\./, /A voluntary seal: cultures present and viable\. Its absence alone proves nothing\./],
   'Some non-dairy yogurts skip the live cultures entirely. Same aisle, same word on the lid, no ferment.': [/Some non-dairy yogurts skip the live cultures entirely: same aisle, same word on the lid, no ferment\./],
 };
 

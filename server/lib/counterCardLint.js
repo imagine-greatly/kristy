@@ -1898,6 +1898,8 @@ export const CANONICAL_GLOSSES = [
     id: 'G3', term: /\bpasture[- ]raised\b/i,
     sections: ['meat', 'eggs_dairy'], categories: null,
     gloss: 'time outdoors on pasture, audited only with a certifier’s seal',
+    // Plain-voice wording (Devon 2026-11-09, egg_labels); L4 accepts either.
+    altGloss: 'time outdoors. Only a certifier’s seal checks it',
     trace: 'label_pasture_raised_feed',
   },
   {
@@ -2060,7 +2062,7 @@ export function lintSections(tips, entries) {
         // A pick has only its decision (PICK_FORBIDDEN_FIELDS bars tier_note, pick_steps and instead), so its one sentence carries the gloss itself.
         const glossTexts = [...(entry.kind === 'pick' ? ['decision'] : []), 'tier_note', 'pick_steps', 'instead'].flatMap((f) => stringsIn(entry[f])).map(norm);
         for (const termRow of resolveSectionTerms(entry.decision, section, entry.category)) {
-          if (!glossTexts.some((text) => text.includes(norm(termRow.gloss)))) {
+          if (!glossTexts.some((text) => [termRow.gloss, termRow.altGloss].some((g) => g && text.includes(norm(g))))) {
             out.push({ code: 'TERM_UNGLOSSED', section, id: entry.id, row: termRow.id });
           }
         }

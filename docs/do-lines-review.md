@@ -50,9 +50,9 @@ Also: imperative, starts with a verb, ≤14 words.
 | `baking_soda_soak` | produce · home | Baking soda water for residue that a plain rinse leaves. | Soak the fruit twelve minutes, then rinse it clean. | — |
 | `precut_produce_tradeoffs` | produce | Whole produce before pre-cut: cutting starts vitamin loss and browning. | Check the use-by date, since pre-cut spoils days before whole produce does. | — |
 | `grassfed_butter` | eggs_dairy | Deep yellow grass-fed butter: cream, and salt if salted. | Read for cream and salt; skip any natural flavor entry. | — |
-| `whole_vs_reduced_fat_milk` | eggs_dairy | Trusted raw milk from a farm, or low-temp pasteurized 100% grass-fed. | Read beside the date; skip ultra-pasteurized and check the fat wording. | — |
+| `whole_vs_reduced_fat_milk` | eggs_dairy | Trusted raw milk from a farm, or low-temp pasteurized 100% grass-fed. | Read beside the date. Skip ultra-pasteurized, then check the fat wording. | — |
 | `cheese_real_vs_processed` | eggs_dairy | Grass-fed block cheese: milk, cultures, salt, enzymes, nothing else. | Read the printed name; skip cheese followed by food or product. | — |
-| `yogurt_plain_vs_flavored` | eggs_dairy | Plain Greek yogurt made from 100% grass-fed milk. | Read for milk and culture names; skip sugar, pectin or flavors. | — |
+| `yogurt_plain_vs_flavored` | eggs_dairy | Plain Greek yogurt made from 100% grass-fed milk. | Read the list for milk and cultures. Skip sugar, pectin or flavors. | — |
 | `raw_milk` | eggs_dairy | Raw grass-fed milk from a farm you can name. | Buy from a farm you can visit that posts its test results. | — |
 | `rice_arsenic` | bulk_pantry | White basmati or sushi rice. | Check the origin on the bag; skip brown rice syrup. | — |
 | `oats_steelcut_rolled_instant` | bulk_pantry | Plain organic oats, steel-cut or rolled. | Skip instant packets listing flavor or sugar; read for whole grain oats. | — |

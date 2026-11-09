@@ -72,7 +72,7 @@ const MILK = {
   why: 'Heat, homogenizing and skimming each change milk. Whole milk keeps its milkfat; reduced-fat milk has some removed.',
   short_answer: 'Raw milk from a trusted local farmer comes first. Next is low-temp pasteurized, 100% grass-fed whole milk. Ultra-pasteurized milk is heated to about 280°F.',
 };
-const MILK_DO = "Read beside the date; skip ultra-pasteurized and check the fat wording."; // P4 current do line
+const MILK_DO = "Read beside the date. Skip ultra-pasteurized, then check the fat wording."; // P4 current do line
 const MILK_UHT = '“Ultra-pasteurized” or “UHT” on the carton means about 280°F for a few seconds: skip it.';
 const MILK_LABELS = [
   { term: 'Vat pasteurized', meaning: 'Held at 145°F for 30 minutes; also printed as low-temperature pasteurized.' },
@@ -89,7 +89,7 @@ const YOG = {
   why: 'Flavored yogurt carries added sugar; plain is milk and cultures. Whole-milk yogurt keeps the milkfat the milk came with.',
   short_answer: 'Plain Greek yogurt from 100% grass-fed milk. Plain organic whole-milk yogurt is next. Flavored tubs are where the added sugar is.',
 };
-const YOG_DO = "Read for milk and culture names; skip sugar, pectin or flavors."; // P4 current do line
+const YOG_DO = "Read the list for milk and cultures. Skip sugar, pectin or flavors."; // P4 current do line
 const YOG_TIPS = {
   'Greek/strained is higher protein; whole-milk versions are more filling.': 'Greek or strained yogurt is thicker; whole-milk versions are more filling.',
   'Greek and skyr are strained: thicker, more protein per spoon.': 'Greek and skyr are strained: thicker, with less whey.',

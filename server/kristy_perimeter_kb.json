@@ -31,7 +31,7 @@
       "category": "seafood",
       "question": "Is wild or farmed salmon better?",
       "decision": "Wild Alaskan salmon, blue MSC label, fresh or frozen, like sockeye or coho.",
-      "why": "Wild is a whole-food preference; read the species name, with deep-red flesh identifying sockeye.",
+      "why": "Wild is a whole-food preference, not settled science. Read the kind of salmon. Deep red flesh usually means sockeye.",
       "short_answer": "Wild salmon eats krill and small fish; farmed salmon eats plant protein and vegetable oil.",
       "detail": "That ration leaves farmed salmon with far more omega-6. The ratio is the claim, not the amount: farmed salmon is fatter, so a serving can carry as much total omega-3 as wild or more; what the feed changes is the balance against omega-6. Sea lice and the treatments used against them are the cost of penning fish that close together. Antibiotic use varies enormously by country of origin: Norwegian farming runs close to zero on the back of vaccination, and other producing countries run far higher. The fish never swam anywhere, and it was colored to look like one that did.",
       "evidence_tier": "kristys_standard",
@@ -41,17 +41,17 @@
           "url": "https://www.ecfr.gov/current/title-7/section-60.200"
         }
       ],
-      "kristy_take": "Wild, and frozen wild before fresh farmed. Where wild is not in the case, the tin is.",
-      "instead": "Canned wild salmon, or sardines, both actually wild.",
+      "kristy_take": "Wild, and frozen wild over fresh farmed. No wild in the case? Try canned wild.",
+      "instead": "Canned wild salmon or sardines. Both are wild.",
       "cart_pick": "Wild-caught salmon",
       "buying_tips": [
-        "“wild-caught”, “Alaska” and the blue MSC label, with the kind of salmon named.",
-        "Sockeye or coho, almost always wild.",
-        "Frozen wild Alaskan, as gladly as fresh."
+        "“Wild-caught”, “Alaska” and the kind of salmon on the label, plus the blue MSC seal.",
+        "Sockeye or coho. They’re almost always wild.",
+        "Frozen wild Alaskan. It’s as good a pick as fresh."
       ],
       "watch_out": [
-        "Wild Atlantic salmon is effectively off the market.",
-        "Some farms rely on routine antibiotics; practice varies by country, so ask."
+        "Wild Atlantic salmon is basically gone from stores.",
+        "Some farms use antibiotics routinely. It depends on the country, so ask."
       ],
       "pick_steps": [
         "Atlantic on the label means farmed."
@@ -71,7 +71,7 @@
           "meaning": "Astaxanthin in the feed set the pink; farmed flesh is gray without it."
         }
       ],
-      "tier_note": "Reach past fresh Atlantic for frozen wild, documented as the same fish.",
+      "tier_note": "Frozen wild is documented as the same fish, so pick it over fresh Atlantic.",
       "eyebrow_short": "Wild or farmed",
       "asked_as": [
         "wild or farmed salmon",
@@ -591,7 +591,7 @@
       "category": "poultry_eggs",
       "question": "What do cage-free, free-range, and pasture-raised eggs actually mean?",
       "decision": "Pasture-raised eggs from hens on soy-free, corn-free feed.",
-      "why": "Space words describe the hen’s room; only feed words describe the ration.",
+      "why": "Pasture-raised doesn’t tell you what the hens ate. Only the feed words do.",
       "short_answer": "Certified Humane Pasture Raised means 108 square feet per hen. Organic sets the feed. Cage-free and vegetarian-fed say nothing about time outdoors.",
       "detail": "‘Soy-free’ and ‘corn-free’ have to be printed outright; nothing else on the carton implies them, and most cartons never say them. The claim clusters on small regional brands, farm stands and farmers markets, not the national pasture-raised labels, so the supermarket case is often the wrong place to look. A feed claim says what is in the ration, not where it came from: feed grown on the farm can be traced, feed from several unnamed suppliers often cannot, and the carton does not say which. ‘Vegetarian fed’ says nothing about outdoor access. Organic reaches the ration another way: organic feed, no GMOs, no routine antibiotics, no added hormones. Pasture-raised with a third-party certifier is an audited space claim, the strongest outdoor claim, and it still sits below feed here. Cage-free and free-range are weaker, and the words alone are not worth paying up for. Certified Humane is three labels: its pasture-raised tier sits well above its free-range tier, and the watchdog scores pasture-raised, free-range and cage-free 60, 50 and 30 on the same scale. The watchdog scores Animal Welfare Approved, Biodynamic, Real Organic Project and Regenerative Organic Certified highest; a carton with no add-on label scores zero on that line. The yolk photo on the carton is artwork, not a sample. Shell pigment goes on in the last hours before laying, so a stressed hen, an older hen or a hurried lay leaves a paler brown shell; paler is not fresher or older. A carton may legally hold the next size up, never smaller, as long as sizes are not mixed. Two cartons with the same sell-by can have been packed weeks apart, so compare the three-digit pack dates; eggs keep four to five weeks past the pack date, refrigerated. At home, keep the carton on a middle or lower shelf, not the door, which swings warm every time it opens. Eggs age far faster on the counter than in the fridge. A cold egg left out can sweat, where bacteria can take hold. Refrigerated eggs should not sit out more than two hours. Store-bought eggs do not need washing before use. US rules require washing and sanitizing, then holding at 45F or below from the plant onward. The standard is all three on one carton: what the hen ate, how it was grown, and how much room it had.",
       "evidence_tier": "kristys_standard",
@@ -618,23 +618,23 @@
           "url": "https://certifiedhumane.org/decoding-the-carton-how-to-buy-clean-humane-eggs/"
         }
       ],
-      "kristy_take": "Pasture alone leaves the feed question open. Check the pack date too: a fresh egg fries with a tall yolk and tight white.",
+      "kristy_take": "Get the pasture words and the feed words on one carton. Then check the pack date. A fresh egg fries with a tall yolk and a tight white.",
       "cart_pick": "Pasture-raised soy-free, corn-free eggs",
       "buying_tips": [
         "“corn-free” and “soy-free” feed printed beside “pasture-raised”.",
-        "Certified Humane Pasture Raised or Animal Welfare Approved beside “pasture-raised”.",
-        "Farm stands, farmers markets or the farm named on the carton, for soy-free.",
-        "No feed words on the shelf: certified organic, the reliable floor.",
+        "A Certified Humane Pasture Raised or Animal Welfare Approved seal. Those seals check the pasture claim.",
+        "Soy-free eggs from farm stands, farmers markets or the farm named on the carton.",
+        "Certified organic when no carton names the feed. It’s the reliable floor.",
         "Open the carton and check for cracks and leaks before it goes in the cart."
       ],
       "watch_out": [
-        "“Cage free” means no cages, not outdoors; “free range” space can be small.",
-        "Certified Humane’s cage-free tier requires no outdoor access at all.",
-        "Most supermarket cartons, big pasture brands included, never mention feed.",
-        "‘Omega-3 enriched’ sets no amount; two cartons can differ a lot."
+        "“Cage free” means no cages. It doesn’t mean outdoors. “Free range” can mean a small space.",
+        "Certified Humane has a cage-free level too. It doesn’t require any time outdoors.",
+        "Most supermarket cartons never say what the hens ate, big pasture brands included.",
+        "‘Omega-3 enriched’ doesn’t set an amount. Two cartons can differ a lot."
       ],
       "pick_steps": [
-        "“Pasture-raised” means time outdoors on pasture, audited only with a certifier’s seal."
+        "Pasture-raised means time outdoors. Only a certifier’s seal checks it."
       ],
       "science": "Cage-free, free-range and pasture-raised are space claims; none says what the hen ate. ‘Vegetarian-fed’ keeps hens off animal foods, yet a hen on real pasture eats bugs. Yolk color is not a feed tell; marigold in the ration deepens it too. With no feed named, certified organic is the floor; its rules reach the ration.",
       "labels_decoded": [
@@ -723,7 +723,7 @@
           "meaning": "Cuticle intact. Can be held at room temperature until washed."
         }
       ],
-      "tier_note": "Trust the certifier’s pasture seal; carton words alone are the producer’s own.",
+      "tier_note": "Trust a certifier’s pasture seal. Without one, it’s only the farm’s word.",
       "eyebrow_short": "Egg labels",
       "asked_as": [
         "what eggs should i buy",
@@ -1262,8 +1262,8 @@
       ],
       "category": "dairy",
       "question": "Should you buy whole or low-fat milk?",
-      "decision": "100% grass-fed whole milk, Certified Grassfed, cream-top, not ultra-pasteurized.",
-      "why": "Whole milk keeps its milkfat; WAPF favors grass-fed dairy and lists ultra-pasteurized milk under avoid.",
+      "decision": "100% grass-fed whole A2 milk, Certified Grassfed, cream-top, not ultra-pasteurized.",
+      "why": "Whole milk keeps all its fat. The Weston A. Price Foundation favors grass-fed milk and says to avoid ultra-pasteurized.",
       "short_answer": "Cream-top or non-homogenized milk comes next, then plain organic whole milk.",
       "detail": "Whole milk is the one that had the least done to it: skimming, standardizing and often ultra-pasteurizing are steps it skips. The old ‘always low-fat dairy’ guidance has weakened for otherwise-healthy people; whole milk is a whole-food-standard pick rather than a finding, and a doctor’s advice for a specific person outranks a shelf standard. Every bit of heat changes milk, so the shortest date on the shelf usually means the least processing, not worse milk. Ultra-pasteurized milk resists culturing; skip it for homemade yogurt. Homogenization carries no health benefit and no health risk; cream-top is a preference about texture and steps. Certified organic means organic feed, outdoor access and a 30 percent grazing minimum in season; Certified Grassfed sets a 100 percent grass and forage diet. rBST is a synthetic growth hormone given to dairy cows; certified organic cows cannot receive it, and US labels need not say whether other cows did. The A2 seal is a licensed program that reports the protein, not how the herd lived; ultra-pasteurized A2 is still UHT, and processing is the higher-order question. Easier digestion is the most promising A2 claim and still unproven by science. Breed is a tendency, not a test: Jerseys and Guernseys carry more A2 genes than Holsteins, yet a Holstein herd can be more than half A2A2, and an A1A2 cow gives milk with both proteins, so the claim rests on a tested herd. Small dairies name the breed; the big labels only print the seal. A2 yogurt and A2 cheese are the same milk cultured.",
       "evidence_tier": "kristys_standard",
@@ -1283,25 +1283,25 @@
           "url": "https://www.americangrassfed.org/about-us/our-standards/"
         }
       ],
-      "kristy_take": "Whole milk, every time. Fewer steps between the cow and the carton.",
+      "kristy_take": "Whole milk, every time. Fewer steps from the cow to the carton.",
       "cart_pick": "100% grass-fed whole milk",
       "buying_tips": [
-        "Look for “100% grass-fed” and Certified Grassfed on a cream-top carton.",
-        "The ladder: low-temperature and cream-top, then A2, then the carton at hand.",
-        "Look for Regenerative Organic Certified, Certified Regenerative by A Greener World or Land to Market Verified.",
-        "No organic carton: find “from cows not treated with rBST”.",
-        "Look for the farm named on the carton.",
-        "Raw milk from a farm you can name, where it is sold, as an option."
+        "A cream-top carton with “100% grass-fed”, “A2” and the Certified Grassfed seal.",
+        "A2, low-temperature and cream-top first. Then whatever whole milk is there.",
+        "A farm seal is a plus: Regenerative Organic Certified, Certified Regenerative by A Greener World or Land to Market Verified.",
+        "No organic carton? “From cows not treated with rBST” on the label.",
+        "The farm’s name on the carton.",
+        "Raw milk from a farm you can name, where it’s sold."
       ],
       "watch_out": [
-        "Chocolate and strawberry jugs carry dessert-level added sugar; check that first.",
-        "Skip “ultra-pasteurized” or “UHT”: about 280°F, and a date months out.",
-        "A2 names a protein, not the processing or how the herd lived.",
-        "Raw milk can carry Campylobacter, E. coli, Listeria and Salmonella, which pasteurization kills."
+        "Chocolate and strawberry milk have as much added sugar as a dessert. Check that first.",
+        "Skip “ultra-pasteurized” or “UHT.” It’s heated to about 280°F, which is why the date is months out.",
+        "A2 only tells you about one protein. It doesn’t tell you how the milk was processed or how the cows lived.",
+        "Raw milk can carry Campylobacter, E. coli, Listeria and Salmonella. Pasteurization kills them."
       ],
       "pick_steps": [
-        "100% grass-fed on milk means the cows ate grass and hay, never grain.",
-        "Look for “low-temperature” or “vat pasteurized” printed on the label."
+        "“100% grass-fed” means the cows ate grass and hay, never grain.",
+        "Check the label for “low-temperature” or “vat pasteurized”."
       ],
       "science": "Reduced-fat, low-fat and skim are whole milk with milkfat removed. Cream is skimmed off before homogenization and less is added back, never water. The fat carries the flavor and most of the fullness. Dairy fat research is mixed, so the call rests on the processing, the checkable part. Grass-fed and pasture milk is a further layer, separate from the fat.",
       "labels_decoded": [
@@ -1334,7 +1334,7 @@
           "meaning": "Cream separates and rises; shake it. Still pasteurized, not raw."
         }
       ],
-      "tier_note": "Reach for whole, low-temperature milk; ultra-pasteurized sits at the bottom.",
+      "tier_note": "Reach for whole A2 milk heated at a low temperature. Ultra-pasteurized comes last.",
       "eyebrow_short": "Whole vs. reduced",
       "asked_as": [
         "whole milk or skim",
@@ -1462,7 +1462,7 @@
       "category": "dairy",
       "question": "What should you look for in yogurt?",
       "decision": "Plain whole-milk yogurt, 100% grass-fed, Certified Grassfed, cultures named.",
-      "why": "Organic tubs can still carry added sugar; grass-fed names where the milk came from.",
+      "why": "Organic yogurt can still have added sugar. “Grass-fed” tells you where the milk came from.",
       "short_answer": "Plain Greek yogurt from 100% grass-fed milk. Plain organic whole-milk yogurt is next. Flavored tubs are where the added sugar is.",
       "detail": "Plain yogurt, especially Greek or strained, is a whole food: milk and cultures, and the added-sugars gap between the plain tub and the fruit cup is the decision. Thickeners do the job straining does, for less. Whether the cultures are still alive is a separate question, read from the ingredient list and the seal. Some non-dairy yogurts skip the live cultures entirely: same aisle, same word on the lid, no ferment. Milk protein concentrate on the list is milk filtered and dried into a concentrated powder. Organic means certified organic feed and outdoor access.",
       "evidence_tier": "kristys_standard",
@@ -1484,14 +1484,14 @@
           "url": "https://www.americangrassfed.org/about-us/our-standards/"
         }
       ],
-      "kristy_take": "A big tub of plain; add your own berries.",
+      "kristy_take": "Buy a big tub of plain and add your own berries.",
       "cart_pick": "100% grass-fed plain whole yogurt",
       "buying_tips": [
         "“100% grass-fed” plain whole-milk yogurt with the Certified Grassfed seal.",
-        "Organic or “rBST free”: no synthetic growth hormone in the herd.",
-        "Milk and cultures only: no added color, dyes, thickeners or vitamins.",
-        "Whole milk over fat-free: more filling, less tinkered with.",
-        "Raw whole-milk yogurt from a farm, where sold."
+        "Organic or “rBST free,” so the herd got no synthetic growth hormone.",
+        "Just milk and cultures on the list. No added color, dyes, thickeners or vitamins.",
+        "Whole milk over fat-free. It’s more filling and less tinkered with.",
+        "Raw whole-milk yogurt from a farm, where it’s sold."
       ],
       "labels_decoded": [
         {
@@ -1523,12 +1523,12 @@
           "meaning": "No added sugar or flavoring."
         }
       ],
-      "tier_note": "Plain means no added sugar; sweeten at home with fruit or honey.",
+      "tier_note": "Plain means no added sugar. Sweeten it at home with fruit or honey.",
       "watch_out": [
-        "Flavored, fruit-on-the-bottom and drinkable cups carry the added sugar.",
-        "‘Light’ means sucralose or a similar high-intensity sweetener, not a plainer cup.",
-        "A shelf-stable tub was heat-treated; nothing in it is alive.",
-        "Live cultures must be listed; none named means heat-treated or never cultured."
+        "Flavored, fruit-on-the-bottom and drinkable yogurts are where the added sugar is.",
+        "Light yogurt uses sucralose or a similar sweetener in place of sugar. It isn’t a plainer cup.",
+        "A shelf-stable tub was heat-treated. Nothing in it is alive.",
+        "Live cultures have to be listed. If none are named, it was heat-treated or never cultured."
       ],
       "pick_steps": [
         "100% grass-fed on the tub means the cows ate grass and hay, never grain."
@@ -4143,7 +4143,7 @@
       "category": "bulk_pantry",
       "question": "How do I buy real extra-virgin olive oil, and what do the grades mean?",
       "decision": "Extra virgin olive oil with a recent harvest date, one country, dark bottle.",
-      "why": "Dark glass or tins protect oil from light; UC Davis names harvest dates as a freshness cue.",
+      "why": "Olive oil starts to break down the day it’s pressed. UC Davis says the harvest date tells you how fresh it is.",
       "short_answer": "Extra virgin uses no heat or solvent, and has to pass lab and taste tests. ‘Pure’, ‘classic’ and ‘light’ are refined oil with some virgin added.",
       "detail": "Grade and provenance are two separate checks, and a bottle has to pass both. Dark glass or tin protects it from light. ‘First cold pressed’ is a legacy phrase with no added legal force, and ‘product of’ is the phrase that names where the olives grew. In UC Davis testing of imported oils, 73 percent of samples from the top-selling imported brands failed the extra-virgin standard. A price that is unusually low for extra virgin is a flag rather than a find; past the grade, olive oil is one of the more adulterated products in the store.",
       "evidence_tier": "established",
@@ -4161,16 +4161,16 @@
           "url": "https://www.westonaprice.org/health-topics/abcs-of-nutrition/shopping-guide-categories/"
         }
       ],
-      "kristy_take": "Harvest date, dark bottle, one country. Everything else on the front is decoration.",
-      "instead": "Butter or ghee for anything cooked. Whole-food fats, with no harvest date to check.",
+      "kristy_take": "Harvest date, dark bottle, one country. The rest of the front is decoration.",
+      "instead": "Butter or ghee for cooking. They’re whole-food fats with no harvest date to check.",
       "buying_tips": [
         "Extra virgin olive oil in dark glass, since light ages it.",
-        "A recent harvest date, not just “best by”.",
-        "One country of origin, named with “product of”.",
+        "A recent harvest date on the bottle, not just “best by”.",
+        "“Product of” followed by one country.",
         "Organic, from a single estate or small producer."
       ],
       "pick_steps": [
-        "‘Pure’, ‘classic’ and ‘light’, all refined oil; pomace is solvent-extracted."
+        "‘Pure’, ‘classic’ and ‘light’ are refined oil. Pomace is pulled with a solvent."
       ],
       "science": "The oil degrades from the day it is pressed, so a harvest date beats a best-by date. The word on the front does not settle the grade. In UC Davis testing, the signals that held up were a recent harvest year and a lightproof container.",
       "labels_decoded": [
@@ -4195,13 +4195,13 @@
           "meaning": "Where it was bottled. Not where the olives grew."
         }
       ],
-      "tier_note": "Extra virgin is a legal grade, taste-panel tested; “product of” is regulated.",
+      "tier_note": "Extra virgin is a legal grade. The oil has to pass a taste test and a lab test. “Product of” is regulated too.",
       "cart_pick": "Extra-virgin olive oil",
       "watch_out": [
-        "‘Pure’, ‘classic’ and ‘light’ mean refined; ‘light’ is flavor, not calories.",
-        "Pomace oil is solvent-extracted from pressing leftovers: a different product.",
-        "‘Packed in [country]’ is where it was bottled, not grown.",
-        "In UC Davis testing, 69 percent of imported oils sampled failed extra virgin."
+        "‘Pure’, ‘classic’ and ‘light’ mean refined. ‘Light’ means lighter flavor, not fewer calories.",
+        "Pomace oil is pulled with a solvent from what’s left after pressing. It’s a different product.",
+        "‘Packed in [country]’ tells you where it was bottled, not where the olives grew.",
+        "In UC Davis tests, 69 percent of the imported oils checked didn’t meet the extra virgin standard."
       ],
       "eyebrow_short": "Real extra-virgin",
       "asked_as": [
@@ -13032,7 +13032,7 @@
       "category": "bulk_pantry",
       "question": "How do you pick canned soup?",
       "decision": "Organic bone-broth soup with meat and vegetables, no yeast extract.",
-      "why": "Homemade soup on bone broth beats the can; bone broth makes the base.",
+      "why": "Homemade soup made with bone broth beats the can. In a can, bone broth should be the base.",
       "short_answer": "Most canned soup is seasoned with MSG, yeast extract or hydrolyzed protein. In a can, pick broth-based soup with a short list and no seed oils.",
       "detail": "Under 21 CFR 101.61, the sodium words on a label carry the set limits per standard serving decoded below; reduced or less sodium must name its reference food and the percent difference. No salt added means no salt went in during processing, and a soup that is not sodium free says “not a sodium free food”. A slightly dented can is fine; skip dents the size of a finger and sharp-pointed dents on the seam. Dates on cans mark peak quality, not safety. Store cans cool and dry, between 50 °F and 70 °F, with the oldest in front; wipe the lid before opening, and move opened soup to a covered container in the refrigerator. High-acid canned food keeps 12 to 18 months for best quality, and low-acid canned food, including vegetable soups other than tomato, keeps 2 to 5 years.",
       "evidence_tier": "established",
@@ -13050,17 +13050,17 @@
           "url": "https://chriskresser.com/re-examining-the-evidence-on-bpa-and-bpa-free-plastics/"
         }
       ],
-      "kristy_take": "A short list is a craft standard, not a safety line.",
+      "kristy_take": "A short list is about how the soup is made, not whether it’s safe.",
       "cart_pick": "Bone broth soup, short list, no yeast extract",
       "buying_tips": [
-        "Bone broth first, herbs and spices by name, no natural flavor.",
-        "No MSG, yeast extract, hydrolyzed protein, or soybean or canola oil.",
-        "‘Low sodium’ is a fixed limit; ‘reduced sodium’ is relative."
+        "The list starts with bone broth and names each herb and spice. No “natural flavor.”",
+        "Check that the list has no MSG, yeast extract, hydrolyzed protein, or soybean or canola oil.",
+        "‘Low sodium’ on the can. That’s a set limit. ‘Reduced sodium’ only means less than the regular version."
       ],
       "watch_out": [
-        "“No salt added” still allows sodium; it is not “sodium free”.",
+        "“No salt added” isn’t “sodium free”. The soup can still have sodium.",
         "Leave cans with deep dents, seam dents, leaks, rust or bulging lids.",
-        "Dusty cans or torn labels may mean old stock."
+        "Dusty cans or torn labels can mean old stock."
       ],
       "pick_steps": [
         "A can with no deep dents, seam dents, leaks, rust or bulging lids."
@@ -13092,7 +13092,7 @@
           "meaning": "Best flavor or quality, not a purchase or safety date."
         }
       ],
-      "tier_note": "Read the list for MSG, yeast extract and seed oils, beyond sodium.",
+      "tier_note": "Check the list for MSG, yeast extract and seed oils, not just sodium.",
       "asked_as": [
         "which canned soup should i buy",
         "how do i pick a canned soup",

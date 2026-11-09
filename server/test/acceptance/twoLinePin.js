@@ -4067,9 +4067,9 @@ const SECOND_PASS = {
     "do": "Read the pack for bison alone and the AGA mark beside the cut."
   },
   "whole_vs_reduced_fat_milk": {
-    "decision": "100% grass-fed whole milk, Certified Grassfed, cream-top, not ultra-pasteurized.",
-    "tip0": "Look for “100% grass-fed” and Certified Grassfed on a cream-top carton.",
-    "do": "Read beside the date; skip ultra-pasteurized and check the fat wording."
+    "decision": "100% grass-fed whole A2 milk, Certified Grassfed, cream-top, not ultra-pasteurized.",
+    "tip0": "A cream-top carton with “100% grass-fed”, “A2” and the Certified Grassfed seal.",
+    "do": "Read beside the date. Skip ultra-pasteurized, then check the fat wording."
   },
   "raw_kefir": {
     "decision": "Plain raw or grass-fed kefir from whole milk, Certified Grassfed, farm named.",
@@ -4084,7 +4084,7 @@ const SECOND_PASS = {
   "yogurt_plain_vs_flavored": {
     "decision": "Plain whole-milk yogurt, 100% grass-fed, Certified Grassfed, cultures named.",
     "tip0": "“100% grass-fed” plain whole-milk yogurt with the Certified Grassfed seal.",
-    "do": "Read for milk and culture names; skip sugar, pectin or flavors."
+    "do": "Read the list for milk and cultures. Skip sugar, pectin or flavors."
   },
   "cheese_real_vs_processed": {
     "decision": "Grass-fed block cheese, Certified Grassfed: milk, salt, cultures and rennet.",
@@ -4108,7 +4108,7 @@ const SECOND_PASS = {
   },
   "salmon_wild_vs_farmed": {
     "decision": "Wild Alaskan salmon, blue MSC label, fresh or frozen, like sockeye or coho.",
-    "tip0": "“wild-caught”, “Alaska” and the blue MSC label, with the kind of salmon named.",
+    "tip0": "“Wild-caught”, “Alaska” and the kind of salmon on the label, plus the blue MSC seal.",
     "do": "Find the MSC label and wild Alaskan, then check for deep red flesh."
   },
   "canned_fish_choosing": {
